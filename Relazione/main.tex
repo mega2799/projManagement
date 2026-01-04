@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Impostazioni pagina
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Impostazioni header e footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Impostazioni link
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Project Management - MaraffaOnline},
+    pdfpagemode=FullScreen,
+}
+
+% Path per le immagini
+\graphicspath{{../img/}}
+
+% Informazioni documento
+\title{
+    \includegraphics[width=0.3\textwidth]{logo_unibo.png}\\[1cm]
+    {\Large Project Management}\\[0.5cm]
+    {\Huge\bfseries Progetto MaraffaOnline}\\[0.5cm]
+    {\large Piattaforma Online per il Gioco di Carte Maraffa}
+}
+\author{Matteo}
+\date{\today}
+
+\begin{document}
+
+% Frontespizio
+\maketitle
+\thispagestyle{empty}
+
+% Indice
+\tableofcontents
+\newpage
+
+% Capitoli
+\include{capitoli/01_introduzione}
+\include{capitoli/02_scoping}
+\include{capitoli/03_planning}
+\include{capitoli/04_launching}
+\include{capitoli/05_monitoring}
+\include{capitoli/06_closing}
+
+% Bibliografia (opzionale)
+% \bibliographystyle{plain}
+% \bibliography{bibliografia}
+
+\end{document}
