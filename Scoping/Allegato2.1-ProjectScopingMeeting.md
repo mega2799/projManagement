@@ -66,13 +66,13 @@
 ### 4. Requirements di Alto Livello (16:00 - 16:30)
 - **Francesca Giuliani** specifica le regole della Maraffa tradizionale romagnola
 - Discussione sulle funzionalità must-have vs nice-to-have:
-  - ✅ Partite multiplayer in tempo reale (4 giocatori)
-  - ✅ Stanze private per giocare con amici specifici
-  - ✅ Chat in-game
-  - ✅ Interfaccia intuitiva e moderna
-  - 🔹 App mobile nativa (da valutare vs responsive web)
-  - 🔹 Sistema di classifiche e statistiche
-  - 🔹 Modalità torneo
+  - Partite multiplayer in tempo reale (4 giocatori)
+  - Stanze private per giocare con amici specifici
+  - Chat in-game
+  - Interfaccia intuitiva e moderna
+  - [Nice to have] App mobile nativa (da valutare vs responsive web)
+  - [Nice to have] Sistema di classifiche e statistiche
+  - [Nice to have] Modalità torneo
 
 ### 5. Rischi e Vincoli (16:30 - 16:45)
 Identificazione preliminare dei rischi principali:
@@ -99,8 +99,8 @@ Accordi su:
 
 | # | Decisione | Responsabile | Scadenza |
 |---|-----------|--------------|----------|
-| 1 | Approva il budget di €25.000 e la durata di 6 mesi | Giovanni Marchetti | ✅ Approvato |
-| 2 | Prioritizzare versione web responsive prima dell'app mobile nativa | Marco Venturi | ✅ Approvato |
+| 1 | Approva il budget di €25.000 e la durata di 6 mesi | Giovanni Marchetti | Approvato |
+| 2 | Prioritizzare versione web responsive prima dell'app mobile nativa | Marco Venturi | Approvato |
 | 3 | Definire contratto formale con milestones e pagamenti scaglionati | Marco Venturi | 20/09/2025 |
 | 4 | Identificare 20 beta tester dalla community per user testing | Francesca Giuliani | 30/09/2025 |
 | 5 | Creare canale Slack condiviso PlayHeritage-MaraffaForever | Andrea Conti | 17/09/2025 |
@@ -145,8 +145,6 @@ Accordi su:
 
 ## Allegati
 
-- Presentazione PowerPoint "MaraffaOnline - Project Vision" (15 slide)
-- Foto del meeting (gruppo in sala + screenshot videoconferenza)
 - Registrazione audio del meeting (disponibile su richiesta)
 
 ---

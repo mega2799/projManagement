@@ -1,16 +1,20 @@
 # Allegato 2.3 - Project Overview Statement (POS)
+
 ## v.1.0.0 – 2025-09-18 16:45:12
 
 ### Problema
+
 La community "Maraffa Forever", composta da 150 appassionati del gioco di carte tradizionale Maraffa, si trova dispersa geograficamente in tutta Italia e all'estero. I membri, un tempo compagni universitari in Romagna, non hanno più modo di giocare insieme a causa della distanza fisica. Le piattaforme online esistenti per la Maraffa sono:
+
 - **Obsolete tecnologicamente** (interfacce datate, scarsa usabilità)
 - **Non mantenute** (alcune non più funzionanti)
-- **Limitate a single-player** contro intelligenza artificiale, perdendo completamente la dimensione sociale del gioco
+<!-- - **Limitate a single-player** contro intelligenza artificiale, perdendo completamente la dimensione sociale del gioco -->
 - **Prive di funzionalità multiplayer real-time** per giocare con amici specifici
 
 Questo impedisce alla community di mantenere viva la tradizione ludica e le relazioni sociali costruite attorno al gioco.
 
 ### Opportunità
+
 Per **PlayHeritage Labs**, primo spin-off universitario dell'Università di Bologna specializzato in cultural heritage gaming, MaraffaOnline rappresenta:
 
 1. **Validazione del Modello di Business**: primo progetto commerciale reale che permette di testare l'approccio alla digitalizzazione di giochi tradizionali e creare un portfolio credibile
@@ -19,6 +23,7 @@ Per **PlayHeritage Labs**, primo spin-off universitario dell'Università di Bolo
 4. **Scalabilità Futura**: il successo di MaraffaOnline può aprire la strada a progetti simili per altri giochi regionali italiani (Briscola chiamata, Tresette, Scopone), creando un ecosistema di giochi tradizionali digitalizzati
 
 ### Goal
+
 Realizzare **MaraffaOnline**, una piattaforma web responsive per giocare a Maraffa in multiplayer online (4 giocatori in tempo reale), che ricrei fedelmente l'esperienza sociale del gioco tradizionale romagnolo. La piattaforma deve diventare il punto di riferimento digitale per la community "Maraffa Forever" e potenzialmente per altre community di giocatori.
 
 <br>
