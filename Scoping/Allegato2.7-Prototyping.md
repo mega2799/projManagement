@@ -170,7 +170,7 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 |     Password: [______]                 |
 |                                        |
 | Invita giocatori:                      |
-| [ Cerca amici...]                    |
+| [ Cerca amici...]                      |
 | [ ] Marco Venturi                      |
 | [ ] Giulia Rossi                       |
 | [ ] Luca Bianchi                       |
@@ -219,15 +219,15 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
        ●●●        |   GIOCO          |      ●●●
                   |                  |
                   | Carte giocate:   |
-                  | [7♥] [A♣][2♦][R♠]|
+                  | [7S] [AS][2D]    |
                   +------------------+
 
                     [Giocatore Sud - TU]
-                    []
+                    [5S]
                     ↑ Clicca carta da giocare
 
 Timer: [========>     ] 18s
-Punteggio: Noi 45 - Loro 38
+Punteggio: Noi 25 - Loro 19
 Chat: [...]
 ```
 
@@ -258,18 +258,18 @@ Chat: [...]
 **Elementi chiave**:
 ```
 +----------------------------------------+
-|           VITTORIA!                |
+|           VITTORIA!                    |
 +----------------------------------------+
-| Punteggio finale: 41 - 38              |
+| Punteggio finale: 41 - 36              |
 |                                        |
 | Mani vinte:                            |
-| Noi: ||||||||| (9)                     |
-| Loro: |||||| (6)                       |
+| Noi: |||| (4)                          |
+| Loro: ||| (3)                          |
 |                                        |
-| Punti raccolti: Noi 41 - Loro 38       |
+| Punti raccolti: Noi 41 - Loro 36       |
 |                                        |
-| [  Rivincita  ]  [Torna alla lobby]   |
-|                  [Condividi ]        |
+| [  Rivincita  ]  [Torna alla lobby]    |
+|                  [Condividi ]          |
 +----------------------------------------+
 ```
 
