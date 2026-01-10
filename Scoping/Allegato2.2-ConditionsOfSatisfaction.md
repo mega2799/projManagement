@@ -146,27 +146,6 @@ La tabella è suddivisa in 5 sezioni:
     </tr>
 </table>
 
-<br>
-
-## Note Aggiuntive
-
-### Milestone di Pagamento
-
-Il budget di €25.000 sarà erogato in 4 tranche correlate alle milestone temporali:
-
-1. **€6.250** - Firma contratto e completamento fase Scoping (30/09/2025)
-2. **€8.750** - Completamento Game Engine + Backend + Real-Time Communication (15/12/2025)
-3. **€6.250** - Completamento Frontend Web + Infrastructure (31/01/2026)
-4. **€3.750** - Lancio MVP e approvazione finale (15/03/2026)
-
-### Priorità delle Condizioni
-
-Secondo il metodo MoSCoW (che verrà approfondito in fase di Planning):
-- **Must Have**: Tutte le condizioni Temporali, Economiche e Tecniche
-- **Should Have**: Condizioni Qualitative relative a UX e soddisfazione committente
-- **Could Have**: Accessibilità WCAG AA (target aspirazionale)
-- **Won't Have (per MVP)**: App mobile nativa (rinviata a fase 2 post-lancio)
-
 ---
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
