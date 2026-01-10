@@ -252,7 +252,7 @@ Chat: [...]
 - [+] Messaggio grande: "VITTORIA!" o "SCONFITTA"
 - [+] Riepilogo punteggio finale
 - [+] Tabella mani vinte per coppia
-- [+] MVP (Most Valuable Player) - giocatore con più contributo
+- [+] Punti raccolti per coppia
 - [+] Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
 
 **Elementi chiave**:
@@ -260,13 +260,13 @@ Chat: [...]
 +----------------------------------------+
 |           VITTORIA!                |
 +----------------------------------------+
-| Punteggio finale: 121 - 98             |
+| Punteggio finale: 41 - 38              |
 |                                        |
 | Mani vinte:                            |
 | Noi: ||||||||| (9)                     |
 | Loro: |||||| (6)                       |
 |                                        |
-| MVP: Marco Venturi (65 punti)          |
+| Punti raccolti: Noi 41 - Loro 38       |
 |                                        |
 | [  Rivincita  ]  [Torna alla lobby]   |
 |                  [Condividi ]        |

@@ -10,7 +10,18 @@
 ## Progetto: MaraffaOnline
 
 ### Descrizione
-Piattaforma online per giocare a Maraffa (gioco di carte tradizionale italiano) in multiplayer.
+Piattaforma online per giocare a **Maraffone** (chiamato anche **Beccaccino** o **Trionfo**), gioco di carte tradizionale della Romagna, in multiplayer.
+
+### Regole Ufficiali
+Le regole complete del gioco sono documentate in: `Scoping/REGOLE-UFFICIALI-MARAFFONE.md`
+
+**Punti chiave**:
+- Gioco a 4 giocatori (2 coppie)
+- 40 carte italiane, 10 carte a giocatore
+- Chi ha il 4 di denari sceglie la briscola e inizia
+- Punteggio: Assi=1pt, Figure/2/3=1/3pt, Carte 4-7=0pt, Ultima presa=1pt
+- Vittoria: 41 punti e una figura (o 31 nella variante corta)
+- Maraffa/Cricca: Asso+2+3 di briscola = 3 punti bonus
 
 ### Riferimenti
 - **Relazione di riferimento**: [relazioneSofy.pdf](../relazioneSofy.pdf) - Progetto Exploding Kittens (voto 30)

@@ -286,15 +286,15 @@ FASE 2: PRIMA MANO
 └─ Carte scompaiono dal tavolo, mano successiva
 
 FASE 3: MANI SUCCESSIVE (2-10)
-└─ Ripete processo FASE 2 finché qualcuno arriva a 121+ punti
+└─ Ripete processo FASE 2 finché qualcuno arriva a 41+ punti e una figura
 
 FASE 4: FINE PARTITA
-├─ Coppia raggiunge 121 punti
+├─ Coppia raggiunge 41 punti e una figura
 ├─ Transizione schermata → " VITTORIA!"
 ├─ Riepilogo:
-│   ├─ Punteggio finale: 121 - 98
+│   ├─ Punteggio finale: 41 - 38
 │   ├─ Mani vinte: 9 vs 6
-│   └─ MVP: Marco (65 punti)
+│   └─ Punti raccolti per coppia
 │
 └─ Opzioni:
     ├─ [Rivincita] → se tutti accettano, torna a FASE 1

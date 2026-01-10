@@ -23,19 +23,27 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 
 ### 1.1 Regole del Gioco
 
-#### 1.1.1 Implementazione Regole Maraffa Romagnola [F, M]
-- Gioco a 4 giocatori (2 coppie)
+#### 1.1.1 Implementazione Regole Maraffone/Beccaccino [F, M]
+- Gioco a 4 giocatori (2 coppie che si affrontano)
 - Mazzo di 40 carte italiane
-- Distribuzione 10 carte a giocatore
-- Sistema di briscola (seme dominante)
-- Calcolo punteggio tradizionale (Asso=11, Tre=10, Re=4, Cavallo=3, Fante=2)
+- Distribuzione 10 carte a giocatore (in due gruppi da 5)
+- Ordine carte per seme: 3, 2, Asso, Re, Cavallo, Fante, 7, 6, 5, 4
+- Sistema di briscola (seme dominante): chi ha il 4 di denari "battezza" (sceglie la briscola) e inizia
+- Calcolo punteggio corretto:
+  - Assi = 1 punto ciascuno (4 totali)
+  - Figure (Re, Cavallo, Fante), 2 e 3 = 1/3 punto ciascuno
+  - Carte 4-7 = 0 punti
+  - Ultima presa = 1 punto
+  - Totale mano = 10 e 2/3 punti (11 con ultima presa)
+  - Conteggio: solo punti interi, arrotondamento per difetto
+- **Fonte regole**: [Wikipedia Marafone Beccacino](https://it.wikipedia.org/wiki/Marafone_Beccacino), [Giochi STARS](https://giochistars.it/news/giochi-carte-tradizionali/marafone-tutte-le-informazioni-e-le-regole-del-gioco-di-carte-romagnolo/)
 - **Validazione**: approvazione formale da Francesca Giuliani (esperta Maraffa Forever)
 
 #### 1.1.2 Gestione Turni e Fasi di Gioco [F, M]
-- Determinazione primo giocatore (casuale al primo turno, poi vincitore mano precedente)
-- Rotazione turni in senso orario
-- Obbligo di rispondere al seme (se si possiede)
-- Gestione dichiarazioni speciali (es. "Maraffa" - tre carte dello stesso seme)
+- Determinazione primo giocatore: chi ha il 4 di denari sceglie la briscola e inizia la prima mano
+- Rotazione turni in senso antiorario (o orario, deciso dal mazziere)
+- Obbligo di rispondere al seme (se si possiede carta del seme giocato)
+- Gestione comunicazioni permesse: solo chi apre il turno può dire "busso" (partner deve prendere), "striscio" (ho ancora carte di questo seme), "volo" (non ho più carte di questo seme)
 - **Dipendenza**: sincronizzazione con Real-Time Communication
 
 #### 1.1.3 Validazione Mosse [F, M]
@@ -45,15 +53,16 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - Mossa automatica se timeout scaduto (carta casuale valida)
 
 #### 1.1.4 Calcolo Punteggi [F, M]
-- Conteggio punti mano (chi vince la mano)
-- Somma punteggi partita per coppia
-- Condizione vittoria: prima coppia a 121 punti
-- Gestione pareggio (rarissimo, ma possibile): mano supplementare
+- Conteggio punti mano (chi vince la presa)
+- Somma punteggi partita per coppia (arrotondamento per difetto a punti interi)
+- Condizione vittoria: prima coppia a 41 punti e una figura (o 31 punti nella variante "corta")
+- Gestione pareggio: mano supplementare se necessario
 
-#### 1.1.5 Gestione Situazioni Speciali [F, S]
-- Dichiarazione "Maraffa" (bonus punti)
-- Gestione "capotto" (una coppia vince tutte le mani): punti raddoppiati
-- Gestione carte particolari con regole speciali (se presenti nelle regole romagnole)
+#### 1.1.5 Gestione Situazioni Speciali [F, M]
+- Dichiarazione "Maraffa" o "Cricca": se un giocatore possiede Asso, 2 e 3 del seme di briscola = 3 punti bonus
+  - DEVE giocare l'Asso di briscola come prima carta, altrimenti perde i 3 punti
+- Gestione "capotto" (se applicabile): regola da validare con esperta Francesca Giuliani
+- Comunicazioni regolamentate: solo chi gioca per primo può usare segnali verbali codificati
 
 ### 1.2 Intelligenza Artificiale (IA) [F, C]
 - [-] **Won't Have** nel MVP: nessuna modalità single-player contro IA

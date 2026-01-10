@@ -326,9 +326,9 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 **Criteri di Accettazione**:
 - [+] Schermata "VITTORIA!" o "SCONFITTA" con animazione
-- [+] Punteggio finale: "121 - 98"
+- [+] Punteggio finale: es. "41 - 38" (primo a 41 punti e una figura)
 - [+] Riepilogo mani vinte per coppia
-- [+] MVP (giocatore con più contributo punti)
+- [+] Punti raccolti per coppia durante la partita
 - [+] Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
 - [+] Se rivincita: tutti i 4 devono accettare per ripartire
 
