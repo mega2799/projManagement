@@ -32,17 +32,17 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 **Obiettivo**: Prima impressione, branding, call-to-action chiara
 
 **Mockup v1 - Feedback Ricevuti**:
-- ❌ "Troppo minimale, sembra una app generica di gaming"
-- ❌ "Manca il 'calore' della tradizione romagnola"
-- ❌ "Non si capisce subito che è un gioco di carte tradizionale"
-- ✅ "Il layout è pulito e moderno"
+- [-] "Troppo minimale, sembra una app generica di gaming"
+- [-] "Manca il 'calore' della tradizione romagnola"
+- [-] "Non si capisce subito che è un gioco di carte tradizionale"
+- [+] "Il layout è pulito e moderno"
 
 **Mockup v2 - Modifiche Implementate**:
-- ✅ Aggiunto header con pattern di carte da gioco italiane stilizzate
-- ✅ Palette colori ispirata ai toni caldi dell'osteria (rosso mattone, legno, verde bottiglia)
-- ✅ Hero section con illustrazione custom: 4 persone al tavolo da gioco (stile illustrativo, non fotografico)
-- ✅ Tagline: "La Maraffa tradizionale romagnola, ora online. Gioca con i tuoi amici, ovunque siano."
-- ✅ CTA principale: "Inizia a giocare" + "Scopri le regole" (per nuovi utenti)
+- [+] Aggiunto header con pattern di carte da gioco italiane stilizzate
+- [+] Palette colori ispirata ai toni caldi dell'osteria (rosso mattone, legno, verde bottiglia)
+- [+] Hero section con illustrazione custom: 4 persone al tavolo da gioco (stile illustrativo, non fotografico)
+- [+] Tagline: "La Maraffa tradizionale romagnola, ora online. Gioca con i tuoi amici, ovunque siano."
+- [+] CTA principale: "Inizia a giocare" + "Scopri le regole" (per nuovi utenti)
 
 **Elementi chiave**:
 ```
@@ -71,15 +71,15 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 **Obiettivo**: Processo di autenticazione semplice e veloce
 
 **Mockup v1 - Feedback Ricevuti**:
-- ❌ "Serve anche opzione 'Gioca come ospite' per chi vuole provare subito"
-- ✅ "Form semplice e chiaro"
+- [-] "Serve anche opzione 'Gioca come ospite' per chi vuole provare subito"
+- [+] "Form semplice e chiaro"
 
 **Mockup v2 - Modifiche Implementate**:
-- ✅ Aggiunta opzione "Prova come ospite" (accesso temporaneo senza registrazione)
-- ✅ Login con email + password
-- ✅ Opzione "Ricordami"
-- ✅ Link "Password dimenticata?"
-- ❗ Nota: Social login (Google, Facebook) considerato "Could Have" in MoSCoW, non nel MVP
+- [+] Aggiunta opzione "Prova come ospite" (accesso temporaneo senza registrazione)
+- [+] Login con email + password
+- [+] Opzione "Ricordami"
+- [+] Link "Password dimenticata?"
+- [!] Nota: Social login (Google, Facebook) considerato "Could Have" in MoSCoW, non nel MVP
 
 **Elementi chiave**:
 ```
@@ -109,15 +109,15 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 **Obiettivo**: Hub centrale post-login, accesso a partite e funzionalità sociali
 
 **Mockup v1 - Feedback Ricevuti**:
-- ❌ "Vogliamo vedere subito chi è online tra gli amici"
-- ❌ "Manca accesso rapido alle partite in corso"
-- ✅ "Pulsante 'Crea partita' ben visibile"
+- [-] "Vogliamo vedere subito chi è online tra gli amici"
+- [-] "Manca accesso rapido alle partite in corso"
+- [+] "Pulsante 'Crea partita' ben visibile"
 
 **Mockup v2 - Modifiche Implementate**:
-- ✅ Sidebar sinistra: profilo utente + lista amici online
-- ✅ Centro: card "Partite attive" + "Crea nuova partita"
-- ✅ Destra: chat globale (opzionale, "Should Have")
-- ✅ Notifiche in tempo reale: "È il tuo turno in Partita #123"
+- [+] Sidebar sinistra: profilo utente + lista amici online
+- [+] Centro: card "Partite attive" + "Crea nuova partita"
+- [+] Destra: chat globale (opzionale, "Should Have")
+- [+] Notifiche in tempo reale: "È il tuo turno in Partita #123"
 
 **Elementi chiave**:
 ```
@@ -145,16 +145,16 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 **Obiettivo**: Permettere di creare partite private e invitare amici specifici
 
 **Mockup v1 - Feedback Ricevuti**:
-- ❌ "Dobbiamo poter impostare password per stanza privata"
-- ❌ "Serve opzione per invitare direttamente utenti dalla lista amici"
-- ✅ "Link di invito condivisibile è ottimo"
+- [-] "Dobbiamo poter impostare password per stanza privata"
+- [-] "Serve opzione per invitare direttamente utenti dalla lista amici"
+- [+] "Link di invito condivisibile è ottimo"
 
 **Mockup v2 - Modifiche Implementate**:
-- ✅ Nome stanza personalizzabile
-- ✅ Opzioni: pubblica / privata (con password)
-- ✅ Invito tramite link condivisibile (copia/incolla)
-- ✅ Selezione diretta amici dalla lista (invito via notifica in-app)
-- ✅ Impostazioni: abilita/disabilita chat vocale (future feature)
+- [+] Nome stanza personalizzabile
+- [+] Opzioni: pubblica / privata (con password)
+- [+] Invito tramite link condivisibile (copia/incolla)
+- [+] Selezione diretta amici dalla lista (invito via notifica in-app)
+- [+] Impostazioni: abilita/disabilita chat vocale (future feature)
 
 **Elementi chiave**:
 ```
@@ -170,7 +170,7 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 |     Password: [______]                 |
 |                                        |
 | Invita giocatori:                      |
-| [🔍 Cerca amici...]                    |
+| [ Cerca amici...]                    |
 | [ ] Marco Venturi                      |
 | [ ] Giulia Rossi                       |
 | [ ] Luca Bianchi                       |
@@ -192,19 +192,19 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 **Obiettivo**: Interfaccia principale del gioco, ricreare esperienza del tavolo fisico
 
 **Mockup v1 - Feedback Ricevuti**:
-- ❌ "Le carte sono troppo piccole, difficile riconoscere i semi"
-- ❌ "Manca visualizzazione chiara di chi ha vinto l'ultima mano"
-- ❌ "Vogliamo vedere le carte giocate precedentemente nella mano"
-- ✅ "Disposizione 4 giocatori intorno al tavolo è intuitiva"
-- ✅ "Pulsante 'Gioca carta' chiaro"
+- [-] "Le carte sono troppo piccole, difficile riconoscere i semi"
+- [-] "Manca visualizzazione chiara di chi ha vinto l'ultima mano"
+- [-] "Vogliamo vedere le carte giocate precedentemente nella mano"
+- [+] "Disposizione 4 giocatori intorno al tavolo è intuitiva"
+- [+] "Pulsante 'Gioca carta' chiaro"
 
 **Mockup v2 - Modifiche Implementate**:
-- ✅ Carte ingrandite del 30%
-- ✅ Semi e valori ben leggibili anche su mobile
-- ✅ Indicatore visivo "Mano vinta da [Nome Giocatore]"
-- ✅ Area "Carte giocate" visibile lateralmente
-- ✅ Timer di turno (30 secondi) con progress bar
-- ✅ Indicatore latency per ogni giocatore (verde/giallo/rosso)
+- [+] Carte ingrandite del 30%
+- [+] Semi e valori ben leggibili anche su mobile
+- [+] Indicatore visivo "Mano vinta da [Nome Giocatore]"
+- [+] Area "Carte giocate" visibile lateralmente
+- [+] Timer di turno (30 secondi) con progress bar
+- [+] Indicatore latency per ogni giocatore (verde/giallo/rosso)
 
 **Layout del tavolo**:
 ```
@@ -223,7 +223,7 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
                   +------------------+
 
                     [Giocatore Sud - TU]
-                    [🃏🃏🃏🃏🃏🃏🃏🃏🃏🃏]
+                    []
                     ↑ Clicca carta da giocare
 
 Timer: [========>     ] 18s
@@ -245,20 +245,20 @@ Chat: [...]
 **Obiettivo**: Celebrare la vittoria/sconfitta, mostrare statistiche, incentivare replay
 
 **Mockup v1 - Feedback Ricevuti**:
-- ❌ "Manca riepilogo delle mani vinte/perse"
-- ✅ "Pulsante 'Rivincita' è fondamentale"
+- [-] "Manca riepilogo delle mani vinte/perse"
+- [+] "Pulsante 'Rivincita' è fondamentale"
 
 **Mockup v2 - Modifiche Implementate**:
-- ✅ Messaggio grande: "VITTORIA!" o "SCONFITTA"
-- ✅ Riepilogo punteggio finale
-- ✅ Tabella mani vinte per coppia
-- ✅ MVP (Most Valuable Player) - giocatore con più contributo
-- ✅ Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
+- [+] Messaggio grande: "VITTORIA!" o "SCONFITTA"
+- [+] Riepilogo punteggio finale
+- [+] Tabella mani vinte per coppia
+- [+] MVP (Most Valuable Player) - giocatore con più contributo
+- [+] Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
 
 **Elementi chiave**:
 ```
 +----------------------------------------+
-|          🎉 VITTORIA! 🎉               |
+|           VITTORIA!                |
 +----------------------------------------+
 | Punteggio finale: 121 - 98             |
 |                                        |
@@ -269,7 +269,7 @@ Chat: [...]
 | MVP: Marco Venturi (65 punti)          |
 |                                        |
 | [  Rivincita  ]  [Torna alla lobby]   |
-|                  [Condividi 🔗]        |
+|                  [Condividi ]        |
 +----------------------------------------+
 ```
 
@@ -299,17 +299,17 @@ Chat: [...]
 **Metodo**: Think Aloud Protocol + Task Completion
 
 **Task 1**: Registrati e crea una partita privata
-- ✅ Success rate: 8/8 (100%)
-- ⏱️ Tempo medio: 2min 15sec
+- [+] Success rate: 8/8 (100%)
+-  Tempo medio: 2min 15sec
 
 **Task 2**: Gioca 3 mani di Maraffa
-- ✅ Success rate: 8/8 (100%)
-- ⏱️ Tempo medio per mossa: 8 secondi
-- 💬 Commenti: "È come giocare dal vivo", "Interfaccia molto chiara"
+- [+] Success rate: 8/8 (100%)
+-  Tempo medio per mossa: 8 secondi
+-  Commenti: "È come giocare dal vivo", "Interfaccia molto chiara"
 
 **Task 3**: Invita un amico via link
-- ✅ Success rate: 7/8 (87.5%)
-- ❗ 1 utente non ha trovato subito il pulsante "Copia link"
+- [+] Success rate: 7/8 (87.5%)
+- [!] 1 utente non ha trovato subito il pulsante "Copia link"
 
 **Soddisfazione generale (scala 1-5)**:
 - Media: 4.6/5
@@ -341,8 +341,7 @@ I seguenti file grafici sono disponibili nella cartella `img/`:
 3. `mockup-v2-login.png`
 4. `mockup-v2-dashboard.png`
 5. `mockup-v2-crea-stanza.png`
-6. `mockup-v2-tavolo-gioco.png` ⭐
-7. `mockup-v2-fine-partita.png`
+6. `mockup-v2-tavolo-gioco.png` 7. `mockup-v2-fine-partita.png`
 8. `mockup-v2-mobile-tavolo.png` (versione mobile)
 9. `style-guide-maraffaonline.png` (palette colori, tipografia, componenti)
 10. `user-flow-diagram.png` (vedi Allegato 2.10)

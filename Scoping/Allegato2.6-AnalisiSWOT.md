@@ -8,7 +8,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 ---
 
-## 🟢 STRENGTHS (Punti di Forza)
+## STRENGTHS (Punti di Forza)
 
 ### S1. Team Multidisciplinare con Competenze Complementari
 **Descrizione**: PlayHeritage Labs ha un team di 5 persone con expertise differenziate e complementari:
@@ -83,9 +83,9 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 ---
 
-## 🔴 WEAKNESSES (Punti di Debolezza)
+## WEAKNESSES (Punti di Debolezza)
 
-### W1. Esperienza Limitata in Real-Time Multiplayer Gaming ⚠️ CRITICO
+### W1. Esperienza Limitata in Real-Time Multiplayer Gaming CRITICO
 **Descrizione**: Nessuno nel team ha mai sviluppato un sistema multiplayer real-time con WebSocket. Questa è la componente tecnicamente più complessa e critica del progetto.
 
 **Impatto**: Alto rischio di ritardi, bug difficili da debuggare, problemi di performance. Possibile necessità di consulenza esterna (costo aggiuntivo).
@@ -94,7 +94,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 ---
 
-### W2. Budget Estremamente Limitato ⚠️ CRITICO
+### W2. Budget Estremamente Limitato CRITICO
 **Descrizione**: €25.000 per 5 persone per 6 mesi = €833/mese/persona. Molto sotto il salario di mercato per sviluppatori (€2.500-3.000/mese).
 
 **Impatto**: Impossibilità di assumere risorse esterne qualificate. Rischio di demotivazione o abbandono del team. Vincoli stretti su infrastruttura e tool.
@@ -148,7 +148,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 ---
 
-## 🟢 OPPORTUNITIES (Opportunità)
+## OPPORTUNITIES (Opportunità)
 
 ### O1. Mercato Inesplorato di Giochi Tradizionali Digitali
 **Descrizione**: La digitalizzazione di giochi di carte regionali italiani è un mercato di nicchia quasi completamente inesplorato. Esistono poche piattaforme moderne.
@@ -217,9 +217,9 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 ---
 
-## 🔴 THREATS (Minacce)
+## THREATS (Minacce)
 
-### T1. Fallimento Tecnico del Real-Time Multiplayer ⚠️ CRITICO
+### T1. Fallimento Tecnico del Real-Time Multiplayer CRITICO
 **Descrizione**: Se il team non riesce a implementare un sistema WebSocket stabile e performante, l'intero progetto fallisce. Non c'è piano B tecnico oltre alla consulenza esterna.
 
 **Impatto**: Progetto non consegnabile. Perdita di credibilità verso committente e Università. Spreco del budget di €25.000.
@@ -306,8 +306,8 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ## Conclusioni e Raccomandazioni Strategiche
 
 **Priorità Assoluta**:
-1. ⚠️ **Mitigare W1 + T1**: Spike tecnico immediato su real-time multiplayer. È il rischio esistenziale del progetto.
-2. ⚠️ **Gestire W4 + T2**: Comunicazione trasparente su trade-off budget/timeline/scope.
+1.  **Mitigare W1 + T1**: Spike tecnico immediato su real-time multiplayer. È il rischio esistenziale del progetto.
+2.  **Gestire W4 + T2**: Comunicazione trasparente su trade-off budget/timeline/scope.
 
 **Leve di Successo da Sfruttare**:
 - **S3 (Community attiva)**: Coinvolgimento continuo, trasformare beta tester in ambassador

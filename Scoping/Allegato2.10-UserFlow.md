@@ -9,7 +9,7 @@ Il **User Flow** descrive i percorsi che gli utenti possono seguire all'interno 
 
 ```mermaid
 graph TD
-    A[🌐 Visita maraffaonline.it] --> B{Utente registrato?}
+    A[ Visita maraffaonline.it] --> B{Utente registrato?}
     B -->|No| C[Homepage]
     B -->|Sì| D[Login]
 
@@ -52,7 +52,7 @@ graph TD
     Z --> Y
     Y -->|Sì| AA[Countdown 10 secondi]
 
-    AA --> AB[🎮 Partita inizia]
+    AA --> AB[ Partita inizia]
     AB --> AC[Distribuzione carte]
     AC --> AD[Turno giocatore 1]
 
@@ -70,7 +70,7 @@ graph TD
     AL --> AM{Qualcuno ha 121+ punti?}
     AM -->|No| AN[Nuova mano]
     AN --> AD
-    AM -->|Sì| AO[🏆 Fine partita]
+    AM -->|Sì| AO[ Fine partita]
 
     AO --> AP[Schermata risultati]
     AP --> AQ{Azione?}
@@ -118,10 +118,10 @@ graph TD
 │ • [ ] Accetto Privacy Policy e Termini              │
 │                                                     │
 │ Validazione real-time:                              │
-│ ✅ Email valida e non già registrata                │
-│ ✅ Username univoco                                 │
-│ ✅ Password min 8 caratteri (1 maiuscola, 1 numero) │
-│ ✅ Password coincidenti                             │
+│ [+] Email valida e non già registrata                │
+│ [+] Username univoco                                 │
+│ [+] Password min 8 caratteri (1 maiuscola, 1 numero) │
+│ [+] Password coincidenti                             │
 │                                                     │
 │ Utente compila e clicca → [Registrati]              │
 └─────────────────────────────────────────────────────┘
@@ -130,7 +130,7 @@ graph TD
 │ Step 3: CONFERMA EMAIL                              │
 ├─────────────────────────────────────────────────────┤
 │ Messaggio di successo:                              │
-│ "✅ Registrazione completata!"                      │
+│ "[+] Registrazione completata!"                      │
 │ "Ti abbiamo inviato un'email a [email]"            │
 │ "Clicca sul link per confermare il tuo account"     │
 │                                                     │
@@ -140,7 +140,7 @@ graph TD
 ┌─────────────────────────────────────────────────────┐
 │ Step 4: CONFERMA AVVENUTA                           │
 ├─────────────────────────────────────────────────────┤
-│ "✅ Email confermata! Benvenuto su MaraffaOnline"   │
+│ "[+] Email confermata! Benvenuto su MaraffaOnline"   │
 │ [Accedi ora]                                        │
 │                                                     │
 │ Utente clicca → [Accedi ora]                        │
@@ -160,7 +160,7 @@ graph TD
 │ Step 6: DASHBOARD (primo accesso)                   │
 ├─────────────────────────────────────────────────────┤
 │ Modale di benvenuto:                                │
-│ "👋 Benvenuto su MaraffaOnline, [Username]!"        │
+│ " Benvenuto su MaraffaOnline, [Username]!"        │
 │ "Sei pronto a giocare? Crea la tua prima partita"  │
 │ "oppure unisciti a una stanza disponibile"          │
 │ [Inizia tour guidato] [Salta]                       │
@@ -169,8 +169,8 @@ graph TD
 
 **Durata stimata**: 3-5 minuti
 **Punti di attrito potenziali**:
-- ⚠️ Email di conferma finisce in spam
-- ⚠️ Password dimenticata durante primo login
+- [!] Email di conferma finisce in spam
+- [!] Password dimenticata durante primo login
 
 **Mitigazioni**:
 - Istruzioni chiare "Controlla spam se non vedi l'email"
@@ -197,7 +197,7 @@ Lobby 3/4 → attesa 30 secondi → 4/4
     ↓
 Partita inizia → gioca 10-15 minuti
     ↓
-Fine partita: "VITTORIA! ✅ Vuoi salvare stats? Registrati ora"
+Fine partita: "VITTORIA! [+] Vuoi salvare stats? Registrati ora"
     ↓
 [Crea account] → conversione a utente registrato
 ```
@@ -224,7 +224,7 @@ Dashboard → [+ Crea nuova partita]
 │     Password: [****]                    │
 │                                         │
 │ Invita giocatori:                       │
-│ [🔍 Cerca amici...]                     │
+│ [ Cerca amici...]                     │
 │ [✓] Marco                               │
 │ [✓] Giulia                              │
 │ [ ] Luca                                │
@@ -248,9 +248,9 @@ Countdown 10 secondi → Partita inizia
 ```
 
 **Features chiave**:
-- ✅ Invito ibrido: notifica in-app (se amici) + link condivisibile (per chiunque)
-- ✅ Password opzionale per maggior privacy
-- ✅ Owner della stanza può kickare giocatori indesiderati
+- [+] Invito ibrido: notifica in-app (se amici) + link condivisibile (per chiunque)
+- [+] Password opzionale per maggior privacy
+- [+] Owner della stanza può kickare giocatori indesiderati
 
 ---
 
@@ -290,7 +290,7 @@ FASE 3: MANI SUCCESSIVE (2-10)
 
 FASE 4: FINE PARTITA
 ├─ Coppia raggiunge 121 punti
-├─ Transizione schermata → "🏆 VITTORIA!"
+├─ Transizione schermata → " VITTORIA!"
 ├─ Riepilogo:
 │   ├─ Punteggio finale: 121 - 98
 │   ├─ Mani vinte: 9 vs 6
@@ -322,7 +322,7 @@ PARTITA IN CORSO
 ┌─────────────────────────────────────────┐
 │ LATO CLIENT (Giocatore 3)               │
 ├─────────────────────────────────────────┤
-│ Schermata: "⚠️ Connessione persa"       │
+│ Schermata: "[!] Connessione persa"       │
 │ "Tentativo riconnessione..."            │
 │ [Spinner animato]                       │
 │                                         │
@@ -341,7 +341,7 @@ PARTITA IN CORSO
 ┌─────────────────────────────────────────┐
 │ LATO ALTRI 3 GIOCATORI                  │
 ├─────────────────────────────────────────┤
-│ Notifica: "⏸️ Giocatore 3 disconnesso"  │
+│ Notifica: " Giocatore 3 disconnesso"  │
 │ "Attendi riconnessione... (1:23)"       │
 │ Partita in pausa, chat attiva           │
 └─────────────────────────────────────────┘
@@ -351,7 +351,7 @@ SCENARIO A: Riconnessione entro 5 minuti
 ├─ Client tenta riconnessione → successo
 ├─ Server invia stato salvato
 ├─ Giocatore 3 riprende con carte in mano, punteggio, turno correnti
-├─ Notifica a tutti: "✅ Giocatore 3 è tornato!"
+├─ Notifica a tutti: "[+] Giocatore 3 è tornato!"
 └─ Partita riprende normalmente
 
 SCENARIO B: No riconnessione dopo 5 minuti
@@ -360,13 +360,13 @@ SCENARIO B: No riconnessione dopo 5 minuti
 ├─ Nessun vincitore dichiarato
 ├─ Nessuna penalità sulle statistiche
 └─ Tutti i giocatori tornano alla lobby con messaggio:
-    "❌ Partita annullata per disconnessione prolungata"
+    "[-] Partita annullata per disconnessione prolungata"
 ```
 
 **Features chiave**:
-- ✅ Salvataggio automatico stato ogni mano
-- ✅ Buffer 5 minuti (bilanciamento tra attesa ragionevole e frustrazione)
-- ✅ Nessuna penalità stats per disconnessioni (evita frustrazione)
+- [+] Salvataggio automatico stato ogni mano
+- [+] Buffer 5 minuti (bilanciamento tra attesa ragionevole e frustrazione)
+- [+] Nessuna penalità stats per disconnessioni (evita frustrazione)
 
 ---
 
@@ -380,19 +380,19 @@ Dashboard → Sezione [Amici]
 ┌─────────────────────────────────────────┐
 │ RICERCA AMICO                           │
 │                                         │
-│ [🔍 Cerca per username...]              │
+│ [ Cerca per username...]              │
 │                                         │
 │ Utente digita "marco_v"                 │
 │                                         │
 │ Risultati:                              │
 │ ┌───────────────────────────────────┐   │
-│ │ 👤 marco_venturi                  │   │
+│ │  marco_venturi                  │   │
 │ │    Partite: 45 | Win: 54%         │   │
 │ │    [+ Aggiungi amico]             │   │
 │ └───────────────────────────────────┘   │
 │                                         │
 │ ┌───────────────────────────────────┐   │
-│ │ 👤 marco_88                       │   │
+│ │  marco_88                       │   │
 │ │    Partite: 12 | Win: 42%         │   │
 │ │    [+ Aggiungi amico]             │   │
 │ └───────────────────────────────────┘   │
@@ -402,7 +402,7 @@ Utente clicca [+ Aggiungi amico] su marco_venturi
     ↓
 ┌─────────────────────────────────────────┐
 │ RICHIESTA INVIATA                       │
-│ "✉️ Richiesta amicizia inviata a        │
+│ " Richiesta amicizia inviata a        │
 │  marco_venturi"                         │
 │ "Attendi che accetti la richiesta"      │
 └─────────────────────────────────────────┘
@@ -411,7 +411,7 @@ Utente clicca [+ Aggiungi amico] su marco_venturi
 │ LATO MARCO_VENTURI                      │
 │                                         │
 │ Notifica in-app (campanella):          │
-│ "👋 [Username] ti ha inviato richiesta  │
+│ " [Username] ti ha inviato richiesta  │
 │  di amicizia"                           │
 │                                         │
 │ [Accetta] [Rifiuta]                     │
@@ -419,7 +419,7 @@ Utente clicca [+ Aggiungi amico] su marco_venturi
     ↓
 Marco clicca [Accetta]
     ↓
-Entrambi ricevono notifica: "✅ Ora siete amici!"
+Entrambi ricevono notifica: "[+] Ora siete amici!"
     ↓
 Marco appare nella lista "Amici" (stato online ●)
     ↓
@@ -483,8 +483,8 @@ INVITO A PARTITA
 - **Tempo medio creazione account**: < 3 minuti (target)
 
 ### Punti di Abbandono (da ridurre)
-- ⚠️ Abbandono durante attesa giocatori in lobby: 15% (se > 2 minuti)
-- ⚠️ Abbandono durante partita per disconnessioni: < 5% (target)
+- [!] Abbandono durante attesa giocatori in lobby: 15% (se > 2 minuti)
+- [!] Abbandono durante partita per disconnessioni: < 5% (target)
 
 ---
 
