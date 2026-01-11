@@ -84,7 +84,7 @@ graph TD
 
 ---
 
-## Flusso 1: Registrazione e Primo Accesso
+<!-- ## Flusso 1: Registrazione e Primo Accesso
 
 ### Scenario: Utente nuovo che vuole registrarsi
 
@@ -494,7 +494,7 @@ Il diagramma completo del User Flow è disponibile come immagine:
 - `img/user-flow-diagram.png` (creato con Figma/Miro)
 - `img/user-flow-dettagliato.pdf` (versione stampabile alta risoluzione)
 
----
+--- -->
 
 **Redatto da**: Luca Moretti (UX/UI Designer, PlayHeritage Labs)
 **Revisionato da**: Marco Venturi (Project Manager)

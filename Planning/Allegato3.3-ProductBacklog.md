@@ -1,7 +1,9 @@
 # Allegato 3.3 - Product Backlog
-## v.1.0.0 – 2025-10-25 09:00:00
+## v.2.0.0 – 2025-10-28 17:00:00
 
-Il **Product Backlog** è l'elenco prioritizzato di tutto il lavoro da completare per il progetto MaraffaOnline. Ogni item è stimato in **Story Points** (scala Fibonacci: 1, 2, 3, 5, 8, 13, 21) e assegnato a specifici **Sprint** da 2 settimane.
+Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progetto MaraffaOnline. Ogni item è stimato in **Story Points** (scala Fibonacci: 1, 2, 3, 5, 8, 13, 21) e assegnato a specifici **Sprint** da 2 settimane.
+
+**IMPORTANTE**: Questo documento include **solo** i sottosistemi gestiti con metodologie Agile (Backend Server, Real-Time Communication, Frontend Web, Social & Community). Game Engine (Waterfall) e Infrastructure (Incrementale) sono documentati in WBS (Allegato 3.1) e Gantt Chart (Allegato 3.5).
 
 ---
 
@@ -12,20 +14,23 @@ Il **Product Backlog** è l'elenco prioritizzato di tutto il lavoro da completar
 **Numero Sprint**: 13 sprint totali
 **Team capacity**: ~40 story points per sprint (considerando team di 5 persone)
 
-### Calendario Sprint
-| Sprint | Periodo | Focus Principale |
-|--------|---------|------------------|
-| Sprint 0 | 15-25 Ott 2025 | Setup infrastruttura, repository, CI/CD |
-| Sprint 1 | 28 Ott - 08 Nov | Backend auth + Game Engine foundation |
-| Sprint 2 | 11 Nov - 22 Nov | Game Engine regole Maraffone |
-| Sprint 3 | 25 Nov - 06 Dic | Backend partite + Frontend homepage |
+### Calendario Sprint (Focus Agile)
+
+**Nota**: Questo calendario mostra il focus sui sottosistemi Agile. In parallelo, Game Engine (Waterfall) e Infrastructure (Incrementale) procedono secondo i loro cicli di vita documentati in WBS/Gantt.
+
+| Sprint | Periodo | Focus Agile Principale |
+|--------|---------|------------------------|
+| Sprint 0 | 15-25 Ott 2025 | [Setup infrastruttura - vedi Gantt] |
+| Sprint 1 | 28 Ott - 08 Nov | Backend auth + database foundation |
+| Sprint 2 | 11 Nov - 22 Nov | Backend gestione partite |
+| Sprint 3 | 25 Nov - 06 Dic | Backend persistenza + Frontend homepage |
 | Sprint 4 | 09 Dic - 20 Dic | Frontend dashboard + login |
 | Sprint 5 | 23 Dic - 03 Gen | WebSocket foundation + Real-Time events |
-| Sprint 6 | 06 Gen - 17 Gen | Frontend tavolo da gioco |
-| Sprint 7 | 20 Gen - 31 Gen | Game Engine avanzato + sincronizzazione |
-| Sprint 8 | 03 Feb - 14 Feb | Chat in-game + notifiche |
+| Sprint 6 | 06 Gen - 17 Gen | Frontend tavolo da gioco (parte 1) |
+| Sprint 7 | 20 Gen - 31 Gen | Frontend tavolo da gioco (parte 2) + Real-Time avanzato |
+| Sprint 8 | 03 Feb - 14 Feb | Chat in-game + disconnessioni |
 | Sprint 9 | 17 Feb - 28 Feb | Sistema amicizie + profili |
-| Sprint 10 | 03 Mar - 14 Mar | Testing, bug fixing, polish |
+| Sprint 10 | 03 Mar - 14 Mar | Frontend accessibilità + performance optimization |
 | Sprint 11 | 17 Mar - 28 Mar | UAT con Maraffa Forever |
 | Sprint 12 | 31 Mar - 11 Apr | Preparazione lancio |
 
@@ -239,14 +244,17 @@ I seguenti sottosistemi seguono altre metodologie e sono tracciati **esclusivame
 
 ## Riepilogo Effort per Sottosistema (Solo Agile)
 
-| Sottosistema | Story Points | % del Totale | Sprint Coinvolti |
-|--------------|--------------|--------------|------------------|
-| Frontend Web | 163 | 38.0% | 3-10 |
-| Game Engine | 94 | 21.9% | 1-8 |
-| Backend Server | 80 | 18.6% | 1-3, 9 |
-| Real-Time Communication | 67 | 15.6% | 5-8 |
-| Infrastructure & DevOps | 37 | 8.6% | 0-6 |
-| **Totale** | **441** | **100%** | |
+| Sottosistema | Story Points | % del Totale Agile | Sprint Coinvolti |
+|--------------|--------------|---------------------|------------------|
+| Frontend Web | 163 | 52.6% | 3-10 |
+| Backend Server | 80 | 25.8% | 1-3, 9 |
+| Real-Time Communication | 67 | 21.6% | 5-8 |
+| **Totale Product Backlog** | **310** | **100%** | |
+
+**Nota**: Questo totale (310 story points) rappresenta **solo** i sottosistemi Agile. Il lavoro totale del progetto include anche:
+- Game Engine (Waterfall): ~94 story points equivalenti → Tracciato in WBS/Gantt
+- Infrastructure & DevOps (Incrementale): ~37 story points equivalenti → Tracciato in WBS/Gantt
+- **Gran Totale Progetto**: ~441 story points equivalenti (tutti i sottosistemi)
 
 ---
 
@@ -257,8 +265,10 @@ I seguenti sottosistemi seguono altre metodologie e sono tracciati **esclusivame
 - **Capacity per sprint**: ~40 story points (8 pts/persona/sprint)
 - **Sprint totali**: 13
 - **Capacity totale**: ~520 story points
-- **Backlog totale**: 441 story points
-- **Buffer**: 79 story points (15.2% contingency)
+- **Backlog Agile totale**: 310 story points
+- **Buffer disponibile**: 210 story points (40.4% contingency per sottosistemi Agile)
+
+**Nota Buffer**: L'elevato buffer (40%) è dovuto al fatto che il Product Backlog include solo i sottosistemi Agile. Il lavoro totale del progetto (441 story points con Game Engine e Infrastructure) utilizzerebbe ~85% della capacity totale, lasciando un buffer più realistico del ~15%.
 
 ### Monitoraggio Velocity
 Alla fine di ogni sprint, il team registrerà:
@@ -307,6 +317,39 @@ Un item del Product Backlog è considerato **Done** solo quando:
 
 ---
 
+## Relazione con Altri Documenti di Planning
+
+### Integrazione tra Product Backlog e Altri Strumenti PM
+
+Questo Product Backlog (Agile) si integra con gli altri documenti di Planning nel seguente modo:
+
+| Documento | Contenuto | Relazione con Product Backlog |
+|-----------|-----------|-------------------------------|
+| **Allegato 3.1 - WBS** | Scomposizione gerarchica di **tutto** il progetto | Il Product Backlog è un **sottoinsieme** della WBS. Le sezioni 2-4 e 6 della WBS (Backend, Real-Time, Frontend, Social) sono dettagliate nel Backlog. Le sezioni 1 e 7 (Game Engine, Infrastructure) sono **escluse** dal Backlog. |
+| **Allegato 3.2 - MoSCoW** | Prioritizzazione requisiti per **tutti** i sottosistemi | Il Product Backlog implementa le priorità MoSCoW per i sottosistemi Agile. I Must Have/Should Have nel Backlog corrispondono ai requisiti M/S della MoSCoW Analysis. |
+| **Allegato 3.4 - Cash Flow** | Budget totale progetto (€25.000) | Il Product Backlog copre ~70% del budget (sottosistemi Agile). Il restante 30% è allocato a Game Engine (Waterfall) e Infrastructure (Incrementale). |
+| **Allegato 3.5 - Gantt Chart** | Timeline completa con **tutte** le attività | Il Gantt include sia le attività del Product Backlog (sprint Agile) sia quelle fuori dal Backlog (Game Engine, Infrastructure). Visione unificata del progetto. |
+
+### Perché Questa Separazione?
+
+La separazione metodologica tra Product Backlog (Agile) e WBS/Gantt (universale) è **intenzionale** e riflette le best practices:
+
+1. **Product Backlog** = strumento Scrum/Agile puro
+   - Gestito dal Product Owner (Marco Venturi)
+   - Prioritizzato continuamente con MoSCoW dinamico
+   - Items stimati in story points (Fibonacci)
+   - Sprint-based con velocity tracking
+
+2. **WBS + Gantt** = strumenti Project Management universali
+   - Gestiti dal Project Manager (Marco Venturi)
+   - Includono **tutte** le metodologie (Waterfall, Agile, Incrementale)
+   - Attività stimate in giorni lavorativi
+   - Timeline-based con critical path analysis
+
+**In sintesi**: Per i sottosistemi Agile (Backend, Real-Time, Frontend), il **Product Backlog è la fonte primaria** per la gestione operativa degli sprint. Per la visione d'insieme del progetto (inclusi Game Engine e Infrastructure), si fa riferimento a **WBS e Gantt**.
+
+---
+
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices Agile/Scrum 2026:
@@ -322,3 +365,4 @@ Questo documento è stato redatto seguendo le best practices Agile/Scrum 2026:
 **Revisionato da**: Elena Rossi (Scrum Master / Tech Lead)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 25/10/2025
+**Ultima revisione metodologica**: 28/10/2025 (v.2.0.0 - Separazione Product Backlog Agile da WBS/Gantt universale)

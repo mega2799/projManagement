@@ -1,7 +1,7 @@
 # Allegato 3.4 - Cash Flow Management
-## v.1.0.0 – 2025-10-27 11:00:00
+## v.1.1.0 – 2025-10-28 18:00:00
 
-La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline, considerando il budget limitato di **€25.000** e la durata di **6 mesi** (15 ottobre 2025 - 15 marzo 2026). Questo documento traccia tutti i flussi finanziari in entrata (inflow) e in uscita (outflow) su base mensile.
+La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline, considerando il budget limitato di **€25.000** e la durata di **6 mesi** (15 ottobre 2025 - 15 marzo 2026). Questo documento traccia tutti i flussi finanziari in entrata (inflow) e in uscita (outflow) su base mensile, con visualizzazioni grafiche professionali.
 
 ---
 
@@ -21,6 +21,19 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 - **Inflow**: pagamenti ricevuti da Maraffa Forever in 4 tranche (50% upfront, 25% a metà progetto, 25% a fine)
 - **Outflow**: spese operative mensili (salari, hosting, tools, licenze)
 - **Saldo Finale**: €2.250 di surplus destinato a contingency e celebrazione lancio
+
+### Visualizzazione Grafica Cash Flow Mensile
+
+Il grafico seguente illustra l'andamento del Cash Flow durante i 6 mesi del progetto:
+
+![Cash Flow MaraffaOnline - 6 Mesi](img/cash-flow-maraffaonline.png)
+
+**Analisi del Grafico**:
+- **Barre Verdi**: Inflow (pagamenti committente) concentrati in 3 momenti chiave (Mese 0, 2, 4)
+- **Barre Rosse**: Outflow (spese operative) costanti per Mesi 1-4, ridotte in Mese 0 e 5
+- **Linea Arancione**: Saldo cumulativo sempre positivo, con minimo di €2.300 nel Mese 3
+
+**Insight**: Il saldo cumulativo non scende mai sotto €2.300, garantendo liquidità sufficiente per coprire le spese operative in ogni fase del progetto. La struttura di pagamento 50/25/25 è efficace per mantenere il cash flow positivo.
 
 ---
 
@@ -108,6 +121,21 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 | **TOTALE SPESE** | **€22.750** | **91.0%** | |
 | **Surplus Finale** | **€2.250** | **9.0%** | Reserve per fase post-lancio |
 
+### Visualizzazione Grafica Distribuzione Spese
+
+Il grafico seguente mostra la distribuzione percentuale delle spese per categoria:
+
+![Distribuzione Spese per Categoria](img/spese-categorie.png)
+
+**Analisi del Grafico**:
+- **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 5.5 mesi)
+- **Contingency Buffer (5.7%)**: Buffer adeguato secondo le best practices PM per progetti a budget fisso
+- **Tools e Licenze (4.4%)**: Costi contenuti grazie all'utilizzo di free tier per molti servizi cloud
+- **Infrastruttura (1.1%)**: Spese minime grazie a server dedicati economici (Hetzner €50/mese)
+- **Surplus Finale (9%)**: Riserva per imprevisti post-lancio e scalabilità iniziale
+
+**Insight**: L'allocazione del budget è ottimizzata per massimizzare il valore del team di sviluppo (64%), mantenendo contenuti i costi infrastrutturali (1.1%) e garantendo un buffer di sicurezza del 14.7% (Contingency 5.7% + Surplus 9.0%) per gestire imprevisti.
+
 ---
 
 ## Analisi Rischi Finanziari
@@ -183,31 +211,23 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 
 ---
 
-## Visualizzazione Cash Flow
+## Note sui Grafici
 
-### Descrizione Istogramma Consigliato
+I grafici Cash Flow presentati in questo documento sono stati generati utilizzando Microsoft Excel a partire dai dati CSV forniti (`CashFlow-Mensile.csv` e `CashFlow-Categorie.csv`). I file sorgente e la guida completa per la riproduzione dei grafici sono disponibili nella cartella `Planning/`.
 
-Per rappresentare visivamente il Cash Flow di MaraffaOnline, si consiglia un **istogramma a barre** con le seguenti caratteristiche:
+**File Grafici**:
+- `img/cash-flow-maraffaonline.png` - Grafico combinato Cash Flow mensile (Inflow/Outflow/Saldo)
+- `img/spese-categorie.png` - Grafico a torta distribuzione spese per categoria
 
-**Asse X**: Mesi del progetto (Mese 0, Mese 1, ..., Mese 5)
-
-**Asse Y**: Importo in Euro (€)
-
-**Barre**:
-- **Barra Verde**: Inflow mensile (pagamenti committente)
-- **Barra Rossa**: Outflow mensile (spese operative)
-- **Linea Blu**: Saldo cumulativo (trend line)
-
-**Annotazioni**:
-- Milestone pagamenti (frecce verdi): "1° Pagamento €12.500", "2° Pagamento €6.250", etc.
-- Threshold warning (linea tratteggiata orizzontale a €1.000): soglia critica saldo
-
-**Software Consigliati**:
-- Microsoft Excel / Google Sheets (per grafico semplice)
-- Tableau / Power BI (per dashboard interattiva)
-- Python matplotlib (per automazione)
-
-**File di Output**: `img/cash-flow-maraffaonline.png` (da inserire nella relazione finale)
+**Per includere nella relazione LaTeX**:
+```latex
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{img/cash-flow-maraffaonline.png}
+\caption{Cash Flow MaraffaOnline - Ottobre 2025 - Marzo 2026}
+\label{fig:cashflow}
+\end{figure}
+```
 
 ---
 
@@ -244,5 +264,10 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 **Revisionato da**: Elena Rossi (Tech Lead)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 27/10/2025
+
+**Ultima revisione**: 28/10/2025 (v.1.1.0)
+- Aggiunta visualizzazione grafica Cash Flow mensile (img/cash-flow-maraffaonline.png)
+- Aggiunta visualizzazione grafica distribuzione spese per categoria (img/spese-categorie.png)
+- Aggiunta analisi interpretativa dei grafici con insights chiave
 
 **Prossimo Review**: 05/11/2025 (fine Mese 0)
