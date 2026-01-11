@@ -31,18 +31,37 @@ Il **Product Backlog** è l'elenco prioritizzato di tutto il lavoro da completar
 
 ---
 
-## Note Metodologiche
+## Nota: Ambito del Product Backlog
 
-### Sottosistemi con Metodologia Agile
+**IMPORTANTE**: Questo Product Backlog include **esclusivamente i sottosistemi gestiti con metodologie Agile** (Iterativo e Adattivo).
+
+### Sottosistemi Inclusi nel Product Backlog
+
 I seguenti sottosistemi utilizzano sprint e story points:
 - **Backend Server** (Agile Iterativo)
 - **Real-Time Communication** (Agile Adattivo)
 - **Frontend Web** (Agile Iterativo)
-- **Social & Community** (Incrementale, con rilasci per sprint)
+- **Social & Community** (Incrementale con rilasci per sprint)
 
-### Sottosistemi con Metodologia Waterfall
-- **Game Engine**: non usa sprint, ma fasi sequenziali (Design → Implementation → Testing)
-- **Infrastructure**: incrementale, lavoro continuo su tutti gli sprint
+### Sottosistemi NON Inclusi nel Product Backlog
+
+I seguenti sottosistemi seguono altre metodologie e sono tracciati **esclusivamente** in Work Breakdown Structure (Allegato 3.1) e Gantt Chart (Allegato 3.5):
+
+- **Game Engine**: Metodologia **Waterfall** → Vedi WBS sezione 1
+  - Approccio: Design → Implementation → Testing sequenziale
+  - Requisiti stabili e completamente definiti (regole ufficiali Maraffone)
+  - Non compatibile con sprint iterativi
+
+- **Infrastructure & DevOps**: Metodologia **Incrementale** → Vedi WBS sezione 7
+  - Approccio: rilasci continui e indipendenti
+  - Lavoro distribuito su tutta la durata del progetto
+  - Non organizzato in sprint, ma in attività on-demand
+
+**Razionale Metodologico**: Il Product Backlog è uno strumento specifico di **Scrum/Agile** e deve includere solo work package gestiti con approcci iterativi/adattivi. Mischiare metodologie diverse nel Backlog comprometterebbe la coerenza della gestione sprint e la chiarezza dei ruoli (Product Owner, Scrum Master, Development Team).
+
+---
+
+## Note Metodologiche Agile
 
 ### Story Points - Scala di Riferimento
 - **1 pt**: Task triviale (~1-2 ore) - es. "Aggiungere campo username a tabella users"
@@ -99,55 +118,6 @@ I seguenti sottosistemi utilizzano sprint e story points:
 | | **Totale Sprint 9** | | **20** | |
 
 **Totale Backend Server**: 80 story points (4 sprint)
-
----
-
-## Product Backlog - Game Engine (Waterfall)
-
-Il Game Engine segue metodologia Waterfall, ma per tracking viene mappato su sprint:
-
-### Sprint 1-2 (28 Ott - 22 Nov) - Design & Foundation
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P0 | Design architettura Game Engine (classi, interfacce) | 5 | Sprint 1 |
-| P0 | Modello dati carte (seme, valore, ordine forza) | 3 | Sprint 1 |
-| P0 | Implementare mazzo 40 carte italiane | 3 | Sprint 1 |
-| P0 | Algoritmo distribuzione carte (2×5 per giocatore) | 3 | Sprint 2 |
-| P0 | Logica selezione briscola (chi ha 4 di denari) | 5 | Sprint 2 |
-| | **Totale Sprint 1-2** | **19** | |
-
-### Sprint 3-4 (25 Nov - 20 Dic) - Regole Core
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P0 | Implementare ordine forza carte (3→2→A→Re→Cavallo→Fante→7→6→5→4) | 5 | Sprint 3 |
-| P0 | Validazione mosse: obbligo rispondere al seme | 8 | Sprint 3 |
-| P0 | Determinare vincitore presa (briscola vs seme) | 5 | Sprint 4 |
-| P0 | Rotazione turni (senso antiorario) | 3 | Sprint 4 |
-| P0 | Gestione timeout turno (30 secondi, mossa automatica) | 5 | Sprint 4 |
-| | **Totale Sprint 3-4** | **26** | |
-
-### Sprint 5-6 (23 Dic - 17 Gen) - Punteggio e Situazioni Speciali
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P0 | Calcolo punteggio carte (Asso=1pt, Figure/2/3=1/3pt, 4-7=0pt) | 5 | Sprint 5 |
-| P0 | Arrotondamento per difetto (solo punti interi) | 2 | Sprint 5 |
-| P0 | Bonus ultima presa (+1 punto) | 2 | Sprint 5 |
-| P0 | Condizione vittoria (41 punti + figura, o 31 variante corta) | 3 | Sprint 5 |
-| P0 | Maraffa/Cricca: rilevazione Asso+2+3 briscola | 5 | Sprint 6 |
-| P0 | Validazione obbligo gioco Asso se Maraffa | 5 | Sprint 6 |
-| P0 | Assegnazione/penalizzazione 3 punti bonus Maraffa | 3 | Sprint 6 |
-| | **Totale Sprint 5-6** | **25** | |
-
-### Sprint 7-8 (20 Gen - 14 Feb) - Testing & Integration
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P0 | Unit testing regole (30+ test case) | 8 | Sprint 7 |
-| P0 | Integration testing partita completa (4 bot) | 8 | Sprint 7 |
-| P0 | Validazione regole con esperta Francesca Giuliani | 3 | Sprint 8 |
-| P1 | Bug fixing edge cases | 5 | Sprint 8 |
-| | **Totale Sprint 7-8** | **24** | |
-
-**Totale Game Engine**: 94 story points (mappati su 8 sprint)
 
 ---
 
@@ -267,43 +237,7 @@ Il Game Engine segue metodologia Waterfall, ma per tracking viene mappato su spr
 
 ---
 
-## Product Backlog - Infrastructure & DevOps
-
-Il lavoro Infrastructure è **continuo** (non sprint-based), ma per tracking viene distribuito:
-
-### Sprint 0 (15-25 Ott) - Setup Iniziale
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P0 | Provisioning server dedicato (Hetzner/OVH) | 3 | Sprint 0 |
-| P0 | Setup Docker + Docker Compose | 3 | Sprint 0 |
-| P0 | Setup GitLab CI pipeline (test → build → deploy) | 5 | Sprint 0 |
-| P0 | Setup PostgreSQL con backup automatici | 3 | Sprint 0 |
-| P0 | Certificato SSL (Let's Encrypt) | 1 | Sprint 0 |
-| | **Totale Sprint 0** | **15** | |
-
-### Sprint 1-3 (28 Ott - 06 Dic) - Monitoring e Logging
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P0 | Logging centralizzato (Winston + Elasticsearch) | 5 | Sprint 1 |
-| P0 | Uptime monitoring (Pingdom/UptimeRobot) | 2 | Sprint 2 |
-| P1 | Error tracking (Sentry) | 3 | Sprint 2 |
-| P1 | Redis caching per sessioni | 3 | Sprint 3 |
-| | **Totale Sprint 1-3** | **13** | |
-
-### Sprint 4-6 (09 Dic - 17 Gen) - Sicurezza e Scalabilità
-| Priority | Task | Story Points | Status |
-|----------|------|--------------|--------|
-| P1 | Firewall configurazione (UFW, solo porte 80/443/22) | 2 | Sprint 4 |
-| P1 | Cloudflare free tier per DDoS protection | 2 | Sprint 4 |
-| P1 | Backup disaster recovery (automazione + test restore) | 3 | Sprint 5 |
-| P2 | Database connection pooling | 2 | Sprint 6 |
-| | **Totale Sprint 4-6** | **9** | |
-
-**Totale Infrastructure**: 37 story points (distribuiti su 6 sprint)
-
----
-
-## Riepilogo Effort per Sottosistema
+## Riepilogo Effort per Sottosistema (Solo Agile)
 
 | Sottosistema | Story Points | % del Totale | Sprint Coinvolti |
 |--------------|--------------|--------------|------------------|
