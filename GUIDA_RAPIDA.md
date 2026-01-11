@@ -149,14 +149,41 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 
 ---
 
-## Stato Progetto - Riepilogo Fase 1 ✅
+## Stato Progetto
+
+### ✅ Fase 1: Introduzione - COMPLETATA
 
 **Contesto Narrativo Definito**:
-
 - Azienda: PlayHeritage Labs (spin-off UniBo)
 - Committente: Maraffa Forever (150 appassionati)
 - Budget: €25.000 | Durata: 6 mesi
 - Target: 25-45 anni
+
+**Gioco**: Maraffone (Beccaccino/Trionfo)
+- Regole ufficiali documentate in: `Scoping/REGOLE-UFFICIALI-MARAFFONE.md`
+- Punteggio: Assi=1pt, Figure/2/3=1/3pt, Carte 4-7=0pt
+- Vittoria: 41 punti e una figura (o 31 variante corta)
+- Maraffa/Cricca: Asso+2+3 di briscola = 3 punti bonus
+
+### ✅ Fase 2: Scoping - COMPLETATA
+
+**Documenti Creati (Allegati 2.1-2.12)**:
+- Project Scoping Meeting
+- Conditions of Satisfaction
+- Project Overview Statement (POS)
+- Risk Analysis (Risk Rating Matrix)
+- Business Model Canvas
+- Analisi SWOT
+- Prototyping (mockup v1 → v2)
+- Requirements Breakdown Structure (RBS)
+- User Stories (formato INVEST)
+- User Flow
+- PM Life Cycle Models
+- Approval Process
+
+**Correzioni Regole Maraffone**: Tutti i documenti ora rispettano le regole ufficiali del Maraffone/Beccaccino (punteggio corretto, vittoria a 41 punti, ecc.)
+
+### 🔄 Fase 3: Planning - IN CORSO
 
 **7 Sottosistemi Identificati**:
 
@@ -168,11 +195,13 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 6. Social & Community → Incrementale
 7. Infrastructure & DevOps → Incrementale
 
-**Documenti Creati**:
-
-- `Relazione/capitoli/01_introduzione.tex` ✅
-- `docs/sottosistemi_e_metodologie.md` ✅
+**Allegati da Creare (Fase Planning)**:
+1. Work Breakdown Structure (WBS)
+2. MoSCoW Analysis
+3. Product Backlog
+4. Cash Flow Management
+5. Project Network Diagram + Gantt Chart
 
 ---
 
-**Ultimo aggiornamento**: 2026-01-04
+**Ultimo aggiornamento**: 2026-01-10
