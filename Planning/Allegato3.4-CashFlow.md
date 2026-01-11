@@ -26,7 +26,7 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 
 Il grafico seguente illustra l'andamento del Cash Flow durante i 6 mesi del progetto:
 
-![Cash Flow MaraffaOnline - 6 Mesi](img/cash-flow-maraffaonline.png)
+![Cash Flow MaraffaOnline - 6 Mesi](../img/cash-flow-maraffaonline.png)
 
 **Analisi del Grafico**:
 - **Barre Verdi**: Inflow (pagamenti committente) concentrati in 3 momenti chiave (Mese 0, 2, 4)
@@ -125,7 +125,7 @@ Il grafico seguente illustra l'andamento del Cash Flow durante i 6 mesi del prog
 
 Il grafico seguente mostra la distribuzione percentuale delle spese per categoria:
 
-![Distribuzione Spese per Categoria](img/spese-categorie.png)
+![Distribuzione Spese per Categoria](../img/spese-categorie.png)
 
 **Analisi del Grafico**:
 - **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 5.5 mesi)
@@ -208,26 +208,6 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 - Break-even: raggiunto dopo ~50 mesi (ROI negativo a breve termine)
 
 **Conclusione**: MaraffaOnline è un progetto **non-profit** per la community Maraffa Forever. Il budget €25.000 copre sviluppo MVP, ma monetizzazione futura richiede strategia diversa (es. sponsorizzazioni, tornei a pagamento, crowdfunding).
-
----
-
-## Note sui Grafici
-
-I grafici Cash Flow presentati in questo documento sono stati generati utilizzando Microsoft Excel a partire dai dati CSV forniti (`CashFlow-Mensile.csv` e `CashFlow-Categorie.csv`). I file sorgente e la guida completa per la riproduzione dei grafici sono disponibili nella cartella `Planning/`.
-
-**File Grafici**:
-- `img/cash-flow-maraffaonline.png` - Grafico combinato Cash Flow mensile (Inflow/Outflow/Saldo)
-- `img/spese-categorie.png` - Grafico a torta distribuzione spese per categoria
-
-**Per includere nella relazione LaTeX**:
-```latex
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.9\textwidth]{img/cash-flow-maraffaonline.png}
-\caption{Cash Flow MaraffaOnline - Ottobre 2025 - Marzo 2026}
-\label{fig:cashflow}
-\end{figure}
-```
 
 ---
 
