@@ -36,7 +36,7 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 | **M** | Frontend Dashboard + Creazione Stanza | 15 | J | P |
 | **N** | Sistema Amicizie | 15 | K | Q |
 | **O** | Integration Testing Game Engine | 10 | L | R |
-| **P** | Frontend Tavolo da Gioco | 30 | M | R |
+| **P** | Frontend Tavolo da Gioco | 40 | M | R |
 | **Q** | Frontend Profili + Notifiche | 10 | N | S |
 | **R** | Testing End-to-End | 15 | O, P | S |
 | **S** | UAT + Bug Fixing | 20 | Q, R | T |
@@ -67,11 +67,11 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 | M | Frontend Dashboard + Creazione Stanza | 15 | 70 | 85 |
 | N | Sistema Amicizie | 15 | 65 | 80 |
 | O | Integration Testing Game Engine | 10 | 85 | 95 |
-| P | Frontend Tavolo da Gioco | 30 | 85 | 115 |
+| P | Frontend Tavolo da Gioco | 40 | 85 | 125 |
 | Q | Frontend Profili + Notifiche | 10 | 80 | 90 |
-| R | Testing End-to-End | 15 | 115 | 130 |
-| S | UAT + Bug Fixing | 20 | 130 | 150 |
-| T | Preparazione Lancio | 10 | 150 | 160 |
+| R | Testing End-to-End | 15 | 125 | 140 |
+| S | UAT + Bug Fixing | 20 | 140 | 160 |
+| T | Preparazione Lancio | 10 | 160 | 170 |
 
 **Metodo Backward Pass** (calcolo Late Start e Late Finish):
 
@@ -90,13 +90,13 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 | K | Chat + Disconnessioni | 10 | 55 | 65 | 0 |
 | L | Game Engine Testing | 15 | 70 | 85 | 0 |
 | M | Frontend Dashboard + Creazione Stanza | 15 | 70 | 85 | 0 |
-| N | Sistema Amicizie | 15 | 70 | 85 | 5 |
-| O | Integration Testing Game Engine | 10 | 85 | 95 | 0 |
-| P | Frontend Tavolo da Gioco | 30 | 85 | 115 | 0 |
-| Q | Frontend Profili + Notifiche | 10 | 85 | 95 | 5 |
-| R | Testing End-to-End | 15 | 115 | 130 | 0 |
-| S | UAT + Bug Fixing | 20 | 130 | 150 | 0 |
-| T | Preparazione Lancio | 10 | 150 | 160 | 0 |
+| N | Sistema Amicizie | 15 | 70 | 85 | 50 |
+| O | Integration Testing Game Engine | 10 | 85 | 95 | 30 |
+| P | Frontend Tavolo da Gioco | 40 | 85 | 125 | 0 |
+| Q | Frontend Profili + Notifiche | 10 | 85 | 95 | 50 |
+| R | Testing End-to-End | 15 | 125 | 140 | 0 |
+| S | UAT + Bug Fixing | 20 | 140 | 160 | 0 |
+| T | Preparazione Lancio | 10 | 160 | 170 | 0 |
 
 ---
 
@@ -104,7 +104,7 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 
 **Critical Path**: **A → B → D → G → J → M → P → R → S → T**
 
-**Durata Totale Critical Path**: **160 giorni lavorativi** (equivalenti a ~6.5 mesi considerando weekend e festività)
+**Durata Totale Critical Path**: **170 giorni lavorativi** (equivalenti a ~7 mesi considerando weekend e festività)
 
 **Attività sul Critical Path** (Float = 0, nessun margine di ritardo):
 1. A - Setup Infrastruttura (10 giorni)
@@ -113,17 +113,19 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 4. G - Backend Persistenza Stato (10 giorni)
 5. J - Frontend Homepage + Login (15 giorni)
 6. M - Frontend Dashboard + Creazione Stanza (15 giorni)
-7. P - Frontend Tavolo da Gioco (30 giorni) → **ATTIVITÀ PIÙ CRITICA**
+7. P - Frontend Tavolo da Gioco (40 giorni) → **ATTIVITÀ PIÙ CRITICA**
 8. R - Testing End-to-End (15 giorni)
 9. S - UAT + Bug Fixing (20 giorni)
 10. T - Preparazione Lancio (10 giorni)
 
-**Attività con Float (Near-Critical Path)**:
-- **N - Sistema Amicizie**: Float = 5 giorni (può ritardare max 5 giorni senza impatto)
-- **Q - Frontend Profili + Notifiche**: Float = 5 giorni
+**Attività con Float (slack disponibile dopo estensione P a 40gg)**:
+- **N - Sistema Amicizie**: Float = 50 giorni (margine ampio dovuto all'estensione del critical path)
+- **Q - Frontend Profili + Notifiche**: Float = 50 giorni
+- **O - Integration Testing Game Engine**: Float = 30 giorni
+- **K - Chat + Disconnessioni**: Float = 50 giorni (predecessore di N)
 
 **Insight Critici**:
-- **Frontend Tavolo da Gioco (P)** è l'attività singola più lunga (30 giorni) sul critical path. Qualsiasi ritardo qui impatta direttamente la data di lancio.
+- **Frontend Tavolo da Gioco (P)** è l'attività singola più lunga (40 giorni) sul critical path. Qualsiasi ritardo qui impatta direttamente la data di lancio.
 - **Backend e Game Engine** devono essere completati in sequenza rigida (nessun parallelismo possibile per attività critiche).
 - **Sistema Amicizie** e **Profili** hanno margine di flessibilità (5 giorni) → possono essere posticipati se necessario.
 
@@ -187,9 +189,9 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 ### Struttura del Gantt Chart MaraffaOnline
 
 **Asse Temporale (Asse X)**:
-- **Periodo**: 15 ottobre 2025 - 15 marzo 2026 (6 mesi)
-- **Granularità**: settimane (26 settimane totali)
-- **Suddivisione**: 13 sprint da 2 settimane ciascuno
+- **Periodo**: 15 ottobre 2025 - 15 maggio 2026 (7 mesi)
+- **Granularità**: settimane (30 settimane totali)
+- **Suddivisione**: 15 sprint da 2 settimane ciascuno (Sprint 0-14)
 
 **Attività (Asse Y)**: Elencate gerarchicamente per sottosistema
 
@@ -249,7 +251,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 #### Sprint 8-9 (03 Feb - 28 Feb)
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
 |----|----------|--------|------|--------|--------------|---------------|
-| P | Frontend Tavolo da Gioco | 03-Feb | 14-Mar | 30 gg | M | Sì ← **CRITICO** |
+| P | Frontend Tavolo da Gioco | 03-Feb | 28-Mar | 40 gg | M | Sì ← **CRITICO** |
 | O | Integration Testing GE | 03-Feb | 14-Feb | 10 gg | L | No |
 | N | Sistema Amicizie | 03-Feb | 21-Feb | 15 gg | K | No (Float 5) |
 | Q | Frontend Profili + Notifiche | 24-Feb | 07-Mar | 10 gg | N | No (Float 5) |

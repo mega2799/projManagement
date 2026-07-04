@@ -57,7 +57,7 @@ La tabella è suddivisa in 5 sezioni:
     </tr>
     <tr>
         <td>Lancio della piattaforma MaraffaOnline completa (MVP)</td>
-        <td>15/03/2026</td>
+        <td>15/05/2026</td>
         <td>Not started</td>
     </tr>
     <tr>

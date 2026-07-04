@@ -95,7 +95,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ---
 
 ### W2. Budget Estremamente Limitato CRITICO
-**Descrizione**: €25.000 per 5 persone per 6 mesi = €833/mese/persona. Molto sotto il salario di mercato per sviluppatori (€2.500-3.000/mese).
+**Descrizione**: €25.000 per 5 persone per 7 mesi = €714/mese/persona equivalent. Molto sotto il salario di mercato per sviluppatori (€2.500-3.000/mese).
 
 **Impatto**: Impossibilità di assumere risorse esterne qualificate. Rischio di demotivazione o abbandono del team. Vincoli stretti su infrastruttura e tool.
 
@@ -113,11 +113,11 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ---
 
 ### W4. Timeline Aggressiva Senza Buffer
-**Descrizione**: 6 mesi netti per sviluppare una piattaforma multiplayer completa. Nessun margine per imprevisti (malattie, bug critici, ritardi).
+**Descrizione**: 7 mesi netti per sviluppare una piattaforma multiplayer completa. Nessun margine per imprevisti (malattie, bug critici, ritardi).
 
 **Impatto**: Qualsiasi ritardo impatta direttamente la deadline finale. Rischio di dover ridurre lo scope per rispettare la data di lancio.
 
-**Mitigazione**: MoSCoW prioritization ferrea. Completare Must Have entro gennaio, lasciando febbraio-marzo per testing e polish.
+**Mitigazione**: MoSCoW prioritization ferrea. Completare Must Have entro fine febbraio, lasciando marzo-aprile per testing e maggio per UAT e polish.
 
 ---
 
@@ -278,7 +278,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 **Impatto**: Perdita di conoscenza critica. Rallentamento sviluppo. Possibile necessità di trovare sostituti (difficile a metà progetto).
 
-**Contrasto**: Accordo formale di commitment per 6 mesi. Compensazione non solo monetaria (pubblicazioni, portfolio). Flessibilità oraria per permettere altre attività parallele.
+**Contrasto**: Accordo formale di commitment per 7 mesi. Compensazione non solo monetaria (pubblicazioni, portfolio). Flessibilità oraria per permettere altre attività parallele.
 
 ---
 

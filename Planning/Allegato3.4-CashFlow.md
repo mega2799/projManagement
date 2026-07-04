@@ -1,7 +1,7 @@
 # Allegato 3.4 - Cash Flow Management
 ## v.1.1.0 – 2025-10-28 18:00:00
 
-La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline, considerando il budget limitato di **€25.000** e la durata di **6 mesi** (15 ottobre 2025 - 15 marzo 2026). Questo documento traccia tutti i flussi finanziari in entrata (inflow) e in uscita (outflow) su base mensile, con visualizzazioni grafiche professionali.
+La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline, considerando il budget limitato di **€25.000** e la durata di **7 mesi** (15 ottobre 2025 - 15 maggio 2026). Questo documento traccia tutti i flussi finanziari in entrata (inflow) e in uscita (outflow) su base mensile, con visualizzazioni grafiche professionali.
 
 ---
 
@@ -24,9 +24,9 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 
 ### Visualizzazione Grafica Cash Flow Mensile
 
-Il grafico seguente illustra l'andamento del Cash Flow durante i 6 mesi del progetto:
+Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del progetto:
 
-![Cash Flow MaraffaOnline - 6 Mesi](../img/cash-flow-maraffaonline.png)
+![Cash Flow MaraffaOnline - 7 Mesi](../img/cash-flow-maraffaonline.png)
 
 **Analisi del Grafico**:
 - **Barre Verdi**: Inflow (pagamenti committente) concentrati in 3 momenti chiave (Mese 0, 2, 4)
@@ -106,18 +106,18 @@ Il grafico seguente illustra l'andamento del Cash Flow durante i 6 mesi del prog
 
 ---
 
-## Dettaglio Spese per Categoria (6 mesi)
+## Dettaglio Spese per Categoria (7 mesi)
 
 | Categoria | Totale (€) | % del Budget | Note |
 |-----------|------------|--------------|------|
-| **Salari Team** | €16.000 | 64.0% | 5 persone × 5.5 mesi (part-time mese 0 e 5) |
-| **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner €50/mese × 5.5 mesi |
+| **Salari Team** | €16.000 | 64.0% | 5 persone × 7 mesi FTE (part-time mese 0 e 7) |
+| **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner €50/mese × 5.5 mesi (server attivo solo da Mese 1) |
 | **Tools e Licenze** | €1.111 | 4.4% | Figma, JetBrains, Zoom, Confluence, Dominio |
 | **Consulenza Esperta** | €300 | 1.2% | Francesca Giuliani (validazione regole) |
 | **Marketing Lancio** | €200 | 0.8% | Comunicazione social per community |
 | **UAT e Testing** | €100 | 0.4% | Compenso tester Maraffa Forever |
 | **Celebrazione** | €100 | 0.4% | Team celebration post-lancio |
-| **Contingency Buffer** | €1.414 | 5.7% | Imprevisti e change requests |
+| **Contingency Buffer** | €4.664 | 18.7% | Imprevisti + change requests + buffer estensione progetto 7 mesi |
 | **TOTALE SPESE** | **€22.750** | **91.0%** | |
 | **Surplus Finale** | **€2.250** | **9.0%** | Reserve per fase post-lancio |
 
@@ -128,13 +128,13 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 ![Distribuzione Spese per Categoria](../img/spese-categorie.png)
 
 **Analisi del Grafico**:
-- **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 5.5 mesi)
-- **Contingency Buffer (5.7%)**: Buffer adeguato secondo le best practices PM per progetti a budget fisso
+- **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 7 mesi FTE part-time)
+- **Contingency Buffer (18.7%)**: Buffer ampio coerente con l'estensione del progetto a 7 mesi e con le best practices PM per progetti software con scope evolutivo e change requests potenziali
 - **Tools e Licenze (4.4%)**: Costi contenuti grazie all'utilizzo di free tier per molti servizi cloud
 - **Infrastruttura (1.1%)**: Spese minime grazie a server dedicati economici (Hetzner €50/mese)
 - **Surplus Finale (9%)**: Riserva per imprevisti post-lancio e scalabilità iniziale
 
-**Insight**: L'allocazione del budget è ottimizzata per massimizzare il valore del team di sviluppo (64%), mantenendo contenuti i costi infrastrutturali (1.1%) e garantendo un buffer di sicurezza del 14.7% (Contingency 5.7% + Surplus 9.0%) per gestire imprevisti.
+**Insight**: L'allocazione del budget è ottimizzata per massimizzare il valore del team di sviluppo (64%), mantenendo contenuti i costi infrastrutturali (1.1%) e garantendo un buffer di sicurezza del 27.7% (Contingency 18.7% + Surplus 9.0%) per gestire imprevisti e change requests in un progetto di 7 mesi.
 
 ---
 
@@ -154,7 +154,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 **Mitigazione**:
 - MoSCoW rigoroso: solo Must Have nel MVP
 - Change Request Process formale (se nuovo requisito → rivalutare budget)
-- Buffer contingency del 5.7% per piccole estensioni
+- Buffer contingency del 18.7% per piccole estensioni e change requests
 - **Se scope creep significativo**: rinegoziare contratto o spostare feature a v1.1
 
 ### Rischio 3: Costi Infrastruttura Superiori al Previsto
@@ -222,7 +222,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 **Decisioni Approvate**:
 1. [+] Budget €25.000 confermato (no incrementi)
 2. [+] Struttura pagamenti 50/25/25 accettata
-3. [+] Contingency buffer 5.7% ritenuto adeguato
+3. [+] Contingency buffer 18.7% ritenuto adeguato per progetto 7 mesi
 4. [+] Costi salari team (64% budget) giustificati per competenze richieste
 5. [!] Richiesta: report mensile cash flow inviato a Giovanni Marchetti entro il 5 di ogni mese
 

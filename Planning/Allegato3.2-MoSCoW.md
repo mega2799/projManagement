@@ -289,7 +289,7 @@ La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scopi
 **Analisi della Distribuzione**:
 - **Must Have al 71.6%**: leggermente sopra il target del 60%, ma giustificato dalla natura critica del Game Engine e Real-Time Communication (core product differentiator).
 - **Should Have al 22.2%**: allineato perfettamente al target del 20%. Include features importanti come sistema amicizie e accessibilità.
-- **Could Have al 6.2%**: sotto il target del 20%. Scelta deliberata per ridurre rischi di scope creep e garantire consegna MVP in 6 mesi.
+- **Could Have al 6.2%**: sotto il target del 20%. Scelta deliberata per ridurre rischi di scope creep e garantire consegna MVP in 7 mesi.
 
 ---
 
@@ -306,7 +306,7 @@ La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scopi
 **Trade-off accettati**:
 - [-] Nessuna integrazione nativa (notifiche push, vibrazione, etc.)
 - [-] Performance leggermente inferiore rispetto a nativa
-- [+] Time-to-market più veloce (6 mesi vs 9-10 mesi)
+- [+] Time-to-market più veloce (7 mesi vs 10-11 mesi)
 - [+] Budget rimane nei limiti
 
 ### 2. Sistema Amicizie come "Should Have"

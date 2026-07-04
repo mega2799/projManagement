@@ -29,7 +29,7 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 3. Sviluppare un'interfaccia web moderna, intuitiva e responsive che richiami l'atmosfera del tavolo da gioco reale
 4. Implementare funzionalità sociali (stanze private, sistema amicizie, chat) per mantenere viva la dimensione comunitaria
 5. Garantire scalabilità, affidabilità e sicurezza tecnica della piattaforma
-6. Lanciare un MVP funzionale entro 6 mesi con budget di €25.000
+6. Lanciare un MVP funzionale entro 7 mesi con budget di €25.000
 
 ### Criteri di Successo
 
@@ -38,11 +38,11 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 3. Valutazione ≥ 4.2/5 sulla facilità d'uso. Nuovo utente crea/joina partita in ≤ 3 minuti. Conformità WCAG 2.1 AA.
 4. Login funzionante nel 99% dei casi. Chat delay < 2s. Almeno 80 utenti attivi nei primi 2 mesi.
 5. Uptime 99% mensile. API response time < 200ms (95% richieste). Conformità GDPR.
-6. Completamento entro 15/03/2026. Budget €25.000 (±5%). Rilascio 4 milestone con pagamenti scaglionati.
+6. Completamento entro 15/05/2026. Budget €25.000 (±5%). Rilascio milestone con pagamenti scaglionati (3 tranche 50/25/25).
 
 ### Rischi
 
-1. 1. Incomprensioni sulle regole della Maraffa tradizionale
+1. Incomprensioni sulle regole della Maraffa tradizionale
    2. Varianti regionali delle regole potrebbero creare controversie
    3. Requisiti aggiuntivi scoperti durante sviluppo
 2. 1. Esperienza limitata con tecnologie WebSocket (RISCHIO ALTO)
@@ -58,7 +58,7 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 5. 1. Budget limitato per infrastruttura cloud scalabile
    2. Mancanza esperienza team in DevOps
    3. Picchi di traffico al lancio potrebbero sovraccaricare sistema
-6. 1. Budget €25.000 molto limitato per team di 5 persone per 6 mesi (RISCHIO ALTO)
+6. 1. Budget €25.000 molto limitato per team di 5 persone per 7 mesi (RISCHIO ALTO)
    2. Scope creep da richieste committente
    3. Sottostima complessità tecniche (real-time)
    4. Assenza di buffer temporale nel calendario
@@ -71,7 +71,7 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 - Accesso infrastrutture universitarie senza costi
 - Pagamenti milestone puntuali
 - Utilizzo solo tecnologie open-source (no licenze a pagamento)
-- Team dedicato full-time per 6 mesi
+- Team dedicato full-time per 7 mesi
 - Francesca Giuliani disponibile 2 volte/mese per consulenze
 - Hosting e deployment gestiti da PlayHeritage Labs
 - App mobile nativa rinviata a fase 2 post-MVP
@@ -83,7 +83,7 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 - Dipendenza dalla partecipazione attiva della community
 - Bilanciamento con impegni accademici del team
 - Primo progetto PM formale per PlayHeritage Labs
-- Timeline aggressiva (6 mesi)
+- Timeline aggressiva (7 mesi)
 - Difficoltà coordinamento user testing con utenti geograficamente distribuiti
 - Gestione aspettative elevate della community
 

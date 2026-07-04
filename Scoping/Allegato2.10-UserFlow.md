@@ -67,7 +67,7 @@ graph TD
     AI -->|Sì| AK[Fine mano: calcolo vincitore]
 
     AK --> AL[Aggiornamento punteggio]
-    AL --> AM{Qualcuno ha 121+ punti?}
+    AL --> AM{Coppia ha 41+ punti con figura?}
     AM -->|No| AN[Nuova mano]
     AN --> AD
     AM -->|Sì| AO[ Fine partita]
@@ -84,7 +84,9 @@ graph TD
 
 ---
 
-<!-- ## Flusso 1: Registrazione e Primo Accesso
+## Flussi Dettagliati
+
+## Flusso 1: Registrazione e Primo Accesso
 
 ### Scenario: Utente nuovo che vuole registrarsi
 
@@ -494,7 +496,7 @@ Il diagramma completo del User Flow è disponibile come immagine:
 - `img/user-flow-diagram.png` (creato con Figma/Miro)
 - `img/user-flow-dettagliato.pdf` (versione stampabile alta risoluzione)
 
---- -->
+---
 
 **Redatto da**: Luca Moretti (UX/UI Designer, PlayHeritage Labs)
 **Revisionato da**: Marco Venturi (Project Manager)

@@ -9,9 +9,9 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progett
 
 ## Struttura Sprint e Timeline
 
-**Durata progetto**: 6 mesi (15 ottobre 2025 - 15 marzo 2026)
+**Durata progetto**: 7 mesi (15 ottobre 2025 - 15 maggio 2026)
 **Sprint duration**: 2 settimane
-**Numero Sprint**: 13 sprint totali
+**Numero Sprint**: 15 sprint totali (Sprint 0-14)
 **Team capacity**: ~40 story points per sprint (considerando team di 5 persone)
 
 ### Calendario Sprint (Focus Agile)
@@ -31,8 +31,10 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progett
 | Sprint 8 | 03 Feb - 14 Feb | Chat in-game + disconnessioni |
 | Sprint 9 | 17 Feb - 28 Feb | Sistema amicizie + profili |
 | Sprint 10 | 03 Mar - 14 Mar | Frontend accessibilità + performance optimization |
-| Sprint 11 | 17 Mar - 28 Mar | UAT con Maraffa Forever |
-| Sprint 12 | 31 Mar - 11 Apr | Preparazione lancio |
+| Sprint 11 | 17 Mar - 31 Mar | Testing End-to-End + Integration |
+| Sprint 12 | 01 Apr - 24 Apr | UAT con Maraffa Forever + Bug Fixing |
+| Sprint 13 | 27 Apr - 08 Mag | Preparazione lancio + Deploy production |
+| Sprint 14 | 11 Mag - 15 Mag | Production Launch + Celebrazione |
 
 ---
 
@@ -262,13 +264,17 @@ I seguenti sottosistemi seguono altre metodologie e sono tracciati **esclusivame
 
 ### Velocity Stimata
 - **Team size**: 5 persone (Elena Rossi, Sara Bianchi, Luca Moretti, Andrea Conti, Marco Venturi part-time)
-- **Capacity per sprint**: ~40 story points (8 pts/persona/sprint)
-- **Sprint totali**: 13
-- **Capacity totale**: ~520 story points
-- **Backlog Agile totale**: 310 story points
-- **Buffer disponibile**: 210 story points (40.4% contingency per sottosistemi Agile)
+- **Capacity per sprint**: ~40 story points complessivi del team (8 pts/persona/sprint), distribuiti tra Backlog Agile + lavoro Game Engine/Infrastructure
+- **Sprint totali**: 15 (Sprint 0-14)
+- **Capacity totale del team**: ~600 story points su tutto il progetto
+- **Backlog Agile (questo documento)**: 310 story points → corrisponde a ~24 SP/sprint di focus Agile
+- **Game Engine + Infrastructure (in WBS/Gantt)**: ~130 story points equivalenti → ~10 SP/sprint
+- **Gran Totale**: ~440 story points → ~34 SP/sprint, in linea con velocity target 40 SP/sprint (con margine 15% buffer)
 
-**Nota Buffer**: L'elevato buffer (40%) è dovuto al fatto che il Product Backlog include solo i sottosistemi Agile. Il lavoro totale del progetto (441 story points con Game Engine e Infrastructure) utilizzerebbe ~85% della capacity totale, lasciando un buffer più realistico del ~15%.
+**Importante - Lettura dei numeri di Velocity**:
+- La **velocity del 38,3 SP/sprint** monitorata nel Capitolo 5 - Monitoring & Control è **team-wide**: somma il lavoro completato su TUTTO il progetto (Backlog Agile + Game Engine in Waterfall + Infrastructure Incrementale), non solo le user stories di questo Backlog.
+- I **310 SP del Product Backlog Agile** sono il sottoinsieme di user stories gestite con Scrum (Backend/Real-Time/Frontend/Social). Diviso per 15 sprint = ~21 SP/sprint di velocity Agile pura.
+- La differenza non è incoerenza: è la naturale distinzione tra "metrica Scrum" (Backlog) e "metrica gestionale di team" (Monitoring).
 
 ### Monitoraggio Velocity
 Alla fine di ogni sprint, il team registrerà:

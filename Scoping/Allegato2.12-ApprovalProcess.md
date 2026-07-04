@@ -80,7 +80,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Durata**: 10 minuti
 
 **Punti chiave**:
-- Timeline: 6 milestone temporali (ultima: 15/03/2026)
+- Timeline: 7 milestone temporali (ultima: 15/05/2026)
 - Budget: €25.000 con 4 tranche di pagamento
 - Requisiti tecnici: scalabilità 100 partite simultanee, latency < 500ms
 - Requisiti qualitativi: soddisfazione beta tester ≥ 4.2/5

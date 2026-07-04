@@ -341,7 +341,8 @@ I seguenti file grafici sono disponibili nella cartella `img/`:
 3. `mockup-v2-login.png`
 4. `mockup-v2-dashboard.png`
 5. `mockup-v2-crea-stanza.png`
-6. `mockup-v2-tavolo-gioco.png` 7. `mockup-v2-fine-partita.png`
+6. `mockup-v2-tavolo-gioco.png`
+7. `mockup-v2-fine-partita.png`
 8. `mockup-v2-mobile-tavolo.png` (versione mobile)
 9. `style-guide-maraffaonline.png` (palette colori, tipografia, componenti)
 10. `user-flow-diagram.png` (vedi Allegato 2.10)

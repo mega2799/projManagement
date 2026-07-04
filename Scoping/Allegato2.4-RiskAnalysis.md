@@ -193,7 +193,7 @@ Per l'analisi dei rischi si è scelto di utilizzare l'approccio **Risk Rating Ma
        - Livello di impatto: Grave
        - Valore rischio: 6
        - Colore rischio: Arancione
-       - Descrizione: 6 mesi senza margini imprevisti
+       - Descrizione: 7 mesi senza margini imprevisti
        - Risk Management: Mitigazione. MoSCoW prioritization. Completare sottosistemi critici entro gennaio.
 
 ---

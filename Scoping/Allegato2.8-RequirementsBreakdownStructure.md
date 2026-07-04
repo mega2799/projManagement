@@ -458,7 +458,7 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 
 ## Riepilogo Priorità MoSCoW
 
-### MUST HAVE (MVP - Lancio 15/03/2026)
+### MUST HAVE (MVP - Lancio 15/05/2026)
 - [+] Game Engine completo
 - [+] Backend Server (auth, partite, API)
 - [+] Real-Time Communication (WebSocket, sincronizzazione)

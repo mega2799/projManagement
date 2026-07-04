@@ -66,7 +66,7 @@ I seguenti documenti sono stati condivisi con tutti i partecipanti 3 giorni prim
 - Celebrazione: questo è l'inizio ufficiale di un'avventura a cui tutti teniamo
 
 **Quote del PM**:
-> "Oggi trasformiamo 6 mesi di preparazione in azione. Il nostro obiettivo è portare il Maraffone, gioco che ha unito generazioni di appassionati, nell'era digitale senza perdere l'anima del gioco tradizionale."
+> "Oggi trasformiamo 7 mesi di preparazione in azione. Il nostro obiettivo è portare il Maraffone, gioco che ha unito generazioni di appassionati, nell'era digitale senza perdere l'anima del gioco tradizionale."
 
 ---
 
@@ -104,7 +104,7 @@ Ogni partecipante si presenta seguendo questo template:
 #### 3.2 La Soluzione (Goal)
 
 **Goal del Progetto**:
-> Sviluppare **MaraffaOnline**, piattaforma web responsive per giocare a Maraffa in modalità multiplayer (4 giocatori), con regole ufficiali Maraffone/Beccaccino, sistema lobby, chat integrata e profili personalizzabili. Lancio MVP entro 15 marzo 2026 (6 mesi).
+> Sviluppare **MaraffaOnline**, piattaforma web responsive per giocare a Maraffa in modalità multiplayer (4 giocatori), con regole ufficiali Maraffone/Beccaccino, sistema lobby, chat integrata e profili personalizzabili. Lancio MVP entro 15 maggio 2026 (7 mesi).
 
 #### 3.3 Criteri di Successo (Success Metrics)
 
@@ -115,7 +115,7 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
 | **Funzionalità** | 100% regole Maraffone implementate correttamente | Validazione con Francesca Giuliani + 10 tester community |
 | **Performance** | Latenza < 200ms per azioni real-time | Load testing con 50 partite simultanee |
 | **Usabilità** | 80% utenti completano prima partita senza aiuto | User testing con 10 membri Maraffa Forever |
-| **Tempo** | Lancio MVP entro 15/03/2026 (6 mesi) | Rispetto Gantt Chart critical path (160 giorni) |
+| **Tempo** | Lancio MVP entro 15/05/2026 (7 mesi) | Rispetto Gantt Chart critical path (170 giorni lavorativi) |
 | **Budget** | Spese entro €22.750 (91% di €25.000) | Cash flow tracking settimanale |
 | **Adozione** | 50 utenti attivi settimanalmente dopo 1 mese dal lancio | Google Analytics + database query |
 
@@ -166,7 +166,7 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
    - Integration test
    - User Acceptance Testing con Maraffa Forever
 
-**Total Development**: 160 giorni sul Critical Path
+**Total Development**: 170 giorni lavorativi sul Critical Path (~7 mesi calendar)
 
 #### 4.2 Out-of-Scope (Won't Have in MVP)
 
@@ -191,16 +191,16 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
 
 #### 5.1 Fasi del Progetto
 
-**Overview 6 mesi**:
+**Overview 7 mesi**:
 
 ```
-Ott 2025          Nov-Dic 2025        Gen-Feb 2026         Mar 2026
+Ott 2025          Nov-Dic 2025        Gen-Mar 2026         Apr-Mag 2026
 │                 │                   │                    │
 Setup (15gg)      Development         Development         UAT + Lancio
-│                 Sprint 1-6          Sprint 7-12         (20gg)
+│                 Sprint 1-4          Sprint 5-11         Sprint 12-13
 │                 │                   │                    │
-└─ M1             └─ M2               └─ M3                └─ M4 (LANCIO)
-   15/10/2025        15/12/2025          15/02/2026           15/03/2026
+└─ M1             └─ M2               └─ M3                └─ M7 (LANCIO)
+   15/10/2025        20/12/2025          31/03/2026           15/05/2026
 ```
 
 #### 5.2 Milestone Critiche
@@ -208,9 +208,9 @@ Setup (15gg)      Development         Development         UAT + Lancio
 | Milestone | Data | Deliverable | Owner | Pagamento |
 |-----------|------|-------------|-------|-----------|
 | **M1: Project Kickoff** | 15/10/2025 | Setup infrastruttura + Team onboarding | Andrea Conti | €12.500 (50%) |
-| **M2: Scoping+Planning Approval** | 15/12/2025 | Game Engine completato + Backend Auth funzionante | Elena Rossi | €6.250 (25%) |
-| **M3: MVP Beta Ready** | 15/02/2026 | Tutte le feature Must Have integrate e testate internamente | Marco Venturi | €6.250 (25%) |
-| **M4: Public Launch** | 15/03/2026 | UAT superato + Deploy produzione + Lancio community | Marco Venturi | - |
+| **M2: Backend Core Complete** | 20/12/2025 | Game Engine Foundation + Backend Auth funzionante | Elena Rossi | €6.250 (25%) |
+| **M3: Game Engine + MVP Beta** | 31/03/2026 | Tutte le feature Must Have integrate e testate internamente | Marco Venturi | €6.250 (25%) |
+| **M7: Public Launch** | 15/05/2026 | UAT superato + Deploy produzione + Lancio community | Marco Venturi | - |
 
 **Slack Time**: 0 giorni sul Critical Path → ogni ritardo impatta direttamente la data di lancio
 
@@ -218,13 +218,14 @@ Setup (15gg)      Development         Development         UAT + Lancio
 
 #### 5.3 Sprint Calendar (Agile Subsystems)
 
-**13 Sprint da 2 settimane** (28/10/2025 - 14/03/2026):
+**15 Sprint da 2 settimane** (15/10/2025 - 15/05/2026):
 
 - **Sprint 0** (15-27 Ott): Setup + Scoping finalization
 - **Sprint 1-4** (28 Ott - 21 Dic): Backend + Real-Time foundation
-- **Sprint 5-8** (06 Gen - 01 Feb): Frontend core + Integration
-- **Sprint 9-12** (03 Feb - 28 Feb): Feature completion + Bug fixing
-- **Sprint 13** (03-14 Mar): UAT + Polish
+- **Sprint 5-8** (22 Dic - 14 Feb): Frontend core + Integration
+- **Sprint 9-11** (16 Feb - 28 Mar): Feature completion + Bug fixing
+- **Sprint 12** (30 Mar - 24 Apr): UAT con Maraffa Forever
+- **Sprint 13** (27 Apr - 15 Mag): Polish + Production Launch
 
 **Cerimonie Agile** (da Sprint 1):
 - **Daily Standup**: Ogni giorno 09:00-09:15 (in presenza/Zoom)
@@ -247,11 +248,11 @@ Setup (15gg)      Development         Development         UAT + Lancio
 **Surplus/Contingency**: €2.250 (9%)
 
 **Breakdown per Categoria**:
-- **Salari Team** (64%): €16.000 - 5 persone × 5.5 mesi
+- **Salari Team** (64%): €16.000 - 5 persone × 7 mesi FTE part-time (compenso ridotto coerente con natura spin-off accademico)
 - **Infrastruttura** (1.1%): €275 - Hetzner server €50/mese
 - **Tools e Licenze** (4.4%): €1.111 - Figma, JetBrains, Zoom, Confluence
 - **Consulenza** (1.2%): €300 - Francesca Giuliani (validazione regole)
-- **Contingency Buffer** (5.7%): €1.414 - Imprevisti
+- **Contingency Buffer** (18.7%): €4.664 - Imprevisti + change requests + buffer estensione progetto 7 mesi
 
 **Cash Flow**: Vedi Allegato 3.4. Saldo minimo €2.300 nel Mese 3 (Gennaio 2026), sempre positivo.
 
@@ -259,20 +260,20 @@ Setup (15gg)      Development         Development         UAT + Lancio
 
 #### 6.2 Allocazione Risorse Team
 
-**Commitment Time** (15 Ott 2025 - 15 Mar 2026):
+**Commitment Time** (15 Ott 2025 - 15 Mag 2026):
 
-| Team Member | Mese 0 (Ott) | Mesi 1-4 | Mese 5 (Mar) | Totale |
-|-------------|--------------|----------|--------------|--------|
-| Marco Venturi (PM) | 50% | 100% | 50% | 5.5 mesi |
-| Elena Rossi (Tech Lead) | 50% | 100% | 50% | 5.5 mesi |
-| Sara Bianchi (Backend) | 50% | 100% | 50% | 5.5 mesi |
-| Luca Moretti (Frontend/UX) | 50% | 100% | 50% | 5.5 mesi |
-| Andrea Conti (DevOps) | 50% | 100% | 50% | 5.5 mesi |
+| Team Member | Mese 0 (Ott) | Mesi 1-6 (Nov-Apr) | Mese 7 (Mag) | Totale FTE |
+|-------------|--------------|---------------------|--------------|------------|
+| Marco Venturi (PM) | 50% | 100% | 50% | 7 mesi FTE |
+| Elena Rossi (Tech Lead) | 50% | 100% | 50% | 7 mesi FTE |
+| Sara Bianchi (Backend) | 50% | 100% | 50% | 7 mesi FTE |
+| Luca Moretti (Frontend/UX) | 50% | 100% | 50% | 7 mesi FTE |
+| Andrea Conti (DevOps) | 50% | 100% | 50% | 7 mesi FTE |
 
-**Razionale part-time Mese 0 e 5**: Setup iniziale e fase UAT finale richiedono meno intensità. Ottimizzazione costi.
+**Razionale part-time Mese 0 e Mese 7**: Setup iniziale e fase UAT finale richiedono meno intensità. Ottimizzazione costi.
 
 **External Resources**:
-- **Francesca Giuliani**: 2 sessioni di validazione regole (3h ciascuna) - Novembre 2025 e Febbraio 2026
+- **Francesca Giuliani**: 2 sessioni di validazione regole (3h ciascuna) - Novembre 2025 e Aprile 2026
 - **Tester Community**: 10 membri Maraffa Forever per UAT (compenso simbolico €10 ciascuno)
 
 ---
@@ -289,7 +290,7 @@ Setup (15gg)      Development         Development         UAT + Lancio
 | **R2: Scope Creep da stakeholder** | Alta (4) | Alto (4) | 16 (Rosso) | MoSCoW rigoroso. Change Request Process formale. Giovanni informato che nuovi requisiti → estensione timeline o riduzione scope. |
 | **R3: Ritardo sviluppo Game Engine** | Media (3) | Alto (4) | 12 (Rosso) | Metodologia Waterfall con gate reviews. Pair programming Elena+Sara per logica complessa. Validazione Francesca Giuliani a metà sviluppo (Nov). |
 | **R4: Turnover team member** | Bassa (2) | Molto Alto (5) | 10 (Arancione) | Contratti a progetto con penale uscita. Pair programming continuo (knowledge sharing). Documentazione Confluence aggiornata. |
-| **R5: Bug critici post-lancio** | Media (3) | Medio (3) | 9 (Arancione) | UAT esteso 20 giorni con 10 tester. Monitoring Sentry attivo pre-lancio. Contingency buffer €1.414 per hotfix urgenti. |
+| **R5: Bug critici post-lancio** | Media (3) | Medio (3) | 9 (Arancione) | UAT esteso 20 giorni con 10 tester. Monitoring Sentry attivo pre-lancio. Contingency buffer €4.664 per hotfix urgenti e change requests. |
 
 **Responsabile Risk Management**: Marco Venturi
 **Frequenza Review**: Settimanale durante Project Status Meeting (ogni venerdì 16:00)
@@ -503,14 +504,14 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 **Obiettivo**: Chiudere con energia positiva e senso di appartenenza
 
 **Recap Key Takeaways**:
-1. Abbiamo un piano solido: 160 giorni, 7 sottosistemi, critical path identificato
+1. Abbiamo un piano solido: 170 giorni lavorativi, 7 sottosistemi, critical path identificato
 2. Budget controllato: €22.750 spese su €25.000, cash flow sempre positivo
 3. Team completo e competente: ognuno ha ruolo chiaro (RASCI Matrix)
 4. Stakeholder allineato: Giovanni e Francesca supportano la visione
 5. Strumenti in place: Confluence, GitLab, Figma, Notion pronti per l'uso
 
 **Celebrazione Kickoff**:
-> "Questo è un momento speciale. Non stiamo solo costruendo software, stiamo preservando un pezzo di cultura ludica italiana e portandola alla prossima generazione. Ogni riga di codice che scriveremo nei prossimi 6 mesi contribuisce a unire la community Maraffa Forever. Sono orgoglioso di lavorare con questo team."
+> "Questo è un momento speciale. Non stiamo solo costruendo software, stiamo preservando un pezzo di cultura ludica italiana e portandola alla prossima generazione. Ogni riga di codice che scriveremo nei prossimi 7 mesi contribuisce a unire la community Maraffa Forever. Sono orgoglioso di lavorare con questo team."
 
 **Foto di Team**: Scattata per documentazione progetto (con permesso)
 
@@ -526,12 +527,12 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 ## Meeting Minutes Summary
 
 **Decisioni Chiave Approvate**:
-1. Timeline 6 mesi confermata (15/10/2025 - 15/03/2026)
+1. Timeline 7 mesi confermata (15/10/2025 - 15/05/2026)
 2. Budget €25.000 confermato, no incrementi
 3. Scope MVP confermato (out: mobile app, AI, tornei, monetizzazione)
 4. RASCI Matrix approvata (Allegato 4.2)
 5. Regole Operative approvate (Allegato 4.2)
-6. Sprint calendar: 13 sprint da 2 settimane
+6. Sprint calendar: 15 sprint da 2 settimane (Sprint 0-14)
 7. Daily Standup 09:00-09:15 da 16/10/2025
 
 **Rischi Evidenziati**:

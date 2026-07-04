@@ -300,544 +300,99 @@ Le **Regole Operative** definiscono i processi per la gestione quotidiana del te
 
 ---
 
-### 1. Problem Solving Strategy
+### 1. Problem Solving
 
-**Processo in 5 Step** (adattato da Agile Retrospective + Lean Problem Solving):
+Per il problem solving del progetto MaraffaOnline si è scelto di adottare un approccio strutturato in cinque passi, ispirato al metodo Lean Problem Solving e alle pratiche Agile. Questo approccio garantisce che i problemi vengano affrontati in modo sistematico e che le soluzioni siano efficaci e sostenibili nel tempo.
 
-#### Step 1: Identify (Identificare il problema)
-- **Chi**: Chiunque nel team può sollevare un problema
-- **Dove**: Daily Standup, Slack #urgent, Project Status Meeting
-- **Come**: Descrivere il problema con formato **"What? Where? When? Impact?"**
+Quando un problema emerge, che sia durante il Daily Standup, in un messaggio su Slack o durante una Sprint Review, la prima responsabilità è identificarlo chiaramente. Chiunque nel team può sollevare un problema, ma è fondamentale che venga descritto in modo rigoroso affinché tutti possano comprenderlo. La descrizione deve rispondere a quattro domande: Cosa sta succedendo? Dove si verifica? Quando è iniziato? Quale impatto ha sul progetto? Ad esempio, se la latenza WebSocket supera i 500ms sul server di staging dopo un deploy, questo deve essere comunicato immediatamente perché rende il gioco praticamente ingiocabile.
 
-**Esempio**:
-> "**What**: Latenza WebSocket superiore a 500ms. **Where**: Server staging. **When**: Da ieri sera dopo deploy. **Impact**: User experience degradata, gioco ingiocabile."
+Una volta identificato il problema, il passo successivo è analizzare la causa root. Questo compito spetta al Responsible dell'area coinvolta insieme all'Accountable, con eventuale supporto di persone Consulted secondo la RASCI Matrix. Per individuare la vera causa si utilizza la tecnica dei "5 Whys": ponendo ripetutamente la domanda "Perché?" si scava progressivamente fino alla radice del problema. Nel caso della latenza WebSocket, chiedendosi perché il server è sovraccarico, perché ci sono troppi log, perché il logger è in modalità DEBUG, si scopre che manca la configurazione della variabile d'ambiente LOG_LEVEL nel deployment checklist. Questa analisi deve essere rapida, al massimo 30 minuti, altrimenti si procede con escalation alla Tech Lead.
 
-#### Step 2: Analyze (Analizzare la causa root)
-- **Chi**: Responsible + Accountable + eventuali Consulted
-- **Strumento**: **5 Whys** o **Fishbone Diagram** (Ishikawa)
-- **Tempo**: Max 30 minuti di analisi (se serve più tempo, escalation a Tech Lead)
+Identificata la causa root, il team procede con il brainstorming per proporre soluzioni alternative. Ogni soluzione viene valutata considerando i pro e i contro, e si privilegiano interventi rapidi quando l'impatto del problema è alto. Nel nostro esempio si potrebbero proporre tre soluzioni: una fix immediato aggiungendo LOG_LEVEL=INFO in staging (10 minuti), la creazione di uno script automatico di verifica pre-deploy per prevenire futuri problemi (1 giorno di lavoro), oppure un upgrade del server a un tier superiore (soluzione costosa e probabilmente eccessiva). La decisione finale spetta all'Accountable, che in questo caso sceglie di implementare subito la soluzione A e pianificare la B come follow-up.
 
-**5 Whys Example**:
-1. Perché latenza è alta? → Server sovraccarico
-2. Perché server è sovraccarico? → Troppi log in console
-3. Perché troppi log? → Logger in modalità DEBUG in staging
-4. Perché DEBUG in staging? → Manca env variable LOG_LEVEL
-5. Perché manca? → Non documentato in deployment checklist
+L'implementazione della soluzione viene assegnata a un Responsible specifico e tracciata come action item su Notion Database con una deadline chiara. Quando il task è completato, si comunica l'update su Slack per tenere informato il team. Infine, l'Accountable verifica che il problema sia effettivamente risolto entro 24-48 ore dall'implementazione. Se il problema persiste, si torna indietro all'analisi con le nuove informazioni acquisite.
 
-**Root Cause**: Deployment checklist incompleto
-
-#### Step 3: Propose Solutions (Proporre soluzioni)
-- **Chi**: Team brainstorming (vedi sezione Brainstorming)
-- **Output**: 2-3 soluzioni alternative con pro/cons
-- **Criterio**: Prioritizzare soluzioni rapide (<1 giorno) se impact è alto
-
-**Esempio Soluzioni**:
-- **A**: Aggiungere LOG_LEVEL=INFO in .env staging (10 min, fix immediato)
-- **B**: Creare script di verifica env vars pre-deploy (1 giorno, previene future occorrenze)
-- **C**: Upgrade server Hetzner a tier superiore (€100/mese extra, overkill)
-
-**Decisione**: Implementare A subito + B come follow-up
-
-#### Step 4: Implement (Implementare)
-- **Chi**: Responsible assegnato (da RASCI o meeting decisionale)
-- **Tracking**: Action item su Notion Database con deadline
-- **Comunicazione**: Update su Slack quando completato
-
-#### Step 5: Verify (Verificare efficacia)
-- **Chi**: Accountable verifica che problema sia risolto
-- **Quando**: Entro 24-48h dall'implementazione
-- **Se non risolto**: Tornare a Step 2 (Analyze) con nuove informazioni
-
-**Retrospective**: Tutti i problemi critici vengono discussi in Sprint Retrospective per prevenzione futura.
+Tutti i problemi critici che emergono durante gli sprint vengono discussi nella Sprint Retrospective per capire come prevenirli in futuro. Questo approccio non solo risolve il problema immediato, ma contribuisce al miglioramento continuo del processo di sviluppo.
 
 ---
 
-### 2. Decision Making Process
+### 2. Decision Making
 
-**Framework a 3 Livelli** (già definito nel Kick-Off Meeting):
+Per quanto riguarda il decision making del progetto MaraffaOnline si è adottato un approccio consultivo a tre livelli, che rappresenta una via di mezzo tra il metodo direttivo e quello completamente collaborativo. Questo approccio permette di beneficiare della varietà di prospettive e conoscenze del gruppo, garantendo al contempo che le decisioni finali siano coerenti con la visione strategica e le responsabilità del leader. Il metodo favorisce un ambiente di lavoro inclusivo e partecipativo, mantenendo però una chiara direzione e responsabilità decisionale.
 
-#### Livello 1: Decisioni Operative (Quotidiane)
-- **Scope**: Implementazione tecnica, naming, scelta librerie minori, fix bug
-- **Decision Maker**: **Responsible** (developer che lavora sul task)
-- **Consulenza**: Opzionale (pair programming, code review)
-- **Timeline**: Immediata
+Le decisioni sono state categorizzate in tre livelli di importanza, ciascuno con un proprio decision maker e processo. Al livello operativo troviamo le decisioni quotidiane sull'implementazione tecnica: la scelta di naming convention, librerie minori, o fix di bug. Queste decisioni spettano direttamente al Responsible che sta lavorando sul task, senza necessità di escalation. Ad esempio, quando Luca deve decidere se usare react-dnd o dnd-kit per il drag & drop delle carte, può autonomamente testare entrambe le librerie con un proof of concept di 2 ore e scegliere quella che preferisce. La consulenza di altri sviluppatori è opzionale e può avvenire attraverso pair programming o code review, ma la decisione finale rimane in capo al developer.
 
-**Esempio**: "Uso react-dnd o dnd-kit per drag & drop?" → Luca decide dopo test entrambe le librerie (2h POC)
+Il secondo livello riguarda le decisioni tattiche, che hanno un impatto più ampio sul progetto. Queste includono scelte architetturali, design delle API, schema del database, o aggiustamenti al backlog dello sprint. In questi casi il decision maker è la Tech Lead Elena Rossi insieme al Project Manager Marco Venturi, che devono raggiungere un consensus. Il processo prevede che Elena presenti le opzioni tecniche con i relativi pro e contro, Marco valuti l'impatto su timeline, budget e scope, si consulti brevemente il team durante uno Sprint Planning o Status Meeting, e infine Elena decida sull'aspetto tecnico mentre Marco su quello di project management. Ad esempio, se emerge la proposta di cambiare da REST a GraphQL per le API della lobby, Elena e Marco valutano insieme i trade-off e decidono di non procedere perché richiederebbe troppo refactoring per benefici marginali nel MVP. Ogni decisione tattica viene documentata su Confluence e deve essere presa entro 48 ore dall'identificazione della necessità.
 
-#### Livello 2: Decisioni Tattiche (Settimanali)
-- **Scope**: Architettura, API design, database schema, sprint backlog adjustment
-- **Decision Maker**: **Tech Lead (Elena)** + **PM (Marco)** consensus
-- **Consulenza**: Team input durante Sprint Planning o Status Meeting
-- **Timeline**: Entro 48h da identificazione necessità decisione
+Il terzo livello comprende le decisioni strategiche che impattano significativamente il progetto: modifiche allo scope, aggiustamenti al budget, estensioni della timeline, o cambiamenti metodologici. Queste decisioni spettano allo Sponsor Giovanni Marchetti, con input fondamentale dal Project Manager e dalla Tech Lead, e con consulenza di tutto il team e di Francesca Giuliani quando si tratta di aspetti legati alle regole del gioco. Se ad esempio il cliente richiede l'aggiunta di un'app mobile nativa nel MVP, Marco prepara un Project Impact Statement dettagliato, Elena stima l'effort aggiuntivo in 80 giorni e €10.000, si presentano a Giovanni tre opzioni (accettare ed estendere la timeline, posticipare alla versione 1.1, o rifiutare), e Giovanni prende la decisione finale. Il tempo per queste decisioni è generalmente di una settimana, salvo situazioni di urgenza.
 
-**Esempio**: "Cambiamo da REST a GraphQL per API lobby?" → Elena + Marco valutano trade-off → Decisione: NO (troppo refactoring, benefici marginali nel MVP)
-
-**Processo**:
-1. Elena presenta opzioni tecniche (pro/cons)
-2. Marco valuta impatto su timeline/budget/scope
-3. Consultazione team (15 min in meeting)
-4. Elena decide aspetto tecnico, Marco aspetto PM
-5. Documentazione decisione su Confluence
-
-#### Livello 3: Decisioni Strategiche (Mensili o On-Demand)
-- **Scope**: Scope change, budget adjustment, timeline extension, metodologia shift
-- **Decision Maker**: **Sponsor (Giovanni)** con input da **PM (Marco)** + **Tech Lead (Elena)**
-- **Consulenza**: Tutta il team + Francesca (se impatta regole gioco)
-- **Timeline**: Entro 1 settimana (urgenza permitting)
-
-**Esempio**: "Cliente richiede mobile app nativa in MVP. Accettiamo?"
-1. Marco prepara **Project Impact Statement** (vedi sezione 5, Change Management)
-2. Elena stima effort: +80 giorni, +€10.000
-3. Presentazione a Giovanni: opzioni (A) Accept + extend timeline, (B) Postpone to v1.1, (C) Reject
-4. Giovanni decide: **(B) Postpone to v1.1** (MVP web only, mobile post-lancio)
-
-**Regola d'Oro**: "Decide at the lowest level possible, escalate only when necessary."
+La regola d'oro che guida tutto il processo decisionale è "decide at the lowest level possible, escalate only when necessary". Questo principio assicura che le decisioni vengano prese rapidamente da chi ha le informazioni più rilevanti, evitando colli di bottiglia e sovraccarico dei livelli decisionali superiori.
 
 ---
 
-### 3. Conflict Resolution Protocol
+### 3. Conflict Resolution
 
-I conflitti sono naturali in progetti complessi. Il nostro protocollo garantisce risoluzione rapida ed equa.
+Per la risoluzione dei conflitti si è scelto un approccio collaborativo e progressivo, che riconosce che i conflitti sono naturali in progetti complessi e che possono essere affrontati con un protocollo che garantisca risoluzione rapida ed equa.
 
-#### Tipologie di Conflitto
+I conflitti nel progetto MaraffaOnline possono essere di tre tipologie principali. I conflitti tecnici riguardano scelte architetturali o tecnologiche, come ad esempio la decisione tra MongoDB e PostgreSQL. In questi casi il resolver è la Tech Lead Elena Rossi, che ascolta gli argomenti di entrambe le parti (15 minuti ciascuna) e decide basandosi su criteri oggettivi come performance, scalabilità, expertise del team e time-to-market. Una volta presa la decisione, il team si allinea secondo il principio "disagree and commit": anche chi non è d'accordo si impegna a supportare la decisione finale. I conflitti di priorità emergono quando ci sono dubbi su quale feature implementare prima. In questo caso il resolver è il Project Manager Marco Venturi, che valuta il business value rispetto all'effort usando la matrice MoSCoW e decide basandosi sul critical path e sul valore per lo stakeholder. Il task prioritizzato torna nello Sprint Backlog. Infine ci sono i conflitti interpersonali, come quando un membro del team non rispetta gli orari di lavoro altrui. Qui Marco agisce come facilitatore neutrale attraverso una conversazione privata "speak truth to power", con l'obiettivo di trovare una soluzione win-win piuttosto che imporre una decisione. Se il conflitto non si risolve, si procede con escalation alle risorse umane di PlayHeritage Labs, che esula dallo scope del progetto.
 
-**A. Conflitti Tecnici** (es. "Usiamo MongoDB o PostgreSQL?")
-- **Resolver**: Tech Lead (Elena)
-- **Input**: Entrambe le parti presentano argomenti (15 min ciascuno)
-- **Decisione**: Elena decide basandosi su: performance, scalabilità, team expertise, time-to-market
-- **Finale**: "Disagree and commit" - team si allinea anche se non tutti d'accordo
-
-**B. Conflitti di Priorità** (es. "Implemento feature X o Y prima?")
-- **Resolver**: PM (Marco) o Product Owner surrogate
-- **Input**: Valutazione business value vs effort (MoSCoW matrix)
-- **Decisione**: Marco decide basandosi su critical path + stakeholder value
-- **Finale**: Task prioritizzato torna in Sprint Backlog
-
-**C. Conflitti Interpersonali** (es. "X non rispetta i miei orari di lavoro")
-- **Resolver**: PM (Marco) come facilitatore neutrale
-- **Processo**: "Speak Truth to Power" conversation privata 1-on-1
-- **Obiettivo**: Win-win solution, non imposizione
-- **Escalation**: Se non risolto, escalation a HR PlayHeritage Labs (fuori scope progetto)
-
-#### Processo di Risoluzione in 3 Fasi
-
-**Fase 1: Direct Discussion (24h)**
-- Le parti coinvolte parlano direttamente, senza intermediari
-- Setting: privato (Zoom 1-on-1 o in presenza)
-- Obiettivo: 80% dei conflitti si risolvono qui
-
-**Fase 2: Facilitated Mediation (48h)**
-- Marco (PM) o Elena (Tech Lead) facilita discussione
-- Setting: meeting strutturato 30 min
-- Formato:
-  1. Parte A espone posizione (5 min)
-  2. Parte B espone posizione (5 min)
-  3. Identificazione interessi comuni (5 min)
-  4. Brainstorming soluzioni (10 min)
-  5. Decisione facilitatore (5 min)
-
-**Fase 3: Executive Decision (72h)**
-- Se Fase 2 fallisce, escalation a decisore finale:
-  - Conflitto tecnico → Elena (Tech Lead)
-  - Conflitto scope/priorità → Giovanni (Sponsor)
-  - Conflitto interpersonale → HR
-- Decisione è **finale e non appellabile**
-- Team si allinea ("disagree and commit")
-
-**Documentazione**: Conflitti di livello 2-3 vengono documentati su Confluence (Issue Log) per retrospective.
+Il processo di risoluzione segue tre fasi progressive. Nella prima fase, che dura al massimo 24 ore, le parti coinvolte parlano direttamente tra loro senza intermediari, in un setting privato via Zoom o in presenza. L'obiettivo è risolv ere il conflitto alla fonte: statisticamente l'80% dei conflitti si risolvono a questo livello. Se la discussione diretta non porta a una soluzione, si passa alla seconda fase di mediazione facilitata entro 48 ore. Marco o Elena facilitano un meeting strutturato di 30 minuti dove prima la parte A espone la propria posizione per 5 minuti, poi la parte B fa lo stesso, si identificano gli interessi comuni per altri 5 minuti, si fa brainstorming di possibili soluzioni per 10 minuti, e infine il facilitatore prende una decisione negli ultimi 5 minuti. Se anche questa fase fallisce, entro 72 ore dall'inizio del conflitto si procede con la terza fase di decisione esecutiva. L'escalation va al decisore appropriato: Elena per conflitti tecnici, Giovanni per conflitti di scope o priorità, HR per conflitti interpersonali. La decisione presa a questo livello è finale e non appellabile, e il team deve allinearsi. I conflitti che raggiungono la fase 2 o 3 vengono documentati su Confluence nell'Issue Log per essere discussi in retrospective.
 
 ---
 
-### 4. Brainstorming Sessions
+### 4. Brainstorming
 
-Il brainstorming è usato per problem solving creativo, design thinking e generazione idee per feature.
+Per l'attività di brainstorming tutte le persone coinvolte si riuniscono in una stanza con una lavagna, oppure utilizzano strumenti digitali come Miro quando qualcuno lavora da remoto. Il brainstorming è utilizzato per problem solving creativo, design thinking e generazione di idee per feature complesse, come ad esempio decidere come visualizzare il bonus Maraffa/Cricca nell'interfaccia, o per affrontare issue senza soluzioni ovvie. È uno strumento prezioso anche durante le Sprint Retrospective quando si cerca di capire cosa migliorare nel processo di lavoro.
 
-#### Quando Usare Brainstorming
+Le sessioni durano tipicamente tra 30 e 45 minuti e seguono un formato strutturato. Un giorno prima della sessione, Marco o Elena convocano il meeting condividendo il topic, il contesto e l'obiettivo, in modo che i partecipanti possano riflettere in anticipo. La preparazione non è richiesta ma è consigliata per aumentare la qualità del contributo. La sessione vera e propria inizia con un warm-up di 5 minuti, un icebreaker per stimolare la creatività, come chiedere a tutti di descrivere il gioco Maraffa in tre parole non tecniche.
 
-- Progettazione nuove feature complesse (es. "Come visualizzare Maraffa/Cricca bonus?")
-- Problem solving per issue senza soluzione ovvia
-- Sprint Retrospective (cosa migliorare)
-- Design thinking per UX miglioramenti
+Segue la fase di divergent thinking della durata di 15 minuti, dove l'obiettivo è generare il maggior numero possibile di idee. Durante questa fase valgono regole precise: nessuna critica è permessa perché nessuna idea è stupida, si privilegia la quantità sulla qualità, si incoraggia a costruire sulle idee altrui dicendo "Yes, and..." invece di "Yes, but...", e le idee stravaganti sono benvenute. Il facilitatore, tipicamente Marco, tiene il tempo e incoraggia i membri più silenziosi a partecipare, mentre uno scribe (Andrea o Luca) annota tutte le idee su una lavagna fisica o digitale. A turno ognuno riferisce un'idea al responsabile che scrive una parola chiave sulla lavagna, assicurando che tutti abbiano modo di partecipare e sentirsi coinvolti. Questo processo favorisce la creatività e l'originalità, stimolando pensieri divergenti e l'interazione tra diverse prospettive.
 
-#### Formato Sessione (30-45 minuti)
+Nella fase successiva di convergent thinking, che dura altri 15 minuti, si passa dalla generazione alla valutazione. Le idee simili vengono raggruppate usando affinity mapping, poi ogni partecipante ha 3 voti da distribuire (dot voting) per identificare le top 3 idee più promettenti. Gli ultimi 10 minuti sono dedicati all'action plan: per ciascuna delle top 3 idee si assegna un owner Responsible, si definisce il next step (che può essere un proof of concept, uno spike di ricerca, o l'implementazione vera e propria), e si stabilisce una deadline. Al termine della sessione, lo scribe pubblica le note su Confluence entro fine giornata e gli action item vengono aggiunti al Notion Database.
 
-**Pre-Brainstorming** (1 giorno prima):
-- Marco o Elena convoca meeting
-- Condivide topic + contesto + obiettivo
-- Partecipanti riflettono in anticipo (no preparazione richiesta, ma consigliata)
-
-**Durante la Sessione**:
-
-**1. Warm-up** (5 min)
-- Icebreaker per stimolare creatività
-- Esempio: "Descrivete Maraffa in 3 parole non tecniche"
-
-**2. Divergent Thinking** (15 min) - Generare idee
-- **Regole**:
-  - No criticism (nessuna idea è stupida)
-  - Quantity over quality (più idee = meglio)
-  - Build on others' ideas ("Yes, and..." invece di "Yes, but...")
-  - Wild ideas welcome
-- **Facilitatore** (Marco): Time-keep + incoraggia silenti a partecipare
-- **Scribe** (Andrea o Luca): Annota tutte le idee su whiteboard/Miro
-
-**3. Convergent Thinking** (15 min) - Valutare e selezionare
-- Raggruppare idee simili (affinity mapping)
-- Votazione: ogni partecipante ha 3 voti (dot voting)
-- Identificare top 3 idee
-
-**4. Action Plan** (10 min) - Trasformare in azioni
-- Top 3 idee → assegnare owner (Responsible)
-- Definire next step (POC, spike, research, implementation)
-- Deadline next step
-
-**Post-Brainstorming**:
-- Scribe pubblica note su Confluence entro EOD
-- Action item aggiunti a Notion Database
-
-#### Tecniche di Brainstorming
-
-**Tecnica 1: Round Robin**
-- Giro di tavolo: ognuno propone 1 idea a turno
-- Utile per coinvolgere introversi
-
-**Tecnica 2: Brainwriting (6-3-5)**
-- 6 persone, 3 idee ciascuno, 5 minuti
-- Passano foglio al vicino → leggono idee altrui → aggiungono 3 varianti
-- Risultato: 108 idee in 30 minuti
-
-**Tecnica 3: Crazy 8s** (per UI/UX)
-- 8 minuti, 8 sketch rapidi di soluzioni
-- Utile per Luca (Designer) quando progetta interfacce
+Il team utilizza diverse tecniche di brainstorming a seconda del contesto. La tecnica Round Robin prevede un giro di tavolo dove ognuno propone un'idea a turno, ed è particolarmente utile per coinvolgere i membri più introversi. Il Brainwriting 6-3-5 coinvolge 6 persone che scrivono 3 idee ciascuno in 5 minuti, poi passano il foglio al vicino che legge le idee altrui e aggiunge 3 varianti: il risultato è un totale di 108 idee in soli 30 minuti. Per problemi di UI/UX, Luca utilizza spesso la tecnica Crazy 8s, che consiste nel produrre 8 sketch rapidi di soluzioni in 8 minuti, forzando la creatività attraverso il vincolo temporale. Le idee raccolte vengono poi valutate e raffinate, permettendo di selezionare le soluzioni più promettenti per ulteriori sviluppi.
 
 ---
 
-### 5. Team Meetings Management
+### 5. Team Meetings
 
-Gestiamo 5 tipologie di meeting ricorrenti + meeting ad-hoc. Ogni meeting ha regole chiare per efficienza.
+Sono previste riunioni frequenti per garantire coordinamento e allineamento continuo tra i membri del team. Il progetto MaraffaOnline adotta cinque tipologie di meeting ricorrenti, ciascuna con un formato e obiettivi specifici, oltre a meeting ad-hoc convocati quando necessario.
 
-#### Meeting Tipologia 1: Daily Standup
+Il Daily Standup è il cuore della comunicazione quotidiana. Si svolge ogni giorno lavorativo dalle 09:00 alle 09:15, con una durata fissa di 15 minuti esatti. Partecipano tutti i membri del team interno: Marco, Elena, Sara, Luca e Andrea. Il meeting si tiene in piedi per mantenere la brevità, ed è possibile partecipare via Zoom per chi lavora da remoto. Ogni persona risponde a tre domande in massimo 2 minuti: cosa ho fatto ieri (con focus sui task completati), cosa farò oggi (con un commitment specifico), e ho blocker che mi impediscono di procedere. Ad esempio, Sara potrebbe dire "Ieri ho completato l'API per la creazione della lobby con test coverage al 95%. Oggi inizio l'API per il join della lobby, stimo 4 ore. Non ho blocker". Il meeting inizia puntualmente alle 09:00 e chi arriva tardi perde il turno. Durante lo standup non si fa problem solving: i problemi vengono parcheggiati e risolti dopo con le sole persone coinvolte. Marco facilita il meeting tenendo il tempo e annotando i blocker per il follow-up immediato post-standup con Responsible e Accountable. Alla fine, lo stato dei task viene aggiornato sul Notion Database.
 
-**Frequenza**: Ogni giorno lavorativo, 09:00-09:15 (15 min esatti)
-**Partecipanti**: Team interno (MV, ER, SB, LM, AC)
-**Format**: In piedi (standing) per mantenere brevità, Zoom se qualcuno remoto
+Lo Sprint Planning si tiene il primo lunedì di ogni sprint, quindi ogni due settimane, dalle 09:00 alle 10:30 per una durata totale di un'ora e mezza. Partecipa tutto il team interno, con Giovanni che può unirsi opzionalmente se vuole dare input sulle priorità. L'obiettivo è selezionare le user stories dal Product Backlog per il prossimo sprint. Il meeting inizia con la definizione dello Sprint Goal in 10 minuti da parte di Marco ed Elena: per esempio, "Completare Backend Auth + POC Socket.IO" per lo Sprint 3. Segue una review del backlog di 15 minuti dove Marco presenta le top user stories già prioritizzate secondo la matrice MoSCoW e ne legge i criteri di accettazione. La parte centrale del meeting, 30 minuti, è dedicata alla stima delle story tramite Planning Poker: il team assegna story points usando la scala Fibonacci (1, 2, 3, 5, 8, 13, 21) alle user stories non ancora stimate. Nei successivi 20 minuti Marco ed Elena selezionano le stories che entreranno nello Sprint Backlog, con un commitment tipicamente di 40 story points basato sulla velocity storica, verificando che lo sprint goal sia raggiungibile. Segue il task breakdown di 15 minuti dove ogni user story viene scomposta in task tecnici di durata inferiore al giorno e si assegnano i Responsible, chiedendo prima volontari e solo poi assegnando i task rimanenti. Gli ultimi 10 minuti sono dedicati alla review dei rischi specifici dello sprint, come dipendenze esterne o assenze programmate. Il meeting produce due output: lo Sprint Backlog definito su Notion Database e lo Sprint Goal pubblicato su Confluence e Slack.
 
-**Struttura** (3 domande per persona, max 2 min/persona):
-1. **Cosa ho fatto ieri?** (focus su task completati)
-2. **Cosa farò oggi?** (commitment specifico)
-3. **Ho blocker?** (impedimenti che richiedono aiuto)
+La Sprint Review si tiene l'ultimo venerdì di ogni sprint dalle 14:00 alle 15:00. Partecipa il team interno più Giovanni in modo obbligatorio e Francesca quando si dimostrano funzionalità legate alle regole del gioco. L'obiettivo è mostrare l'increment completato e raccogliere feedback dallo stakeholder. Marco apre con un recap di 5 minuti sullo sprint goal, confrontando gli story points committed con quelli effettivamente completati e mostrando il trend della velocity. La parte centrale, 30 minuti, è la demo dal vivo delle feature completate secondo la "Definition of Done", condotta dal developer che le ha implementate. Ad esempio, nello Sprint 4 Sara potrebbe dimostrare le API della lobby funzionanti usando Postman. Seguono 15 minuti di feedback da Giovanni e Francesca con commenti, domande e suggerimenti, al termine dei quali Giovanni decide se accettare i deliverable o richiedere modifiche. Gli ultimi 10 minuti sono dedicati all'aggiustamento del Product Backlog da parte di Marco, con re-prioritizzazione basata sui feedback ricevuti e identificazione di eventuali nuove user stories. È importante che vengano dimostrate solo feature completamente "Done", no work in progress, e si preferisce mostrare software funzionante piuttosto che slide. Se Giovanni richiede modifiche sostanziali allo scope, si attiva il Change Request Process formale. Il meeting produce due output: l'accettazione o il rifiuto dei deliverable dello sprint e l'aggiornamento del Product Backlog.
 
-**Regole**:
-- No problem solving durante standup (parcheggiare e risolvere dopo)
-- No status report prolungati (dettagli in Project Status Meeting)
-- Inizia puntuale alle 09:00 (chi arriva tardi perde il turno)
-- Facilitatore (Marco): time-keep + nota blocker per follow-up
+Immediatamente dopo, lo stesso venerdì dalle 15:00 alle 16:00, si tiene la Sprint Retrospective. Questo è un safe space riservato esclusivamente al team interno, senza Giovanni né Francesca. L'obiettivo è il miglioramento continuo: capire cosa ha funzionato e cosa può essere migliorato nel processo di lavoro. Si utilizza il formato "Start/Stop/Continue". Il meeting inizia con un warm-up di 5 minuti, un icebreaker come chiedere a tutti di valutare l'energia dello sprint da 1 a 10. Seguono 10 minuti di riflessione individuale in silenzio dove ognuno scrive su post-it fisici o digitali su Miro tre categorie di osservazioni: cosa dovremmo iniziare a fare (Start), cosa dovremmo smettere di fare (Stop), e cosa funziona e dobbiamo mantenere (Continue). Nella fase di sharing and grouping di 15 minuti, ogni persona presenta i propri post-it in un minuto mentre Marco facilita raggruppando le osservazioni per temi comuni. La prioritizzazione dura 10 minuti e usa il dot voting: ognuno vota i tre issues più importanti da risolvere, identificando collettivamente i top 2 action items per il prossimo sprint. Gli ultimi 15 minuti sono dedicati all'action plan: si definiscono azioni concrete per i top 2 issues, si assegna un owner Responsible e una deadline. Ad esempio, un action item potrebbe essere "Andrea crea template PR checklist su GitLab entro fine settimana". Si chiude con 5 minuti di meta-feedback sulla retrospettiva stessa per migliorare anche questo processo. Vale la "Vegas Rule": ciò che viene detto in retrospective rimane in retrospective e non viene escalato a Giovanni, a meno di problemi gravi come harassment. Il meeting produce 2 action items concreti per miglioramento processo e note pubblicate su Confluence accessibili solo al team interno.
 
-**Output**:
-- Blocker list → risoluzione immediata post-standup (Responsible + Accountable)
-- Update Notion Database task status
+Il Project Status Meeting si tiene ogni venerdì dalle 16:00 alle 17:00 ed è il punto di controllo settimanale con lo sponsor. Marco presenta, Giovanni partecipa obbligatoriamente, Elena co-presenta la parte tecnica, e altri membri possono essere invitati se necessario. L'obiettivo è fornire un update esecutivo sulla salute complessiva del progetto analizzando scope, time, budget, quality e risks. Marco apre con un executive summary di 5 minuti mostrando lo status generale usando il sistema stoplight (Verde/Giallo/Rosso) e il progresso verso le milestone. Seguono quattro sezioni di 10 minuti ciascuna: scope status con feature completate versus pianificate ed eventuali change request ricevute, schedule status con il progresso percentuale sul critical path del Gantt e forecast sulle milestone, budget status con il cash flow corrente versus pianificato e proiezione del surplus o deficit a fine progetto, e quality & risks presentati da Elena con trend dei bug aperti e chiusi, test coverage percentuale e top 3 rischi attuali con status della mitigazione. I successivi 10 minuti sono dedicati alle decisioni necessarie dove Marco e Giovanni discutono item che richiedono approvazione dello sponsor o escalation di conflitti critici. Si chiude con 5 minuti di Q&A da parte di Giovanni. Il meeting produce uno Stoplight Report pubblicato su Confluence e la documentazione delle decisioni prese da Giovanni. Il report usa un formato tabellare chiaro: ogni area (Scope, Schedule, Budget, Quality, Risks) ha un colore (verde, giallo o rosso) e una nota esplicativa.
 
-**Esempio Standup Update** (Sara):
-> "Ieri: completato API creazione lobby, test coverage 95%. Oggi: inizio API join lobby, stimo 4h. Blocker: nessuno."
-
-#### Meeting Tipologia 2: Sprint Planning
-
-**Frequenza**: Primo lunedì di ogni sprint (ogni 2 settimane), 09:00-10:30 (1.5h)
-**Partecipanti**: Team interno + Giovanni (opzionale, se vuole input su priorità)
-
-**Obiettivo**: Selezionare user stories dal Product Backlog per il prossimo sprint
-
-**Agenda**:
-1. **Sprint Goal Definition** (10 min) - Marco + Elena
-   - Esempio Sprint 3: "Completare Backend Auth + POC Socket.IO"
-
-2. **Backlog Review** (15 min) - Marco
-   - Top user stories dal Product Backlog (già prioritizzate MoSCoW)
-   - Lettura acceptance criteria
-
-3. **Story Estimation** (30 min) - Team
-   - Planning Poker per user stories non stimate
-   - Fibonacci: 1, 2, 3, 5, 8, 13, 21 story points
-
-4. **Sprint Backlog Selection** (20 min) - Marco + Elena
-   - Commitment: 40 story points (velocity storica)
-   - Verificare che sprint goal sia achievable
-
-5. **Task Breakdown** (15 min) - Team
-   - Ogni user story → task tecnici (< 1 giorno)
-   - Assegnazione Responsible (volontari prima, assegnazione dopo)
-
-6. **Sprint Risks Review** (10 min) - Marco
-   - Rischi specifici dello sprint (es. dipendenze esterne, assenze)
-
-**Output**:
-- Sprint Backlog definito su Notion Database
-- Sprint Goal pubblicato su Confluence + Slack
-
-#### Meeting Tipologia 3: Sprint Review
-
-**Frequenza**: Ultimo venerdì di ogni sprint, 14:00-15:00 (1h)
-**Partecipanti**: Team interno + Giovanni (mandatory) + Francesca (se demo regole gioco)
-
-**Obiettivo**: Demo increment + feedback stakeholder
-
-**Agenda**:
-1. **Sprint Recap** (5 min) - Marco
-   - Sprint goal, story points committed vs completati
-   - Velocity trend
-
-2. **Demo Increment** (30 min) - Developer che ha implementato
-   - Live demo di feature completate ("Definition of Done")
-   - Esempio Sprint 4: Sara mostra API lobby funzionanti (Postman demo)
-
-3. **Feedback Stakeholder** (15 min) - Giovanni + Francesca
-   - Commenti, domande, suggerimenti
-   - Acceptance: Giovanni approva o richiede modifiche
-
-4. **Product Backlog Adjustment** (10 min) - Marco
-   - Re-prioritizzazione basata su feedback
-   - Nuove user stories identificate
-
-**Regole**:
-- Demo SOLO feature "Done" (no WIP)
-- No slides, only working software (o mockup Figma per UI)
-- Giovanni può richiedere change (→ Change Request Process se impatta scope)
-
-**Output**:
-- Acceptance/Rejection di deliverable sprint
-- Updated Product Backlog
-
-#### Meeting Tipologia 4: Sprint Retrospective
-
-**Frequenza**: Ultimo venerdì di ogni sprint, 15:00-16:00 (1h)
-**Partecipanti**: Team interno SOLO (no Giovanni, no Francesca) - safe space
-
-**Obiettivo**: Continuous improvement - cosa migliorare nel processo
-
-**Agenda** (formato "Start/Stop/Continue"):
-1. **Warm-up** (5 min) - Icebreaker
-   - Esempio: "Rate your sprint energy: 1-10"
-
-2. **Individual Reflection** (10 min) - Silenzio
-   - Ognuno scrive post-it (fisici o Miro digitali):
-     - **Start**: Cosa dovremmo iniziare a fare?
-     - **Stop**: Cosa dovremmo smettere di fare?
-     - **Continue**: Cosa funziona e dobbiamo mantenere?
-
-3. **Sharing & Grouping** (15 min) - Team
-   - Ognuno presenta i propri post-it (1 min/persona)
-   - Facilitatore (Marco) raggruppa per temi
-
-4. **Prioritization** (10 min) - Team
-   - Dot voting: ognuno vota top 3 issues da risolvere
-   - Identificare top 2 action items per prossimo sprint
-
-5. **Action Plan** (15 min) - Team
-   - Definire azioni concrete per top 2 issues
-   - Assegnare owner (Responsible)
-   - Esempio Action Item: "Andrea crea template PR checklist su GitLab (Owner: AC, Deadline: fine settimana)"
-
-6. **Retrospective of Retrospective** (5 min) - Team
-   - Meta-feedback: come migliorare la retrospettiva stessa?
-
-**Output**:
-- 2 action items per miglioramento processo
-- Note pubblicate su Confluence (accessibili solo team interno)
-
-**Regola "Vegas Rule"**: What happens in retrospective, stays in retrospective (no escalation a Giovanni se qualcuno critica processo, a meno di issue gravi tipo harassment)
-
-#### Meeting Tipologia 5: Project Status Meeting (Weekly)
-
-**Frequenza**: Ogni venerdì, 16:00-17:00 (1h)
-**Partecipanti**: Marco (presenter) + Giovanni (mandatory) + Elena (co-presenter) + altri se richiesti
-
-**Obiettivo**: Update esecutivo su salute progetto (scope, time, budget, quality, risks)
-
-**Agenda**:
-1. **Executive Summary** (5 min) - Marco
-   - Overall project status: Green/Yellow/Red (stoplight)
-   - Sprint corrente + progress verso milestone
-
-2. **Scope Status** (10 min) - Marco
-   - Feature completate vs pianificate
-   - Change requests ricevute (se any)
-
-3. **Schedule Status** (10 min) - Marco
-   - Gantt progress: % complete su critical path
-   - Milestone forecast (on time / at risk / delayed)
-   - Ritardi e recovery plan
-
-4. **Budget Status** (10 min) - Marco
-   - Cash flow: spese correnti vs pianificate
-   - Burn rate mensile
-   - Proiezione surplus/deficit fine progetto
-
-5. **Quality & Risks** (10 min) - Elena
-   - Bugs aperti/chiusi (trend)
-   - Test coverage (%)
-   - Top 3 rischi attuali + mitigation status
-
-6. **Decisions Needed** (10 min) - Marco + Giovanni
-   - Item che richiedono decisione sponsor
-   - Escalation conflict/issue se necessario
-
-7. **Q&A** (5 min) - Giovanni
-
-**Output**:
-- **Stoplight Report** pubblicato su Confluence
-- Decisioni Giovanni documentate (approvazioni, rejection, defer)
-
-**Format Report**:
-| Area | Status | Notes |
-|------|--------|-------|
-| Scope | 🟢 Green | Tutte feature Must Have on track |
-| Schedule | 🟡 Yellow | Frontend Tavolo da Gioco 3 giorni indietro, recuperabile |
-| Budget | 🟢 Green | Speso €8.200/€8.650 Mese 1 (sotto budget) |
-| Quality | 🟢 Green | Test coverage 87%, bug critici 0 |
-| Risks | 🟡 Yellow | Rischio latenza WebSocket in monitoring |
-
-#### Meeting Ad-Hoc
-
-**Trigger**: Urgency (blocker critico, escalation, decisione strategica)
-**Convocazione**: Marco (PM) o Elena (Tech Lead)
-**Timeline**: Entro 24h da identificazione urgenza
-**Durata**: Max 30 min (focus ristretto)
-
-**Esempio**: "Hetzner server down per manutenzione non pianificata → Meeting emergenza per disaster recovery plan"
+In casi di urgenza vengono convocati meeting ad-hoc da Marco o Elena, tipicamente quando emerge un blocker critico, serve un'escalation immediata, o va presa una decisione strategica urgente. Questi meeting vengono organizzati entro 24 ore dall'identificazione dell'urgenza e durano al massimo 30 minuti con focus ristretto al problema specifico. Ad esempio, se il server Hetzner va giù per manutenzione non pianificata, si convoca immediatamente un meeting di emergenza per attivare il disaster recovery plan. Inoltre, sono previsti dei review meeting anche in concomitanza con il raggiungimento di una milestone importante. Nel caso si riscontrino problemi è consigliato indire una riunione con solamente le persone coinvolte, evitando di coinvolgere l'intero team quando non necessario.
 
 ---
 
-### 6. Change Management Process
+### 6. Change Management
 
-I **Change Request** sono richieste di modifica a scope, timeline o budget già approvati. Richiedono gestione formale per evitare scope creep.
+Le richieste di modifica allo scope, alla timeline o al budget già approvati richiedono una gestione formale per evitare il temuto scope creep che può compromettere il successo del progetto. Nel progetto MaraffaOnline si è adottato un processo strutturato in cinque passi che garantisce valutazione oggettiva e trasparenza nelle decisioni.
 
-#### Quando Si Attiva Change Request
+Un Change Request si attiva in quattro situazioni: quando lo stakeholder richiede una nuova feature non prevista nel Project Overview Statement, quando richiede modifiche a feature già approvate che vanno oltre semplici bug fix, quando il team identifica un'impossibilità tecnica che richiede aggiustamenti allo scope, o quando un evento esterno impatta il progetto come un ipotetico cambio del regolamento ufficiale del Maraffa. Ad esempio, se Giovanni richiede l'integrazione con Facebook per la condivisione dei risultati delle partite, questo attiverebbe il processo formale.
 
-**Trigger**:
-- Stakeholder richiede nuova feature non nel POS
-- Stakeholder richiede modifica feature già approvata (oltre bug fix)
-- Team identifica impossibilità tecnica che richiede scope adjustment
-- Evento esterno impatta progetto (es. cambio regolamento Maraffa ufficiale)
+Il primo step è la submission: il richiedente compila un Change Request Form disponibile su Confluence indicando il titolo della modifica, una descrizione dettagliata, la motivazione business che spiega perché è importante, e la priorità percepita tra Low, Medium, High o Critical. Il secondo step è l'impact analysis condotta da Marco e Elena in 2-3 giorni lavorativi (esclusi weekend e festività; per Change Request ricevute nel weekend o in giorni festivi, il conteggio parte dal primo giorno lavorativo successivo). Analizzano l'impatto su cinque dimensioni: lo scope identificando quali feature andrebbero aggiunte, modificate o rimosse, il time calcolando i giorni aggiuntivi e l'impatto sul critical path, il budget stimando i costi extra per team, tools o licenze, la quality valutando l'impatto sui test e i rischi aggiuntivi, e le resources determinando se serve expertise esterna. L'output di questa analisi è un Project Impact Statement che presenta la richiesta di change, l'analisi dettagliata degli impatti, tre opzioni possibili come accettare ed estendere la timeline, differire a versione successiva o rifiutare completamente, e la raccomandazione del Project Manager con motivazione e benefici di ciascuna scelta.
 
-**Esempio Change Request**:
-> "Giovanni richiede integrazione con Facebook per condivisione risultati partite."
-
-#### Processo Change Request in 5 Step
-
-**Step 1: Submission (Chi: Richiedente)**
-- Compilare **Change Request Form** (template su Confluence)
-- Campi richiesti:
-  - Titolo change
-  - Descrizione dettagliata
-  - Motivazione business (perché è importante)
-  - Priorità percepita (Low/Medium/High/Critical)
-
-**Step 2: Impact Analysis (Chi: PM + Tech Lead, Tempo: 2-3 giorni)**
-- Marco + Elena analizzano impatto su:
-  - **Scope**: quali feature aggiunte/modificate/rimosse
-  - **Time**: giorni aggiuntivi, impatto critical path
-  - **Budget**: costi extra (team, tools, licenze)
-  - **Quality**: impatto su test, rischi aggiuntivi
-  - **Resources**: serve expertise esterna?
-
-**Output**: **Project Impact Statement** (template):
-
-```markdown
-## Project Impact Statement - Change Request #12
-
-**Change**: Integrazione Facebook condivisione risultati
-
-**Impact Analysis**:
-- **Scope**: +1 feature (Social Sharing), dipendenza Facebook SDK
-- **Time**: +8 giorni (implementazione 5gg + test 3gg)
-- **Budget**: +€150 (nessun costo SDK, solo effort team)
-- **Quality**: Rischio: Facebook API deprecation, richiede monitoring
-- **Resources**: Sara (5gg) + Luca (3gg)
-
-**Opzioni**:
-A. Accept → Estendere timeline 8 giorni (nuovo lancio 23/03/2026)
-B. Defer → Implementare in v1.1 post-lancio
-C. Reject → Non implementare (bassa priorità per MVP)
-
-**Raccomandazione PM**: Opzione B (Defer to v1.1)
-- Motivazione: MVP già completo senza social sharing, feature nice-to-have non Must Have
-- Beneficio: Manteniamo timeline 15/03/2026
-```
-
-**Step 3: Decision (Chi: Sponsor, Tempo: 1 settimana)**
-- Marco presenta Project Impact Statement a Giovanni
-- Giovanni decide: Accept / Defer / Reject
-- Se Accept → rinegoziare contratto se impatta budget/timeline (clausola contrattuale)
-
-**Step 4: Implementation (Se Accept)**
-- Aggiornare POS, WBS, Gantt, Product Backlog
-- Comunicare change a tutto il team (Slack + Project Status Meeting)
-- Assegnare Responsible per implementazione
-
-**Step 5: Tracking**
-- Change Request tracciato su Confluence (Change Log)
-- Status: Submitted → Under Review → Approved/Deferred/Rejected → Implemented/Closed
+Il terzo step è la decisione dello Sponsor. Marco presenta il Project Impact Statement a Giovanni che ha una settimana per decidere se accettare, defer o rifiutare. Se accetta e la modifica impatta significativamente budget o timeline, si rinegozia il contratto secondo le clausole contrattuali. Il quarto step, che si attiva solo se la richiesta è accettata, è l'implementation: si aggiornano tutti i documenti di progetto come POS, WBS, Gantt e Product Backlog, si comunica il change a tutto il team tramite Slack e nel successivo Project Status Meeting, e si assegna un Responsible per l'implementazione. Il quinto e ultimo step è il tracking: ogni Change Request viene tracciato su Confluence in un Change Log con status che evolve da Submitted a Under Review, poi Approved o Deferred o Rejected, e infine Implemented o Closed. Questo approccio strutturato garantisce che ogni modifica sia valutata oggettivamente e che le decisioni siano prese con piena consapevolezza delle conseguenze sul triangolo scope-time-budget.
 
 ---
 
-### 7. Communication Protocols
+### 7. Communication
 
-**Golden Rules**:
-1. **Asynchronous First**: Preferire Slack/email a meeting, salvo urgency
-2. **Transparency**: Tutte le decisioni su Confluence (single source of truth)
-3. **Response SLA**:
-   - 🔴 Urgent (blocker): < 2h
-   - 🟠 High (rallenta lavoro): < 4h
-   - 🟡 Medium: < 1 giorno
-   - 🟢 Low: < 3 giorni
+Per la comunicazione del progetto MaraffaOnline si seguono tre regole d'oro. Prima regola: preferire la comunicazione asincrona tramite Slack o email ai meeting, salvo casi di urgenza. Seconda regola: garantire trasparenza totale documentando tutte le decisioni importanti su Confluence che funge da single source of truth. Terza regola: rispettare gli SLA di risposta stabiliti: le richieste urgenti che bloccano il lavoro richiedono risposta entro 2 ore, quelle ad alta priorità che rallentano il lavoro entro 4 ore, le richieste di media priorità entro 1 giorno, e quelle a bassa priorità entro 3 giorni.
 
-#### Slack Channels
+Il team utilizza quattro canali Slack dedicati. Il canale general è per comunicazioni generali del team, celebrazioni e messaggi non urgenti. Il canale daily raccoglie gli aggiornamenti del daily standup, sia tramite Slackbot automatizzato che con backup scritto in caso di assenza. Il canale dev è riservato alle discussioni tecniche, alert di code review e notifiche di deploy. Il canale urgent è riservato esclusivamente ai blocker critici e tutti i membri devono leggerlo entro 2 ore. L'etiquette di Slack prevede di usare i thread per discussioni lunghe per evitare spam nel canale principale, di taggare persone solo quando si richiede un'azione diretta specifica, di evitare mention di massa come at-channel o at-here se non in caso di vera urgenza, e di usare emoji reactions per acknowledge rapido: la spunta verde significa "visto e ok", gli occhi significano "sto guardando".
 
-- **#general**: Comunicazioni generali team, celebrazioni, non-urgent
-- **#daily**: Standup updates (automatizzato Slackbot + backup scritto se assenza)
-- **#dev**: Discussioni tecniche, code review alerts, deploy notifications
-- **#urgent**: Solo per blocker critici (tutti devono leggere entro 2h)
+L'email viene utilizzata solo per comunicazioni formali a Giovanni come il monthly cash flow report o le milestone approval, per la submission di Change Request, per contratti e approvazioni legali, e per comunicazioni con enti esterni come Hetzner o fornitori. Ogni email segue un formato standard con subject che include il progetto, una categoria come STATUS_UPDATE o MILESTONE o CHANGE_REQUEST o APPROVAL_NEEDED o RISK_ALERT, e il titolo specifico. Il body include contesto in una frase, situazione dettagliata, azione richiesta se presente, e deadline se applicabile.
 
-**Slack Etiquette**:
-- Usare thread per discussioni lunghe (no spam channel principale)
-- Taggare persone solo se richiesta azione diretta (@sara @luca)
-- No @channel/@here se non urgency vera
-- Usare emoji reactions per acknowledge (✅ = "visto e ok", 👀 = "sto guardando")
-
-#### Email
-
-**Quando usare email** (invece di Slack):
-- Comunicazioni formali a Giovanni (monthly cash flow report, milestone approval)
-- Change Request submission
-- Contratti, approvazioni legali
-- Comunicazioni esterne (Hetzner, fornitori)
-
-**Email Standard Format**:
-```
-Subject: [MaraffaOnline] [Categoria] Titolo
-
-Categoria = {STATUS_UPDATE, MILESTONE, CHANGE_REQUEST, APPROVAL_NEEDED, RISK_ALERT}
-
-Body:
-- Context (1 frase)
-- Situation (dettagli)
-- Action needed (se any)
-- Deadline (se any)
-```
-
-#### Confluence Documentation
-
-**Cosa documentare su Confluence**:
-- Tutti gli allegati PM (Scoping, Planning, Launching, Monitoring, Closing)
-- Meeting notes (Sprint Review, Retrospective, Status Meeting)
-- Decisioni tecniche importanti (Architecture Decision Records - ADR)
-- Change Request log
-- Issue log (problemi ricorrenti)
-
-**Update Frequency**:
-- Meeting notes: entro EOD stesso giorno meeting
-- Status reports: weekly (venerdì post-Status Meeting)
-- Change log: real-time (quando cambiamento approvato)
+Tutta la documentazione importante viene archiviata su Confluence. Questo include tutti gli allegati di Project Management delle fasi Scoping, Planning, Launching, Monitoring e Closing, le note di tutti i meeting come Sprint Review, Retrospective e Status Meeting, le decisioni tecniche importanti documentate come Architecture Decision Records, il Change Request log, e l'Issue log dei problemi ricorrenti. La frequenza di aggiornamento varia: le note dei meeting vengono pubblicate entro fine giornata dello stesso meeting, i status report vengono pubblicati settimanalmente il venerdì dopo il Project Status Meeting, e il change log viene aggiornato in real-time quando un cambiamento viene approvato. Questo sistema di comunicazione garantisce che le informazioni siano sempre accessibili, tracciate e che nulla vada perso nel tempo.
 
 ---
 

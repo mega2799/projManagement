@@ -58,7 +58,7 @@
 ### 3. Visione del Progetto MaraffaOnline (15:15 - 15:45)
 - **Marco Venturi** presenta la visione di PlayHeritage Labs
 - Obiettivo: piattaforma web e mobile per giocare a Maraffa in multiplayer
-- Timeline prevista: 6 mesi (15/09/2025 - 15/03/2026)
+- Timeline prevista: 7 mesi (15/10/2025 - 15/05/2026)
 - Budget disponibile: €25.000
 
 **Pausa caffè (15:45 - 16:00)**
@@ -77,9 +77,9 @@
 ### 5. Rischi e Vincoli (16:30 - 16:45)
 Identificazione preliminare dei rischi principali:
 - **Rischio tecnico alto**: sincronizzazione real-time tra 4 giocatori
-- **Rischio di budget**: €25.000 è un budget limitato per 6 mesi di sviluppo
+- **Rischio di budget**: €25.000 è un budget limitato per 7 mesi di sviluppo
 - **Rischio di scope creep**: necessità di prioritizzare le features
-- **Vincolo temporale**: la community desidera lanciare la piattaforma entro marzo 2026
+- **Vincolo temporale**: la community desidera lanciare la piattaforma entro maggio 2026
 
 ### 6. Modalità di Lavoro e Comunicazione (16:45 - 16:55)
 Accordi su:
@@ -99,7 +99,7 @@ Accordi su:
 
 | # | Decisione | Responsabile | Scadenza |
 |---|-----------|--------------|----------|
-| 1 | Approva il budget di €25.000 e la durata di 6 mesi | Giovanni Marchetti | Approvato |
+| 1 | Approva il budget di €25.000 e la durata di 7 mesi | Giovanni Marchetti | Approvato |
 | 2 | Prioritizzare versione web responsive prima dell'app mobile nativa | Marco Venturi | Approvato |
 | 3 | Definire contratto formale con milestones e pagamenti scaglionati | Marco Venturi | 20/09/2025 |
 | 4 | Identificare 20 beta tester dalla community per user testing | Francesca Giuliani | 30/09/2025 |
@@ -137,7 +137,7 @@ Accordi su:
 - Il progetto sarà utilizzato come caso di studio per la tesi di dottorato di Marco Venturi
 
 ### Preoccupazioni Emerse
-- Budget limitato (€25.000) per un progetto di 6 mesi con 5 persone nel team
+- Budget limitato (€25.000) per un progetto di 7 mesi con 5 persone nel team
 - Incertezza tecnica sulla gestione del real-time multiplayer (esperienza limitata del team)
 - Necessità di bilanciare qualità e velocità di sviluppo
 
