@@ -40,9 +40,9 @@ Ho creato 3 file CSV pronti per l'importazione in Excel:
 
 ### Passo 4: Formattazione Consigliata
 
-**Titolo**: "Cash Flow MaraffaOnline - 6 Mesi (Ott 2025 - Mar 2026)"
+**Titolo**: "Cash Flow MaraffaOnline - 7 Mesi (Ott 2025 - Mag 2026)"
 
-**Asse X**: Mese (Mese 0, Mese 1, ..., Mese 5)
+**Asse X**: Mese (Mese 0, Mese 1, ..., Mese 7)
 
 **Asse Y Primario (Sinistra)**: "Importo (€)" - Range 0 a 14.000
 
@@ -207,7 +207,7 @@ Usa la palette coerente con il progetto MaraffaOnline (vedi `Scoping/Allegato2.7
 
 **Insights da evidenziare nella relazione**:
 
-> "Il grafico del Cash Flow evidenzia 3 momenti critici di inflow (Mese 0, 2, 4) corrispondenti ai pagamenti del committente. Il saldo cumulativo (linea arancione) mostra un andamento positivo costante, con un minimo di €2.300 nel Mese 3 (Gen 2026), garantendo sempre liquidità sufficiente per coprire le spese operative. Il surplus finale di €2.250 (9% del budget) fornisce un buffer adeguato per imprevisti e celebrazione del lancio."
+> "Il grafico del Cash Flow evidenzia 3 momenti critici di inflow (Mese 0, 2, 4) corrispondenti ai pagamenti del committente. Il saldo cumulativo (linea arancione) mostra un andamento positivo per tutti i 7 mesi, con un minimo di €2.250 nel Mese 7 (Mag 2026), garantendo sempre liquidità sufficiente per coprire le spese operative anche nella seconda metà del progetto, priva di nuovi inflow. Il surplus finale di €2.250 (9% del budget) fornisce un buffer adeguato per imprevisti e celebrazione del lancio."
 
 ### Grafico Spese per Categoria
 

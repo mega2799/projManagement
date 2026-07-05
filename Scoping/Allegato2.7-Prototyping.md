@@ -1,5 +1,5 @@
 # Allegato 2.7 - Prototyping
-## v.2.0.0 – 2025-09-28 16:00:00
+## v.2.1.0 – 2025-09-28 16:00:00
 
 Il prototyping è un passaggio fondamentale nella fase di Scoping per validare le scelte di design dell'interfaccia utente prima dell'implementazione. Per MaraffaOnline sono state create **due iterazioni** di mockup/wireframe:
 
@@ -26,6 +26,8 @@ Il processo di prototyping ha seguito l'approccio del **co-design con la communi
 ---
 
 ## Schermate Principali Prototipate
+
+> **Nota metodologica.** I mockup descritti in questo allegato sono rappresentati tramite i wireframe testuali (schema ASCII) riportati per ciascuna schermata. I file grafici Figma/PNG citati con il loro nome (`img/mockup-v2-*.png`, ecc.) non sono stati prodotti per questo elaborato accademico: coerentemente con l'indicazione di gestire il progetto senza implementarlo, l'attenzione è sulla gestione del processo di design (workshop, iterazioni, feedback della community) più che sulla realizzazione degli asset UI/UX finali.
 
 ### 1. Homepage / Landing Page
 
@@ -332,9 +334,9 @@ Chat: [...]
 
 ---
 
-## Allegati Grafici
+## Riferimenti ai File Grafici (non prodotti per questo elaborato)
 
-I seguenti file grafici sono disponibili nella cartella `img/`:
+I nomi seguenti indicano come sarebbero stati organizzati i file grafici in un progetto reale; non sono stati generati per questo elaborato accademico. La loro rappresentazione testuale (wireframe ASCII, tabelle feedback, elenco modifiche v1→v2) è quella riportata nelle sezioni precedenti di questo documento:
 
 1. `mockup-v1-homepage.png` (versione iniziale con annotazioni)
 2. `mockup-v2-homepage.png` (versione finale approvata)
@@ -347,8 +349,7 @@ I seguenti file grafici sono disponibili nella cartella `img/`:
 9. `style-guide-maraffaonline.png` (palette colori, tipografia, componenti)
 10. `user-flow-diagram.png` (vedi Allegato 2.10)
 
-**Formato Figma**: Il file sorgente completo è disponibile su Figma:
-`https://figma.com/file/maraffaonline-design-system`
+**Figma**: nella pratica reale il file sorgente sarebbe stato mantenuto su Figma per la collaborazione real-time del team; per questo elaborato non è stato creato un file Figma reale, e non viene quindi riportato alcun link.
 
 ---
 
@@ -356,3 +357,6 @@ I seguenti file grafici sono disponibili nella cartella `img/`:
 **Revisionato da**: Marco Venturi (Project Manager)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 15/10/2025
+
+**Storico revisioni**:
+- **v.2.1.0**: Chiarito esplicitamente che i file grafici (mockup PNG, file Figma) non sono stati prodotti per questo elaborato accademico; la rappresentazione visiva è affidata ai wireframe testuali già presenti nel documento.

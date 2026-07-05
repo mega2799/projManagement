@@ -19,37 +19,16 @@ Questo approccio pragmatico è in linea con le best practice moderne di project 
 
 ## Modelli PM Utilizzati: Panoramica
 
-### 1. Linear/Waterfall
-**Quando**: Requisiti chiari, stabili e ben definiti fin dall'inizio
-**Caratteristiche**:
-- Fasi sequenziali: Analisi → Design → Implementazione → Test → Deploy
-- Documentazione dettagliata upfront
-- Modifiche costose e rare
-- Validazione finale a fine sviluppo
+I quattro modelli adottati nel progetto, con la relativa condizione d'uso:
 
-### 2. Agile Iterativo (Scrum-like)
-**Quando**: Requisiti noti ma necessità di feedback continuo
-**Caratteristiche**:
-- Sprint brevi (2 settimane)
-- Incrementi funzionanti rilasciati regolarmente
-- Demo bi-settimanali al committente
-- Raffinamento continuo basato su feedback
+| Modello | Quando si usa |
+|---------|---------------|
+| **Linear/Waterfall** | Requisiti chiari e stabili fin dall'inizio; fasi sequenziali con documentazione upfront e validazione finale |
+| **Agile Iterativo (Scrum-like)** | Requisiti noti ma con necessità di feedback continuo; sprint di 2 settimane con demo al committente |
+| **Agile Adattivo (Kanban + Spike)** | Alta incertezza tecnica; flusso continuo, prototipazione rapida (spike) e decision point go/no-go |
+| **Incrementale** | Componenti indipendenti rilasciabili in sequenza; prioritizzazione MoSCoW e release graduale |
 
-### 3. Agile Adattivo (Kanban + Spike)
-**Quando**: Alta incertezza tecnica, necessità di sperimentazione
-**Caratteristiche**:
-- Nessuno sprint rigido, flusso continuo
-- Prototipazione rapida (spike tecnici)
-- Pivot frequenti in base ai risultati
-- Decision point espliciti per go/no-go
-
-### 4. Incrementale
-**Quando**: Componenti indipendenti che possono essere sviluppati e rilasciati in sequenza
-**Caratteristiche**:
-- Ogni incremento aggiunge valore standalone
-- Prioritizzazione MoSCoW
-- Release graduale di features
-- Riduzione rischio di incompletezza
+La mappatura di ciascun sottosistema su questi modelli, con la motivazione specifica, è dettagliata nella sezione seguente.
 
 ---
 

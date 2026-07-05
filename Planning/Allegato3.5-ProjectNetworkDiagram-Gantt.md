@@ -1,5 +1,5 @@
 # Allegato 3.5 - Project Network Diagram & Gantt Chart
-## v.1.0.0 – 2025-10-28 15:00:00
+## v.1.1.0 – 2025-10-28 15:00:00
 
 Questo documento descrive la struttura del **Project Network Diagram** (con Critical Path Method) e del **Gantt Chart** per il progetto MaraffaOnline. Gli elementi descritti devono essere visualizzati utilizzando software come Microsoft Project, GanttProject, o ProjectLibre.
 
@@ -79,21 +79,21 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 |----|----------|--------|----|----|---------------|
 | A | Setup Infrastruttura | 10 | 0 | 10 | 0 |
 | B | Backend Auth + Database | 15 | 10 | 25 | 0 |
-| C | Game Engine Foundation | 15 | 10 | 25 | 0 |
+| C | Game Engine Foundation | 15 | 40 | 55 | 30 |
 | D | Backend Gestione Partite | 20 | 25 | 45 | 0 |
-| E | WebSocket Server Setup | 10 | 25 | 35 | 0 |
-| F | Game Engine Regole Core | 25 | 25 | 50 | 0 |
+| E | WebSocket Server Setup | 10 | 75 | 85 | 50 |
+| F | Game Engine Regole Core | 25 | 55 | 80 | 30 |
 | G | Backend Persistenza Stato | 10 | 45 | 55 | 0 |
-| H | Real-Time Eventi | 20 | 35 | 55 | 0 |
-| I | Game Engine Punteggi e Maraffa | 20 | 50 | 70 | 0 |
+| H | Real-Time Eventi | 20 | 85 | 105 | 50 |
+| I | Game Engine Punteggi e Maraffa | 20 | 80 | 100 | 30 |
 | J | Frontend Homepage + Login | 15 | 55 | 70 | 0 |
-| K | Chat + Disconnessioni | 10 | 55 | 65 | 0 |
-| L | Game Engine Testing | 15 | 70 | 85 | 0 |
+| K | Chat + Disconnessioni | 10 | 105 | 115 | 50 |
+| L | Game Engine Testing | 15 | 100 | 115 | 30 |
 | M | Frontend Dashboard + Creazione Stanza | 15 | 70 | 85 | 0 |
-| N | Sistema Amicizie | 15 | 70 | 85 | 50 |
-| O | Integration Testing Game Engine | 10 | 85 | 95 | 30 |
+| N | Sistema Amicizie | 15 | 115 | 130 | 50 |
+| O | Integration Testing Game Engine | 10 | 115 | 125 | 30 |
 | P | Frontend Tavolo da Gioco | 40 | 85 | 125 | 0 |
-| Q | Frontend Profili + Notifiche | 10 | 85 | 95 | 50 |
+| Q | Frontend Profili + Notifiche | 10 | 130 | 140 | 50 |
 | R | Testing End-to-End | 15 | 125 | 140 | 0 |
 | S | UAT + Bug Fixing | 20 | 140 | 160 | 0 |
 | T | Preparazione Lancio | 10 | 160 | 170 | 0 |
@@ -118,16 +118,14 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 9. S - UAT + Bug Fixing (20 giorni)
 10. T - Preparazione Lancio (10 giorni)
 
-**Attività con Float (slack disponibile dopo estensione P a 40gg)**:
-- **N - Sistema Amicizie**: Float = 50 giorni (margine ampio dovuto all'estensione del critical path)
-- **Q - Frontend Profili + Notifiche**: Float = 50 giorni
-- **O - Integration Testing Game Engine**: Float = 30 giorni
-- **K - Chat + Disconnessioni**: Float = 50 giorni (predecessore di N)
+**Attività con Float (slack disponibile)**:
+- **Ramo Game Engine (C, F, I, L, O)**: Float = 30 giorni. Il Game Engine e il suo testing non sono sul critical path: pur essendo una catena lunga, si completano prima che il ramo Frontend (critico) arrivi al testing End-to-End (R).
+- **Ramo Chat/Social (E, H, K, N, Q)**: Float = 50 giorni. Sistema Amicizie, Chat, Profili e Notifiche dispongono del margine più ampio, dovuto al fatto che il ramo critico Backend → Frontend Tavolo è nettamente più lungo.
 
 **Insight Critici**:
 - **Frontend Tavolo da Gioco (P)** è l'attività singola più lunga (40 giorni) sul critical path. Qualsiasi ritardo qui impatta direttamente la data di lancio.
-- **Backend e Game Engine** devono essere completati in sequenza rigida (nessun parallelismo possibile per attività critiche).
-- **Sistema Amicizie** e **Profili** hanno margine di flessibilità (5 giorni) → possono essere posticipati se necessario.
+- Il **Backend** (B → D → G) è sul critical path e va completato in sequenza rigida; il **Game Engine** (C → F → I → L → O), pur sviluppandosi in parallelo, dispone di 30 giorni di float e non condiziona la data di lancio.
+- **Sistema Amicizie** e **Profili** hanno un ampio margine di flessibilità (50 giorni) → possono essere posticipati o ridotti senza impatto sulla milestone finale.
 
 ---
 
@@ -170,7 +168,7 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 - Lucidchart / Draw.io (per creare manualmente)
 - GanttProject (open source, export PNG)
 
-**File di Output**: `img/network-diagram-maraffaonline.png`
+**File di Output** (non prodotto per questo elaborato): `img/network-diagram-maraffaonline.png` — nella pratica reale generato con uno dei software sopra; qui il diagramma è documentato tramite l'elenco delle Attività Principali, il template del nodo e la tabella Critical Path Identificato di questo stesso documento.
 
 ---
 
@@ -253,8 +251,8 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 |----|----------|--------|------|--------|--------------|---------------|
 | P | Frontend Tavolo da Gioco | 03-Feb | 28-Mar | 40 gg | M | Sì ← **CRITICO** |
 | O | Integration Testing GE | 03-Feb | 14-Feb | 10 gg | L | No |
-| N | Sistema Amicizie | 03-Feb | 21-Feb | 15 gg | K | No (Float 5) |
-| Q | Frontend Profili + Notifiche | 24-Feb | 07-Mar | 10 gg | N | No (Float 5) |
+| N | Sistema Amicizie | 03-Feb | 21-Feb | 15 gg | K | No (Float 50) |
+| Q | Frontend Profili + Notifiche | 24-Feb | 07-Mar | 10 gg | N | No (Float 50) |
 
 #### Sprint 10-11 (03 Mar - 28 Mar)
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
@@ -327,14 +325,14 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 
 ### Rischi Evidenziati dal Gantt Chart
 
-#### Rischio 1: Frontend Tavolo da Gioco (30 giorni sul Critical Path)
+#### Rischio 1: Frontend Tavolo da Gioco (40 giorni sul Critical Path)
 **Probabilità**: Alta
 **Impatto**: Critico (ritardo diretto sulla data di lancio)
 **Mitigazione**:
 - Assegnare Luca Moretti (UX Designer) a tempo pieno
 - Pair programming con Sara Bianchi per componenti complessi
 - Mockup approvati in anticipo (già fatto in Scoping)
-- Buffer: se P supera i 30 giorni, comprimere attività S (UAT) da 20 a 15 giorni
+- Buffer: se P supera i 40 giorni, comprimere attività S (UAT) da 20 a 15 giorni
 
 #### Rischio 2: Testing End-to-End (15 giorni, dopo P)
 **Probabilità**: Media
@@ -343,10 +341,10 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 - Iniziare testing E2E in parallelo con P (parziale overlap)
 - Automatizzare test con Cypress per velocizzare
 
-#### Rischio 3: Attività N e Q con Float 5 giorni
+#### Rischio 3: Attività N e Q con Float 50 giorni
 **Probabilità**: Bassa
 **Impatto**: Medio
-**Opportunità**: Se altre attività critiche ritardano, N e Q possono assorbire fino a 5 giorni di slittamento senza impatto finale.
+**Opportunità**: N (Sistema Amicizie) e Q (Frontend Profili + Notifiche) dispongono di 50 giorni di float. Possono quindi slittare ampiamente senza impatto sulla data di lancio, oppure essere ridimensionate/posticipate per liberare risorse da spostare sul critical path (es. sul Frontend Tavolo da Gioco) in caso di necessità.
 
 ---
 
@@ -370,7 +368,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 - **TeamGantt**: collaborativo, aggiornamenti real-time
 - **Asana / Monday.com**: Gantt view integrata con task management
 
-**File di Output**: `img/gantt-chart-maraffaonline.png` (aggiornato mensilmente per documentazione)
+**File di Output** (non prodotto per questo elaborato): `img/gantt-chart-maraffaonline.png` (aggiornato mensilmente per documentazione) — il Gantt è documentato in forma tabellare/CSV in questo allegato e in `Allegato3.5.2-GanttData.csv` (che esiste realmente).
 
 ---
 
@@ -409,13 +407,14 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 - **Nessun impatto su data lancio** (L ha margine di manovra)
 
 ### Scenario 3: Sistema Amicizie (N) ritarda di 10 giorni
-**Impatto**: N ha 5 giorni di float.
-- Ritardo 10 giorni → supera float di 5 giorni → entra nel critical path
-- **Nuovo critical path**: A → B → E → H → K → N → Q → ... (se N supera margine)
-- **Azione**: Posticipare N a post-lancio MVP (degradare da Should Have a Won't Have)
+**Impatto**: N dispone di 50 giorni di float.
+- Ritardo di 10 giorni molto inferiore ai 50 giorni di float → N **non** entra nel critical path
+- **Nessun impatto sulla data di lancio**: il ritardo viene interamente assorbito dallo slack disponibile
+- Solo un ritardo superiore a 50 giorni renderebbe critico il ramo Chat/Social (A → B → E → H → K → N → Q → S); in quel caso l'azione sarebbe posticipare N/Q a post-lancio MVP (degradandole da Should/Could Have a Won't Have per la v1.0)
 
 ---
 
+<!-- Sezione "Fonti e Riferimenti" commentata (link a blog esterni, non necessari in un allegato di progetto). Reinseribile o sostituibile con fonti del corso; registro in Relazione/_appunti-per-relazione.md.
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices di Project Management 2026:
@@ -424,6 +423,7 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 - [TeamGantt - Critical Path Method Practical Guide](https://www.teamgantt.com/blog/critical-path)
 - [Smartsheet - Ultimate Guide to CPM](https://www.smartsheet.com/critical-path-method)
 - [Asana - Critical Path Method 2025](https://asana.com/resources/critical-path-method)
+-->
 
 ---
 
@@ -433,3 +433,6 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 **Data approvazione**: 28/10/2025
 
 **Prossimo Aggiornamento**: 05/11/2025 (fine Sprint 0)
+
+**Storico revisioni**:
+- **v.1.1.0**: Chiarito che i file immagine del network diagram e del Gantt non sono stati prodotti per questo elaborato; restano documentati tramite le tabelle/CSV già presenti.

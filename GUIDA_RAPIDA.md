@@ -156,7 +156,7 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 **Contesto Narrativo Definito**:
 - Azienda: PlayHeritage Labs (spin-off UniBo)
 - Committente: Maraffa Forever (150 appassionati)
-- Budget: €25.000 | Durata: 6 mesi
+- Budget: €25.000 | Durata: 7 mesi
 - Target: 25-45 anni
 
 **Gioco**: Maraffone (Beccaccino/Trionfo)
@@ -183,7 +183,7 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 
 **Correzioni Regole Maraffone**: Tutti i documenti ora rispettano le regole ufficiali del Maraffone/Beccaccino (punteggio corretto, vittoria a 41 punti, ecc.)
 
-### 🔄 Fase 3: Planning - IN CORSO
+### ✅ Fase 3: Planning - COMPLETATA
 
 **7 Sottosistemi Identificati**:
 
@@ -191,17 +191,93 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 2. Backend Server → Agile Iterativo
 3. Real-Time Communication → Agile Adattivo
 4. Frontend Web → Agile Iterativo
-5. Mobile Application → Incrementale
+5. Mobile Application → Won't Have (MVP)
 6. Social & Community → Incrementale
 7. Infrastructure & DevOps → Incrementale
 
-**Allegati da Creare (Fase Planning)**:
-1. Work Breakdown Structure (WBS)
-2. MoSCoW Analysis
-3. Product Backlog
-4. Cash Flow Management
-5. Project Network Diagram + Gantt Chart
+**Documenti Creati (Allegati 3.1-3.5)**:
+1. ✅ Work Breakdown Structure (WBS) - Scomposizione gerarchica completa (7 sottosistemi)
+2. ✅ MoSCoW Analysis - Prioritizzazione 310 story points Agile (Must 71.6%, Should 22.2%, Could 6.2%)
+3. ✅ Product Backlog - 15 sprint, solo sottosistemi Agile (Backend, Real-Time, Frontend, Social)
+4. ✅ Cash Flow Management - Budget €25.000, 7 mesi, con grafici Excel
+5. ✅ Project Network Diagram + Gantt Chart - Critical Path 170 giorni lavorativi, CSV per Notion
+
+**Note Metodologiche**:
+- Product Backlog include SOLO sottosistemi Agile (rigore metodologico)
+- Game Engine (Waterfall) e Infrastructure (Incrementale) documentati in WBS/Gantt
+- Grafici Cash Flow creati con Excel e integrati nel documento
+
+### ✅ Fase 4: Launching - COMPLETATA
+
+**Documenti Creati (Allegati 4.1-4.2)**:
+1. ✅ Project Kick-Off Meeting - Meeting 15/10/2025 con agenda completa, Q&A, action items, next steps
+2. ✅ RASCI Matrix + Regole Operative - Responsibility assignment per tutti i task + processi operativi (problem solving, decision making, conflict resolution, brainstorming, meetings, change management)
+
+**Note**:
+- RASCI Matrix copre tutti i 7 sottosistemi + Project Management tasks
+- Regole Operative definiscono 5 tipologie di meeting (Daily Standup, Sprint Planning, Sprint Review, Retrospective, Status Meeting)
+- Framework decisionale a 3 livelli (Operativo/Tattico/Strategico)
+- Change Management Process formalizzato con Project Impact Statement
+
+### ✅ Fase 5: Monitoring & Control - COMPLETATA
+
+**Documento Creato**:
+- ✅ Capitolo 5 - Monitoring and Control (integrato nella relazione, stile discorsivo)
+  - Monitoraggio continuo (Daily Standup, Notion Database, cultura aziendale)
+  - Project Status Meetings settimanali con Stoplight Reports
+  - Sprint Review e Retrospective
+  - Problem Solving Strategy
+  - Earned Value Management con grafico
+  - Gantt Chart tracking
+  - Velocity tracking per sistemi Agile
+  - Quality Metrics (test coverage, bug tracking, code quality)
+  - Risk Monitoring
+  - Risultati e rispetto criteri
+
+**Note**:
+- Documento discorsivo integrato nella relazione principale, non allegati separati (come nella relazione esempio)
+- Include grafico Earned Value con analisi Cost Variance e Schedule Variance
+- Descrive tutti gli strumenti di monitoring (Stoplight, EVM, Velocity, Quality Metrics)
+
+### ✅ Fase 6: Closing - COMPLETATA
+
+**Documento Creato**:
+
+- ✅ Capitolo 6 - Closing (integrato nella relazione, stile discorsivo)
+  - Accettazione formale (10 Maggio 2026, Giovanni firma senza modifiche)
+  - Final Project Report (9 sezioni, consegnato 12 Maggio 2026)
+  - Audit Post-Implementazione (tutti i criteri soddisfatti)
+  - Fattori di Successo (5 fattori chiave identificati)
+  - Sfide Affrontate e Lezioni Apprese (5 sfide con lezioni specifiche)
+  - Soddisfazione Cliente e Sviluppi Futuri (3 progetti proposti)
+  - Impatto Business PlayHeritage Labs
+  - Celebrazione e Chiusura (15 Maggio 2026, lancio pubblico)
+
+**Risultati Finali**:
+
+- Budget: €22.750/€25.000 (surplus €2.250, 9%)
+- Timeline: 7 mesi esatti (15 Ott 2025 - 15 Mag 2026)
+- Critical Path: 170 giorni lavorativi rispettati
+- Launch: 50 utenti e 23 partite nelle prime 24h
+
+**Note**:
+
+- Documento discorsivo come Capitolo 5, non allegati separati
+- Include audit completo con verifica di tutti i criteri
+- Documenta lessons learned per progetti futuri
+- Prospettive di collaborazione futura con 3 sviluppi proposti
+
+### 🎉 Fase 7: Relazione Finale - PRONTA PER COMPILAZIONE
+
+**Tutti i capitoli completati**:
+
+- ✅ Capitolo 1 - Introduzione
+- ✅ Capitolo 2 - Scoping (Allegati 2.1-2.12)
+- ✅ Capitolo 3 - Planning (Allegati 3.1-3.5)
+- ✅ Capitolo 4 - Launching (Allegati 4.1-4.2)
+- ✅ Capitolo 5 - Monitoring & Control
+- ✅ Capitolo 6 - Closing
 
 ---
 
-**Ultimo aggiornamento**: 2026-01-10
+**Ultimo aggiornamento**: 2026-01-11

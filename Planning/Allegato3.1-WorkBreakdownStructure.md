@@ -1,5 +1,7 @@
 # Allegato 3.1 - Work Breakdown Structure (WBS)
-## v.1.0.0 – 2025-10-20 10:00:00
+## v.1.2.0 – 2025-10-20 10:00:00
+
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.1-WorkBreakdownStructure.html`: apri il file nel browser e usa "Stampa → Salva come PDF". L'html contiene sia il diagramma ad albero (Sottosistema → Funzione, con conteggio di Attività/Task, a colpo d'occhio) sia, in una sezione sottostante, l'elenco testuale completo di tutti i 160 Task per chi vuole il dettaglio in un unico file. Questo documento `.md` resta comunque la WBS Dictionary di riferimento.
 
 La Work Breakdown Structure (WBS) è la scomposizione gerarchica del lavoro necessario per completare il progetto MaraffaOnline. Seguendo il principio della **100% Rule**, la WBS include tutto il lavoro richiesto dal progetto, organizzato per deliverable piuttosto che per fasi.
 
@@ -327,27 +329,7 @@ La WBS è organizzata su 4 livelli:
 
 ## Note Metodologiche
 
-### Allineamento con Metodologie per Sottosistema
-
-**Waterfall (Game Engine)**:
-- Requisiti completi e stabili (regole Maraffone codificate)
-- Design → Implementazione → Testing sequenziale
-- Consegna unica a fine sottosistema
-
-**Agile Iterativo (Backend, Frontend)**:
-- Sprint da 2 settimane
-- Iterazioni successive per migliorare features esistenti
-- Demo a fine sprint con stakeholder
-
-**Agile Adattivo (Real-Time Communication)**:
-- Requisiti emergenti (latency, sincronizzazione)
-- Sperimentazione tecnologica (WebSocket vs alternative)
-- Adattamento continuo basato su metriche performance
-
-**Incrementale (Social, Infrastructure)**:
-- Rilasci successivi con funzionalità crescenti
-- Versione base → estensioni progressive
-- Deploy indipendenti per ogni incremento
+Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratteristiche: Game Engine in Waterfall, Backend e Frontend in Agile Iterativo, Real-Time Communication in Agile Adattivo, Social e Infrastructure in Incrementale. **La scelta e la motivazione di ciascuna metodologia sono documentate nell'Allegato 2.11 - PM Life Cycle Models** e discusse nella relazione (Cap. 2/3).
 
 ### Integrazione con Altri Documenti
 
@@ -362,3 +344,7 @@ La WBS è organizzata su 4 livelli:
 **Revisionato da**: Luca Bianchi (Tech Lead)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 20/10/2025
+
+**Storico revisioni**:
+- **v.1.2.0**: Aggiunta al companion HTML la sezione "Dettaglio Completo" con tutti i 160 Task in forma testuale (organizzati per Sottosistema → Funzione → Attività, colori coerenti col diagramma), su richiesta esplicita per avere un unico file stampabile con sia il diagramma sia il dettaglio.
+- **v.1.1.0**: Aggiunto il companion `Allegato3.1-WorkBreakdownStructure.html`: diagramma ad albero (Sottosistema → Funzione) con conteggi verificati di Attività/Task per ramo, colori per sottosistema. È la versione da esportare in PDF (stampa da browser) per l'allegato finale; questo `.md` resta la WBS Dictionary completa (tutti i 160 Task).

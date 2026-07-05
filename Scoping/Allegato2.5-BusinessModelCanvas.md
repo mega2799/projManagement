@@ -1,6 +1,8 @@
 # Allegato 2.5 - Business Model Canvas
 
-## v.1.0.0 – 2025-09-21 14:30:00
+## v.1.2.0 – 2025-09-21 14:30:00
+
+> Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.5-BusinessModelCanvas.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 
 Il Business Model Canvas è uno strumento strategico per descrivere, analizzare e progettare il modello di business del progetto MaraffaOnline. Il canvas è composto da **9 componenti critiche** che insieme definiscono come PlayHeritage Labs crea, distribuisce e cattura valore attraverso questo progetto.
 
@@ -190,44 +192,23 @@ Il Business Model Canvas è uno strumento strategico per descrivere, analizzare 
 
 ## Visualizzazione Business Model Canvas
 
-```
-┌─────────────────────┬──────────────────┬─────────────────────┬──────────────────┬─────────────────────┐
-│  KEY PARTNERS       │ KEY ACTIVITIES   │  VALUE PROPOSITION  │ CUSTOMER         │  CUSTOMER SEGMENTS  │
-│                     │                  │                     │ RELATIONSHIPS    │                     │
-│ • UniBo             │ • Sviluppo SW    │ Per Maraffa Forever:│                  │ Primary:            │
-│ • Dip. Informatica  │ • Co-design      │ • Riconnessione     │ • Co-creation    │ • Community         │
-│ • Maraffa Forever   │ • PM & Monitoring│   sociale           │ • Community      │   Maraffa Forever   │
-│ • Francesca Giuliani│ • Ricerca        │ • Fedeltà regole    │   building       │   (150 membri)      │
-│ • Provider hosting  │ • Marketing      │ • UX moderna        │ • Self-service   │                     │
-│ • Consulenti (opt.) │                  │ • Accessibile/Free  │ • Automated      │ Secondary:          │
-│                     │                  │                     │   services       │ • Altre community   │
-│                     │ KEY RESOURCES    │ Per PlayHeritage:   │                  │   giochi regionali  │
-│                     │                  │ • Validazione model │                  │ • Associazioni      │
-│                     │ • Team 5 persone │ • Portfolio         │   CHANNELS       │   culturali         │
-│                     │ • Esperti dominio│ • Pubblicazioni     │                  │                     │
-│                     │ • Spazi UniBo    │ • Impatto sociale   │ • Web app        │ Stakeholder:        │
-│                     │ • Budget €25k    │                     │ • Responsive     │ • UniBo             │
-│                     │ • Stack open-src │                     │ • WhatsApp       │ • Ricercatori       │
-│                     │                  │                     │ • Newsletter     │                     │
-│                     │                  │                     │ • Meeting Zoom   │                     │
-├─────────────────────┴──────────────────┴─────────────────────┴──────────────────┴─────────────────────┤
-│                              COST STRUCTURE                 │           REVENUE STREAMS              │
-│                                                             │                                        │
-│ Fissi:                                                      │ Progetto:                              │
-│ • Hosting: €50/mese                                         │ • Crowdfunding: €25.000                │
-│                                                             │ • Pagamenti per milestone (4 tranche)  │
-│ Variabili:                                                  │                                        │
-│ • Consulenza: €2.000 (contingenza)                          │ Futuro:                                │
-│ • Beta tester incentivi: €500                               │ • Manutenzione: €500/mese              │
-│ • Marketing: €500                                           │ • Licensing ad altre community         │
-│                                                             │ • Consulenza progetti simili           │
-│ Totale: €25.000 (sviluppo 70%, infra 15%, contingenza 10%, │ • Freemium (tornei, temi, stats)       │
-│                 marketing 5%)                               │                                        │
-└─────────────────────────────────────────────────────────────┴────────────────────────────────────────┘
-```
+La tabella seguente riproduce il canvas classico a 9 blocchi: le colonne 2 e 4 raggruppano rispettivamente Key Activities/Key Resources e Customer Relationships/Channels, così come nel canvas originale questi blocchi sono impilati verticalmente sotto/sopra la stessa colonna.
+
+| Key Partners | Key Activities & Key Resources | Value Propositions | Customer Relationships & Channels | Customer Segments |
+|---|---|---|---|---|
+| • Università di Bologna (owner spin-off, spazi, supporto legale)<br>• Dipartimento di Informatica Cesena<br>• Community Maraffa Forever (committente, beta tester)<br>• Francesca Giuliani (esperta Maraffa)<br>• Provider di hosting (Hetzner/OVH)<br>• Community open-source (Node.js, React, Socket.IO)<br>• GitLab (repository, CI/CD)<br>• Dr. Stefano Nardi (consulente real-time, contingenza)<br>• Ufficio Legale UniBo (GDPR, contratti) | **Key Activities**<br>• Sviluppo software (7 sottosistemi)<br>• Testing continuo e bug fixing<br>• Co-design UI/UX con la community<br>• User testing iterativo bi-settimanale<br>• Pianificazione sprint e monitoraggio milestone<br>• Comunicazione con il committente<br>• Documentazione tecnica e per pubblicazioni scientifiche<br>• Comunicazione avanzamento e materiali di lancio<br><br>**Key Resources**<br>• Team PlayHeritage Labs (5 persone: PM, Lead Dev, UX Designer, Backend Dev, DevOps)<br>• Francesca Giuliani (esperta Maraffa)<br>• 20 beta tester da Maraffa Forever<br>• Spazi di lavoro presso UniBo Cesena<br>• Server dedicato per hosting<br>• Documentazione regole Maraffa (knowledge base community)<br>• Stack open-source (Node.js, React, Socket.IO, PostgreSQL)<br>• Budget progetto €25.000 + budget emergenza €2.000 | **Per Community Maraffa Forever**<br>• Riconnessione sociale per giocare a distanza<br>• Fedeltà alle regole tradizionali della Maraffa romagnola<br>• Interfaccia moderna e accessibile (web responsive)<br>• Gratuito per gli utenti<br><br>**Per PlayHeritage Labs**<br>• Validazione del modello di business (cultural heritage gaming)<br>• Portfolio credibile per futuri clienti<br>• Materiale per pubblicazioni scientifiche<br><br>**Differenziatori**<br>• Focus su dimensione sociale vs app single-player<br>• Co-design partecipativo con la community | **Customer Relationships**<br>• Co-creation: coinvolgimento della community in scoping, design, beta testing e launch<br>• Riconoscimento pubblico dei beta tester<br>• Community building: canale Slack dedicato, senso di appartenenza e ownership<br>• Self-service & automation: piattaforma intuitiva, documentazione accessibile, notifiche e statistiche personali<br><br>**Channels**<br>• Web application responsive (maraffaonline.it)<br>• Link sharing per stanze di gioco<br>• Gruppo WhatsApp Maraffa Forever<br>• Newsletter mensile e meeting bi-settimanali Zoom<br>• Social media (Facebook, Instagram)<br>• Documentazione online (FAQ, tutorial) ed email support | **Cliente Primario**<br>• Community "Maraffa Forever" (150 membri, 25-45 anni, geograficamente dispersi)<br><br>**Clienti Secondari**<br>• Altre community di giochi di carte regionali<br>• Associazioni culturali romagnole<br><br>**Stakeholder**<br>• Università di Bologna (owner dello spin-off)<br>• Comunità scientifica |
+
+| Cost Structure | Revenue Streams |
+|---|---|
+| **Costi Fissi**<br>• Hosting server: €50/mese<br>• Spazi e tool: €0 (forniti da UniBo e open-source)<br><br>**Costi Variabili**<br>• Consulenza esterna: €2.000 (budget emergenza)<br>• Catering meeting: €300<br>• Incentivi beta tester: €500<br><br>**Costi One-Time**<br>• Dominio: €15/anno<br>• Marketing lancio: €500<br><br>**Ripartizione Budget (€25.000)**<br>• Sviluppo: 70% (€17.500)<br>• Infrastruttura: 15% (€3.750)<br>• Contingenza: 10% (€2.500)<br>• Marketing & Community: 5% (€1.250)<br><br>**Post-Lancio**<br>• €500/mese (manutenzione) | **Modello Attuale**<br>• Crowdfunding community: €25.000 totali<br>• Pagamenti per milestone: firma (€6.250), core tech (€8.750), frontend (€6.250), MVP (€3.750)<br><br>**Modello Futuro**<br>• Contratto di manutenzione (€500/mese)<br>• Licensing ad altre community<br>• Consulenza per progetti simili<br>• Freemium model (tornei, temi grafici, statistiche avanzate)<br><br>**Ricavi Non-Monetari**<br>• Pubblicazioni scientifiche<br>• Portfolio e reputazione |
 
 ---
 
 **Redatto da**: Marco Venturi (CEO & Project Manager, PlayHeritage Labs)
 **Revisionato da**: Luca Moretti (UX Designer & Cultural Heritage Expert)
 **Data approvazione**: 22/09/2025
+
+**Storico revisioni**:
+- **v.1.2.0**: Aggiunto il companion `Allegato2.5-BusinessModelCanvas.html`: canvas a 9 blocchi con layout a griglia reale (rowspan) e colori ripresi dalla palette ufficiale di progetto (Allegato 2.7 / Guida Grafici Excel), contenuto condensato per lettura a colpo d'occhio. È la versione da esportare in PDF (stampa da browser) per l'allegato finale; il `.md` resta il registro testuale completo.
+- **v.1.1.0**: Sostituita la visualizzazione ASCII-art del canvas con vere tabelle Markdown (canvas a 9 blocchi + tabella Cost Structure/Revenue Streams), per una resa grafica corretta anche in export PDF/Word. Contenuto invariato rispetto alle sezioni 1-9.
+- **v.1.0.0**: Prima stesura del Business Model Canvas (9 componenti + visualizzazione ASCII-art).

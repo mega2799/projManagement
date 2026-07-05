@@ -38,33 +38,15 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progett
 
 ---
 
-## Nota: Ambito del Product Backlog
+## Ambito del Product Backlog
 
-**IMPORTANTE**: Questo Product Backlog include **esclusivamente i sottosistemi gestiti con metodologie Agile** (Iterativo e Adattivo).
+Questo Backlog include **solo i sottosistemi Agile** (Iterativo/Adattivo): **Backend Server**, **Real-Time Communication**, **Frontend Web**, **Social & Community**.
 
-### Sottosistemi Inclusi nel Product Backlog
+Restano **esclusi** — perché gestiti con altre metodologie — e sono tracciati in WBS (Allegato 3.1) e Gantt (Allegato 3.5):
+- **Game Engine** — Waterfall (requisiti stabili, sviluppo sequenziale) → WBS sezione 1
+- **Infrastructure & DevOps** — Incrementale (rilasci continui, attività on-demand) → WBS sezione 6
 
-I seguenti sottosistemi utilizzano sprint e story points:
-- **Backend Server** (Agile Iterativo)
-- **Real-Time Communication** (Agile Adattivo)
-- **Frontend Web** (Agile Iterativo)
-- **Social & Community** (Incrementale con rilasci per sprint)
-
-### Sottosistemi NON Inclusi nel Product Backlog
-
-I seguenti sottosistemi seguono altre metodologie e sono tracciati **esclusivamente** in Work Breakdown Structure (Allegato 3.1) e Gantt Chart (Allegato 3.5):
-
-- **Game Engine**: Metodologia **Waterfall** → Vedi WBS sezione 1
-  - Approccio: Design → Implementation → Testing sequenziale
-  - Requisiti stabili e completamente definiti (regole ufficiali Maraffone)
-  - Non compatibile con sprint iterativi
-
-- **Infrastructure & DevOps**: Metodologia **Incrementale** → Vedi WBS sezione 7
-  - Approccio: rilasci continui e indipendenti
-  - Lavoro distribuito su tutta la durata del progetto
-  - Non organizzato in sprint, ma in attività on-demand
-
-**Razionale Metodologico**: Il Product Backlog è uno strumento specifico di **Scrum/Agile** e deve includere solo work package gestiti con approcci iterativi/adattivi. Mischiare metodologie diverse nel Backlog comprometterebbe la coerenza della gestione sprint e la chiarezza dei ruoli (Product Owner, Scrum Master, Development Team).
+*(La motivazione metodologica di questa separazione è discussa nella relazione, Cap. 3 - Planning.)*
 
 ---
 
@@ -263,18 +245,11 @@ I seguenti sottosistemi seguono altre metodologie e sono tracciati **esclusivame
 ## Velocity Tracking e Burn-down
 
 ### Velocity Stimata
-- **Team size**: 5 persone (Elena Rossi, Sara Bianchi, Luca Moretti, Andrea Conti, Marco Venturi part-time)
-- **Capacity per sprint**: ~40 story points complessivi del team (8 pts/persona/sprint), distribuiti tra Backlog Agile + lavoro Game Engine/Infrastructure
+- **Team**: 5 persone (Elena Rossi, Sara Bianchi, Luca Moretti, Andrea Conti, Marco Venturi part-time)
+- **Capacity target**: ~40 story points/sprint a livello di team
 - **Sprint totali**: 15 (Sprint 0-14)
-- **Capacity totale del team**: ~600 story points su tutto il progetto
-- **Backlog Agile (questo documento)**: 310 story points → corrisponde a ~24 SP/sprint di focus Agile
-- **Game Engine + Infrastructure (in WBS/Gantt)**: ~130 story points equivalenti → ~10 SP/sprint
-- **Gran Totale**: ~440 story points → ~34 SP/sprint, in linea con velocity target 40 SP/sprint (con margine 15% buffer)
 
-**Importante - Lettura dei numeri di Velocity**:
-- La **velocity del 38,3 SP/sprint** monitorata nel Capitolo 5 - Monitoring & Control è **team-wide**: somma il lavoro completato su TUTTO il progetto (Backlog Agile + Game Engine in Waterfall + Infrastructure Incrementale), non solo le user stories di questo Backlog.
-- I **310 SP del Product Backlog Agile** sono il sottoinsieme di user stories gestite con Scrum (Backend/Real-Time/Frontend/Social). Diviso per 15 sprint = ~21 SP/sprint di velocity Agile pura.
-- La differenza non è incoerenza: è la naturale distinzione tra "metrica Scrum" (Backlog) e "metrica gestionale di team" (Monitoring).
+*(La riconciliazione tra i 310 SP del Backlog Agile, il lavoro Game Engine/Infrastructure e la velocity team-wide monitorata nel Cap. 5 è trattata nella relazione.)*
 
 ### Monitoraggio Velocity
 Alla fine di ogni sprint, il team registrerà:
@@ -325,37 +300,20 @@ Un item del Product Backlog è considerato **Done** solo quando:
 
 ## Relazione con Altri Documenti di Planning
 
-### Integrazione tra Product Backlog e Altri Strumenti PM
+Questo Product Backlog (Agile) si integra con gli altri documenti di Planning:
 
-Questo Product Backlog (Agile) si integra con gli altri documenti di Planning nel seguente modo:
+| Documento | Relazione con il Product Backlog |
+|-----------|----------------------------------|
+| **Allegato 3.1 - WBS** | Il Backlog è un sottoinsieme della WBS: ne dettaglia le sezioni Agile (2 Backend, 3 Real-Time, 4 Frontend, 5 Social); Game Engine (sez. 1) e Infrastructure (sez. 6) sono esclusi |
+| **Allegato 3.2 - MoSCoW** | Il Backlog implementa le priorità MoSCoW (Must/Should) dei sottosistemi Agile |
+| **Allegato 3.4 - Cash Flow** | I sottosistemi Agile del Backlog coprono ~70% del budget; il resto è Game Engine + Infrastructure |
+| **Allegato 3.5 - Gantt** | Il Gantt unifica le attività del Backlog (sprint Agile) e quelle fuori Backlog (Game Engine, Infrastructure) |
 
-| Documento | Contenuto | Relazione con Product Backlog |
-|-----------|-----------|-------------------------------|
-| **Allegato 3.1 - WBS** | Scomposizione gerarchica di **tutto** il progetto | Il Product Backlog è un **sottoinsieme** della WBS. Le sezioni 2-4 e 6 della WBS (Backend, Real-Time, Frontend, Social) sono dettagliate nel Backlog. Le sezioni 1 e 7 (Game Engine, Infrastructure) sono **escluse** dal Backlog. |
-| **Allegato 3.2 - MoSCoW** | Prioritizzazione requisiti per **tutti** i sottosistemi | Il Product Backlog implementa le priorità MoSCoW per i sottosistemi Agile. I Must Have/Should Have nel Backlog corrispondono ai requisiti M/S della MoSCoW Analysis. |
-| **Allegato 3.4 - Cash Flow** | Budget totale progetto (€25.000) | Il Product Backlog copre ~70% del budget (sottosistemi Agile). Il restante 30% è allocato a Game Engine (Waterfall) e Infrastructure (Incrementale). |
-| **Allegato 3.5 - Gantt Chart** | Timeline completa con **tutte** le attività | Il Gantt include sia le attività del Product Backlog (sprint Agile) sia quelle fuori dal Backlog (Game Engine, Infrastructure). Visione unificata del progetto. |
-
-### Perché Questa Separazione?
-
-La separazione metodologica tra Product Backlog (Agile) e WBS/Gantt (universale) è **intenzionale** e riflette le best practices:
-
-1. **Product Backlog** = strumento Scrum/Agile puro
-   - Gestito dal Product Owner (Marco Venturi)
-   - Prioritizzato continuamente con MoSCoW dinamico
-   - Items stimati in story points (Fibonacci)
-   - Sprint-based con velocity tracking
-
-2. **WBS + Gantt** = strumenti Project Management universali
-   - Gestiti dal Project Manager (Marco Venturi)
-   - Includono **tutte** le metodologie (Waterfall, Agile, Incrementale)
-   - Attività stimate in giorni lavorativi
-   - Timeline-based con critical path analysis
-
-**In sintesi**: Per i sottosistemi Agile (Backend, Real-Time, Frontend), il **Product Backlog è la fonte primaria** per la gestione operativa degli sprint. Per la visione d'insieme del progetto (inclusi Game Engine e Infrastructure), si fa riferimento a **WBS e Gantt**.
+*(Il razionale metodologico della separazione Backlog / WBS-Gantt è approfondito nella relazione, Cap. 3 - Planning.)*
 
 ---
 
+<!-- Sezione "Fonti e Riferimenti" commentata (link a blog esterni, non necessari in un allegato di progetto). Reinseribile o sostituibile con fonti del corso; registro in Relazione/_appunti-per-relazione.md.
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices Agile/Scrum 2026:
@@ -364,6 +322,7 @@ Questo documento è stato redatto seguendo le best practices Agile/Scrum 2026:
 - [Scrum Alliance - Story Point Estimation Guide](https://resources.scrumalliance.org/Article/story-point-estimation)
 - [Asana - Story Points Guide 2025](https://asana.com/resources/story-points)
 - [Mountain Goat Software - Agile Estimating](https://www.mountaingoatsoftware.com/agile/agile-estimation-estimating-with-story-points)
+-->
 
 ---
 

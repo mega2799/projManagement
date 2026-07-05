@@ -1,5 +1,5 @@
 # Allegato 2.10 - User Flow
-## v.1.0.0 – 2025-09-29 11:00:00
+## v.1.1.0 – 2025-09-29 11:00:00
 
 Il **User Flow** descrive i percorsi che gli utenti possono seguire all'interno della piattaforma MaraffaOnline, dalla prima visita fino al completamento di una partita. Questo documento aiuta a visualizzare l'esperienza utente e identificare eventuali punti di attrito.
 
@@ -492,9 +492,7 @@ INVITO A PARTITA
 
 ## Allegato Visivo
 
-Il diagramma completo del User Flow è disponibile come immagine:
-- `img/user-flow-diagram.png` (creato con Figma/Miro)
-- `img/user-flow-dettagliato.pdf` (versione stampabile alta risoluzione)
+> **Nota metodologica.** Il diagramma completo del User Flow è rappresentato testualmente nella sezione "Diagramma Completo Navigazione Sito" di questo documento. I file `img/user-flow-diagram.png` e `img/user-flow-dettagliato.pdf` non sono stati prodotti per questo elaborato accademico; nella pratica reale sarebbero stati creati con Figma/Miro a partire dallo stesso contenuto qui documentato.
 
 ---
 
@@ -502,3 +500,6 @@ Il diagramma completo del User Flow è disponibile come immagine:
 **Revisionato da**: Marco Venturi (Project Manager)
 **Validato con**: 8 utenti beta tester (Think Aloud Protocol, 10/10/2025)
 **Data approvazione**: 30/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Chiarito che i file immagine/PDF del diagramma non sono stati prodotti per questo elaborato; il diagramma resta documentato tramite lo schema testuale già presente nel documento.

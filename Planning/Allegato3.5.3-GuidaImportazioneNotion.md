@@ -1,7 +1,9 @@
 # Allegato 3.5.3 - Guida Importazione Gantt Chart in Notion
-## v.1.0.0 – 2025-10-28 16:30:00
+## v.1.1.0 – 2025-10-28 16:30:00
 
 Questa guida spiega come importare il file CSV del Gantt Chart MaraffaOnline in Notion e configurare la visualizzazione Timeline (Gantt) ottimale.
+
+> **Nota metodologica.** Questa guida descrive la procedura da seguire per chi volesse effettivamente importare il Gantt in Notion; per questo elaborato accademico i passaggi non sono stati eseguiti (nessun database Notion creato, nessun export PNG/PDF prodotto). Il Gantt è documentato tramite il CSV sorgente (`Allegato3.5.2-GanttData.csv`, che esiste realmente) e la ripartizione per sprint in `Allegato3.5-ProjectNetworkDiagram-Gantt.md`.
 
 ---
 
@@ -352,3 +354,6 @@ Se Notion non soddisfa le esigenze (es. calcolo automatico Critical Path):
 **Ultima modifica**: 28/10/2025
 
 **Supporto**: Per domande sull'importazione, contattare marco.venturi@playheritage.it
+
+**Storico revisioni**:
+- **v.1.1.0**: Chiarito che la procedura descritta non è stata eseguita per questo elaborato (nessun export prodotto).

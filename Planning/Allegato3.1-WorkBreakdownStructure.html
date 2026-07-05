@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Breakdown Structure - MaraffaOnline</title>
+<style>
+  :root {
+    --blu: #007bff;
+    --viola: #6f42c1;
+    --rosso-mattone: #b85450;
+    --rosa: #e83e8c;
+    --giallo: #ffc107;
+    --grigio: #6c757d;
+    --verde-bottiglia: #28a745;
+    --testo-scuro: #212529;
+    --linea: #b0b0b0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--testo-scuro);
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 16px;
+    line-height: 1.3;
+  }
+  h1 { font-size: 1.4rem; margin-bottom: 0.1rem; }
+  .sub { color: #666; font-size: 0.8rem; margin-top: 0; margin-bottom: 10px; }
+  .note {
+    font-size: 0.74rem; color: #444; background: #f6f6f6;
+    padding: 7px 11px; border-left: 4px solid var(--grigio); margin-bottom: 14px;
+  }
+
+  .root-row { display: flex; justify-content: center; margin-bottom: 0; }
+  .root-box {
+    background: var(--testo-scuro); color: #fff; border-radius: 6px;
+    padding: 8px 22px; text-align: center; font-weight: 700; font-size: 0.9rem;
+  }
+  .root-box .badge { display: block; font-weight: 400; font-size: 0.68rem; opacity: 0.85; margin-top: 2px; }
+
+  .stem-root { width: 2px; height: 12px; background: var(--linea); margin: 0 auto; }
+
+  .connectors {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    border-top: 2px solid var(--linea);
+    margin: 0 4px;
+  }
+  .connectors .tick { width: 2px; height: 12px; background: var(--linea); margin: 0 auto; }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 0;
+    align-items: start;
+  }
+
+  .col-head {
+    border-radius: 6px 6px 0 0;
+    padding: 7px 6px;
+    text-align: center;
+    color: #fff;
+  }
+  .col-head .name { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.01em; }
+  .col-head .method { font-size: 0.64rem; opacity: 0.92; margin-top: 1px; }
+  .col-head .totals { font-size: 0.64rem; opacity: 0.92; margin-top: 3px; font-weight: 600; }
+
+  .col-body {
+    border: 2px solid;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .fun-box {
+    background: #fff;
+    border-radius: 4px;
+    padding: 5px 7px;
+    font-size: 0.66rem;
+  }
+  .fun-box .fname { font-weight: 600; display: block; margin-bottom: 1px; }
+  .fun-box .fcount { color: #555; font-size: 0.62rem; }
+
+  .ge .col-head { background: var(--blu); }
+  .bs .col-head { background: var(--viola); }
+  .rt .col-head { background: var(--rosso-mattone); }
+  .fw .col-head { background: var(--rosa); }
+  .sc .col-head { background: var(--giallo); color: var(--testo-scuro); }
+  .id .col-head { background: var(--grigio); }
+  .pm .col-head { background: var(--verde-bottiglia); }
+
+  .ge  .fun-box { background: color-mix(in srgb, var(--blu) 12%, white); border: 1px solid color-mix(in srgb, var(--blu) 35%, white); }
+  .bs  .fun-box { background: color-mix(in srgb, var(--viola) 12%, white); border: 1px solid color-mix(in srgb, var(--viola) 35%, white); }
+  .rt  .fun-box { background: color-mix(in srgb, var(--rosso-mattone) 12%, white); border: 1px solid color-mix(in srgb, var(--rosso-mattone) 35%, white); }
+  .fw  .fun-box { background: color-mix(in srgb, var(--rosa) 12%, white); border: 1px solid color-mix(in srgb, var(--rosa) 35%, white); }
+  .sc  .fun-box { background: color-mix(in srgb, var(--giallo) 18%, white); border: 1px solid color-mix(in srgb, var(--giallo) 55%, white); }
+  .id  .fun-box { background: color-mix(in srgb, var(--grigio) 12%, white); border: 1px solid color-mix(in srgb, var(--grigio) 35%, white); }
+  .pm  .fun-box { background: color-mix(in srgb, var(--verde-bottiglia) 12%, white); border: 1px solid color-mix(in srgb, var(--verde-bottiglia) 35%, white); }
+
+  .ge .col-body { border-color: var(--blu); }
+  .bs .col-body { border-color: var(--viola); }
+  .rt .col-body { border-color: var(--rosso-mattone); }
+  .fw .col-body { border-color: var(--rosa); }
+  .sc .col-body { border-color: var(--giallo); }
+  .id .col-body { border-color: var(--grigio); }
+  .pm .col-body { border-color: var(--verde-bottiglia); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; font-size: 0.7rem; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .chip { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+  @media print {
+    @page { size: A4 landscape; margin: 8mm; }
+    body { margin: 0; max-width: none; }
+    .dictionary { page-break-before: always; }
+  }
+
+  .dictionary { margin-top: 30px; }
+  .dictionary h2 { font-size: 1.1rem; margin-bottom: 8px; }
+  .dict-sub {
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    break-inside: avoid-page;
+  }
+  .dict-sub-head { color: #fff; font-weight: 700; font-size: 0.8rem; padding: 6px 10px; }
+  .dict-sub-body {
+    padding: 8px 12px;
+    background: #fafafa;
+    column-count: 2;
+    column-gap: 22px;
+  }
+  .dict-fun {
+    font-weight: 700; font-size: 0.7rem; margin: 8px 0 3px; color: var(--testo-scuro);
+    break-after: avoid-column;
+  }
+  .dict-sub-body > .dict-fun:first-child { margin-top: 0; }
+  .dict-att-block { break-inside: avoid-column; margin-bottom: 5px; }
+  .dict-att { font-weight: 600; font-size: 0.66rem; margin: 3px 0 1px; color: #444; }
+  .dict-tasks { margin: 0; padding-left: 14px; font-size: 0.62rem; line-height: 1.35; }
+  .dict-tasks li { margin-bottom: 1px; }
+
+  .ge .dict-sub-head { background: var(--blu); }
+  .bs .dict-sub-head { background: var(--viola); }
+  .rt .dict-sub-head { background: var(--rosso-mattone); }
+  .fw .dict-sub-head { background: var(--rosa); }
+  .sc .dict-sub-head { background: var(--giallo); color: var(--testo-scuro); }
+  .id .dict-sub-head { background: var(--grigio); }
+  .pm .dict-sub-head { background: var(--verde-bottiglia); }
+</style>
+</head>
+<body>
+
+<h1>Work Breakdown Structure &mdash; MaraffaOnline</h1>
+<p class="sub">Allegato 3.1 &middot; v.1.1.0 &middot; PlayHeritage Labs</p>
+
+<div class="note">Diagramma sui primi 3 livelli (Sottosistema &rarr; Funzione, con conteggio di Attività e Task). Il 4&deg; livello &mdash; i 160 Task atomici &mdash; è elencato per esteso nella sezione "Dettaglio Completo" più sotto e nella <strong>WBS Dictionary</strong> (<code>Allegato3.1-WorkBreakdownStructure.md</code>), secondo la prassi di separare il diagramma grafico (pochi livelli, leggibile) dal dettaglio completo.</p>
+
+<div class="root-row"><div class="root-box">MaraffaOnline<span class="badge">7 sottosistemi &middot; 18 funzioni &middot; 43 attività &middot; 160 task</span></div></div>
+<div class="stem-root"></div>
+<div class="connectors">
+  <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
+</div>
+
+<div class="columns">
+
+  <div class="ge">
+    <div class="col-head"><div class="name">Game Engine</div><div class="method">Waterfall</div><div class="totals">7 attività &middot; 27 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">1.1 Logica di Gioco Maraffone</span><span class="fcount">5 attività &middot; 20 task</span></div>
+      <div class="fun-box"><span class="fname">1.2 Validazione e Testing</span><span class="fcount">2 attività &middot; 7 task</span></div>
+    </div>
+  </div>
+
+  <div class="bs">
+    <div class="col-head"><div class="name">Backend Server</div><div class="method">Agile Iterativo</div><div class="totals">7 attività &middot; 26 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">2.1 Autenticazione e Gestione Utenti</span><span class="fcount">2 attività &middot; 8 task</span></div>
+      <div class="fun-box"><span class="fname">2.2 Gestione Partite</span><span class="fcount">3 attività &middot; 11 task</span></div>
+      <div class="fun-box"><span class="fname">2.3 Database Design</span><span class="fcount">2 attività &middot; 7 task</span></div>
+    </div>
+  </div>
+
+  <div class="rt">
+    <div class="col-head"><div class="name">Real-Time Communication</div><div class="method">Agile Adattivo</div><div class="totals">4 attività &middot; 14 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">3.1 WebSocket Server</span><span class="fcount">2 attività &middot; 8 task</span></div>
+      <div class="fun-box"><span class="fname">3.2 Sincronizzazione Stato</span><span class="fcount">2 attività &middot; 6 task</span></div>
+    </div>
+  </div>
+
+  <div class="fw">
+    <div class="col-head"><div class="name">Frontend Web</div><div class="method">Agile Iterativo</div><div class="totals">9 attività &middot; 36 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">4.1 Interfaccia Utente React</span><span class="fcount">5 attività &middot; 23 task</span></div>
+      <div class="fun-box"><span class="fname">4.2 Responsive Design</span><span class="fcount">2 attività &middot; 7 task</span></div>
+      <div class="fun-box"><span class="fname">4.3 Ottimizzazione Performance</span><span class="fcount">2 attività &middot; 6 task</span></div>
+    </div>
+  </div>
+
+  <div class="sc">
+    <div class="col-head"><div class="name">Social &amp; Community</div><div class="method">Incrementale</div><div class="totals">4 attività &middot; 14 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">5.1 Sistema Amicizie</span><span class="fcount">2 attività &middot; 7 task</span></div>
+      <div class="fun-box"><span class="fname">5.2 Chat e Comunicazione</span><span class="fcount">2 attività &middot; 7 task</span></div>
+    </div>
+  </div>
+
+  <div class="id">
+    <div class="col-head"><div class="name">Infrastructure &amp; DevOps</div><div class="method">Incrementale</div><div class="totals">8 attività &middot; 28 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">6.1 Hosting e Deploy</span><span class="fcount">2 attività &middot; 8 task</span></div>
+      <div class="fun-box"><span class="fname">6.2 CI/CD Pipeline</span><span class="fcount">2 attività &middot; 6 task</span></div>
+      <div class="fun-box"><span class="fname">6.3 Monitoring e Logging</span><span class="fcount">2 attività &middot; 6 task</span></div>
+      <div class="fun-box"><span class="fname">6.4 Sicurezza</span><span class="fcount">2 attività &middot; 8 task</span></div>
+    </div>
+  </div>
+
+  <div class="pm">
+    <div class="col-head"><div class="name">Project Management</div><div class="method">&nbsp;</div><div class="totals">4 attività &middot; 15 task</div></div>
+    <div class="col-body">
+      <div class="fun-box"><span class="fname">7.1 Documentazione</span><span class="fcount">2 attività &middot; 8 task</span></div>
+      <div class="fun-box"><span class="fname">7.2 Testing e QA</span><span class="fcount">2 attività &middot; 7 task</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="legend">
+  <span><i class="chip" style="background:var(--blu)"></i> Waterfall</span>
+  <span><i class="chip" style="background:var(--viola)"></i> Agile Iterativo (Backend)</span>
+  <span><i class="chip" style="background:var(--rosso-mattone)"></i> Agile Adattivo</span>
+  <span><i class="chip" style="background:var(--rosa)"></i> Agile Iterativo (Frontend)</span>
+  <span><i class="chip" style="background:var(--giallo)"></i> Incrementale (Social)</span>
+  <span><i class="chip" style="background:var(--grigio)"></i> Incrementale (Infra)</span>
+  <span><i class="chip" style="background:var(--verde-bottiglia)"></i> Project Management</span>
+</div>
+
+<div class="dictionary">
+<h2>Dettaglio Completo (Sottosistema &rarr; Funzione &rarr; Attività &rarr; Task)</h2>
+
+<div class="dict-sub ge">
+  <div class="dict-sub-head">1. Game Engine</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">1.1 Logica di Gioco Maraffone</div>
+    <div class="dict-att-block"><div class="dict-att">1.1.1 Implementazione Regole Base</div>
+    <ul class="dict-tasks">
+      <li><strong>1.1.1.1</strong> Definire struttura dati per carte (seme, valore, ordine)</li>
+      <li><strong>1.1.1.2</strong> Implementare mazzo da 40 carte italiane</li>
+      <li><strong>1.1.1.3</strong> Implementare algoritmo di distribuzione carte (2×5)</li>
+      <li><strong>1.1.1.4</strong> Codificare ordine di forza carte (3→2→A→Re→Cavallo→Fante→7→6→5→4)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">1.1.2 Sistema di Punteggio</div>
+    <ul class="dict-tasks">
+      <li><strong>1.1.2.1</strong> Implementare calcolo punteggio carte (Asso=1pt, Figure/2/3=1/3pt)</li>
+      <li><strong>1.1.2.2</strong> Sviluppare arrotondamento per difetto (punti interi)</li>
+      <li><strong>1.1.2.3</strong> Implementare bonus ultima presa (+1 punto)</li>
+      <li><strong>1.1.2.4</strong> Calcolare totale mano (max 11 e 2/3 punti)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">1.1.3 Meccanica Turni</div>
+    <ul class="dict-tasks">
+      <li><strong>1.1.3.1</strong> Implementare selezione briscola da chi ha 4 di denari</li>
+      <li><strong>1.1.3.2</strong> Validare obbligo di rispondere al seme</li>
+      <li><strong>1.1.3.3</strong> Determinare vincitore presa (briscola vs seme)</li>
+      <li><strong>1.1.3.4</strong> Gestire rotazione turni (senso antiorario)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">1.1.4 Regole Speciali</div>
+    <ul class="dict-tasks">
+      <li><strong>1.1.4.1</strong> Rilevare Maraffa/Cricca (Asso+2+3 briscola)</li>
+      <li><strong>1.1.4.2</strong> Validare obbligo gioco Asso se Maraffa</li>
+      <li><strong>1.1.4.3</strong> Assegnare 3 punti bonus per Maraffa</li>
+      <li><strong>1.1.4.4</strong> Penalizzare mancato gioco Asso (-3 punti)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">1.1.5 Condizioni Vittoria</div>
+    <ul class="dict-tasks">
+      <li><strong>1.1.5.1</strong> Verificare raggiungimento 41 punti + figura</li>
+      <li><strong>1.1.5.2</strong> Implementare variante corta (31 punti)</li>
+      <li><strong>1.1.5.3</strong> Determinare coppia vincitrice</li>
+      <li><strong>1.1.5.4</strong> Generare riepilogo fine partita</li>
+    </ul></div>
+    <div class="dict-fun">1.2 Validazione e Testing</div>
+    <div class="dict-att-block"><div class="dict-att">1.2.1 Unit Testing Regole</div>
+    <ul class="dict-tasks">
+      <li><strong>1.2.1.1</strong> Test punteggio carte (30 test case)</li>
+      <li><strong>1.2.1.2</strong> Test vincitore presa (briscola/seme)</li>
+      <li><strong>1.2.1.3</strong> Test Maraffa/Cricca (casi positivi/negativi)</li>
+      <li><strong>1.2.1.4</strong> Test condizioni vittoria</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">1.2.2 Integration Testing</div>
+    <ul class="dict-tasks">
+      <li><strong>1.2.2.1</strong> Test partita completa simulata (4 giocatori bot)</li>
+      <li><strong>1.2.2.2</strong> Validare coerenza punteggi mano per mano</li>
+      <li><strong>1.2.2.3</strong> Test edge cases (pareggi, carte finali)</li>
+    </ul></div>
+  </div>
+</div>
+<div class="dict-sub bs">
+  <div class="dict-sub-head">2. Backend Server</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">2.1 Autenticazione e Gestione Utenti</div>
+    <div class="dict-att-block"><div class="dict-att">2.1.1 Sistema di Autenticazione</div>
+    <ul class="dict-tasks">
+      <li><strong>2.1.1.1</strong> Implementare registrazione utente (email + password)</li>
+      <li><strong>2.1.1.2</strong> Sviluppare login con JWT token</li>
+      <li><strong>2.1.1.3</strong> Implementare "Gioca come ospite" (sessione temporanea)</li>
+      <li><strong>2.1.1.4</strong> Gestire logout e invalidazione token</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">2.1.2 Profilo Utente</div>
+    <ul class="dict-tasks">
+      <li><strong>2.1.2.1</strong> CRUD operazioni profilo (avatar, nickname)</li>
+      <li><strong>2.1.2.2</strong> Calcolare statistiche utente (partite vinte/perse, win%)</li>
+      <li><strong>2.1.2.3</strong> Implementare storico partite</li>
+      <li><strong>2.1.2.4</strong> Gestire preferenze utente (notifiche, privacy)</li>
+    </ul></div>
+    <div class="dict-fun">2.2 Gestione Partite</div>
+    <div class="dict-att-block"><div class="dict-att">2.2.1 Creazione e Lobby</div>
+    <ul class="dict-tasks">
+      <li><strong>2.2.1.1</strong> API creazione stanza (pubblica/privata)</li>
+      <li><strong>2.2.1.2</strong> Gestire password stanze private</li>
+      <li><strong>2.2.1.3</strong> Implementare sistema di inviti (link condivisibile)</li>
+      <li><strong>2.2.1.4</strong> Lista stanze disponibili (filtri pubbliche/amici)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">2.2.2 Stato Partita</div>
+    <ul class="dict-tasks">
+      <li><strong>2.2.2.1</strong> Persistere stato partita su database</li>
+      <li><strong>2.2.2.2</strong> Gestire recupero partita in corso (reconnect)</li>
+      <li><strong>2.2.2.3</strong> Sincronizzare stato tra 4 giocatori</li>
+      <li><strong>2.2.2.4</strong> Implementare timeout turno (30 secondi)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">2.2.3 Storico e Statistiche</div>
+    <ul class="dict-tasks">
+      <li><strong>2.2.3.1</strong> Salvare replay partite (mosse + timestamp)</li>
+      <li><strong>2.2.3.2</strong> Calcolare statistiche aggregate</li>
+      <li><strong>2.2.3.3</strong> Generare classifiche globali/amici</li>
+    </ul></div>
+    <div class="dict-fun">2.3 Database Design</div>
+    <div class="dict-att-block"><div class="dict-att">2.3.1 Schema PostgreSQL</div>
+    <ul class="dict-tasks">
+      <li><strong>2.3.1.1</strong> Progettare schema tabelle (users, matches, moves, friendships)</li>
+      <li><strong>2.3.1.2</strong> Definire indici per query performance</li>
+      <li><strong>2.3.1.3</strong> Implementare migrazioni database</li>
+      <li><strong>2.3.1.4</strong> Configurare backup automatici</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">2.3.2 Ottimizzazione Query</div>
+    <ul class="dict-tasks">
+      <li><strong>2.3.2.1</strong> Query profiling per bottleneck</li>
+      <li><strong>2.3.2.2</strong> Implementare connection pooling</li>
+      <li><strong>2.3.2.3</strong> Caching query frequenti (Redis)</li>
+    </ul></div>
+  </div>
+</div>
+<div class="dict-sub rt">
+  <div class="dict-sub-head">3. Real-Time Communication</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">3.1 WebSocket Server</div>
+    <div class="dict-att-block"><div class="dict-att">3.1.1 Setup Socket.IO</div>
+    <ul class="dict-tasks">
+      <li><strong>3.1.1.1</strong> Configurare Socket.IO server (Node.js)</li>
+      <li><strong>3.1.1.2</strong> Implementare gestione rooms per partite</li>
+      <li><strong>3.1.1.3</strong> Autenticazione WebSocket (JWT)</li>
+      <li><strong>3.1.1.4</strong> Gestire disconnessioni/reconnessioni</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">3.1.2 Eventi Real-Time</div>
+    <ul class="dict-tasks">
+      <li><strong>3.1.2.1</strong> Evento "gioca_carta" (broadcast a 4 giocatori)</li>
+      <li><strong>3.1.2.2</strong> Evento "fine_mano" con punteggi aggiornati</li>
+      <li><strong>3.1.2.3</strong> Evento "chat_message" (solo stanza attiva)</li>
+      <li><strong>3.1.2.4</strong> Evento "notifica_turno" (push notification)</li>
+    </ul></div>
+    <div class="dict-fun">3.2 Sincronizzazione Stato</div>
+    <div class="dict-att-block"><div class="dict-att">3.2.1 Conflict Resolution</div>
+    <ul class="dict-tasks">
+      <li><strong>3.2.1.1</strong> Validare mosse lato server (anti-cheat)</li>
+      <li><strong>3.2.1.2</strong> Gestire mosse simultanee (timestamp-based)</li>
+      <li><strong>3.2.1.3</strong> Implementare rollback per errori sincronizzazione</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">3.2.2 Latency Management</div>
+    <ul class="dict-tasks">
+      <li><strong>3.2.2.1</strong> Misurare latency client-server (ping/pong)</li>
+      <li><strong>3.2.2.2</strong> Indicatori latency UI (verde/giallo/rosso)</li>
+      <li><strong>3.2.2.3</strong> Compensazione lag per animazioni</li>
+    </ul></div>
+  </div>
+</div>
+<div class="dict-sub fw">
+  <div class="dict-sub-head">4. Frontend Web</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">4.1 Interfaccia Utente React</div>
+    <div class="dict-att-block"><div class="dict-att">4.1.1 Homepage e Autenticazione</div>
+    <ul class="dict-tasks">
+      <li><strong>4.1.1.1</strong> Sviluppare landing page (hero + CTA)</li>
+      <li><strong>4.1.1.2</strong> Form registrazione/login (validazione client-side)</li>
+      <li><strong>4.1.1.3</strong> Modale "Prova come ospite"</li>
+      <li><strong>4.1.1.4</strong> Pagina "Scopri le regole" (tutorial interattivo)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">4.1.2 Dashboard Utente</div>
+    <ul class="dict-tasks">
+      <li><strong>4.1.2.1</strong> Layout dashboard (profilo + partite + amici)</li>
+      <li><strong>4.1.2.2</strong> Card "Partite attive" con stato</li>
+      <li><strong>4.1.2.3</strong> Pulsanti "Crea partita" / "Unisciti a partita"</li>
+      <li><strong>4.1.2.4</strong> Sidebar lista amici online (indicatori status)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">4.1.3 Lobby e Creazione Stanza</div>
+    <ul class="dict-tasks">
+      <li><strong>4.1.3.1</strong> Form creazione stanza (nome, password, inviti)</li>
+      <li><strong>4.1.3.2</strong> Selezione amici da invitare (checkbox)</li>
+      <li><strong>4.1.3.3</strong> Generazione e copia link di invito</li>
+      <li><strong>4.1.3.4</strong> Waiting room (4 giocatori, pulsante "Inizia")</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">4.1.4 Tavolo da Gioco</div>
+    <ul class="dict-tasks">
+      <li><strong>4.1.4.1</strong> Layout tavolo 4 giocatori (Nord/Sud/Est/Ovest)</li>
+      <li><strong>4.1.4.2</strong> Renderizzare carte in mano (click to play)</li>
+      <li><strong>4.1.4.3</strong> Area centrale carte giocate (4 carte)</li>
+      <li><strong>4.1.4.4</strong> Animazioni gioco carta (fly to center)</li>
+      <li><strong>4.1.4.5</strong> Timer turno con progress bar (30s)</li>
+      <li><strong>4.1.4.6</strong> Indicatori latency per giocatore</li>
+      <li><strong>4.1.4.7</strong> Chat in-game (collapsabile)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">4.1.5 Schermata Fine Partita</div>
+    <ul class="dict-tasks">
+      <li><strong>4.1.5.1</strong> Modale "Vittoria/Sconfitta" con confetti</li>
+      <li><strong>4.1.5.2</strong> Riepilogo punteggio finale</li>
+      <li><strong>4.1.5.3</strong> Tabella mani vinte per coppia</li>
+      <li><strong>4.1.5.4</strong> Pulsanti "Rivincita" / "Torna alla lobby" / "Condividi"</li>
+    </ul></div>
+    <div class="dict-fun">4.2 Responsive Design</div>
+    <div class="dict-att-block"><div class="dict-att">4.2.1 Adattamento Mobile</div>
+    <ul class="dict-tasks">
+      <li><strong>4.2.1.1</strong> Layout verticale tavolo da gioco (mobile)</li>
+      <li><strong>4.2.1.2</strong> Carte scrollabili orizzontalmente</li>
+      <li><strong>4.2.1.3</strong> Pulsanti tattili grandi (min 44×44 px)</li>
+      <li><strong>4.2.1.4</strong> Chat drawer laterale (collapsabile)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">4.2.2 Accessibilità</div>
+    <ul class="dict-tasks">
+      <li><strong>4.2.2.1</strong> Modalità alto contrasto (daltonici)</li>
+      <li><strong>4.2.2.2</strong> Screen reader support (aria-labels)</li>
+      <li><strong>4.2.2.3</strong> Navigazione da tastiera (tab index)</li>
+    </ul></div>
+    <div class="dict-fun">4.3 Ottimizzazione Performance</div>
+    <div class="dict-att-block"><div class="dict-att">4.3.1 Bundle Size</div>
+    <ul class="dict-tasks">
+      <li><strong>4.3.1.1</strong> Code splitting per route (lazy loading)</li>
+      <li><strong>4.3.1.2</strong> Tree shaking dipendenze non utilizzate</li>
+      <li><strong>4.3.1.3</strong> Minification e uglification</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">4.3.2 Rendering Optimization</div>
+    <ul class="dict-tasks">
+      <li><strong>4.3.2.1</strong> React.memo per componenti statici</li>
+      <li><strong>4.3.2.2</strong> useMemo/useCallback per calcoli costosi</li>
+      <li><strong>4.3.2.3</strong> Virtualizzazione liste lunghe (storico partite)</li>
+    </ul></div>
+  </div>
+</div>
+<div class="dict-sub sc">
+  <div class="dict-sub-head">5. Social &amp; Community</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">5.1 Sistema Amicizie</div>
+    <div class="dict-att-block"><div class="dict-att">5.1.1 Gestione Amici</div>
+    <ul class="dict-tasks">
+      <li><strong>5.1.1.1</strong> Ricerca utenti per nickname</li>
+      <li><strong>5.1.1.2</strong> Invio richiesta amicizia</li>
+      <li><strong>5.1.1.3</strong> Accetta/rifiuta richiesta</li>
+      <li><strong>5.1.1.4</strong> Rimuovi amico</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">5.1.2 Presenza Online</div>
+    <ul class="dict-tasks">
+      <li><strong>5.1.2.1</strong> Indicatore online/offline (WebSocket heartbeat)</li>
+      <li><strong>5.1.2.2</strong> Stato "In partita" / "Disponibile"</li>
+      <li><strong>5.1.2.3</strong> Notifiche amico online</li>
+    </ul></div>
+    <div class="dict-fun">5.2 Chat e Comunicazione</div>
+    <div class="dict-att-block"><div class="dict-att">5.2.1 Chat Testuale</div>
+    <ul class="dict-tasks">
+      <li><strong>5.2.1.1</strong> Chat privata 1-a-1 con amici</li>
+      <li><strong>5.2.1.2</strong> Chat stanza di gioco (4 giocatori)</li>
+      <li><strong>5.2.1.3</strong> Storico messaggi (ultimi 100)</li>
+      <li><strong>5.2.1.4</strong> Moderazione messaggi (filtro parole offensive)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">5.2.2 Notifiche</div>
+    <ul class="dict-tasks">
+      <li><strong>5.2.2.1</strong> Notifiche in-app (toast messages)</li>
+      <li><strong>5.2.2.2</strong> Badge contatore notifiche non lette</li>
+      <li><strong>5.2.2.3</strong> Centro notifiche (dropdown)</li>
+    </ul></div>
+  </div>
+</div>
+<div class="dict-sub id">
+  <div class="dict-sub-head">6. Infrastructure &amp; DevOps</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">6.1 Hosting e Deploy</div>
+    <div class="dict-att-block"><div class="dict-att">6.1.1 Ambiente Produzione</div>
+    <ul class="dict-tasks">
+      <li><strong>6.1.1.1</strong> Setup VPS Linux (DigitalOcean/Hetzner)</li>
+      <li><strong>6.1.1.2</strong> Configurare Nginx reverse proxy</li>
+      <li><strong>6.1.1.3</strong> Certificati SSL (Let's Encrypt)</li>
+      <li><strong>6.1.1.4</strong> Domain setup (maraffaonline.it)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">6.1.2 Container Orchestration</div>
+    <ul class="dict-tasks">
+      <li><strong>6.1.2.1</strong> Dockerfile per backend (Node.js)</li>
+      <li><strong>6.1.2.2</strong> Dockerfile per frontend (React build)</li>
+      <li><strong>6.1.2.3</strong> Docker Compose per stack completo (DB + Backend + Frontend)</li>
+      <li><strong>6.1.2.4</strong> Deploy automatizzato con GitHub Actions</li>
+    </ul></div>
+    <div class="dict-fun">6.2 CI/CD Pipeline</div>
+    <div class="dict-att-block"><div class="dict-att">6.2.1 Continuous Integration</div>
+    <ul class="dict-tasks">
+      <li><strong>6.2.1.1</strong> GitHub Actions workflow per test automatici</li>
+      <li><strong>6.2.1.2</strong> Linting e code quality checks (ESLint, Prettier)</li>
+      <li><strong>6.2.1.3</strong> Build check per ogni PR</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">6.2.2 Continuous Deployment</div>
+    <ul class="dict-tasks">
+      <li><strong>6.2.2.1</strong> Deploy automatico su staging (branch develop)</li>
+      <li><strong>6.2.2.2</strong> Deploy production manuale (branch main)</li>
+      <li><strong>6.2.2.3</strong> Rollback automatico in caso di errori</li>
+    </ul></div>
+    <div class="dict-fun">6.3 Monitoring e Logging</div>
+    <div class="dict-att-block"><div class="dict-att">6.3.1 Application Monitoring</div>
+    <ul class="dict-tasks">
+      <li><strong>6.3.1.1</strong> Setup monitoring uptime (UptimeRobot/Pingdom)</li>
+      <li><strong>6.3.1.2</strong> Error tracking (Sentry)</li>
+      <li><strong>6.3.1.3</strong> Performance monitoring (Response time, latency)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">6.3.2 Logging</div>
+    <ul class="dict-tasks">
+      <li><strong>6.3.2.1</strong> Centralizzare log applicativi (Winston)</li>
+      <li><strong>6.3.2.2</strong> Log rotation e retention policy</li>
+      <li><strong>6.3.2.3</strong> Dashboard Grafana per metriche</li>
+    </ul></div>
+    <div class="dict-fun">6.4 Sicurezza</div>
+    <div class="dict-att-block"><div class="dict-att">6.4.1 Hardening Server</div>
+    <ul class="dict-tasks">
+      <li><strong>6.4.1.1</strong> Configurare firewall (UFW)</li>
+      <li><strong>6.4.1.2</strong> Disabilitare login SSH root</li>
+      <li><strong>6.4.1.3</strong> Setup fail2ban per brute force protection</li>
+      <li><strong>6.4.1.4</strong> Aggiornamenti automatici sicurezza OS</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">6.4.2 Application Security</div>
+    <ul class="dict-tasks">
+      <li><strong>6.4.2.1</strong> Sanitizzazione input utente (XSS prevention)</li>
+      <li><strong>6.4.2.2</strong> Rate limiting API (DoS prevention)</li>
+      <li><strong>6.4.2.3</strong> SQL injection prevention (prepared statements)</li>
+      <li><strong>6.4.2.4</strong> CORS policy configurazione</li>
+    </ul></div>
+  </div>
+</div>
+<div class="dict-sub pm">
+  <div class="dict-sub-head">7. Project Management</div>
+  <div class="dict-sub-body">
+    <div class="dict-fun">7.1 Documentazione</div>
+    <div class="dict-att-block"><div class="dict-att">7.1.1 Documentazione Tecnica</div>
+    <ul class="dict-tasks">
+      <li><strong>7.1.1.1</strong> README principale del progetto</li>
+      <li><strong>7.1.1.2</strong> API documentation (Swagger/OpenAPI)</li>
+      <li><strong>7.1.1.3</strong> Guida deployment per DevOps</li>
+      <li><strong>7.1.1.4</strong> Regole ufficiali Maraffone (per team)</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">7.1.2 Documentazione PM</div>
+    <ul class="dict-tasks">
+      <li><strong>7.1.2.1</strong> Scoping documents (12 allegati)</li>
+      <li><strong>7.1.2.2</strong> Planning documents (5 allegati)</li>
+      <li><strong>7.1.2.3</strong> Launching documents (2 allegati)</li>
+      <li><strong>7.1.2.4</strong> Monitoring reports (settimanali)</li>
+    </ul></div>
+    <div class="dict-fun">7.2 Testing e QA</div>
+    <div class="dict-att-block"><div class="dict-att">7.2.1 Testing Automation</div>
+    <ul class="dict-tasks">
+      <li><strong>7.2.1.1</strong> Unit tests (Jest) - coverage 80%+</li>
+      <li><strong>7.2.1.2</strong> Integration tests (Supertest)</li>
+      <li><strong>7.2.1.3</strong> E2E tests (Cypress) - critical paths</li>
+    </ul></div>
+    <div class="dict-att-block"><div class="dict-att">7.2.2 User Acceptance Testing</div>
+    <ul class="dict-tasks">
+      <li><strong>7.2.2.1</strong> UAT con 10 membri Maraffa Forever</li>
+      <li><strong>7.2.2.2</strong> Raccolta feedback tramite questionario</li>
+      <li><strong>7.2.2.3</strong> Bug fixing prioritizzato (critical → high → medium)</li>
+      <li><strong>7.2.2.4</strong> Approvazione finale committente</li>
+    </ul></div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

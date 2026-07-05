@@ -10,7 +10,7 @@ Il metodo **MoSCoW** è una tecnica di prioritizzazione dei requisiti sviluppata
 
 ---
 
-## Principi Applicati (Best Practices 2026)
+## Principi Applicati
 
 ### 1. Regola del 60/20/20
 Seguendo le linee guida del **Dynamic Systems Development Method (DSDM)**, abbiamo applicato la seguente distribuzione dello sforzo:
@@ -357,6 +357,7 @@ La categorizzazione MoSCoW sarà **rivista** nei seguenti momenti:
 
 ---
 
+<!-- Sezione "Fonti e Riferimenti" commentata (link a blog esterni, non necessari in un allegato di progetto). Reinseribile o sostituibile con fonti del corso; registro in Relazione/_appunti-per-relazione.md.
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2026:
@@ -364,6 +365,7 @@ Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2
 - [Agile Business Consortium - DSDM MoSCoW Prioritisation](https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html)
 - [ProductPlan - MoSCoW Method Overview](https://www.productplan.com/glossary/moscow-prioritization/)
 - [EdStellar - Implementing MoSCoW in 2026](https://www.edstellar.com/blog/moscow-prioritization)
+-->
 
 ---
 

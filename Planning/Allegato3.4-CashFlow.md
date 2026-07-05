@@ -1,5 +1,7 @@
 # Allegato 3.4 - Cash Flow Management
-## v.1.1.0 – 2025-10-28 18:00:00
+## v.1.3.0 – 2025-10-28 18:00:00
+
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.4-CashFlow.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene statistiche chiave, il grafico Cash Flow mensile e la ripartizione spese per categoria, generati direttamente dai valori verificati di questo documento — sostituiscono le immagini PNG sotto, che mostrano dati superati (vedi nota nella sezione "Visualizzazione Grafica Cash Flow Mensile").
 
 La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline, considerando il budget limitato di **€25.000** e la durata di **7 mesi** (15 ottobre 2025 - 15 maggio 2026). Questo documento traccia tutti i flussi finanziari in entrata (inflow) e in uscita (outflow) su base mensile, con visualizzazioni grafiche professionali.
 
@@ -9,20 +11,24 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 
 | Mese | Periodo | Inflow (€) | Outflow (€) | Net Cash Flow (€) | Saldo Cumulativo (€) |
 |------|---------|------------|-------------|-------------------|----------------------|
-| **Mese 0** | 15 Ott - 31 Ott | €12.500 | €3.850 | €8.650 | €8.650 |
-| **Mese 1** | 01 Nov - 30 Nov | €0 | €4.200 | -€4.200 | €4.450 |
-| **Mese 2** | 01 Dic - 31 Dic | €6.250 | €4.200 | €2.050 | €6.500 |
-| **Mese 3** | 01 Gen - 31 Gen | €0 | €4.200 | -€4.200 | €2.300 |
-| **Mese 4** | 01 Feb - 28 Feb | €6.250 | €4.200 | €2.050 | €4.350 |
-| **Mese 5** | 01 Mar - 15 Mar | €0 | €2.100 | -€2.100 | €2.250 |
+| **Mese 0** | 15 Ott - 31 Ott | €12.500 | €3.000 | €9.500 | €9.500 |
+| **Mese 1** | 01 Nov - 30 Nov | €0 | €3.700 | -€3.700 | €5.800 |
+| **Mese 2** | 01 Dic - 31 Dic | €6.250 | €3.700 | €2.550 | €8.350 |
+| **Mese 3** | 01 Gen - 31 Gen | €0 | €3.700 | -€3.700 | €4.650 |
+| **Mese 4** | 01 Feb - 28 Feb | €6.250 | €3.700 | €2.550 | €7.200 |
+| **Mese 5** | 01 Mar - 31 Mar | €0 | €2.000 | -€2.000 | €5.200 |
+| **Mese 6** | 01 Apr - 30 Apr | €0 | €1.800 | -€1.800 | €3.400 |
+| **Mese 7** | 01 Mag - 15 Mag | €0 | €1.150 | -€1.150 | €2.250 |
 | **TOTALE** | | **€25.000** | **€22.750** | **€2.250** | **€2.250** |
 
 **Note**:
-- **Inflow**: pagamenti ricevuti da Maraffa Forever in 4 tranche (50% upfront, 25% a metà progetto, 25% a fine)
-- **Outflow**: spese operative mensili (salari, hosting, tools, licenze)
+- **Inflow**: pagamenti ricevuti da Maraffa Forever in 3 tranche (50% upfront, 25% a metà progetto, 25% alla consegna dell'MVP beta)
+- **Outflow**: spese operative mensili (salari, hosting, tools, licenze), più contenute nella coda del progetto (Mesi 5-7) quando il team si riduce alle attività di testing, UAT e lancio
 - **Saldo Finale**: €2.250 di surplus destinato a contingency e celebrazione lancio
 
 ### Visualizzazione Grafica Cash Flow Mensile
+
+> **Nota.** L'immagine seguente è stata generata prima della ridistribuzione del Cash Flow su 7 mesi (v.1.2.0) e mostra ancora i valori superati a 6 mesi (outflow Mese 1-4 a €4.200, saldo minimo €2.300 nel Mese 3). Non è stata rigenerata in Excel. Per i valori corretti, aggiornati alla tabella di questo documento, vedi il grafico nel companion `Allegato3.4-CashFlow.html`.
 
 Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del progetto:
 
@@ -30,10 +36,10 @@ Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del prog
 
 **Analisi del Grafico**:
 - **Barre Verdi**: Inflow (pagamenti committente) concentrati in 3 momenti chiave (Mese 0, 2, 4)
-- **Barre Rosse**: Outflow (spese operative) costanti per Mesi 1-4, ridotte in Mese 0 e 5
-- **Linea Arancione**: Saldo cumulativo sempre positivo, con minimo di €2.300 nel Mese 3
+- **Barre Rosse**: Outflow (spese operative) sostanzialmente costanti nei Mesi 1-4 (€3.700), più bassi nel Mese 0 (setup, mezzo mese) e in progressiva riduzione nei Mesi 5-7 (testing, UAT e lancio con team ridotto)
+- **Linea Arancione**: Saldo cumulativo sempre positivo, con minimo di €2.250 nel Mese 7
 
-**Insight**: Il saldo cumulativo non scende mai sotto €2.300, garantendo liquidità sufficiente per coprire le spese operative in ogni fase del progetto. La struttura di pagamento 50/25/25 è efficace per mantenere il cash flow positivo.
+**Insight**: Il saldo cumulativo non scende mai sotto €2.250, garantendo liquidità sufficiente per coprire le spese operative in ogni fase del progetto. La struttura di pagamento 50/25/25 è efficace per mantenere il cash flow positivo per tutti i 7 mesi, anche nei mesi privi di inflow (1, 3, 5, 6, 7).
 
 ---
 
@@ -46,63 +52,35 @@ Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del prog
 | **3° Pagamento** | 15 Feb 2026 | €6.250 | 25% | Consegna MVP funzionante (beta) |
 | **TOTALE** | | **€25.000** | **100%** | |
 
-**Razionale**: Struttura pagamenti standard per progetti a budget fisso. Il 50% upfront garantisce liquidità iniziale per setup team e infrastruttura. I pagamenti successivi sono legati a milestone misurabili.
+**Razionale**: Struttura pagamenti standard per progetti a budget fisso. Il 50% upfront garantisce liquidità iniziale per setup team e infrastruttura. I pagamenti successivi sono legati a milestone misurabili. Poiché l'ultimo inflow è a metà progetto (15 Feb), la seconda metà (Mar-Mag) è finanziata interamente dal saldo cumulativo accumulato: per questo l'outflow viene ridotto nei Mesi 5-7, mantenendo il saldo positivo fino al lancio.
 
 ---
 
 ## Dettaglio Spese Mensili (Outflow)
 
-### Mese 0 (15 Ott - 31 Ott) - €3.850
+La tabella seguente riporta la ripartizione dell'outflow per categoria in ciascun mese. Ogni riga somma all'outflow del mese e ogni colonna somma al totale di categoria riportato più avanti.
 
-| Categoria | Voce di Spesa | Importo (€) | Motivazione |
-|-----------|---------------|-------------|-------------|
-| **Salari** | Stipendi team (5 persone, 0.5 mesi) | €2.500 | Fase setup e kickoff |
-| **Infrastruttura** | Server dedicato Hetzner (€50/mese × 0.5) | €25 | Provisioning iniziale |
-| **Tools** | Licenze Figma Pro (€15/mese × 5 utenti) | €75 | Design mockup approvati |
-| **Tools** | Licenza JetBrains All Products (€25/mese) | €25 | IDE per sviluppo |
-| **Tools** | Dominio maraffaonline.it (registrazione annuale) | €15 | Acquisto dominio |
-| **Consulenza** | Validazione regole con Francesca Giuliani | €300 | Esperta Maraffa Forever |
-| **Setup** | SSL Certificato Let's Encrypt (gratuito) | €0 | |
-| **Setup** | GitLab CI setup (piano free) | €0 | |
-| **Comunicazione** | Zoom Pro per daily meetings (€13/mese) | €13 | Team remoto |
-| **Documentazione** | Confluence Cloud (€10/utente × 5) | €50 | Documentazione PM |
-| **Contingency** | Buffer 10% | €347 | Imprevisti fase iniziale |
-| **Subtotale Mese 0** | | **€3.850** | |
+| Mese | Salari | Infrastruttura | Tools e Licenze | Consulenza | Marketing/UAT/Celebr. | Contingency | Totale Outflow |
+|------|-------:|---------------:|----------------:|-----------:|----------------------:|------------:|---------------:|
+| **Mese 0** (15-31 Ott) | €2.300 | €0 | €97 | €0 | €0 | €603 | **€3.000** |
+| **Mese 1** (Nov) | €2.800 | €50 | €163 | €150 | €0 | €537 | **€3.700** |
+| **Mese 2** (Dic) | €2.700 | €50 | €163 | €0 | €0 | €787 | **€3.700** |
+| **Mese 3** (Gen) | €2.800 | €50 | €163 | €0 | €0 | €687 | **€3.700** |
+| **Mese 4** (Feb) | €2.800 | €50 | €163 | €0 | €0 | €687 | **€3.700** |
+| **Mese 5** (Mar) | €1.500 | €50 | €163 | €0 | €0 | €287 | **€2.000** |
+| **Mese 6** (Apr) | €800 | €25 | €100 | €150 | €0 | €725 | **€1.800** |
+| **Mese 7** (01-15 Mag) | €300 | €0 | €99 | €0 | €400 | €351 | **€1.150** |
+| **TOTALE** | **€16.000** | **€275** | **€1.111** | **€300** | **€400** | **€4.664** | **€22.750** |
 
-### Mese 1-4 (Nov - Feb) - €4.200/mese
+**Note di dettaglio**:
+- **Salari** (€16.000): 5 persone. Il Mese 0 (mezzo mese, setup) e i Mesi 5-7 (fase finale con team progressivamente ridotto a testing, UAT e lancio) hanno importi più contenuti; i mesi centrali di sviluppo pieno (1-4) sono i più onerosi.
+- **Infrastruttura** (€275): server dedicato Hetzner (~€50/mese) attivo dal Mese 1. Nel Mese 7 la voce è nulla perché il deploy in produzione è a carico di Maraffa Forever (come da accordi contrattuali, vedi Cap. 6 - Closing).
+- **Tools e Licenze** (€1.111): dominio maraffaonline.it (€15 una tantum nel Mese 0) più abbonamenti software mensili (Figma Pro €75, JetBrains €25, Zoom Pro €13, Confluence €50 = €163/mese), con quote ridotte nei mezzi mesi (0 e 7).
+- **Consulenza** (€300): Francesca Giuliani (esperta Maraffa Forever) per la validazione delle regole, in due sessioni da €150 — Novembre 2025 (Mese 1) e Aprile 2026 (Mese 6).
+- **Marketing/UAT/Celebrazione** (€400): tutte concentrate nel Mese 7 (fase di lancio) — comunicazione social €200, compenso simbolico ai 10 tester della community €100, team celebration €100.
+- **Contingency**: buffer per imprevisti e change request distribuito su tutti i mesi (totale €4.664, pari al 18,7% del budget).
 
-| Categoria | Voce di Spesa | Importo (€/mese) | Motivazione |
-|-----------|---------------|------------------|-------------|
-| **Salari** | Stipendi team (5 persone, full-time) | €3.000 | Development sprint |
-| **Infrastruttura** | Server dedicato Hetzner (€50/mese) | €50 | Hosting production + staging |
-| **Database** | PostgreSQL hosting (incluso in server) | €0 | |
-| **CDN** | Cloudflare Free Tier | €0 | DDoS protection + CDN |
-| **Monitoring** | UptimeRobot Free Tier | €0 | Uptime monitoring |
-| **Error Tracking** | Sentry (10K events/mese free) | €0 | Error tracking |
-| **Tools** | Figma Pro (€15/mese × 5 utenti) | €75 | Design continuativo |
-| **Tools** | JetBrains All Products (€25/mese) | €25 | IDE |
-| **Comunicazione** | Zoom Pro (€13/mese) | €13 | Meeting team + stakeholder |
-| **Documentazione** | Confluence Cloud (€10/utente × 5) | €50 | PM documentation |
-| **Email Service** | SendGrid (100 email/giorno free) | €0 | Email transazionali (registrazione, password recovery) |
-| **Storage** | Cloudinary Free Tier (25 GB) | €0 | Storage avatar utenti |
-| **Testing** | BrowserStack (piano free) | €0 | Cross-browser testing |
-| **Contingency** | Buffer 20% per imprevisti | €387 | Bug fixing, estensioni scope |
-| **Subtotale Mesi 1-4** | | **€4.200** | |
-
-**Totale Mesi 1-4**: €4.200 × 4 = **€16.800**
-
-### Mese 5 (01 Mar - 15 Mar) - €2.100
-
-| Categoria | Voce di Spesa | Importo (€) | Motivazione |
-|-----------|---------------|-------------|-------------|
-| **Salari** | Stipendi team (5 persone, 0.5 mesi) | €1.500 | Testing finale e lancio |
-| **Infrastruttura** | Server dedicato Hetzner (€50/mese × 0.5) | €25 | |
-| **Tools** | Figma + JetBrains + Zoom + Confluence (0.5 mesi) | €81 | Continuità tools |
-| **Marketing** | Materiale comunicazione lancio (social media) | €200 | Post Facebook/Instagram per Maraffa Forever |
-| **UAT** | Budget ringraziamento tester (10 utenti × €10) | €100 | Compenso simbolico community |
-| **Celebrazione** | Team celebration (pizza + birre online) | €100 | Morale team post-lancio |
-| **Contingency** | Buffer finale | €94 | Ultimi aggiustamenti |
-| **Subtotale Mese 5** | | **€2.100** | |
+Molti servizi cloud sono utilizzati in free tier e quindi non generano costi: PostgreSQL (incluso nel server), Cloudflare CDN, UptimeRobot, Sentry (error tracking), SendGrid (email transazionali), Cloudinary (storage avatar), BrowserStack (cross-browser testing), Let's Encrypt (SSL), GitLab CI (piano free).
 
 ---
 
@@ -110,14 +88,14 @@ Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del prog
 
 | Categoria | Totale (€) | % del Budget | Note |
 |-----------|------------|--------------|------|
-| **Salari Team** | €16.000 | 64.0% | 5 persone × 7 mesi FTE (part-time mese 0 e 7) |
-| **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner €50/mese × 5.5 mesi (server attivo solo da Mese 1) |
+| **Salari Team** | €16.000 | 64.0% | 5 persone su 7 mesi (part-time nel Mese 0 e nella coda Mesi 5-7) |
+| **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner ~€50/mese (attivo dal Mese 1; deploy finale a carico del committente) |
 | **Tools e Licenze** | €1.111 | 4.4% | Figma, JetBrains, Zoom, Confluence, Dominio |
-| **Consulenza Esperta** | €300 | 1.2% | Francesca Giuliani (validazione regole) |
+| **Consulenza Esperta** | €300 | 1.2% | Francesca Giuliani (validazione regole, 2 sessioni) |
 | **Marketing Lancio** | €200 | 0.8% | Comunicazione social per community |
 | **UAT e Testing** | €100 | 0.4% | Compenso tester Maraffa Forever |
 | **Celebrazione** | €100 | 0.4% | Team celebration post-lancio |
-| **Contingency Buffer** | €4.664 | 18.7% | Imprevisti + change requests + buffer estensione progetto 7 mesi |
+| **Contingency Buffer** | €4.664 | 18.7% | Imprevisti + change requests + buffer per progetto di 7 mesi |
 | **TOTALE SPESE** | **€22.750** | **91.0%** | |
 | **Surplus Finale** | **€2.250** | **9.0%** | Reserve per fase post-lancio |
 
@@ -128,13 +106,13 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 ![Distribuzione Spese per Categoria](../img/spese-categorie.png)
 
 **Analisi del Grafico**:
-- **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 7 mesi FTE part-time)
+- **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 7 mesi, con impegno ridotto nel setup iniziale e nella fase finale)
 - **Contingency Buffer (18.7%)**: Buffer ampio coerente con l'estensione del progetto a 7 mesi e con le best practices PM per progetti software con scope evolutivo e change requests potenziali
 - **Tools e Licenze (4.4%)**: Costi contenuti grazie all'utilizzo di free tier per molti servizi cloud
-- **Infrastruttura (1.1%)**: Spese minime grazie a server dedicati economici (Hetzner €50/mese)
+- **Infrastruttura (1.1%)**: Spese minime grazie a server dedicati economici (Hetzner ~€50/mese)
 - **Surplus Finale (9%)**: Riserva per imprevisti post-lancio e scalabilità iniziale
 
-**Insight**: L'allocazione del budget è ottimizzata per massimizzare il valore del team di sviluppo (64%), mantenendo contenuti i costi infrastrutturali (1.1%) e garantendo un buffer di sicurezza del 27.7% (Contingency 18.7% + Surplus 9.0%) per gestire imprevisti e change requests in un progetto di 7 mesi.
+**Insight**: L'allocazione del budget è ottimizzata per massimizzare il valore del team di sviluppo (64%), mantenendo contenuti i costi infrastrutturali (1.1%) e garantendo un margine di sicurezza complessivo del 27,7% (Contingency 18,7% + Surplus 9,0%) per gestire imprevisti e change requests in un progetto di 7 mesi.
 
 ---
 
@@ -178,8 +156,8 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 ## Cash Flow Variance Analysis
 
 **Target Outflow**: €22.750 (budget pianificato)
-**Threshold Warning**: Se outflow mensile supera il budget del 10% (€420/mese)
-**Threshold Critical**: Se saldo cumulativo scende sotto €1.000
+**Threshold Warning**: Se l'outflow di un mese supera del 10% l'outflow pianificato per quel mese
+**Threshold Critical**: Se il saldo cumulativo scende sotto €1.000
 
 **Azioni Correttive**:
 1. **Variance 5-10%**: Review spese non essenziali (marketing, tools premium)
@@ -230,6 +208,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 
 ---
 
+<!-- Sezione "Fonti e Riferimenti" commentata (link a blog esterni, non necessari in un allegato di progetto). Reinseribile o sostituibile con fonti del corso; registro in Relazione/_appunti-per-relazione.md.
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices di Cash Flow Management 2026:
@@ -237,6 +216,7 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 - [Savant Labs - Cash Flow Forecasting Software](https://savantlabs.io/blog/cash-flow-forecasting-tools/)
 - [Vena Solutions - Cash Flow Management Guide](https://www.venasolutions.com/blog/best-cash-flow-management-software-tools)
 - [American Express - Cash Flow Management Tools](https://www.americanexpress.com/en-us/business/trends-and-insights/articles/7-cash-flow-management-tools-worth-checking-out/)
+-->
 
 ---
 
@@ -245,9 +225,9 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 27/10/2025
 
-**Ultima revisione**: 28/10/2025 (v.1.1.0)
-- Aggiunta visualizzazione grafica Cash Flow mensile (img/cash-flow-maraffaonline.png)
-- Aggiunta visualizzazione grafica distribuzione spese per categoria (img/spese-categorie.png)
-- Aggiunta analisi interpretativa dei grafici con insights chiave
+**Storico revisioni**:
+- **v.1.3.0**: Aggiunto il companion `Allegato3.4-CashFlow.html` con grafici nativi (SVG generati da script dai valori verificati della tabella corrente): Cash Flow mensile e ripartizione spese per categoria. Aggiunta nota che segnala come superate le immagini PNG esistenti (`img/cash-flow-maraffaonline.png`, generata pre-v.1.2.0 e mai rigenerata: mostra ancora 6 mesi e valori pre-ridistribuzione).
+- **v.1.2.0**: Ridistribuzione del Cash Flow sui 7 mesi effettivi del progetto (15 Ott 2025 - 15 Mag 2026). Tabella mensile estesa da 6 a 8 righe (Mese 0-7), outflow ridistribuiti con riduzione progressiva nella coda (testing/UAT/lancio), dettaglio spese per mese e per categoria resi internamente coerenti (righe = outflow mensile, colonne = totali di categoria). Totali invariati: inflow €25.000, outflow €22.750, surplus €2.250. Saldo minimo €2.250 (Mese 7).
+- **v.1.1.0**: Aggiunta visualizzazione grafica Cash Flow mensile (img/cash-flow-maraffaonline.png) e distribuzione spese per categoria (img/spese-categorie.png), con analisi interpretativa e insights chiave.
 
 **Prossimo Review**: 05/11/2025 (fine Mese 0)

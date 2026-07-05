@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Model Canvas - MaraffaOnline</title>
+<style>
+  :root {
+    --viola: #6f42c1;
+    --blu: #007bff;
+    --rosso-mattone: #b85450;
+    --giallo: #ffc107;
+    --rosa: #e83e8c;
+    --grigio: #6c757d;
+    --verde-bottiglia: #28a745;
+    --testo-scuro: #212529;
+    --testo-chiaro: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--testo-scuro);
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 20px;
+    line-height: 1.35;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.1rem; }
+  .sub { color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 16px; }
+  .note {
+    font-size: 0.78rem; color: #444; background: #f6f6f6;
+    padding: 8px 12px; border-left: 4px solid var(--grigio); margin-bottom: 18px;
+  }
+
+  .canvas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.15fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 6px;
+  }
+
+  .block {
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--testo-scuro);
+  }
+  .block h2 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+  }
+  .block ul { margin: 0; padding-left: 16px; font-size: 0.76rem; }
+  .block ul li { margin-bottom: 3px; }
+  .block .group + .group { margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(0,0,0,0.15); }
+
+  .kp   { grid-column: 1; grid-row: 1 / span 2; background: color-mix(in srgb, var(--viola) 18%, white); }
+  .ka   { grid-column: 2; grid-row: 1; background: color-mix(in srgb, var(--blu) 16%, white); }
+  .kr   { grid-column: 2; grid-row: 2; background: color-mix(in srgb, var(--blu) 16%, white); }
+  .vp   { grid-column: 3; grid-row: 1 / span 2; background: color-mix(in srgb, var(--rosso-mattone) 20%, white); }
+  .cr   { grid-column: 4; grid-row: 1; background: color-mix(in srgb, var(--giallo) 30%, white); }
+  .ch   { grid-column: 4; grid-row: 2; background: color-mix(in srgb, var(--giallo) 30%, white); }
+  .cs   { grid-column: 5; grid-row: 1 / span 2; background: color-mix(in srgb, var(--rosa) 16%, white); }
+  .cost { grid-column: 1 / span 2; grid-row: 3; background: color-mix(in srgb, var(--grigio) 18%, white); }
+  .rev  { grid-column: 3 / span 3; grid-row: 3; background: color-mix(in srgb, var(--verde-bottiglia) 18%, white); }
+
+  .kp h2   { color: var(--viola); }
+  .ka h2, .kr h2 { color: var(--blu); }
+  .vp h2   { color: var(--rosso-mattone); }
+  .cr h2, .ch h2 { color: #a07800; }
+  .cs h2   { color: var(--rosa); }
+  .cost h2 { color: var(--grigio); }
+  .rev h2  { color: var(--verde-bottiglia); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .legend span {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; border: 1px solid #ddd;
+  }
+  .chip { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+  @media print {
+    @page { size: A4 landscape; margin: 10mm; }
+    body { margin: 0; max-width: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Business Model Canvas &mdash; MaraffaOnline</h1>
+<p class="sub">Allegato 2.5 &middot; v.1.2.0 &middot; PlayHeritage Labs</p>
+
+<div class="note">Colori riutilizzati dalla palette ufficiale di progetto (rosso mattone, verde bottiglia, legno/arancione, blu &mdash; vedi Allegato 2.7 e Guida Grafici Excel) per coerenza visiva con gli altri allegati. Contenuto sintetico: il dettaglio completo delle 9 componenti è nel file <code>Allegato2.5-BusinessModelCanvas.md</code>.</div>
+
+<div class="canvas">
+  <div class="block kp">
+    <h2>Key Partners</h2>
+    <ul>
+      <li>Università di Bologna (spazi, legale)</li>
+      <li>Community Maraffa Forever (committente)</li>
+      <li>Francesca Giuliani (esperta regole)</li>
+      <li>Provider hosting (Hetzner/OVH)</li>
+      <li>Dr. Stefano Nardi (consulente real-time)</li>
+    </ul>
+  </div>
+
+  <div class="block ka">
+    <h2>Key Activities</h2>
+    <ul>
+      <li>Sviluppo software (7 sottosistemi)</li>
+      <li>Co-design UI/UX con community</li>
+      <li>PM: sprint e milestone</li>
+      <li>Documentazione e ricerca</li>
+    </ul>
+  </div>
+
+  <div class="block kr">
+    <h2>Key Resources</h2>
+    <ul>
+      <li>Team 5 persone (PM, Dev, UX, DevOps)</li>
+      <li>20 beta tester Maraffa Forever</li>
+      <li>Stack open-source (Node.js, React, Socket.IO)</li>
+      <li>Budget €25.000 (+ €2.000 emergenza)</li>
+    </ul>
+  </div>
+
+  <div class="block vp">
+    <h2>Value Propositions</h2>
+    <div class="group">
+      <strong style="font-size:0.76rem;">Per Maraffa Forever</strong>
+      <ul>
+        <li>Riconnessione sociale a distanza</li>
+        <li>Fedeltà alle regole tradizionali</li>
+        <li>UX moderna e accessibile, gratuita</li>
+      </ul>
+    </div>
+    <div class="group">
+      <strong style="font-size:0.76rem;">Per PlayHeritage Labs</strong>
+      <ul>
+        <li>Validazione modello di business</li>
+        <li>Portfolio e pubblicazioni scientifiche</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block cr">
+    <h2>Customer Relationships</h2>
+    <ul>
+      <li>Co-creation (scoping &rarr; lancio)</li>
+      <li>Community building (Slack)</li>
+      <li>Self-service &amp; automation</li>
+    </ul>
+  </div>
+
+  <div class="block ch">
+    <h2>Channels</h2>
+    <ul>
+      <li>Web app responsive (maraffaonline.it)</li>
+      <li>WhatsApp, newsletter, Zoom</li>
+      <li>Social media (Facebook/Instagram)</li>
+    </ul>
+  </div>
+
+  <div class="block cs">
+    <h2>Customer Segments</h2>
+    <ul>
+      <li><strong>Primario:</strong> Maraffa Forever (150 membri, 25-45 anni)</li>
+      <li><strong>Secondari:</strong> altre community di carte, associazioni culturali</li>
+      <li><strong>Stakeholder:</strong> UniBo, comunità scientifica</li>
+    </ul>
+  </div>
+
+  <div class="block cost">
+    <h2>Cost Structure</h2>
+    <ul>
+      <li>Sviluppo (team): 70% &mdash; €17.500</li>
+      <li>Infrastruttura: 15% &mdash; €3.750</li>
+      <li>Contingenza: 10% &mdash; €2.500</li>
+      <li>Marketing &amp; community: 5% &mdash; €1.250</li>
+      <li>Post-lancio: €500/mese (manutenzione)</li>
+    </ul>
+  </div>
+
+  <div class="block rev">
+    <h2>Revenue Streams</h2>
+    <ul>
+      <li>Crowdfunding community: €25.000, 4 tranche per milestone (firma, core tech, frontend, MVP)</li>
+      <li>Futuro: manutenzione €500/mese, licensing ad altre community, consulenza, freemium (tornei, temi, statistiche)</li>
+      <li>Non-monetari: pubblicazioni scientifiche, portfolio e reputazione</li>
+    </ul>
+  </div>
+</div>
+
+<div class="legend">
+  <span><i class="chip" style="background:var(--viola)"></i> Key Partners</span>
+  <span><i class="chip" style="background:var(--blu)"></i> Key Activities / Resources</span>
+  <span><i class="chip" style="background:var(--rosso-mattone)"></i> Value Propositions</span>
+  <span><i class="chip" style="background:var(--giallo)"></i> Customer Relationships / Channels</span>
+  <span><i class="chip" style="background:var(--rosa)"></i> Customer Segments</span>
+  <span><i class="chip" style="background:var(--grigio)"></i> Cost Structure</span>
+  <span><i class="chip" style="background:var(--verde-bottiglia)"></i> Revenue Streams</span>
+</div>
+
+</body>
+</html>

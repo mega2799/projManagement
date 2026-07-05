@@ -1,10 +1,15 @@
 # Allegato 2.4 - Risk Analysis
-## v.1.0.0 – 2025-09-19 11:20:45
+## v.1.1.0 – 2025-09-19 11:20:45
 
+> Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.4-RiskMatrix.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
+
+<!--
 Per l'analisi dei rischi si è scelto di utilizzare l'approccio **Risk Rating Matrix** che consiste nella creazione di una tabella che ha le probabilità che il rischio accada nelle righe e il livello di impatto del rischio nelle colonne.
+-->
 
 ## Risk Rating Matrix
 
+<!--
 **Range delle probabilità:**
 - Range A = 0-25% (Bassa)
 - Range B = 26-50% (Media-Bassa)
@@ -21,12 +26,91 @@ Per l'analisi dei rischi si è scelto di utilizzare l'approccio **Risk Rating Ma
 - Probabilità A=1, B=2, C=3, D=4
 - Impatto Trascurabile=1, Moderato=2, Grave=3, Disastroso=4
 - Valore Rischio = Probabilità × Impatto
+-->
 
-**Colori:**
+**Colori (livello di rischio):**
 - Verde (1-2): Rischio accettabile
 - Giallo (3-4): Rischio da monitorare
 - Arancione (6-8): Rischio significativo, richiede mitigazione
-- Rosso (9-16): Rischio critico, richiede piano di contingenza
+- Rosso (9-12): Rischio critico, richiede piano di contingenza
+- Rosso Critico (16): Rischio massimo, priorità assoluta e piano di contingenza dedicato
+
+<!--
+### Matrice
+
+La matrice seguente incrocia la **probabilità** (righe) con il **livello di impatto** (colonne). In ogni cella sono riportati il valore di rischio (Probabilità × Impatto) e i codici dei rischi che vi ricadono; il codice ha la forma *sottosistema.rischio* (vedi Risk Register più sotto). Il colore della cella indica il livello secondo la scala definita sopra.
+
+<table>
+  <tr>
+    <th colspan="2" rowspan="2" style="background-color:#404040;color:#ffffff;text-align:center;padding:6px;">Valore di rischio<br>(P &times; I)</th>
+    <th colspan="4" style="background-color:#404040;color:#ffffff;text-align:center;padding:6px;">Livello di impatto &rarr;</th>
+  </tr>
+  <tr>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">Trascurabile<br>(1)</th>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">Moderato<br>(2)</th>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">Grave<br>(3)</th>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">Disastroso<br>(4)</th>
+  </tr>
+  <tr>
+    <th rowspan="4" style="background-color:#404040;color:#ffffff;text-align:center;padding:6px;">Probabilità<br>&uarr;</th>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">D &middot; Alta<br>(76-100%)</th>
+    <td style="background-color:#FFEB84;color:#000000;text-align:center;padding:8px;"><strong>4</strong><br>&mdash;</td>
+    <td style="background-color:#F4A259;color:#000000;text-align:center;padding:8px;"><strong>8</strong><br>2.3, 5.3</td>
+    <td style="background-color:#E06666;color:#ffffff;text-align:center;padding:8px;"><strong>12</strong><br>&mdash;</td>
+    <td style="background-color:#A61C00;color:#ffffff;text-align:center;padding:8px;"><strong>16</strong><br>2.1, 6.1</td>
+  </tr>
+  <tr>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">C &middot; Media-Alta<br>(51-75%)</th>
+    <td style="background-color:#FFEB84;color:#000000;text-align:center;padding:8px;"><strong>3</strong><br>&mdash;</td>
+    <td style="background-color:#F4A259;color:#000000;text-align:center;padding:8px;"><strong>6</strong><br>4.1</td>
+    <td style="background-color:#E06666;color:#ffffff;text-align:center;padding:8px;"><strong>9</strong><br>1.3, 2.2, 5.1, 6.3</td>
+    <td style="background-color:#E06666;color:#ffffff;text-align:center;padding:8px;"><strong>12</strong><br>2.4, 6.2</td>
+  </tr>
+  <tr>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">B &middot; Media-Bassa<br>(26-50%)</th>
+    <td style="background-color:#63BE7B;color:#000000;text-align:center;padding:8px;"><strong>2</strong><br>&mdash;</td>
+    <td style="background-color:#FFEB84;color:#000000;text-align:center;padding:8px;"><strong>4</strong><br>1.2, 3.3, 5.2</td>
+    <td style="background-color:#F4A259;color:#000000;text-align:center;padding:8px;"><strong>6</strong><br>1.1, 3.1, 4.3, 6.4</td>
+    <td style="background-color:#F4A259;color:#000000;text-align:center;padding:8px;"><strong>8</strong><br>&mdash;</td>
+  </tr>
+  <tr>
+    <th style="background-color:#595959;color:#ffffff;text-align:center;padding:6px;">A &middot; Bassa<br>(0-25%)</th>
+    <td style="background-color:#63BE7B;color:#000000;text-align:center;padding:8px;"><strong>1</strong><br>&mdash;</td>
+    <td style="background-color:#63BE7B;color:#000000;text-align:center;padding:8px;"><strong>2</strong><br>&mdash;</td>
+    <td style="background-color:#FFEB84;color:#000000;text-align:center;padding:8px;"><strong>3</strong><br>3.2</td>
+    <td style="background-color:#FFEB84;color:#000000;text-align:center;padding:8px;"><strong>4</strong><br>4.2</td>
+  </tr>
+</table>
+
+**Distribuzione dei 20 rischi**: 2 a livello Rosso Critico (valore 16), 6 Rossi (9-12), 7 Arancioni (6-8), 5 Gialli (3-4), nessuno Verde. La concentrazione nell'area alta della matrice — dominata da **Real-Time Communication** e **Project Management** — conferma che sono questi i due sottosistemi che richiedono la massima attenzione gestionale e i piani di contingenza dedicati.
+-->
+
+### Risk Register
+
+Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.rischio*, probabilità, impatto, valore e livello di rischio. Il dettaglio completo di descrizione e strategia è riportato nella sezione "Rischi" più avanti.
+
+| Codice | Rischio | Sottosistema | Prob. | Impatto | Valore | Livello | Strategia (sintesi) |
+|--------|---------|--------------|:-----:|---------|:------:|---------|---------------------|
+| 1.1 | Incomprensioni sulle regole della Maraffa | Game Engine | B | Grave | 6 | Arancione | Mitigazione — workshop con Francesca Giuliani; regole approvate formalmente |
+| 1.2 | Varianti regionali delle regole | Game Engine | B | Moderato | 4 | Giallo | Accept — versione ufficiale "Maraffa Forever" definita in Scoping |
+| 1.3 | Requisiti aggiuntivi scoperti in sviluppo | Game Engine | C | Grave | 9 | Rosso | Mitigazione — demo bi-settimanali; freeze requisiti dopo milestone 1 |
+| 2.1 | Esperienza limitata con WebSocket | Real-Time Communication | D | Disastroso | 16 | Rosso Critico | Contingenza — spike tecnico 2 settimane; consulente esterno (budget €2.000) |
+| 2.2 | Gestione disconnessioni e riconnessioni | Real-Time Communication | C | Grave | 9 | Rosso | Mitigazione — sistema "partita sospesa" (5 min); state persistence con Redis |
+| 2.3 | Performance di rete variabile tra utenti | Real-Time Communication | D | Moderato | 8 | Arancione | Mitigazione — indicatore qualità connessione; ottimizzazione messaggi |
+| 2.4 | Race conditions e sincronizzazione stato | Real-Time Communication | C | Disastroso | 12 | Rosso | Mitigazione — architettura server-authoritative; code review obbligatoria |
+| 3.1 | Bilanciare modernità e familiarità | Frontend Web | B | Grave | 6 | Arancione | Mitigazione — co-design con 10 utenti; votazione su 2 mockup |
+| 3.2 | Scarsa partecipazione a user testing | Frontend Web | A | Grave | 3 | Giallo | Mitigazione — coinvolgimento precoce; incentivi (accesso anticipato, gadget) |
+| 3.3 | Responsive design su tutti i dispositivi | Frontend Web | B | Moderato | 4 | Giallo | Mitigazione — approccio mobile-first; framework Tailwind CSS |
+| 4.1 | Integrazione chat con sistema real-time | Social & Community | C | Moderato | 6 | Arancione | Mitigazione — stesso canale WebSocket; throttling (1 msg/sec) |
+| 4.2 | Vulnerabilità nel sistema di autenticazione | Backend Server | A | Disastroso | 4 | Giallo | Contingenza — Passport.js/JWT; HTTPS obbligatorio; penetration testing |
+| 4.3 | Gestione privacy e GDPR | Backend Server | B | Grave | 6 | Arancione | Mitigazione — ufficio legale UniBo; privacy policy, cookie consent, diritto all'oblio |
+| 5.1 | Budget limitato per infrastruttura cloud | Infrastructure & DevOps | C | Grave | 9 | Rosso | Mitigazione — server dedicato (€50/mese); architettura pronta per cloud migration |
+| 5.2 | Esperienza limitata in DevOps | Infrastructure & DevOps | B | Moderato | 4 | Giallo | Mitigazione — PaaS (Heroku/Railway); Docker; CI/CD con GitLab |
+| 5.3 | Picchi di traffico al lancio | Infrastructure & DevOps | D | Moderato | 8 | Arancione | Mitigazione — load testing; soft launch graduale; rate limiting |
+| 6.1 | Budget insufficiente per team | Project Management | D | Disastroso | 16 | Rosso Critico | Accept — progetto pilota a valore strategico; team part-time (50% FTE) |
+| 6.2 | Scope creep da richieste committente | Project Management | C | Disastroso | 12 | Rosso | Mitigazione — Change Control Process rigoroso; freeze requisiti dopo POS |
+| 6.3 | Sottostima complessità tecnica | Real-Time, Frontend | C | Grave | 9 | Rosso | Mitigazione — agile iterativo; buffer 20%; riduzione scope se ritardo >15% |
+| 6.4 | Assenza di buffer temporale | Project Management | B | Grave | 6 | Arancione | Mitigazione — MoSCoW prioritization; sottosistemi critici completati entro gennaio |
 
 ---
 
@@ -212,3 +296,7 @@ Per l'analisi dei rischi si è scelto di utilizzare l'approccio **Risk Rating Ma
 **Redatto da**: Elena Rossi (Lead Developer, PlayHeritage Labs)
 **Revisionato da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Data approvazione**: 20/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Aggiornata la legenda dei colori (introdotto il livello "Rosso Critico" per il valore 16) e aggiunto il Risk Register tabellare di sintesi (codice, probabilità, impatto, valore, livello e strategia per ogni rischio).
+- **v.1.0.0**: Prima stesura dell'analisi dei rischi (definizioni, elenco rischi per sottosistema, riepilogo rischi critici).

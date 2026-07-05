@@ -123,6 +123,15 @@ Set completo di documenti allegati:
 - Allegato 4.x - Monitoring & Control
 - Allegato 5.x - Closing
 
+### Convenzione: allegati compatti e leggibili a colpo d'occhio (HTML vs Markdown)
+
+Obiettivo: gli allegati non devono essere "wall of text". Gli allegati Markdown (Scoping/Planning/Monitoring/ecc.) sono documenti a sé stanti, separati dalla Relazione LaTeX (`Relazione/main.tex`, che li cita testualmente ma non li compila al suo interno) — questo permette una scelta diversa a seconda della struttura del contenuto:
+
+- **Allegati con struttura visiva a griglia/blocchi** (matrici come la Risk Rating Matrix, canvas come il Business Model Canvas, eventuali heat-map o semafori): creare un file `.html` standalone con CSS inline, accanto al `.md` corrispondente (stesso nome allegato, es. `Allegato2.4-RiskAnalysis.md` + `Allegato2.4-RiskMatrix.html`; `Allegato2.5-BusinessModelCanvas.md` + `Allegato2.5-BusinessModelCanvas.html`). Usare `grid-template-columns`/`grid-row: span` per i layout con celle unite (non disponibili in Markdown puro). Colori dalla **palette ufficiale di progetto** (vedi `Planning/GUIDA-GRAFICI-EXCEL.md`: rosso mattone #b85450, verde bottiglia #28a745, legno/arancione #fd7e14, blu #007bff, + viola #6f42c1, giallo #ffc107, rosa #e83e8c, grigio #6c757d), non colori inventati. Contenuto **condensato** (poche voci essenziali per blocco): il dettaglio completo resta nel `.md`, che funge da registro testuale. Il `.md` deve avere una nota in blockquote sotto il titolo che rimanda al file HTML. Il PDF si genera **aprendo l'HTML nel browser e usando "Stampa → Salva come PDF"** — l'unico percorso che preserva i colori fedelmente.
+- **Allegati testuali/lineari** (liste, prosa, tabelle semplici senza celle unite): tabelle Markdown native (sintassi pipe, con `<br>` per interruzioni di riga dentro le celle). Restano leggibili ovunque (GitHub, VS Code, export Pandoc) e non richiedono un file separato.
+
+**Perché non mettere HTML con `style=` dentro il `.md`**: funziona solo se il rendering finale è un motore browser/webview (VS Code preview, Typora). Si rompe altrove — GitHub rimuove gli attributi `style` per sicurezza, e la pipeline Pandoc/LaTeX usata per compilare la Relazione non traduce il CSS in colori LaTeX (spesso perde l'intera tabella, non solo il colore).
+
 ## Criteri di Valutazione
 
 Secondo le linee guida:

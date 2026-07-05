@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Rating Matrix - MaraffaOnline</title>
+<style>
+  :root {
+    --verde: #63BE7B;
+    --giallo: #FFEB84;
+    --arancione: #F4A259;
+    --rosso: #E06666;
+    --rosso-critico: #A61C00;
+    --grigio-scuro: #404040;
+    --grigio: #595959;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 24px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 0.2rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 2px solid #ddd; padding-bottom: 4px; }
+  .sub { color: #666; font-size: 0.9rem; margin-top: 0; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 20px; }
+  .legend span {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.85rem; padding: 4px 10px; border-radius: 4px; border: 1px solid #ccc;
+  }
+  .chip { width: 16px; height: 16px; border-radius: 3px; display: inline-block; border: 1px solid rgba(0,0,0,.2); }
+
+  table.matrix { border-collapse: collapse; width: 100%; margin: 16px 0 8px; }
+  table.matrix th, table.matrix td {
+    border: 2px solid #fff; text-align: center; padding: 12px 8px;
+  }
+  table.matrix .corner, table.matrix .axis {
+    background: var(--grigio-scuro); color: #fff; font-weight: 600;
+  }
+  table.matrix .head { background: var(--grigio); color: #fff; font-weight: 600; font-size: 0.9rem; }
+  table.matrix td .val { font-size: 1.3rem; font-weight: 700; display: block; }
+  table.matrix td .codes { font-size: 0.82rem; opacity: 0.95; }
+  .verde { background: var(--verde); color: #000; }
+  .giallo { background: var(--giallo); color: #000; }
+  .arancione { background: var(--arancione); color: #000; }
+  .rosso { background: var(--rosso); color: #fff; }
+  .critico { background: var(--rosso-critico); color: #fff; }
+
+  .note { font-size: 0.9rem; color: #333; background: #f6f6f6; padding: 10px 14px; border-left: 4px solid var(--grigio); margin: 12px 0 20px; }
+
+  table.register { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+  table.register th, table.register td { border: 1px solid #ccc; padding: 6px 8px; text-align: left; vertical-align: top; }
+  table.register th { background: var(--grigio-scuro); color: #fff; }
+  table.register td.c { text-align: center; white-space: nowrap; }
+  .lvl { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.78rem; font-weight: 600; }
+
+  @media print {
+    body { margin: 0; max-width: none; }
+    h2 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Risk Rating Matrix &mdash; MaraffaOnline</h1>
+<p class="sub">Allegato 2.4 &middot; Risk Analysis &middot; v.1.1.0</p>
+
+<div class="legend">
+  <span><i class="chip verde"></i> Verde (1-2) &middot; Accettabile</span>
+  <span><i class="chip giallo"></i> Giallo (3-4) &middot; Da monitorare</span>
+  <span><i class="chip arancione"></i> Arancione (6-8) &middot; Significativo</span>
+  <span><i class="chip rosso"></i> Rosso (9-12) &middot; Critico</span>
+  <span><i class="chip critico"></i> Rosso Critico (16) &middot; Massimo</span>
+</div>
+<!--
+<h2>Matrice (Probabilità &times; Impatto)</h2>
+<table class="matrix">
+  <tr>
+    <th class="corner" colspan="2" rowspan="2">Valore di rischio<br>(P &times; I)</th>
+    <th class="corner" colspan="4">Livello di impatto &rarr;</th>
+  </tr>
+  <tr>
+    <th class="head">Trascurabile (1)</th>
+    <th class="head">Moderato (2)</th>
+    <th class="head">Grave (3)</th>
+    <th class="head">Disastroso (4)</th>
+  </tr>
+  <tr>
+    <th class="axis" rowspan="4">Probabilità&nbsp;&uarr;</th>
+    <th class="head">D &middot; Alta (76-100%)</th>
+    <td class="giallo"><span class="val">4</span><span class="codes">&mdash;</span></td>
+    <td class="arancione"><span class="val">8</span><span class="codes">2.3, 5.3</span></td>
+    <td class="rosso"><span class="val">12</span><span class="codes">&mdash;</span></td>
+    <td class="critico"><span class="val">16</span><span class="codes">2.1, 6.1</span></td>
+  </tr>
+  <tr>
+    <th class="head">C &middot; Media-Alta (51-75%)</th>
+    <td class="giallo"><span class="val">3</span><span class="codes">&mdash;</span></td>
+    <td class="arancione"><span class="val">6</span><span class="codes">4.1</span></td>
+    <td class="rosso"><span class="val">9</span><span class="codes">1.3, 2.2, 5.1, 6.3</span></td>
+    <td class="rosso"><span class="val">12</span><span class="codes">2.4, 6.2</span></td>
+  </tr>
+  <tr>
+    <th class="head">B &middot; Media-Bassa (26-50%)</th>
+    <td class="verde"><span class="val">2</span><span class="codes">&mdash;</span></td>
+    <td class="giallo"><span class="val">4</span><span class="codes">1.2, 3.3, 5.2</span></td>
+    <td class="arancione"><span class="val">6</span><span class="codes">1.1, 3.1, 4.3, 6.4</span></td>
+    <td class="arancione"><span class="val">8</span><span class="codes">&mdash;</span></td>
+  </tr>
+  <tr>
+    <th class="head">A &middot; Bassa (0-25%)</th>
+    <td class="verde"><span class="val">1</span><span class="codes">&mdash;</span></td>
+    <td class="verde"><span class="val">2</span><span class="codes">&mdash;</span></td>
+    <td class="giallo"><span class="val">3</span><span class="codes">3.2</span></td>
+    <td class="giallo"><span class="val">4</span><span class="codes">4.2</span></td>
+  </tr>
+</table>
+
+<p class="note"><strong>Distribuzione dei 20 rischi:</strong> 2 Rosso Critico (16), 6 Rossi (9-12), 7 Arancioni (6-8), 5 Gialli (3-4), nessuno Verde. La concentrazione nell'area alta della matrice &mdash; dominata da <strong>Real-Time Communication</strong> e <strong>Project Management</strong> &mdash; conferma che sono questi i due sottosistemi che richiedono la massima attenzione gestionale e piani di contingenza dedicati.</p>
+
+-->
+<h2>Risk Register (legenda codici)</h2>
+<table class="register">
+  <tr>
+    <th>Cod.</th><th>Rischio</th><th>Sottosistema</th><th>Prob.</th><th>Impatto</th><th>Val.</th><th>Livello</th><th>Strategia (sintesi)</th>
+  </tr>
+  <tr><td class="c">1.1</td><td>Incomprensioni sulle regole della Maraffa</td><td>Game Engine</td><td class="c">B</td><td>Grave</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; workshop con Francesca Giuliani; regole approvate formalmente</td></tr>
+  <tr><td class="c">1.2</td><td>Varianti regionali delle regole</td><td>Game Engine</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Accept &mdash; versione ufficiale "Maraffa Forever" definita in Scoping</td></tr>
+  <tr><td class="c">1.3</td><td>Requisiti aggiuntivi scoperti in sviluppo</td><td>Game Engine</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; demo bi-settimanali; freeze requisiti dopo milestone 1</td></tr>
+  <tr><td class="c">2.1</td><td>Esperienza limitata con WebSocket</td><td>Real-Time Communication</td><td class="c">D</td><td>Disastroso</td><td class="c">16</td><td><span class="lvl critico">Rosso Critico</span></td><td>Contingenza &mdash; spike tecnico 2 settimane; consulente esterno (budget &euro;2.000)</td></tr>
+  <tr><td class="c">2.2</td><td>Gestione disconnessioni e riconnessioni</td><td>Real-Time Communication</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; sistema "partita sospesa" (5 min); state persistence con Redis</td></tr>
+  <tr><td class="c">2.3</td><td>Performance di rete variabile tra utenti</td><td>Real-Time Communication</td><td class="c">D</td><td>Moderato</td><td class="c">8</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; indicatore qualità connessione; ottimizzazione messaggi</td></tr>
+  <tr><td class="c">2.4</td><td>Race conditions e sincronizzazione stato</td><td>Real-Time Communication</td><td class="c">C</td><td>Disastroso</td><td class="c">12</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; architettura server-authoritative; code review obbligatoria</td></tr>
+  <tr><td class="c">3.1</td><td>Bilanciare modernità e familiarità</td><td>Frontend Web</td><td class="c">B</td><td>Grave</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; co-design con 10 utenti; votazione su 2 mockup</td></tr>
+  <tr><td class="c">3.2</td><td>Scarsa partecipazione a user testing</td><td>Frontend Web</td><td class="c">A</td><td>Grave</td><td class="c">3</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; coinvolgimento precoce; incentivi (accesso anticipato, gadget)</td></tr>
+  <tr><td class="c">3.3</td><td>Responsive design su tutti i dispositivi</td><td>Frontend Web</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; approccio mobile-first; framework Tailwind CSS</td></tr>
+  <tr><td class="c">4.1</td><td>Integrazione chat con sistema real-time</td><td>Social &amp; Community</td><td class="c">C</td><td>Moderato</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; stesso canale WebSocket; throttling (1 msg/sec)</td></tr>
+  <tr><td class="c">4.2</td><td>Vulnerabilità nel sistema di autenticazione</td><td>Backend Server</td><td class="c">A</td><td>Disastroso</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Contingenza &mdash; Passport.js/JWT; HTTPS obbligatorio; penetration testing</td></tr>
+  <tr><td class="c">4.3</td><td>Gestione privacy e GDPR</td><td>Backend Server</td><td class="c">B</td><td>Grave</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; ufficio legale UniBo; privacy policy, cookie consent, diritto all'oblio</td></tr>
+  <tr><td class="c">5.1</td><td>Budget limitato per infrastruttura cloud</td><td>Infrastructure &amp; DevOps</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; server dedicato (&euro;50/mese); architettura pronta per cloud migration</td></tr>
+  <tr><td class="c">5.2</td><td>Esperienza limitata in DevOps</td><td>Infrastructure &amp; DevOps</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; PaaS (Heroku/Railway); Docker; CI/CD con GitLab</td></tr>
+  <tr><td class="c">5.3</td><td>Picchi di traffico al lancio</td><td>Infrastructure &amp; DevOps</td><td class="c">D</td><td>Moderato</td><td class="c">8</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; load testing; soft launch graduale; rate limiting</td></tr>
+  <tr><td class="c">6.1</td><td>Budget insufficiente per team</td><td>Project Management</td><td class="c">D</td><td>Disastroso</td><td class="c">16</td><td><span class="lvl critico">Rosso Critico</span></td><td>Accept &mdash; progetto pilota a valore strategico; team part-time (50% FTE)</td></tr>
+  <tr><td class="c">6.2</td><td>Scope creep da richieste committente</td><td>Project Management</td><td class="c">C</td><td>Disastroso</td><td class="c">12</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; Change Control Process rigoroso; freeze requisiti dopo POS</td></tr>
+  <tr><td class="c">6.3</td><td>Sottostima complessità tecnica</td><td>Real-Time, Frontend</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; agile iterativo; buffer 20%; riduzione scope se ritardo &gt;15%</td></tr>
+  <tr><td class="c">6.4</td><td>Assenza di buffer temporale</td><td>Project Management</td><td class="c">B</td><td>Grave</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; MoSCoW prioritization; sottosistemi critici completati entro gennaio</td></tr>
+</table>
+
+</body>
+</html>
