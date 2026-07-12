@@ -1,5 +1,7 @@
 # Allegato 3.5 - Project Network Diagram & Gantt Chart
-## v.1.1.0 – 2025-10-28 15:00:00
+## v.1.2.0 – 2026-07-06 10:00:00
+
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.5-NetworkGantt.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene il Network Diagram (20 nodi, asse = giorni lavorativi CPM) e il Gantt (stesse 20 attività, asse = calendario reale) in forma condensata; il dettaglio per sprint/sotto-task, le tabelle Forward/Backward Pass complete, l'analisi rischi e il processo di aggiornamento dinamico restano in questo documento.
 
 Questo documento descrive la struttura del **Project Network Diagram** (con Critical Path Method) e del **Gantt Chart** per il progetto MaraffaOnline. Gli elementi descritti devono essere visualizzati utilizzando software come Microsoft Project, GanttProject, o ProjectLibre.
 
@@ -436,3 +438,4 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 
 **Storico revisioni**:
 - **v.1.1.0**: Chiarito che i file immagine del network diagram e del Gantt non sono stati prodotti per questo elaborato; restano documentati tramite le tabelle/CSV già presenti.
+- **v.1.2.0**: Creato il companion `Allegato3.5-NetworkGantt.html` — Network Diagram (grafo a 3 rami: Critico/Game Engine/Chat-Social, nodi posizionati per ES/EF, frecce rosse spesse sul critical path e blu sottili sulle non critiche, milestone M1-M4 a rombo) e Gantt Chart (20 barre su calendario reale 15-Ott-2025→15-Mag-2026, milestone M1-M7, colori per criticità) generati via script Python dai valori verificati delle tabelle Forward/Backward Pass e Sprint di questo documento. Sostituisce la descrizione puramente testuale della "Struttura Visuale" con un diagramma effettivamente colorato e a colpo d'occhio.

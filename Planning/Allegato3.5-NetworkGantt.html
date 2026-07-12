@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Network Diagram &amp; Gantt Chart - MaraffaOnline</title>
+<style>
+  :root {
+    --blu: #007bff;
+    --viola: #6f42c1;
+    --rosso-mattone: #b85450;
+    --rosa: #e83e8c;
+    --giallo: #ffc107;
+    --grigio: #6c757d;
+    --verde-bottiglia: #28a745;
+    --legno: #fd7e14;
+    --testo-scuro: #212529;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--testo-scuro);
+    max-width: 1060px;
+    margin: 24px auto;
+    padding: 0 20px;
+    line-height: 1.35;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.1rem; }
+  .sub { color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 14px; }
+  h2 { font-size: 1.05rem; margin: 24px 0 8px; }
+  h3 { font-size: 0.88rem; margin: 14px 0 6px; }
+  .note {
+    font-size: 0.76rem; color: #444; background: #f6f6f6;
+    padding: 8px 12px; border-left: 4px solid var(--grigio); margin-bottom: 16px;
+  }
+
+  .stats-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .stat {
+    flex: 1 1 130px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+  }
+  .stat .value { font-size: 1.1rem; font-weight: 700; display: block; }
+  .stat .label { font-size: 0.66rem; color: #666; text-transform: uppercase; letter-spacing: 0.02em; }
+  .stat.crit .value { color: var(--rosso-mattone); }
+  .stat.launch .value { color: var(--legno); }
+
+  .chart-wrap { overflow-x: auto; margin-bottom: 8px; }
+  svg { display: block; }
+
+  .chart-legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.74rem; margin: 6px 0 14px; align-items: center; }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .chip { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .chip.line { width: 16px; height: 3px; border-radius: 0; }
+  .chip.diamond { width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); display: inline-block; }
+
+  .cp-strip {
+    background: color-mix(in srgb, var(--rosso-mattone) 10%, white);
+    border: 1px solid color-mix(in srgb, var(--rosso-mattone) 35%, white);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    margin-bottom: 14px;
+  }
+  .cp-strip strong { color: var(--rosso-mattone); }
+  .cp-strip .path { font-weight: 600; letter-spacing: 0.02em; }
+
+  .id-legend {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px 14px;
+    font-size: 0.68rem;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 18px;
+  }
+  .id-legend .grp-title { grid-column: 1 / -1; font-weight: 700; font-size: 0.7rem; margin-top: 6px; }
+  .id-legend .grp-title:first-child { margin-top: 0; }
+  .id-legend .grp-title.crit { color: var(--rosso-mattone); }
+  .id-legend .grp-title.ge, .id-legend .grp-title.soc { color: var(--verde-bottiglia); }
+  .id-legend .item b { display: inline-block; width: 14px; }
+
+  .mile-legend {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px 14px;
+    font-size: 0.68rem;
+    margin-bottom: 16px;
+  }
+  .mile-legend .m { background: #fff8ec; border: 1px solid #f1dcb0; border-radius: 6px; padding: 5px 8px; }
+  .mile-legend .m b { color: #7a4a00; }
+
+  .sens-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .sens { flex: 1 1 280px; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 9px 12px; font-size: 0.74rem; }
+  .sens .stitle { font-weight: 700; font-size: 0.76rem; display: block; margin-bottom: 3px; }
+  .sens .simpact { color: var(--verde-bottiglia); font-weight: 600; }
+  .sens.crit-scenario .simpact { color: var(--rosso-mattone); }
+
+  @media print {
+    @page { size: A4 landscape; margin: 9mm; }
+    body { margin: 0; max-width: none; }
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Project Network Diagram &amp; Gantt Chart &mdash; MaraffaOnline</h1>
+<p class="sub">Allegato 3.5 &middot; v.1.2.0 &middot; PlayHeritage Labs</p>
+
+<div class="note">Vista condensata: Network Diagram sui 20 nodi principali (asse = giorni lavorativi CPM) e Gantt sulle stesse 20 attività (asse = calendario reale). Il dettaglio per sprint/sotto-task, l'analisi dei rischi e il processo di aggiornamento dinamico restano in <code>Allegato3.5-ProjectNetworkDiagram-Gantt.md</code>.</div>
+
+<div class="stats-row">
+  <div class="stat crit"><span class="value">170gg</span><span class="label">Critical Path</span></div>
+  <div class="stat"><span class="value">20</span><span class="label">Attività principali</span></div>
+  <div class="stat"><span class="value">30 sett.</span><span class="label">15 Ott 2025 &rarr; 15 Mag 2026</span></div>
+  <div class="stat"><span class="value">15</span><span class="label">Sprint (0&ndash;14, 2 sett.)</span></div>
+  <div class="stat launch"><span class="value">15 Mag</span><span class="label">Lancio MVP 2026</span></div>
+  <div class="stat"><span class="value">3</span><span class="label">Rami paralleli</span></div>
+</div>
+
+<h2>Network Diagram (Critical Path Method)</h2>
+
+<div class="cp-strip"><strong>Critical Path (170gg, float 0):</strong> <span class="path">A &rarr; B &rarr; D &rarr; G &rarr; J &rarr; M &rarr; P &rarr; R &rarr; S &rarr; T</span> &mdash; qualsiasi ritardo su questi nodi sposta la data di lancio. <strong>P (Frontend Tavolo da Gioco, 40gg)</strong> è il singolo nodo più lungo sul percorso critico.</div>
+
+<div class="chart-wrap">
+<svg viewBox="0 0 882.0 380" width="882.0" height="380">
+<defs>
+<marker id="arrRed" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--rosso-mattone)"/></marker>
+<marker id="arrBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--blu)"/></marker>
+</defs>
+<text x="60" y="14" font-size="9" fill="#888">giorni lavorativi (CPM) &rarr;</text>
+<line x1="60.0" y1="20" x2="60.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="60.0" y="376" font-size="8" text-anchor="middle" fill="#999">0g</text>
+<line x1="152.0" y1="20" x2="152.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="152.0" y="376" font-size="8" text-anchor="middle" fill="#999">20g</text>
+<line x1="244.0" y1="20" x2="244.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="244.0" y="376" font-size="8" text-anchor="middle" fill="#999">40g</text>
+<line x1="336.0" y1="20" x2="336.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="336.0" y="376" font-size="8" text-anchor="middle" fill="#999">60g</text>
+<line x1="428.0" y1="20" x2="428.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="428.0" y="376" font-size="8" text-anchor="middle" fill="#999">80g</text>
+<line x1="520.0" y1="20" x2="520.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="520.0" y="376" font-size="8" text-anchor="middle" fill="#999">100g</text>
+<line x1="612.0" y1="20" x2="612.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="612.0" y="376" font-size="8" text-anchor="middle" fill="#999">120g</text>
+<line x1="704.0" y1="20" x2="704.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="704.0" y="376" font-size="8" text-anchor="middle" fill="#999">140g</text>
+<line x1="796.0" y1="20" x2="796.0" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+<text x="796.0" y="376" font-size="8" text-anchor="middle" fill="#999">160g</text>
+<text x="4" y="90" font-size="9.5" font-weight="700" fill="var(--rosso-mattone)">CRITICO</text>
+<text x="4" y="101" font-size="7.3" fill="#999">float 0</text>
+<text x="4" y="210" font-size="9.5" font-weight="700" fill="var(--verde-bottiglia)">GAME</text>
+<text x="4" y="221" font-size="7.3" fill="#999">ENGINE</text>
+<text x="4" y="231" font-size="7.3" fill="#999">float 30gg</text>
+<text x="4" y="330" font-size="9.5" font-weight="700" fill="var(--verde-bottiglia)">CHAT/</text>
+<text x="4" y="341" font-size="7.3" fill="#999">SOCIAL</text>
+<text x="4" y="351" font-size="7.3" fill="#999">float 50gg</text>
+<line x1="106.0" y1="96.0" x2="102.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="106.0" y1="96.0" x2="102.0" y2="216.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="175.0" y1="96.0" x2="171.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="175.0" y1="96.0" x2="171.0" y2="336.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="175.0" y1="216.0" x2="171.0" y2="216.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="267.0" y1="96.0" x2="263.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="221.0" y1="336.0" x2="217.0" y2="336.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="290.0" y1="216.0" x2="286.0" y2="216.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="313.0" y1="96.0" x2="309.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="313.0" y1="336.0" x2="309.0" y2="336.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="382.0" y1="216.0" x2="378.0" y2="216.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="382.0" y1="96.0" x2="378.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="359.0" y1="336.0" x2="355.0" y2="336.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="451.0" y1="216.0" x2="447.0" y2="216.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="451.0" y1="96.0" x2="447.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="428.0" y1="336.0" x2="424.0" y2="336.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="497.0" y1="216.0" x2="631.0" y2="96.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="635.0" y1="96.0" x2="631.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="474.0" y1="336.0" x2="700.0" y2="96.0" stroke="var(--blu)" stroke-width="1.3" stroke-opacity="0.75" marker-end="url(#arrBlue)"/>
+<line x1="704.0" y1="96.0" x2="700.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<line x1="796.0" y1="96.0" x2="792.0" y2="96.0" stroke="var(--rosso-mattone)" stroke-width="2.6" marker-end="url(#arrRed)"/>
+<g>
+<rect x="60.0" y="74" width="46.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="83.0" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">A</text>
+<text x="83.0" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">10gg &middot; ES0</text>
+</g>
+<g>
+<rect x="106.0" y="74" width="69.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="140.5" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">B</text>
+<text x="140.5" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">15gg &middot; ES10</text>
+</g>
+<g>
+<rect x="106.0" y="194" width="69.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="140.5" y="210" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">C</text>
+<text x="140.5" y="221" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">15gg &middot; ES10</text>
+<text x="140.5" y="231" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 30gg</text>
+</g>
+<g>
+<rect x="175.0" y="74" width="92.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="221.0" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">D</text>
+<text x="221.0" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">20gg &middot; ES25</text>
+</g>
+<g>
+<rect x="175.0" y="314" width="46.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="198.0" y="330" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">E</text>
+<text x="198.0" y="341" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">10gg &middot; ES25</text>
+<text x="198.0" y="351" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 50gg</text>
+</g>
+<g>
+<rect x="175.0" y="194" width="115.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="232.5" y="210" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">F</text>
+<text x="232.5" y="221" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">25gg &middot; ES25</text>
+<text x="232.5" y="231" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 30gg</text>
+</g>
+<g>
+<rect x="267.0" y="74" width="46.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="290.0" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">G</text>
+<text x="290.0" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">10gg &middot; ES45</text>
+</g>
+<g>
+<rect x="221.0" y="314" width="92.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="267.0" y="330" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">H</text>
+<text x="267.0" y="341" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">20gg &middot; ES35</text>
+<text x="267.0" y="351" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 50gg</text>
+</g>
+<g>
+<rect x="290.0" y="194" width="92.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="336.0" y="210" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">I</text>
+<text x="336.0" y="221" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">20gg &middot; ES50</text>
+<text x="336.0" y="231" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 30gg</text>
+</g>
+<g>
+<rect x="313.0" y="74" width="69.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="347.5" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">J</text>
+<text x="347.5" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">15gg &middot; ES55</text>
+</g>
+<g>
+<rect x="313.0" y="314" width="46.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="336.0" y="330" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">K</text>
+<text x="336.0" y="341" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">10gg &middot; ES55</text>
+<text x="336.0" y="351" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 50gg</text>
+</g>
+<g>
+<rect x="382.0" y="194" width="69.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="416.5" y="210" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">L</text>
+<text x="416.5" y="221" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">15gg &middot; ES70</text>
+<text x="416.5" y="231" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 30gg</text>
+</g>
+<g>
+<rect x="382.0" y="74" width="69.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="416.5" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">M</text>
+<text x="416.5" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">15gg &middot; ES70</text>
+</g>
+<g>
+<rect x="359.0" y="314" width="69.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="393.5" y="330" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">N</text>
+<text x="393.5" y="341" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">15gg &middot; ES65</text>
+<text x="393.5" y="351" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 50gg</text>
+</g>
+<g>
+<rect x="451.0" y="194" width="46.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="474.0" y="210" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">O</text>
+<text x="474.0" y="221" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">10gg &middot; ES85</text>
+<text x="474.0" y="231" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 30gg</text>
+</g>
+<g>
+<rect x="451.0" y="74" width="184.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="543.0" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">P</text>
+<text x="543.0" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">40gg &middot; ES85</text>
+</g>
+<g>
+<rect x="428.0" y="314" width="46.0" height="44" rx="5" fill="color-mix(in srgb, var(--verde-bottiglia) 16%, white)" stroke="var(--verde-bottiglia)" stroke-width="1.3"/>
+<text x="451.0" y="330" font-size="12" font-weight="700" text-anchor="middle" fill="#1e5b2f">Q</text>
+<text x="451.0" y="341" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">10gg &middot; ES80</text>
+<text x="451.0" y="351" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float 50gg</text>
+</g>
+<g>
+<rect x="635.0" y="74" width="69.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="669.5" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">R</text>
+<text x="669.5" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">15gg &middot; ES125</text>
+</g>
+<g>
+<rect x="704.0" y="74" width="92.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="750.0" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">S</text>
+<text x="750.0" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">20gg &middot; ES140</text>
+</g>
+<g>
+<rect x="796.0" y="74" width="46.0" height="44" rx="5" fill="var(--rosso-mattone)"/>
+<text x="819.0" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">T</text>
+<text x="819.0" y="101" font-size="7.6" text-anchor="middle" fill="#fff" opacity="0.9">10gg &middot; ES160</text>
+</g>
+<g transform="translate(313.0,62)">
+<path d="M0,-8 L8,0 L0,8 L-8,0 Z" fill="var(--testo-scuro)"/>
+<text x="0" y="-12" font-size="7.5" text-anchor="middle" fill="var(--testo-scuro)" font-weight="700">M1</text>
+</g>
+<g transform="translate(451.0,182)">
+<path d="M0,-8 L8,0 L0,8 L-8,0 Z" fill="var(--testo-scuro)"/>
+<text x="0" y="-12" font-size="7.5" text-anchor="middle" fill="var(--testo-scuro)" font-weight="700">M2</text>
+</g>
+<g transform="translate(635.0,62)">
+<path d="M0,-8 L8,0 L0,8 L-8,0 Z" fill="var(--testo-scuro)"/>
+<text x="0" y="-12" font-size="7.5" text-anchor="middle" fill="var(--testo-scuro)" font-weight="700">M3</text>
+</g>
+<g transform="translate(796.0,62)">
+<path d="M0,-8 L8,0 L0,8 L-8,0 Z" fill="var(--testo-scuro)"/>
+<text x="0" y="-12" font-size="7.5" text-anchor="middle" fill="var(--testo-scuro)" font-weight="700">M4</text>
+</g>
+</svg>
+</div>
+
+<div class="chart-legend">
+  <span><i class="chip" style="background:var(--rosso-mattone)"></i> Nodo critico (float 0)</span>
+  <span><i class="chip" style="background:color-mix(in srgb, var(--verde-bottiglia) 16%, white); border:1.5px solid var(--verde-bottiglia)"></i> Nodo con float (&gt;5gg)</span>
+  <span><i class="chip line" style="background:var(--rosso-mattone)"></i> Dipendenza critica</span>
+  <span><i class="chip line" style="background:var(--blu)"></i> Dipendenza non critica</span>
+  <span><i class="chip diamond" style="background:var(--testo-scuro)"></i> Milestone</span>
+</div>
+<div class="note" style="margin-top:-4px;">Nessuna attività ha float 1&ndash;5gg (fascia "near-critical" arancione della legenda originale): i due rami non critici hanno rispettivamente 30gg (Game Engine) e 50gg (Chat/Social) di margine.</div>
+
+<div class="id-legend">
+  <div class="grp-title crit">Ramo Critico</div>
+  <div class="item"><b>A</b>Setup Infrastruttura</div><div class="item"><b>B</b>Backend Auth + DB</div><div class="item"><b>D</b>Backend Gestione Partite</div><div class="item"><b>G</b>Backend Persistenza Stato</div>
+  <div class="item"><b>J</b>Frontend Homepage + Login</div><div class="item"><b>M</b>Frontend Dashboard + Stanza</div><div class="item"><b>P</b>Frontend Tavolo da Gioco</div><div class="item"><b>R</b>Testing End-to-End</div>
+  <div class="item"><b>S</b>UAT + Bug Fixing</div><div class="item"><b>T</b>Preparazione Lancio</div>
+  <div class="grp-title ge">Ramo Game Engine (float 30gg)</div>
+  <div class="item"><b>C</b>Game Engine Foundation</div><div class="item"><b>F</b>Game Engine Regole Core</div><div class="item"><b>I</b>Game Engine Punteggi e Maraffa</div><div class="item"><b>L</b>Game Engine Testing</div>
+  <div class="item"><b>O</b>Integration Testing GE</div>
+  <div class="grp-title soc">Ramo Chat/Social (float 50gg)</div>
+  <div class="item"><b>E</b>WebSocket Server Setup</div><div class="item"><b>H</b>Real-Time Eventi</div><div class="item"><b>K</b>Chat + Disconnessioni</div><div class="item"><b>N</b>Sistema Amicizie</div>
+  <div class="item"><b>Q</b>Frontend Profili + Notifiche</div>
+</div>
+
+<div class="page-break"></div>
+<h2>Gantt Chart</h2>
+<p class="note" style="margin-top:0">Asse temporale = calendario reale (date effettive per sprint, non giorni lavorativi CPM): per questo le durate delle barre differiscono leggermente dai giorni lavorativi del Network Diagram (weekend/festività inclusi).</p>
+
+<div class="chart-wrap">
+<svg viewBox="0 0 996.6 454" width="996.6" height="454">
+<line x1="274.4" y1="24" x2="274.4" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="277.4" y="20" font-size="9" fill="#888">Nov</text>
+<line x1="380.9" y1="24" x2="380.9" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="383.9" y="20" font-size="9" fill="#888">Dic</text>
+<line x1="490.9" y1="24" x2="490.9" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="493.9" y="20" font-size="9" fill="#888">Gen</text>
+<line x1="601.0" y1="24" x2="601.0" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="604.0" y="20" font-size="9" fill="#888">Feb</text>
+<line x1="700.3" y1="24" x2="700.3" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="703.3" y="20" font-size="9" fill="#888">Mar</text>
+<line x1="810.4" y1="24" x2="810.4" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="813.4" y="20" font-size="9" fill="#888">Apr</text>
+<line x1="916.9" y1="24" x2="916.9" y2="434" stroke="#eee" stroke-width="1"/>
+<text x="919.9" y="20" font-size="9" fill="#888">Mag</text>
+<line x1="214.0" y1="24" x2="214.0" y2="434" stroke="#ccc" stroke-width="1.2" stroke-dasharray="2,2"/>
+<text x="214.0" y="20" font-size="8.3" fill="#666" font-weight="600">15 Ott</text>
+<rect x="0" y="30" width="6" height="200" fill="var(--rosso-mattone)"/>
+<rect x="0" y="230" width="6" height="100" fill="var(--verde-bottiglia)"/>
+<rect x="0" y="330" width="6" height="100" fill="var(--verde-bottiglia)"/>
+<rect x="6" y="30" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="44" font-size="8.4" fill="#333">A &middot; Setup Infrastruttura</text>
+<rect x="214.0" y="33" width="35.5" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<text x="10" y="64" font-size="8.4" fill="#333">B &middot; Backend Auth + DB</text>
+<rect x="260.1" y="53" width="39.1" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<rect x="6" y="70" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="84" font-size="8.4" fill="#333">D &middot; Backend Gestione Partite</text>
+<rect x="309.9" y="73" width="88.7" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<text x="10" y="104" font-size="8.4" fill="#333">G &middot; Backend Persistenza</text>
+<rect x="409.2" y="93" width="39.1" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<rect x="6" y="110" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="124" font-size="8.4" fill="#333">J &middot; FE Homepage + Login</text>
+<rect x="458.9" y="113" width="63.9" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<text x="10" y="144" font-size="8.4" fill="#333">M &middot; FE Dashboard + Stanza</text>
+<rect x="533.5" y="133" width="63.9" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<rect x="6" y="150" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="164" font-size="8.4" fill="#333">P &middot; FE Tavolo da Gioco</text>
+<rect x="608.0" y="153" width="188.2" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<text x="10" y="184" font-size="8.4" fill="#333">R &middot; Testing End-to-End</text>
+<rect x="757.1" y="173" width="49.8" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<rect x="6" y="190" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="204" font-size="8.4" fill="#333">S &middot; UAT + Bug Fixing</text>
+<rect x="810.4" y="193" width="81.6" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<text x="10" y="224" font-size="8.4" fill="#333">T &middot; Preparazione Lancio</text>
+<rect x="902.7" y="213" width="39.1" height="12" rx="3" fill="var(--rosso-mattone)"/>
+<rect x="6" y="230" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="244" font-size="8.4" fill="#333">C &middot; Game Engine Foundation</text>
+<rect x="260.1" y="233" width="39.1" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="303.2" y="243" font-size="6.8" fill="#888">float 30gg</text>
+<text x="10" y="264" font-size="8.4" fill="#333">F &middot; GE Regole Core</text>
+<rect x="309.9" y="253" width="113.5" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="427.4" y="263" font-size="6.8" fill="#888">float 30gg</text>
+<rect x="6" y="270" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="284" font-size="8.4" fill="#333">I &middot; GE Punteggi/Maraffa</text>
+<rect x="427.0" y="273" width="95.8" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="526.8" y="283" font-size="6.8" fill="#888">float 30gg</text>
+<text x="10" y="304" font-size="8.4" fill="#333">L &middot; GE Testing</text>
+<rect x="533.5" y="293" width="63.9" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="601.4" y="303" font-size="6.8" fill="#888">float 30gg</text>
+<rect x="6" y="310" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="324" font-size="8.4" fill="#333">O &middot; Integration Testing GE</text>
+<rect x="608.0" y="313" width="39.1" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="651.1" y="323" font-size="6.8" fill="#888">float 30gg</text>
+<text x="10" y="344" font-size="8.4" fill="#333">E &middot; WebSocket Server</text>
+<rect x="409.2" y="333" width="39.1" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="452.3" y="343" font-size="6.8" fill="#888">float 50gg</text>
+<rect x="6" y="350" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="364" font-size="8.4" fill="#333">H &middot; Real-Time Eventi</text>
+<rect x="458.9" y="353" width="88.8" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="551.7" y="363" font-size="6.8" fill="#888">float 50gg</text>
+<text x="10" y="384" font-size="8.4" fill="#333">K &middot; Chat + Disconnessioni</text>
+<rect x="558.3" y="373" width="39.1" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="601.4" y="383" font-size="6.8" fill="#888">float 50gg</text>
+<rect x="6" y="390" width="980.6" height="20" fill="#fafafa"/>
+<text x="10" y="404" font-size="8.4" fill="#333">N &middot; Sistema Amicizie</text>
+<rect x="608.0" y="393" width="64.0" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="676.0" y="403" font-size="6.8" fill="#888">float 50gg</text>
+<text x="10" y="424" font-size="8.4" fill="#333">Q &middot; FE Profili + Notifiche</text>
+<rect x="682.6" y="413" width="39.0" height="12" rx="3" fill="var(--verde-bottiglia)" opacity="0.85"/>
+<text x="725.6" y="423" font-size="6.8" fill="#888">float 50gg</text>
+<line x1="249.5" y1="24" x2="249.5" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(249.5,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+<line x1="448.3" y1="24" x2="448.3" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(448.3,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+<line x1="597.4" y1="24" x2="597.4" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(597.4,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+<line x1="746.5" y1="24" x2="746.5" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(746.5,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+<line x1="806.9" y1="24" x2="806.9" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(806.9,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+<line x1="892.0" y1="24" x2="892.0" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(892.0,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+<line x1="966.6" y1="24" x2="966.6" y2="434" stroke="var(--legno)" stroke-width="1" stroke-dasharray="3,2"/>
+<path transform="translate(966.6,24)" d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="var(--legno)"/>
+</svg>
+</div>
+
+<div class="chart-legend">
+  <span><i class="chip" style="background:var(--rosso-mattone)"></i> Attività critica</span>
+  <span><i class="chip" style="background:var(--verde-bottiglia); opacity:0.85"></i> Attività con float</span>
+  <span><i class="chip diamond" style="background:var(--legno)"></i> Milestone (M1&ndash;M7)</span>
+</div>
+
+<div class="mile-legend">
+  <div class="m"><b>M1</b> &middot; 25 Ott 2025 &mdash; Infrastructure Ready</div>
+  <div class="m"><b>M2</b> &middot; 20 Dic 2025 &mdash; Backend Core Complete</div>
+  <div class="m"><b>M3</b> &middot; 31 Gen 2026 &mdash; Game Engine Complete</div>
+  <div class="m"><b>M4</b> &middot; 14 Mar 2026 &mdash; Frontend Core Complete</div>
+  <div class="m"><b>M5</b> &middot; 31 Mar 2026 &mdash; MVP Beta</div>
+  <div class="m"><b>M6</b> &middot; 24 Apr 2026 &mdash; UAT Approved</div>
+  <div class="m"><b>M7</b> &middot; 15 Mag 2026 &mdash; Production Launch</div>
+</div>
+
+<h2>Sensitivity Analysis (sintesi)</h2>
+<div class="sens-row">
+  <div class="sens crit-scenario"><span class="stitle">Scenario 1 &middot; P ritarda 10gg</span>Lancio slitta al 25 Mag. <span class="simpact">Azione:</span> comprimere S (UAT) 20&rarr;15gg + 1 dev part-time su P (+&euro;2.000).</div>
+  <div class="sens"><span class="stitle">Scenario 2 &middot; L (+5gg bug critici)</span>L non è critico: il ritardo si propaga a O ma non a P (parallelo). <span class="simpact">Nessun impatto</span> sulla data di lancio.</div>
+  <div class="sens"><span class="stitle">Scenario 3 &middot; N ritarda 10gg</span>N ha 50gg di float, ampiamente assorbente. <span class="simpact">Nessun impatto</span>: solo un ritardo &gt;50gg renderebbe critico il ramo Chat/Social.</div>
+</div>
+
+<div class="note">Dettaglio per sprint (attività + sotto-task con date), tabelle Forward/Backward Pass complete, analisi rischi con mitigazioni, integrazione Network↔Gantt e processo di aggiornamento dinamico: vedi <code>Allegato3.5-ProjectNetworkDiagram-Gantt.md</code>.</div>
+
+</body>
+</html>
