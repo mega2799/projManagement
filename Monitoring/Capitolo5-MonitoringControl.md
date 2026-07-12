@@ -42,7 +42,7 @@ Ogni Stoplight Report contiene una tabella con cinque aree critiche: Scope, Sche
 
 - **Scope: Verde** - Tutte le feature Must Have sono in sviluppo secondo il piano. Nessuna change request ricevuta da Giovanni.
 - **Schedule: Giallo** - Il Frontend Tavolo da Gioco, attività sul critical path, ha accumulato 3 giorni di ritardo a causa della complessità inaspettata nel drag & drop delle carte. Recovery plan attivo: Luca Moretti è affiancato da Sara Bianchi per pair programming. Previsto recupero entro fine Sprint 9.
-- **Budget: Verde** - Spesi €8.200 su €8.650 previsti per il Mese 1 (Novembre). Sotto budget del 5%. Cash flow positivo con saldo cumulativo di €4.450.
+- **Budget: Verde** - Spesi €3.500 su €3.700 previsti per il Mese 1 (Novembre). Sotto budget del 5%. Cash flow positivo con saldo cumulativo di €5.800.
 - **Quality: Verde** - Test coverage all'87%, superiore al target del 85%. Zero bug critici aperti. Tutti i test di integrazione superati.
 - **Risks: Giallo** - Rischio latenza WebSocket ancora in monitoring. Load test previsto per Sprint 6 mostrerà se la mitigazione (ottimizzazione Socket.IO) è sufficiente.
 
@@ -81,17 +81,17 @@ Legenda:
 
 Nel grafico si può notare come durante i primi quattro mesi del progetto ci sia stata una buona aderenza tra le tre curve. A fine Gennaio 2026, il progetto mostrava i seguenti valori:
 
-- **Planned Value (PV)**: €16.800 - Questo è il budget che era pianificato per i primi 4 mesi secondo il Cash Flow Management (€3.850 per il Mese 0 + €4.200 × 3 mesi).
-- **Earned Value (EV)**: €15.900 - Valore del lavoro effettivamente completato, leggermente inferiore al pianificato.
-- **Actual Cost (AC)**: €16.200 - Costi reali sostenuti, leggermente superiori al valore guadagnato.
+- **Planned Value (PV)**: €14.100 - Questo è il budget che era pianificato per i primi 4 mesi secondo il Cash Flow Management (€3.000 per il Mese 0 + €3.700 × 3 mesi per Novembre, Dicembre e Gennaio).
+- **Earned Value (EV)**: €13.200 - Valore del lavoro effettivamente completato, leggermente inferiore al pianificato.
+- **Actual Cost (AC)**: €13.500 - Costi reali sostenuti, leggermente superiori al valore guadagnato.
 
 Da questi valori possiamo calcolare due indici fondamentali:
 
-**Cost Variance (CV) = EV - AC = €15.900 - €16.200 = -€300**
+**Cost Variance (CV) = EV - AC = €13.200 - €13.500 = -€300**
 
-La Cost Variance negativa indica che il progetto ha speso €300 in più rispetto al valore prodotto. Questo scostamento, pari all'1,9% del valore guadagnato, è considerato accettabile e rientra ampiamente nel Contingency Buffer del 18,7% previsto nel Cash Flow Management. La causa principale di questo lieve overrun è stata la necessità di dedicare ore extra al sistema Real-Time Communication per ottimizzare la latenza WebSocket, come identificato nel rischio R1 della Risk Rating Matrix.
+La Cost Variance negativa indica che il progetto ha speso €300 in più rispetto al valore prodotto. Questo scostamento, pari al 2,3% del valore guadagnato, è considerato accettabile e rientra ampiamente nel Contingency Buffer del 18,7% previsto nel Cash Flow Management. La causa principale di questo lieve overrun è stata la necessità di dedicare ore extra al sistema Real-Time Communication per ottimizzare la latenza WebSocket, come identificato nel rischio R1 della Risk Rating Matrix.
 
-**Schedule Variance (SV) = EV - PV = €15.900 - €16.800 = -€900**
+**Schedule Variance (SV) = EV - PV = €13.200 - €14.100 = -€900**
 
 La Schedule Variance negativa indica che il progetto è leggermente in ritardo rispetto al piano, con un valore di €900 di lavoro non ancora completato rispetto a quanto pianificato. Questo corrisponde al ritardo di 3 giorni accumulato dal Frontend Tavolo da Gioco menzionato nello Stoplight Report. Tuttavia, grazie al recovery plan attivato (pair programming Luca + Sara), il ritardo è stato recuperato entro la fine di Febbraio 2026.
 
@@ -103,16 +103,16 @@ Per completezza, ecco la tabella riassuntiva dei valori EVM mese per mese fino a
 
 | Mese | Periodo | PV cumulato (€) | EV cumulato (€) | AC cumulato (€) | CV (€) | SV (€) | CPI | SPI |
 |------|---------|----------------:|----------------:|----------------:|-------:|-------:|----:|----:|
-| 0 | Ott 2025 | 3.850 | 3.850 | 3.700 | +150 | 0 | 1,04 | 1,00 |
-| 1 | Nov 2025 | 8.050 | 8.000 | 7.900 | +100 | -50 | 1,01 | 0,99 |
-| 2 | Dic 2025 | 12.250 | 12.000 | 12.100 | -100 | -250 | 0,99 | 0,98 |
-| 3 | Gen 2026 | 16.800 | 15.900 | 16.200 | -300 | -900 | 0,98 | 0,95 |
-| 4 | Feb 2026 | 20.650 | 20.100 | 20.350 | -250 | -550 | 0,99 | 0,97 |
-| 5 | Mar 2026 | 21.700 | 21.500 | 21.700 | -200 | -200 | 0,99 | 0,99 |
-| 6 | Apr 2026 (UAT) | 22.500 | 22.400 | 22.500 | -100 | -100 | 1,00 | 1,00 |
+| 0 | Ott 2025 | 3.000 | 2.950 | 2.900 | +50 | -50 | 1,02 | 0,98 |
+| 1 | Nov 2025 | 6.700 | 6.550 | 6.500 | +50 | -150 | 1,01 | 0,98 |
+| 2 | Dic 2025 | 10.400 | 10.100 | 10.200 | -100 | -300 | 0,99 | 0,97 |
+| 3 | Gen 2026 | 14.100 | 13.200 | 13.500 | -300 | -900 | 0,98 | 0,94 |
+| 4 | Feb 2026 | 17.800 | 17.300 | 17.500 | -200 | -500 | 0,99 | 0,97 |
+| 5 | Mar 2026 | 19.800 | 19.600 | 19.700 | -100 | -200 | 0,99 | 0,99 |
+| 6 | Apr 2026 (UAT) | 21.600 | 21.500 | 21.550 | -50 | -100 | 1,00 | 1,00 |
 | 7 | Mag 2026 (Launch) | 22.750 | 22.750 | 22.750 | 0 | 0 | 1,00 | 1,00 |
 
-La traiettoria mostra come il leggero overrun di Gennaio (CV=-300, SV=-900) sia stato progressivamente assorbito attraverso il recovery plan, fino a chiudere a fine progetto con CPI=1,00 e SPI=1,00. Il consumo finale di €22.750 lascia il surplus di €2.250 documentato nel Cap 6 - Closing.
+I valori di PV corrispondono all'outflow cumulato pianificato nel Cash Flow Management (Allegato 3.4). La traiettoria mostra come il leggero overrun di Gennaio (CV=-300, SV=-900) sia stato progressivamente assorbito attraverso il recovery plan, fino a chiudere a fine progetto con CPI=1,00 e SPI=1,00. Il consumo finale di €22.750 lascia il surplus di €2.250 documentato nel Cap 6 - Closing.
 
 ## 5.7 Gantt Chart Tracking
 
@@ -184,19 +184,19 @@ Il rischio R2 "Scope Creep da stakeholder" è rimasto costantemente monitorato m
 
 Grazie al monitoraggio costante e ai sistemi di early warning implementati (Stoplight Reports, Earned Value Management, Velocity Tracking, Quality Metrics, Risk Monitoring), il progetto MaraffaOnline è riuscito a mantenere una traiettoria stabile verso gli obiettivi definiti nelle Conditions of Satisfaction.
 
-Tutti i criteri previsti sono stati rispettati entro le tolleranze accettabili. Alla fine del periodo di monitoraggio intensivo (Ottobre 2025 - Febbraio 2026), prima dell'inizio della fase di UAT, la situazione era la seguente:
+Tutti i criteri previsti sono stati rispettati entro le tolleranze accettabili. Grazie al monitoraggio costante lungo l'intero ciclo di vita del progetto (Ottobre 2025 - Maggio 2026), il consuntivo sui diversi criteri è stato il seguente:
 
 **Criteri Temporali**: Il progetto ha accumulato un massimo di 3 giorni di ritardo sul critical path durante Gennaio 2026, ma grazie al recovery plan il ritardo è stato recuperato entro fine Febbraio. La data di lancio del 15 Maggio 2026 è stata mantenuta.
 
-**Criteri Economici**: Il budget di €25.000 è stato rispettato. A fine Febbraio 2026 (Mese 4) le spese totali erano di €20.650 su €20.900 pianificate, con uno scostamento di €250 (1,2%), ben all'interno del Contingency Buffer del 18,7%.
+**Criteri Economici**: Il budget di €25.000 è stato rispettato. A fine Febbraio 2026 (Mese 4) le spese totali erano di €17.500 su €17.800 pianificate, con uno scostamento favorevole di €300 (1,7%), ben all'interno del Contingency Buffer del 18,7%.
 
 **Criteri Tecnici**: Tutte le regole del Maraffone/Beccaccino sono state implementate correttamente e validate da Francesca Giuliani durante la Sessione 1 di validazione (Novembre 2025). Il sistema Real-Time mantiene una latenza media di 185ms, sotto il target di 200ms. Il test coverage è stabilmente sopra l'85%.
 
-**Criteri Qualitativi**: L'esperienza utente è stata validata attraverso user testing con 10 membri della community Maraffa Forever durante lo Sprint 10. L'80% degli utenti è riuscito a completare una partita senza aiuto, soddisfacendo il criterio di usabilità definito nelle Conditions of Satisfaction.
+**Criteri Qualitativi**: L'esperienza utente è stata validata in due momenti. Una prima sessione a Gennaio 2026 con 5 membri della community Maraffa Forever ha dato riscontri positivi sull'usabilità e portato a piccole migliorie implementate nello Sprint 11. La User Acceptance Testing ufficiale, condotta con 10 tester della community nella prima metà di Maggio 2026, ha poi confermato che l'80% degli utenti è riuscito a completare una partita senza aiuto, soddisfacendo il criterio di usabilità definito nelle Conditions of Satisfaction.
 
 **Criteri di Gestione del Lavoro**: Il team ha lavorato in modo coeso e collaborativo. Le Sprint Retrospective hanno prodotto 30 action items di miglioramento continuo nel corso dei 15 sprint, di cui 28 sono stati completamente implementati, portando a un progressivo aumento dell'efficienza del team.
 
-La soluzione è stata collaudata internamente con successo e il progetto è pronto per procedere alla fase di UAT (User Acceptance Testing) programmata per la prima metà di Maggio 2026, seguita dal lancio pubblico il 15 Maggio 2026.
+Grazie a questo monitoraggio multilivello il progetto, collaudato internamente con successo, ha superato anche la fase finale di UAT ed è giunto pronto al lancio pubblico del 15 Maggio 2026. La chiusura formale, l'accettazione da parte del committente e le lezioni apprese sono descritte nel Capitolo 6 - Closing.
 
 ---
 

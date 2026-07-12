@@ -425,6 +425,7 @@ Queste **Regole Operative** sono state discusse e approvate durante il **Project
 
 ---
 
+<!-- Sezione "Fonti e Riferimenti" commentata. NOTA: la sottosezione "RASCI Matrix" sono link a blog esterni; la sottosezione "Regole Operative" cita invece fonti solide del corso (Scrum Guide 2020, PMBOK 7th Edition, Lean/Toyota, Atlassian Team Playbooks) da valorizzare nella relazione. Registro in Relazione/_appunti-per-relazione.md.
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices di Responsibility Assignment e Team Operating Rules 2026:
@@ -440,6 +441,7 @@ Questo documento è stato redatto seguendo le best practices di Responsibility A
 - Lean Problem Solving (Toyota Production System)
 - Conflict Resolution Frameworks (PMI PMBOK 7th Edition)
 - Team Working Agreements (Atlassian Team Playbooks)
+-->
 
 ---
 

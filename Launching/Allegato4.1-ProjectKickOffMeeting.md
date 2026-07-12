@@ -214,7 +214,7 @@ Setup (15gg)      Development         Development         UAT + Lancio
 
 **Slack Time**: 0 giorni sul Critical Path → ogni ritardo impatta direttamente la data di lancio
 
-**Critical Path Awareness**: L'attività più critica è **Frontend Tavolo da Gioco (30 giorni, Sprint 8-9-10)**. Luca Moretti sarà dedicato full-time con supporto di Sara Bianchi per componenti complessi.
+**Critical Path Awareness**: L'attività più critica è **Frontend Tavolo da Gioco (40 giorni, Sprint 8-11)**. Luca Moretti sarà dedicato full-time con supporto di Sara Bianchi per componenti complessi.
 
 #### 5.3 Sprint Calendar (Agile Subsystems)
 
@@ -254,7 +254,7 @@ Setup (15gg)      Development         Development         UAT + Lancio
 - **Consulenza** (1.2%): €300 - Francesca Giuliani (validazione regole)
 - **Contingency Buffer** (18.7%): €4.664 - Imprevisti + change requests + buffer estensione progetto 7 mesi
 
-**Cash Flow**: Vedi Allegato 3.4. Saldo minimo €2.300 nel Mese 3 (Gennaio 2026), sempre positivo.
+**Cash Flow**: Vedi Allegato 3.4. Saldo minimo €2.250 nel Mese 7 (prima metà Maggio 2026), sempre positivo.
 
 **Tracking**: Report mensile a Giovanni Marchetti entro il 5 di ogni mese.
 
@@ -436,7 +436,7 @@ MaraffaOnline/
 
 ---
 
-**Q2 (Luca Moretti)**: "Ho notato che il Frontend Tavolo da Gioco è sul critical path con 30 giorni. È realistico? Mi preoccupa."
+**Q2 (Luca Moretti)**: "Ho notato che il Frontend Tavolo da Gioco è sul critical path con 40 giorni. È realistico? Mi preoccupa."
 
 **A2 (Marco Venturi + Elena Rossi)**: "È la task più critica, hai ragione. Abbiamo preso 3 misure di mitigazione: (1) I mockup sono già approvati in fase Scoping, quindi zero incertezza su design. (2) Sara Bianchi farà pair programming con te per i componenti React complessi (drag & drop carte, animazioni). (3) Se necessario, comprimetemo UAT da 20 a 15 giorni per recuperare slack. Avrai supporto full-time."
 
@@ -536,7 +536,7 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 7. Daily Standup 09:00-09:15 da 16/10/2025
 
 **Rischi Evidenziati**:
-- Frontend Tavolo da Gioco (30 giorni) su critical path → mitigazione con pair programming
+- Frontend Tavolo da Gioco (40 giorni) su critical path → mitigazione con pair programming
 - Latenza WebSocket → POC entro Sprint 2
 - Scope Creep → Change Request Process rigoroso
 
@@ -564,6 +564,7 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 
 ---
 
+<!-- Sezione "Fonti e Riferimenti" commentata (link a blog esterni, non necessari in un allegato di progetto). Reinseribile o sostituibile con fonti del corso; registro in Relazione/_appunti-per-relazione.md.
 ## Fonti e Riferimenti
 
 Questo documento è stato redatto seguendo le best practices per Project Kick-Off Meeting 2026:
@@ -572,6 +573,7 @@ Questo documento è stato redatto seguendo le best practices per Project Kick-Of
 - [TeamGantt - How to Run Project Kickoff Meetings Like a Pro](https://www.teamgantt.com/guide/project-kickoff-meetings)
 - [Digital Project Manager - Project Kickoff Guide 2025](https://thedigitalprojectmanager.com/project-management/project-kickoff-guide/)
 - [Atlassian - Planning Project Kickoff Meetings](https://www.atlassian.com/work-management/project-management/project-kickoff)
+-->
 
 ---
 
