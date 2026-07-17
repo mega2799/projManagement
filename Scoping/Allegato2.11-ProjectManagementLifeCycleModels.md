@@ -1,79 +1,64 @@
 # Allegato 2.11 - Project Management Life Cycle Models
 ## v.1.0.0 – 2025-09-30 10:00:00
 
-Questo documento descrive le **metodologie di Project Management** adottate per il progetto MaraffaOnline e giustifica la scelta di un **approccio ibrido** che combina modelli diversi per sottosistemi differenti.
+Questo documento descrive le metodologie di Project Management adottate per il progetto MaraffaOnline e giustifica la scelta di un approccio ibrido, che combina modelli diversi per sottosistemi differenti.
 
 ---
 
-## Introduzione: Perché un Approccio Ibrido?
+## Introduzione: perché un approccio ibrido?
 
-PlayHeritage Labs ha scelto di **non adottare una singola metodologia monolitica** (es. solo Waterfall o solo Agile) ma di applicare il modello più adatto a ciascun sottosistema, in base a:
-- **Grado di incertezza dei requisiti**
-- **Complessità tecnica**
-- **Dipendenze tra componenti**
-- **Necessità di feedback continuo**
+PlayHeritage Labs ha deciso di non adottare una singola metodologia monolitica (per esempio solo Waterfall o solo Agile), ma di applicare a ciascun sottosistema il modello che meglio si adatta alle sue caratteristiche. I criteri usati per la scelta sono stati:
 
-Questo approccio pragmatico è in linea con le best practice moderne di project management, che privilegiano l'**adattabilità** rispetto al dogmatismo metodologico.
+- il grado di incertezza dei requisiti;
+- la complessità tecnica;
+- le dipendenze verso gli altri componenti;
+- la necessità di feedback continuo.
+
+Si tratta di una scelta pragmatica: dove i requisiti sono stabili conviene pianificare in anticipo, dove invece l'incertezza è alta serve la flessibilità di iterare. Forzare un unico approccio su tutto il progetto avrebbe introdotto overhead inutile in alcuni casi e rigidità dannosa in altri.
 
 ---
 
-## Modelli PM Utilizzati: Panoramica
+## Modelli PM utilizzati: panoramica
 
-I quattro modelli adottati nel progetto, con la relativa condizione d'uso:
+Nel progetto sono stati impiegati quattro modelli, ciascuno con la propria condizione d'uso tipica:
 
 | Modello | Quando si usa |
 |---------|---------------|
-| **Linear/Waterfall** | Requisiti chiari e stabili fin dall'inizio; fasi sequenziali con documentazione upfront e validazione finale |
-| **Agile Iterativo (Scrum-like)** | Requisiti noti ma con necessità di feedback continuo; sprint di 2 settimane con demo al committente |
-| **Agile Adattivo (Kanban + Spike)** | Alta incertezza tecnica; flusso continuo, prototipazione rapida (spike) e decision point go/no-go |
-| **Incrementale** | Componenti indipendenti rilasciabili in sequenza; prioritizzazione MoSCoW e release graduale |
+| Linear/Waterfall | Requisiti chiari e stabili fin dall'inizio; fasi sequenziali con documentazione upfront e validazione finale |
+| Agile Iterativo (Scrum-like) | Requisiti noti ma con necessità di feedback continuo; sprint di 2 settimane con demo al committente |
+| Agile Adattivo (Kanban + Spike) | Alta incertezza tecnica; flusso continuo, prototipazione rapida (spike) e decision point go/no-go |
+| Incrementale | Componenti indipendenti rilasciabili in sequenza; prioritizzazione MoSCoW e release graduale |
 
-La mappatura di ciascun sottosistema su questi modelli, con la motivazione specifica, è dettagliata nella sezione seguente.
+La mappatura di ciascun sottosistema su questi modelli, con la motivazione specifica, è dettagliata nelle sezioni seguenti.
 
 ---
 
-## Mappatura Sottosistemi → Metodologie
+## Mappatura sottosistemi → metodologie
 
-| # | Sottosistema | Metodologia | Motivazione Primaria |
+| # | Sottosistema | Metodologia | Motivazione primaria |
 |---|--------------|-------------|---------------------|
-| 1 | Game Engine | **Waterfall** | Requisiti fissi (regole tradizionali) |
-| 2 | Backend Server | **Agile Iterativo** | Integrazione continua con frontend |
-| 3 | Real-Time Communication | **Agile Adattivo** | Alta incertezza tecnica |
-| 4 | Frontend Web | **Agile Iterativo** | Feedback continuo UX |
-| 5 | Mobile Application | **Incrementale** | Won't Have MVP, post-lancio |
-| 6 | Social & Community | **Incrementale** | Features indipendenti prioritizzabili |
-| 7 | Infrastructure & DevOps | **Incrementale** | Setup progressivo capabilities |
+| 1 | Game Engine | Waterfall | Requisiti fissi (regole tradizionali) |
+| 2 | Backend Server | Agile Iterativo | Integrazione continua con frontend |
+| 3 | Real-Time Communication | Agile Adattivo | Alta incertezza tecnica |
+| 4 | Frontend Web | Agile Iterativo | Feedback continuo UX |
+| 5 | Mobile Application | Incrementale | Won't Have MVP, post-lancio |
+| 6 | Social & Community | Incrementale | Features indipendenti prioritizzabili |
+| 7 | Infrastructure & DevOps | Incrementale | Setup progressivo delle capabilities |
 
 ---
 
-## Analisi Dettagliata per Sottosistema
+## Analisi dettagliata per sottosistema
 
-### 1️⃣ Game Engine: Linear/Waterfall ✅
+### 1. Game Engine: Linear/Waterfall
 
-**Metodologia scelta**: **Waterfall** (modello lineare sequenziale)
+Metodologia scelta: Waterfall (modello lineare sequenziale).
 
-**Motivazioni**:
+Il Game Engine è il candidato ideale per un approccio a cascata perché i suoi requisiti sono già definiti e stabili. Le regole della Maraffa romagnola esistono da decenni, non presentano ambiguità e sono documentate in modo completo dalla community: non c'è quindi bisogno di iterazioni per "scoprire" cosa realizzare. Al contrario, qui la fedeltà al gioco tradizionale è vincolante — implementare una regola sbagliata comprometterebbe l'intera esperienza — per cui la tolleranza alle variazioni è praticamente nulla.
 
-1. **Requisiti completamente definiti e stabili**:
-   - Le regole della Maraffa romagnola esistono da decenni
-   - Nessuna ambiguità: la community fornisce documentazione completa
-   - Non servono iterazioni per "scoprire" i requisiti
-   - **Zero tolleranza per variazioni**: implementare regole sbagliate comprometterebbe la fedeltà al gioco tradizionale
+La stabilità dei requisiti rende possibile una validazione a monte: Francesca Giuliani, esperta di gioco, approva la specifica delle regole prima che lo sviluppo cominci, e i test case possono essere scritti in anticipo partendo da partite di esempio con risultato noto. Durante lo sviluppo il feedback degli utenti conta poco sulla logica di gioco (gli utenti le regole le conoscono già) e resta utile solo per l'interfaccia. Un'analisi iniziale accurata riduce quindi il rework e i bug logici, e il test finale si limita a verificare l'aderenza al regolamento ufficiale.
 
-2. **Validazione upfront possibile**:
-   - Francesca Giuliani (esperta) valida la specifica delle regole prima dello sviluppo
-   - Test case possono essere scritti in anticipo (partite di esempio con risultati noti)
+Fasi Waterfall applicate:
 
-3. **Bassa dipendenza da feedback utente durante sviluppo**:
-   - Gli utenti non devono "provare" le regole per validarle (le conoscono già)
-   - Feedback utente utile solo per UI/UX del gioco, non per la logica
-
-4. **Efficienza massima**:
-   - Analisi completa iniziale evita rework
-   - Implementazione sistematica riduce bug
-   - Test finale validazione against regolamento ufficiale
-
-**Fasi Waterfall applicate**:
 ```
 1. ANALISI (Settimane 1-2)
    - Workshop con Francesca Giuliani
@@ -100,40 +85,20 @@ La mappatura di ciascun sottosistema su questi modelli, con la motivazione speci
    - Deploy su server staging
 ```
 
-**Rischi mitigati**:
-- ✅ Evita scope creep (regole chiaramente delimitate)
-- ✅ Riduce bug logici critici (analisi approfondita upfront)
-
-**Rischi accettati**:
-- ⚠️ Modifiche tardive costose (ma improbabili dato requisiti stabili)
+L'approccio consente di contenere lo scope creep (le regole sono un perimetro chiuso) e di ridurre i bug logici critici grazie all'analisi upfront. Il rischio che accettiamo è quello tipico del Waterfall — modifiche tardive costose — che qui resta però improbabile proprio per la stabilità dei requisiti.
 
 ---
 
-### 2️⃣ Backend Server: Agile Iterativo (Scrum-like) ✅
+### 2. Backend Server: Agile Iterativo (Scrum-like)
 
-**Metodologia scelta**: **Agile Iterativo**
+Metodologia scelta: Agile Iterativo.
 
-**Motivazioni**:
+Il backend espone le API consumate dal frontend, e proprio per questo ha bisogno di un ciclo di feedback rapido: il team frontend, provando le API, segnala esigenze che portano ad adattarle in corsa. Un endpoint come `/api/matches/create`, per esempio, può richiedere campi diversi da quelli previsti all'inizio. Anche la struttura dati non è congelata a priori: lo schema del database viene ottimizzato iterativamente, e alcuni problemi di performance sulle query emergono solo testando con dati realistici.
 
-1. **Integrazione continua necessaria**:
-   - Il backend espone API per il frontend
-   - Feedback rapido dal team frontend è critico per adattare API
-   - Esempio: endpoint `/api/matches/create` potrebbe richiedere campi diversi da quelli inizialmente previsti
+L'iterazione permette inoltre di rilasciare valore in modo incrementale — autenticazione, gestione partite, integrazione WebSocket in sprint successivi — così che il frontend abbia sempre API utilizzabili. Infine, integrare di continuo evita il classico "big bang integration" a fine progetto, con tutti i rischi di integration hell che comporta.
 
-2. **Requisiti evoluti durante sviluppo**:
-   - Struttura dati (database schema) può essere ottimizzata iterativamente
-   - Query performance issues scoperti solo durante testing con dati reali
+Sprint planning (2 settimane per sprint):
 
-3. **Delivery incrementale di valore**:
-   - Sprint 1: autenticazione base
-   - Sprint 2: gestione partite CRUD
-   - Sprint 3: integrazione WebSocket
-   - Ogni sprint rilascia API utilizzabili dal frontend
-
-4. **Riduzione rischio di integration hell**:
-   - Integrazione continua evita "big bang integration" a fine progetto
-
-**Sprint Planning (2 settimane per sprint)**:
 ```
 SPRINT 1 (Settimane 3-4): Autenticazione
 - User stories: US-1.1 (Registrazione), US-1.2 (Login), US-1.3 (Ospite)
@@ -160,47 +125,29 @@ SPRINT 5 (Settimane 11-12): Statistiche & Polish
 - Deliverable: API stats + ottimizzazioni performance
 ```
 
-**Cerimonie Agile**:
-- **Daily Stand-up**: 9:30 ogni mattina (15 min)
-- **Sprint Review**: Demo bi-settimanale al committente (venerdì, 1h)
-- **Sprint Retrospective**: Venerdì dopo demo (30 min)
-- **Sprint Planning**: Lunedì inizio sprint (1h)
+Cerimonie Agile:
 
-**Metriche monitorate**:
-- Velocity (Story Points completati per sprint)
-- Burn-down chart
-- Code coverage (target: 80%+)
+- Daily stand-up: 9:30 ogni mattina (15 min)
+- Sprint review: demo bi-settimanale al committente (venerdì, 1h)
+- Sprint retrospective: venerdì dopo la demo (30 min)
+- Sprint planning: lunedì a inizio sprint (1h)
+
+Metriche monitorate: velocity (story point completati per sprint), burn-down chart, code coverage (obiettivo 80%+).
 
 ---
 
-### 3️⃣ Real-Time Communication: Agile Adattivo (Kanban + Spike) ⚠️
+### 3. Real-Time Communication: Agile Adattivo (Kanban + Spike)
 
-**Metodologia scelta**: **Agile Adattivo** (approccio sperimentale)
+Metodologia scelta: Agile Adattivo (approccio sperimentale).
 
-**Motivazioni**:
+Questo è il sottosistema più incerto, e per noi il rischio tecnico più critico dell'intero progetto: nessuno nel team ha esperienza di WebSocket in produzione, i problemi che possono emergere sono tali da imporre anche un cambio di libreria (per esempio abbandonare Socket.IO), e una stima affidabile a monte semplicemente non è possibile. Per questo abbiamo scelto di procedere in modo adattivo, riducendo l'incertezza per gradi anziché pianificare su ipotesi fragili.
 
-1. **Incertezza tecnica massima** (RISCHIO CRITICO):
-   - Nessuno nel team ha esperienza WebSocket production-ready
-   - Problemi tecnici potrebbero richiedere pivot completo (es. cambio libreria Socket.IO → altro)
-   - Non è possibile stimare accuratamente upfront
+Il primo passo è uno spike, cioè un lavoro di ricerca e prototipazione time-boxed pensato per abbassare l'incertezza. Nelle settimane 1-2 lo spike "WebSocket Proof-of-Concept" ha un obiettivo preciso — quattro client che sincronizzano uno stato semplificato — con criteri di successo misurabili (latenza sotto i 500 ms, sincronizzazione corretta) e un punto di decisione go/no-go fissato al giorno 15. I decision point sono espliciti proprio perché il rischio è alto: se lo spike fallisce al giorno 15 si attiva il piano di contingenza (il consulente esterno Dr. Stefano Nardi); se al giorno 30 nemmeno con il consulente si ottengono risultati, si passa a un'escalation verso il committente, perché a quel punto è in gioco la fattibilità del progetto.
 
-2. **Necessità di spike tecnici**:
-   - **Spike** = time-boxed research/prototyping per ridurre incertezza
-   - Settimane 1-2: Spike "WebSocket Proof-of-Concept"
-     - Obiettivo: 4 client sincronizzano stato semplificato
-     - Success criteria: latency < 500ms, sincronizzazione corretta
-     - Go/No-Go decision point al giorno 15
+Il lavoro non segue sprint rigidi ma un flusso continuo su board Kanban, con priorità dinamica: se emerge un bug critico, l'intero team ci si concentra. Elena e Sara lavorano in pair programming intensivo, sia per la difficoltà del problema sia per condividere conoscenza su una tecnologia nuova per tutti.
 
-3. **Decision points espliciti**:
-   - **Giorno 15**: Se spike fallisce → attivare piano di contingenza (consulente esterno Dr. Stefano Nardi)
-   - **Giorno 30**: Se con consulente non funziona → ESCALATION al committente (rischio progetto)
+Board Kanban:
 
-4. **Flessibilità massima**:
-   - Niente sprint rigidi: lavoro continuo su board Kanban
-   - Priorità dinamica: se bug critico scoperto, tutto il team switcha
-   - Pair programming intensivo (Elena + Sara) per knowledge sharing
-
-**Approccio Kanban Board**:
 ```
 ┌─────────────┬─────────────┬─────────────┬───────────┐
 │ BACKLOG     │ IN PROGRESS │ TESTING     │  DONE     │
@@ -214,9 +161,10 @@ SPRINT 5 (Settimane 11-12): Statistiche & Polish
 └─────────────┴─────────────┴─────────────┴───────────┘
 ```
 
-**WIP Limit**: Max 2 task in progress (focus vs parallelismo)
+WIP limit: massimo 2 task in progress (focus a scapito del parallelismo).
 
-**Fasi adattive**:
+Fasi adattive:
+
 ```
 FASE 1: SPIKE TECNICO (Settimane 1-2)
 ├─ Obiettivo: Provare fattibilità tecnica
@@ -239,34 +187,18 @@ FASE 3: HARDENING (Settimane 6-8)
 └─ Bug fixing aggressivo
 ```
 
-**Rischi gestiti**:
-- ✅ **Piano di contingenza chiaro** (consulente esterno)
-- ✅ **Early failure detection** (spike upfront)
-- ✅ **Escalation path definito** (se tutto fallisce)
+I rischi principali sono presidiati su tre fronti: un piano di contingenza chiaro (il consulente esterno), il rilevamento precoce dei problemi (grazie allo spike a monte) e un percorso di escalation definito nel caso peggiore.
 
 ---
 
-### 4️⃣ Frontend Web: Agile Iterativo (Scrum-like) ✅
+### 4. Frontend Web: Agile Iterativo (Scrum-like)
 
-**Metodologia scelta**: **Agile Iterativo**
+Metodologia scelta: Agile Iterativo.
 
-**Motivazioni**:
+Sul frontend il feedback continuo sull'esperienza d'uso è determinante: l'interfaccia deve ricreare il "calore" della tradizione, e per capirlo non bastano mockup statici — i beta tester devono provare prototipi interattivi, così da poter iterare rapidamente sul design. Da qui il co-design con la community: demo bi-settimanali con Maraffa Forever, sessioni di Think Aloud Protocol e A/B testing sulle scelte critiche (per esempio drag&drop contro click per giocare una carta). Il frontend, inoltre, consuma API ancora in evoluzione, quindi le sue iterazioni vanno tenute allineate con gli sprint del backend.
 
-1. **Feedback UX continuo essenziale**:
-   - L'interfaccia deve ricreare il "calore" della tradizione
-   - Beta tester devono provare mockup interattivi, non solo statici
-   - Iterazioni rapide su design basate su feedback
+Sprint sincronizzati con il backend:
 
-2. **Co-design con community**:
-   - Demo bi-settimanali con Maraffa Forever
-   - Think Aloud Protocol sessions
-   - A/B testing su scelte critiche (es. drag&drop vs click per giocare carta)
-
-3. **Dipendenza dal backend**:
-   - Frontend consuma API in evoluzione
-   - Iterazioni allineate con sprint backend
-
-**Sprint sincronizzati con Backend**:
 ```
 SPRINT 1 (Settimane 3-4): Login & Registrazione
 - Implementazione form con validazione real-time
@@ -278,7 +210,7 @@ SPRINT 2 (Settimane 5-6): Dashboard & Creazione Stanze
 - Form creazione stanza (pubblica/privata)
 - Demo: creazione e join stanza
 
-SPRINT 3 (Settimane 7-8): Tavolo da Gioco ⭐ (CRITICO)
+SPRINT 3 (Settimane 7-8): Tavolo da Gioco (CRITICO)
 - Implementazione schermata tavolo con 4 giocatori
 - Animazioni carte
 - Integrazione WebSocket per real-time
@@ -295,29 +227,18 @@ SPRINT 5 (Settimane 11-12): Statistiche & Polish
 - Responsive design finale (mobile)
 ```
 
-**Tecniche UX Agile**:
-- **Mockup interattivi** (Figma prototypes) prima di codificare
-- **User testing ogni 2 settimane** (5 utenti rappresentativi)
-- **System Usability Scale (SUS)** misurato a fine ogni sprint (target: 75+)
+Tecniche UX adottate: mockup interattivi (prototipi Figma) prima di scrivere codice, user testing ogni 2 settimane con 5 utenti rappresentativi, e misurazione della System Usability Scale (SUS) al termine di ogni sprint con obiettivo 75+.
 
 ---
 
-### 5️⃣ Mobile Application: Incrementale ❌ (Won't Have MVP)
+### 5. Mobile Application: Incrementale (Won't Have per l'MVP)
 
-**Metodologia scelta**: **Incrementale** (ma rinviato post-MVP)
+Metodologia scelta: Incrementale, ma rinviata a dopo l'MVP.
 
-**Motivazioni**:
+L'app mobile nativa resta fuori dall'MVP per una ragione di risorse: sviluppare in parallelo iOS e Android richiederebbe 3-4 mesi aggiuntivi, che il budget di €25.000 non copre. Nel frattempo la copertura mobile è garantita dal frontend web responsive, utilizzabile dal browser dei dispositivi e con performance accettabili su iPhone e Android moderni: questo permette di ridurre lo scope dell'MVP senza rinunciare all'usabilità da mobile.
 
-1. **Budget/tempo insufficienti**:
-   - Sviluppare app nativa iOS + Android richiederebbe 3-4 mesi aggiuntivi
-   - Budget €25.000 non copre sviluppo mobile
+Pianificazione futura (v1.1, post-lancio):
 
-2. **Alternativa responsive web**:
-   - Frontend web responsive utilizzabile da mobile browser
-   - Performance accettabile su iPhone/Android moderni
-   - Riduce scope MVP senza compromettere usabilità mobile
-
-**Pianificazione futura (v1.1, post-lancio)**:
 ```
 FASE 1: App iOS
 ├─ Utilizzare React Native (riuso codice)
@@ -335,35 +256,18 @@ FASE 3: Features Mobile-Specific
 └─ Durata stimata: 1 mese
 ```
 
-**Approccio incrementale**:
-- Ogni fase rilascia app funzionante standalone
-- Nessuna dipendenza tra iOS e Android
-- Priorità iOS first (community Maraffa Forever usa prevalentemente iPhone)
+L'ordine è pensato in ottica incrementale: ogni fase rilascia un'app funzionante e autonoma, iOS e Android non hanno dipendenze reciproche, e si parte da iOS perché la community di Maraffa Forever usa prevalentemente iPhone.
 
 ---
 
-### 6️⃣ Social & Community Features: Incrementale ✅
+### 6. Social & Community Features: Incrementale
 
-**Metodologia scelta**: **Incrementale**
+Metodologia scelta: Incrementale.
 
-**Motivazioni**:
+Le funzionalità social si prestano bene a un rilascio a incrementi perché sono in larga parte indipendenti tra loro: il sistema di amicizie funziona senza la chat globale, la chat in partita non ha bisogno delle classifiche, le statistiche prescindono dai profili pubblici. Questa indipendenza si sposa con una prioritizzazione MoSCoW netta — chat in-game e login/profilo base come Must Have, amicizie come Should Have, classifiche e chat globale come Could Have, tornei e achievement esclusi dall'MVP. Il vantaggio pratico è la riduzione del rischio: anche se il tempo dovesse stringere, i Must Have restano completati e non si rilascia nessuna feature "a metà".
 
-1. **Features indipendenti tra loro**:
-   - Sistema amicizie funziona senza chat globale
-   - Chat in-game funziona senza classifiche
-   - Statistiche funzionano senza profili pubblici
+Sequenza incrementale:
 
-2. **Prioritizzazione MoSCoW chiara**:
-   - **Must Have**: Chat in-game, login/profilo base
-   - **Should Have**: Sistema amicizie
-   - **Could Have**: Classifiche, chat globale
-   - **Won't Have** (MVP): Tornei, achievements
-
-3. **Riduzione rischio incompletezza**:
-   - Anche se tempo scade, almeno Must Have completato
-   - Nessuna feature "metà fatta" rilasciata
-
-**Sequenza incrementale**:
 ```
 INCREMENTO 1 (Sprint 2): Login & Profilo Base
 ├─ Registrazione, login, profilo minimale
@@ -390,31 +294,18 @@ INCREMENTO 5 (Backlog): Classifiche (COULD)
 └─ Altrimenti rinviato a v1.1
 ```
 
-**Vantaggi approccio**:
-- ✅ Riduce rischio di deadline mancata con feature incomplete
-- ✅ Permette rilascio anticipato (soft launch) se necessario
-- ✅ Feedback utenti su incrementi precedenti informa sviluppo successivi
+L'approccio riduce il rischio di arrivare alla scadenza con funzioni incomplete, rende possibile un rilascio anticipato (soft launch) se serve, e fa sì che il feedback sugli incrementi già rilasciati orienti lo sviluppo dei successivi.
 
 ---
 
-### 7️⃣ Infrastructure & DevOps: Incrementale ✅
+### 7. Infrastructure & DevOps: Incrementale
 
-**Metodologia scelta**: **Incrementale**
+Metodologia scelta: Incrementale.
 
-**Motivazioni**:
+Sull'infrastruttura l'approccio incrementale serve soprattutto a evitare l'over-engineering: si parte da una configurazione minimale (single server) e si aggiunge complessità solo quando diventa realmente necessaria, senza sostenere costi inutili all'inizio. Le capabilities crescono per layer: hosting e database sono indispensabili da subito (Layer 1), la CI/CD riduce gli errori di deployment (Layer 2), il monitoring dà visibilità sui problemi in produzione (Layer 3), l'auto-scaling arriva solo se il traffico lo richiede (Layer 4).
 
-1. **Setup progressivo evita over-engineering**:
-   - Partire con infrastruttura minimale (single server)
-   - Aggiungere complessità solo quando necessario
-   - Evitare costi infrastruttura inutili all'inizio
+Sequenza incrementale:
 
-2. **Capabilities aggiunte per layer**:
-   - Layer 1: Hosting + database (necessario da subito)
-   - Layer 2: CI/CD (riduce errori deployment)
-   - Layer 3: Monitoring (identifica problemi production)
-   - Layer 4: Auto-scaling (solo se traffico lo richiede)
-
-**Sequenza incrementale**:
 ```
 INCREMENTO 1 (Settimana 1): Setup Base
 ├─ Server dedicato Hetzner (€50/mese)
@@ -450,75 +341,39 @@ INCREMENTO 6 (Post-lancio, se necessario): Scalabilità
 └─ OPZIONALE: dipende da successo MVP
 ```
 
-**Vantaggi approccio**:
-- ✅ Riduce costi iniziali (no over-provisioning)
-- ✅ Incrementi validati prima di aggiungere complessità
-- ✅ Scalabilità preparata ma non implementata upfront (YAGNI principle)
+In questo modo i costi iniziali restano contenuti (niente over-provisioning), ogni incremento viene validato prima di introdurre l'ulteriore complessità, e la scalabilità resta predisposta ma non implementata in anticipo, coerentemente col principio YAGNI ("You Aren't Gonna Need It").
 
 ---
 
-## Matrice Decisionale: Quale Metodologia per Quale Sottosistema?
+## Matrice decisionale: quale metodologia per quale sottosistema?
 
-| Caratteristica Sottosistema | Waterfall | Agile Iterativo | Agile Adattivo | Incrementale |
+| Caratteristica del sottosistema | Waterfall | Agile Iterativo | Agile Adattivo | Incrementale |
 |----------------------------|-----------|-----------------|----------------|--------------|
-| Requisiti completamente noti | ✅ SÌ | ❌ No | ❌ No | 🔹 Parziale |
-| Feedback continuo necessario | ❌ No | ✅ SÌ | ✅ SÌ | ❌ No |
-| Alta incertezza tecnica | ❌ No | ❌ No | ✅ SÌ | ❌ No |
-| Features indipendenti prioritizzabili | ❌ No | 🔹 Parziale | ❌ No | ✅ SÌ |
-| Integrazione continua con altri sistemi | ❌ No | ✅ SÌ | 🔹 Parziale | ❌ No |
-
-**Legenda**: ✅ SÌ (ottimo fit) | 🔹 Parziale (fit moderato) | ❌ No (non adatto)
+| Requisiti completamente noti | Sì | No | No | Parziale |
+| Feedback continuo necessario | No | Sì | Sì | No |
+| Alta incertezza tecnica | No | No | Sì | No |
+| Features indipendenti prioritizzabili | No | Parziale | No | Sì |
+| Integrazione continua con altri sistemi | No | Sì | Parziale | No |
 
 ---
 
-## Coordinamento tra Metodologie Diverse
+## Coordinamento tra metodologie diverse
 
-### Challenge: Come sincronizzare approcci diversi?
+La difficoltà principale di un approccio ibrido è tenere sincronizzati sottosistemi che internamente seguono ritmi diversi. La soluzione adottata è una cadenza comune sovrapposta ai singoli metodi: anche i sottosistemi Waterfall e Incrementale, che internamente non lavorano per sprint, si allineano a una scansione bi-settimanale, con demo al committente ogni venerdì e milestone di integrazione a cadenza mensile.
 
-**Soluzione: Unified Sprint Cadence + Milestones Comuni**
-
-Anche se i sottosistemi usano metodologie diverse, tutti seguono:
-1. **Sprint bi-settimanali comuni** (anche se Waterfall/Incrementale non sprint-based internamente)
-2. **Demo bi-settimanali al committente** (venerdì)
-3. **Milestone mensili comuni** (sincronizzazione integrazione)
-
-**Esempio Milestone 1 (Fine Ottobre)**:
-- Game Engine (Waterfall): completata fase Implementazione
-- Backend (Agile Iterativo): Sprint 2 completato (gestione partite)
-- Real-Time (Agile Adattivo): Spike PoC validato
-- Frontend (Agile Iterativo): Sprint 2 completato (dashboard)
-- Infrastructure (Incrementale): Incremento 3 (CI/CD) completato
-
-**Integration Points**:
-- Settimana 4, 8, 12: Integration Sprint (no nuove feature, solo integrazione e bug fixing)
+A titolo di esempio, la prima milestone (fine ottobre) prevede: Game Engine (Waterfall) con la fase di implementazione conclusa, Backend (Agile Iterativo) allo Sprint 2 completato, Real-Time (Agile Adattivo) con lo spike PoC validato, Frontend (Agile Iterativo) allo Sprint 2 completato, Infrastructure (Incrementale) all'incremento 3 (CI/CD) completato. Le settimane 4, 8 e 12 sono dedicate a integration sprint, in cui non si introducono nuove feature ma ci si concentra su integrazione e bug fixing.
 
 ---
 
-## Conclusioni e Raccomandazioni
+## Conclusioni
 
-### Perché l'Approccio Ibrido è la Scelta Giusta per MaraffaOnline
+L'approccio ibrido si è rivelato la scelta più coerente con la natura di MaraffaOnline, per alcune ragioni di fondo. Innanzitutto per pragmatismo: i sottosistemi hanno caratteristiche molto diverse, e imporre un unico metodo sarebbe stato inefficiente. In secondo luogo per la gestione del rischio, che risulta calibrata sul singolo componente — il Waterfall contiene il rischio sul Game Engine (requisiti stabili), mentre l'Agile Adattivo governa quello sul Real-Time (incertezza massima). C'è poi un guadagno di efficienza, perché si evita l'overhead superfluo (uno sprint planning sul Game Engine non avrebbe senso) e si concentra il feedback continuo dove serve davvero, cioè su frontend e backend. Infine il modello è riutilizzabile: PlayHeritage Labs potrà applicarlo ad altri progetti futuri, per esempio la digitalizzazione di altri giochi tradizionali.
 
-1. **Pragmatismo sopra dogmatismo**: ogni sottosistema ha caratteristiche diverse, forzare una singola metodologia sarebbe inefficiente
-
-2. **Gestione rischio ottimale**:
-   - Waterfall riduce rischio su Game Engine (requisiti stabili)
-   - Agile Adattivo gestisce rischio su Real-Time (incertezza massima)
-
-3. **Massimizzazione efficienza**:
-   - Nessuno overhead inutile (es. sprint planning su Game Engine non serve)
-   - Feedback continuo solo dove utile (frontend, backend)
-
-4. **Scalabilità approccio**: questo modello ibrido è riutilizzabile per progetti futuri di PlayHeritage Labs (altri giochi tradizionali)
-
-### Lezioni Apprese da Applicare
-
-- ✅ **Decision point espliciti** cruciali per sottosistemi ad alto rischio
-- ✅ **Sincronizzazione via milestone comuni** funziona meglio di sprint rigidi ovunque
-- ✅ **Documentazione upfront** (Waterfall) riduce drasticamente bug logici
+Tra le indicazioni che porteremo con noi: i decision point espliciti sono cruciali per i sottosistemi ad alto rischio; la sincronizzazione tramite milestone comuni funziona meglio di sprint rigidi imposti ovunque; e la documentazione a monte, tipica del Waterfall, riduce in modo sensibile i bug logici dove i requisiti lo permettono.
 
 ---
 
-**Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
-**Revisionato da**: Elena Rossi (Lead Developer) + Team completo
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 01/10/2025
+Redatto da: Marco Venturi (Project Manager, PlayHeritage Labs)
+Revisionato da: Elena Rossi (Lead Developer) e team completo
+Approvato da: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
+Data approvazione: 01/10/2025
