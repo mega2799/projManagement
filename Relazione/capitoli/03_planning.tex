@@ -1,27 +1,29 @@
 \chapter{Planning}
 
-% TODO: Completare la fase di Planning
+La fase di Planning traduce il perimetro definito nello Scoping in un piano operativo. A partire dai requisiti si è costruita la Work Breakdown Structure, da cui sono derivate le stime, la prioritizzazione, il piano economico e il calendario delle attività con l'analisi del percorso critico.
 
 \section{Work Breakdown Structure}
 
-% TODO: Descrizione della WBS e riferimento all'allegato
+I requisiti emersi nello Scoping, durante la definizione della RBS e delle User Stories, sono stati ulteriormente decomposti nella Work Breakdown Structure. Seguendo la 100\% rule, la WBS organizza tutto il lavoro del progetto su quattro livelli (sottosistema, funzione, attività e task), per un totale di circa 160 task distribuiti sui sei sottosistemi di sviluppo attivi e sulle attività trasversali di Project Management (la Mobile Application, settimo sottosistema dell'architettura, è \textit{Won't Have} per l'MVP e non genera task in questa release). Essa costituisce la base da cui derivano le stime, il Project Network Diagram e il Gantt. La WBS è riportata nell'Allegato 3.1 - Work Breakdown Structure, disponibile anche come diagramma ad albero a colori (companion HTML) affiancato all'elenco testuale completo dei task.
 
-\section{Moscow Analysis}
+\section{MoSCoW Analysis}
 
-% TODO: Descrizione della prioritizzazione dei requisiti
+Per evitare che il team concentri gli sforzi su requisiti non fondamentali, a ciascun requisito è stata assegnata una priorità tramite la tecnica MoSCoW, che prevede quattro livelli: \textit{Must Have}, requisiti essenziali senza i quali il prodotto non è utilizzabile; \textit{Should Have}, requisiti importanti ma non bloccanti; \textit{Could Have}, requisiti desiderabili da includere solo se tempo e risorse lo permettono; \textit{Won't Have}, requisiti esplicitamente esclusi dalla versione corrente. La distribuzione dell'effort risultante vede i Must Have prevalere (circa il 75\% dei 302 giorni-uomo stimati), coerentemente con la natura critica del Game Engine e del Real-Time Communication, mentre i Could Have sono stati mantenuti contenuti per ridurre il rischio di scope creep e garantire la consegna dell'MVP nei sette mesi. Si noti che i 302 giorni-uomo esprimono lo \textit{sforzo} complessivo aggregato del team, non la \textit{durata} del progetto: distribuito su un organico di cinque persone part-time che lavorano in parallelo sui sei sottosistemi di sviluppo, tale sforzo si traduce in circa 170 giorni lavorativi sul percorso critico (i sette mesi di calendario), come dettagliato nel Project Network Diagram (Allegato 3.5). L'analisi è riportata nell'Allegato 3.2 - MoSCoW Prioritization, disponibile anche come board visiva a quattro quadranti (companion HTML).
 
 \section{Stime}
 
-% TODO: Descrizione delle tecniche utilizzate (Delphi, Planning Poker)
+Per la stima dell'effort si sono utilizzate due tecniche diverse a seconda della metodologia del sottosistema. Per il Game Engine, gestito con approccio tradizionale Waterfall, si è adottata la Delphi Technique: ogni membro ha fornito in forma anonima una stima e una motivazione per ciascun task e, ripetendo il procedimento per più round, si è conversi verso valori condivisi. Per i sottosistemi Agile si è invece impiegato il Planning Poker: il Product Owner ha presentato i task e ogni membro ha scelto in modo indipendente una carta con la stima in story points secondo la scala di Fibonacci (1, 2, 3, 5, 8, 13, 21); in caso di forti discrepanze se ne sono discusse le motivazioni, ripetendo il procedimento fino al consenso. Questa combinazione ha permesso di ottenere stime affidabili sfruttando l'approccio più adatto a ciascun contesto.
 
 \section{Product Backlog}
 
-% TODO: Descrizione del backlog per i sistemi agili
+Per i sottosistemi gestiti con metodologie Agile è stato realizzato un Product Backlog, la lista prioritizzata del lavoro ordinata secondo le priorità della MoSCoW Analysis e articolata in 15 sprint da due settimane. All'inizio di ogni sprint uno Sprint Planning seleziona i task da completare, mentre a fine sprint una Sprint Review con lo stakeholder e una Sprint Retrospective interna consentono di validare il lavoro e migliorare il processo. Il backlog è riportato nell'Allegato 3.3 - Product Backlog.
+
+Va evidenziata una scelta metodologica: il Product Backlog include \textbf{esclusivamente i sottosistemi gestiti con approcci iterativi e adattivi} (Backend Server, Real-Time Communication, Frontend Web e Social \& Community), mentre il Game Engine (Waterfall) e l'Infrastructure \& DevOps (Incrementale) sono tracciati nella WBS e nel Gantt. Questa separazione è intenzionale: il Product Backlog è uno strumento specifico di Scrum e mescolarvi lavoro gestito con altre metodologie ne comprometterebbe la coerenza e la chiarezza dei ruoli. Ne consegue anche una precisazione sulla velocity: la capacità stimata di circa 40 story points per sprint è una metrica \textit{team-wide}, che aggrega tutto il lavoro del progetto; i 310 story points del solo Backlog Agile corrispondono invece a una velocity Scrum pura di circa 21 story points per sprint. Le due misure non sono in contraddizione, ma riflettono livelli di lettura diversi (gestionale l'una, di puro Scrum l'altra).
 
 \section{Cash Flow Management}
 
-% TODO: Descrizione del cash flow e analisi della sostenibilità economica
+Il Cash Flow Management traccia i flussi finanziari del progetto su un budget complessivo di €25.000 e una durata di sette mesi. I pagamenti da parte di Maraffa Forever seguono una struttura a corpo in tre tranche (50\% alla firma, 25\% a valle del Backend Core, 25\% al completamento del core di gioco), mentre le uscite mensili coprono salari, infrastruttura, tool e consulenza. L'analisi mostra un saldo cumulativo sempre positivo, con un minimo di €2.250 nell'ultimo mese, e un surplus finale di €2.250 (9\% del budget) destinato al supporto post-lancio: il progetto risulta quindi economicamente sostenibile e senza problemi di liquidità. Il dettaglio, con la tabella mensile e la ripartizione delle spese per categoria, è riportato nell'Allegato 3.4 - Cash Flow Management, corredato dai grafici a colori (companion HTML).
 
 \section{Project Network Diagram e Gantt}
 
-% TODO: Descrizione dei diagrammi, critical path, slack time
+A partire dalla WBS e dalle stime di durata, si sono realizzati il Project Network Diagram e il Gantt Chart per determinare un calendario preciso delle attività. Nel Project Network Diagram ogni task riporta la durata, l'Early Start, l'Early Finish, il Late Start, il Late Finish e lo slack, calcolato come differenza tra Late Start ed Early Start. Applicando il Critical Path Method (forward e backward pass) è stato individuato il percorso critico A $\to$ B $\to$ D $\to$ G $\to$ J $\to$ M $\to$ P $\to$ R $\to$ S $\to$ T, della durata di 170 giorni lavorativi, che determina la data di lancio: qualsiasi ritardo su un'attività a slack zero impatta direttamente la milestone finale. L'attività più critica è risultata il Frontend Tavolo da Gioco (40 giorni). Il Gantt traduce queste dipendenze in un calendario a barre con le milestone del progetto. Entrambi i diagrammi sono riportati nell'Allegato 3.5 - Project Network Diagram \& Gantt, disponibile anche in versione visiva (companion HTML). La fase di Planning si è conclusa con un meeting di approvazione della pianificazione, dal quale è emerso il via libera di tutti i partecipanti all'avvio dell'esecuzione.
