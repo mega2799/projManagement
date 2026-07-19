@@ -1,5 +1,5 @@
 # Allegato 4.1 - Project Kick-Off Meeting
-## v.1.0.0 – 15/10/2025 10:00-11:00
+## v.1.1.0 – 15/10/2025 10:00-11:00
 
 Il **Project Kick-Off Meeting** segna l'inizio ufficiale della fase di esecuzione del progetto MaraffaOnline. Questo meeting rappresenta il momento in cui il team di progetto si allinea su obiettivi, ruoli, responsabilità e regole operative, trasformando la pianificazione in azione.
 
@@ -66,7 +66,7 @@ I seguenti documenti sono stati condivisi con tutti i partecipanti 3 giorni prim
 - Celebrazione: questo è l'inizio ufficiale di un'avventura a cui tutti teniamo
 
 **Quote del PM**:
-> "Oggi trasformiamo 7 mesi di preparazione in azione. Il nostro obiettivo è portare il Maraffone, gioco che ha unito generazioni di appassionati, nell'era digitale senza perdere l'anima del gioco tradizionale."
+> "Oggi trasformiamo la pianificazione in azione. Nei prossimi 7 mesi il nostro obiettivo è portare il Maraffone, gioco che ha unito generazioni di appassionati, nell'era digitale senza perdere l'anima del gioco tradizionale."
 
 ---
 
@@ -113,7 +113,7 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
 | Criterio | Target MVP | Misurazione |
 |----------|------------|-------------|
 | **Funzionalità** | 100% regole Maraffone implementate correttamente | Validazione con Francesca Giuliani + 10 tester community |
-| **Performance** | Latenza < 200ms per azioni real-time | Load testing con 50 partite simultanee |
+| **Performance** | Latenza < 500ms per azioni real-time | Load testing con 50 partite simultanee |
 | **Usabilità** | 80% utenti completano prima partita senza aiuto | User testing con 10 membri Maraffa Forever |
 | **Tempo** | Lancio MVP entro 15/05/2026 (7 mesi) | Rispetto Gantt Chart critical path (170 giorni lavorativi) |
 | **Budget** | Spese entro €22.750 (91% di €25.000) | Cash flow tracking settimanale |
@@ -127,36 +127,36 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
 
 **Obiettivo**: Chiarezza assoluta su cosa è dentro/fuori dal MVP
 
-#### 4.1 In-Scope (Must Have)
+#### 4.1 In-Scope: i 6 sottosistemi di sviluppo dell'MVP + Testing & QA
 
-**7 Sottosistemi del MVP**:
+I giorni indicano l'**effort totale stimato per sottosistema** (Must + Should + Could inclusi nell'MVP), come da Allegato 3.2 - MoSCoW.
 
 1. **Game Engine** (Waterfall) - 50 giorni
    - Logica Maraffone completa (distribuzione, turni, punteggio, vittoria)
    - Gestione Maraffa/Cricca (Asso+2+3 briscola = +3pt)
    - Validazione mosse legali
 
-2. **Backend Server** (Agile Iterativo) - 50 giorni
+2. **Backend Server** (Agile Iterativo) - 70 giorni
    - Autenticazione JWT (registrazione, login, guest)
    - API REST per gestione partite/lobby
    - Database PostgreSQL (utenti, partite, statistiche)
 
-3. **Real-Time Communication** (Agile Adattivo) - 42 giorni
+3. **Real-Time Communication** (Agile Adattivo) - 45 giorni
    - WebSocket con Socket.IO
    - Sincronizzazione stato partita 4 giocatori
    - Notifiche eventi real-time (turno, carte giocate)
 
-4. **Frontend Web** (Agile Iterativo) - 56 giorni
+4. **Frontend Web** (Agile Iterativo) - 76 giorni
    - UI responsive (desktop priority, tablet supportato)
    - Tavolo da gioco virtuale con drag & drop carte
    - Lobby, profili, statistiche personali
 
-5. **Social & Community** (Incrementale) - 35 giorni
+5. **Social & Community** (Incrementale) - 24 giorni
    - Sistema amicizie
    - Lista partite recenti con replay
    - Leaderboard community
 
-6. **Infrastructure & DevOps** (Incrementale) - 25 giorni
+6. **Infrastructure & DevOps** (Incrementale) - 37 giorni
    - Deploy Docker su Hetzner
    - CI/CD GitLab
    - Monitoring (Sentry, UptimeRobot)
@@ -166,7 +166,7 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
    - Integration test
    - User Acceptance Testing con Maraffa Forever
 
-**Total Development**: 170 giorni lavorativi sul Critical Path (~7 mesi calendar)
+**Nota sugli effort**: la somma degli effort dei 6 sottosistemi di sviluppo è di circa 302 giorni-uomo; grazie al parallelismo tra sottosistemi (vedi Project Network Diagram, Allegato 3.5) il progetto si completa in **170 giorni lavorativi sul Critical Path** (~7 mesi di calendario).
 
 #### 4.2 Out-of-Scope (Won't Have in MVP)
 
@@ -194,23 +194,33 @@ I criteri sono stati concordati con Giovanni Marchetti durante la fase di Scopin
 **Overview 7 mesi**:
 
 ```
-Ott 2025          Nov-Dic 2025        Gen-Mar 2026         Apr-Mag 2026
-│                 │                   │                    │
-Setup (15gg)      Development         Development         UAT + Lancio
-│                 Sprint 1-4          Sprint 5-11         Sprint 12-13
-│                 │                   │                    │
-└─ M1             └─ M2               └─ M3                └─ M7 (LANCIO)
-   15/10/2025        20/12/2025          31/03/2026           15/05/2026
+Ott 2025      Nov 2025 - Feb 2026    Mar 2026       Apr-Mag 2026
+│             │                      │              │
+Setup         Sviluppo core          MVP Beta       UAT + Lancio
+Sprint 0      Sprint 1-8             Sprint 9-11    Sprint 12-14
+│             │                      │              │
+Kick-off      M2 → M3                M4 → M5        M6 → M7 (LANCIO)
+15/10         20/12 → 31/01          14/03 → 31/03  24/04 → 15/05
 ```
 
 #### 5.2 Milestone Critiche
 
-| Milestone | Data | Deliverable | Owner | Pagamento |
-|-----------|------|-------------|-------|-----------|
-| **M1: Project Kickoff** | 15/10/2025 | Setup infrastruttura + Team onboarding | Andrea Conti | €12.500 (50%) |
-| **M2: Backend Core Complete** | 20/12/2025 | Game Engine Foundation + Backend Auth funzionante | Elena Rossi | €6.250 (25%) |
-| **M3: Game Engine + MVP Beta** | 31/03/2026 | Tutte le feature Must Have integrate e testate internamente | Marco Venturi | €6.250 (25%) |
-| **M7: Public Launch** | 15/05/2026 | UAT superato + Deploy produzione + Lancio community | Marco Venturi | - |
+Le milestone tecniche seguono il Project Network Diagram e il Gantt (Allegato 3.5):
+
+| Milestone | Data | Deliverable | Owner |
+|-----------|------|-------------|-------|
+| **M1: Infrastructure Ready** | 25/10/2025 | Server + CI/CD operativi | Andrea Conti |
+| **M2: Backend Core Complete** | 20/12/2025 | Auth + gestione partite + persistenza | Elena Rossi |
+| **M3: Game Engine Complete** | 31/01/2026 | Regole Maraffone implementate e validate | Elena Rossi |
+| **M4: Frontend Core Complete** | 14/03/2026 | Homepage + Dashboard + Tavolo da gioco | Luca Moretti |
+| **M5: MVP Beta** | 31/03/2026 | Tutte le feature Must Have integrate e testate internamente | Marco Venturi |
+| **M6: UAT Approved** | 24/04/2026 | Approvazione community (10 tester) | Giovanni Marchetti |
+| **M7: Public Launch** | 15/05/2026 | Deploy produzione + Lancio community | Marco Venturi |
+
+**Pagamenti** (struttura 50/25/25, dettaglio in Allegato 3.4 - Cash Flow):
+- **1° pagamento** €12.500 (50%) — 15/10/2025, alla firma del contratto e kickoff
+- **2° pagamento** €6.250 (25%) — 15/12/2025, a valle del Backend Core (M2)
+- **3° pagamento** €6.250 (25%) — 15/02/2026, a metà progetto
 
 **Slack Time**: 0 giorni sul Critical Path → ogni ritardo impatta direttamente la data di lancio
 
@@ -220,12 +230,12 @@ Setup (15gg)      Development         Development         UAT + Lancio
 
 **15 Sprint da 2 settimane** (15/10/2025 - 15/05/2026):
 
-- **Sprint 0** (15-27 Ott): Setup + Scoping finalization
-- **Sprint 1-4** (28 Ott - 21 Dic): Backend + Real-Time foundation
-- **Sprint 5-8** (22 Dic - 14 Feb): Frontend core + Integration
-- **Sprint 9-11** (16 Feb - 28 Mar): Feature completion + Bug fixing
-- **Sprint 12** (30 Mar - 24 Apr): UAT con Maraffa Forever
-- **Sprint 13** (27 Apr - 15 Mag): Polish + Production Launch
+- **Sprint 0** (15-25 Ott): Setup + Scoping finalization
+- **Sprint 1-4** (28 Ott - 20 Dic): Backend + Real-Time foundation
+- **Sprint 5-8** (23 Dic - 14 Feb): Frontend core + Integration
+- **Sprint 9-11** (17 Feb - 31 Mar): Feature completion + Bug fixing
+- **Sprint 12** (01 - 24 Apr): UAT con Maraffa Forever
+- **Sprint 13-14** (27 Apr - 15 Mag): Polish + Production Launch
 
 **Cerimonie Agile** (da Sprint 1):
 - **Daily Standup**: Ogni giorno 09:00-09:15 (in presenza/Zoom)
@@ -252,6 +262,7 @@ Setup (15gg)      Development         Development         UAT + Lancio
 - **Infrastruttura** (1.1%): €275 - Hetzner server €50/mese
 - **Tools e Licenze** (4.4%): €1.111 - Figma, JetBrains, Zoom, Confluence
 - **Consulenza** (1.2%): €300 - Francesca Giuliani (validazione regole)
+- **Marketing, UAT e Celebrazione** (1.6%): €400 - comunicazione lancio, compenso tester, team celebration
 - **Contingency Buffer** (18.7%): €4.664 - Imprevisti + change requests + buffer estensione progetto 7 mesi
 
 **Cash Flow**: Vedi Allegato 3.4. Saldo minimo €2.250 nel Mese 7 (prima metà Maggio 2026), sempre positivo.
@@ -286,11 +297,11 @@ Setup (15gg)      Development         Development         UAT + Lancio
 
 | Rischio | Probabilità | Impatto | Rating | Mitigazione |
 |---------|-------------|---------|--------|-------------|
-| **R1: Latenza WebSocket > 200ms** | Media (3) | Alto (4) | 12 (Rosso) | Proof of concept Socket.IO entro Sprint 2. Load testing anticipato Sprint 6. Fallback: ridurre animazioni. |
-| **R2: Scope Creep da stakeholder** | Alta (4) | Alto (4) | 16 (Rosso) | MoSCoW rigoroso. Change Request Process formale. Giovanni informato che nuovi requisiti → estensione timeline o riduzione scope. |
-| **R3: Ritardo sviluppo Game Engine** | Media (3) | Alto (4) | 12 (Rosso) | Metodologia Waterfall con gate reviews. Pair programming Elena+Sara per logica complessa. Validazione Francesca Giuliani a metà sviluppo (Nov). |
-| **R4: Turnover team member** | Bassa (2) | Molto Alto (5) | 10 (Arancione) | Contratti a progetto con penale uscita. Pair programming continuo (knowledge sharing). Documentazione Confluence aggiornata. |
-| **R5: Bug critici post-lancio** | Media (3) | Medio (3) | 9 (Arancione) | UAT esteso 20 giorni con 10 tester. Monitoring Sentry attivo pre-lancio. Contingency buffer €4.664 per hotfix urgenti e change requests. |
+| **R1: Esperienza limitata con WebSocket / real-time** | Alta (4) | Disastroso (4) | 16 (Rosso Critico) | Spike tecnico di 2 settimane (Sprint 0-1) + PoC Socket.IO in Sprint 2. Decision point al giorno 30: se non risolto, consulente esterno Dr. Stefano Nardi (budget €2.000). Load testing anticipato Sprint 6. |
+| **R2: Budget insufficiente per il team** | Alta (4) | Disastroso (4) | 16 (Rosso Critico) | Accept: progetto pilota a valore strategico. Team part-time (50% FTE), compensi ridotti coerenti con la natura di spin-off accademico. Buffer di contingenza monitorato settimanalmente. |
+| **R3: Race conditions e sincronizzazione dello stato** | Media-Alta (3) | Disastroso (4) | 12 (Rosso) | Architettura server-authoritative. Code review obbligatoria sul modulo real-time. Test di concorrenza con 4 client simulati. |
+| **R4: Scope creep da richieste del committente** | Media-Alta (3) | Disastroso (4) | 12 (Rosso) | MoSCoW rigoroso. Change Request Process formale. Freeze requisiti dopo il POS. Giovanni informato che nuovi requisiti → estensione timeline o riduzione scope. |
+| **R5: Sottostima della complessità tecnica** | Media-Alta (3) | Grave (3) | 9 (Rosso) | Sviluppo agile iterativo. Buffer 20% sulle stime. Se ritardo >15% a metà progetto: riduzione dello scope (Could/Should). |
 
 **Responsabile Risk Management**: Marco Venturi
 **Frequenza Review**: Settimanale durante Project Status Meeting (ogni venerdì 16:00)
@@ -432,13 +443,13 @@ MaraffaOnline/
 
 **Q1 (Giovanni Marchetti)**: "Come garantite che le regole implementate siano davvero quelle del Maraffone e non di varianti regionali?"
 
-**A1 (Elena Rossi)**: "Abbiamo creato un documento di riferimento ufficiale (`REGOLE-UFFICIALI-MARAFFONE.md`) basato su 4 fonti autorevoli (Wikipedia, Giochi STARS, Cavallore, Blog Bartolini). Francesca Giuliani validerà l'implementazione a metà sviluppo (Novembre) e durante UAT (Febbraio). Inoltre, durante lo Sprint Review 6 (fine Dicembre) faremo una demo live con te e Francesca per conferma."
+**A1 (Elena Rossi)**: "Abbiamo creato un documento di riferimento ufficiale (`REGOLE-UFFICIALI-MARAFFONE.md`) basato su 4 fonti autorevoli (Wikipedia, Giochi STARS, Cavallore, Blog Bartolini). Francesca Giuliani validerà l'implementazione a metà sviluppo (Novembre) e nella fase finale del progetto (Aprile). Inoltre, durante lo Sprint Review 6 (fine Dicembre) faremo una demo live con te e Francesca per conferma."
 
 ---
 
 **Q2 (Luca Moretti)**: "Ho notato che il Frontend Tavolo da Gioco è sul critical path con 40 giorni. È realistico? Mi preoccupa."
 
-**A2 (Marco Venturi + Elena Rossi)**: "È la task più critica, hai ragione. Abbiamo preso 3 misure di mitigazione: (1) I mockup sono già approvati in fase Scoping, quindi zero incertezza su design. (2) Sara Bianchi farà pair programming con te per i componenti React complessi (drag & drop carte, animazioni). (3) Se necessario, comprimetemo UAT da 20 a 15 giorni per recuperare slack. Avrai supporto full-time."
+**A2 (Marco Venturi + Elena Rossi)**: "È la task più critica, hai ragione. Abbiamo preso 3 misure di mitigazione: (1) I mockup sono già approvati in fase Scoping, quindi zero incertezza su design. (2) Sara Bianchi farà pair programming con te per i componenti React complessi (drag & drop carte, animazioni). (3) Se necessario, comprimeremo UAT da 20 a 15 giorni per recuperare slack. Avrai supporto full-time."
 
 **A2-bis (Elena)**: "Inoltre, ho già identificato 2 librerie candidate per drag & drop (react-dnd, dnd-kit) che semplificheranno molto. Le testiamo in Sprint 1 anche se il tavolo inizia in Sprint 8."
 
@@ -446,15 +457,15 @@ MaraffaOnline/
 
 **Q3 (Andrea Conti)**: "Per il monitoring, Sentry free tier è sufficiente o rischiamo di sforare i 10K eventi/mese?"
 
-**A3 (Marco Venturi)**: "Abbiamo budget contingency. Se in Sprint 6-7 vediamo che siamo vicini al limite, upgradiamo a piano Business ($26/mese). È coperto dal buffer. Meglio avere monitoring completo che risparmiare $150 totali e perdere visibilità su bug."
+**A3 (Marco Venturi)**: "Abbiamo budget contingency. Se in Sprint 6-7 vediamo che siamo vicini al limite, upgradiamo a piano Business (~€25/mese). È coperto dal buffer. Meglio avere monitoring completo che risparmiare ~€150 totali e perdere visibilità su bug."
 
 ---
 
 **Q4 (Francesca Giuliani)**: "Quando esattamente mi chiamate per le validazioni?"
 
 **A4 (Elena Rossi)**: "Ti contattiamo per 2 sessioni da 3 ore ciascuna:
-- **Sessione 1**: Fine Novembre 2025 (dopo Sprint 4) - Validazione logica di gioco implementata
-- **Sessione 2**: Metà Febbraio 2026 (durante UAT) - Test end-to-end partita completa
+- **Sessione 1**: Fine Novembre 2025 (dopo Sprint 2) - Validazione logica di gioco implementata
+- **Sessione 2**: Aprile 2026 - Test end-to-end partita completa
 Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (€150/sessione)."
 
 ---
@@ -484,7 +495,7 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 | **AI-005** | Finalizzare database schema PostgreSQL (utenti, partite, mosse) | Elena Rossi | 27/10/2025 | ER diagram + migration scripts |
 | **AI-006** | Preparare Sprint 1 Planning: selezionare user stories, stimare story points | Marco Venturi + Elena Rossi | 27/10/2025 | Sprint 1 Backlog pronto |
 | **AI-007** | Confermare disponibilità per Sessione Validazione 1 (fine Nov) | Francesca Giuliani | 18/10/2025 | Email conferma date |
-| **AI-008** | Approvazione formale documenti Scoping+Planning | Giovanni Marchetti | 20/10/2025 | Email approval + trigger 2° pagamento (€6.250) |
+| **AI-008** | Approvazione formale documenti Scoping+Planning | Giovanni Marchetti | 20/10/2025 | Email approval (via libera all'esecuzione) |
 
 **Tracking**: Tutti gli action item sono tracciati su Notion Database con status (Todo/In Progress/Done).
 
@@ -504,18 +515,14 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 **Obiettivo**: Chiudere con energia positiva e senso di appartenenza
 
 **Recap Key Takeaways**:
-1. Abbiamo un piano solido: 170 giorni lavorativi, 7 sottosistemi, critical path identificato
+1. Abbiamo un piano solido: 170 giorni lavorativi, 6 sottosistemi di sviluppo, critical path identificato
 2. Budget controllato: €22.750 spese su €25.000, cash flow sempre positivo
 3. Team completo e competente: ognuno ha ruolo chiaro (RASCI Matrix)
 4. Stakeholder allineato: Giovanni e Francesca supportano la visione
 5. Strumenti in place: Confluence, GitLab, Figma, Notion pronti per l'uso
 
 **Celebrazione Kickoff**:
-> "Questo è un momento speciale. Non stiamo solo costruendo software, stiamo preservando un pezzo di cultura ludica italiana e portandola alla prossima generazione. Ogni riga di codice che scriveremo nei prossimi 7 mesi contribuisce a unire la community Maraffa Forever. Sono orgoglioso di lavorare con questo team."
-
-**Foto di Team**: Scattata per documentazione progetto (con permesso)
-
-**Brindisi Virtuale**: Giovanni Marchetti alza un calice da remoto, team in presenza brinda con caffè.
+> "Non stiamo solo costruendo software: stiamo portando online un gioco che fa parte della cultura ludica romagnola e che unisce la community Maraffa Forever. Buon lavoro a tutti."
 
 **Chiusura**:
 > "Il progetto MaraffaOnline è ufficialmente LANCIATO. Ci vediamo domani alle 09:00 per il primo Daily Standup. Buon lavoro a tutti!"
@@ -537,13 +544,13 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 
 **Rischi Evidenziati**:
 - Frontend Tavolo da Gioco (40 giorni) su critical path → mitigazione con pair programming
-- Latenza WebSocket → POC entro Sprint 2
+- Esperienza WebSocket → spike tecnico Sprint 0-1 + PoC Sprint 2 (consulente esterno come contingenza)
 - Scope Creep → Change Request Process rigoroso
 
 **Prossimi Milestone**:
 - 27/10/2025: Fine Sprint 0 (Setup + POC)
 - 28/10/2025: Sprint 1 Planning
-- 15/12/2025: M2 - Game Engine + Backend Auth completi → Pagamento €6.250
+- 20/12/2025: M2 - Backend Core Complete (2° pagamento €6.250 a metà Dicembre)
 
 **Sentiment Check**: Tutti i partecipanti esprimono fiducia nel piano e commitment al progetto.
 
@@ -560,7 +567,7 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 - Registrazione Zoom condivisa su Google Drive (solo audio, no video per privacy)
 
 **Approvazione Formale**:
-- Giovanni Marchetti: approvazione entro 20/10/2025 → trigger pagamento M2 (€6.250)
+- Giovanni Marchetti: approvazione formale entro 20/10/2025 (via libera all'esecuzione; 2° pagamento a metà Dicembre secondo Cash Flow)
 
 ---
 
@@ -583,3 +590,6 @@ Questo documento è stato redatto seguendo le best practices per Project Kick-Of
 
 **Data meeting**: 15/10/2025 10:00-11:00
 **Prossimo review**: Sprint 0 Review (27/10/2025)
+
+**Storico revisioni**:
+- **v.1.1.0**: Revisione di coerenza. Milestone allineate al Gantt (M1-M7, Allegato 3.5) e pagamenti alle date del Cash Flow (15 Ott / 15 Dic / 15 Feb, Allegato 3.4); effort per sottosistema allineato ai totali del MoSCoW (Backend 70, Real-Time 45, Frontend 76, Social 24, Infrastructure 37); 2ª sessione di validazione di Francesca spostata ad Aprile; calendario sprint completato a 15 sprint (Sprint 0-14); aggiunta la voce di budget Marketing/UAT/Celebrazione (€400); corretti refusi e uniformata la valuta (€).

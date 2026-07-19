@@ -65,8 +65,8 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - Comunicazioni regolamentate: solo chi gioca per primo può usare segnali verbali codificati
 
 ### 1.2 Intelligenza Artificiale (IA) [F, C]
-- [-] **Won't Have** nel MVP: nessuna modalità single-player contro IA
-- [+] Potenziale feature futura (post-MVP)
+- **Won't Have** nel MVP: nessuna modalità single-player contro IA
+- Potenziale feature futura (post-MVP)
 - **Motivazione esclusione**: focus su multiplayer online, budget/tempo limitato
 
 ### 1.3 Persistenza Stato Partita [F, M]
@@ -111,8 +111,8 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - Token temporaneo (validità 1 ora)
 
 #### 2.1.6 Social Login [F, W]
-- [-] **Won't Have** MVP: login con Google/Facebook
-- [+] Considerato per v1.1 post-lancio
+- **Won't Have** MVP: login con Google/Facebook
+- Considerato per v1.1 post-lancio
 
 ### 2.2 Gestione Partite
 
@@ -247,8 +247,8 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - **Priorità**: Could Have (non critico)
 
 #### 3.4.3 Emoji/Reactions [F, W]
-- [-] Won't Have MVP
-- [+] Considerato per versione futura
+- Won't Have MVP
+- Considerato per versione futura
 
 ---
 
@@ -327,8 +327,8 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 **Priorità**: WON'T HAVE (MVP)
 
 ### 5.1 App Nativa iOS/Android [F, W]
-- [-] **Esclusa dal MVP** (budget/tempo limitato)
-- [+] **Alternativa MVP**: responsive web app utilizzabile da mobile browser
+- **Esclusa dal MVP** (budget/tempo limitato)
+- **Alternativa MVP**: responsive web app utilizzabile da mobile browser
 - **Pianificazione**: sviluppo app nativa in fase 2 post-lancio (se progetto di successo)
 
 ### 5.2 Progressive Web App (PWA) [F, C]
@@ -369,8 +369,8 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - **Implementazione**: WebSocket events
 
 #### 6.4.2 Notifiche Push [F, W]
-- [-] Won't Have MVP (richiede app mobile o browser permission)
-- [+] Considerato per fase 2
+- Won't Have MVP (richiede app mobile o browser permission)
+- Considerato per fase 2
 
 ### 6.5 Profili Pubblici [F, S]
 
@@ -459,34 +459,34 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 ## Riepilogo Priorità MoSCoW
 
 ### MUST HAVE (MVP - Lancio 15/05/2026)
-- [+] Game Engine completo
-- [+] Backend Server (auth, partite, API)
-- [+] Real-Time Communication (WebSocket, sincronizzazione)
-- [+] Frontend Web responsive
-- [+] Chat in-game
-- [+] Infrastructure base (hosting, database, CI/CD)
+- Game Engine completo
+- Backend Server (auth, partite, API)
+- Real-Time Communication (WebSocket, sincronizzazione)
+- Frontend Web responsive
+- Chat in-game
+- Infrastructure base (hosting, database, CI/CD)
 
 ### SHOULD HAVE (Importante ma non critico)
-- - Sistema amicizie
-- - Profili utente personalizzabili
-- - Statistiche avanzate
-- - Accessibilità WCAG AA
-- - Monitoring avanzato
+- Sistema amicizie
+- Profili utente personalizzabili
+- Statistiche avanzate
+- Accessibilità WCAG AA
+- Monitoring avanzato
 
 ### COULD HAVE (Desiderabile)
-- - Chat globale
-- - Classifiche/Leaderboard
-- - PWA
-- - Modalità daltonici
-- - Statistiche molto avanzate
+- Chat globale
+- Classifiche/Leaderboard
+- PWA
+- Modalità daltonici
+- Statistiche molto avanzate
 
 ### WON'T HAVE (MVP - Pianificato per v1.1+)
-- [-] App mobile nativa iOS/Android
-- [-] Social login (Google/Facebook)
-- [-] Modalità single-player vs IA
-- [-] Notifiche push
-- [-] Emoji/reactions
-- [-] Tornei strutturati
+- App mobile nativa iOS/Android
+- Social login (Google/Facebook)
+- Modalità single-player vs IA
+- Notifiche push
+- Emoji/reactions
+- Tornei strutturati
 
 ---
 

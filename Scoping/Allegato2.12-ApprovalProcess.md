@@ -18,17 +18,17 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 
 | Nome | Ruolo | Organizzazione | Presenza | Voto |
 |------|-------|----------------|----------|------|
-| **Giovanni Marchetti** | Project Sponsor | Maraffa Forever | Videoconferenza | ✅ Decisionale |
-| **Francesca Giuliani** | Esperta Maraffa & Beta Tester Lead | Maraffa Forever | Videoconferenza | 🔹 Consultivo |
-| **Marco Venturi** | CEO & Project Manager | PlayHeritage Labs | Presenza fisica | 🔹 Consultivo |
-| **Elena Rossi** | Lead Developer | PlayHeritage Labs | Presenza fisica | 🔹 Consultivo |
-| **Luca Moretti** | UX/UI Designer | PlayHeritage Labs | Presenza fisica | 🔹 Consultivo |
-| **Sara Bianchi** | Backend Developer | PlayHeritage Labs | Videoconferenza | 🔹 Consultivo |
-| **Andrea Conti** | DevOps Specialist | PlayHeritage Labs | Videoconferenza | 🔹 Consultivo |
+| **Giovanni Marchetti** | Project Sponsor | Maraffa Forever | Videoconferenza | Decisionale |
+| **Francesca Giuliani** | Esperta Maraffa & Beta Tester Lead | Maraffa Forever | Videoconferenza | Consultivo |
+| **Marco Venturi** | CEO & Project Manager | PlayHeritage Labs | Presenza fisica | Consultivo |
+| **Elena Rossi** | Lead Developer | PlayHeritage Labs | Presenza fisica | Consultivo |
+| **Luca Moretti** | UX/UI Designer | PlayHeritage Labs | Presenza fisica | Consultivo |
+| **Sara Bianchi** | Backend Developer | PlayHeritage Labs | Videoconferenza | Consultivo |
+| **Andrea Conti** | DevOps Specialist | PlayHeritage Labs | Videoconferenza | Consultivo |
 
 **Legenda voto**:
-- ✅ Decisionale: ha potere di approvazione/rifiuto
-- 🔹 Consultivo: fornisce parere ma non blocca decisione
+- Decisionale: ha potere di approvazione/rifiuto
+- Consultivo: fornisce parere ma non blocca decisione
 
 ---
 
@@ -71,7 +71,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Risposta Marco Venturi**:
 > "Sì, confermato Must Have. È nel core della richiesta: ricreare l'esperienza sociale del tavolo da gioco. Senza chat, perderemmo questo aspetto."
 
-**Approvazione parziale**: ✅ Giovanni approva POS
+**Approvazione parziale**: Giovanni approva POS
 
 ---
 
@@ -81,7 +81,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 
 **Punti chiave**:
 - Timeline: 7 milestone temporali (ultima: 15/05/2026)
-- Budget: €25.000 con 4 tranche di pagamento
+- Budget: €25.000 con 3 tranche di pagamento (50/25/25)
 - Requisiti tecnici: scalabilità 100 partite simultanee, latency < 500ms
 - Requisiti qualitativi: soddisfazione beta tester ≥ 4.2/5
 
@@ -89,9 +89,9 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 > "La latency di 500ms è sufficiente? Vorremmo un'esperienza fluida."
 
 **Risposta Elena Rossi**:
-> "500ms è un target conservativo. Punteremo a < 300ms, ma 500ms è il limite di accettabilità. Per confronto, un blink umano è 300-400ms, quindi imperceptibile."
+> "500ms è un target conservativo. Punteremo a < 300ms, ma 500ms è il limite di accettabilità. Per confronto, un blink umano è 300-400ms, quindi impercettibile."
 
-**Approvazione parziale**: ✅ Giovanni approva Conditions of Satisfaction
+**Approvazione parziale**: Giovanni approva Conditions of Satisfaction
 
 ---
 
@@ -109,7 +109,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Risposta Marco Venturi**:
 > "Abbiamo concordato di implementare la versione 'Maraffa Forever' ufficiale, documentata da te. Eventuali varianti saranno features future post-MVP. Questo è scritto nel Risk Management dell'allegato 2.4."
 
-**Approvazione parziale**: ✅ Giovanni approva Risk Analysis con nota: "Monitorare strettamente rischio WebSocket"
+**Approvazione parziale**: Giovanni approva Risk Analysis con nota: "Monitorare strettamente rischio WebSocket"
 
 ---
 
@@ -134,7 +134,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Risposta Marco Venturi**:
 > "Sì. Abbiamo identificato il rischio early, preparato piano di contingenza con esperto esterno, e avremo decision point al giorno 30. Non procederemo 'a speranza' ma con validazione continua."
 
-**Approvazione parziale**: ✅ Giovanni approva BMC e SWOT
+**Approvazione parziale**: Giovanni approva BMC e SWOT
 
 ---
 
@@ -152,7 +152,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 - Video recording user testing (Think Aloud Protocol con 8 beta tester)
 
 **Feedback Francesca Giuliani**:
-> "I mockup del tavolo da gioco sono fantastici! Catturano perfettamente l'atmosfera. Confermo approvazione."
+> "I mockup del tavolo da gioco catturano bene l'atmosfera del gioco tradizionale. Confermo l'approvazione."
 
 **Feedback Giovanni Marchetti**:
 > "Ottimo lavoro. Una richiesta: il pulsante 'Rivincita' deve essere molto visibile a fine partita, è una feature che useremo spesso."
@@ -160,7 +160,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Risposta Luca Moretti**:
 > "Preso nota. Lo renderemo prominente nella schermata fine partita, come mostrato nel mockup v2."
 
-**Approvazione parziale**: ✅ Giovanni approva Prototyping e User Flow
+**Approvazione parziale**: Giovanni approva Prototyping e User Flow
 
 ---
 
@@ -182,7 +182,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Risposta Marco Venturi**:
 > "Should Have significa 'altamente desiderabile e ci impegniamo a farlo', ma se incontriamo ritardi critici, potremmo rinviarlo a versione 1.1 per rispettare la deadline del 15/03. Must Have invece è non negoziabile. Ma il nostro obiettivo è completare tutti i Should Have."
 
-**Approvazione parziale**: ✅ Giovanni approva RBS con riserva: "Sistema amicizie è importante per la community, fate del vostro meglio per includerlo"
+**Approvazione parziale**: Giovanni approva RBS con riserva: "Sistema amicizie è importante per la community, fate del vostro meglio per includerlo"
 
 ---
 
@@ -201,7 +201,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
   - User story più complessa, integra real-time + validazione regole
   - Critical path del progetto
 
-**Approvazione parziale**: ✅ Giovanni approva User Stories
+**Approvazione parziale**: Giovanni approva User Stories
 
 ---
 
@@ -221,7 +221,7 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 **Risposta Marco Venturi**:
 > "Ottima domanda. Pur usando approcci diversi internamente, tutti i sottosistemi seguono sprint bi-settimanali comuni e demo al committente ogni 2 settimane. Questo garantisce sincronizzazione. È un approccio pragmatico: ogni sottosistema usa il metodo più efficace per le sue caratteristiche."
 
-**Approvazione parziale**: ✅ Giovanni approva Metodologie (con fiducia nel team)
+**Approvazione parziale**: Giovanni approva Metodologie (con fiducia nel team)
 
 ---
 
@@ -264,15 +264,15 @@ Questo documento descrive il processo formale di approvazione della **Fase di Sc
 > "Saremo trasparenti. Non vi nasconderemo problemi. Comunicazione continua ogni 2 settimane proprio per questo."
 
 **Risposta Giovanni**:
-> "Bene. Fiducia totale, ma comunicazione trasparente è fondamentale."
+> "Bene. Mi fido, ma la comunicazione trasparente resta essenziale."
 
 ---
 
 #### Commento - Sara Bianchi:
-> "Voglio sottolineare che, nonostante le sfide, siamo un team motivato e competente. Questo progetto ci appassiona non solo professionalmente ma anche personalmente. Crediamo nel valore culturale della Maraffa."
+> "Il team è motivato e crede nel valore culturale della Maraffa."
 
 **Risposta Giovanni**:
-> "Si vede. È uno dei motivi per cui abbiamo scelto voi. Andiamo avanti!"
+> "È uno dei motivi per cui vi abbiamo scelto."
 
 ---
 
@@ -284,20 +284,20 @@ Verifica che tutti i deliverable della fase di Scoping siano completi e approvat
 
 | # | Allegato | Stato | Approvazione Giovanni |
 |---|----------|-------|----------------------|
-| 2.1 | Project Scoping Meeting | ✅ Completo | ✅ Approvato |
-| 2.2 | Conditions of Satisfaction | ✅ Completo | ✅ Approvato |
-| 2.3 | Project Overview Statement (POS) | ✅ Completo | ✅ Approvato |
-| 2.4 | Risk Analysis | ✅ Completo | ✅ Approvato (con monitoraggio) |
-| 2.5 | Business Model Canvas | ✅ Completo | ✅ Approvato |
-| 2.6 | Analisi SWOT | ✅ Completo | ✅ Approvato |
-| 2.7 | Prototyping | ✅ Completo | ✅ Approvato |
-| 2.8 | Requirements Breakdown Structure | ✅ Completo | ✅ Approvato (con nota amicizie) |
-| 2.9 | User Stories | ✅ Completo | ✅ Approvato |
-| 2.10 | User Flow | ✅ Completo | ✅ Approvato |
-| 2.11 | PM Life Cycle Models | ✅ Completo | ✅ Approvato |
-| 2.12 | Approval Process (questo documento) | ✅ In compilazione | ⏳ In attesa firma |
+| 2.1 | Project Scoping Meeting | Completo | Approvato |
+| 2.2 | Conditions of Satisfaction | Completo | Approvato |
+| 2.3 | Project Overview Statement (POS) | Completo | Approvato |
+| 2.4 | Risk Analysis | Completo | Approvato (con monitoraggio) |
+| 2.5 | Business Model Canvas | Completo | Approvato |
+| 2.6 | Analisi SWOT | Completo | Approvato |
+| 2.7 | Prototyping | Completo | Approvato |
+| 2.8 | Requirements Breakdown Structure | Completo | Approvato (con nota amicizie) |
+| 2.9 | User Stories | Completo | Approvato |
+| 2.10 | User Flow | Completo | Approvato |
+| 2.11 | PM Life Cycle Models | Completo | Approvato |
+| 2.12 | Approval Process (questo documento) | In compilazione | In attesa firma |
 
-**Verifica completezza**: ✅ Tutti i 12 allegati presenti e approvati
+**Verifica completezza**: Tutti i 12 allegati presenti e approvati
 
 ---
 
@@ -309,11 +309,9 @@ Verifica che tutti i deliverable della fase di Scoping siano completi e approvat
 >
 > **Approvo formalmente** la conclusione della Fase di Scoping e autorizzo il passaggio alla **Fase di Planning**.
 >
-> Confermo inoltre il pagamento della **prima tranche di €6.250** come da accordi (milestone: completamento Scoping entro 30/09/2025 - completata in anticipo il 02/10/2025).
+> Confermo inoltre l'avvio della struttura di pagamento a corpo in 3 tranche (50/25/25): la **prima tranche di €12.500 (50%)** sarà erogata alla firma del contratto e al kickoff, a valle dell'approvazione dello Scoping (completato in anticipo il 02/10/2025).
 >
 > Auguro buon lavoro al team e confido nel successo del progetto MaraffaOnline!"
-
-**Applauso e ringraziamenti reciproci**
 
 ---
 
@@ -327,7 +325,7 @@ Ruolo: Rappresentante Community Maraffa Forever
 Data: 02/10/2025
 Firma: [Firma digitale]
 
-Approvazione: ✅ APPROVATA
+Approvazione: APPROVATA
 ```
 
 **Project Manager (Fornitore)**:
@@ -349,9 +347,9 @@ Impegno: Procedere con Fase di Planning entro 05/10/2025
 
 | # | Decisione | Responsabile | Scadenza |
 |---|-----------|--------------|----------|
-| 1 | Approvata Fase di Scoping completa | Giovanni Marchetti | ✅ 02/10/2025 |
-| 2 | Autorizzato passaggio a Fase di Planning | Giovanni Marchetti | ✅ 02/10/2025 |
-| 3 | Confermato pagamento 1° tranche €6.250 | Giovanni Marchetti | 10/10/2025 |
+| 1 | Approvata Fase di Scoping completa | Giovanni Marchetti | 02/10/2025 |
+| 2 | Autorizzato passaggio a Fase di Planning | Giovanni Marchetti | 02/10/2025 |
+| 3 | Confermata struttura pagamenti 3 tranche 50/25/25 (1° tranche €12.500 alla firma/kickoff) | Giovanni Marchetti | 10/10/2025 |
 | 4 | Monitoraggio speciale rischio WebSocket | Marco Venturi | Continuo |
 | 5 | Sistema amicizie priorità alta (Should Have) | Marco Venturi | Pianificazione Sprint |
 
@@ -359,7 +357,7 @@ Impegno: Procedere con Fase di Planning entro 05/10/2025
 
 | # | Azione | Assegnato a | Scadenza | Stato |
 |---|--------|-------------|----------|-------|
-| 1 | Emettere fattura 1° tranche (€6.250) | Marco Venturi | 05/10/2025 | Not started |
+| 1 | Predisporre fattura 1° tranche (€12.500) per la firma/kickoff | Marco Venturi | 15/10/2025 | Not started |
 | 2 | Iniziare Fase di Planning (WBS, Moscow, Gantt) | Team PlayHeritage Labs | 05/10/2025 | Not started |
 | 3 | Inviare calendario beta testing a Francesca | Luca Moretti | 15/10/2025 | Not started |
 | 4 | Archiviare tutti allegati Scoping in repository | Andrea Conti | 03/10/2025 | Not started |
@@ -370,16 +368,16 @@ Impegno: Procedere con Fase di Planning entro 05/10/2025
 
 ## Milestone Raggiunta
 
-🎉 **MILESTONE 1 COMPLETATA: Fase di Scoping**
+**MILESTONE 1 COMPLETATA: Fase di Scoping**
 
 - **Data prevista**: 30/09/2025
 - **Data effettiva**: 02/10/2025
 - **Scostamento**: +2 giorni (trascurabile, entro margine)
 - **Budget consumato**: €0 (fase interna PlayHeritage Labs)
 - **Qualità**: Alta (approvazione senza riserve critiche)
-- **Pagamento**: €6.250 autorizzato
+- **Pagamento**: 1° tranche €12.500 (50%) autorizzata, erogazione alla firma/kickoff
 
-**Status progetto**: 🟢 VERDE (on track)
+**Status progetto**: VERDE (on track)
 
 ---
 
@@ -409,7 +407,7 @@ Obiettivi:
 **Soddisfazione complessiva**: 9/10
 
 **Aspetti positivi**:
-- "Documentazione estremamente dettagliata e professionale"
+- "Documentazione dettagliata e professionale"
 - "Trasparenza totale su rischi e limiti del budget"
 - "Mockup visivi aiutano molto a visualizzare il prodotto finale"
 - "Approccio pragmatico (ibrido) alle metodologie dimostra maturità"
@@ -423,11 +421,11 @@ Obiettivi:
 **Soddisfazione complessiva**: 10/10
 
 **Commento**:
-> "I mockup del tavolo da gioco sono esattamente quello che sognavo! Rispecchiano perfettamente l'esperienza del gioco tradizionale. Non vedo l'ora di testare il prodotto finito."
+> "I mockup del tavolo da gioco rispecchiano bene l'esperienza del gioco tradizionale. Attendo di poter testare il prodotto finito."
 
 ### Feedback Team PlayHeritage Labs
 
-**Sentiment team**: 🟢 Positivo, energizzato
+**Sentiment team**: Positivo, energizzato
 
 **Commento Marco Venturi**:
 > "Ottimo inizio. La fase di Scoping ci ha permesso di allinearci perfettamente con il committente. Ora abbiamo una roadmap chiara. Il vero lavoro inizia adesso con Planning e Development!"

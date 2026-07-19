@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoSCoW Prioritization - MaraffaOnline</title>
+<style>
+  :root {
+    --must: #b85450;      /* rosso mattone */
+    --should: #fd7e14;    /* legno/arancione */
+    --could: #007bff;     /* blu */
+    --wont: #6c757d;      /* grigio */
+    --testo-scuro: #212529;
+    --testo-chiaro: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--testo-scuro);
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 20px;
+    line-height: 1.35;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.1rem; }
+  .sub { color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 16px; }
+  .note {
+    font-size: 0.78rem; color: #444; background: #f6f6f6;
+    padding: 8px 12px; border-left: 4px solid var(--wont); margin-bottom: 18px;
+  }
+
+  /* Barra distribuzione 60/20/20 */
+  .dist { margin-bottom: 18px; }
+  .bar {
+    display: flex; height: 30px; border-radius: 5px; overflow: hidden;
+    font-size: 0.75rem; font-weight: 700; color: var(--testo-chiaro);
+  }
+  .bar .seg { display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+  .bar .s-must   { background: var(--must); }
+  .bar .s-should { background: var(--should); }
+  .bar .s-could  { background: var(--could); }
+  .dist-note { font-size: 0.76rem; color: #555; margin: 6px 0 0; }
+
+  /* Board 2x2 */
+  .board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .quad {
+    border-radius: 6px; overflow: hidden;
+    border: 1px solid #e3e3e3;
+    display: flex; flex-direction: column;
+  }
+  .quad > header {
+    padding: 8px 12px; color: var(--testo-chiaro);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  }
+  .quad > header h2 {
+    font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.03em;
+    margin: 0; font-weight: 700;
+  }
+  .quad > header .tot { font-size: 0.78rem; font-weight: 600; opacity: 0.95; white-space: nowrap; }
+  .quad .body { padding: 10px 12px; font-size: 0.76rem; }
+  .quad .body .group + .group { margin-top: 7px; padding-top: 6px; border-top: 1px solid rgba(0,0,0,0.10); }
+  .quad .body .group strong { display: block; margin-bottom: 2px; font-size: 0.76rem; }
+  .quad .body ul { margin: 0; padding-left: 15px; }
+  .quad .body ul li { margin-bottom: 2px; }
+  .quad .body > ul { padding-left: 16px; }
+
+  .q-must   > header { background: var(--must); }
+  .q-should > header { background: var(--should); }
+  .q-could  > header { background: var(--could); }
+  .q-wont   > header { background: var(--wont); }
+  .q-must   .body { background: color-mix(in srgb, var(--must) 8%, white); }
+  .q-should .body { background: color-mix(in srgb, var(--should) 8%, white); }
+  .q-could  .body { background: color-mix(in srgb, var(--could) 8%, white); }
+  .q-wont   .body { background: color-mix(in srgb, var(--wont) 8%, white); }
+  .q-must .body .group strong { color: var(--must); }
+  .q-should .body .group strong { color: #b35c0f; }
+  .q-could .body .group strong { color: var(--could); }
+
+  @media print {
+    .note { display: none; }
+    @page { size: A4 portrait; margin: 10mm; }
+    body { margin: 0; max-width: none; }
+    .board { gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>MoSCoW Prioritization &mdash; MaraffaOnline</h1>
+<p class="sub">Allegato 3.2 &middot; v.1.1.0 &middot; PlayHeritage Labs</p>
+
+<div class="note">Colori dalla palette ufficiale di progetto. Vista sintetica per categoria e sottosistema: l'elenco completo dei requisiti con ID, effort e razionale di esclusione &egrave; nel file <code>Allegato3.2-MoSCoW.md</code>, che resta il registro di riferimento.</div>
+
+<div class="dist">
+  <div class="bar">
+    <div class="seg s-must" style="width:75.8%">Must 75,8%</div>
+    <div class="seg s-should" style="width:18.9%">Should 18,9%</div>
+    <div class="seg s-could" style="width:5.3%">Could&nbsp;5,3%</div>
+  </div>
+  <p class="dist-note">Distribuzione dell'effort MVP su 302 giorni-persona (Must 229 &middot; Should 57 &middot; Could 16). Target DSDM di riferimento 60/20/20: il Must al 75,8% riflette la criticit&agrave; di Game Engine e Real-Time; il Could contenuto al 5,3% riduce il rischio di scope creep.</p>
+</div>
+
+<div class="board">
+
+  <div class="quad q-must">
+    <header><h2>Must Have</h2><span class="tot">229 gg &middot; 75,8%</span></header>
+    <div class="body">
+      <div class="group"><strong>Game Engine</strong>
+        <ul><li>Regole Maraffone, turni, anti-cheat, punteggi, Maraffa/Cricca, persistenza partita</li></ul>
+      </div>
+      <div class="group"><strong>Backend Server</strong>
+        <ul><li>Auth (registrazione, login JWT, ospite), stanze (crea/join/lobby), persistenza partita, statistiche base, API REST sicure e &lt;200ms</li></ul>
+      </div>
+      <div class="group"><strong>Real-Time Communication</strong>
+        <ul><li>WebSocket + auth, eventi di gioco, broadcast selettivo, lag compensation, reconnect, chat in-game</li></ul>
+      </div>
+      <div class="group"><strong>Frontend Web</strong>
+        <ul><li>6 schermate da mockup approvati, design system, multi-device mobile-first, caricamento &lt;2s</li></ul>
+      </div>
+      <div class="group"><strong>Social &amp; Infrastructure</strong>
+        <ul><li>Notifiche in-app "&egrave; il tuo turno"; server dedicato, Docker, CI/CD, PostgreSQL+backup, logging, monitoring, SSL, disaster recovery</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quad q-should">
+    <header><h2>Should Have</h2><span class="tot">57 gg &middot; 18,9%</span></header>
+    <div class="body">
+      <div class="group"><strong>Backend Server</strong>
+        <ul><li>Profilo personalizzabile, password recovery, sistema amicizie, presenza online, inviti diretti</li></ul>
+      </div>
+      <div class="group"><strong>Frontend Web</strong>
+        <ul><li>Accessibilit&agrave; WCAG 2.1 AA, bundle optimization, microinterazioni e animazioni</li></ul>
+      </div>
+      <div class="group"><strong>Social &amp; Community</strong>
+        <ul><li>Sistema amicizie, profili pubblici utenti</li></ul>
+      </div>
+      <div class="group"><strong>Infrastructure &amp; DevOps</strong>
+        <ul><li>Redis caching, error tracking (Sentry), firewall/DDoS (Cloudflare), architettura scalabile</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quad q-could">
+    <header><h2>Could Have</h2><span class="tot">16 gg &middot; 5,3%</span></header>
+    <div class="body">
+      <div class="group"><strong>Backend</strong><ul><li>Statistiche avanzate (carta pi&ugrave; giocata, ecc.)</li></ul></div>
+      <div class="group"><strong>Real-Time</strong><ul><li>Chat globale di lobby</li></ul></div>
+      <div class="group"><strong>Frontend</strong><ul><li>Modalit&agrave; daltonici (palette alternativa)</li></ul></div>
+      <div class="group"><strong>Social</strong><ul><li>Classifica globale (top 100), classifica amici</li></ul></div>
+    </div>
+  </div>
+
+  <div class="quad q-wont">
+    <header><h2>Won't Have</h2><span class="tot">Esclusi dall'MVP</span></header>
+    <div class="body">
+      <ul>
+        <li>App mobile nativa iOS/Android (budget insufficiente &rarr; web responsive)</li>
+        <li>Social login (Google/Facebook) &rarr; v1.1</li>
+        <li>Modalit&agrave; single-player vs IA</li>
+        <li>Notifiche push</li>
+        <li>Emoji/reactions in chat</li>
+        <li>Tornei strutturati</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

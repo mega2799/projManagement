@@ -79,7 +79,7 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 ### Ostacoli
 
 - Competenze limitate in real-time multiplayer gaming
-- Budget ristretto (€833/mese/persona)
+- Budget ristretto (€714/mese/persona)
 - Dipendenza dalla partecipazione attiva della community
 - Bilanciamento con impegni accademici del team
 - Primo progetto PM formale per PlayHeritage Labs

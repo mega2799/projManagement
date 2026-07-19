@@ -1,5 +1,7 @@
 # Allegato 4.2 - RASCI Matrix e Regole Operative
-## v.1.0.0 – 15/10/2025
+## v.1.1.0 – 15/10/2025
+
+> La RASCI Matrix è disponibile anche come companion visivo `Allegato4.2-RASCI.html` (matrice colorata task × ruoli, con legenda R/A/S/C/I): apri il file nel browser e usa "Stampa → Salva come PDF". Questo documento `.md` resta il registro completo (matrice dettagliata per sottosistema, Regole Operative e analisi).
 
 Questo documento definisce le **responsabilità del team** attraverso la RASCI Matrix e le **regole operative** per garantire una collaborazione efficace durante l'intero ciclo di vita del progetto MaraffaOnline.
 
@@ -117,7 +119,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Proje
 | Task | GM | FG | MV | ER | SB | LM | AC |
 |------|----|----|----|----|----|----|-----|
 | **Setup Socket.IO server** | I | - | I | A | R | - | S |
-| **Proof of Concept latency test (<200ms)** | I | - | I | A | R | - | S |
+| **Proof of Concept latency test (<500ms)** | I | - | I | A | R | - | S |
 | **WebSocket event: player-join** | I | - | I | A | R | C | - |
 | **WebSocket event: card-played** | I | - | I | A | R | C | - |
 | **WebSocket event: turn-change** | I | - | I | A | R | C | - |
@@ -194,19 +196,19 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Proje
 
 | Task | GM | FG | MV | ER | SB | LM | AC |
 |------|----|----|----|----|----|----|-----|
-| **Provisioning server Hetzner** | I | - | I | C | - | - | R |
-| **Setup Docker containers (backend, frontend, db)** | I | - | I | C | - | - | R |
-| **GitLab repository setup** | I | - | I | C | S | S | R |
-| **GitLab CI/CD pipeline (build, test, deploy)** | I | - | I | C | S | S | R |
-| **Ambiente staging** | I | - | I | C | - | - | R |
-| **Ambiente production** | I | - | I | C | - | - | R |
-| **SSL certificato (Let's Encrypt)** | I | - | I | C | - | - | R |
-| **DNS setup (maraffaonline.it)** | I | - | I | C | - | - | R |
-| **Cloudflare CDN + DDoS protection** | I | - | I | C | - | - | R |
-| **Database backup automatico (daily)** | I | - | I | C | - | - | R |
-| **Monitoring: Sentry (error tracking)** | I | - | I | C | S | - | R |
-| **Monitoring: UptimeRobot (uptime)** | I | - | I | C | - | - | R |
-| **Log aggregation (Winston)** | I | - | I | C | S | - | R |
+| **Provisioning server Hetzner** | I | - | I | A | - | - | R |
+| **Setup Docker containers (backend, frontend, db)** | I | - | I | A | - | - | R |
+| **GitLab repository setup** | I | - | I | A | S | S | R |
+| **GitLab CI/CD pipeline (build, test, deploy)** | I | - | I | A | S | S | R |
+| **Ambiente staging** | I | - | I | A | - | - | R |
+| **Ambiente production** | I | - | I | A | - | - | R |
+| **SSL certificato (Let's Encrypt)** | I | - | I | A | - | - | R |
+| **DNS setup (maraffaonline.it)** | I | - | I | A | - | - | R |
+| **Cloudflare CDN + DDoS protection** | I | - | I | A | - | - | R |
+| **Database backup automatico (daily)** | I | - | I | A | - | - | R |
+| **Monitoring: Sentry (error tracking)** | I | - | I | A | S | - | R |
+| **Monitoring: UptimeRobot (uptime)** | I | - | I | A | - | - | R |
+| **Log aggregation (Winston)** | I | - | I | A | S | - | R |
 | **Disaster recovery plan** | I | - | A | C | - | - | R |
 
 **Accountable**: Marco Venturi (PM) per disaster recovery, Elena Rossi (Tech Lead) per setup tecnici
@@ -229,7 +231,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Proje
 | **Accessibility testing (WCAG 2.1 AA)** | I | - | I | A | - | R | - |
 | **Cross-browser testing (BrowserStack)** | I | - | I | A | - | R | S |
 | **User Acceptance Testing: recruitment 10 tester** | A | S | R | C | - | - | - |
-| **UAT: preparazione test plan** | C | C | R | S | - | S | - |
+| **UAT: preparazione test plan** | A | C | R | S | - | S | - |
 | **UAT: esecuzione sessioni test** | A | R | S | C | - | - | - |
 | **UAT: raccolta feedback** | A | R | R | C | - | - | - |
 | **Bug fixing post-UAT** | I | C | I | A | R | R | R |
@@ -246,21 +248,21 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Proje
 
 | Task | GM | FG | MV | ER | SB | LM | AC |
 |------|----|----|----|----|----|----|-----|
-| **Project Scoping Meeting** | C | C | R | C | C | C | C |
+| **Project Scoping Meeting** | A | C | R | C | C | C | C |
 | **Project Planning (WBS, Gantt, Cash Flow)** | A | - | R | C | - | - | - |
 | **Project Kick-Off Meeting** | A | I | R | I | I | I | I |
-| **Daily Standup facilitation** | - | - | R | S | I | I | I |
-| **Sprint Planning** | C | - | R | C | I | I | I |
+| **Daily Standup facilitation** | - | - | A | S | I | I | I |
+| **Sprint Planning** | C | - | A | C | I | I | I |
 | **Sprint Review** | A | C | R | R | R | R | R |
-| **Sprint Retrospective** | - | - | R | I | I | I | I |
+| **Sprint Retrospective** | - | - | A | I | I | I | I |
 | **Project Status Meeting (weekly)** | A | I | R | C | - | - | - |
 | **Cash Flow Tracking (monthly report)** | A | - | R | - | - | - | - |
-| **Risk Management (weekly review)** | C | - | R | C | - | - | - |
+| **Risk Management (weekly review)** | C | - | A | C | - | - | - |
 | **Change Request evaluation** | A | C | R | C | - | - | - |
-| **Stakeholder communication** | C | - | R | S | - | - | - |
-| **Documentation Confluence** | I | - | R | S | S | S | S |
+| **Stakeholder communication** | C | - | A | S | - | - | - |
+| **Documentation Confluence** | I | - | A | S | S | S | S |
 | **Final Project Report** | A | - | R | C | - | - | - |
-| **Lessons Learned session** | C | C | R | C | C | C | C |
+| **Lessons Learned session** | A | C | R | C | C | C | C |
 | **Project Closure celebration** | A | I | R | I | I | I | I |
 
 **Accountable Principale**: Giovanni Marchetti (Project Sponsor) per approvazioni milestone
@@ -274,23 +276,23 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Proje
 ### Distribuzione Responsabilità
 
 **Accountable Frequency** (chi approva):
-- **Giovanni Marchetti (Sponsor)**: 12 decisioni (milestone, budget, UAT, closure)
-- **Elena Rossi (Tech Lead)**: 67 decisioni (tutte le attività tecniche)
-- **Marco Venturi (PM)**: 15 decisioni (planning, status, change requests, UAT plan)
+- **Elena Rossi (Tech Lead)**: 99 attività (tutte le attività tecniche di sviluppo e infrastruttura)
+- **Giovanni Marchetti (Sponsor)**: 16 attività (milestone, budget, UAT, approvazione Scoping e Lessons Learned, closure)
+- **Marco Venturi (PM)**: 8 attività (cerimonie Agile, risk management, comunicazione stakeholder, documentazione)
 
 **Responsible Frequency** (chi esegue):
-- **Sara Bianchi (Backend)**: 45 task (Game Engine, Backend Server, Real-Time)
+- **Sara Bianchi (Backend)**: 59 task (Game Engine, Backend Server, Real-Time)
 - **Luca Moretti (Frontend/UX)**: 28 task (Frontend Web, Social UI)
-- **Andrea Conti (DevOps)**: 18 task (Infrastructure, CI/CD, Testing automation)
-- **Marco Venturi (PM)**: 12 task (planning, reporting, UAT coordination)
-- **Francesca Giuliani (Expert)**: 3 task (validazione regole sessioni 1-2, conduzione UAT)
+- **Andrea Conti (DevOps)**: 19 task (Infrastructure, CI/CD, Testing automation)
+- **Marco Venturi (PM)**: 13 task (planning, reporting, coordinamento UAT)
+- **Francesca Giuliani (Expert)**: 4 task (validazione regole sessioni 1-2, conduzione UAT)
 
 **Consulted Frequency** (expertise richiesta):
-- **Francesca Giuliani**: 18 consultazioni (tutte attività legate a regole Maraffone)
-- **Giovanni Marchetti**: 15 consultazioni (decisioni UX, feature priority, budget)
-- **Elena Rossi**: 25 consultazioni (decisioni architetturali cross-team)
+- **Francesca Giuliani**: 23 consultazioni (tutte le attività legate alle regole Maraffone)
+- **Giovanni Marchetti**: 22 consultazioni (decisioni UX, feature priority, budget)
+- **Elena Rossi**: 15 consultazioni (decisioni architetturali cross-team)
 
-**Balanced Workload**: La distribuzione è equilibrata, con Sara (Backend) e Luca (Frontend) come Responsible principali, Elena come Accountable tecnico, Marco come orchestratore PM.
+**Balanced Workload**: La distribuzione è equilibrata: Sara (Backend) e Luca (Frontend) sono i Responsible principali; Elena è l'Accountable tecnico (approva tutte le attività di sviluppo e infrastruttura); Marco è l'orchestratore PM (Accountable delle cerimonie Agile e della gestione); Giovanni è l'Accountable delle decisioni di business e delle milestone.
 
 ---
 
@@ -324,7 +326,7 @@ Le decisioni sono state categorizzate in tre livelli di importanza, ciascuno con
 
 Il secondo livello riguarda le decisioni tattiche, che hanno un impatto più ampio sul progetto. Queste includono scelte architetturali, design delle API, schema del database, o aggiustamenti al backlog dello sprint. In questi casi il decision maker è la Tech Lead Elena Rossi insieme al Project Manager Marco Venturi, che devono raggiungere un consensus. Il processo prevede che Elena presenti le opzioni tecniche con i relativi pro e contro, Marco valuti l'impatto su timeline, budget e scope, si consulti brevemente il team durante uno Sprint Planning o Status Meeting, e infine Elena decida sull'aspetto tecnico mentre Marco su quello di project management. Ad esempio, se emerge la proposta di cambiare da REST a GraphQL per le API della lobby, Elena e Marco valutano insieme i trade-off e decidono di non procedere perché richiederebbe troppo refactoring per benefici marginali nel MVP. Ogni decisione tattica viene documentata su Confluence e deve essere presa entro 48 ore dall'identificazione della necessità.
 
-Il terzo livello comprende le decisioni strategiche che impattano significativamente il progetto: modifiche allo scope, aggiustamenti al budget, estensioni della timeline, o cambiamenti metodologici. Queste decisioni spettano allo Sponsor Giovanni Marchetti, con input fondamentale dal Project Manager e dalla Tech Lead, e con consulenza di tutto il team e di Francesca Giuliani quando si tratta di aspetti legati alle regole del gioco. Se ad esempio il cliente richiede l'aggiunta di un'app mobile nativa nel MVP, Marco prepara un Project Impact Statement dettagliato, Elena stima l'effort aggiuntivo in 80 giorni e €10.000, si presentano a Giovanni tre opzioni (accettare ed estendere la timeline, posticipare alla versione 1.1, o rifiutare), e Giovanni prende la decisione finale. Il tempo per queste decisioni è generalmente di una settimana, salvo situazioni di urgenza.
+Il terzo livello comprende le decisioni strategiche che impattano significativamente il progetto: modifiche allo scope, aggiustamenti al budget, estensioni della timeline, o cambiamenti metodologici. Queste decisioni spettano allo Sponsor Giovanni Marchetti, con input fondamentale dal Project Manager e dalla Tech Lead, e con consulenza di tutto il team e di Francesca Giuliani quando si tratta di aspetti legati alle regole del gioco. Se ad esempio il cliente richiede l'aggiunta di un'app mobile nativa nel MVP, Marco prepara un Project Impact Statement dettagliato, Elena stima l'effort aggiuntivo in circa 120 giorni e €18.000, si presentano a Giovanni tre opzioni (accettare ed estendere la timeline, posticipare alla versione 1.1, o rifiutare), e Giovanni prende la decisione finale. Il tempo per queste decisioni è generalmente di una settimana, salvo situazioni di urgenza.
 
 La regola d'oro che guida tutto il processo decisionale è "decide at the lowest level possible, escalate only when necessary". Questo principio assicura che le decisioni vengano prese rapidamente da chi ha le informazioni più rilevanti, evitando colli di bottiglia e sovraccarico dei livelli decisionali superiori.
 
@@ -336,7 +338,7 @@ Per la risoluzione dei conflitti si è scelto un approccio collaborativo e progr
 
 I conflitti nel progetto MaraffaOnline possono essere di tre tipologie principali. I conflitti tecnici riguardano scelte architetturali o tecnologiche, come ad esempio la decisione tra MongoDB e PostgreSQL. In questi casi il resolver è la Tech Lead Elena Rossi, che ascolta gli argomenti di entrambe le parti (15 minuti ciascuna) e decide basandosi su criteri oggettivi come performance, scalabilità, expertise del team e time-to-market. Una volta presa la decisione, il team si allinea secondo il principio "disagree and commit": anche chi non è d'accordo si impegna a supportare la decisione finale. I conflitti di priorità emergono quando ci sono dubbi su quale feature implementare prima. In questo caso il resolver è il Project Manager Marco Venturi, che valuta il business value rispetto all'effort usando la matrice MoSCoW e decide basandosi sul critical path e sul valore per lo stakeholder. Il task prioritizzato torna nello Sprint Backlog. Infine ci sono i conflitti interpersonali, come quando un membro del team non rispetta gli orari di lavoro altrui. Qui Marco agisce come facilitatore neutrale attraverso una conversazione privata "speak truth to power", con l'obiettivo di trovare una soluzione win-win piuttosto che imporre una decisione. Se il conflitto non si risolve, si procede con escalation alle risorse umane di PlayHeritage Labs, che esula dallo scope del progetto.
 
-Il processo di risoluzione segue tre fasi progressive. Nella prima fase, che dura al massimo 24 ore, le parti coinvolte parlano direttamente tra loro senza intermediari, in un setting privato via Zoom o in presenza. L'obiettivo è risolv ere il conflitto alla fonte: statisticamente l'80% dei conflitti si risolvono a questo livello. Se la discussione diretta non porta a una soluzione, si passa alla seconda fase di mediazione facilitata entro 48 ore. Marco o Elena facilitano un meeting strutturato di 30 minuti dove prima la parte A espone la propria posizione per 5 minuti, poi la parte B fa lo stesso, si identificano gli interessi comuni per altri 5 minuti, si fa brainstorming di possibili soluzioni per 10 minuti, e infine il facilitatore prende una decisione negli ultimi 5 minuti. Se anche questa fase fallisce, entro 72 ore dall'inizio del conflitto si procede con la terza fase di decisione esecutiva. L'escalation va al decisore appropriato: Elena per conflitti tecnici, Giovanni per conflitti di scope o priorità, HR per conflitti interpersonali. La decisione presa a questo livello è finale e non appellabile, e il team deve allinearsi. I conflitti che raggiungono la fase 2 o 3 vengono documentati su Confluence nell'Issue Log per essere discussi in retrospective.
+Il processo di risoluzione segue tre fasi progressive. Nella prima fase, che dura al massimo 24 ore, le parti coinvolte parlano direttamente tra loro senza intermediari, in un setting privato via Zoom o in presenza. L'obiettivo è risolvere il conflitto alla fonte: statisticamente l'80% dei conflitti si risolvono a questo livello. Se la discussione diretta non porta a una soluzione, si passa alla seconda fase di mediazione facilitata entro 48 ore. Marco o Elena facilitano un meeting strutturato di 30 minuti dove prima la parte A espone la propria posizione per 5 minuti, poi la parte B fa lo stesso, si identificano gli interessi comuni per altri 5 minuti, si fa brainstorming di possibili soluzioni per 10 minuti, e infine il facilitatore prende una decisione negli ultimi 5 minuti. Se anche questa fase fallisce, entro 72 ore dall'inizio del conflitto si procede con la terza fase di decisione esecutiva. L'escalation va al decisore appropriato: Elena per conflitti tecnici, Giovanni per conflitti di scope o priorità, HR per conflitti interpersonali. La decisione presa a questo livello è finale e non appellabile, e il team deve allinearsi. I conflitti che raggiungono la fase 2 o 3 vengono documentati su Confluence nell'Issue Log per essere discussi in retrospective.
 
 ---
 
@@ -450,5 +452,8 @@ Questo documento è stato redatto seguendo le best practices di Responsibility A
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 15/10/2025
 
-**Versione**: v.1.0.0
+**Versione**: v.1.1.0
 **Prossimo review**: 15/12/2025 (fine Sprint 4, Milestone M2)
+
+**Storico revisioni**:
+- **v.1.1.0**: Corretti i 22 task privi di Accountable (Infrastructure → Elena=A; Project Scoping / UAT test plan / Lessons Learned → Giovanni=A; cerimonie Agile e gestione PM → Marco=A), così ogni attività ha esattamente un Accountable come previsto dal principio RASCI. Ricalcolati i conteggi della sezione "Analisi RASCI". Aggiunto il companion visivo `Allegato4.2-RASCI.html`. Corretti refusi nelle Regole Operative.

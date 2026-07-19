@@ -1,7 +1,9 @@
 # Allegato 2.6 - Analisi SWOT
-## v.1.0.0 – 2025-09-22 09:15:30
+## v.1.1.0 – 2025-09-22 09:15:30
 
-L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento strategico per valutare i fattori interni ed esterni che possono influenzare il successo del progetto MaraffaOnline.
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato2.6-AnalisiSWOT.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la matrice SWOT a 4 quadranti (interni/esterni × utili/dannosi) con i soli titoli dei fattori e l'evidenza di quelli critici. Questo documento `.md` resta il registro completo (descrizioni, impatti, mitigazioni, matrice incrociata SO/WO/ST/WT e conclusioni).
+
+L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori interni ed esterni che possono influenzare il successo del progetto MaraffaOnline.
 
 - **Strengths (Punti di Forza)** e **Weaknesses (Punti di Debolezza)**: fattori **interni** controllabili da PlayHeritage Labs
 - **Opportunities (Opportunità)** e **Threats (Minacce)**: fattori **esterni** non direttamente controllabili
@@ -35,7 +37,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 
 ### S3. Co-Creazione con una Community Attiva e Motivata
 **Descrizione**: La community "Maraffa Forever" (150 membri) è:
-- Altamente motivata (ha auto-finanziato il progetto con €25.000)
+- Molto motivata (ha auto-finanziato il progetto con €25.000)
 - Disponibile a partecipare attivamente (beta testing, feedback, user testing)
 - Portatrice di conoscenza esperta sulle regole tradizionali
 
@@ -46,7 +48,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ### S4. Focus su Nicchia Culturale con Forte Identità
 **Descrizione**: La Maraffa è un gioco con forte identità regionale romagnola. La community ha un legame emotivo profondo con il gioco.
 
-**Impatto**: Bassissima competizione diretta. L'alternativa principale sono piattaforme obsolete o assenti. Facilità di creare un prodotto distintivo e fortemente voluto dal target.
+**Impatto**: Competizione diretta molto ridotta. L'alternativa principale sono piattaforme obsolete o assenti, il che facilita la creazione di un prodotto distintivo e voluto dal target.
 
 ---
 
@@ -95,7 +97,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ---
 
 ### W2. Budget Estremamente Limitato CRITICO
-**Descrizione**: €25.000 per 5 persone per 7 mesi = €714/mese/persona equivalent. Molto sotto il salario di mercato per sviluppatori (€2.500-3.000/mese).
+**Descrizione**: €25.000 per 5 persone per 7 mesi = €714/mese/persona. Molto sotto il salario di mercato per sviluppatori (€2.500-3.000/mese).
 
 **Impatto**: Impossibilità di assumere risorse esterne qualificate. Rischio di demotivazione o abbandono del team. Vincoli stretti su infrastruttura e tool.
 
@@ -153,7 +155,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ### O1. Mercato Inesplorato di Giochi Tradizionali Digitali
 **Descrizione**: La digitalizzazione di giochi di carte regionali italiani è un mercato di nicchia quasi completamente inesplorato. Esistono poche piattaforme moderne.
 
-**Impatto**: Bassissima competizione. Possibilità di diventare player di riferimento nel settore del cultural heritage gaming.
+**Impatto**: Competizione diretta molto ridotta. Possibilità di diventare punto di riferimento nel settore del cultural heritage gaming.
 
 **Azione**: Dopo il successo di MaraffaOnline, replicare il modello su Briscola chiamata, Tresette, Scopone. Creare una "suite" di giochi tradizionali.
 
@@ -306,7 +308,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 ## Conclusioni e Raccomandazioni Strategiche
 
 **Priorità Assoluta**:
-1.  **Mitigare W1 + T1**: Spike tecnico immediato su real-time multiplayer. È il rischio esistenziale del progetto.
+1.  **Mitigare W1 + T1**: Spike tecnico immediato su real-time multiplayer. È il rischio più critico del progetto.
 2.  **Gestire W4 + T2**: Comunicazione trasparente su trade-off budget/timeline/scope.
 
 **Leve di Successo da Sfruttare**:
@@ -324,3 +326,6 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) è uno strumento 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Lead Developer) & Luca Moretti (UX Designer)
 **Data approvazione**: 23/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Aggiunto companion `Allegato2.6-AnalisiSWOT.html` — matrice SWOT a 4 quadranti colorati con i soli titoli dei fattori (vista sintetica per l'allegato PDF). Contenuto del `.md` invariato.

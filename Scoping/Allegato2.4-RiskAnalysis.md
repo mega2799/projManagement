@@ -253,7 +253,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
        - Livello di impatto: Disastroso
        - Valore rischio: 16
        - Colore rischio: Rosso Critico
-       - Descrizione: €833/mese/persona sotto media mercato
+       - Descrizione: €714/mese/persona sotto media mercato
        - Risk Management: Accept. Progetto pilota con valore strategico. Team part-time (50% FTE).
    2. Scope creep da richieste committente
        - Sottosistema: Project Management

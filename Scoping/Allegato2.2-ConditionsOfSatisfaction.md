@@ -1,7 +1,7 @@
 # Allegato 2.2 - Conditions of Satisfaction
 ## v.1.0.0 – 2025-09-16 10:15:30
 
-La tabella è suddivisa in 5 sezioni:
+La tabella è composta da 4 colonne:
 - **Tipologia:** l'ambito della condizione. Assume uno dei seguenti valori:
     - **Temporale:** Si riferisce ai tempi di consegna e milestone del progetto
     - **Economica:** Si riferisce al budget previsto e gestione finanziaria
@@ -103,7 +103,7 @@ La tabella è suddivisa in 5 sezioni:
         <td>Not started</td>
     </tr>
     <tr>
-        <td rowspan="5">Qualitativa</td>
+        <td rowspan="6">Qualitativa</td>
         <td>Soddisfazione della community Maraffa Forever</td>
         <td>Valutazione media ≥ 4.2/5 nel feedback dei 20 beta tester al termine del progetto</td>
         <td>Not started</td>
@@ -116,6 +116,11 @@ La tabella è suddivisa in 5 sezioni:
     <tr>
         <td>User Experience intuitiva</td>
         <td>Un nuovo utente deve essere in grado di creare/joinare una partita entro 3 minuti dal primo accesso (misurato con user testing)</td>
+        <td>Not started</td>
+    </tr>
+    <tr>
+        <td>Autonomia del giocatore</td>
+        <td>L'80% degli utenti completa la prima partita senza richiedere assistenza esterna (misurato con user testing sui 20 beta tester)</td>
         <td>Not started</td>
     </tr>
     <tr>

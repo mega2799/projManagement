@@ -8,7 +8,7 @@ Come è già stato citato nel capitolo precedente durante la descrizione delle r
 
 Inoltre, a ogni sviluppatore è stato chiesto di utilizzare il software di gestione del progetto Notion Database per tenere traccia dei task assegnati, delle scadenze e dello stato di avanzamento. Ogni task nel database ha uno status (Todo, In Progress, Done) che viene aggiornato quotidianamente, permettendo a Marco Venturi, il Project Manager, di avere una visione in tempo reale dello stato del progetto senza dover necessariamente convocare meeting aggiuntivi.
 
-Per favorire il monitoraggio e, quindi, la buona riuscita del progetto, PlayHeritage Labs ha deciso di attuare una linea guida nei confronti dei suoi collaboratori: gli sviluppatori sono incoraggiati a riportare i problemi il prima possibile, evitando che si accumulino in quello che in gergo viene chiamato "creep". Inoltre, sono stati istruiti sull'importanza di essere sinceri sulla situazione attuale, di quanto sia importante farla presente subito per evitare che peggiori ulteriormente e sull'importanza di porre domande quando qualcosa non è chiaro. In generale, PlayHeritage Labs promuove un clima di apertura e onestà, nel quale i collaboratori possono sentirsi a proprio agio, esprimere liberamente le proprie opinioni e preoccupazioni senza timore di essere giudicati o penalizzati.
+Per favorire il monitoraggio e, quindi, la buona riuscita del progetto, PlayHeritage Labs ha deciso di attuare una linea guida nei confronti dei suoi collaboratori: gli sviluppatori sono incoraggiati a riportare i problemi il prima possibile, evitando che si accumulino in quello che in gergo viene chiamato "creep". Inoltre, sono stati istruiti sull'importanza di essere sinceri sulla situazione attuale, di quanto sia importante farla presente subito per evitare che peggiori ulteriormente e sull'importanza di porre domande quando qualcosa non è chiaro. PlayHeritage Labs promuove così un clima di apertura in cui i problemi vengono segnalati con tempestività, senza timore di penalizzazioni.
 
 ## 5.2 Project Status Meetings
 
@@ -46,7 +46,7 @@ Ogni Stoplight Report contiene una tabella con cinque aree critiche: Scope, Sche
 - **Quality: Verde** - Test coverage all'87%, superiore al target del 85%. Zero bug critici aperti. Tutti i test di integrazione superati.
 - **Risks: Giallo** - Rischio latenza WebSocket ancora in monitoring. Load test previsto per Sprint 6 mostrerà se la mitigazione (ottimizzazione Socket.IO) è sufficiente.
 
-Questa sintesi permette a Giovanni di comprendere immediatamente se il progetto richiede la sua attenzione su aspetti specifici o se può procedere con fiducia. I colori gialli fungono da early warning system che segnalano aree da monitorare attentamente prima che diventino rosse e richiedano interventi drastici.
+Questa sintesi permette a Giovanni di comprendere immediatamente se il progetto richiede la sua attenzione su aspetti specifici o se può procedere con fiducia. I colori gialli segnalano le aree da monitorare prima che diventino rosse e richiedano interventi drastici.
 
 ## 5.6 Earned Value Management
 
@@ -95,7 +95,7 @@ La Cost Variance negativa indica che il progetto ha speso €300 in più rispett
 
 La Schedule Variance negativa indica che il progetto è leggermente in ritardo rispetto al piano, con un valore di €900 di lavoro non ancora completato rispetto a quanto pianificato. Questo corrisponde al ritardo di 3 giorni accumulato dal Frontend Tavolo da Gioco menzionato nello Stoplight Report. Tuttavia, grazie al recovery plan attivato (pair programming Luca + Sara), il ritardo è stato recuperato entro la fine di Febbraio 2026.
 
-Si può notare come nel complesso il progetto abbia mantenuto le tre linee relativamente vicine, segno di una buona capacità di pianificazione e esecuzione. In altri momenti dell'anno, in particolare durante i mesi di Ottobre e Novembre 2025 quando il team lavorava principalmente su sistemi Waterfall e setup infrastrutturale con requisiti ben definiti, si è riusciti per lunghi periodi a far combaciare le tre linee quasi perfettamente.
+Si può notare come nel complesso il progetto abbia mantenuto le tre linee relativamente vicine, segno di una buona capacità di pianificazione e esecuzione. In altri momenti dell'anno, in particolare durante i mesi di Ottobre e Novembre 2025 quando il team lavorava principalmente su sistemi Waterfall e setup infrastrutturale con requisiti ben definiti, si è riusciti per lunghi periodi a mantenere le tre linee molto vicine.
 
 ### Riepilogo EVM mensile (Ott 2025 - Mag 2026)
 
@@ -151,7 +151,7 @@ Oltre al monitoraggio di scope, schedule e budget, un'area critica per il succes
 
 3. **Code review approvata**: Ogni pull request deve essere rivista e approvata da almeno un altro membro del team prima del merge. Nel caso di modifiche particolarmente critiche (ad esempio, logica del Game Engine o sincronizzazione Real-Time), la code review deve essere effettuata da Elena Rossi, la Tech Lead.
 
-4. **Performance requirements soddisfatti**: Per il sistema Real-Time Communication, la latenza deve essere inferiore a 200ms. Questo viene verificato attraverso load test automatizzati che simulano 50 partite simultanee.
+4. **Performance requirements soddisfatti**: Per il sistema Real-Time Communication, la latenza deve essere inferiore a 500ms. Questo viene verificato attraverso load test automatizzati che simulano 50 partite simultanee.
 
 Durante i Project Status Meeting, Elena Rossi presenta un report sulle quality metrics che include:
 
@@ -176,9 +176,9 @@ Marco Venturi mantiene un Risk Log su Confluence che traccia lo stato di ciascun
 - **Azioni di mitigazione intraprese**: Cosa è stato fatto per ridurre la probabilità o l'impatto
 - **Owner**: Chi è responsabile di monitorare il rischio e attivare il piano di contingenza
 
-Durante i primi quattro mesi del progetto, il rischio R1 "Latenza WebSocket > 200ms" è stato l'oggetto di attenzione maggiore. Inizialmente valutato come probabilità Media (3) e impatto Alto (4) per un rating di 12 (Rosso), durante lo Sprint 2 è stato effettuato un proof of concept che ha mostrato una latenza di 180ms, riducendo la probabilità a Bassa (2) e portando il rating a 8 (Arancione). Il load test completo previsto per lo Sprint 6 ha confermato che con le ottimizzazioni implementate la latenza si mantiene sotto i 200ms anche con 50 partite simultanee, permettendo di chiudere il rischio come "Mitigato".
+Durante i primi quattro mesi del progetto, il rischio R1 "Esperienza limitata con tecnologie WebSocket" è stato l'oggetto di attenzione maggiore. Inizialmente valutato come probabilità Alta (4) e impatto Disastroso (4) per un rating di 16 (Rosso Critico), è stato affrontato con uno spike tecnico di due settimane e, durante lo Sprint 2, con un proof of concept che ha mostrato una latenza di 180ms: la dimostrata padronanza della tecnologia ha ridotto la probabilità a Media-Bassa (2), portando il rating a 8 (Arancione). Il load test completo previsto per lo Sprint 6 ha confermato che con le ottimizzazioni implementate la latenza si mantiene sotto i 500ms anche con 50 partite simultanee, permettendo di chiudere il rischio come "Mitigato".
 
-Il rischio R2 "Scope Creep da stakeholder" è rimasto costantemente monitorato ma non si è mai materializzato, grazie alla chiarezza del POS (Project Overview Statement) e al rigore con cui Marco ha applicato il Change Request Process. Giovanni Marchetti ha dimostrato grande professionalità nell'accettare che feature nice-to-have venissero posticipate alla versione 1.1 quando emergeva che la loro implementazione avrebbe impattato il critical path.
+Il rischio R4 "Scope creep da richieste committente" è rimasto costantemente monitorato ma non si è mai materializzato, grazie alla chiarezza del POS (Project Overview Statement) e al rigore con cui Marco ha applicato il Change Request Process. Giovanni Marchetti ha accettato che alcune feature nice-to-have venissero posticipate alla versione 1.1 quando la loro implementazione avrebbe impattato il critical path.
 
 ## 5.11 Risultati del Monitoraggio
 
@@ -190,14 +190,10 @@ Tutti i criteri previsti sono stati rispettati entro le tolleranze accettabili. 
 
 **Criteri Economici**: Il budget di €25.000 è stato rispettato. A fine Febbraio 2026 (Mese 4) le spese totali erano di €17.500 su €17.800 pianificate, con uno scostamento favorevole di €300 (1,7%), ben all'interno del Contingency Buffer del 18,7%.
 
-**Criteri Tecnici**: Tutte le regole del Maraffone/Beccaccino sono state implementate correttamente e validate da Francesca Giuliani durante la Sessione 1 di validazione (Novembre 2025). Il sistema Real-Time mantiene una latenza media di 185ms, sotto il target di 200ms. Il test coverage è stabilmente sopra l'85%.
+**Criteri Tecnici**: Tutte le regole del Maraffone/Beccaccino sono state implementate correttamente e validate da Francesca Giuliani durante la Sessione 1 di validazione (Novembre 2025). Il sistema Real-Time mantiene una latenza media di 185ms, sotto il target di 500ms. Il test coverage è stabilmente sopra l'85%.
 
 **Criteri Qualitativi**: L'esperienza utente è stata validata in due momenti. Una prima sessione a Gennaio 2026 con 5 membri della community Maraffa Forever ha dato riscontri positivi sull'usabilità e portato a piccole migliorie implementate nello Sprint 11. La User Acceptance Testing ufficiale, condotta con 10 tester della community nella prima metà di Maggio 2026, ha poi confermato che l'80% degli utenti è riuscito a completare una partita senza aiuto, soddisfacendo il criterio di usabilità definito nelle Conditions of Satisfaction.
 
 **Criteri di Gestione del Lavoro**: Il team ha lavorato in modo coeso e collaborativo. Le Sprint Retrospective hanno prodotto 30 action items di miglioramento continuo nel corso dei 15 sprint, di cui 28 sono stati completamente implementati, portando a un progressivo aumento dell'efficienza del team.
 
 Grazie a questo monitoraggio multilivello il progetto, collaudato internamente con successo, ha superato anche la fase finale di UAT ed è giunto pronto al lancio pubblico del 15 Maggio 2026. La chiusura formale, l'accettazione da parte del committente e le lezioni apprese sono descritte nel Capitolo 6 - Closing.
-
----
-
-**Note**: Questo capitolo è stato redatto seguendo le best practices di Project Monitoring & Control 2026 e integra elementi da Scrum Guide 2020, PMI PMBOK 7th Edition, e Earned Value Management Standard.

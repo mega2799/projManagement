@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analisi SWOT - MaraffaOnline</title>
+<style>
+  :root {
+    --s: #28a745;   /* Strengths - verde bottiglia */
+    --w: #b85450;   /* Weaknesses - rosso mattone */
+    --o: #007bff;   /* Opportunities - blu */
+    --t: #fd7e14;   /* Threats - legno/arancione */
+    --crit: #8b2f2b;
+    --testo-scuro: #212529;
+    --testo-chiaro: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--testo-scuro);
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 20px;
+    line-height: 1.3;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.1rem; }
+  .sub { color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 14px; }
+  .note {
+    font-size: 0.78rem; color: #444; background: #f6f6f6;
+    padding: 8px 12px; border-left: 4px solid #6c757d; margin-bottom: 16px;
+  }
+
+  .swot {
+    display: grid;
+    grid-template-columns: 24px 1fr 1fr;
+    grid-template-rows: 22px 1fr 1fr;
+    gap: 8px;
+  }
+  .axis-corner { grid-column: 1; grid-row: 1; }
+  .axis-col {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.04em; color: #555;
+  }
+  .axis-col.pos { grid-column: 2; grid-row: 1; }
+  .axis-col.neg { grid-column: 3; grid-row: 1; }
+  .axis-row {
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.04em; color: #555;
+  }
+  .axis-row.int { grid-column: 1; grid-row: 2; }
+  .axis-row.ext { grid-column: 1; grid-row: 3; }
+
+  .quad { border-radius: 6px; overflow: hidden; border: 1px solid #e3e3e3; display: flex; flex-direction: column; }
+  .quad > header {
+    padding: 7px 12px; color: var(--testo-chiaro);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  }
+  .quad > header h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; margin: 0; font-weight: 700; }
+  .quad > header .cnt { font-size: 0.74rem; font-weight: 600; opacity: 0.92; }
+  .quad .body { padding: 8px 12px 10px; font-size: 0.77rem; flex: 1; }
+  .quad .body ul { margin: 0; padding-left: 16px; }
+  .quad .body ul li { margin-bottom: 3px; }
+  .quad .body ul li b { font-weight: 700; }
+
+  .q-s { grid-column: 2; grid-row: 2; }
+  .q-w { grid-column: 3; grid-row: 2; }
+  .q-o { grid-column: 2; grid-row: 3; }
+  .q-t { grid-column: 3; grid-row: 3; }
+  .q-s > header { background: var(--s); }
+  .q-w > header { background: var(--w); }
+  .q-o > header { background: var(--o); }
+  .q-t > header { background: var(--t); }
+  .q-s .body { background: color-mix(in srgb, var(--s) 8%, white); }
+  .q-w .body { background: color-mix(in srgb, var(--w) 8%, white); }
+  .q-o .body { background: color-mix(in srgb, var(--o) 8%, white); }
+  .q-t .body { background: color-mix(in srgb, var(--t) 8%, white); }
+
+  .crit {
+    background: var(--crit); color: #fff; font-size: 0.6rem; font-weight: 700;
+    padding: 1px 5px; border-radius: 3px; margin-left: 4px; vertical-align: middle;
+    letter-spacing: 0.03em;
+  }
+
+  @media print {
+    .note { display: none; }
+    @page { size: A4 portrait; margin: 10mm; }
+    body { margin: 0; max-width: none; }
+    .swot { gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Analisi SWOT &mdash; MaraffaOnline</h1>
+<p class="sub">Allegato 2.6 &middot; v.1.1.0 &middot; PlayHeritage Labs</p>
+
+<div class="note">Vista sintetica: ogni quadrante elenca i fattori con il solo titolo. La descrizione, l'impatto e le mitigazioni di ciascun fattore, la matrice incrociata SO/WO/ST/WT e le conclusioni strategiche sono nel file <code>Allegato2.6-AnalisiSWOT.md</code>, che resta il registro di riferimento.</div>
+
+<div class="swot">
+  <div class="axis-corner"></div>
+  <div class="axis-col pos">Utili (positivi)</div>
+  <div class="axis-col neg">Dannosi (negativi)</div>
+
+  <div class="axis-row int">Origine interna</div>
+  <div class="quad q-s">
+    <header><h2>Strengths</h2><span class="cnt">Punti di forza</span></header>
+    <div class="body">
+      <ul>
+        <li><b>S1</b> Team multidisciplinare completo</li>
+        <li><b>S2</b> Supporto dell'Universit&agrave; di Bologna</li>
+        <li><b>S3</b> Community attiva e co-creazione</li>
+        <li><b>S4</b> Nicchia culturale con forte identit&agrave;</li>
+        <li><b>S5</b> Metodologia di PM ibrida</li>
+        <li><b>S6</b> Stack open-source moderno</li>
+        <li><b>S7</b> Valore strategico oltre il profitto</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quad q-w">
+    <header><h2>Weaknesses</h2><span class="cnt">Punti di debolezza</span></header>
+    <div class="body">
+      <ul>
+        <li><b>W1</b> Poca esperienza in real-time multiplayer <span class="crit">CRITICO</span></li>
+        <li><b>W2</b> Budget molto limitato <span class="crit">CRITICO</span></li>
+        <li><b>W3</b> Poca esperienza di PM formale</li>
+        <li><b>W4</b> Timeline aggressiva senza buffer</li>
+        <li><b>W5</b> Dipendenza da un unico committente</li>
+        <li><b>W6</b> Competenze di marketing limitate</li>
+        <li><b>W7</b> Infrastruttura poco scalabile</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="axis-row ext">Origine esterna</div>
+  <div class="quad q-o">
+    <header><h2>Opportunities</h2><span class="cnt">Opportunit&agrave;</span></header>
+    <div class="body">
+      <ul>
+        <li><b>O1</b> Mercato dei giochi tradizionali inesplorato</li>
+        <li><b>O2</b> Trend di valorizzazione del patrimonio culturale</li>
+        <li><b>O3</b> Pubblicazioni e visibilit&agrave; accademica</li>
+        <li><b>O4</b> Espansione ad altri giochi regionali</li>
+        <li><b>O5</b> Partnership con associazioni e sponsor locali</li>
+        <li><b>O6</b> Tornei ed eventi (gamification)</li>
+        <li><b>O7</b> Integrazione con il turismo esperienziale</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quad q-t">
+    <header><h2>Threats</h2><span class="cnt">Minacce</span></header>
+    <div class="body">
+      <ul>
+        <li><b>T1</b> Fallimento tecnico del real-time <span class="crit">CRITICO</span></li>
+        <li><b>T2</b> Insoddisfazione del committente per scope ridotto</li>
+        <li><b>T3</b> Competizione da player pi&ugrave; grandi</li>
+        <li><b>T4</b> Scarsa adozione post-lancio</li>
+        <li><b>T5</b> Problemi di sicurezza / GDPR</li>
+        <li><b>T6</b> Disallineamento interno alla community</li>
+        <li><b>T7</b> Abbandono o riduzione del team</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

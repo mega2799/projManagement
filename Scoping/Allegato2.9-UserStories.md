@@ -17,19 +17,19 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 1: Gestione Account Utente
 
-### US-1.1: Registrazione Account  MUST HAVE
+### US-1.1: Registrazione Account — MUST HAVE
 
 **Come** nuovo utente,
 **voglio** registrarmi alla piattaforma con email e password,
 **così da** poter salvare le mie statistiche e giocare con il mio profilo personalizzato.
 
 **Criteri di Accettazione**:
-- [+] Form di registrazione con campi: email, password, conferma password, username
-- [+] Validazione email (formato corretto, univoca nel sistema)
-- [+] Password min 8 caratteri (almeno 1 maiuscola, 1 numero)
-- [+] Email di conferma inviata con link di attivazione
-- [+] Messaggio successo dopo conferma email
-- [+] Gestione errori: email già esistente, password debole
+- Form di registrazione con campi: email, password, conferma password, username
+- Validazione email (formato corretto, univoca nel sistema)
+- Password min 8 caratteri (almeno 1 maiuscola, 1 numero)
+- Email di conferma inviata con link di attivazione
+- Messaggio successo dopo conferma email
+- Gestione errori: email già esistente, password debole
 
 **Priorità**: MUST HAVE
 **Story Points**: 5
@@ -39,18 +39,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-1.2: Login  MUST HAVE
+### US-1.2: Login — MUST HAVE
 
 **Come** utente registrato,
 **voglio** effettuare il login con le mie credenziali,
 **così da** accedere al mio account e giocare partite.
 
 **Criteri di Accettazione**:
-- [+] Form di login con email e password
-- [+] Opzione "Ricordami" (mantiene sessione per 7 giorni)
-- [+] Redirect a dashboard dopo login successo
-- [+] Messaggio errore se credenziali errate (max 5 tentativi, poi blocco 15 min)
-- [+] Link "Password dimenticata?"
+- Form di login con email e password
+- Opzione "Ricordami" (mantiene sessione per 7 giorni)
+- Redirect a dashboard dopo login successo
+- Messaggio errore se credenziali errate (max 5 tentativi, poi blocco 15 min)
+- Link "Password dimenticata?"
 
 **Priorità**: MUST HAVE
 **Story Points**: 3
@@ -60,19 +60,19 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-1.3: Accesso Ospite  MUST HAVE
+### US-1.3: Accesso Ospite — MUST HAVE
 
 **Come** visitatore curioso,
 **voglio** provare la piattaforma senza registrarmi,
 **così da** capire se il gioco mi piace prima di creare un account.
 
 **Criteri di Accettazione**:
-- [+] Pulsante "Prova come ospite" nella homepage
-- [+] Generazione username temporaneo (es. "Ospite_4729")
-- [+] Accesso a tutte le funzionalità di gioco
-- [+] Nessun salvataggio statistiche
-- [+] Banner "Crea account per salvare progressi" visibile ma non invasivo
-- [+] Opzione conversione a account registrato dopo partita
+- Pulsante "Prova come ospite" nella homepage
+- Generazione username temporaneo (es. "Ospite_4729")
+- Accesso a tutte le funzionalità di gioco
+- Nessun salvataggio statistiche
+- Banner "Crea account per salvare progressi" visibile ma non invasivo
+- Opzione conversione a account registrato dopo partita
 
 **Priorità**: MUST HAVE
 **Story Points**: 3
@@ -82,18 +82,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-1.4: Modifica Profilo  SHOULD HAVE
+### US-1.4: Modifica Profilo — SHOULD HAVE
 
 **Come** utente registrato,
 **voglio** personalizzare il mio profilo (avatar, bio, username),
 **così da** esprimere la mia identità nella community.
 
 **Criteri di Accettazione**:
-- [+] Pagina "Impostazioni Profilo"
-- [+] Upload avatar (max 1MB, jpg/png)
-- [+] Cambio username (univocità controllata)
-- [+] Campo bio (max 200 caratteri)
-- [+] Anteprima modifiche prima del salvataggio
+- Pagina "Impostazioni Profilo"
+- Upload avatar (max 1MB, jpg/png)
+- Cambio username (univocità controllata)
+- Campo bio (max 200 caratteri)
+- Anteprima modifiche prima del salvataggio
 
 **Priorità**: SHOULD HAVE
 **Story Points**: 5
@@ -103,17 +103,17 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-1.5: Reset Password  SHOULD HAVE
+### US-1.5: Reset Password — SHOULD HAVE
 
 **Come** utente che ha dimenticato la password,
 **voglio** ricevere un link di reset via email,
 **così da** poter creare una nuova password e rientrare nel mio account.
 
 **Criteri di Accettazione**:
-- [+] Link "Password dimenticata?" nel form login
-- [+] Invio email con token temporaneo (validità 1 ora)
-- [+] Pagina reset password con campo nuova password
-- [+] Conferma successo e redirect a login
+- Link "Password dimenticata?" nel form login
+- Invio email con token temporaneo (validità 1 ora)
+- Pagina reset password con campo nuova password
+- Conferma successo e redirect a login
 
 **Priorità**: SHOULD HAVE
 **Story Points**: 3
@@ -125,19 +125,19 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 2: Creazione e Join Partite
 
-### US-2.1: Creazione Stanza Pubblica  MUST HAVE
+### US-2.1: Creazione Stanza Pubblica — MUST HAVE
 
 **Come** giocatore,
 **voglio** creare una stanza di gioco pubblica,
 **così da** far unire altri giocatori casualmente e iniziare una partita.
 
 **Criteri di Accettazione**:
-- [+] Pulsante "Crea partita" nella dashboard
-- [+] Modal/form con opzioni: nome stanza, tipo (pubblica/privata)
-- [+] Se pubblica: stanza visibile nella lobby pubblica
-- [+] Creator della stanza diventa "owner" (può kickare player)
-- [+] Lobby di attesa mostra 0/4 giocatori
-- [+] Countdown automatico quando 4/4 giocatori (10 secondi)
+- Pulsante "Crea partita" nella dashboard
+- Modal/form con opzioni: nome stanza, tipo (pubblica/privata)
+- Se pubblica: stanza visibile nella lobby pubblica
+- Creator della stanza diventa "owner" (può kickare player)
+- Lobby di attesa mostra 0/4 giocatori
+- Countdown automatico quando 4/4 giocatori (10 secondi)
 
 **Priorità**: MUST HAVE
 **Story Points**: 8
@@ -147,18 +147,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-2.2: Creazione Stanza Privata  MUST HAVE
+### US-2.2: Creazione Stanza Privata — MUST HAVE
 
 **Come** giocatore,
 **voglio** creare una stanza privata con password,
 **così da** giocare solo con amici specifici che conosco.
 
 **Criteri di Accettazione**:
-- [+] Opzione "Privata" nel form creazione stanza
-- [+] Campo password (min 4 caratteri)
-- [+] Generazione link di invito univoco (es. `maraffaonline.it/join/ABC123`)
-- [+] Pulsante "Copia link" (clipboard API)
-- [+] Stanza NON visibile in lobby pubblica
+- Opzione "Privata" nel form creazione stanza
+- Campo password (min 4 caratteri)
+- Generazione link di invito univoco (es. `maraffaonline.it/join/ABC123`)
+- Pulsante "Copia link" (clipboard API)
+- Stanza NON visibile in lobby pubblica
 
 **Priorità**: MUST HAVE
 **Story Points**: 5
@@ -168,18 +168,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-2.3: Join Stanza Pubblica  MUST HAVE
+### US-2.3: Join Stanza Pubblica — MUST HAVE
 
 **Come** giocatore,
 **voglio** unirmi a una stanza pubblica dalla lobby,
 **così da** giocare con altri giocatori disponibili.
 
 **Criteri di Accettazione**:
-- [+] Lista stanze pubbliche nella dashboard (filtro: stanze con posti liberi)
-- [+] Info visibili: nome stanza, giocatori connessi (X/4), owner
-- [+] Pulsante "Unisciti"
-- [+] Redirect alla lobby della stanza dopo join
-- [+] Messaggio errore se stanza piena o non più disponibile
+- Lista stanze pubbliche nella dashboard (filtro: stanze con posti liberi)
+- Info visibili: nome stanza, giocatori connessi (X/4), owner
+- Pulsante "Unisciti"
+- Redirect alla lobby della stanza dopo join
+- Messaggio errore se stanza piena o non più disponibile
 
 **Priorità**: MUST HAVE
 **Story Points**: 5
@@ -189,18 +189,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-2.4: Join Stanza Privata Tramite Link  MUST HAVE
+### US-2.4: Join Stanza Privata Tramite Link — MUST HAVE
 
 **Come** giocatore invitato,
 **voglio** cliccare un link di invito e unirmi direttamente alla stanza,
 **così da** giocare con i miei amici senza cercare manualmente.
 
 **Criteri di Accettazione**:
-- [+] Link formato `maraffaonline.it/join/ABC123` apre modal di join
-- [+] Richiesta password (se stanza privata)
-- [+] Validazione password
-- [+] Join automatico se password corretta
-- [+] Messaggio errore se stanza piena o link non valido
+- Link formato `maraffaonline.it/join/ABC123` apre modal di join
+- Richiesta password (se stanza privata)
+- Validazione password
+- Join automatico se password corretta
+- Messaggio errore se stanza piena o link non valido
 
 **Priorità**: MUST HAVE
 **Story Points**: 5
@@ -210,17 +210,17 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-2.5: Invito Diretto Amici  SHOULD HAVE
+### US-2.5: Invito Diretto Amici — SHOULD HAVE
 
 **Come** giocatore,
 **voglio** invitare direttamente un amico dalla mia lista,
 **così da** non dover inviare manualmente il link.
 
 **Criteri di Accettazione**:
-- [+] Pulsante "Invita amici" nella lobby stanza
-- [+] Lista amici online (checkbox)
-- [+] Invio notifica in-app agli amici selezionati
-- [+] Amico riceve notifica cliccabile che lo porta alla stanza
+- Pulsante "Invita amici" nella lobby stanza
+- Lista amici online (checkbox)
+- Invio notifica in-app agli amici selezionati
+- Amico riceve notifica cliccabile che lo porta alla stanza
 
 **Priorità**: SHOULD HAVE
 **Story Points**: 8
@@ -232,19 +232,19 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 3: Gameplay - Partita
 
-### US-3.1: Avvio Partita  MUST HAVE
+### US-3.1: Avvio Partita — MUST HAVE
 
 **Come** giocatore in lobby (4/4),
 **voglio** che la partita inizi automaticamente,
 **così da** non dover aspettare decisioni manuali.
 
 **Criteri di Accettazione**:
-- [+] Countdown di 10 secondi quando 4/4 giocatori
-- [+] Messaggio "La partita inizia tra 10...9...8..."
-- [+] Distribuzione automatica 10 carte a giocatore
-- [+] Determinazione casuale primo giocatore
-- [+] Transizione a schermata tavolo da gioco
-- [+] Indicatore visivo "È il turno di [Nome]"
+- Countdown di 10 secondi quando 4/4 giocatori
+- Messaggio "La partita inizia tra 10...9...8..."
+- Distribuzione automatica 10 carte a giocatore
+- Determinazione casuale primo giocatore
+- Transizione a schermata tavolo da gioco
+- Indicatore visivo "È il turno di [Nome]"
 
 **Priorità**: MUST HAVE
 **Story Points**: 8
@@ -254,20 +254,20 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-3.2: Giocare una Carta  MUST HAVE
+### US-3.2: Giocare una Carta — MUST HAVE
 
 **Come** giocatore durante il mio turno,
 **voglio** cliccare una carta dalla mia mano e giocarla,
 **così da** procedere con la partita.
 
 **Criteri di Accettazione**:
-- [+] Carte nella mia mano sono cliccabili (evidenziate al hover)
-- [+] Click su carta valida: animazione carta vola al centro tavolo
-- [+] Carta giocata visibile a tutti i 4 giocatori
-- [+] Turno passa al giocatore successivo
-- [+] Non posso giocare carte durante il turno di altri
-- [+] Validazione server-side: carta deve essere legale (rispetto seme se possibile)
-- [+] Messaggio errore se carta illegale
+- Carte nella mia mano sono cliccabili (evidenziate al hover)
+- Click su carta valida: animazione carta vola al centro tavolo
+- Carta giocata visibile a tutti i 4 giocatori
+- Turno passa al giocatore successivo
+- Non posso giocare carte durante il turno di altri
+- Validazione server-side: carta deve essere legale (rispetto seme se possibile)
+- Messaggio errore se carta illegale
 
 **Priorità**: MUST HAVE
 **Story Points**: 13 (complessa, integrazione real-time)
@@ -277,17 +277,17 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-3.3: Visualizzare Punteggio  MUST HAVE
+### US-3.3: Visualizzare Punteggio — MUST HAVE
 
 **Come** giocatore,
 **voglio** vedere il punteggio aggiornato dopo ogni mano,
 **così da** sapere se sto vincendo o perdendo.
 
 **Criteri di Accettazione**:
-- [+] Barra punteggio sempre visibile: "Noi: 45 - Loro: 38"
-- [+] Aggiornamento real-time dopo ogni mano vinta
-- [+] Indicatore visivo "Mano vinta da [Coppia]" (es. banner temporaneo)
-- [+] Evidenziazione coppia in vantaggio (colore diverso)
+- Barra punteggio sempre visibile: "Noi: 45 - Loro: 38"
+- Aggiornamento real-time dopo ogni mano vinta
+- Indicatore visivo "Mano vinta da [Coppia]" (es. banner temporaneo)
+- Evidenziazione coppia in vantaggio (colore diverso)
 
 **Priorità**: MUST HAVE
 **Story Points**: 5
@@ -297,18 +297,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-3.4: Gestione Timeout Turno  MUST HAVE
+### US-3.4: Gestione Timeout Turno — MUST HAVE
 
 **Come** giocatore,
 **voglio** che se un giocatore non gioca entro 30 secondi venga giocata automaticamente una carta casuale valida,
 **così da** non bloccare la partita per colpa di un giocatore inattivo.
 
 **Criteri di Accettazione**:
-- [+] Timer visibile durante turno (progress bar circolare, countdown)
-- [+] Avviso sonoro (opzionale) a 10 secondi rimanenti
-- [+] Se timeout scade: server gioca automaticamente carta casuale valida
-- [+] Messaggio "[Nome] ha esaurito il tempo, carta giocata automaticamente"
-- [+] Turno passa al giocatore successivo normalmente
+- Timer visibile durante turno (progress bar circolare, countdown)
+- Avviso sonoro (opzionale) a 10 secondi rimanenti
+- Se timeout scade: server gioca automaticamente carta casuale valida
+- Messaggio "[Nome] ha esaurito il tempo, carta giocata automaticamente"
+- Turno passa al giocatore successivo normalmente
 
 **Priorità**: MUST HAVE
 **Story Points**: 8
@@ -318,19 +318,19 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-3.5: Fine Partita e Risultato  MUST HAVE
+### US-3.5: Fine Partita e Risultato — MUST HAVE
 
 **Come** giocatore,
 **voglio** vedere una schermata di riepilogo a fine partita,
 **così da** sapere chi ha vinto e le statistiche finali.
 
 **Criteri di Accettazione**:
-- [+] Schermata "VITTORIA!" o "SCONFITTA" con animazione
-- [+] Punteggio finale: es. "41 - 38" (primo a 41 punti e una figura)
-- [+] Riepilogo mani vinte per coppia
-- [+] Punti raccolti per coppia durante la partita
-- [+] Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
-- [+] Se rivincita: tutti i 4 devono accettare per ripartire
+- Schermata "VITTORIA!" o "SCONFITTA" con animazione
+- Punteggio finale: es. "41 - 38" (primo a 41 punti e una figura)
+- Riepilogo mani vinte per coppia
+- Punti raccolti per coppia durante la partita
+- Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
+- Se rivincita: tutti i 4 devono accettare per ripartire
 
 **Priorità**: MUST HAVE
 **Story Points**: 8
@@ -340,17 +340,17 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-3.6: Dichiarazione "Maraffa"  SHOULD HAVE
+### US-3.6: Dichiarazione "Maraffa" — SHOULD HAVE
 
 **Come** giocatore esperto,
 **voglio** dichiarare "Maraffa" quando ho 3 carte dello stesso seme,
 **così da** ottenere punti bonus secondo le regole tradizionali.
 
 **Criteri di Accettazione**:
-- [+] Pulsante "Dichiara Maraffa" visibile durante mio turno (solo se ho 3+ carte stesso seme)
-- [+] Click pulsante: mostro le 3 carte agli altri giocatori
-- [+] Bonus punti aggiunto al punteggio della coppia
-- [+] Validazione server-side: verifica effettiva presenza 3 carte
+- Pulsante "Dichiara Maraffa" visibile durante mio turno (solo se ho 3+ carte stesso seme)
+- Click pulsante: mostro le 3 carte agli altri giocatori
+- Bonus punti aggiunto al punteggio della coppia
+- Validazione server-side: verifica effettiva presenza 3 carte
 
 **Priorità**: SHOULD HAVE (regola tradizionale importante)
 **Story Points**: 8
@@ -362,20 +362,20 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 4: Chat e Comunicazione
 
-### US-4.1: Chat In-Game  MUST HAVE
+### US-4.1: Chat In-Game — MUST HAVE
 
 **Come** giocatore,
 **voglio** chattare con gli altri 3 giocatori durante la partita,
 **così da** comunicare, scherzare e ricreare l'atmosfera sociale del gioco dal vivo.
 
 **Criteri di Accettazione**:
-- [+] Box chat visibile nella schermata tavolo da gioco (laterale o collapsabile)
-- [+] Input testo + pulsante Invio
-- [+] Messaggi visibili in tempo reale a tutti i 4 giocatori
-- [+] Formato: "[Nome]: messaggio" con timestamp
-- [+] Throttling: max 1 messaggio/secondo per utente
-- [+] Filtro parole offensive (lista italiana)
-- [+] Chat persistente durante tutta la partita, cancellata a fine partita
+- Box chat visibile nella schermata tavolo da gioco (laterale o collapsabile)
+- Input testo + pulsante Invio
+- Messaggi visibili in tempo reale a tutti i 4 giocatori
+- Formato: "[Nome]: messaggio" con timestamp
+- Throttling: max 1 messaggio/secondo per utente
+- Filtro parole offensive (lista italiana)
+- Chat persistente durante tutta la partita, cancellata a fine partita
 
 **Priorità**: MUST HAVE
 **Story Points**: 8
@@ -385,16 +385,16 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-4.2: Chat Globale Lobby  COULD HAVE
+### US-4.2: Chat Globale Lobby — COULD HAVE
 
 **Come** giocatore nella dashboard,
 **voglio** chattare con altri giocatori online,
 **così da** socializzare mentre aspetto di entrare in partita.
 
 **Criteri di Accettazione**:
-- [+] Box chat globale nella sidebar destra dashboard
-- [+] Messaggi pubblici visibili a tutti gli utenti online
-- [+] Throttling e moderazione come US-4.1
+- Box chat globale nella sidebar destra dashboard
+- Messaggi pubblici visibili a tutti gli utenti online
+- Throttling e moderazione come US-4.1
 
 **Priorità**: COULD HAVE
 **Story Points**: 5
@@ -406,19 +406,19 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 5: Sistema Amicizie
 
-### US-5.1: Aggiungere Amico  SHOULD HAVE
+### US-5.1: Aggiungere Amico — SHOULD HAVE
 
 **Come** giocatore,
 **voglio** cercare un altro utente per username e aggiungerlo come amico,
 **così da** poterlo invitare facilmente a partite future.
 
 **Criteri di Accettazione**:
-- [+] Pagina/sezione "Amici"
-- [+] Barra di ricerca per username
-- [+] Risultati ricerca con avatar + username
-- [+] Pulsante "Aggiungi amico" (invia richiesta)
-- [+] Notifica destinatario: "X ti ha inviato richiesta amicizia"
-- [+] Accettazione/rifiuto richiesta
+- Pagina/sezione "Amici"
+- Barra di ricerca per username
+- Risultati ricerca con avatar + username
+- Pulsante "Aggiungi amico" (invia richiesta)
+- Notifica destinatario: "X ti ha inviato richiesta amicizia"
+- Accettazione/rifiuto richiesta
 
 **Priorità**: SHOULD HAVE
 **Story Points**: 8
@@ -428,16 +428,16 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-5.2: Visualizzare Lista Amici  SHOULD HAVE
+### US-5.2: Visualizzare Lista Amici — SHOULD HAVE
 
 **Come** giocatore,
 **voglio** vedere la lista dei miei amici con stato online/offline,
 **così da** sapere chi è disponibile per giocare.
 
 **Criteri di Accettazione**:
-- [+] Sidebar sinistra dashboard: "Amici Online" (verde) + "Amici Offline" (grigio)
-- [+] Aggiornamento real-time stato online/offline
-- [+] Click su amico: opzioni "Invita a partita" / "Visualizza profilo"
+- Sidebar sinistra dashboard: "Amici Online" (verde) + "Amici Offline" (grigio)
+- Aggiornamento real-time stato online/offline
+- Click su amico: opzioni "Invita a partita" / "Visualizza profilo"
 
 **Priorità**: SHOULD HAVE
 **Story Points**: 5
@@ -449,20 +449,20 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 6: Statistiche e Profilo
 
-### US-6.1: Visualizzare Statistiche Personali  MUST HAVE
+### US-6.1: Visualizzare Statistiche Personali — MUST HAVE
 
 **Come** giocatore registrato,
 **voglio** vedere le mie statistiche (partite giocate, vinte, perse, win rate),
 **così da** monitorare i miei progressi.
 
 **Criteri di Accettazione**:
-- [+] Sezione "Le Mie Statistiche" in dashboard o profilo
-- [+] Metriche visualizzate:
+- Sezione "Le Mie Statistiche" in dashboard o profilo
+- Metriche visualizzate:
   - Partite giocate
   - Partite vinte / perse
   - Win rate (%)
   - Punti totali accumulati
-- [+] Aggiornamento automatico dopo ogni partita
+- Aggiornamento automatico dopo ogni partita
 
 **Priorità**: MUST HAVE
 **Story Points**: 5
@@ -472,16 +472,16 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-### US-6.2: Statistiche Avanzate  COULD HAVE
+### US-6.2: Statistiche Avanzate — COULD HAVE
 
 **Come** giocatore appassionato di stats,
 **voglio** vedere statistiche dettagliate (mani vinte, carte più giocate, ecc.),
 **così da** analizzare il mio stile di gioco.
 
 **Criteri di Accettazione**:
-- [+] Pagina "Statistiche Avanzate"
-- [+] Grafici: trend vittorie nel tempo, distribuzione carte giocate
-- [+] Confronto con media globale utenti
+- Pagina "Statistiche Avanzate"
+- Grafici: trend vittorie nel tempo, distribuzione carte giocate
+- Confronto con media globale utenti
 
 **Priorità**: COULD HAVE
 **Story Points**: 13 (richiede analisi dati significativa)
@@ -493,18 +493,18 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 7: Gestione Disconnessioni
 
-### US-7.1: Riconnessione Automatica  MUST HAVE
+### US-7.1: Riconnessione Automatica — MUST HAVE
 
 **Come** giocatore che perde temporaneamente la connessione,
 **voglio** potermi riconnettere automaticamente e riprendere la partita,
 **così da** non perdere la partita per un problema tecnico temporaneo.
 
 **Criteri di Accettazione**:
-- [+] Se disconnessione < 5 minuti: partita sospesa, stato salvato
-- [+] Messaggio agli altri giocatori: "[Nome] disconnesso, attendi riconnessione..."
-- [+] Tentativo automatico riconnessione lato client ogni 5 secondi
-- [+] Riconnessione: ripristino stato esatto (carte in mano, punteggio, turno corrente)
-- [+] Se > 5 minuti: partita annullata (nessun vincitore, no penalty stats)
+- Se disconnessione < 5 minuti: partita sospesa, stato salvato
+- Messaggio agli altri giocatori: "[Nome] disconnesso, attendi riconnessione..."
+- Tentativo automatico riconnessione lato client ogni 5 secondi
+- Riconnessione: ripristino stato esatto (carte in mano, punteggio, turno corrente)
+- Se > 5 minuti: partita annullata (nessun vincitore, no penalty stats)
 
 **Priorità**: MUST HAVE
 **Story Points**: 13 (complessa, critical path)
@@ -566,12 +566,12 @@ Tutte le user stories sono state validate contro i criteri INVEST:
 
 | Criterio | Verifica |
 |----------|----------|
-| **Independent** | [+] Ogni story è autosufficiente (eccetto dipendenze esplicitate) |
-| **Negotiable** | [+] I criteri di accettazione sono chiari ma flessibili nei dettagli implementativi |
-| **Valuable** | [+] Ogni story porta valore percepibile all'utente o al business |
-| **Estimable** | [+] Tutte le storie hanno Story Points assegnati (Fibonacci: 3, 5, 8, 13) |
-| **Small** | [+] Nessuna story > 13 pts (max 1 sprint di lavoro) |
-| **Testable** | [+] Criteri di accettazione chiari e verificabili |
+| **Independent** | Ogni story è autosufficiente (eccetto dipendenze esplicitate) |
+| **Negotiable** | I criteri di accettazione sono chiari ma flessibili nei dettagli implementativi |
+| **Valuable** | Ogni story porta valore percepibile all'utente o al business |
+| **Estimable** | Tutte le storie hanno Story Points assegnati (Fibonacci: 3, 5, 8, 13) |
+| **Small** | Nessuna story > 13 pts (max 1 sprint di lavoro) |
+| **Testable** | Criteri di accettazione chiari e verificabili |
 
 ---
 

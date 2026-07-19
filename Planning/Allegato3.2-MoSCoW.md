@@ -1,5 +1,7 @@
 # Allegato 3.2 - MoSCoW Prioritization Analysis
-## v.1.0.0 – 2025-10-22 14:00:00
+## v.1.1.0 – 2025-10-22 14:00:00
+
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.2-MoSCoW.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la board MoSCoW a 4 quadranti colorati (Must/Should/Could/Won't) e la barra di distribuzione 60/20/20. Questo documento `.md` resta il registro completo dei requisiti (ID, effort, razionale di esclusione).
 
 Il metodo **MoSCoW** è una tecnica di prioritizzazione dei requisiti sviluppata da Dai Clegg per gestire le aspettative degli stakeholder e garantire che le risorse del progetto siano allocate sulle funzionalità più critiche. L'acronimo sta per:
 
@@ -249,23 +251,23 @@ La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scopi
 | Infrastructure | 27 | 11.8% |
 | **Totale Must Have** | **229** | **100%** |
 
-### Should Have (71 giorni)
+### Should Have (57 giorni)
 | Sottosistema | Giorni Should | % del Totale Should |
 |--------------|---------------|---------------------|
-| Backend Server | 16 | 22.5% |
-| Frontend Web | 17 | 23.9% |
-| Social & Community | 14 | 19.7% |
-| Infrastructure | 10 | 14.1% |
-| **Totale Should Have** | **71** | **100%** |
+| Backend Server | 16 | 28.1% |
+| Frontend Web | 17 | 29.8% |
+| Social & Community | 14 | 24.6% |
+| Infrastructure | 10 | 17.5% |
+| **Totale Should Have** | **57** | **100%** |
 
-### Could Have (20 giorni)
+### Could Have (16 giorni)
 | Sottosistema | Giorni Could | % del Totale Could |
 |--------------|--------------|-------------------|
-| Backend Server | 4 | 20.0% |
-| Real-Time Communication | 3 | 15.0% |
-| Frontend Web | 3 | 15.0% |
-| Social & Community | 6 | 30.0% |
-| **Totale Could Have** | **20** | **100%** |
+| Backend Server | 4 | 25.0% |
+| Real-Time Communication | 3 | 18.8% |
+| Frontend Web | 3 | 18.8% |
+| Social & Community | 6 | 37.5% |
+| **Totale Could Have** | **16** | **100%** |
 
 ### Won't Have (Esclusi da MVP)
 - App mobile nativa iOS/Android
@@ -281,15 +283,15 @@ La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scopi
 
 | Categoria | Giorni | % dello Sforzo | Target DSDM |
 |-----------|--------|----------------|-------------|
-| Must Have | 229 | 71.6% | ~60% |
-| Should Have | 71 | 22.2% | ~20% |
-| Could Have | 20 | 6.2% | ~20% |
-| **Totale** | **320** | **100%** | |
+| Must Have | 229 | 75.8% | ~60% |
+| Should Have | 57 | 18.9% | ~20% |
+| Could Have | 16 | 5.3% | ~20% |
+| **Totale** | **302** | **100%** | |
 
 **Analisi della Distribuzione**:
-- **Must Have al 71.6%**: leggermente sopra il target del 60%, ma giustificato dalla natura critica del Game Engine e Real-Time Communication (core product differentiator).
-- **Should Have al 22.2%**: allineato perfettamente al target del 20%. Include features importanti come sistema amicizie e accessibilità.
-- **Could Have al 6.2%**: sotto il target del 20%. Scelta deliberata per ridurre rischi di scope creep e garantire consegna MVP in 7 mesi.
+- **Must Have al 75.8%**: sopra il target del 60%, giustificato dalla natura critica del Game Engine e Real-Time Communication (core product differentiator).
+- **Should Have al 18.9%**: in linea con il target del 20%. Include features importanti come sistema amicizie e accessibilità.
+- **Could Have al 5.3%**: sotto il target del 20%. Scelta deliberata per ridurre rischi di scope creep e garantire consegna MVP in 7 mesi.
 
 ---
 
@@ -304,10 +306,14 @@ La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scopi
 - **Validazione**: user testing ha confermato che la web app mobile è usabile (87.5% success rate, vedi Allegato 2.7)
 
 **Trade-off accettati**:
-- [-] Nessuna integrazione nativa (notifiche push, vibrazione, etc.)
-- [-] Performance leggermente inferiore rispetto a nativa
-- [+] Time-to-market più veloce (7 mesi vs 10-11 mesi)
-- [+] Budget rimane nei limiti
+
+_Svantaggi:_
+- Nessuna integrazione nativa (notifiche push, vibrazione, etc.)
+- Performance leggermente inferiore rispetto a nativa
+
+_Vantaggi:_
+- Time-to-market più veloce (7 mesi vs 10-11 mesi)
+- Budget rimane nei limiti
 
 ### 2. Sistema Amicizie come "Should Have"
 **Decisione**: Should Have (non Must Have)
@@ -331,14 +337,14 @@ La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scopi
 
 Il progetto MaraffaOnline sarà considerato **MVP completo e lanciabile** se e solo se:
 
-1. [+] **Tutti i requisiti Must Have sono implementati e testati**
-2. [+] **Almeno l'80% dei requisiti Should Have sono completati**
-3. [+] **User Acceptance Testing supera il 90% di success rate** (target: 95%)
-4. [+] **Performance targets raggiunti**:
+1. **Tutti i requisiti Must Have sono implementati e testati**
+2. **Almeno l'80% dei requisiti Should Have sono completati**
+3. **User Acceptance Testing supera il 90% di success rate** (target: 95%)
+4. **Performance targets raggiunti**:
    - API response time < 200ms (95th percentile)
    - WebSocket latency < 500ms
    - Frontend FCP < 2 secondi
-5. [+] **Approvazione formale committente** (Giovanni Marchetti, Maraffa Forever)
+5. **Approvazione formale committente** (Giovanni Marchetti, Maraffa Forever)
 
 **Se vincoli di budget/tempo emergono**: i requisiti Could Have saranno i primi ad essere tagliati, seguiti dai Should Have in ordine di impatto minore.
 
@@ -373,3 +379,6 @@ Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2
 **Revisionato da**: Elena Rossi (Tech Lead)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 22/10/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Aggiunto companion `Allegato3.2-MoSCoW.html` (board a 4 quadranti + barra di distribuzione). Corretti i totali Should (71→57 gg) e Could (20→16 gg) e il totale effort (320→302 gg) per allinearli alla somma dei subtotali per sottosistema; percentuali di distribuzione e di categoria ricalcolate (Must 75,8% / Should 18,9% / Could 5,3%).

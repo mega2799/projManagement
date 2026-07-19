@@ -22,7 +22,7 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 | **TOTALE** | | **€25.000** | **€22.750** | **€2.250** | **€2.250** |
 
 **Note**:
-- **Inflow**: pagamenti ricevuti da Maraffa Forever in 3 tranche (50% upfront, 25% a metà progetto, 25% alla consegna dell'MVP beta)
+- **Inflow**: pagamenti ricevuti da Maraffa Forever in 3 tranche (50% upfront, 25% a valle del Backend Core, 25% al completamento del core di gioco)
 - **Outflow**: spese operative mensili (salari, hosting, tools, licenze), più contenute nella coda del progetto (Mesi 5-7) quando il team si riduce alle attività di testing, UAT e lancio
 - **Saldo Finale**: €2.250 di surplus destinato a contingency e celebrazione lancio
 
@@ -48,8 +48,8 @@ Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del prog
 | Tranche | Data | Importo (€) | % del Totale | Condizione |
 |---------|------|-------------|--------------|------------|
 | **1° Pagamento** | 15 Ott 2025 | €12.500 | 50% | Firma contratto + kickoff meeting |
-| **2° Pagamento** | 15 Dic 2025 | €6.250 | 25% | Completamento fase Scoping + Planning |
-| **3° Pagamento** | 15 Feb 2026 | €6.250 | 25% | Consegna MVP funzionante (beta) |
+| **2° Pagamento** | 15 Dic 2025 | €6.250 | 25% | Backend Core completo (M2) |
+| **3° Pagamento** | 15 Feb 2026 | €6.250 | 25% | Completamento core di gioco (Game Engine, Backend, Real-Time) |
 | **TOTALE** | | **€25.000** | **100%** | |
 
 **Razionale**: Struttura pagamenti standard per progetti a budget fisso. Il 50% upfront garantisce liquidità iniziale per setup team e infrastruttura. I pagamenti successivi sono legati a milestone misurabili. Poiché l'ultimo inflow è a metà progetto (15 Feb), la seconda metà (Mar-Mag) è finanziata interamente dal saldo cumulativo accumulato: per questo l'outflow viene ridotto nei Mesi 5-7, mantenendo il saldo positivo fino al lancio.
@@ -198,11 +198,11 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 - Elena Rossi (Tech Lead, PlayHeritage Labs)
 
 **Decisioni Approvate**:
-1. [+] Budget €25.000 confermato (no incrementi)
-2. [+] Struttura pagamenti 50/25/25 accettata
-3. [+] Contingency buffer 18.7% ritenuto adeguato per progetto 7 mesi
-4. [+] Costi salari team (64% budget) giustificati per competenze richieste
-5. [!] Richiesta: report mensile cash flow inviato a Giovanni Marchetti entro il 5 di ogni mese
+1. Budget €25.000 confermato (no incrementi)
+2. Struttura pagamenti 50/25/25 accettata
+3. Contingency buffer 18.7% ritenuto adeguato per progetto 7 mesi
+4. Costi salari team (64% budget) giustificati per competenze richieste
+5. Richiesta: report mensile cash flow inviato a Giovanni Marchetti entro il 5 di ogni mese
 
 **Trasparenza**: Tutti i movimenti finanziari sono tracciati su Google Sheets condiviso con committente (accesso read-only).
 

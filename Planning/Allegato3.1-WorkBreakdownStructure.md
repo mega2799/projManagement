@@ -15,6 +15,8 @@ La WBS è organizzata su 4 livelli:
 3. **Attività**: work package specifici
 4. **Task**: unità atomiche di lavoro
 
+> **Nota sui sottosistemi.** L'architettura del prodotto comprende **7 sottosistemi** (Game Engine, Backend Server, Real-Time Communication, Frontend Web, Mobile Application, Social & Community, Infrastructure & DevOps — vedi Allegato 2.8 - RBS e Allegato 2.11). La **Mobile Application è classificata Won't Have per l'MVP** (Allegato 3.2 - MoSCoW) e quindi non genera task in questa release: la presente WBS decompone perciò il lavoro dei **6 sottosistemi di sviluppo attivi** (sezioni 1-6) e delle **attività trasversali di Project Management e QA** (sezione 7).
+
 ---
 
 ## 1. Game Engine (Metodologia: Waterfall)
@@ -254,12 +256,12 @@ La WBS è organizzata su 4 livelli:
 - **Task 6.1.2.1**: Dockerfile per backend (Node.js)
 - **Task 6.1.2.2**: Dockerfile per frontend (React build)
 - **Task 6.1.2.3**: Docker Compose per stack completo (DB + Backend + Frontend)
-- **Task 6.1.2.4**: Deploy automatizzato con GitHub Actions
+- **Task 6.1.2.4**: Deploy automatizzato con GitLab CI/CD
 
 ### 6.2 CI/CD Pipeline
 
 #### 6.2.1 Continuous Integration
-- **Task 6.2.1.1**: GitHub Actions workflow per test automatici
+- **Task 6.2.1.1**: GitLab CI workflow per test automatici
 - **Task 6.2.1.2**: Linting e code quality checks (ESLint, Prettier)
 - **Task 6.2.1.3**: Build check per ogni PR
 
@@ -296,7 +298,7 @@ La WBS è organizzata su 4 livelli:
 
 ---
 
-## 7. Project Management
+## 7. Project Management (attività trasversali)
 
 ### 7.1 Documentazione
 

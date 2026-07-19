@@ -266,14 +266,14 @@ Alla fine di ogni sprint, il team registrerà:
 
 Un item del Product Backlog è considerato **Done** solo quando:
 
-1. [+] Codice scritto e committed su repository
-2. [+] Unit tests scritti e passati (coverage > 80%)
-3. [+] Code review approvata da almeno 1 peer
-4. [+] Integration tests passati
-5. [+] Documentazione API/componente aggiornata
-6. [+] Deploy su ambiente staging riuscito
-7. [+] Acceptance criteria (da User Story) soddisfatti
-8. [+] Product Owner ha approvato (demo sprint review)
+1. Codice scritto e committed su repository
+2. Unit tests scritti e passati (coverage > 80%)
+3. Code review approvata da almeno 1 peer
+4. Integration tests passati
+5. Documentazione API/componente aggiornata
+6. Deploy su ambiente staging riuscito
+7. Acceptance criteria (da User Story) soddisfatti
+8. Product Owner ha approvato (demo sprint review)
 
 ---
 

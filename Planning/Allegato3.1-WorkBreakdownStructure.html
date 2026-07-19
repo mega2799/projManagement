@@ -116,6 +116,7 @@
   .chip { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
 
   @media print {
+    .note { display: none; }
     @page { size: A4 landscape; margin: 8mm; }
     body { margin: 0; max-width: none; }
     .dictionary { page-break-before: always; }
@@ -163,7 +164,7 @@
 
 <div class="note">Diagramma sui primi 3 livelli (Sottosistema &rarr; Funzione, con conteggio di Attività e Task). Il 4&deg; livello &mdash; i 160 Task atomici &mdash; è elencato per esteso nella sezione "Dettaglio Completo" più sotto e nella <strong>WBS Dictionary</strong> (<code>Allegato3.1-WorkBreakdownStructure.md</code>), secondo la prassi di separare il diagramma grafico (pochi livelli, leggibile) dal dettaglio completo.</p>
 
-<div class="root-row"><div class="root-box">MaraffaOnline<span class="badge">7 sottosistemi &middot; 18 funzioni &middot; 43 attività &middot; 160 task</span></div></div>
+<div class="root-row"><div class="root-box">MaraffaOnline<span class="badge">6 sottosistemi di sviluppo + PM trasversale &middot; 18 funzioni &middot; 43 attività &middot; 160 task</span></div></div>
 <div class="stem-root"></div>
 <div class="connectors">
   <div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div><div class="tick"></div>
@@ -224,7 +225,7 @@
   </div>
 
   <div class="pm">
-    <div class="col-head"><div class="name">Project Management</div><div class="method">&nbsp;</div><div class="totals">4 attività &middot; 15 task</div></div>
+    <div class="col-head"><div class="name">Project Management</div><div class="method">trasversale</div><div class="totals">4 attività &middot; 15 task</div></div>
     <div class="col-body">
       <div class="fun-box"><span class="fname">7.1 Documentazione</span><span class="fcount">2 attività &middot; 8 task</span></div>
       <div class="fun-box"><span class="fname">7.2 Testing e QA</span><span class="fcount">2 attività &middot; 7 task</span></div>
@@ -240,8 +241,10 @@
   <span><i class="chip" style="background:var(--rosa)"></i> Agile Iterativo (Frontend)</span>
   <span><i class="chip" style="background:var(--giallo)"></i> Incrementale (Social)</span>
   <span><i class="chip" style="background:var(--grigio)"></i> Incrementale (Infra)</span>
-  <span><i class="chip" style="background:var(--verde-bottiglia)"></i> Project Management</span>
+  <span><i class="chip" style="background:var(--verde-bottiglia)"></i> Project Management (trasversale)</span>
 </div>
+
+<p style="font-size:0.72rem;color:#555;margin:10px 0 0;">Nota: l'architettura del prodotto comprende 7 sottosistemi; la <strong>Mobile Application</strong> è <em>Won't Have</em> per l'MVP (nessun task in questa release), perciò la WBS decompone i <strong>6 sottosistemi di sviluppo</strong> (1-6) più le attività trasversali di <strong>Project Management &amp; QA</strong> (7).</p>
 
 <div class="dictionary">
 <h2>Dettaglio Completo (Sottosistema &rarr; Funzione &rarr; Attività &rarr; Task)</h2>
@@ -509,12 +512,12 @@
       <li><strong>6.1.2.1</strong> Dockerfile per backend (Node.js)</li>
       <li><strong>6.1.2.2</strong> Dockerfile per frontend (React build)</li>
       <li><strong>6.1.2.3</strong> Docker Compose per stack completo (DB + Backend + Frontend)</li>
-      <li><strong>6.1.2.4</strong> Deploy automatizzato con GitHub Actions</li>
+      <li><strong>6.1.2.4</strong> Deploy automatizzato con GitLab CI/CD</li>
     </ul></div>
     <div class="dict-fun">6.2 CI/CD Pipeline</div>
     <div class="dict-att-block"><div class="dict-att">6.2.1 Continuous Integration</div>
     <ul class="dict-tasks">
-      <li><strong>6.2.1.1</strong> GitHub Actions workflow per test automatici</li>
+      <li><strong>6.2.1.1</strong> GitLab CI workflow per test automatici</li>
       <li><strong>6.2.1.2</strong> Linting e code quality checks (ESLint, Prettier)</li>
       <li><strong>6.2.1.3</strong> Build check per ogni PR</li>
     </ul></div>
@@ -555,7 +558,7 @@
   </div>
 </div>
 <div class="dict-sub pm">
-  <div class="dict-sub-head">7. Project Management</div>
+  <div class="dict-sub-head">7. Project Management (trasversale)</div>
   <div class="dict-sub-body">
     <div class="dict-fun">7.1 Documentazione</div>
     <div class="dict-att-block"><div class="dict-att">7.1.1 Documentazione Tecnica</div>
