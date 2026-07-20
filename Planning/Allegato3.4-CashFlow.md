@@ -75,7 +75,7 @@ La tabella seguente riporta la ripartizione dell'outflow per categoria in ciascu
 **Note di dettaglio**:
 - **Salari** (€16.000): 5 persone. Il Mese 0 (mezzo mese, setup) e i Mesi 5-7 (fase finale con team progressivamente ridotto a testing, UAT e lancio) hanno importi più contenuti; i mesi centrali di sviluppo pieno (1-4) sono i più onerosi.
 - **Infrastruttura** (€275): server dedicato Hetzner (~€50/mese) attivo dal Mese 1. Nel Mese 7 la voce è nulla perché il deploy in produzione è a carico di Maraffa Forever (come da accordi contrattuali, vedi Cap. 6 - Closing).
-- **Tools e Licenze** (€1.111): dominio maraffaonline.it (€15 una tantum nel Mese 0) più abbonamenti software mensili (Figma Pro €75, JetBrains €25, Zoom Pro €13, Confluence €50 = €163/mese), con quote ridotte nei mezzi mesi (0 e 7).
+- **Tools e Licenze** (€1.111): dominio maraffaonline.it (€15 una tantum nel Mese 0) più abbonamenti software mensili (Figma Pro €75, JetBrains €25, Zoom Pro €13, Notion €50 = €163/mese), con quote ridotte nei mezzi mesi (0 e 7).
 - **Consulenza** (€300): Francesca Giuliani (esperta Maraffa Forever) per la validazione delle regole, in due sessioni da €150 — Novembre 2025 (Mese 1) e Aprile 2026 (Mese 6).
 - **Marketing/UAT/Celebrazione** (€400): tutte concentrate nel Mese 7 (fase di lancio) — comunicazione social €200, compenso simbolico ai 10 tester della community €100, team celebration €100.
 - **Contingency**: buffer per imprevisti e change request distribuito su tutti i mesi (totale €4.664, pari al 18,7% del budget).
@@ -90,7 +90,7 @@ Molti servizi cloud sono utilizzati in free tier e quindi non generano costi: Po
 |-----------|------------|--------------|------|
 | **Salari Team** | €16.000 | 64.0% | 5 persone su 7 mesi (part-time nel Mese 0 e nella coda Mesi 5-7) |
 | **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner ~€50/mese (attivo dal Mese 1; deploy finale a carico del committente) |
-| **Tools e Licenze** | €1.111 | 4.4% | Figma, JetBrains, Zoom, Confluence, Dominio |
+| **Tools e Licenze** | €1.111 | 4.4% | Figma, JetBrains, Zoom, Notion, Dominio |
 | **Consulenza Esperta** | €300 | 1.2% | Francesca Giuliani (validazione regole, 2 sessioni) |
 | **Marketing Lancio** | €200 | 0.8% | Comunicazione social per community |
 | **UAT e Testing** | €100 | 0.4% | Compenso tester Maraffa Forever |
@@ -147,7 +147,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 **Probabilità**: Bassa
 **Impatto**: Alto
 **Mitigazione**:
-- Documentazione continua su Confluence
+- Documentazione continua su Notion
 - Pair programming e code review (knowledge sharing)
 - Contratti a progetto con clausole di uscita anticipata (penale)
 

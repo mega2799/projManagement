@@ -16,7 +16,7 @@ Per ottenere informazioni sull'avanzamento complessivo del progetto rispetto all
 
 Il sistema stoplight, seppur contenga informazioni molto sintetiche, permette di capire immediatamente lo stato del progetto in quanto lo identifica con tre colori: verde, giallo e rosso. Il verde indica che il progetto sta procedendo come previsto senza scostamenti significativi. Il giallo indica che anche se ci sono degli scostamenti, la situazione è comunque sotto controllo e non richiede interventi urgenti. Il rosso segnala che ci sono problemi critici e quindi è necessario intervenire immediatamente con azioni correttive. Ogni area del progetto (Scope, Schedule, Budget, Quality, Risks) riceve un colore e una nota esplicativa che giustifica la valutazione.
 
-Durante questi meeting settimanali viene anche aggiornato l'Issue Log, un documento mantenuto su Confluence che contiene una lista di tutti i problemi che sono stati riscontrati durante il progetto, il loro stato di risoluzione, chi è responsabile della risoluzione, e la data prevista di chiusura. Questo log è fondamentale per garantire che nessun problema venga dimenticato o trascurato.
+Durante questi meeting settimanali viene anche aggiornato l'Issue Log, un documento mantenuto su Notion che contiene una lista di tutti i problemi che sono stati riscontrati durante il progetto, il loro stato di risoluzione, chi è responsabile della risoluzione, e la data prevista di chiusura. Questo log è fondamentale per garantire che nessun problema venga dimenticato o trascurato.
 
 ## 5.3 Sprint Review e Retrospective
 
@@ -36,7 +36,7 @@ Se il problema persiste e non è risolvibile con le strategie project manager-ba
 
 ## 5.5 Reporting: Stoplight Reports
 
-Affinché le informazioni sul progetto siano accurate, tempestive e complete, PlayHeritage Labs ha deciso di mantenere diversi tipi di report. Il principale strumento di reporting utilizzato durante i Project Status Meeting settimanali è lo Stoplight Report. Questo documento, pubblicato su Confluence ogni venerdì sera dopo il meeting, fornisce una panoramica immediata dello stato di salute del progetto.
+Affinché le informazioni sul progetto siano accurate, tempestive e complete, PlayHeritage Labs ha deciso di mantenere diversi tipi di report. Il principale strumento di reporting utilizzato durante i Project Status Meeting settimanali è lo Stoplight Report. Questo documento, pubblicato su Notion ogni venerdì sera dopo il meeting, fornisce una panoramica immediata dello stato di salute del progetto.
 
 Ogni Stoplight Report contiene una tabella con cinque aree critiche: Scope, Schedule, Budget, Quality e Risks. Per ciascuna area viene assegnato un colore (verde, giallo, rosso) e una nota che spiega la motivazione del colore assegnato. Ad esempio, durante il mese di Novembre 2025, lo Stoplight Report mostrava:
 
@@ -169,7 +169,7 @@ Queste metriche di qualità sono fondamentali per garantire che il progetto non 
 
 I rischi identificati durante la fase di Scoping attraverso la Risk Rating Matrix non sono statici ma evolvono nel tempo. Un rischio che inizialmente era valutato come "bassa probabilità - alto impatto" può diventare "alta probabilità - alto impatto" se le condizioni del progetto cambiano. Per questo motivo, durante ogni Project Status Meeting viene dedicato un segmento alla review dei rischi.
 
-Marco Venturi mantiene un Risk Log su Confluence che traccia lo stato di ciascun rischio identificato nella Risk Rating Matrix. Per ogni rischio viene monitorato:
+Marco Venturi mantiene un Risk Log su Notion che traccia lo stato di ciascun rischio identificato nella Risk Rating Matrix. Per ogni rischio viene monitorato:
 
 - **Status attuale**: Aperto, In Mitigation, Mitigato, Materializzato (il rischio si è verificato)
 - **Probabilità e Impatto aggiornati**: Rivalutati sulla base delle informazioni emerse durante il progetto

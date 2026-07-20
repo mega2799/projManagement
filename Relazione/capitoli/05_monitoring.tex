@@ -1,173 +1,19 @@
 \chapter{Monitoring and Control}
 
-Per evitare problemi con il progetto MaraffaOnline, come ritardi o costi aggiuntivi, è necessario monitorarlo e controllarlo in maniera continua. La fase di monitoraggio e controllo non è una fase distinta che segue il lancio, ma piuttosto un'attività continua che accompagna l'intero ciclo di vita del progetto dalla fase di Launching fino alla Closing.
+Per evitare che problemi come ritardi o costi aggiuntivi compromettessero il progetto, MaraffaOnline è stato monitorato e controllato in modo continuo lungo tutti i sette mesi. Il monitoraggio si è articolato su tre livelli: quotidiano, per i sottosistemi Agile, tramite Daily Standup di 15 minuti; settimanale, tramite Project Status Meeting di un'ora con lo sponsor; e per sprint, tramite Sprint Review e Retrospective al termine di ogni iterazione.
 
-\section{Monitoraggio Continuo}
+PlayHeritage Labs ha promosso un clima di apertura in cui i problemi vengono segnalati con tempestività, così da individuarli prima che si accumulino. A supporto, ogni sviluppatore aggiorna quotidianamente lo stato dei propri task sulla board di project management, e un Issue Log su Notion tiene traccia di tutti i problemi riscontrati durante il progetto.
 
-Come è già stato citato nel capitolo precedente durante la descrizione delle regole operative, nei sottosistemi che hanno adottato metodologie Agile (Backend Server, Real-Time Communication, Frontend Web, Social \& Community) viene effettuato ogni mattina un Daily Standup di 15 minuti dalle 09:00 alle 09:15. Durante questo meeting ogni membro del team risponde a tre domande fondamentali: cosa ho fatto ieri, cosa farò oggi, e ho blocker che mi impediscono di procedere. Questo rituale quotidiano permette di individuare problemi emergenti prima che si accumulino e diventino critici.
+\section{Reporting}
 
-Inoltre, a ogni sviluppatore è stato chiesto di utilizzare il software di gestione del progetto Notion Database per tenere traccia dei task assegnati, delle scadenze e dello stato di avanzamento. Ogni task nel database ha uno status (Todo, In Progress, Done) che viene aggiornato quotidianamente, permettendo a Marco Venturi, il Project Manager, di avere una visione in tempo reale dello stato del progetto senza dover necessariamente convocare meeting aggiuntivi.
+Per comunicare lo stato di avanzamento allo sponsor si è adottato il formato \textbf{Stoplight Report}: a ciascuna area critica (Scope, Schedule, Budget, Quality, Risks) viene assegnato un colore --- verde (in linea), giallo (scostamento sotto controllo), rosso (intervento necessario) --- con una nota che ne motiva la valutazione. I colori gialli segnalano le aree da monitorare prima che diventino rosse.
 
-Per favorire il monitoraggio e, quindi, la buona riuscita del progetto, PlayHeritage Labs ha deciso di attuare una linea guida nei confronti dei suoi collaboratori: gli sviluppatori sono incoraggiati a riportare i problemi il prima possibile, evitando che si accumulino in quello che in gergo viene chiamato ``creep''. Inoltre, sono stati istruiti sull'importanza di essere sinceri sulla situazione attuale, di quanto sia importante farla presente subito per evitare che peggiori ulteriormente e sull'importanza di porre domande quando qualcosa non è chiaro. PlayHeritage Labs promuove così un clima di apertura in cui i problemi vengono segnalati con tempestività, senza timore di penalizzazioni.
+Il controllo di costi e tempi è stato affidato all'\textbf{Earned Value Management}, che confronta il valore pianificato (PV), il valore realizzato (EV) e il costo effettivo (AC), derivandone gli indici di efficienza CPI e SPI. Al termine del progetto il consumo è stato di €22.750 su €25.000, con CPI e SPI prossimi a 1: segno di una buona aderenza tra pianificato ed effettivo. L'analisi Earned Value mensile completa, gli Stoplight Report settimanali e le metriche di velocity e di qualità (test coverage stabilmente sopra l'85\%) sono riportati nel documento di dettaglio Monitoring \& Control allegato alla relazione.
 
-\section{Project Status Meetings}
+\section{Problem Solving e Gestione dei Rischi}
 
-Per ottenere informazioni sull'avanzamento complessivo del progetto rispetto alle milestone e al budget, sono stati effettuati dei Project Status Meetings di un'ora, ogni venerdì dalle 16:00 alle 17:00. A questi meeting partecipano obbligatoriamente Marco Venturi come presenter, Giovanni Marchetti come sponsor, ed Elena Rossi per la parte tecnica. Durante questi incontri viene presentato uno Stoplight Report che fornisce una visione sintetica ma efficace dello stato del progetto.
+Di fronte a uno scostamento, la strategia di intervento ha seguito una scala graduata: prima si valuta se lo slack disponibile assorbe il problema, poi si esaminano le dipendenze tra i task, e solo se necessario si rinegozia con lo sponsor una rischedulazione. L'esempio principale è stato il ritardo di 3 giorni accumulato sul Frontend Tavolo da Gioco a Gennaio 2026, riassorbito entro Febbraio grazie a un recovery plan (pair programming) senza impatto sulla milestone finale.
 
-Il sistema stoplight, seppur contenga informazioni molto sintetiche, permette di capire immediatamente lo stato del progetto in quanto lo identifica con tre colori: verde, giallo e rosso. Il verde indica che il progetto sta procedendo come previsto senza scostamenti significativi. Il giallo indica che anche se ci sono degli scostamenti, la situazione è comunque sotto controllo e non richiede interventi urgenti. Il rosso segnala che ci sono problemi critici e quindi è necessario intervenire immediatamente con azioni correttive. Ogni area del progetto (Scope, Schedule, Budget, Quality, Risks) riceve un colore e una nota esplicativa che giustifica la valutazione.
+I rischi identificati nella Risk Rating Matrix (Allegato 2.4) sono stati monitorati a ogni Project Status Meeting. Il rischio più critico --- l'esperienza limitata del team con le tecnologie WebSocket --- è stato affrontato con uno spike tecnico e un proof of concept in Sprint 2 (latenza misurata a 180ms): la sua probabilità si è ridotta portando il rating da 16 a 8, fino a chiuderlo come mitigato dopo il load test dello Sprint 6.
 
-Durante questi meeting settimanali viene anche aggiornato l'Issue Log, un documento mantenuto su Confluence che contiene una lista di tutti i problemi che sono stati riscontrati durante il progetto, il loro stato di risoluzione, chi è responsabile della risoluzione, e la data prevista di chiusura. Questo log è fondamentale per garantire che nessun problema venga dimenticato o trascurato.
-
-\section{Sprint Review e Retrospective}
-
-Per i sottosistemi Agile, oltre al monitoraggio quotidiano tramite Daily Standup e quello settimanale tramite Project Status Meeting, è previsto un ulteriore livello di controllo rappresentato dalle Sprint Review e Sprint Retrospective che si tengono l'ultimo venerdì di ogni sprint dalle 14:00 alle 16:00.
-
-Durante la Sprint Review, che dura un'ora dalle 14:00 alle 15:00, il team dimostra a Giovanni Marchetti le feature completate durante lo sprint. Questa è l'occasione in cui lo stakeholder può verificare che il lavoro svolto corrisponda effettivamente alle sue aspettative e fornire feedback immediato. Se emergono discrepanze tra quanto sviluppato e quanto atteso, queste vengono discusse e il Product Backlog viene aggiornato di conseguenza. Giovanni ha il potere di accettare o rifiutare i deliverable presentati, e solo le feature accettate vengono considerate ``Done'' ai fini del calcolo dell'Earned Value.
-
-Immediatamente dopo, dalle 15:00 alle 16:00, si tiene la Sprint Retrospective, un safe space riservato esclusivamente al team interno senza la presenza di Giovanni. Durante questa sessione il team riflette su cosa ha funzionato bene nello sprint appena concluso, cosa può essere migliorato, e quali azioni concrete intraprendere per il prossimo sprint. Utilizzando il formato ``Start/Stop/Continue'', il team identifica due action items prioritari per il miglioramento continuo del processo. Questa pratica ha permesso al team di MaraffaOnline di ottimizzare progressivamente il proprio modo di lavorare, risolvendo inefficienze e riducendo gli attriti.
-
-\section{Problem Solving Strategy}
-
-Per quanto riguarda la strategia di risoluzione dei problemi, PlayHeritage Labs ha adottato un approccio graduale che parte dalla valutazione della necessità di un intervento. Quando emerge un problema durante un Daily Standup o un Project Status Meeting, il primo step è determinare se gli slack presenti nel Project Network Diagram permettono di assorbirlo senza impattare la data di lancio finale. Nel progetto MaraffaOnline, il critical path ha una durata di 170 giorni lavorativi e qualsiasi ritardo su attività che si trovano su questo percorso critico (identificate con slack pari a zero) impatta direttamente la milestone finale.
-
-Se il problema può essere assorbito grazie allo slack disponibile su attività non critiche, si procede semplicemente monitorando la situazione senza interventi invasivi. Se invece il problema impatta il critical path, si procede a livello project manager-based esaminando le dipendenze tra i task per capire se è possibile riorganizzare il lavoro, ad esempio parallelizzando attività che erano state pianificate in sequenza, o utilizzando la tecnica del ``crashing'' che prevede l'aggiunta di risorse per accelerare task critici.
-
-Se il problema persiste e non è risolvibile con le strategie project manager-based, si procede con l'applicazione delle strategie client-based. In questo caso Marco convoca Giovanni per un meeting straordinario e presenta un Project Impact Statement che analizza l'impatto del problema su scope, time, budget, quality e resources. Vengono presentate diverse opzioni, come la negoziazione di un approccio basato su rilasci multipli dove alcune feature vengono spostate dalla versione 1.0 alla versione 1.1 post-lancio, oppure l'estensione della timeline con rinegoziazione del contratto. Come indicato nelle regole operative, l'assenza o scarsità di risorse non è un problema che tange questo progetto, in quanto MaraffaOnline ha la precedenza sull'allocazione delle risorse rispetto ad altri progetti di PlayHeritage Labs.
-
-\section{Reporting: Stoplight Reports}
-
-Affinché le informazioni sul progetto siano accurate, tempestive e complete, PlayHeritage Labs ha deciso di mantenere diversi tipi di report. Il principale strumento di reporting utilizzato durante i Project Status Meeting settimanali è lo Stoplight Report. Questo documento, pubblicato su Confluence ogni venerdì sera dopo il meeting, fornisce una panoramica immediata dello stato di salute del progetto.
-
-Ogni Stoplight Report contiene una tabella con cinque aree critiche: Scope, Schedule, Budget, Quality e Risks. Per ciascuna area viene assegnato un colore (verde, giallo, rosso) e una nota che spiega la motivazione del colore assegnato. Ad esempio, durante il mese di Novembre 2025, lo Stoplight Report mostrava:
-
-\begin{itemize}
-    \item \textbf{Scope: Verde} - Tutte le feature Must Have sono in sviluppo secondo il piano. Nessuna change request ricevuta da Giovanni.
-    \item \textbf{Schedule: Giallo} - Il Frontend Tavolo da Gioco, attività sul critical path, ha accumulato 3 giorni di ritardo a causa della complessità inaspettata nel drag \& drop delle carte. Recovery plan attivo: Luca Moretti è affiancato da Sara Bianchi per pair programming. Previsto recupero entro fine Sprint 9.
-    \item \textbf{Budget: Verde} - Spesi €3.500 su €3.700 previsti per il Mese 1 (Novembre). Sotto budget del 5\%. Cash flow positivo con saldo cumulativo di €5.800.
-    \item \textbf{Quality: Verde} - Test coverage all'87\%, superiore al target del 85\%. Zero bug critici aperti. Tutti i test di integrazione superati.
-    \item \textbf{Risks: Giallo} - Rischio latenza WebSocket ancora in monitoring. Load test previsto per Sprint 6 mostrerà se la mitigazione (ottimizzazione Socket.IO) è sufficiente.
-\end{itemize}
-
-Questa sintesi permette a Giovanni di comprendere immediatamente se il progetto richiede la sua attenzione su aspetti specifici o se può procedere con fiducia. I colori gialli segnalano le aree da monitorare prima che diventino rosse e richiedano interventi drastici.
-
-\section{Earned Value Management}
-
-Oltre agli Stoplight Reports, un altro strumento fondamentale per il monitoraggio del progetto è l'Earned Value Management (EVM). Questa tecnica permette di integrare misure di scope, schedule e costi per valutare le performance del progetto e prevedere gli outcome futuri. L'EVM utilizza tre metriche principali: il Planned Value (PV), che rappresenta il valore del lavoro che dovrebbe essere stato completato secondo il piano; l'Earned Value (EV), che rappresenta il valore del lavoro effettivamente completato; e l'Actual Cost (AC), che rappresenta i costi reali sostenuti per il lavoro completato.
-
-Per il progetto MaraffaOnline, Marco Venturi ha creato un foglio di calcolo Excel condiviso con Giovanni (in modalità read-only per lo sponsor) dove vengono tracciati mensilmente i valori di PV, EV e AC. Questi dati vengono poi visualizzati in un grafico che mostra l'andamento delle tre curve nel tempo, e sono sintetizzati nella tabella EVM riportata più avanti. Il grafico permette di identificare rapidamente se il progetto è on schedule (EV allineato con PV), under budget (AC inferiore a EV), o se ci sono problemi di performance (EV inferiore a PV indica che si sta producendo meno valore di quanto pianificato).
-
-Considerando il periodo Ottobre 2025 - Gennaio 2026, corrispondente ai primi quattro mesi del progetto, si osserva una buona aderenza tra le tre curve. A fine Gennaio 2026, il progetto mostrava i seguenti valori:
-
-\begin{itemize}
-    \item \textbf{Planned Value (PV)}: €14.100 - Questo è il budget che era pianificato per i primi 4 mesi secondo il Cash Flow Management (€3.000 per il Mese 0 + €3.700 $\times$ 3 mesi per Novembre, Dicembre e Gennaio).
-    \item \textbf{Earned Value (EV)}: €13.200 - Valore del lavoro effettivamente completato, leggermente inferiore al pianificato.
-    \item \textbf{Actual Cost (AC)}: €13.500 - Costi reali sostenuti, leggermente superiori al valore guadagnato.
-\end{itemize}
-
-Da questi valori possiamo calcolare due indici fondamentali:
-
-\textbf{Cost Variance (CV) = EV - AC = €13.200 - €13.500 = -€300}
-
-La Cost Variance negativa indica che il progetto ha speso €300 in più rispetto al valore prodotto. Questo scostamento, pari al 2,3\% del valore guadagnato, è considerato accettabile e rientra ampiamente nel Contingency Buffer del 18,7\% previsto nel Cash Flow Management. La causa principale di questo lieve overrun è stata la necessità di dedicare ore extra al sistema Real-Time Communication per ottimizzare la latenza WebSocket, come identificato nel rischio R1 della Risk Rating Matrix.
-
-\textbf{Schedule Variance (SV) = EV - PV = €13.200 - €14.100 = -€900}
-
-La Schedule Variance negativa indica che il progetto è leggermente in ritardo rispetto al piano, con un valore di €900 di lavoro non ancora completato rispetto a quanto pianificato. Questo corrisponde al ritardo di 3 giorni accumulato dal Frontend Tavolo da Gioco menzionato nello Stoplight Report. Tuttavia, grazie al recovery plan attivato (pair programming Luca + Sara), il ritardo è stato recuperato entro la fine di Febbraio 2026.
-
-Si può notare come nel complesso il progetto abbia mantenuto le tre linee relativamente vicine, segno di una buona capacità di pianificazione ed esecuzione. In altri momenti dell'anno, in particolare durante i mesi di Ottobre e Novembre 2025 quando il team lavorava principalmente su sistemi Waterfall e setup infrastrutturale con requisiti ben definiti, si è riusciti per lunghi periodi a mantenere le tre linee molto vicine.
-
-\subsection{Riepilogo EVM mensile (Ott 2025 - Mag 2026)}
-
-Per completezza, la tabella seguente riassume i valori EVM mese per mese fino alla chiusura del progetto:
-
-\begin{center}
-\footnotesize
-\begin{tabular}{clrrrrrcc}
-\toprule
-Mese & Periodo & PV (€) & EV (€) & AC (€) & CV (€) & SV (€) & CPI & SPI \\
-\midrule
-0 & Ott 2025 & 3.000 & 2.950 & 2.900 & +50 & -50 & 1,02 & 0,98 \\
-1 & Nov 2025 & 6.700 & 6.550 & 6.500 & +50 & -150 & 1,01 & 0,98 \\
-2 & Dic 2025 & 10.400 & 10.100 & 10.200 & -100 & -300 & 0,99 & 0,97 \\
-3 & Gen 2026 & 14.100 & 13.200 & 13.500 & -300 & -900 & 0,98 & 0,94 \\
-4 & Feb 2026 & 17.800 & 17.300 & 17.500 & -200 & -500 & 0,99 & 0,97 \\
-5 & Mar 2026 & 19.800 & 19.600 & 19.700 & -100 & -200 & 0,99 & 0,99 \\
-6 & Apr 2026 (UAT) & 21.600 & 21.500 & 21.550 & -50 & -100 & 1,00 & 1,00 \\
-7 & Mag 2026 (Launch) & 22.750 & 22.750 & 22.750 & 0 & 0 & 1,00 & 1,00 \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-I valori di PV corrispondono all'outflow cumulato pianificato nel Cash Flow Management (Allegato 3.4). La traiettoria mostra come il leggero overrun di Gennaio (CV=-300, SV=-900) sia stato progressivamente assorbito attraverso il recovery plan, fino a chiudere a fine progetto con CPI=1,00 e SPI=1,00. Il consumo finale di €22.750 lascia il surplus di €2.250 documentato nel Capitolo 6 - Closing.
-
-\section{Gantt Chart Tracking}
-
-Un ulteriore strumento di monitoraggio utilizzato è il Gantt Chart dinamico mantenuto su Notion Database. A differenza del Gantt statico creato durante la fase di Planning, questo Gantt viene aggiornato settimanalmente da Marco Venturi per riflettere lo stato attuale del progetto. Ogni attività nel Gantt ha associata una percentuale di completamento che viene aggiornata sulla base delle informazioni raccolte durante i Daily Standup e i Project Status Meeting.
-
-Il Gantt Chart è particolarmente utile per visualizzare il critical path e identificare rapidamente quali attività sono in ritardo e quale impatto questo ritardo ha sulla data di lancio finale. Durante il mese di Gennaio 2026, ad esempio, il Gantt mostrava chiaramente che l'attività ``Frontend Tavolo da Gioco'' (ID: P nel Project Network Diagram) era al 65\% invece dell'80\% previsto, evidenziando visivamente con una barra rossa che questa attività sul critical path stava accumulando un ritardo che avrebbe potuto compromettere il lancio del 15 Maggio 2026.
-
-Questa visualizzazione immediata ha permesso a Marco di attivare tempestivamente il recovery plan, evitando che il problema si aggravasse ulteriormente. Il Gantt viene condiviso con Giovanni durante i Project Status Meeting per fornirgli una visione complessiva dell'avanzamento temporale del progetto.
-
-\section{Velocity Tracking per Sistemi Agile}
-
-Per i sottosistemi che utilizzano metodologie Agile, un'ulteriore metrica di monitoraggio è la velocity, ovvero il numero di story points che il team riesce a completare in ogni sprint. La velocity è fondamentale per fare previsioni realistiche su quando determinate feature saranno completate e per identificare se il team sta migliorando la propria produttività nel tempo o se sta incontrando difficoltà.
-
-\textbf{Nota metodologica sulla velocity tracciata}: i 40 story points/sprint sono la \textbf{capacity team-wide} stimata, che include sia il lavoro sulle user stories del Product Backlog Agile (Allegato 3.3, 310 SP totali = $\sim$21 SP/sprint di pura velocity Scrum) sia il lavoro sui sottosistemi gestiti con altre metodologie (Game Engine in Waterfall, Infrastructure in Incrementale, per $\sim$130 SP equivalenti complessivi). La metrica monitorata in questo capitolo è quindi una velocity \textit{gestionale} a livello di team, non la velocity Scrum pura, per dare a Giovanni Marchetti una visione unica e consolidata dell'avanzamento del lavoro su tutto il progetto.
-
-Nel Product Backlog di MaraffaOnline era stata stimata una velocity target di 40 story points per sprint (ogni 2 settimane). Durante i primi sei sprint del progetto (Novembre 2025 - Gennaio 2026), la velocity effettiva è stata:
-
-\begin{itemize}
-    \item \textbf{Sprint 1} (28 Ott - 08 Nov): 38 story points completati su 40 pianificati (95\%)
-    \item \textbf{Sprint 2} (11 Nov - 22 Nov): 42 story points completati su 40 pianificati (105\%)
-    \item \textbf{Sprint 3} (25 Nov - 06 Dic): 40 story points completati su 40 pianificati (100\%)
-    \item \textbf{Sprint 4} (09 Dic - 20 Dic): 35 story points completati su 40 pianificati (87,5\%) - Impatto festività
-    \item \textbf{Sprint 5} (06 Gen - 17 Gen): 39 story points completati su 40 pianificati (97,5\%)
-    \item \textbf{Sprint 6} (20 Gen - 31 Gen): 36 story points completati su 40 pianificati (90\%) - Ritardo Frontend
-\end{itemize}
-
-La velocity media dei primi sei sprint è stata di 38,3 story points, leggermente inferiore al target di 40 ma comunque molto vicina. Questa metrica ha confermato che la stima iniziale di 40 story points per sprint era realistica e che il team stava lavorando in modo consistente. Il calo di velocity nello Sprint 6 è stato direttamente correlato al ritardo accumulato dal Frontend Tavolo da Gioco e ha innescato il recovery plan.
-
-Durante le Sprint Retrospective, il team ha anche discusso i fattori che hanno influenzato la velocity, come ad esempio l'underestimation di alcune user stories particolarmente complesse o la necessità di dedicare tempo al refactoring per mantenere la qualità del codice. Queste riflessioni hanno permesso al team di migliorare progressivamente le proprie stime e di identificare pattern ricorrenti che causavano rallentamenti.
-
-\section{Quality Metrics}
-
-Oltre al monitoraggio di scope, schedule e budget, un'area critica per il successo del progetto MaraffaOnline è la qualità del software prodotto. PlayHeritage Labs ha stabilito dei quality gates che devono essere rispettati affinché una feature possa essere considerata ``Done'' e contribuire all'Earned Value:
-
-\begin{enumerate}
-    \item \textbf{Test Coverage minimo 85\%}: ogni componente deve avere test unitari che coprono almeno l'85\% del codice. Questo garantisce che le funzionalità siano verificate automaticamente e che eventuali regressioni vengano identificate rapidamente.
-    \item \textbf{Zero bug critici aperti}: prima di considerare una feature completata, tutti i bug di severità critica devono essere risolti. I bug di severità media o bassa possono essere posticipati a sprint successivi se non bloccano funzionalità core.
-    \item \textbf{Code review approvata}: ogni pull request deve essere rivista e approvata da almeno un altro membro del team prima del merge. Nel caso di modifiche particolarmente critiche (ad esempio, logica del Game Engine o sincronizzazione Real-Time), la code review deve essere effettuata da Elena Rossi, la Tech Lead.
-    \item \textbf{Performance requirements soddisfatti}: per il sistema Real-Time Communication, la latenza deve essere inferiore a 500ms. Questo viene verificato attraverso load test automatizzati che simulano 50 partite simultanee.
-\end{enumerate}
-
-Durante i Project Status Meeting, Elena Rossi presenta un report sulle quality metrics che include il Test Coverage attuale (monitorato attraverso tool di code coverage integrati nella CI/CD pipeline: durante Gennaio 2026 il coverage era all'87\%, superiore al target dell'85\%), il Bug Burn Down (grafico che mostra il trend dei bug aperti nel tempo, suddivisi per severità), la Code Complexity (metriche come il Cyclomatic Complexity per identificare porzioni di codice che potrebbero beneficiare di refactoring) e il Technical Debt (stima del tempo necessario per ``pulire'' il codice; PlayHeritage Labs ha stabilito che non deve superare il 10\% del tempo totale di sviluppo).
-
-Queste metriche di qualità sono fondamentali per garantire che il progetto non stia accumulando problemi nascosti che potrebbero emergere durante la fase di UAT (User Acceptance Testing) o, peggio ancora, in produzione dopo il lancio.
-
-\section{Risk Monitoring}
-
-I rischi identificati durante la fase di Scoping attraverso la Risk Rating Matrix non sono statici ma evolvono nel tempo. Un rischio che inizialmente era valutato come ``bassa probabilità - alto impatto'' può diventare ``alta probabilità - alto impatto'' se le condizioni del progetto cambiano. Per questo motivo, durante ogni Project Status Meeting viene dedicato un segmento alla review dei rischi.
-
-Marco Venturi mantiene un Risk Log su Confluence che traccia lo stato di ciascun rischio identificato nella Risk Rating Matrix. Per ogni rischio vengono monitorati lo status attuale (Aperto, In Mitigation, Mitigato, Materializzato), la probabilità e l'impatto aggiornati sulla base delle informazioni emerse durante il progetto, le azioni di mitigazione intraprese e l'owner responsabile di monitorarlo e attivare il piano di contingenza.
-
-Durante i primi quattro mesi del progetto, il rischio R1 ``Esperienza limitata con tecnologie WebSocket'' è stato l'oggetto di attenzione maggiore. Inizialmente valutato come probabilità Alta (4) e impatto Disastroso (4) per un rating di 16 (Rosso Critico), è stato affrontato con uno spike tecnico di due settimane e, durante lo Sprint 2, con un proof of concept che ha mostrato una latenza di 180ms: la dimostrata padronanza della tecnologia ha ridotto la probabilità a Media-Bassa (2), portando il rating a 8 (Arancione). Il load test completo previsto per lo Sprint 6 ha confermato che con le ottimizzazioni implementate la latenza si mantiene sotto i 500ms anche con 50 partite simultanee, permettendo di chiudere il rischio come ``Mitigato''.
-
-Il rischio R4 ``Scope creep da richieste committente'' è rimasto costantemente monitorato ma non si è mai materializzato, grazie alla chiarezza del POS (Project Overview Statement) e al rigore con cui Marco ha applicato il Change Request Process. Giovanni Marchetti ha accettato che alcune feature nice-to-have venissero posticipate alla versione 1.1 quando la loro implementazione avrebbe impattato il critical path.
-
-\section{Risultati del Monitoraggio}
-
-Grazie al monitoraggio costante e ai sistemi di early warning implementati (Stoplight Reports, Earned Value Management, Velocity Tracking, Quality Metrics, Risk Monitoring), il progetto MaraffaOnline è riuscito a mantenere una traiettoria stabile verso gli obiettivi definiti nelle Conditions of Satisfaction.
-
-Tutti i criteri previsti sono stati rispettati entro le tolleranze accettabili. Grazie al monitoraggio costante lungo l'intero ciclo di vita del progetto (Ottobre 2025 - Maggio 2026), il consuntivo sui diversi criteri è stato il seguente:
-
-\textbf{Criteri Temporali}: il progetto ha accumulato un massimo di 3 giorni di ritardo sul critical path durante Gennaio 2026, ma grazie al recovery plan il ritardo è stato recuperato entro fine Febbraio. La data di lancio del 15 Maggio 2026 è stata mantenuta.
-
-\textbf{Criteri Economici}: il budget di €25.000 è stato rispettato. A fine Febbraio 2026 (Mese 4) le spese totali erano di €17.500 su €17.800 pianificate, con uno scostamento favorevole di €300 (1,7\%), ben all'interno del Contingency Buffer del 18,7\%.
-
-\textbf{Criteri Tecnici}: tutte le regole del Maraffone/Beccaccino sono state implementate correttamente e validate da Francesca Giuliani durante la Sessione 1 di validazione (Novembre 2025). Il sistema Real-Time mantiene una latenza media di 185ms, sotto il target di 500ms. Il test coverage è stabilmente sopra l'85\%.
-
-\textbf{Criteri Qualitativi}: l'esperienza utente è stata validata in due momenti. Una prima sessione a Gennaio 2026 con 5 membri della community Maraffa Forever ha dato riscontri positivi sull'usabilità e portato a piccole migliorie implementate nello Sprint 11. La User Acceptance Testing ufficiale, condotta con 10 tester della community nella prima metà di Maggio 2026, ha poi confermato che l'80\% degli utenti è riuscito a completare una partita senza aiuto, soddisfacendo il criterio di usabilità definito nelle Conditions of Satisfaction.
-
-\textbf{Criteri di Gestione del Lavoro}: il team ha lavorato in modo coeso e collaborativo. Le Sprint Retrospective hanno prodotto 30 action items di miglioramento continuo nel corso dei 15 sprint, di cui 28 sono stati completamente implementati, portando a un progressivo aumento dell'efficienza del team.
-
-Grazie a questo monitoraggio multilivello il progetto, collaudato internamente con successo, ha superato anche la fase finale di UAT ed è giunto pronto al lancio pubblico del 15 Maggio 2026. La chiusura formale, l'accettazione da parte del committente e le lezioni apprese sono descritte nel Capitolo 6 - Closing.
+Grazie a questo monitoraggio multilivello tutti i criteri definiti nelle Conditions of Satisfaction sono stati rispettati: la soluzione è stata collaudata internamente, ha superato la fase di UAT ed è giunta pronta al lancio pubblico del 15 Maggio 2026. La chiusura formale del progetto è descritta nel capitolo successivo.

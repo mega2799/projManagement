@@ -260,7 +260,7 @@ Le milestone tecniche seguono il Project Network Diagram e il Gantt (Allegato 3.
 **Breakdown per Categoria**:
 - **Salari Team** (64%): €16.000 - 5 persone × 7 mesi FTE part-time (compenso ridotto coerente con natura spin-off accademico)
 - **Infrastruttura** (1.1%): €275 - Hetzner server €50/mese
-- **Tools e Licenze** (4.4%): €1.111 - Figma, JetBrains, Zoom, Confluence
+- **Tools e Licenze** (4.4%): €1.111 - Figma, JetBrains, Zoom, Notion
 - **Consulenza** (1.2%): €300 - Francesca Giuliani (validazione regole)
 - **Marketing, UAT e Celebrazione** (1.6%): €400 - comunicazione lancio, compenso tester, team celebration
 - **Contingency Buffer** (18.7%): €4.664 - Imprevisti + change requests + buffer estensione progetto 7 mesi
@@ -335,7 +335,7 @@ Le seguenti assunzioni sono alla base del piano. Se invalidate, richiedono re-pi
 | **Project Status Meeting** | Zoom | Settimanale (venerdì 16:00) | Team + Giovanni Marchetti |
 | **Monthly Cash Flow Report** | Email + Google Sheets | Mensile (entro il 5) | Marco → Giovanni |
 | **Urgent Issues** | Telefono + Slack #urgent | On-demand (risposta < 2h) | Chiunque → Marco |
-| **Change Requests** | Email formale + Confluence | On-demand | Giovanni → Marco |
+| **Change Requests** | Email formale + Notion | On-demand | Giovanni → Marco |
 
 **Response Time SLA**:
 - **Urgent** (blocker produzione): < 2 ore
@@ -350,9 +350,8 @@ Le seguenti assunzioni sono alla base del piano. Se invalidate, richiedono re-pi
 | Strumento | Utilizzo | Owner | Accesso |
 |-----------|----------|-------|---------|
 | **GitLab** | Code repository + CI/CD | Andrea Conti | Team interno |
-| **Confluence** | Documentazione PM + tecnica | Marco Venturi | Team + Giovanni (read-only) |
+| **Notion** | Documentazione PM/tecnica + Gantt Chart + task tracking | Marco Venturi | Team + Giovanni (view) |
 | **Figma** | Design mockup + prototype | Luca Moretti | Team + Giovanni (view) |
-| **Notion Database** | Gantt Chart + task tracking | Marco Venturi | Team + Giovanni (view) |
 | **Google Sheets** | Cash flow tracking | Marco Venturi | Team + Giovanni (read-only) |
 | **Slack Workspace** | Chat team (canali: #general, #dev, #daily, #urgent) | Andrea Conti | Team interno |
 | **Zoom** | Meeting video | Marco Venturi | Team + Giovanni |
@@ -361,7 +360,7 @@ Le seguenti assunzioni sono alla base del piano. Se invalidate, richiedono re-pi
 
 #### 8.3 Documentation Standards
 
-**Confluence Structure**:
+**Notion Structure**:
 ```
 MaraffaOnline/
 ├── Project Management/
@@ -379,7 +378,7 @@ MaraffaOnline/
     └── Retrospectives/
 ```
 
-**Regola d'Oro**: "Se non è documentato su Confluence, non esiste." Ogni decisione importante va tracciata.
+**Regola d'Oro**: "Se non è documentato su Notion, non esiste." Ogni decisione importante va tracciata.
 
 ---
 
@@ -488,8 +487,8 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 
 | ID | Action Item | Owner | Deadline | Deliverable |
 |----|-------------|-------|----------|-------------|
-| **AI-001** | Inviare inviti a tutte le piattaforme (GitLab, Confluence, Figma, Notion, Slack, Zoom) | Andrea Conti | 16/10/2025 EOD | Email di conferma a team |
-| **AI-002** | Creare struttura Confluence secondo standard documentato | Marco Venturi | 17/10/2025 | Confluence workspace setup |
+| **AI-001** | Inviare inviti a tutte le piattaforme (GitLab, Figma, Notion, Slack, Zoom) | Andrea Conti | 16/10/2025 EOD | Email di conferma a team |
+| **AI-002** | Creare struttura Notion secondo standard documentato | Marco Venturi | 17/10/2025 | Notion workspace setup |
 | **AI-003** | Setup server Hetzner + Docker + GitLab CI pipeline base | Andrea Conti | 25/10/2025 | Infra funzionante + documentazione |
 | **AI-004** | Proof of concept Socket.IO (2 client, echo message) | Sara Bianchi | 27/10/2025 | Demo funzionante + latency test |
 | **AI-005** | Finalizzare database schema PostgreSQL (utenti, partite, mosse) | Elena Rossi | 27/10/2025 | ER diagram + migration scripts |
@@ -519,7 +518,7 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 2. Budget controllato: €22.750 spese su €25.000, cash flow sempre positivo
 3. Team completo e competente: ognuno ha ruolo chiaro (RASCI Matrix)
 4. Stakeholder allineato: Giovanni e Francesca supportano la visione
-5. Strumenti in place: Confluence, GitLab, Figma, Notion pronti per l'uso
+5. Strumenti in place: GitLab, Figma, Notion pronti per l'uso
 
 **Celebrazione Kickoff**:
 > "Non stiamo solo costruendo software: stiamo portando online un gioco che fa parte della cultura ludica romagnola e che unisce la community Maraffa Forever. Buon lavoro a tutti."
@@ -559,7 +558,7 @@ Ti confermiamo date precise almeno 2 settimane prima. Compenso €300 totale (�
 ## Post-Meeting Follow-Up
 
 **Documenti Pubblicati**:
-- Questo verbale (Allegato 4.1) caricato su Confluence entro 16/10/2025
+- Questo verbale (Allegato 4.1) caricato su Notion entro 16/10/2025
 - Action items importati su Notion Database
 
 **Comunicazioni Inviate**:

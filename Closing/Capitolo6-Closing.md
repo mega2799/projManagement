@@ -12,7 +12,7 @@ Inoltre, non è stato necessario per PlayHeritage Labs eseguire l'installazione 
 
 ## 6.2 Final Project Report
 
-La documentazione generata durante l'intero progetto è completa e accessibile su Confluence. Il Final Project Report, redatto da Marco Venturi con il supporto di Elena Rossi per la parte tecnica, è stato consegnato a Giovanni il 12 Maggio 2026 e si articola in nove sezioni:
+La documentazione generata durante l'intero progetto è completa e accessibile su Notion. Il Final Project Report, redatto da Marco Venturi con il supporto di Elena Rossi per la parte tecnica, è stato consegnato a Giovanni il 12 Maggio 2026 e si articola in nove sezioni:
 
 1. **Executive Summary** — sintesi del progetto, obiettivi raggiunti, budget consumato (€22.750 su €25.000) e timeline rispettata.
 2. **Project Overview** — genesi del progetto e contesto della community Maraffa Forever.
@@ -24,7 +24,7 @@ La documentazione generata durante l'intero progetto è completa e accessibile s
 8. **Lessons Learned** — cosa ha funzionato e cosa migliorare (dettaglio nella sezione seguente).
 9. **Appendix** — allegati, verbali dei meeting, grafici, mockup approvati e codice sorgente con documentazione API.
 
-Il report è stato pubblicato su Confluence con accesso completo per Giovanni e per il team, e resta il documento di riferimento per eventuali sviluppi futuri della piattaforma.
+Il report è stato pubblicato su Notion con accesso completo per Giovanni e per il team, e resta il documento di riferimento per eventuali sviluppi futuri della piattaforma.
 
 ## 6.3 Audit Post-Implementazione
 
