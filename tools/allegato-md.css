@@ -1,0 +1,69 @@
+/*
+ * Stile di stampa per gli allegati generati da Markdown.
+ * Obiettivo: aspetto da documento tipografico / relazione, non da export web.
+ * Modificabile liberamente: viene ricaricato a ogni generazione dei PDF.
+ */
+
+@page { size: A4; margin: 20mm 18mm; }
+
+* { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+html { font-size: 10.8pt; }
+
+body {
+  font-family: "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  color: #1b1b1b;
+  line-height: 1.55;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+/* Testo giustificato con sillabazione, come un documento impaginato */
+p { margin: .55em 0; text-align: justify; hyphens: auto; }
+
+/* Titoli sobri, in nero, senza sottolineature colorate vistose */
+h1, h2, h3, h4, h5 { line-height: 1.25; page-break-after: avoid; color: #141414; font-weight: 700; }
+h1 { font-size: 1.68em; margin: 0 0 .7em; padding-bottom: .25em; border-bottom: 1px solid #b7b7b7; }
+h2 { font-size: 1.3em; margin: 1.5em 0 .5em; padding-bottom: .12em; border-bottom: 1px solid #e3e3e3; }
+h3 { font-size: 1.12em; margin: 1.2em 0 .35em; }
+h4 { font-size: 1em; margin: 1em 0 .3em; font-variant: small-caps; letter-spacing: .02em; color: #333; }
+h5 { font-size: .95em; margin: .9em 0 .25em; color: #333; }
+
+ul, ol { margin: .5em 0; padding-left: 1.4em; }
+li { margin: .18em 0; }
+li > ul, li > ol { margin: .18em 0; }
+
+a { color: #24507a; text-decoration: none; }
+
+code {
+  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: .84em; background: #f3f3f0; padding: .1em .32em; border-radius: 3px;
+}
+pre {
+  background: #f6f6f4; border: 1px solid #e5e5df; padding: 11px 13px; border-radius: 4px;
+  overflow-x: auto; page-break-inside: avoid; font-size: .82em; line-height: 1.42;
+}
+pre code { background: none; padding: 0; }
+
+blockquote {
+  margin: .9em 0; padding: .1em 0 .1em .95em;
+  border-left: 3px solid #cccccc; color: #454545; font-style: italic;
+}
+
+/*
+ * Tabelle in stile "booktabs": due righe di contorno robuste (sopra e sotto),
+ * una riga sotto l'intestazione, righe interne appena accennate.
+ * Niente intestazione a fondo pieno, niente zebratura.
+ */
+table {
+  border-collapse: collapse; width: 100%; margin: 1.1em 0; font-size: .9em;
+  page-break-inside: avoid;
+  border-top: 1.3pt solid #222; border-bottom: 1.3pt solid #222;
+}
+thead th { border-bottom: .8pt solid #555; font-weight: 700; text-align: left; }
+th, td { padding: 5px 9px; text-align: left; vertical-align: top; }
+tbody td { border-top: .3pt solid #ececec; }
+tbody tr:first-child td { border-top: none; }
+
+hr { border: none; border-top: 1px solid #dddddd; margin: 1.6em 0; }
+img { max-width: 100%; height: auto; }

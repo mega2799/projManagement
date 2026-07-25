@@ -1,0 +1,13 @@
+{
+  "name": "maraffa-allegati-pdf",
+  "version": "1.0.0",
+  "description": "Genera i PDF degli allegati MaraffaOnline (Markdown + HTML) via Chrome headless",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node genera-allegati-pdf.mjs"
+  },
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}

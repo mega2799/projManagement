@@ -3,3 +3,9 @@
 # macOS
 .DS_Store
 **/.DS_Store
+
+# Dipendenze script generazione PDF
+tools/node_modules/
+
+# PDF degli allegati: artefatti rigenerabili con tools/genera-allegati-pdf.sh
+Allegati-PDF/
