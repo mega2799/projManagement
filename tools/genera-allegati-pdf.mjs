@@ -19,6 +19,7 @@
  *   node genera-allegati-pdf.mjs --all          # aggiunge i registri .md (-registro.pdf)
  *   node genera-allegati-pdf.mjs --capitoli     # include anche i Capitolo*.md (Monitoring/Closing)
  *   node genera-allegati-pdf.mjs --only 4.2     # solo i file il cui nome contiene "4.2"
+ *   node genera-allegati-pdf.mjs --clean        # versione consegna: rimuove le note interne (callout companion, Storico revisioni)
  *
  * Variabili d'ambiente:
  *   CHROME_BIN   percorso all'eseguibile Chrome/Chromium (default: Chrome su macOS)
@@ -58,8 +59,49 @@ const CHROME = CHROME_CANDIDATES.find((p) => existsSync(p));
 const args = process.argv.slice(2);
 const OPT_ALL = args.includes('--all');
 const OPT_CAPITOLI = args.includes('--capitoli');
+const OPT_CLEAN = args.includes('--clean');
 const onlyIdx = args.indexOf('--only');
 const ONLY = onlyIdx !== -1 ? (args[onlyIdx + 1] || '').toLowerCase() : null;
+
+// Rimuove dalle sorgenti le note interne di lavorazione che non devono finire
+// nella versione consegnata (attivo solo con --clean; i file su disco NON sono
+// toccati, la pulizia avviene in memoria):
+//   A) i callout in blockquote che rimandano al file companion .html/.md
+//   B) la sezione "Storico revisioni"
+function sanitizeForDelivery(text) {
+  const lines = text.split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    // A) callout blockquote -> companion .html/.md
+    if (/^\s*>/.test(line)) {
+      let j = i;
+      const block = [];
+      while (j < lines.length && /^\s*>/.test(lines[j])) { block.push(lines[j]); j++; }
+      const t = block.join(' ');
+      if (/\.html\b|\bcompanion\b|Stampa\s*(→|->|&gt;)|registro (testuale|completo)|apri (il file )?nel browser/i.test(t)) {
+        i = j - 1;
+        if ((lines[i + 1] ?? '').trim() === '') i++; // consuma la riga vuota successiva
+        continue;
+      }
+      out.push(...block);
+      i = j - 1;
+      continue;
+    }
+    // B) blocco "Storico revisioni" (marker + lista che segue)
+    if (/\*\*Storico revisioni\*\*|^\s*#{1,6}\s*Storico revisioni/i.test(line)) {
+      let k = i + 1;
+      while (k < lines.length && (lines[k].trim() === '' || /^\s*[-*]\s/.test(lines[k]) || /^\s{2,}\S/.test(lines[k]))) k++;
+      i = k - 1;
+      // rimuove anche il separatore '---' che precedeva la sezione
+      while (out.length && out[out.length - 1].trim() === '') out.pop();
+      if (out.length && /^\s*---\s*$/.test(out[out.length - 1])) out.pop();
+      continue;
+    }
+    out.push(line);
+  }
+  return out.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
+}
 
 // --- CSS di stampa per gli allegati Markdown --------------------------------
 // Caricato da file esterno cosi' e' modificabile senza toccare lo script.
@@ -108,7 +150,8 @@ async function printToPdf(html, outPdf) {
 
 async function buildTask({ src, out, kind }) {
   const baseHref = pathToFileURL(path.dirname(src) + path.sep).href;
-  const raw = await readFile(src, 'utf8');
+  let raw = await readFile(src, 'utf8');
+  if (OPT_CLEAN) raw = sanitizeForDelivery(raw);
   let html;
   if (kind === 'md') {
     const body = marked.parse(raw, { gfm: true, breaks: false });
