@@ -377,8 +377,6 @@ Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Tech Lead)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 22/10/2025
 
 **Storico revisioni**:
 - **v.1.1.0**: Aggiunto companion `Allegato3.2-MoSCoW.html` (board a 4 quadranti + barra di distribuzione). Corretti i totali Should (71→57 gg) e Could (20→16 gg) e il totale effort (320→302 gg) per allinearli alla somma dei subtotali per sottosistema; percentuali di distribuzione e di categoria ricalcolate (Must 75,8% / Should 18,9% / Could 5,3%).

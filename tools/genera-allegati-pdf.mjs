@@ -68,9 +68,15 @@ const ONLY = onlyIdx !== -1 ? (args[onlyIdx + 1] || '').toLowerCase() : null;
 // toccati, la pulizia avviene in memoria):
 //   A) i callout in blockquote che rimandano al file companion .html/.md
 //   B) la sezione "Storico revisioni"
+//   C) i blocchi commentati <!-- ... --> (note interne, es. "Fonti e Riferimenti"):
+//      marked li riemette nell'HTML e nel browser diventano commenti reali che
+//      possono inghiottire il contenuto adiacente (o far trapelare le note stesse).
 function sanitizeForDelivery(text) {
+  // C) rimuove i blocchi commentati HTML prima di tutto
+  text = text.replace(/<!--[\s\S]*?-->/g, '');
   const lines = text.split('\n');
   const out = [];
+  const isHr = (s) => /^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(s);
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     // A) callout blockquote -> companion .html/.md
@@ -95,8 +101,14 @@ function sanitizeForDelivery(text) {
       i = k - 1;
       // rimuove anche il separatore '---' che precedeva la sezione
       while (out.length && out[out.length - 1].trim() === '') out.pop();
-      if (out.length && /^\s*---\s*$/.test(out[out.length - 1])) out.pop();
+      if (out.length && isHr(out[out.length - 1])) out.pop();
       continue;
+    }
+    // collassa i separatori '---' consecutivi (rimasti dopo aver tolto i blocchi sopra)
+    if (isHr(line)) {
+      let p = out.length - 1;
+      while (p >= 0 && out[p].trim() === '') p--;
+      if (p >= 0 && isHr(out[p])) continue;
     }
     out.push(line);
   }

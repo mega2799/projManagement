@@ -328,6 +328,4 @@ Questo documento è stato redatto seguendo le best practices Agile/Scrum 2026:
 
 **Redatto da**: Marco Venturi (Product Owner, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Scrum Master / Tech Lead)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 25/10/2025
 **Ultima revisione metodologica**: 28/10/2025 (v.2.0.0 - Separazione Product Backlog Agile da WBS/Gantt universale)

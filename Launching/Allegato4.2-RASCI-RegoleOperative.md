@@ -1,5 +1,5 @@
 # Allegato 4.2 - RASCI Matrix e Regole Operative
-## v.1.2.0 – 15/10/2025
+## v.1.3.0 – 15/10/2025
 
 > La RASCI Matrix è disponibile anche come companion visivo `Allegato4.2-RASCI.html` (matrice colorata task × ruoli, con legenda R/A/S/C/I): apri il file nel browser e usa "Stampa → Salva come PDF". Questo documento `.md` resta il registro completo (matrice dettagliata per sottosistema, Regole Operative e analisi).
 
@@ -11,7 +11,7 @@ Questo documento definisce le **responsabilità del team** attraverso la RASCI M
 
 ### Cos'è la RASCI Matrix
 
-La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Project Management che chiarisce chi fa cosa in ogni attività del progetto. Elimina ambiguità, riduce conflitti e garantisce accountability.
+La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in ogni attività del progetto, riducendo le ambiguità e garantendo l'accountability.
 
 **RASCI** sta per:
 
@@ -271,28 +271,9 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) è uno strumento di Proje
 
 ---
 
-## Analisi RASCI: Insights Chiave
+## Analisi RASCI: distribuzione delle responsabilità
 
-### Distribuzione Responsabilità
-
-**Accountable Frequency** (chi approva):
-- **Elena Rossi (Tech Lead)**: 99 attività (tutte le attività tecniche di sviluppo e infrastruttura)
-- **Giovanni Marchetti (Sponsor)**: 16 attività (milestone, budget, UAT, approvazione Scoping e Lessons Learned, closure)
-- **Marco Venturi (PM)**: 8 attività (cerimonie Agile, risk management, comunicazione stakeholder, documentazione)
-
-**Responsible Frequency** (chi esegue):
-- **Sara Bianchi (Backend)**: 59 task (Game Engine, Backend Server, Real-Time)
-- **Luca Moretti (Frontend/UX)**: 28 task (Frontend Web, Social UI)
-- **Andrea Conti (DevOps)**: 19 task (Infrastructure, CI/CD, Testing automation)
-- **Marco Venturi (PM)**: 13 task (planning, reporting, coordinamento UAT)
-- **Francesca Giuliani (Expert)**: 4 task (validazione regole sessioni 1-2, conduzione UAT)
-
-**Consulted Frequency** (expertise richiesta):
-- **Francesca Giuliani**: 23 consultazioni (tutte le attività legate alle regole Maraffone)
-- **Giovanni Marchetti**: 22 consultazioni (decisioni UX, feature priority, budget)
-- **Elena Rossi**: 15 consultazioni (decisioni architetturali cross-team)
-
-**Balanced Workload**: La distribuzione è equilibrata: Sara (Backend) e Luca (Frontend) sono i Responsible principali; Elena è l'Accountable tecnico (approva tutte le attività di sviluppo e infrastruttura); Marco è l'orchestratore PM (Accountable delle cerimonie Agile e della gestione); Giovanni è l'Accountable delle decisioni di business e delle milestone.
+La matrice concentra la responsabilità esecutiva (R) sugli sviluppatori: Sara sul Game Engine, sul Backend e sul Real-Time; Luca sul Frontend e sulle interfacce social; Andrea sull'infrastruttura, la CI/CD e l'automazione dei test. L'accountability (A) è ripartita per natura dell'attività: a Elena, come Tech Lead, quella tecnica su sviluppo e infrastruttura; a Marco quella sulle cerimonie Agile e sul coordinamento di progetto; a Giovanni, come Sponsor, quella sulle decisioni di business e sulle milestone. Francesca è consultata (C) su tutte le attività legate alle regole del gioco.
 
 ---
 
@@ -338,7 +319,7 @@ Per il brainstorming le persone coinvolte si riuniscono davanti a una lavagna, f
 
 Le sessioni seguono un formato strutturato in due fasi. Nella fase di divergent thinking l'obiettivo è generare il maggior numero possibile di idee: non è ammessa alcuna critica, si privilegia la quantità sulla qualità e si incoraggia a costruire sulle idee altrui ("Yes, and..." invece di "Yes, but..."); un facilitatore modera e stimola la partecipazione anche dei più silenziosi, mentre uno scribe annota tutte le idee su una lavagna. Nella successiva fase di convergent thinking si passa dalla generazione alla valutazione: le idee simili vengono raggruppate (affinity mapping) e, tramite dot voting, si selezionano le più promettenti, per ciascuna delle quali si definisce un owner Responsible, un next step (proof of concept, spike di ricerca o implementazione) e una deadline.
 
-A seconda del contesto il team ricorre a tecniche diverse, come il Round Robin (un giro di tavolo in cui ognuno propone un'idea a turno, utile per coinvolgere i più introversi), il Brainwriting 6-3-5 o, per i problemi di UI/UX, i Crazy 8s (otto sketch rapidi in otto minuti, che forzano la creatività attraverso il vincolo temporale). Le idee raccolte vengono infine raffinate per selezionare le soluzioni da sviluppare.
+A seconda del contesto il team ricorre a tecniche diverse, come un giro di tavolo per coinvolgere anche i più introversi o brevi sketch a tempo per i problemi di UI/UX. Le idee raccolte vengono infine raffinate per selezionare le soluzioni da sviluppare.
 
 ---
 
@@ -396,8 +377,7 @@ Queste **Regole Operative** sono state discusse e approvate durante il **Project
 - Modifiche proposte → discussione team → approvazione Marco (PM)
 - Versioning su Notion (v.1.0.0 → v.1.1.0 se modifiche)
 
-**Commitment**:
-> "Noi sottoscritti ci impegniamo a seguire queste regole operative per garantire successo del progetto MaraffaOnline. Eventuali violazioni saranno discusse in retrospective per miglioramento continuo, non per colpevolizzazione."
+**Commitment**: il team si impegna a seguire queste regole operative; eventuali criticità vengono discusse in retrospective in un'ottica di miglioramento continuo, non di colpevolizzazione.
 
 **Firme** (simboliche):
 - Marco Venturi (Project Manager)
@@ -406,6 +386,10 @@ Queste **Regole Operative** sono state discusse e approvate durante il **Project
 - Luca Moretti (UX Designer / Frontend Developer)
 - Andrea Conti (DevOps Engineer)
 - Giovanni Marchetti (Project Sponsor)
+
+**Storico revisioni**:
+- **v.1.3.0**: snellimento anti-ridondanza. L'analisi RASCI è stata sintetizzata (rimossi i conteggi esaustivi per persona e la nota "Balanced Workload", sostituiti da una descrizione qualitativa della distribuzione R/A/C); alleggerite l'introduzione teorica e la sezione Brainstorming e ammorbidita la formula di commitment finale. Matrice per sottosistema e regole operative invariate nella sostanza.
+- **v.1.2.0**: assegnato un Accountable a tutte le righe della matrice (ogni attività ha ora esattamente un Accountable) e ricalcolati i conteggi di responsabilità; refusi corretti.
 
 ---
 
@@ -431,12 +415,6 @@ Questo documento è stato redatto seguendo le best practices di Responsibility A
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Tech Lead)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 15/10/2025
 
-**Versione**: v.1.2.0
+**Versione**: v.1.3.0
 **Prossimo review**: 15/12/2025 (fine Sprint 4, Milestone M2)
-
-**Storico revisioni**:
-- **v.1.2.0**: Sfoltite le Regole Operative (Parte 2). Rimossi cronometraggi al minuto delle riunioni, esempi di livello implementativo/codice e ripetizioni dei nomi dei tool, mantenendo per ogni sezione la scelta metodologica, la sua motivazione e la struttura portante (5 passi problem solving, 3 livelli decision making, 3 fasi conflict resolution, tecniche di brainstorming, cerimonie di team, 5 passi change management, regole di comunicazione).
-- **v.1.1.0**: Corretti i 22 task privi di Accountable (Infrastructure → Elena=A; Project Scoping / UAT test plan / Lessons Learned → Giovanni=A; cerimonie Agile e gestione PM → Marco=A), così ogni attività ha esattamente un Accountable come previsto dal principio RASCI. Ricalcolati i conteggi della sezione "Analisi RASCI". Aggiunto il companion visivo `Allegato4.2-RASCI.html`. Corretti refusi nelle Regole Operative.

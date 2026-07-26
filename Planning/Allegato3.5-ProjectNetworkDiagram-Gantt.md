@@ -431,8 +431,6 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Tech Lead)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 28/10/2025
 
 **Prossimo Aggiornamento**: 05/11/2025 (fine Sprint 0)
 

@@ -222,8 +222,6 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Tech Lead)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 27/10/2025
 
 **Storico revisioni**:
 - **v.1.3.0**: Aggiunto il companion `Allegato3.4-CashFlow.html` con grafici nativi (SVG generati da script dai valori verificati della tabella corrente): Cash Flow mensile e ripartizione spese per categoria. Aggiunta nota che segnala come superate le immagini PNG esistenti (`img/cash-flow-maraffaonline.png`, generata pre-v.1.2.0 e mai rigenerata: mostra ancora 6 mesi e valori pre-ridistribuzione).

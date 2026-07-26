@@ -344,8 +344,6 @@ Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratter
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Luca Bianchi (Tech Lead)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 20/10/2025
 
 **Storico revisioni**:
 - **v.1.2.0**: Aggiunta al companion HTML la sezione "Dettaglio Completo" con tutti i 160 Task in forma testuale (organizzati per Sottosistema → Funzione → Attività, colori coerenti col diagramma), su richiesta esplicita per avere un unico file stampabile con sia il diagramma sia il dettaglio.

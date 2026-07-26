@@ -367,8 +367,6 @@ I nomi seguenti indicano come sarebbero stati organizzati i file grafici in un p
 
 **Redatto da**: Luca Moretti (UX/UI Designer, PlayHeritage Labs)
 **Revisionato da**: Marco Venturi (Project Manager)
-**Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
-**Data approvazione**: 15/10/2025
 
 **Storico revisioni**:
 - **v.2.1.0**: Chiarito esplicitamente che i file grafici (mockup PNG, file Figma) non sono stati prodotti per questo elaborato accademico; la rappresentazione visiva è affidata ai wireframe testuali già presenti nel documento.
