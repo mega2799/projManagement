@@ -1,6 +1,6 @@
 # Allegato 2.3 - Project Overview Statement (POS)
 
-## v.1.0.0 – 2025-09-18 16:45:12
+## v.1.1.0 – 2025-09-18 16:45:12
 
 ### Problema
 
@@ -42,26 +42,39 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 
 ### Rischi
 
-1. Incomprensioni sulle regole della Maraffa tradizionale
-   2. Varianti regionali delle regole potrebbero creare controversie
-   3. Requisiti aggiuntivi scoperti durante sviluppo
-2. 1. Esperienza limitata con tecnologie WebSocket (RISCHIO ALTO)
-   2. Complessità nella gestione disconnessioni/riconnessioni
-   3. Performance di rete variabile tra utenti
-   4. Race conditions e bug di sincronizzazione stato tra 4 client
-3. 1. Difficoltà nel bilanciare modernità e familiarità dell'interfaccia
-   2. Scarsa partecipazione a sessioni di user testing
-   3. Responsive design potrebbe richiedere più tempo del previsto
-4. 1. Integrazione chat potrebbe interferire con sistema real-time
-   2. Vulnerabilità nel sistema di autenticazione
-   3. Gestione privacy GDPR richiede competenze legali esterne
-5. 1. Budget limitato per infrastruttura cloud scalabile
-   2. Mancanza esperienza team in DevOps
-   3. Picchi di traffico al lancio potrebbero sovraccaricare sistema
-6. 1. Budget €25.000 molto limitato per team di 5 persone per 7 mesi (RISCHIO ALTO)
-   2. Scope creep da richieste committente
-   3. Sottostima complessità tecniche (real-time)
-   4. Assenza di buffer temporale nel calendario
+I rischi sono raggruppati per obiettivo (stesso numero della sezione Obiettivi); i due più critici sono evidenziati.
+
+**1. Fedeltà alle regole della Maraffa**
+- Incomprensioni sulle regole della Maraffa tradizionale
+- Varianti regionali delle regole che potrebbero creare controversie
+- Requisiti aggiuntivi scoperti durante lo sviluppo
+
+**2. Comunicazione real-time tra i giocatori**
+- Esperienza limitata del team con le tecnologie WebSocket *(rischio critico)*
+- Complessità nella gestione di disconnessioni e riconnessioni
+- Performance di rete variabile tra gli utenti
+- Race conditions e bug di sincronizzazione dello stato tra 4 client
+
+**3. Interfaccia web moderna e responsive**
+- Difficoltà nel bilanciare modernità e familiarità dell'interfaccia
+- Scarsa partecipazione alle sessioni di user testing
+- Responsive design che potrebbe richiedere più tempo del previsto
+
+**4. Funzionalità sociali**
+- Integrazione della chat che potrebbe interferire con il sistema real-time
+- Vulnerabilità nel sistema di autenticazione
+- Gestione della privacy (GDPR) che richiede competenze legali esterne
+
+**5. Scalabilità, affidabilità e sicurezza**
+- Budget limitato per un'infrastruttura cloud scalabile
+- Mancanza di esperienza del team in DevOps
+- Picchi di traffico al lancio che potrebbero sovraccaricare il sistema
+
+**6. MVP nei tempi e nel budget**
+- Budget di €25.000 molto limitato per un team di 5 persone su 7 mesi *(rischio critico)*
+- Scope creep da richieste del committente
+- Sottostima delle complessità tecniche (in particolare il real-time)
+- Assenza di buffer temporale nel calendario
 
 ### Assunzioni
 
@@ -93,3 +106,7 @@ Ogni obiettivo è associato a un numero. Criteri di successo e rischi sono corre
 **Revisionato da**: Elena Rossi (Lead Developer, PlayHeritage Labs)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 19/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Rifatta la sezione Rischi con un raggruppamento leggibile per obiettivo (la numerazione annidata precedente rendeva poco chiara la corrispondenza rischio-obiettivo); evidenziati i due rischi critici. Contenuto dei rischi invariato.
+- **v.1.0.0**: Prima stesura del Project Overview Statement.

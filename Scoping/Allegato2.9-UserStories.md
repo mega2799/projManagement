@@ -1,5 +1,5 @@
 # Allegato 2.9 - User Stories
-## v.1.0.0 – 2025-09-27 14:45:00
+## v.1.1.0 – 2025-09-27 14:45:00
 
 Le **User Stories** sono descrizioni concise delle funzionalità del sistema dal punto di vista dell'utente finale. Seguono il formato standard:
 
@@ -17,7 +17,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 1: Gestione Account Utente
 
-### US-1.1: Registrazione Account — MUST HAVE
+### US-1.1: Registrazione Account
 
 **Come** nuovo utente,
 **voglio** registrarmi alla piattaforma con email e password,
@@ -31,15 +31,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Messaggio successo dopo conferma email
 - Gestione errori: email già esistente, password debole
 
-**Priorità**: MUST HAVE
-**Story Points**: 5
-**Sprint**: Sprint 2
 **Dipendenze**: Nessuna
 **Test**: Automated (unit + integration)
 
 ---
 
-### US-1.2: Login — MUST HAVE
+### US-1.2: Login
 
 **Come** utente registrato,
 **voglio** effettuare il login con le mie credenziali,
@@ -52,15 +49,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Messaggio errore se credenziali errate (max 5 tentativi, poi blocco 15 min)
 - Link "Password dimenticata?"
 
-**Priorità**: MUST HAVE
-**Story Points**: 3
-**Sprint**: Sprint 2
 **Dipendenze**: US-1.1
 **Test**: Automated + Manual (UX flow)
 
 ---
 
-### US-1.3: Accesso Ospite — MUST HAVE
+### US-1.3: Accesso Ospite
 
 **Come** visitatore curioso,
 **voglio** provare la piattaforma senza registrarmi,
@@ -74,15 +68,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Banner "Crea account per salvare progressi" visibile ma non invasivo
 - Opzione conversione a account registrato dopo partita
 
-**Priorità**: MUST HAVE
-**Story Points**: 3
-**Sprint**: Sprint 2
 **Dipendenze**: Nessuna
 **Test**: Manual (UX flow)
 
 ---
 
-### US-1.4: Modifica Profilo — SHOULD HAVE
+### US-1.4: Modifica Profilo
 
 **Come** utente registrato,
 **voglio** personalizzare il mio profilo (avatar, bio, username),
@@ -95,15 +86,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Campo bio (max 200 caratteri)
 - Anteprima modifiche prima del salvataggio
 
-**Priorità**: SHOULD HAVE
-**Story Points**: 5
-**Sprint**: Sprint 4
 **Dipendenze**: US-1.2
 **Test**: Manual
 
 ---
 
-### US-1.5: Reset Password — SHOULD HAVE
+### US-1.5: Reset Password
 
 **Come** utente che ha dimenticato la password,
 **voglio** ricevere un link di reset via email,
@@ -115,9 +103,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Pagina reset password con campo nuova password
 - Conferma successo e redirect a login
 
-**Priorità**: SHOULD HAVE
-**Story Points**: 3
-**Sprint**: Sprint 3
 **Dipendenze**: US-1.1
 **Test**: Manual
 
@@ -125,7 +110,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 2: Creazione e Join Partite
 
-### US-2.1: Creazione Stanza Pubblica — MUST HAVE
+### US-2.1: Creazione Stanza Pubblica
 
 **Come** giocatore,
 **voglio** creare una stanza di gioco pubblica,
@@ -139,15 +124,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Lobby di attesa mostra 0/4 giocatori
 - Countdown automatico quando 4/4 giocatori (10 secondi)
 
-**Priorità**: MUST HAVE
-**Story Points**: 8
-**Sprint**: Sprint 3
 **Dipendenze**: US-1.2
 **Test**: Automated + Manual
 
 ---
 
-### US-2.2: Creazione Stanza Privata — MUST HAVE
+### US-2.2: Creazione Stanza Privata
 
 **Come** giocatore,
 **voglio** creare una stanza privata con password,
@@ -160,15 +142,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Pulsante "Copia link" (clipboard API)
 - Stanza NON visibile in lobby pubblica
 
-**Priorità**: MUST HAVE
-**Story Points**: 5
-**Sprint**: Sprint 3
 **Dipendenze**: US-2.1
 **Test**: Automated + Manual
 
 ---
 
-### US-2.3: Join Stanza Pubblica — MUST HAVE
+### US-2.3: Join Stanza Pubblica
 
 **Come** giocatore,
 **voglio** unirmi a una stanza pubblica dalla lobby,
@@ -181,15 +160,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Redirect alla lobby della stanza dopo join
 - Messaggio errore se stanza piena o non più disponibile
 
-**Priorità**: MUST HAVE
-**Story Points**: 5
-**Sprint**: Sprint 3
 **Dipendenze**: US-2.1
 **Test**: Automated
 
 ---
 
-### US-2.4: Join Stanza Privata Tramite Link — MUST HAVE
+### US-2.4: Join Stanza Privata Tramite Link
 
 **Come** giocatore invitato,
 **voglio** cliccare un link di invito e unirmi direttamente alla stanza,
@@ -202,15 +178,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Join automatico se password corretta
 - Messaggio errore se stanza piena o link non valido
 
-**Priorità**: MUST HAVE
-**Story Points**: 5
-**Sprint**: Sprint 3
 **Dipendenze**: US-2.2
 **Test**: Manual
 
 ---
 
-### US-2.5: Invito Diretto Amici — SHOULD HAVE
+### US-2.5: Invito Diretto Amici
 
 **Come** giocatore,
 **voglio** invitare direttamente un amico dalla mia lista,
@@ -222,9 +195,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Invio notifica in-app agli amici selezionati
 - Amico riceve notifica cliccabile che lo porta alla stanza
 
-**Priorità**: SHOULD HAVE
-**Story Points**: 8
-**Sprint**: Sprint 5
 **Dipendenze**: US-3.1 (Sistema amicizie)
 **Test**: Manual
 
@@ -232,7 +202,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 3: Gameplay - Partita
 
-### US-3.1: Avvio Partita — MUST HAVE
+### US-3.1: Avvio Partita
 
 **Come** giocatore in lobby (4/4),
 **voglio** che la partita inizi automaticamente,
@@ -246,15 +216,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Transizione a schermata tavolo da gioco
 - Indicatore visivo "È il turno di [Nome]"
 
-**Priorità**: MUST HAVE
-**Story Points**: 8
-**Sprint**: Sprint 4
 **Dipendenze**: US-2.1, Game Engine
 **Test**: Automated + Manual
 
 ---
 
-### US-3.2: Giocare una Carta — MUST HAVE
+### US-3.2: Giocare una Carta
 
 **Come** giocatore durante il mio turno,
 **voglio** cliccare una carta dalla mia mano e giocarla,
@@ -269,15 +236,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Validazione server-side: carta deve essere legale (rispetto seme se possibile)
 - Messaggio errore se carta illegale
 
-**Priorità**: MUST HAVE
-**Story Points**: 13 (complessa, integrazione real-time)
-**Sprint**: Sprint 4
 **Dipendenze**: US-3.1, Real-Time Communication
 **Test**: Automated + Manual (critico)
 
 ---
 
-### US-3.3: Visualizzare Punteggio — MUST HAVE
+### US-3.3: Visualizzare Punteggio
 
 **Come** giocatore,
 **voglio** vedere il punteggio aggiornato dopo ogni mano,
@@ -289,15 +253,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Indicatore visivo "Mano vinta da [Coppia]" (es. banner temporaneo)
 - Evidenziazione coppia in vantaggio (colore diverso)
 
-**Priorità**: MUST HAVE
-**Story Points**: 5
-**Sprint**: Sprint 4
 **Dipendenze**: US-3.2, Game Engine
 **Test**: Manual
 
 ---
 
-### US-3.4: Gestione Timeout Turno — MUST HAVE
+### US-3.4: Gestione Timeout Turno
 
 **Come** giocatore,
 **voglio** che se un giocatore non gioca entro 30 secondi venga giocata automaticamente una carta casuale valida,
@@ -310,15 +271,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Messaggio "[Nome] ha esaurito il tempo, carta giocata automaticamente"
 - Turno passa al giocatore successivo normalmente
 
-**Priorità**: MUST HAVE
-**Story Points**: 8
-**Sprint**: Sprint 5
 **Dipendenze**: US-3.2
 **Test**: Automated + Manual
 
 ---
 
-### US-3.5: Fine Partita e Risultato — MUST HAVE
+### US-3.5: Fine Partita e Risultato
 
 **Come** giocatore,
 **voglio** vedere una schermata di riepilogo a fine partita,
@@ -332,15 +290,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
 - Se rivincita: tutti i 4 devono accettare per ripartire
 
-**Priorità**: MUST HAVE
-**Story Points**: 8
-**Sprint**: Sprint 5
 **Dipendenze**: US-3.2, Game Engine
 **Test**: Manual
 
 ---
 
-### US-3.6: Dichiarazione "Maraffa" — SHOULD HAVE
+### US-3.6: Dichiarazione "Maraffa"
 
 **Come** giocatore esperto,
 **voglio** dichiarare "Maraffa" quando ho 3 carte dello stesso seme,
@@ -352,9 +307,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Bonus punti aggiunto al punteggio della coppia
 - Validazione server-side: verifica effettiva presenza 3 carte
 
-**Priorità**: SHOULD HAVE (regola tradizionale importante)
-**Story Points**: 8
-**Sprint**: Sprint 6
 **Dipendenze**: US-3.2, validazione regole esperte Maraffa Forever
 **Test**: Manual + validazione Francesca Giuliani
 
@@ -362,7 +314,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 4: Chat e Comunicazione
 
-### US-4.1: Chat In-Game — MUST HAVE
+### US-4.1: Chat In-Game
 
 **Come** giocatore,
 **voglio** chattare con gli altri 3 giocatori durante la partita,
@@ -377,15 +329,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Filtro parole offensive (lista italiana)
 - Chat persistente durante tutta la partita, cancellata a fine partita
 
-**Priorità**: MUST HAVE
-**Story Points**: 8
-**Sprint**: Sprint 5
 **Dipendenze**: Real-Time Communication (WebSocket)
 **Test**: Manual + Load testing
 
 ---
 
-### US-4.2: Chat Globale Lobby — COULD HAVE
+### US-4.2: Chat Globale Lobby
 
 **Come** giocatore nella dashboard,
 **voglio** chattare con altri giocatori online,
@@ -396,9 +345,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Messaggi pubblici visibili a tutti gli utenti online
 - Throttling e moderazione come US-4.1
 
-**Priorità**: COULD HAVE
-**Story Points**: 5
-**Sprint**: Backlog (post-MVP se tempo)
 **Dipendenze**: US-4.1
 **Test**: Manual
 
@@ -406,7 +352,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 5: Sistema Amicizie
 
-### US-5.1: Aggiungere Amico — SHOULD HAVE
+### US-5.1: Aggiungere Amico
 
 **Come** giocatore,
 **voglio** cercare un altro utente per username e aggiungerlo come amico,
@@ -420,15 +366,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Notifica destinatario: "X ti ha inviato richiesta amicizia"
 - Accettazione/rifiuto richiesta
 
-**Priorità**: SHOULD HAVE
-**Story Points**: 8
-**Sprint**: Sprint 5
 **Dipendenze**: US-1.2
 **Test**: Manual
 
 ---
 
-### US-5.2: Visualizzare Lista Amici — SHOULD HAVE
+### US-5.2: Visualizzare Lista Amici
 
 **Come** giocatore,
 **voglio** vedere la lista dei miei amici con stato online/offline,
@@ -439,9 +382,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Aggiornamento real-time stato online/offline
 - Click su amico: opzioni "Invita a partita" / "Visualizza profilo"
 
-**Priorità**: SHOULD HAVE
-**Story Points**: 5
-**Sprint**: Sprint 5
 **Dipendenze**: US-5.1
 **Test**: Manual
 
@@ -449,7 +389,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 6: Statistiche e Profilo
 
-### US-6.1: Visualizzare Statistiche Personali — MUST HAVE
+### US-6.1: Visualizzare Statistiche Personali
 
 **Come** giocatore registrato,
 **voglio** vedere le mie statistiche (partite giocate, vinte, perse, win rate),
@@ -464,15 +404,12 @@ Ogni user story è validata secondo il principio **INVEST**:
   - Punti totali accumulati
 - Aggiornamento automatico dopo ogni partita
 
-**Priorità**: MUST HAVE
-**Story Points**: 5
-**Sprint**: Sprint 6
 **Dipendenze**: US-1.1, Backend persistenza dati
 **Test**: Automated
 
 ---
 
-### US-6.2: Statistiche Avanzate — COULD HAVE
+### US-6.2: Statistiche Avanzate
 
 **Come** giocatore appassionato di stats,
 **voglio** vedere statistiche dettagliate (mani vinte, carte più giocate, ecc.),
@@ -483,9 +420,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Grafici: trend vittorie nel tempo, distribuzione carte giocate
 - Confronto con media globale utenti
 
-**Priorità**: COULD HAVE
-**Story Points**: 13 (richiede analisi dati significativa)
-**Sprint**: Backlog (post-MVP)
 **Dipendenze**: US-6.1
 **Test**: Manual
 
@@ -493,7 +427,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ## Epic 7: Gestione Disconnessioni
 
-### US-7.1: Riconnessione Automatica — MUST HAVE
+### US-7.1: Riconnessione Automatica
 
 **Come** giocatore che perde temporaneamente la connessione,
 **voglio** potermi riconnettere automaticamente e riprendere la partita,
@@ -506,9 +440,6 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Riconnessione: ripristino stato esatto (carte in mano, punteggio, turno corrente)
 - Se > 5 minuti: partita annullata (nessun vincitore, no penalty stats)
 
-**Priorità**: MUST HAVE
-**Story Points**: 13 (complessa, critical path)
-**Sprint**: Sprint 6
 **Dipendenze**: Real-Time Communication, persistenza stato
 **Test**: Manual (simulazione disconnessioni)
 
@@ -569,8 +500,8 @@ Tutte le user stories sono state validate contro i criteri INVEST:
 | **Independent** | Ogni story è autosufficiente (eccetto dipendenze esplicitate) |
 | **Negotiable** | I criteri di accettazione sono chiari ma flessibili nei dettagli implementativi |
 | **Valuable** | Ogni story porta valore percepibile all'utente o al business |
-| **Estimable** | Tutte le storie hanno Story Points assegnati (Fibonacci: 3, 5, 8, 13) |
-| **Small** | Nessuna story > 13 pts (max 1 sprint di lavoro) |
+| **Estimable** | Ogni storia è abbastanza piccola e ben definita da poter essere stimata |
+| **Small** | Ogni storia è di dimensioni contenute, completabile in un breve ciclo di lavoro |
 | **Testable** | Criteri di accettazione chiari e verificabili |
 
 ---
@@ -578,3 +509,7 @@ Tutte le user stories sono state validate contro i criteri INVEST:
 **Redatto da**: Marco Venturi (Project Manager) & Team PlayHeritage Labs
 **Revisionato con**: Community Maraffa Forever (feedback su user experience)
 **Data approvazione**: 28/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Rimossi da ogni user story i campi Priorità (MoSCoW), Story Points e Sprint — contenuti che appartengono agli allegati di Planning (3.2 MoSCoW, 3.3 Product Backlog); le storie restano nella forma INVEST (racconto, criteri di accettazione, dipendenze, approccio di test). Aggiornata di conseguenza la tabella INVEST (Estimable/Small).
+- **v.1.0.0**: Prima stesura delle user stories.

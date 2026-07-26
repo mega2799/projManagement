@@ -1,5 +1,5 @@
 # Allegato 2.2 - Conditions of Satisfaction
-## v.1.0.0 – 2025-09-16 10:15:30
+## v.1.1.0 – 2025-09-16 10:15:30
 
 La tabella è composta da 4 colonne:
 - **Tipologia:** l'ambito della condizione. Assume uno dei seguenti valori:
@@ -25,39 +25,24 @@ La tabella è composta da 4 colonne:
         <th>Stato</th>
     </tr>
     <tr>
-        <td rowspan="7">Temporale</td>
-        <td>Completamento fase di Scoping</td>
+        <td rowspan="4">Temporale</td>
+        <td>Completamento della fase di Scoping</td>
         <td>30/09/2025</td>
         <td>Not started</td>
     </tr>
     <tr>
-        <td>Consegna del Game Engine (sottosistema 1)</td>
-        <td>30/10/2025</td>
+        <td>Disponibilità di una versione beta collaudabile con la community</td>
+        <td>Prima del lancio pubblico</td>
         <td>Not started</td>
     </tr>
     <tr>
-        <td>Consegna del Backend Server (sottosistema 2)</td>
-        <td>30/11/2025</td>
-        <td>Not started</td>
-    </tr>
-    <tr>
-        <td>Consegna del Real-Time Communication (sottosistema 3)</td>
-        <td>15/12/2025</td>
-        <td>Not started</td>
-    </tr>
-    <tr>
-        <td>Consegna del Frontend Web (sottosistema 4)</td>
-        <td>31/12/2025</td>
-        <td>Not started</td>
-    </tr>
-    <tr>
-        <td>Consegna di Infrastructure & DevOps (sottosistema 7) e Social Features base (sottosistema 6)</td>
-        <td>31/01/2026</td>
-        <td>Not started</td>
-    </tr>
-    <tr>
-        <td>Lancio della piattaforma MaraffaOnline completa (MVP)</td>
+        <td>Lancio della piattaforma MaraffaOnline (MVP)</td>
         <td>15/05/2026</td>
+        <td>Not started</td>
+    </tr>
+    <tr>
+        <td>Rispetto della durata complessiva concordata</td>
+        <td>7 mesi (15/10/2025 – 15/05/2026)</td>
         <td>Not started</td>
     </tr>
     <tr>
@@ -136,7 +121,7 @@ La tabella è composta da 4 colonne:
     <tr>
         <td rowspan="3">Gestione del lavoro</td>
         <td>Coordinazione efficace del team di 5 persone</td>
-        <td>Utilizzo di strumenti collaborativi (Slack, Jira, GitLab) con daily stand-up meeting alle 9:30</td>
+        <td>Utilizzo di strumenti collaborativi (Slack, Notion, GitLab) con daily stand-up meeting alle 9:00</td>
         <td>Not started</td>
     </tr>
     <tr>
@@ -156,3 +141,7 @@ La tabella è composta da 4 colonne:
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 **Data approvazione**: 18/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: I criteri temporali sono stati riportati ad alto livello (completamento Scoping, versione beta prima del lancio, lancio MVP, durata complessiva di 7 mesi), rimuovendo il calendario di consegna per singolo sottosistema — che anticipava la scomposizione in sottosistemi (analisi successiva) e conteneva date non allineate al piano definitivo. Uniformati gli strumenti (Notion al posto di Jira) e l'orario del daily stand-up (9:00).
+- **v.1.0.0**: Prima stesura delle Conditions of Satisfaction.

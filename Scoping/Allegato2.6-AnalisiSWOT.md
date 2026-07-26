@@ -1,5 +1,5 @@
 # Allegato 2.6 - Analisi SWOT
-## v.1.1.0 – 2025-09-22 09:15:30
+## v.1.2.0 – 2025-09-22 09:15:30
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato2.6-AnalisiSWOT.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la matrice SWOT a 4 quadranti (interni/esterni × utili/dannosi) con i soli titoli dei fattori e l'evidenza di quelli critici. Questo documento `.md` resta il registro completo (descrizioni, impatti, mitigazioni, matrice incrociata SO/WO/ST/WT e conclusioni).
 
@@ -53,13 +53,9 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 ---
 
 ### S5. Metodologia di PM Ibrida e Pragmatica
-**Descrizione**: PlayHeritage Labs adotta un approccio metodologico flessibile:
-- Waterfall per Game Engine (requisiti fissi)
-- Agile Iterativo per Backend e Frontend (feedback continuo)
-- Agile Adattivo per Real-Time (alta incertezza tecnica)
-- Incrementale per Mobile, Social, Infrastructure
+**Descrizione**: PlayHeritage Labs padroneggia sia gli approcci predittivi (Waterfall) sia quelli agili (iterativi e adattivi) e sa scegliere, per ciascun componente del progetto, il modello di gestione più adatto alle sue caratteristiche — requisiti stabili contro incertezza tecnica, necessità o meno di feedback continuo.
 
-**Impatto**: Ottimizzazione dell'efficienza. Ogni sottosistema è gestito con la metodologia più adatta, riducendo sprechi e aumentando la qualità.
+**Impatto**: Ottimizzazione dell'efficienza. Ogni componente è gestito con la metodologia più adatta, riducendo sprechi e aumentando la qualità.
 
 ---
 
@@ -110,7 +106,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 
 **Impatto**: Rischio di errori organizzativi, stime imprecise, gestione inefficace dei rischi, problemi di comunicazione interna/esterna.
 
-**Mitigazione**: Utilizzo rigoroso di framework e tool (Jira, Gantt, WBS). Retrospective settimanali per identificare e correggere rapidamente problemi organizzativi.
+**Mitigazione**: Utilizzo rigoroso di metodologie e strumenti di project management, con documentazione e task tracking su Notion. Retrospective settimanali per identificare e correggere rapidamente i problemi organizzativi.
 
 ---
 
@@ -328,4 +324,5 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 **Data approvazione**: 23/09/2025
 
 **Storico revisioni**:
+- **v.1.2.0**: Ammorbiditi i superlativi ("Bassissima competizione", "rischio esistenziale", "Altamente motivata") e l'intro. Rimosse due forward reference: S5 non riproduce più la mappatura metodologia→sottosistema (contenuto dell'Allegato 2.11), resa come capacità metodologica ad alto livello; W3 non cita più artefatti di Planning (WBS/Gantt) né "Jira" (stack allineato a Notion).
 - **v.1.1.0**: Aggiunto companion `Allegato2.6-AnalisiSWOT.html` — matrice SWOT a 4 quadranti colorati con i soli titoli dei fattori (vista sintetica per l'allegato PDF). Contenuto del `.md` invariato.
