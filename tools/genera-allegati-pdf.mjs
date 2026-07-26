@@ -166,7 +166,11 @@ async function buildTask({ src, out, kind }) {
   if (OPT_CLEAN) raw = sanitizeForDelivery(raw);
   let html;
   if (kind === 'md') {
-    const body = marked.parse(raw, { gfm: true, breaks: false });
+    // breaks:true -> ogni newline singolo diventa <br>. Necessario perche' gli
+    // allegati scrivono i blocchi metadata/firme/user-story su righe separate
+    // con un solo newline (che altrimenti verrebbero unite in un unico paragrafo).
+    // Sicuro: la prosa e' scritta una riga per paragrafo e gli ASCII art sono in code fence.
+    const body = marked.parse(raw, { gfm: true, breaks: true });
     html = wrapMarkdownHtml(body, baseHref, path.basename(src));
   } else {
     html = prepareHtml(raw, baseHref);
