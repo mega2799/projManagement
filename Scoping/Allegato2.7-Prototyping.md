@@ -1,5 +1,5 @@
 # Allegato 2.7 - Prototyping
-## v.2.1.0 – 2025-09-28 16:00:00
+## v.2.1.0 – 2025-09-28 16:00
 
 Il prototyping è un passaggio fondamentale nella fase di Scoping per validare le scelte di design dell'interfaccia utente prima dell'implementazione. Per MaraffaOnline sono state create **due iterazioni** di mockup/wireframe:
 
@@ -359,7 +359,6 @@ I nomi seguenti indicano come sarebbero stati organizzati i file grafici in un p
 7. `mockup-v2-fine-partita.png`
 8. `mockup-v2-mobile-tavolo.png` (versione mobile)
 9. `style-guide-maraffaonline.png` (palette colori, tipografia, componenti)
-10. `user-flow-diagram.png` (vedi Allegato 2.10)
 
 **Figma**: nella pratica reale il file sorgente sarebbe stato mantenuto su Figma per la collaborazione real-time del team; per questo elaborato non è stato creato un file Figma reale, e non viene quindi riportato alcun link.
 

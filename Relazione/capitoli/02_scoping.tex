@@ -38,18 +38,14 @@ La Requirements Breakdown Structure (RBS) scompone e organizza i requisiti del p
 
 A partire dai requisiti sono state redatte delle User Stories seguendo il principio INVEST, in modo da esprimere le funzionalità dal punto di vista dell'utente e renderle indipendenti, negoziabili, di valore, stimabili, piccole e testabili. Le user stories costituiscono la base del Product Backlog per i sottosistemi gestiti con metodologie Agile e sono riportate nell'\allegatolink{Documentazione/Scoping/Allegato2.9-UserStories.pdf}{Allegato 2.9 - User Stories}.
 
-\section{User Flow}
-
-Per immedesimarsi nell'esperienza dell'utente è stato realizzato un User Flow che mostra il percorso compiuto dal giocatore all'interno della piattaforma, dalla registrazione alla partecipazione a una partita completa. Il diagramma è riportato nell'\allegatolink{Documentazione/Scoping/Allegato2.10-UserFlow.pdf}{Allegato 2.10 - User Flow}.
-
 \section{Project Management Life Cycle Models}
 
 Poiché il progetto è scomponibile in sottosistemi differenti e loosely coupled, con dipendenze contenute, si è scelto di non adottare un'unica metodologia monolitica ma di applicare a ciascun sottosistema il modello di ciclo di vita più adatto alle sue caratteristiche, valutando il grado di incertezza dei requisiti e della soluzione tecnica.
 
 Il Game Engine, che implementa le regole del Maraffone, ha requisiti stabili e completamente definiti grazie al documento delle regole ufficiali validato da Francesca Giuliani: avendo chiari sia i requisiti sia la soluzione, si è adottato il modello lineare tradizionale con approccio Waterfall, che consente uno sviluppo sequenziale e una validazione formale al termine. Il Backend Server e il Frontend Web hanno obiettivi chiari ma richiedono feedback continuo da parte dello stakeholder: per essi si è scelto un approccio Agile Iterativo, con sprint di due settimane e demo regolari a Giovanni, che ha così potuto vedere l'evoluzione del prodotto e fornire aggiustamenti incrementali. Il Real-Time Communication presenta invece una forte incertezza tecnologica sulla capacità di mantenere latenze accettabili con Socket.IO: si è dunque adottato un approccio Agile Adattivo, capace di sperimentare rapidamente diverse soluzioni di ottimizzazione fino a individuare quella più efficace. Infine, per Infrastructure \& DevOps e Social \& Community, componenti che forniscono valore attraverso rilasci indipendenti e progressivi, si è scelto un approccio Incrementale.
 
-Questa diversificazione metodologica, invece di forzare un'unica metodologia rigida su tutto il progetto, ha permesso di massimizzare l'efficacia della gestione riducendo sprechi e rischi. La mappatura completa dei sottosistemi sulle metodologie, con la relativa motivazione, è riportata nell'\allegatolink{Documentazione/Scoping/Allegato2.11-ProjectManagementLifeCycleModels.pdf}{Allegato 2.11 - Project Management Life Cycle Models}.
+Questa diversificazione metodologica, invece di forzare un'unica metodologia rigida su tutto il progetto, ha permesso di massimizzare l'efficacia della gestione riducendo sprechi e rischi. La mappatura completa dei sottosistemi sulle metodologie, con la relativa motivazione, è riportata nell'\allegatolink{Documentazione/Scoping/Allegato2.10-ProjectManagementLifeCycleModels.pdf}{Allegato 2.10 - Project Management Life Cycle Models}.
 
 \section{Approval Process}
 
-La fase di Scoping si è chiusa con un meeting di approvazione a cui hanno partecipato il committente, il Project Manager e il team. Dall'incontro è emersa l'approvazione formale del perimetro definito, che ha dato il via libera alla fase di Planning. Il verbale è riportato nell'\allegatolink{Documentazione/Scoping/Allegato2.12-ApprovalProcess.pdf}{Allegato 2.12 - Approval Process}.
+La fase di Scoping si è chiusa con un meeting di approvazione a cui hanno partecipato il committente, il Project Manager e il team. Dall'incontro è emersa l'approvazione formale del perimetro definito, che ha dato il via libera alla fase di Planning. Il verbale è riportato nell'\allegatolink{Documentazione/Scoping/Allegato2.11-ApprovalProcess.pdf}{Allegato 2.11 - Approval Process}.

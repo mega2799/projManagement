@@ -12,7 +12,7 @@ _Provenienza: Allegato 3.3 - Product Backlog (sezioni "Nota: Ambito" e "Perché 
 
 La separazione tra Product Backlog e WBS/Gantt è intenzionale e riflette la natura degli strumenti:
 
-- **Product Backlog** = strumento Scrum/Agile puro. Gestito dal Product Owner (Marco Venturi), prioritizzato in modo continuo con MoSCoW dinamico, item stimati in story points (Fibonacci), organizzato per sprint con velocity tracking. Include **solo** i sottosistemi gestiti con approcci iterativi/adattivi: Backend Server, Real-Time Communication, Frontend Web, Social & Community.
+- **Product Backlog** = strumento Scrum/Agile puro. Gestito dal Product Owner (Marco Venturi), prioritizzato in modo continuo con MoSCoW dinamico, item stimati in story points (Fibonacci), organizzato per sprint con velocity tracking. Include **solo** il lavoro che scorre attraverso gli sprint: i sottosistemi iterativi/adattivi (Backend Server, Real-Time Communication, Frontend Web) e le user story di Social & Community (sottosistema Incrementale, ma realizzato dagli stessi team nelle stesse iterazioni e quindi tracciato sotto il sottosistema che lo implementa).
 - **WBS + Gantt** = strumenti di Project Management universali. Gestiti dal Project Manager, includono **tutte** le metodologie (Waterfall, Agile, Incrementale), attività stimate in giorni lavorativi, timeline con critical path analysis.
 
 Mischiare metodologie diverse nel Backlog comprometterebbe la coerenza della gestione sprint e la chiarezza dei ruoli Scrum (Product Owner, Scrum Master, Development Team). Per questo Game Engine (Waterfall) e Infrastructure & DevOps (Incrementale) sono tracciati esclusivamente in WBS (Allegato 3.1) e Gantt (Allegato 3.5), non nel Backlog. In sintesi: per i sottosistemi Agile il Product Backlog è la fonte primaria della gestione operativa degli sprint; per la visione d'insieme del progetto si fa riferimento a WBS e Gantt.
@@ -20,9 +20,11 @@ Mischiare metodologie diverse nel Backlog comprometterebbe la coerenza della ges
 ### Lettura dei numeri di velocity (Scrum pura vs team-wide)
 _Provenienza: Allegato 3.3 - Product Backlog ("Lettura dei numeri di Velocity"). Rilevante anche per il Cap. 5 - Monitoring & Control (dove si cita la velocity 38,3)._
 
-- La **velocity di 38,3 SP/sprint** monitorata nel Cap. 5 è **team-wide**: somma il lavoro completato su tutto il progetto (Backlog Agile + Game Engine in Waterfall + Infrastructure Incrementale), non solo le user stories del Backlog.
-- I **310 SP del Product Backlog Agile** sono il sottoinsieme di user stories gestite con Scrum (Backend/Real-Time/Frontend/Social): diviso per 15 sprint ≈ 21 SP/sprint di velocity Scrum pura.
-- La differenza non è un'incoerenza: è la distinzione tra "metrica Scrum" (Backlog) e "metrica gestionale di team" (Monitoring). Utile spiegarla in relazione per prevenire la domanda all'orale.
+- La **velocity di 38,3 SP/sprint** monitorata nel Cap. 5 è **team-wide**: somma il lavoro completato su tutto il progetto (Backlog + Game Engine in Waterfall + Infrastructure Incrementale), non solo le user stories del Backlog. La media esclude lo Sprint 5 (23 Dic - 03 Gen), a capacità ridotta per le festività.
+- La **capacity di ~40 SP/sprint** è coerente con il totale: 310 SP (Backlog) + ~131 SP (Game Engine + Infrastructure) = ~441 SP, distribuiti sugli **11 sprint di sviluppo effettivo** (Sprint 0-10). Gli Sprint 11-14 sono testing E2E, UAT, preparazione lancio e go-live: tracciati in WBS/Gantt, non stimati in SP.
+- I **310 SP del Product Backlog** (Backend/Real-Time/Frontend, incluse le feature Social) sui **10 sprint in cui sono caricati** (Sprint 1-10) danno ≈ **31 SP/sprint** di velocity Scrum pura.
+- **Attenzione**: il vecchio numero "21 SP/sprint" (310/15) era sbagliato — usava un denominatore diverso da quello dei 40 team-wide, e la somma delle due metriche non tornava (~30 ≠ 40). Corretto in ottobre; non reintrodurlo.
+- La differenza tra le due misure non è un'incoerenza: è la distinzione tra "metrica Scrum" (Backlog) e "metrica gestionale di team" (Monitoring). Utile spiegarla in relazione per prevenire la domanda all'orale.
 
 ---
 

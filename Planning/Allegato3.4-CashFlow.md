@@ -1,5 +1,5 @@
 # Allegato 3.4 - Cash Flow Management
-## v.1.3.0 – 2025-10-28 18:00:00
+## v.1.3.0 – 2025-10-28 18:00
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.4-CashFlow.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene statistiche chiave, il grafico Cash Flow mensile e la ripartizione spese per categoria, generati direttamente dai valori verificati di questo documento — sostituiscono le immagini PNG sotto, che mostrano dati superati (vedi nota nella sezione "Visualizzazione Grafica Cash Flow Mensile").
 

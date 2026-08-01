@@ -1,5 +1,5 @@
 # Allegato 3.5 - Project Network Diagram & Gantt Chart
-## v.1.2.0 – 2026-07-06 10:00:00
+## v.1.2.0 – 2026-07-06 10:00
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.5-NetworkGantt.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene il Network Diagram (20 nodi, asse = giorni lavorativi CPM) e il Gantt (stesse 20 attività, asse = calendario reale) in forma condensata; il dettaglio per sprint/sotto-task, le tabelle Forward/Backward Pass complete, l'analisi rischi e il processo di aggiornamento dinamico restano in questo documento.
 
@@ -261,12 +261,12 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 |----|----------|--------|------|--------|--------------|---------------|
 | R | Testing End-to-End | 17-Mar | 31-Mar | 15 gg | P, O | Sì |
 
-#### Sprint 12 (31 Mar - 11 Apr)
+#### Sprint 12 (01 Apr - 24 Apr)
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
 |----|----------|--------|------|--------|--------------|---------------|
 | S | UAT + Bug Fixing | 01-Apr | 24-Apr | 20 gg | R, Q | Sì |
 
-#### Sprint 13 (Lancio)
+#### Sprint 13-14 (27 Apr - 15 Mag) - Preparazione e Lancio
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
 |----|----------|--------|------|--------|--------------|---------------|
 | T | Preparazione Lancio | 27-Apr | 08-Mag | 10 gg | S | Sì |

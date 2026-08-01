@@ -1,5 +1,5 @@
 # Allegato 2.9 - User Stories
-## v.1.1.0 – 2025-09-27 14:45:00
+## v.1.1.0 – 2025-09-27 14:45
 
 Le **User Stories** sono descrizioni concise delle funzionalità del sistema dal punto di vista dell'utente finale. Seguono il formato standard:
 

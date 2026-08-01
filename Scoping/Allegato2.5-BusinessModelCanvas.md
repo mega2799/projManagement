@@ -1,6 +1,6 @@
 # Allegato 2.5 - Business Model Canvas
 
-## v.1.3.0 – 2025-09-21 14:30:00
+## v.1.3.0 – 2025-09-21 14:30
 
 > Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.5-BusinessModelCanvas.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 

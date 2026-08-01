@@ -1,5 +1,5 @@
 # Allegato 2.1 - Project Scoping Meeting
-## v.1.0.0 – 2025-09-15 14:30:00
+## v.1.0.0 – 2025-09-15 14:30
 
 ## Informazioni Generali
 

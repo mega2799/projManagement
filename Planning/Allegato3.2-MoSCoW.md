@@ -1,5 +1,5 @@
 # Allegato 3.2 - MoSCoW Prioritization Analysis
-## v.1.1.0 – 2025-10-22 14:00:00
+## v.1.1.0 – 2025-10-22 14:00
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.2-MoSCoW.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la board MoSCoW a 4 quadranti colorati (Must/Should/Could/Won't) e la barra di distribuzione 60/20/20. Questo documento `.md` resta il registro completo dei requisiti (ID, effort, razionale di esclusione).
 

@@ -198,12 +198,12 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 **Documenti Creati (Allegati 3.1-3.5)**:
 1. ✅ Work Breakdown Structure (WBS) - Scomposizione gerarchica completa (7 sottosistemi)
 2. ✅ MoSCoW Analysis - Prioritizzazione 310 story points Agile (Must 71.6%, Should 22.2%, Could 6.2%)
-3. ✅ Product Backlog - 15 sprint, solo sottosistemi Agile (Backend, Real-Time, Frontend, Social)
+3. ✅ Product Backlog - 15 sprint, solo il lavoro che scorre negli sprint (Backend, Real-Time, Frontend + user story Social)
 4. ✅ Cash Flow Management - Budget €25.000, 7 mesi, con grafici Excel
 5. ✅ Project Network Diagram + Gantt Chart - Critical Path 170 giorni lavorativi, CSV per Notion
 
 **Note Metodologiche**:
-- Product Backlog include SOLO sottosistemi Agile (rigore metodologico)
+- Product Backlog include SOLO il lavoro esprimibile come user story e realizzato negli sprint; Game Engine (Waterfall) e Infrastructure (Incrementale) restano in WBS/Gantt
 - Game Engine (Waterfall) e Infrastructure (Incrementale) documentati in WBS/Gantt
 - Grafici Cash Flow creati con Excel e integrati nel documento
 

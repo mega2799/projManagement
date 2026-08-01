@@ -16,7 +16,7 @@ La documentazione generata durante l'intero progetto è completa e accessibile s
 
 1. **Executive Summary** — sintesi del progetto, obiettivi raggiunti, budget consumato (€22.750 su €25.000) e timeline rispettata.
 2. **Project Overview** — genesi del progetto e contesto della community Maraffa Forever.
-3. **Scope Management** — allegati di Scoping (2.1-2.12): raccolta requisiti, Conditions of Satisfaction, validazione delle user stories.
+3. **Scope Management** — allegati di Scoping (2.1-2.11): raccolta requisiti, Conditions of Satisfaction, validazione delle user stories.
 4. **Planning Documentation** — allegati di Planning (3.1-3.5): WBS, MoSCoW, Product Backlog, Cash Flow, Project Network Diagram.
 5. **Execution & Launch** — fase di Launching (4.1-4.2): RASCI Matrix e Regole Operative.
 6. **Monitoring & Control** — Stoplight Reports, analisi Earned Value, metriche di velocity e quality metrics (test coverage > 85%).
@@ -48,7 +48,7 @@ Questi risultati sono stati resi possibili da alcuni fattori ricorrenti.
 
 Il **monitoraggio costante e multilivello** — Daily Standup per i sistemi Agile, Project Status Meeting settimanali con Stoplight Report, Earned Value Management, tracking della velocity e quality metrics — ha creato una rete di early warning efficace: dei 17 blocker tecnici emersi nel progetto, 14 sono stati intercettati nei Daily Standup entro 24 ore e nessuno ha raggiunto il post-delivery. È così che a Gennaio 2026 il ritardo di 3 giorni sul Frontend Tavolo da Gioco è stato assorbito entro Febbraio, senza impatto sulla milestone finale.
 
-La **scelta di metodologie differenziate per sottosistema** (Allegato 2.11) ha permesso di adattare la gestione alle caratteristiche di ciascun componente: Waterfall per il Game Engine (requisiti stabili, con validazione finale di Francesca Giuliani), Agile Iterativo per Backend e Frontend (feedback continuo e demo regolari), Agile Adattivo per il Real-Time (incertezza tecnologica su Socket.IO), Incrementale per Social e Infrastructure (rilasci indipendenti).
+La **scelta di metodologie differenziate per sottosistema** (Allegato 2.10) ha permesso di adattare la gestione alle caratteristiche di ciascun componente: Waterfall per il Game Engine (requisiti stabili, con validazione finale di Francesca Giuliani), Agile Iterativo per Backend e Frontend (feedback continuo e demo regolari), Agile Adattivo per il Real-Time (incertezza tecnologica su Socket.IO), Incrementale per Social e Infrastructure (rilasci indipendenti).
 
 Hanno inoltre inciso la **leadership del Project Manager** — con decisioni tempestive come il proof of concept sul Real-Time in Sprint 2 e il recovery plan di Gennaio — la **collaborazione costante dello sponsor** Giovanni Marchetti, presente a tutti gli Status Meeting e rispettoso del Change Request Process, e la **competenza del team** sulle tecnologie adottate (Node.js, React, Socket.IO, PostgreSQL, Docker, CI/CD), che ha permesso ai sei sottosistemi di sviluppo di lavorare in modo loosely coupled.
 

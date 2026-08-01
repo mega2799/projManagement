@@ -1,5 +1,5 @@
 # Allegato 2.4 - Risk Analysis
-## v.1.1.0 – 2025-09-19 11:20:45
+## v.1.1.0 – 2025-09-19 11:20
 
 > Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.4-RiskMatrix.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 

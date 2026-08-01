@@ -1,5 +1,5 @@
 # Allegato 2.8 - Requirements Breakdown Structure (RBS)
-## v.1.0.0 – 2025-09-25 10:30:00
+## v.1.0.0 – 2025-09-25 10:30
 
 La **Requirements Breakdown Structure (RBS)** è una decomposizione gerarchica dei requisiti del progetto MaraffaOnline, organizzata per sottosistema. Ogni requisito è classificato secondo le seguenti categorie:
 

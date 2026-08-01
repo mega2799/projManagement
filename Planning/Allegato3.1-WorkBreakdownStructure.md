@@ -1,5 +1,5 @@
 # Allegato 3.1 - Work Breakdown Structure (WBS)
-## v.1.2.0 – 2025-10-20 10:00:00
+## v.1.2.0 – 2025-10-20 10:00
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.1-WorkBreakdownStructure.html`: apri il file nel browser e usa "Stampa → Salva come PDF". L'html contiene sia il diagramma ad albero (Sottosistema → Funzione, con conteggio di Attività/Task, a colpo d'occhio) sia, in una sezione sottostante, l'elenco testuale completo di tutti i 160 Task per chi vuole il dettaglio in un unico file. Questo documento `.md` resta comunque la WBS Dictionary di riferimento.
 
@@ -15,7 +15,7 @@ La WBS è organizzata su 4 livelli:
 3. **Attività**: work package specifici
 4. **Task**: unità atomiche di lavoro
 
-> **Nota sui sottosistemi.** L'architettura del prodotto comprende **7 sottosistemi** (Game Engine, Backend Server, Real-Time Communication, Frontend Web, Mobile Application, Social & Community, Infrastructure & DevOps — vedi Allegato 2.8 - RBS e Allegato 2.11). La **Mobile Application è classificata Won't Have per l'MVP** (Allegato 3.2 - MoSCoW) e quindi non genera task in questa release: la presente WBS decompone perciò il lavoro dei **6 sottosistemi di sviluppo attivi** (sezioni 1-6) e delle **attività trasversali di Project Management e QA** (sezione 7).
+> **Nota sui sottosistemi.** L'architettura del prodotto comprende **7 sottosistemi** (Game Engine, Backend Server, Real-Time Communication, Frontend Web, Mobile Application, Social & Community, Infrastructure & DevOps — vedi Allegato 2.8 - RBS e Allegato 2.10). La **Mobile Application è classificata Won't Have per l'MVP** (Allegato 3.2 - MoSCoW) e quindi non genera task in questa release: la presente WBS decompone perciò il lavoro dei **6 sottosistemi di sviluppo attivi** (sezioni 1-6) e delle **attività trasversali di Project Management e QA** (sezione 7).
 
 ---
 
@@ -331,7 +331,7 @@ La WBS è organizzata su 4 livelli:
 
 ## Note Metodologiche
 
-Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratteristiche: Game Engine in Waterfall, Backend e Frontend in Agile Iterativo, Real-Time Communication in Agile Adattivo, Social e Infrastructure in Incrementale. **La scelta e la motivazione di ciascuna metodologia sono documentate nell'Allegato 2.11 - PM Life Cycle Models** e discusse nella relazione (Cap. 2/3).
+Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratteristiche: Game Engine in Waterfall, Backend e Frontend in Agile Iterativo, Real-Time Communication in Agile Adattivo, Social e Infrastructure in Incrementale. **La scelta e la motivazione di ciascuna metodologia sono documentate nell'Allegato 2.10 - PM Life Cycle Models** e discusse nella relazione (Cap. 2/3).
 
 ### Integrazione con Altri Documenti
 

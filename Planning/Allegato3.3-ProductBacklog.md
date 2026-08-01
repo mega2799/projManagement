@@ -1,9 +1,9 @@
 # Allegato 3.3 - Product Backlog
-## v.2.0.0 – 2025-10-28 17:00:00
+## v.2.0.0 – 2025-10-28 17:00
 
 Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progetto MaraffaOnline. Ogni item è stimato in **Story Points** (scala Fibonacci: 1, 2, 3, 5, 8, 13, 21) e assegnato a specifici **Sprint** da 2 settimane.
 
-**IMPORTANTE**: Questo documento include **solo** i sottosistemi gestiti con metodologie Agile (Backend Server, Real-Time Communication, Frontend Web, Social & Community). Game Engine (Waterfall) e Infrastructure (Incrementale) sono documentati in WBS (Allegato 3.1) e Gantt Chart (Allegato 3.5).
+**IMPORTANTE**: Questo documento include **solo** il lavoro che scorre attraverso gli sprint, cioè i sottosistemi iterativi e adattivi (Backend Server, Real-Time Communication, Frontend Web) e le user story di Social & Community, tracciate sotto il sottosistema che le implementa. Game Engine (Waterfall) e Infrastructure & DevOps (Incrementale) sono documentati in WBS (Allegato 3.1) e Gantt Chart (Allegato 3.5).
 
 ---
 
@@ -12,7 +12,7 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progett
 **Durata progetto**: 7 mesi (15 ottobre 2025 - 15 maggio 2026)
 **Sprint duration**: 2 settimane
 **Numero Sprint**: 15 sprint totali (Sprint 0-14)
-**Team capacity**: ~40 story points per sprint (considerando team di 5 persone)
+**Team capacity**: ~40 story points per sprint, **team-wide** (team di 5 persone; include anche il lavoro Game Engine e Infrastructure tracciato in WBS/Gantt). Il carico del solo Backlog è di ~31 SP/sprint
 
 ### Calendario Sprint (Focus Agile)
 
@@ -25,7 +25,7 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progett
 | Sprint 2 | 11 Nov - 22 Nov | Backend gestione partite |
 | Sprint 3 | 25 Nov - 06 Dic | Backend persistenza + Frontend homepage |
 | Sprint 4 | 09 Dic - 20 Dic | Frontend dashboard + login |
-| Sprint 5 | 23 Dic - 03 Gen | WebSocket foundation + Real-Time events |
+| Sprint 5 | 23 Dic - 03 Gen | WebSocket foundation + Real-Time events — **sprint a capacità ridotta** (festività natalizie), carryover pianificato sugli sprint successivi |
 | Sprint 6 | 06 Gen - 17 Gen | Frontend tavolo da gioco (parte 1) |
 | Sprint 7 | 20 Gen - 31 Gen | Frontend tavolo da gioco (parte 2) + Real-Time avanzato |
 | Sprint 8 | 03 Feb - 14 Feb | Chat in-game + disconnessioni |
@@ -40,11 +40,17 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progett
 
 ## Ambito del Product Backlog
 
-Questo Backlog include **solo i sottosistemi Agile** (Iterativo/Adattivo): **Backend Server**, **Real-Time Communication**, **Frontend Web**, **Social & Community**.
+Il criterio di inclusione non è l'etichetta metodologica del sottosistema, ma la natura del lavoro: entra nel Backlog ciò che è esprimibile come **user story rivolta all'utente finale** e che viene realizzato **all'interno degli sprint**.
 
-Restano **esclusi** — perché gestiti con altre metodologie — e sono tracciati in WBS (Allegato 3.1) e Gantt (Allegato 3.5):
-- **Game Engine** — Waterfall (requisiti stabili, sviluppo sequenziale) → WBS sezione 1
-- **Infrastructure & DevOps** — Incrementale (rilasci continui, attività on-demand) → WBS sezione 6
+Sono **inclusi**:
+- **Backend Server** — Agile Iterativo → WBS sezione 2
+- **Real-Time Communication** — Agile Adattivo → WBS sezione 3
+- **Frontend Web** — Agile Iterativo → WBS sezione 4
+- le user story di **Social & Community** (WBS sezione 5, Incrementale): amicizie, chat in-game, profili e statistiche sono sviluppati dagli stessi team nelle medesime iterazioni e compaiono perciò sotto il sottosistema che li implementa (US-4.x in Backend Server, US-6.16 e US-6.17 in Real-Time Communication, US-7.29÷US-7.32 in Frontend Web)
+
+Restano **esclusi** e sono tracciati in WBS (Allegato 3.1) e Gantt (Allegato 3.5):
+- **Game Engine** — Waterfall (requisiti stabili, sviluppo sequenziale su specifica approvata a monte) → WBS sezione 1
+- **Infrastructure & DevOps** — Incrementale (attività ricorrenti e on-demand, non riconducibili a user story) → WBS sezione 6
 
 *(La motivazione metodologica di questa separazione è discussa nella relazione, Cap. 3 - Planning.)*
 
@@ -226,16 +232,16 @@ Restano **esclusi** — perché gestiti con altre metodologie — e sono traccia
 
 ---
 
-## Riepilogo Effort per Sottosistema (Solo Agile)
+## Riepilogo Effort per Sottosistema (Solo Backlog)
 
-| Sottosistema | Story Points | % del Totale Agile | Sprint Coinvolti |
+| Sottosistema | Story Points | % del Totale Backlog | Sprint Coinvolti |
 |--------------|--------------|---------------------|------------------|
 | Frontend Web | 163 | 52.6% | 3-10 |
 | Backend Server | 80 | 25.8% | 1-3, 9 |
 | Real-Time Communication | 67 | 21.6% | 5-8 |
 | **Totale Product Backlog** | **310** | **100%** | |
 
-**Nota**: Questo totale (310 story points) rappresenta **solo** i sottosistemi Agile. Il lavoro totale del progetto include anche:
+**Nota**: le feature di Social & Community non compaiono come riga a sé perché conteggiate nel sottosistema che le implementa (US-4.x in Backend Server, US-6.16 e US-6.17 in Real-Time Communication, US-7.29÷US-7.32 in Frontend Web). Questo totale (310 story points) rappresenta comunque **solo** il lavoro tracciato nel Backlog; il lavoro totale del progetto include anche:
 - Game Engine (Waterfall): ~94 story points equivalenti → Tracciato in WBS/Gantt
 - Infrastructure & DevOps (Incrementale): ~37 story points equivalenti → Tracciato in WBS/Gantt
 - **Gran Totale Progetto**: ~441 story points equivalenti (tutti i sottosistemi)
@@ -246,10 +252,11 @@ Restano **esclusi** — perché gestiti con altre metodologie — e sono traccia
 
 ### Velocity Stimata
 - **Team**: 5 persone (Elena Rossi, Sara Bianchi, Luca Moretti, Andrea Conti, Marco Venturi part-time)
-- **Capacity target**: ~40 story points/sprint a livello di team
-- **Sprint totali**: 15 (Sprint 0-14)
+- **Capacity target**: ~40 story points/sprint **team-wide** — aggrega i 310 SP del Backlog e i ~131 SP equivalenti di Game Engine e Infrastructure & DevOps (~441 SP complessivi) sugli 11 sprint di sviluppo effettivo (Sprint 0-10)
+- **Carico del solo Backlog**: ~31 SP/sprint sui 10 sprint in cui è caricato (Sprint 1-10)
+- **Sprint totali**: 15 (Sprint 0-14). Gli Sprint 11-14 sono dedicati a testing E2E, UAT, preparazione lancio e go-live: attività tracciate in WBS/Gantt e non stimate in story points
 
-*(La riconciliazione tra i 310 SP del Backlog Agile, il lavoro Game Engine/Infrastructure e la velocity team-wide monitorata nel Cap. 5 è trattata nella relazione.)*
+*(La riconciliazione tra le due metriche è discussa nella relazione, Cap. 3 - Planning, ed è ripresa nel Cap. 5 - Monitoring & Control.)*
 
 ### Monitoraggio Velocity
 Alla fine di ogni sprint, il team registrerà:
@@ -258,7 +265,7 @@ Alla fine di ogni sprint, il team registrerà:
 3. Impedimenti e blockers
 4. Aggiustamenti a stime future
 
-**Target**: velocity stabile tra 35-45 pts/sprint dopo i primi 3 sprint di calibrazione.
+**Target**: velocity team-wide stabile tra 35-45 pts/sprint dopo i primi 3 sprint di calibrazione (escluso lo Sprint 5, a capacità ridotta per le festività).
 
 ---
 
@@ -304,7 +311,7 @@ Questo Product Backlog (Agile) si integra con gli altri documenti di Planning:
 
 | Documento | Relazione con il Product Backlog |
 |-----------|----------------------------------|
-| **Allegato 3.1 - WBS** | Il Backlog è un sottoinsieme della WBS: ne dettaglia le sezioni Agile (2 Backend, 3 Real-Time, 4 Frontend, 5 Social); Game Engine (sez. 1) e Infrastructure (sez. 6) sono esclusi |
+| **Allegato 3.1 - WBS** | Il Backlog è un sottoinsieme della WBS: ne dettaglia le sezioni 2 (Backend), 3 (Real-Time), 4 (Frontend) e le user story della sezione 5 (Social & Community); Game Engine (sez. 1) e Infrastructure (sez. 6) sono esclusi |
 | **Allegato 3.2 - MoSCoW** | Il Backlog implementa le priorità MoSCoW (Must/Should) dei sottosistemi Agile |
 | **Allegato 3.4 - Cash Flow** | I sottosistemi Agile del Backlog coprono ~70% del budget; il resto è Game Engine + Infrastructure |
 | **Allegato 3.5 - Gantt** | Il Gantt unifica le attività del Backlog (sprint Agile) e quelle fuori Backlog (Game Engine, Infrastructure) |

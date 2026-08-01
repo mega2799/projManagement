@@ -1,5 +1,5 @@
 # Allegato 2.2 - Conditions of Satisfaction
-## v.1.1.0 – 2025-09-16 10:15:30
+## v.1.1.0 – 2025-09-16 10:15
 
 La tabella è composta da 4 colonne:
 - **Tipologia:** l'ambito della condizione. Assume uno dei seguenti valori:

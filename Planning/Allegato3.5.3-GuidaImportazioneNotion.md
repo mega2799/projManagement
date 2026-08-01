@@ -1,5 +1,5 @@
 # Allegato 3.5.3 - Guida Importazione Gantt Chart in Notion
-## v.1.1.0 – 2025-10-28 16:30:00
+## v.1.1.0 – 2025-10-28 16:30
 
 Questa guida spiega come importare il file CSV del Gantt Chart MaraffaOnline in Notion e configurare la visualizzazione Timeline (Gantt) ottimale.
 
@@ -55,7 +55,7 @@ Dopo l'importazione, verifica e configura le seguenti proprietà:
 | **Priority** | Select | Opzioni: `P0`, `P1`, `P2`, `P3` |
 | **Assegnatario** | Person | Tagga membri del team (o lascia come Text se non hai membri Notion) |
 | **Critical Path** | Checkbox | Selezionato = attività sul critical path |
-| **Sprint** | Select | Opzioni: `Sprint 0`, `Sprint 1`, ..., `Sprint 13` |
+| **Sprint** | Select | Opzioni: `Sprint 0`, `Sprint 1`, ..., `Sprint 14` |
 | **Sottosistema** | Select | Opzioni: `Backend Server`, `Game Engine`, `Frontend Web`, `Real-Time Communication`, `Infrastructure`, `Social & Community`, `Testing`, `Launch`, `Milestone` |
 
 ### 2.2 Proprietà Aggiuntive

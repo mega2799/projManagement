@@ -1,6 +1,6 @@
 # Allegato 2.3 - Project Overview Statement (POS)
 
-## v.1.1.0 – 2025-09-18 16:45:12
+## v.1.1.0 – 2025-09-18 16:45
 
 ### Problema
 

@@ -4,7 +4,7 @@ Per evitare problemi con il progetto MaraffaOnline, come ritardi o costi aggiunt
 
 ## 5.1 Monitoraggio Continuo
 
-Come è già stato citato nel capitolo precedente durante la descrizione delle regole operative, nei sottosistemi che hanno adottato metodologie Agile (Backend Server, Real-Time Communication, Frontend Web, Social & Community) viene effettuato ogni mattina un Daily Standup di 15 minuti dalle 09:00 alle 09:15. Durante questo meeting ogni membro del team risponde a tre domande fondamentali: cosa ho fatto ieri, cosa farò oggi, e ho blocker che mi impediscono di procedere. Questo rituale quotidiano permette di individuare problemi emergenti prima che si accumulino e diventino critici.
+Come è già stato citato nel capitolo precedente durante la descrizione delle regole operative, nei sottosistemi che hanno adottato metodologie Agile (Backend Server, Real-Time Communication, Frontend Web) viene effettuato ogni mattina un Daily Standup di 15 minuti dalle 09:00 alle 09:15. Durante questo meeting ogni membro del team risponde a tre domande fondamentali: cosa ho fatto ieri, cosa farò oggi, e ho blocker che mi impediscono di procedere. Questo rituale quotidiano permette di individuare problemi emergenti prima che si accumulino e diventino critici.
 
 Inoltre, a ogni sviluppatore è stato chiesto di utilizzare il software di gestione del progetto Notion Database per tenere traccia dei task assegnati, delle scadenze e dello stato di avanzamento. Ogni task nel database ha uno status (Todo, In Progress, Done) che viene aggiornato quotidianamente, permettendo a Marco Venturi, il Project Manager, di avere una visione in tempo reale dello stato del progetto senza dover necessariamente convocare meeting aggiuntivi.
 
@@ -126,18 +126,19 @@ Questa visualizzazione immediata ha permesso a Marco di attivare tempestivamente
 
 Per i sottosistemi che utilizzano metodologie Agile, un'ulteriore metrica di monitoraggio è la velocity, ovvero il numero di story points che il team riesce a completare in ogni sprint. La velocity è fondamentale per fare previsioni realistiche su quando determinate feature saranno completate e per identificare se il team sta migliorando la propria produttività nel tempo o se sta incontrando difficoltà.
 
-**Nota metodologica sulla velocity tracciata**: I 40 story points/sprint sono la **capacity team-wide** stimata, che include sia il lavoro sulle user stories del Product Backlog Agile (Allegato 3.3, 310 SP totali = ~21 SP/sprint di pura velocity Scrum) sia il lavoro sui sottosistemi gestiti con altre metodologie (Game Engine in Waterfall, Infrastructure in Incrementale, per ~130 SP equivalenti complessivi). La metrica monitorata in questo capitolo è quindi una velocity *gestionale* a livello di team, non la velocity Scrum pura, per dare a Giovanni Marchetti una visione unica e consolidata dell'avanzamento del lavoro su tutto il progetto.
+**Nota metodologica sulla velocity tracciata**: I 40 story points/sprint sono la **capacity team-wide** stimata: aggregano il lavoro sulle user stories del Product Backlog (Allegato 3.3, 310 SP) e quello sui sottosistemi gestiti con altre metodologie (Game Engine in Waterfall e Infrastructure & DevOps in Incrementale, ~131 SP equivalenti), per un totale di ~441 SP distribuiti sugli **11 sprint di sviluppo effettivo** (Sprint 0-10); gli Sprint 11-14 sono dedicati a testing end-to-end, UAT, preparazione del lancio e go-live, attività tracciate in WBS/Gantt e non stimate in story points. Il solo Product Backlog, sui 10 sprint in cui è caricato, vale ~31 SP/sprint di pura velocity Scrum. La metrica monitorata in questo capitolo è quindi una velocity *gestionale* a livello di team, non la velocity Scrum pura, per dare a Giovanni Marchetti una visione unica e consolidata dell'avanzamento del lavoro su tutto il progetto.
 
-Nel Product Backlog di MaraffaOnline era stata stimata una velocity target di 40 story points per sprint (ogni 2 settimane). Durante i primi sei sprint del progetto (Novembre 2025 - Gennaio 2026), la velocity effettiva è stata:
+Nel Product Backlog di MaraffaOnline era stata stimata una velocity target di 40 story points per sprint (ogni 2 settimane). Durante i primi sette sprint del progetto (Novembre 2025 - Gennaio 2026), la velocity effettiva è stata:
 
 - **Sprint 1** (28 Ott - 08 Nov): 38 story points completati su 40 pianificati (95%)
 - **Sprint 2** (11 Nov - 22 Nov): 42 story points completati su 40 pianificati (105%)
 - **Sprint 3** (25 Nov - 06 Dic): 40 story points completati su 40 pianificati (100%)
 - **Sprint 4** (09 Dic - 20 Dic): 35 story points completati su 40 pianificati (87,5%) - Impatto festività
-- **Sprint 5** (06 Gen - 17 Gen): 39 story points completati su 40 pianificati (97,5%)
-- **Sprint 6** (20 Gen - 31 Gen): 36 story points completati su 40 pianificati (90%) - Ritardo Frontend
+- **Sprint 5** (23 Dic - 03 Gen): 21 story points completati su 40 pianificati (52,5%) - Sprint interamente a cavallo delle festività natalizie
+- **Sprint 6** (06 Gen - 17 Gen): 39 story points completati su 40 pianificati (97,5%)
+- **Sprint 7** (20 Gen - 31 Gen): 36 story points completati su 40 pianificati (90%) - Ritardo Frontend
 
-La velocity media dei primi sei sprint è stata di 38,3 story points, leggermente inferiore al target di 40 ma comunque molto vicina. Questa metrica ha confermato che la stima iniziale di 40 story points per sprint era realistica e che il team stava lavorando in modo consistente. Il calo di velocity nello Sprint 6 è stato direttamente correlato al ritardo accumulato dal Frontend Tavolo da Gioco e ha innescato il recovery plan.
+Escludendo lo Sprint 5, che cade interamente nel periodo natalizio e non è rappresentativo del ritmo di regime, la velocity media è stata di 38,3 story points: leggermente inferiore al target di 40 ma molto vicina, a conferma che la stima iniziale era realistica e che il team stava lavorando in modo consistente. Lo Sprint 5 ha invece prodotto un carryover di 19 story points, riassorbito nei due sprint successivi. Il calo di velocity nello Sprint 7 è stato direttamente correlato al ritardo accumulato dal Frontend Tavolo da Gioco e ha innescato il recovery plan.
 
 Durante le Sprint Retrospective, il team ha anche discusso i fattori che hanno influenzato la velocity, come ad esempio l'underestimation di alcune user stories particolarmente complesse o la necessità di dedicare tempo al refactoring per mantenere la qualità del codice. Queste riflessioni hanno permesso al team di migliorare progressivamente le proprie stime e di identificare pattern ricorrenti che causavano rallentamenti.
 

@@ -1,5 +1,5 @@
-# Allegato 2.12 - Scoping Approval Process
-## v.2.0.0 – 02/10/2025
+# Allegato 2.11 - Scoping Approval Process
+## v.2.1.0 – 02/10/2025
 
 Verbale del meeting di approvazione della fase di Scoping del progetto MaraffaOnline. L'approvazione formale conclude lo Scoping e autorizza il passaggio alla fase di Planning.
 
@@ -23,7 +23,7 @@ Verbale del meeting di approvazione della fase di Scoping del progetto MaraffaOn
 
 ## Documenti esaminati
 
-I dodici allegati della fase di Scoping (2.1–2.12) sono stati condivisi in anticipo e presentati in sintesi durante il meeting: Project Overview Statement (2.3), Conditions of Satisfaction (2.2), Risk Analysis (2.4), Business Model Canvas (2.5) e Analisi SWOT (2.6), Prototyping (2.7) e User Flow (2.10), Requirements Breakdown Structure (2.8), User Stories (2.9) e PM Life Cycle Models (2.11).
+Gli undici allegati della fase di Scoping (2.1–2.11) sono stati condivisi in anticipo e presentati in sintesi durante il meeting: Project Overview Statement (2.3), Conditions of Satisfaction (2.2), Risk Analysis (2.4), Business Model Canvas (2.5) e Analisi SWOT (2.6), Prototyping (2.7), Requirements Breakdown Structure (2.8), User Stories (2.9) e PM Life Cycle Models (2.10).
 
 ## Discussione
 
@@ -57,5 +57,6 @@ Completamento della fase di **Planning** (WBS, MoSCoW, stime, Product Backlog, C
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever), 02/10/2025
 
 **Storico revisioni**:
+- **v.2.1.0**: Rinumerato da Allegato 2.12 a **Allegato 2.11** in seguito alla rimozione dell'ex Allegato 2.10 - User Flow; aggiornati l'elenco dei documenti esaminati (ora undici allegati, 2.1–2.11) e il riferimento a PM Life Cycle Models (ora 2.10).
 - **v.2.0.0**: Verbale snellito e reso più realistico. Rimossi i dialoghi Q&A ricostruiti per ciascun documento, i virgolettati con punteggi di soddisfazione e l'appendice di feedback qualitativo; il dettaglio dei singoli documenti resta nei rispettivi allegati di Scoping, qui richiamati. Mantenuti partecipanti, documenti esaminati, esito dell'approvazione con riserve, action item e prossime tappe.
 - **v.1.0.0**: Prima stesura del verbale di approvazione dello Scoping.
