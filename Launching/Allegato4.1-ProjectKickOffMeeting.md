@@ -1,5 +1,5 @@
 # Allegato 4.1 - Project Kick-Off Meeting
-## v.2.0.0 – 15/10/2025
+## v.2.1.0 – 2026-08-02
 
 Verbale del meeting di avvio del progetto MaraffaOnline. Il kick-off segna il passaggio dalla pianificazione all'esecuzione: serve ad allineare il team su obiettivi, ruoli e regole operative prima dell'inizio dello sviluppo.
 
@@ -15,7 +15,7 @@ Verbale del meeting di avvio del progetto MaraffaOnline. Il kick-off segna il pa
 | Nome | Ruolo | Presenza |
 |------|-------|----------|
 | Marco Venturi | Project Manager | In presenza |
-| Elena Rossi | Tech Lead / Backend | In presenza |
+| Elena Rossi | Tech Lead / Game Engine | In presenza |
 | Sara Bianchi | Backend Developer | In presenza |
 | Luca Moretti | UX / Frontend | In presenza |
 | Andrea Conti | DevOps | In presenza |
@@ -70,5 +70,6 @@ Gli action item sono tracciati su Notion.
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever), 20/10/2025
 
 **Storico revisioni**:
+- **v.2.1.0**: Ruolo di Elena Rossi corretto da "Tech Lead / Backend" a "Tech Lead / Game Engine", in coerenza con Allegato 2.1, WBS/Gantt e RASCI v.1.4.0.
 - **v.2.0.0**: Verbale snellito e reso più realistico. Rimossi i dialoghi Q&A ricostruiti, le citazioni sceneggiate, le tabelle che duplicavano altri allegati (effort per sottosistema, milestone, budget, top rischi) e i framework di processo sovra-dettagliati (SLA a ore, livelli decisionali, conflict resolution): il dettaglio resta nei rispettivi allegati, qui richiamati. Mantenuti partecipanti, temi trattati, decisioni, action item e prossimi passi.
 - **v.1.1.0**: Revisione di coerenza — milestone allineate al Gantt (M1–M7) e pagamenti al Cash Flow (15 Ott / 15 Dic / 15 Feb); effort per sottosistema allineato ai totali del MoSCoW; calendario completato a 15 sprint (0–14); aggiunta la voce di budget Marketing/UAT/Celebrazione; refusi e valuta uniformati.

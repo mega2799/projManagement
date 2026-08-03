@@ -1,5 +1,5 @@
 # Allegato 3.2 - MoSCoW Prioritization Analysis
-## v.1.1.0 – 2025-10-22 14:00
+## v.1.2.0 – 2026-08-02
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.2-MoSCoW.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la board MoSCoW a 4 quadranti colorati (Must/Should/Could/Won't) e la barra di distribuzione 60/20/20. Questo documento `.md` resta il registro completo dei requisiti (ID, effort, razionale di esclusione).
 
@@ -32,14 +32,18 @@ Un requisito è classificato come **Must Have** solo se soddisfa **almeno uno** 
 4. Il requisito è esplicitamente richiesto dal committente come non negoziabile
 
 ### 3. Approccio Dinamico
-La categorizzazione MoSCoW è stata rivista **3 volte** durante la fase di Scoping:
+La categorizzazione MoSCoW è stata rivista **3 volte** tra Scoping e avvio del progetto:
 - **28/09/2025**: Prima classificazione basata su POS
-- **05/10/2025**: Revisione dopo user testing mockup v2
+- **01/10/2025**: Revisione dopo lo user testing dei mockup v2 (29-30/09)
 - **15/10/2025**: Approvazione finale con Giovanni Marchetti (Maraffa Forever)
+
+L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la Sessione 1 di validazione delle regole con Francesca Giuliani, **REQ-GE-1.1.5 (Maraffa/Cricca)** è stato riclassificato da Should Have a **Must Have** — il riconoscimento automatico è imprescindibile per i giocatori esperti della community (vedi Cap. 6 - Closing, lezioni apprese). La tabella riflette la classificazione finale.
 
 ---
 
 ## Categorizzazione Requisiti per Sottosistema
+
+> **Nota sugli ID.** Gli identificativi `REQ-<area>-<n>` codificano la numerazione gerarchica della Requirements Breakdown Structure (Allegato 2.8): ad esempio `REQ-SOC-6.3.1` corrisponde al primo requisito della sezione 6.3 (Classifiche e Leaderboard) della RBS.
 
 ### 1. Game Engine
 
@@ -379,4 +383,5 @@ Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
+- **v.1.2.0**: Documentata la riclassificazione in corso d'opera di REQ-GE-1.1.5 (Maraffa/Cricca) da Should a Must (Novembre 2025, dopo la Sessione 1 di validazione con Francesca Giuliani), in coerenza con il Cap. 6 - Closing. Aggiunta la nota di raccordo tra gli ID `REQ-*` e la numerazione gerarchica della RBS (Allegato 2.8). Data della seconda revisione allineata al nuovo calendario del prototyping (user testing 29-30/09).
 - **v.1.1.0**: Aggiunto companion `Allegato3.2-MoSCoW.html` (board a 4 quadranti + barra di distribuzione). Corretti i totali Should (71→57 gg) e Could (20→16 gg) e il totale effort (320→302 gg) per allinearli alla somma dei subtotali per sottosistema; percentuali di distribuzione e di categoria ricalcolate (Must 75,8% / Should 18,9% / Could 5,3%).

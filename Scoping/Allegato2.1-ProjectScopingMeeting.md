@@ -1,5 +1,5 @@
 # Allegato 2.1 - Project Scoping Meeting
-## v.1.0.0 – 2025-09-15 14:30
+## v.1.1.0 – 2026-08-02
 
 ## Informazioni Generali
 
@@ -90,8 +90,8 @@ Accordi su:
 
 ### 7. Prossimi Passi e Chiusura (16:55 - 17:00)
 - Approvazione formale dell'inizio del progetto
-- Firma del contratto prevista per il 20/09/2025
-- Kick-off ufficiale del progetto: 25/09/2025
+- Definizione del contratto formale (milestone e pagamenti scaglionati) entro fine settembre
+- Firma del contratto e kick-off ufficiale del progetto: 15/10/2025, a valle dell'approvazione dello Scoping e del Planning
 
 ---
 
@@ -152,3 +152,7 @@ Accordi su:
 **Redatto da**: Marco Venturi
 **Approvato da**: Giovanni Marchetti
 **Data approvazione**: 16/09/2025
+
+**Storico revisioni**:
+- **v.1.1.0**: Corrette le date previste per contratto e kick-off (erano 20/09 e 25/09, incompatibili con la chiusura dello Scoping del 02/10): la firma del contratto e il kick-off sono il 15/10/2025, come da Allegato 4.1 e Cash Flow.
+- **v.1.0.0**: Prima stesura del verbale.

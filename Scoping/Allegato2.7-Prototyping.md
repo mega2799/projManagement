@@ -1,5 +1,5 @@
 # Allegato 2.7 - Prototyping
-## v.2.1.0 – 2025-09-28 16:00
+## v.2.2.0 – 2026-08-02
 
 Il prototyping è un passaggio fondamentale nella fase di Scoping per validare le scelte di design dell'interfaccia utente prima dell'implementazione. Per MaraffaOnline sono state create **due iterazioni** di mockup/wireframe:
 
@@ -12,11 +12,11 @@ Il prototyping è un passaggio fondamentale nella fase di Scoping per validare l
 
 ### Co-Design Partecipativo
 Il processo di prototyping ha seguito l'approccio del **co-design con la community**:
-- **26/09/2025**: Workshop iniziale con 10 membri di Maraffa Forever per raccogliere requisiti UX
-- **28/09/2025**: Luca Moretti (UX Designer) crea primi wireframe low-fidelity
-- **01/10/2025**: Sessione di feedback con community (annotazioni su mockup v1)
-- **05/10/2025**: Iterazione e creazione mockup high-fidelity v2
-- **07/10/2025**: Approvazione finale da parte di Giovanni Marchetti
+- **16/09/2025**: Workshop iniziale con 10 membri di Maraffa Forever per raccogliere requisiti UX
+- **18/09/2025**: Luca Moretti (UX Designer) crea primi wireframe low-fidelity
+- **22/09/2025**: Sessione di feedback con community (annotazioni su mockup v1)
+- **25/09/2025**: Iterazione e creazione mockup high-fidelity v2
+- **26/09/2025**: Review dei mockup v2 con Giovanni Marchetti
 
 ### Tool Utilizzati
 - **Figma**: design collaborativo, wireframe e mockup high-fidelity
@@ -308,7 +308,7 @@ Apprezzato:
 
 ## User Testing - Risultati v2
 
-**Data**: 10-12/10/2025
+**Data**: 29-30/09/2025
 **Partecipanti**: 8 membri Maraffa Forever (età 28-42)
 **Metodo**: Think Aloud Protocol + Task Completion
 
@@ -334,7 +334,7 @@ Apprezzato:
 
 ## Approvazione Finale
 
-**Data**: 15/10/2025
+**Data**: 01/10/2025 (formalizzata nel meeting di approvazione dello Scoping del 02/10, Allegato 2.11)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 
 **Commento ufficiale**:
@@ -368,4 +368,5 @@ I nomi seguenti indicano come sarebbero stati organizzati i file grafici in un p
 **Revisionato da**: Marco Venturi (Project Manager)
 
 **Storico revisioni**:
+- **v.2.2.0**: Timeline del co-design e dell'approvazione anticipata entro la finestra di Scoping (workshop 16/09, v2 il 25/09, user testing 29-30/09, approvazione 01/10): le date precedenti (fino al 15/10) cadevano dopo il meeting di approvazione dello Scoping del 02/10 che esaminava questo stesso documento.
 - **v.2.1.0**: Chiarito esplicitamente che i file grafici (mockup PNG, file Figma) non sono stati prodotti per questo elaborato accademico; la rappresentazione visiva è affidata ai wireframe testuali già presenti nel documento.

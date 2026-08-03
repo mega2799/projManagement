@@ -200,7 +200,7 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 2. ✅ MoSCoW Analysis - Prioritizzazione 310 story points Agile (Must 71.6%, Should 22.2%, Could 6.2%)
 3. ✅ Product Backlog - 15 sprint, solo il lavoro che scorre negli sprint (Backend, Real-Time, Frontend + user story Social)
 4. ✅ Cash Flow Management - Budget €25.000, 7 mesi, con grafici Excel
-5. ✅ Project Network Diagram + Gantt Chart - Critical Path 170 giorni lavorativi, CSV per Notion
+5. ✅ Project Network Diagram + Gantt Chart - Critical Path 141 giorni lavorativi (fast tracking P→R), CSV per Notion
 
 **Note Metodologiche**:
 - Product Backlog include SOLO il lavoro esprimibile come user story e realizzato negli sprint; Game Engine (Waterfall) e Infrastructure (Incrementale) restano in WBS/Gantt
@@ -257,7 +257,7 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 
 - Budget: €22.750/€25.000 (surplus €2.250, 9%)
 - Timeline: 7 mesi esatti (15 Ott 2025 - 15 Mag 2026)
-- Critical Path: 170 giorni lavorativi rispettati
+- Critical Path: 141 giorni lavorativi rispettati
 - Launch: 50 utenti e 23 partite nelle prime 24h
 
 **Note**:

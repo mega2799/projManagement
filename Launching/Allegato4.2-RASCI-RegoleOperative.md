@@ -1,5 +1,5 @@
 # Allegato 4.2 - RASCI Matrix e Regole Operative
-## v.1.3.0 – 15/10/2025
+## v.1.4.0 – 2026-08-02 11:00
 
 > La RASCI Matrix è disponibile anche come companion visivo `Allegato4.2-RASCI.html` (matrice colorata task × ruoli, con legenda R/A/S/C/I): apri il file nel browser e usa "Stampa → Salva come PDF". Questo documento `.md` resta il registro completo (matrice dettagliata per sottosistema, Regole Operative e analisi).
 
@@ -37,7 +37,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 
 **Project Team (PlayHeritage Labs)**:
 - **Marco Venturi (MV)**: Project Manager
-- **Elena Rossi (ER)**: Tech Lead / Backend Developer
+- **Elena Rossi (ER)**: Tech Lead / Game Engine Specialist
 - **Sara Bianchi (SB)**: Backend Developer
 - **Luca Moretti (LM)**: UX Designer / Frontend Developer
 - **Andrea Conti (AC)**: DevOps Engineer
@@ -60,25 +60,25 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 
 | Task | GM | FG | MV | ER | SB | LM | AC |
 |------|----|----|----|----|----|----|-----|
-| **Definizione struttura dati carte** | I | C | I | A | R | - | - |
-| **Implementazione mazzo 40 carte** | I | C | I | A | R | - | - |
-| **Algoritmo distribuzione 2×5** | I | C | I | A | R | - | - |
-| **Codifica ordine forza carte** | I | C | I | A | R | - | - |
-| **Implementazione regole presa (maggiore vince)** | I | C | I | A | R | - | - |
-| **Logica briscola (determinazione e priorità)** | I | C | I | A | R | - | - |
-| **Sistema turni 4 giocatori** | I | C | I | A | R | - | - |
-| **Gestione chi inizia (4 di denari)** | I | C | I | A | R | - | - |
-| **Calcolo punteggio fine presa** | I | C | I | A | R | - | - |
-| **Tracciamento punteggio mano (11pt totali)** | I | C | I | A | R | - | - |
-| **Condizione vittoria (41pt + figura)** | I | C | I | A | R | - | - |
-| **Gestione Maraffa/Cricca (A+2+3 briscola = +3pt)** | I | C | I | A | R | - | - |
-| **Validazione mosse legali** | I | C | I | A | R | - | - |
-| **Detection casi edge (abbandono, timeout)** | I | - | I | A | R | - | - |
-| **Unit test logica di gioco (>90% coverage)** | I | C | I | A | R | - | - |
+| **Definizione struttura dati carte** | I | C | I | A/R | S | - | - |
+| **Implementazione mazzo 40 carte** | I | C | I | A/R | S | - | - |
+| **Algoritmo distribuzione 2×5** | I | C | I | A/R | S | - | - |
+| **Codifica ordine forza carte** | I | C | I | A/R | S | - | - |
+| **Implementazione regole presa (maggiore vince)** | I | C | I | A/R | S | - | - |
+| **Logica briscola (determinazione e priorità)** | I | C | I | A/R | S | - | - |
+| **Sistema turni 4 giocatori** | I | C | I | A/R | S | - | - |
+| **Gestione chi inizia (4 di denari)** | I | C | I | A/R | S | - | - |
+| **Calcolo punteggio fine presa** | I | C | I | A/R | S | - | - |
+| **Tracciamento punteggio mano (11pt totali)** | I | C | I | A/R | S | - | - |
+| **Condizione vittoria (41pt + figura)** | I | C | I | A/R | S | - | - |
+| **Gestione Maraffa/Cricca (A+2+3 briscola = +3pt)** | I | C | I | A/R | S | - | - |
+| **Validazione mosse legali** | I | C | I | A/R | S | - | - |
+| **Detection casi edge (abbandono, timeout)** | I | - | I | A/R | S | - | - |
+| **Unit test logica di gioco (>90% coverage)** | I | C | I | A/R | S | - | - |
 | **Validazione regole con Francesca (Sessione 1)** | A | R | S | C | C | - | - |
 
-**Accountable Principale**: Elena Rossi (Tech Lead)
-**Responsible Principale**: Sara Bianchi (Backend Developer)
+**Accountable e Responsible Principale**: Elena Rossi (Tech Lead / Game Engine Specialist) — sul Game Engine i due ruoli coincidono deliberatamente: è la specialista che implementa il sottosistema (vedi WBS e Gantt) e in un team di cinque la sovrapposizione A/R è accettata, bilanciata dal supporto di Sara, dalla code review e dalla validazione esterna delle regole
+**Support**: Sara Bianchi (integrazione con il Backend Server)
 **Consulted Critico**: Francesca Giuliani (Domain Expert)
 
 ---
@@ -129,7 +129,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **Gestione disconnessione giocatore** | I | - | I | A | R | - | - |
 | **Reconnection handling (30s timeout)** | I | - | I | A | R | - | - |
 | **Notifiche real-time eventi partita** | I | - | I | A | R | C | - |
-| **Load testing 50 partite simultanee** | I | - | I | A | R | - | S |
+| **Load testing 100 partite simultanee (400 giocatori)** | I | - | I | A | R | - | S |
 | **Monitoring latency con Sentry** | I | - | I | A | R | - | S |
 
 **Accountable Principale**: Elena Rossi (Tech Lead)
@@ -154,7 +154,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **Sala d'attesa (4 giocatori)** | C | - | I | A | - | R | - |
 | **Tavolo da gioco virtuale** | C | C | I | A | S | R | - |
 | **Rendering carte italiane (40 asset grafici)** | C | - | I | A | - | R | - |
-| **Drag & drop carte (react-dnd o dnd-kit)** | I | - | I | A | S | R | - |
+| **Interazione giocata carta (click to play) + animazioni** | I | - | I | A | S | R | - |
 | **Animazioni giocata carte** | I | - | I | A | - | R | - |
 | **Visualizzazione punteggio real-time** | I | C | I | A | S | R | - |
 | **Indicatore turno corrente** | I | - | I | A | - | R | - |
@@ -164,7 +164,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **Sistema notifiche UI (toast)** | I | - | I | A | - | R | - |
 | **Responsive design (desktop + tablet)** | C | - | I | A | - | R | - |
 | **Accessibilità (WCAG 2.1 AA)** | I | - | I | A | - | R | - |
-| **Cross-browser testing (Chrome, Firefox, Safari)** | I | - | I | A | - | R | S |
+| **Cross-browser testing (Chrome, Firefox, Safari, Edge)** | I | - | I | A | - | R | S |
 | **Unit test componenti (Vitest)** | I | - | I | A | - | R | - |
 
 **Accountable Principale**: Elena Rossi (Tech Lead)
@@ -222,11 +222,11 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 
 | Task | GM | FG | MV | ER | SB | LM | AC |
 |------|----|----|----|----|----|----|-----|
-| **Unit test Game Engine (Jest)** | I | C | I | A | R | - | - |
+| **Unit test Game Engine (Jest)** | I | C | I | A/R | S | - | - |
 | **Unit test API Backend (Jest)** | I | - | I | A | R | - | - |
 | **Unit test componenti Frontend (Vitest)** | I | - | I | A | - | R | - |
-| **Integration test end-to-end (Playwright)** | I | - | I | A | S | S | R |
-| **Load testing 50 partite simultanee (k6)** | I | - | I | A | S | - | R |
+| **Integration test end-to-end (Cypress)** | I | - | I | A | S | S | R |
+| **Load testing 100 partite simultanee (k6)** | I | - | I | A | S | - | R |
 | **Security testing (SQL injection, XSS)** | I | - | I | A | S | - | R |
 | **Accessibility testing (WCAG 2.1 AA)** | I | - | I | A | - | R | - |
 | **Cross-browser testing (BrowserStack)** | I | - | I | A | - | R | S |
@@ -273,7 +273,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 
 ## Analisi RASCI: distribuzione delle responsabilità
 
-La matrice concentra la responsabilità esecutiva (R) sugli sviluppatori: Sara sul Game Engine, sul Backend e sul Real-Time; Luca sul Frontend e sulle interfacce social; Andrea sull'infrastruttura, la CI/CD e l'automazione dei test. L'accountability (A) è ripartita per natura dell'attività: a Elena, come Tech Lead, quella tecnica su sviluppo e infrastruttura; a Marco quella sulle cerimonie Agile e sul coordinamento di progetto; a Giovanni, come Sponsor, quella sulle decisioni di business e sulle milestone. Francesca è consultata (C) su tutte le attività legate alle regole del gioco.
+La matrice concentra la responsabilità esecutiva (R) sugli sviluppatori: Elena sul Game Engine, di cui è la specialista (e dove ricopre anche il ruolo di Accountable, con Sara a supporto per l'integrazione); Sara sul Backend e sul Real-Time; Luca sul Frontend e sulle interfacce social; Andrea sull'infrastruttura, la CI/CD e l'automazione dei test. L'assegnazione rispetta i carichi temporali del Gantt: nessuna persona risulta Responsible di due sottosistemi negli stessi periodi. L'accountability (A) è ripartita per natura dell'attività: a Elena, come Tech Lead, quella tecnica su sviluppo e infrastruttura; a Marco quella sulle cerimonie Agile e sul coordinamento di progetto; a Giovanni, come Sponsor, quella sulle decisioni di business e sulle milestone. Francesca è consultata (C) su tutte le attività legate alle regole del gioco.
 
 ---
 
@@ -388,6 +388,7 @@ Queste **Regole Operative** sono state discusse e approvate durante il **Project
 - Giovanni Marchetti (Project Sponsor)
 
 **Storico revisioni**:
+- **v.1.4.0**: revisione di coerenza con WBS/Gantt. Corretta l'inversione dei ruoli sul Game Engine: Responsible è Elena Rossi (Game Engine Specialist, come da Allegato 2.1 e assegnazioni WBS/Gantt), non Sara Bianchi — che negli stessi sprint è già Responsible del Backend; sul Game Engine Elena cumula A/R con Sara a supporto. Ruolo di Elena corretto da "Backend Developer" a "Game Engine Specialist". Load testing allineato al criterio delle Conditions of Satisfaction: 100 partite simultanee (era 50). Cross-browser esteso a Edge (come da CoS) e interazione carta uniformata al Backlog (click to play, non drag & drop).
 - **v.1.3.0**: snellimento anti-ridondanza. L'analisi RASCI è stata sintetizzata (rimossi i conteggi esaustivi per persona e la nota "Balanced Workload", sostituiti da una descrizione qualitativa della distribuzione R/A/C); alleggerite l'introduzione teorica e la sezione Brainstorming e ammorbidita la formula di commitment finale. Matrice per sottosistema e regole operative invariate nella sostanza.
 - **v.1.2.0**: assegnato un Accountable a tutte le righe della matrice (ogni attività ha ora esattamente un Accountable) e ricalcolati i conteggi di responsabilità; refusi corretti.
 
@@ -416,5 +417,5 @@ Questo documento è stato redatto seguendo le best practices di Responsibility A
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Tech Lead)
 
-**Versione**: v.1.3.0
+**Versione**: v.1.4.0
 **Prossimo review**: 15/12/2025 (fine Sprint 4, Milestone M2)

@@ -1,5 +1,5 @@
 # Allegato 2.2 - Conditions of Satisfaction
-## v.1.1.0 – 2025-09-16 10:15
+## v.1.2.0 – 2026-08-02
 
 La tabella è composta da 4 colonne:
 - **Tipologia:** l'ambito della condizione. Assume uno dei seguenti valori:
@@ -105,7 +105,7 @@ La tabella è composta da 4 colonne:
     </tr>
     <tr>
         <td>Autonomia del giocatore</td>
-        <td>L'80% degli utenti completa la prima partita senza richiedere assistenza esterna (misurato con user testing sui 20 beta tester)</td>
+        <td>L'80% degli utenti completa la prima partita senza richiedere assistenza esterna (misurato nelle sessioni strutturate di user testing con la community)</td>
         <td>Not started</td>
     </tr>
     <tr>
@@ -126,7 +126,7 @@ La tabella è composta da 4 colonne:
     </tr>
     <tr>
         <td>Comunicazione regolare con il committente</td>
-        <td>Meeting bi-settimanale ogni martedì + demo mensile + accesso al board Kanban pubblico</td>
+        <td>Project Status Meeting settimanale (ogni venerdì) + demo bi-settimanale in Sprint Review + accesso al board Kanban pubblico</td>
         <td>Not started</td>
     </tr>
     <tr>
@@ -143,5 +143,6 @@ La tabella è composta da 4 colonne:
 **Data approvazione**: 18/09/2025
 
 **Storico revisioni**:
+- **v.1.2.0**: Comunicazione col committente allineata alle regole operative effettive (Project Status Meeting settimanale del venerdì + Sprint Review bi-settimanale; era "bi-settimanale ogni martedì + demo mensile"). Il criterio di autonomia del giocatore ora rimanda alle sessioni strutturate di user testing (5 + 10 partecipanti) invece che genericamente ai 20 beta tester, che restano il bacino del criterio di soddisfazione (valutazione ≥ 4,2/5).
 - **v.1.1.0**: I criteri temporali sono stati riportati ad alto livello (completamento Scoping, versione beta prima del lancio, lancio MVP, durata complessiva di 7 mesi), rimuovendo il calendario di consegna per singolo sottosistema — che anticipava la scomposizione in sottosistemi (analisi successiva) e conteneva date non allineate al piano definitivo. Uniformati gli strumenti (Notion al posto di Jira) e l'orario del daily stand-up (9:00).
 - **v.1.0.0**: Prima stesura delle Conditions of Satisfaction.

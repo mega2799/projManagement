@@ -1,5 +1,5 @@
 # Allegato 2.9 - User Stories
-## v.1.1.0 – 2025-09-27 14:45
+## v.1.2.0 – 2026-08-02
 
 Le **User Stories** sono descrizioni concise delle funzionalità del sistema dal punto di vista dell'utente finale. Seguono il formato standard:
 
@@ -445,49 +445,12 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-## Riepilogo User Stories per Sprint
-
-### Sprint 2 (Settimane 3-4)
-- US-1.1: Registrazione Account (5 pts)
-- US-1.2: Login (3 pts)
-- US-1.3: Accesso Ospite (3 pts)
-**Total**: 11 pts
-
-### Sprint 3 (Settimane 5-6)
-- US-1.5: Reset Password (3 pts)
-- US-2.1: Creazione Stanza Pubblica (8 pts)
-- US-2.2: Creazione Stanza Privata (5 pts)
-- US-2.3: Join Stanza Pubblica (5 pts)
-- US-2.4: Join Tramite Link (5 pts)
-**Total**: 26 pts
-
-### Sprint 4 (Settimane 7-8)
-- US-1.4: Modifica Profilo (5 pts)
-- US-3.1: Avvio Partita (8 pts)
-- US-3.2: Giocare una Carta [CRITICA] (13 pts - critica)
-- US-3.3: Visualizzare Punteggio (5 pts)
-**Total**: 31 pts
-
-### Sprint 5 (Settimane 9-10)
-- US-3.4: Timeout Turno (8 pts)
-- US-3.5: Fine Partita (8 pts)
-- US-4.1: Chat In-Game (8 pts)
-- US-5.1: Aggiungi Amico (8 pts)
-- US-5.2: Lista Amici (5 pts)
-**Total**: 37 pts
-
-### Sprint 6 (Settimane 11-12)
-- US-3.6: Dichiarazione Maraffa (8 pts)
-- US-6.1: Statistiche Personali (5 pts)
-- US-7.1: Riconnessione Automatica (13 pts)
-**Total**: 26 pts
-
----
-
 ## Backlog (Post-MVP, se tempo disponibile)
-- US-2.5: Invito Diretto Amici (8 pts) - SHOULD HAVE
-- US-4.2: Chat Globale (5 pts) - COULD HAVE
-- US-6.2: Statistiche Avanzate (13 pts) - COULD HAVE
+- US-2.5: Invito Diretto Amici
+- US-4.2: Chat Globale
+- US-6.2: Statistiche Avanzate
+
+*(La prioritizzazione MoSCoW e le stime sono negli allegati di Planning: 3.2 e 3.3.)*
 
 ---
 
@@ -511,5 +474,6 @@ Tutte le user stories sono state validate contro i criteri INVEST:
 **Data approvazione**: 28/09/2025
 
 **Storico revisioni**:
+- **v.1.2.0**: Rimosso il "Riepilogo User Stories per Sprint" (5 sprint con story points), residuo sfuggito alla pulizia della v.1.1.0: era pianificazione dentro un documento di Scoping e contraddiceva il calendario del Product Backlog (Allegato 3.3), che è l'unica fonte per l'assegnazione agli sprint. Ripuliti anche i punti e le etichette MoSCoW dalla sezione Post-MVP.
 - **v.1.1.0**: Rimossi da ogni user story i campi Priorità (MoSCoW), Story Points e Sprint — contenuti che appartengono agli allegati di Planning (3.2 MoSCoW, 3.3 Product Backlog); le storie restano nella forma INVEST (racconto, criteri di accettazione, dipendenze, approccio di test). Aggiornata di conseguenza la tabella INVEST (Estimable/Small).
 - **v.1.0.0**: Prima stesura delle user stories.

@@ -1,338 +1,156 @@
 # Allegato 3.3 - Product Backlog
-## v.2.0.0 – 2025-10-28 17:00
+## v.3.1.0 – 2026-08-02 12:00
 
-Il **Product Backlog** è l'elenco prioritizzato del lavoro Agile per il progetto MaraffaOnline. Ogni item è stimato in **Story Points** (scala Fibonacci: 1, 2, 3, 5, 8, 13, 21) e assegnato a specifici **Sprint** da 2 settimane.
+Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per il progetto MaraffaOnline. Gli item derivano dalle User Stories (Allegato 2.9), sono stimati in **story points** (Planning Poker, scala Fibonacci) e assegnati a sprint da 2 settimane, in coerenza con le date del Gantt (Allegato 3.5).
 
-**IMPORTANTE**: Questo documento include **solo** il lavoro che scorre attraverso gli sprint, cioè i sottosistemi iterativi e adattivi (Backend Server, Real-Time Communication, Frontend Web) e le user story di Social & Community, tracciate sotto il sottosistema che le implementa. Game Engine (Waterfall) e Infrastructure & DevOps (Incrementale) sono documentati in WBS (Allegato 3.1) e Gantt Chart (Allegato 3.5).
+**Ambito.** Il Backlog include solo il lavoro esprimibile come user story e realizzato negli sprint: **Backend Server**, **Real-Time Communication**, **Frontend Web** e le user story di **Social & Community** (tracciate sotto il sottosistema che le implementa). Restano esclusi il **Game Engine** (Waterfall) e l'**Infrastructure & DevOps** (Incrementale, attività on-demand): sono tracciati in WBS (Allegato 3.1) e Gantt (Allegato 3.5). *(Razionale nella relazione, Cap. 3 - Planning.)*
 
----
-
-## Struttura Sprint e Timeline
-
-**Durata progetto**: 7 mesi (15 ottobre 2025 - 15 maggio 2026)
-**Sprint duration**: 2 settimane
-**Numero Sprint**: 15 sprint totali (Sprint 0-14)
-**Team capacity**: ~40 story points per sprint, **team-wide** (team di 5 persone; include anche il lavoro Game Engine e Infrastructure tracciato in WBS/Gantt). Il carico del solo Backlog è di ~31 SP/sprint
-
-### Calendario Sprint (Focus Agile)
-
-**Nota**: Questo calendario mostra il focus sui sottosistemi Agile. In parallelo, Game Engine (Waterfall) e Infrastructure (Incrementale) procedono secondo i loro cicli di vita documentati in WBS/Gantt.
-
-| Sprint | Periodo | Focus Agile Principale |
-|--------|---------|------------------------|
-| Sprint 0 | 15-25 Ott 2025 | [Setup infrastruttura - vedi Gantt] |
-| Sprint 1 | 28 Ott - 08 Nov | Backend auth + database foundation |
-| Sprint 2 | 11 Nov - 22 Nov | Backend gestione partite |
-| Sprint 3 | 25 Nov - 06 Dic | Backend persistenza + Frontend homepage |
-| Sprint 4 | 09 Dic - 20 Dic | Frontend dashboard + login |
-| Sprint 5 | 23 Dic - 03 Gen | WebSocket foundation + Real-Time events — **sprint a capacità ridotta** (festività natalizie), carryover pianificato sugli sprint successivi |
-| Sprint 6 | 06 Gen - 17 Gen | Frontend tavolo da gioco (parte 1) |
-| Sprint 7 | 20 Gen - 31 Gen | Frontend tavolo da gioco (parte 2) + Real-Time avanzato |
-| Sprint 8 | 03 Feb - 14 Feb | Chat in-game + disconnessioni |
-| Sprint 9 | 17 Feb - 28 Feb | Sistema amicizie + profili |
-| Sprint 10 | 03 Mar - 14 Mar | Frontend accessibilità + performance optimization |
-| Sprint 11 | 17 Mar - 31 Mar | Testing End-to-End + Integration |
-| Sprint 12 | 01 Apr - 24 Apr | UAT con Maraffa Forever + Bug Fixing |
-| Sprint 13 | 27 Apr - 08 Mag | Preparazione lancio + Deploy production |
-| Sprint 14 | 11 Mag - 15 Mag | Production Launch + Celebrazione |
+**Legenda.** Priorità: **P0-P1** = Must Have (P0 bloccante per il core), **P2** = Should Have, **P3** = Could Have (mappatura MoSCoW, Allegato 3.2). Story points: Fibonacci 1-21 (1 SP ≈ 1-2 ore; 8 SP ≈ 4-5 giorni; 13 SP ≈ 1 settimana). **Colonna US**: la user story dell'Allegato 2.9 da cui il task deriva; "—" indica task tecnici/abilitanti non riconducibili a una singola storia utente.
 
 ---
 
-## Ambito del Product Backlog
+## Calendario Sprint
 
-Il criterio di inclusione non è l'etichetta metodologica del sottosistema, ma la natura del lavoro: entra nel Backlog ciò che è esprimibile come **user story rivolta all'utente finale** e che viene realizzato **all'interno degli sprint**.
+**Durata progetto**: 15 ottobre 2025 - 15 maggio 2026 · **15 sprint** (Sprint 0-14) da 2 settimane.
 
-Sono **inclusi**:
-- **Backend Server** — Agile Iterativo → WBS sezione 2
-- **Real-Time Communication** — Agile Adattivo → WBS sezione 3
-- **Frontend Web** — Agile Iterativo → WBS sezione 4
-- le user story di **Social & Community** (WBS sezione 5, Incrementale): amicizie, chat in-game, profili e statistiche sono sviluppati dagli stessi team nelle medesime iterazioni e compaiono perciò sotto il sottosistema che li implementa (US-4.x in Backend Server, US-6.16 e US-6.17 in Real-Time Communication, US-7.29÷US-7.32 in Frontend Web)
+| Sprint | Periodo | Focus |
+|--------|---------|-------|
+| 0 | 15-25 Ott 2025 | Setup infrastruttura (fuori Backlog, vedi Gantt) |
+| 1 | 28 Ott - 08 Nov | Backend auth + database foundation |
+| 2 | 11 Nov - 22 Nov | Backend gestione partite |
+| 3 | 25 Nov - 06 Dic | Backend lobby + statistiche |
+| 4 | 09 Dic - 20 Dic | Backend persistenza + WebSocket foundation |
+| 5 | 23 Dic - 03 Gen | Eventi Real-Time + Frontend foundation — **capacità ridotta** (festività), carryover pianificato |
+| 6 | 06 Gen - 17 Gen | Frontend homepage, auth e dashboard + Real-Time eventi (fine) |
+| 7 | 20 Gen - 31 Gen | Frontend stanze/lobby + chat e disconnessioni |
+| 8 | 03 Feb - 14 Feb | Frontend tavolo da gioco (parte 1) + sistema amicizie |
+| 9 | 17 Feb - 28 Feb | Frontend tavolo (parte 2) + social e profili |
+| 10 | 03 Mar - 14 Mar | Animazioni tavolo + accessibilità/performance |
+| 11 | 17 Mar - 31 Mar | Testing End-to-End + rifiniture tavolo (fast tracking, vedi Allegato 3.5) |
+| 12 | 01 Apr - 24 Apr | UAT con Maraffa Forever + bug fixing |
+| 13 | 27 Apr - 08 Mag | Preparazione lancio + deploy production |
+| 14 | 11 Mag - 15 Mag | Production launch |
 
-Restano **esclusi** e sono tracciati in WBS (Allegato 3.1) e Gantt (Allegato 3.5):
-- **Game Engine** — Waterfall (requisiti stabili, sviluppo sequenziale su specifica approvata a monte) → WBS sezione 1
-- **Infrastructure & DevOps** — Incrementale (attività ricorrenti e on-demand, non riconducibili a user story) → WBS sezione 6
-
-*(La motivazione metodologica di questa separazione è discussa nella relazione, Cap. 3 - Planning.)*
-
----
-
-## Note Metodologiche Agile
-
-### Story Points - Scala di Riferimento
-- **1 pt**: Task triviale (~1-2 ore) - es. "Aggiungere campo username a tabella users"
-- **2 pt**: Task semplice (~3-4 ore) - es. "Endpoint GET /api/users/profile"
-- **3 pt**: Task standard (~1 giorno) - es. "Form registrazione con validazione"
-- **5 pt**: Task complesso (~2-3 giorni) - es. "Implementare JWT authentication"
-- **8 pt**: Feature medio-grande (~4-5 giorni) - es. "Sistema creazione/join stanze"
-- **13 pt**: Feature grande (~1 settimana) - es. "Tavolo da gioco completo con animazioni"
-- **21 pt**: Epic (~2 settimane) - es. "Game Engine completo con tutte le regole"
+**Capacity e carico**: la capacità stimata del team è di **~40 SP/sprint team-wide** (include il lavoro Game Engine/Infrastructure tracciato in WBS/Gantt, ~131 SP equivalenti). Il piano carica in media **~37 SP/sprint team-wide** (441 SP sugli Sprint 0-11) e **~28 SP/sprint di solo Backlog** (310 SP sugli Sprint 1-11): il margine tra capacità e carico medio assorbe festività e variabilità. Lo Sprint 11 ospita solo le rifiniture del tavolo, in fast tracking con il Testing E2E; gli Sprint 12-14 (UAT, lancio) non sono stimati in story points. *(Riconciliazione delle metriche: relazione Cap. 3 e Cap. 5.)*
 
 ---
 
-## Product Backlog - Backend Server
+## Backend Server
 
-### Sprint 1 (28 Ott - 08 Nov)
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-1.1 | Setup progetto Node.js + Express + PostgreSQL | 5 | Sprint 1 |
-| P0 | US-1.2 | Implementare registrazione utente (email + password) | 5 | Sprint 1 |
-| P0 | US-1.3 | Implementare login con JWT token | 5 | Sprint 1 |
-| P0 | US-1.4 | Middleware autenticazione JWT | 3 | Sprint 1 |
-| P1 | US-1.5 | Endpoint GET /api/users/profile | 2 | Sprint 1 |
-| | **Totale Sprint 1** | | **20** | |
+| Sprint | Priorità | US (2.9) | Task | SP |
+|:------:|:--------:|------|------|:--:|
+| 1 | P0 | — | Setup progetto Node.js + Express + PostgreSQL | 5 |
+| 1 | P0 | US-1.1 | Registrazione utente (email + password) | 5 |
+| 1 | P0 | US-1.2 | Login con JWT token | 5 |
+| 1 | P0 | US-1.2 | Middleware autenticazione JWT | 3 |
+| 1 | P1 | US-1.4 | Endpoint GET /api/users/profile | 2 |
+| 1 | P0 | US-1.3 | Accesso ospite (username temporaneo) | 3 |
+| 2 | P0 | US-2.1 | Modello database partite (matches table) | 3 |
+| 2 | P0 | US-2.1/2.2 | POST /api/matches/create (stanza pubblica/privata) | 5 |
+| 2 | P0 | US-2.3/2.4 | POST /api/matches/:id/join (password validation) | 5 |
+| 3 | P1 | US-3.1 | Gestione lobby: lista giocatori connessi (4/4) | 3 |
+| 3 | P0 | US-7.1 | GET /api/matches/:id (recupero stato) | 3 |
+| 3 | P0 | US-7.1 | DELETE /api/matches/:id (annulla partita) | 2 |
+| 3 | P1 | US-6.1 | Modello database statistiche utente | 3 |
+| 3 | P1 | US-6.1 | Calcolo statistiche base (win/loss, win rate) | 5 |
+| 4 | P0 | US-7.1 | Persistenza stato partita su PostgreSQL | 8 |
+| 8 | P2 | US-5.1 | Modello database amicizie (friendships table) | 3 |
+| 8 | P2 | US-5.1 | POST /api/friends/request (invia richiesta) | 3 |
+| 8 | P2 | US-5.1 | PUT /api/friends/request/:id/accept | 2 |
+| 8 | P2 | US-5.2 | GET /api/friends (lista amici) | 2 |
+| 9 | P2 | US-5.2 | Presenza online/offline (integrazione WebSocket) | 5 |
+| 9 | P3 | US-1.5 | Password recovery (reset via email) | 5 |
+| | | | **Totale Backend Server (6 sprint)** | **80** |
 
-### Sprint 2 (11 Nov - 22 Nov)
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-1.6 | Accesso ospite (username temporaneo) | 3 | Sprint 2 |
-| P0 | US-2.1 | Modello database per partite (matches table) | 3 | Sprint 2 |
-| P0 | US-2.2 | Endpoint POST /api/matches/create (stanza pubblica/privata) | 5 | Sprint 2 |
-| P0 | US-2.3 | Endpoint POST /api/matches/:id/join (con password validation) | 5 | Sprint 2 |
-| P1 | US-2.4 | Gestione lobby: lista giocatori connessi (4/4) | 3 | Sprint 2 |
-| | **Totale Sprint 2** | | **19** | |
+## Real-Time Communication
 
-### Sprint 3 (25 Nov - 06 Dic)
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-2.5 | Persistenza stato partita su PostgreSQL | 8 | Sprint 3 |
-| P0 | US-2.6 | Endpoint GET /api/matches/:id (recupero stato) | 3 | Sprint 3 |
-| P0 | US-2.7 | Endpoint DELETE /api/matches/:id (annulla partita) | 2 | Sprint 3 |
-| P1 | US-3.1 | Modello database statistiche utente (stats table) | 3 | Sprint 3 |
-| P1 | US-3.2 | Calcolo statistiche base (win/loss, win rate) | 5 | Sprint 3 |
-| | **Totale Sprint 3** | | **21** | |
+| Sprint | Priorità | US (2.9) | Task | SP |
+|:------:|:--------:|------|------|:--:|
+| 4 | P0 | — | Setup Socket.IO server | 5 |
+| 4 | P0 | — | Gestione rooms per partite (room-based broadcast) | 5 |
+| 4 | P0 | — | Autenticazione WebSocket con JWT | 3 |
+| 4 | P0 | US-7.1 | Heartbeat ogni 30s per rilevare disconnessioni | 3 |
+| 4 | P1 | — | Logging eventi WebSocket | 2 |
+| 5 | P0 | US-3.1 | Evento `player_joined` | 2 |
+| 5 | P0 | US-3.1 | Evento `game_started` | 2 |
+| 5 | P0 | US-3.2 | Evento `card_played` | 5 |
+| 5 | P0 | US-3.3 | Evento `hand_won` (punteggio aggiornato) | 5 |
+| 6 | P0 | US-3.5 | Evento `game_ended` | 3 |
+| 6 | P0 | US-3.2 | Broadcast selettivo: eventi privati (carte in mano) | 5 |
+| 6 | P1 | — | Ottimizzazione payload (compressione JSON) | 3 |
+| 7 | P0 | US-7.1 | Disconnessione temporanea: partita sospesa (max 5 min) | 5 |
+| 7 | P0 | US-7.1 | Riconnessione automatica con ripristino stato | 5 |
+| 7 | P0 | US-7.1 | Disconnessione permanente: annulla partita | 3 |
+| 7 | P0 | US-4.1 | Chat in-game testuale (4 giocatori) | 5 |
+| 7 | P1 | US-4.1 | Throttling chat (1 msg/sec) + filtro parole offensive | 3 |
+| 7 | P2 | — | Indicatore latency visuale (verde/giallo/rosso) | 3 |
+| | | | **Totale Real-Time Communication (4 sprint)** | **67** |
 
-### Sprint 9 (17 Feb - 28 Feb) - Sistema Amicizie
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P2 | US-4.1 | Modello database amicizie (friendships table) | 3 | Sprint 9 |
-| P2 | US-4.2 | Endpoint POST /api/friends/request (invia richiesta) | 3 | Sprint 9 |
-| P2 | US-4.3 | Endpoint PUT /api/friends/request/:id/accept | 2 | Sprint 9 |
-| P2 | US-4.4 | Endpoint GET /api/friends (lista amici) | 2 | Sprint 9 |
-| P2 | US-4.5 | Presenza online/offline (integrazione WebSocket) | 5 | Sprint 9 |
-| P3 | US-5.1 | Password recovery (reset via email) | 5 | Sprint 9 |
-| | **Totale Sprint 9** | | **20** | |
+## Frontend Web
 
-**Totale Backend Server**: 80 story points (4 sprint)
+| Sprint | Priorità | US (2.9) | Task | SP |
+|:------:|:--------:|------|------|:--:|
+| 5 | P0 | — | Setup progetto React + Vite + Tailwind CSS | 3 |
+| 5 | P0 | — | Design system: componenti base (Button, Card, Modal, Form) | 8 |
+| 6 | P0 | — | Homepage/Landing page (mockup v2) | 5 |
+| 6 | P1 | — | Pagina "Scopri le regole" (tutorial Maraffone) | 5 |
+| 6 | P0 | US-1.1 | Form registrazione con validazione client-side | 5 |
+| 6 | P0 | US-1.2 | Form login (email + password) | 3 |
+| 6 | P0 | US-1.3 | Opzione "Prova come ospite" (modale) | 2 |
+| 6 | P0 | US-1.2 | Gestione JWT token (store in localStorage) | 3 |
+| 6 | P1 | US-1.5 | Password recovery (form + email flow) | 3 |
+| 6 | P0 | — | Layout dashboard (profilo + partite + amici) | 5 |
+| 6 | P0 | US-2.3 | Card "Partite attive" con lista partite in corso | 5 |
+| 7 | P0 | US-2.1/2.3 | Pulsanti "Crea partita" / "Unisciti a partita" | 2 |
+| 7 | P0 | US-2.1/2.2 | Form creazione stanza (nome, password, inviti) | 5 |
+| 7 | P1 | US-5.2 | Sidebar lista amici online (indicatori status) | 3 |
+| 8 | P0 | US-3.2 | Layout tavolo 4 giocatori (Nord/Sud/Est/Ovest) | 8 |
+| 8 | P0 | US-3.2 | Renderizzare carte in mano (SVG o immagini) | 5 |
+| 9 | P0 | US-3.2 | Click to play: seleziona carta e invia al server | 5 |
+| 9 | P0 | US-3.2 | Area centrale: mostra 4 carte giocate | 3 |
+| 9 | P2 | US-6.1 | Pagina profilo utente (stats + avatar) | 5 |
+| 9 | P2 | US-5.1/5.2 | Lista amici (ricerca + richieste) | 5 |
+| 9 | P2 | — | Notifiche in-app (toast messages) | 3 |
+| 10 | P0 | US-3.2 | Animazioni gioco carta (fly to center, 60fps) | 8 |
+| 10 | P0 | US-3.4 | Timer turno con progress bar (30 secondi) | 5 |
+| 10 | P0 | — | Responsive design: layout verticale mobile | 8 |
+| 10 | P0 | — | Touch-friendly: pulsanti min 44×44px | 3 |
+| 10 | P3 | US-6.1 | Storico partite (tabella con paginazione) | 5 |
+| 10 | P2 | — | Accessibilità WCAG 2.1 AA (aria-labels, focus indicators) | 8 |
+| 10 | P2 | — | Ottimizzazione bundle size (code splitting, lazy loading) | 5 |
+| 11 | P0 | US-3.3 | Punteggio real-time (aggiornato dopo ogni mano) | 3 |
+| 11 | P1 | — | Indicatori latency per giocatore (colori) | 3 |
+| 11 | P1 | US-4.1 | Chat in-game (collapsabile, integrata con WebSocket) | 5 |
+| 11 | P0 | US-3.5 | Modale fine partita (vittoria/sconfitta + riepilogo) | 5 |
+| 11 | P0 | US-3.5 | Pulsanti "Rivincita" / "Torna alla lobby" / "Condividi" | 3 |
+| 11 | P1 | US-3.5 | Animazioni microinterazioni (confetti vittoria) | 3 |
+| 11 | P2 | — | Performance audit (Lighthouse score > 90) | 5 |
+| 11 | P3 | — | Modalità daltonici (palette alternativa) | 3 |
+| | | | **Totale Frontend Web (7 sprint)** | **163** |
 
----
-
-## Product Backlog - Real-Time Communication
-
-### Sprint 5 (23 Dic - 03 Gen) - WebSocket Foundation
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-6.1 | Setup Socket.IO server | 5 | Sprint 5 |
-| P0 | US-6.2 | Gestione rooms per partite (room-based broadcast) | 5 | Sprint 5 |
-| P0 | US-6.3 | Autenticazione WebSocket con JWT | 3 | Sprint 5 |
-| P0 | US-6.4 | Heartbeat ogni 30s per rilevare disconnessioni | 3 | Sprint 5 |
-| P1 | US-6.5 | Logging eventi WebSocket | 2 | Sprint 5 |
-| | **Totale Sprint 5** | | **18** | |
-
-### Sprint 6-7 (06 Gen - 31 Gen) - Eventi Real-Time
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-6.6 | Evento `player_joined` (giocatore entra in partita) | 2 | Sprint 6 |
-| P0 | US-6.7 | Evento `game_started` (partita iniziata) | 2 | Sprint 6 |
-| P0 | US-6.8 | Evento `card_played` (carta giocata da giocatore) | 5 | Sprint 6 |
-| P0 | US-6.9 | Evento `hand_won` (mano vinta, punteggio aggiornato) | 5 | Sprint 6 |
-| P0 | US-6.10 | Evento `game_ended` (partita terminata) | 3 | Sprint 7 |
-| P0 | US-6.11 | Broadcast selettivo: eventi privati (carte in mano) | 5 | Sprint 7 |
-| P1 | US-6.12 | Ottimizzazione payload (compressione JSON) | 3 | Sprint 7 |
-| | **Totale Sprint 6-7** | | **25** | |
-
-### Sprint 8 (03 Feb - 14 Feb) - Gestione Disconnessioni e Chat
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-6.13 | Disconnessione temporanea: partita sospesa (max 5 min) | 5 | Sprint 8 |
-| P0 | US-6.14 | Riconnessione automatica con ripristino stato | 5 | Sprint 8 |
-| P0 | US-6.15 | Disconnessione permanente: annulla partita | 3 | Sprint 8 |
-| P0 | US-6.16 | Chat in-game testuale (4 giocatori) | 5 | Sprint 8 |
-| P1 | US-6.17 | Throttling chat (max 1 msg/sec) + filtro parole offensive | 3 | Sprint 8 |
-| P2 | US-6.18 | Indicatore latency visuale (verde/giallo/rosso) | 3 | Sprint 8 |
-| | **Totale Sprint 8** | | **24** | |
-
-**Totale Real-Time Communication**: 67 story points (4 sprint)
-
----
-
-## Product Backlog - Frontend Web
-
-### Sprint 3 (25 Nov - 06 Dic) - Setup e Homepage
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-7.1 | Setup progetto React + Vite + Tailwind CSS | 3 | Sprint 3 |
-| P0 | US-7.2 | Design system: componenti base (Button, Card, Modal, Form) | 8 | Sprint 3 |
-| P0 | US-7.3 | Homepage/Landing page (mockup v2) | 5 | Sprint 3 |
-| P1 | US-7.4 | Pagina "Scopri le regole" (tutorial Maraffone) | 5 | Sprint 3 |
-| | **Totale Sprint 3** | | **21** | |
-
-### Sprint 4 (09 Dic - 20 Dic) - Autenticazione
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-7.5 | Form registrazione con validazione client-side | 5 | Sprint 4 |
-| P0 | US-7.6 | Form login (email + password) | 3 | Sprint 4 |
-| P0 | US-7.7 | Opzione "Prova come ospite" (modale) | 2 | Sprint 4 |
-| P0 | US-7.8 | Gestione JWT token (store in localStorage) | 3 | Sprint 4 |
-| P1 | US-7.9 | Password recovery (form + email flow) | 3 | Sprint 4 |
-| | **Totale Sprint 4** | | **16** | |
-
-### Sprint 5 (23 Dic - 03 Gen) - Dashboard/Lobby
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-7.10 | Layout dashboard (profilo + partite + amici) | 5 | Sprint 5 |
-| P0 | US-7.11 | Card "Partite attive" con lista partite in corso | 5 | Sprint 5 |
-| P0 | US-7.12 | Pulsanti "Crea partita" / "Unisciti a partita" | 2 | Sprint 5 |
-| P0 | US-7.13 | Form creazione stanza (nome, password, inviti) | 5 | Sprint 5 |
-| P1 | US-7.14 | Sidebar lista amici online (indicatori status) | 3 | Sprint 5 |
-| | **Totale Sprint 5** | | **20** | |
-
-### Sprint 6-7 (06 Gen - 31 Gen) - Tavolo da Gioco [CRITICO]
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-7.15 | Layout tavolo 4 giocatori (Nord/Sud/Est/Ovest) | 8 | Sprint 6 |
-| P0 | US-7.16 | Renderizzare carte in mano (SVG o immagini) | 5 | Sprint 6 |
-| P0 | US-7.17 | Click to play: seleziona carta e invia al server | 5 | Sprint 6 |
-| P0 | US-7.18 | Area centrale: mostra 4 carte giocate | 3 | Sprint 6 |
-| P0 | US-7.19 | Animazioni gioco carta (fly to center, 60fps) | 8 | Sprint 7 |
-| P0 | US-7.20 | Timer turno con progress bar (30 secondi) | 5 | Sprint 7 |
-| P0 | US-7.21 | Punteggio real-time (aggiornato dopo ogni mano) | 3 | Sprint 7 |
-| P1 | US-7.22 | Indicatori latency per giocatore (colori) | 3 | Sprint 7 |
-| P1 | US-7.23 | Chat in-game (collapsabile, integrata con WebSocket) | 5 | Sprint 7 |
-| | **Totale Sprint 6-7** | | **45** | |
-
-### Sprint 8 (03 Feb - 14 Feb) - Fine Partita e Mobile
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P0 | US-7.24 | Modale fine partita (vittoria/sconfitta + riepilogo) | 5 | Sprint 8 |
-| P0 | US-7.25 | Pulsanti "Rivincita" / "Torna alla lobby" / "Condividi" | 3 | Sprint 8 |
-| P0 | US-7.26 | Responsive design: layout verticale mobile | 8 | Sprint 8 |
-| P0 | US-7.27 | Touch-friendly: pulsanti min 44×44px | 3 | Sprint 8 |
-| P1 | US-7.28 | Animazioni microinterazioni (confetti vittoria) | 3 | Sprint 8 |
-| | **Totale Sprint 8** | | **22** | |
-
-### Sprint 9 (17 Feb - 28 Feb) - Social Features Frontend
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P2 | US-7.29 | Pagina profilo utente (stats + avatar) | 5 | Sprint 9 |
-| P2 | US-7.30 | Lista amici (ricerca + richieste) | 5 | Sprint 9 |
-| P2 | US-7.31 | Notifiche in-app (toast messages) | 3 | Sprint 9 |
-| P3 | US-7.32 | Storico partite (tabella con paginazione) | 5 | Sprint 9 |
-| | **Totale Sprint 9** | | **18** | |
-
-### Sprint 10 (03 Mar - 14 Mar) - Accessibilità e Polish
-| Priority | User Story ID | Task | Story Points | Status |
-|----------|---------------|------|--------------|--------|
-| P2 | US-7.33 | Accessibilità WCAG 2.1 AA (aria-labels, focus indicators) | 8 | Sprint 10 |
-| P2 | US-7.34 | Ottimizzazione bundle size (code splitting, lazy loading) | 5 | Sprint 10 |
-| P2 | US-7.35 | Performance audit (Lighthouse score > 90) | 5 | Sprint 10 |
-| P3 | US-7.36 | Modalità daltonici (palette alternativa) | 3 | Sprint 10 |
-| | **Totale Sprint 10** | | **21** | |
-
-**Totale Frontend Web**: 163 story points (8 sprint)
+**Totale Product Backlog: 310 story points.** Le user story di Social & Community sono conteggiate nel sottosistema che le implementa: amicizie (US-5.x) e statistiche (US-6.1) nel Backend, chat in-game (US-4.1) nel Real-Time, le rispettive interfacce nel Frontend. Il lavoro del Game Engine copre le user story di gameplay (US-3.x) per la parte di regole, tracciata in WBS/Gantt.
 
 ---
 
-## Riepilogo Effort per Sottosistema (Solo Backlog)
+## Definition of Done
 
-| Sottosistema | Story Points | % del Totale Backlog | Sprint Coinvolti |
-|--------------|--------------|---------------------|------------------|
-| Frontend Web | 163 | 52.6% | 3-10 |
-| Backend Server | 80 | 25.8% | 1-3, 9 |
-| Real-Time Communication | 67 | 21.6% | 5-8 |
-| **Totale Product Backlog** | **310** | **100%** | |
-
-**Nota**: le feature di Social & Community non compaiono come riga a sé perché conteggiate nel sottosistema che le implementa (US-4.x in Backend Server, US-6.16 e US-6.17 in Real-Time Communication, US-7.29÷US-7.32 in Frontend Web). Questo totale (310 story points) rappresenta comunque **solo** il lavoro tracciato nel Backlog; il lavoro totale del progetto include anche:
-- Game Engine (Waterfall): ~94 story points equivalenti → Tracciato in WBS/Gantt
-- Infrastructure & DevOps (Incrementale): ~37 story points equivalenti → Tracciato in WBS/Gantt
-- **Gran Totale Progetto**: ~441 story points equivalenti (tutti i sottosistemi)
-
----
-
-## Velocity Tracking e Burn-down
-
-### Velocity Stimata
-- **Team**: 5 persone (Elena Rossi, Sara Bianchi, Luca Moretti, Andrea Conti, Marco Venturi part-time)
-- **Capacity target**: ~40 story points/sprint **team-wide** — aggrega i 310 SP del Backlog e i ~131 SP equivalenti di Game Engine e Infrastructure & DevOps (~441 SP complessivi) sugli 11 sprint di sviluppo effettivo (Sprint 0-10)
-- **Carico del solo Backlog**: ~31 SP/sprint sui 10 sprint in cui è caricato (Sprint 1-10)
-- **Sprint totali**: 15 (Sprint 0-14). Gli Sprint 11-14 sono dedicati a testing E2E, UAT, preparazione lancio e go-live: attività tracciate in WBS/Gantt e non stimate in story points
-
-*(La riconciliazione tra le due metriche è discussa nella relazione, Cap. 3 - Planning, ed è ripresa nel Cap. 5 - Monitoring & Control.)*
-
-### Monitoraggio Velocity
-Alla fine di ogni sprint, il team registrerà:
-1. Story points completati (velocity effettiva)
-2. Story points portati al sprint successivo (carryover)
-3. Impedimenti e blockers
-4. Aggiustamenti a stime future
-
-**Target**: velocity team-wide stabile tra 35-45 pts/sprint dopo i primi 3 sprint di calibrazione (escluso lo Sprint 5, a capacità ridotta per le festività).
-
----
-
-## Definition of Done (DoD)
-
-Un item del Product Backlog è considerato **Done** solo quando:
+Un item è **Done** solo quando:
 
 1. Codice scritto e committed su repository
-2. Unit tests scritti e passati (coverage > 80%)
+2. Unit test scritti e passati (coverage > 80%)
 3. Code review approvata da almeno 1 peer
-4. Integration tests passati
+4. Integration test passati
 5. Documentazione API/componente aggiornata
 6. Deploy su ambiente staging riuscito
 7. Acceptance criteria (da User Story) soddisfatti
-8. Product Owner ha approvato (demo sprint review)
-
----
-
-## Gestione Cambiamenti al Backlog
-
-### Processo di Aggiunta Nuovi Item
-1. Stakeholder propone nuovo requisito
-2. Product Owner (Marco Venturi) valuta con MoSCoW
-3. Se approvato: team stima in story points (planning poker)
-4. Item inserito nel backlog con priorità
-5. Se Must Have: verificare impatto su timeline e budget
-
-### Sprint Planning Meeting
-**Quando**: Primo giorno di ogni sprint
-**Partecipanti**: Tutto il team + Giovanni Marchetti (committente, opzionale)
-**Output**: Sprint Backlog (item selezionati per il prossimo sprint)
-
-### Backlog Refinement
-**Frequenza**: Metà sprint (ogni settimana dispari)
-**Durata**: 1 ora
-**Obiettivo**: Stimare nuovi item, rivalutare priorità, dividere epics
-
----
-
-## Relazione con Altri Documenti di Planning
-
-Questo Product Backlog (Agile) si integra con gli altri documenti di Planning:
-
-| Documento | Relazione con il Product Backlog |
-|-----------|----------------------------------|
-| **Allegato 3.1 - WBS** | Il Backlog è un sottoinsieme della WBS: ne dettaglia le sezioni 2 (Backend), 3 (Real-Time), 4 (Frontend) e le user story della sezione 5 (Social & Community); Game Engine (sez. 1) e Infrastructure (sez. 6) sono esclusi |
-| **Allegato 3.2 - MoSCoW** | Il Backlog implementa le priorità MoSCoW (Must/Should) dei sottosistemi Agile |
-| **Allegato 3.4 - Cash Flow** | I sottosistemi Agile del Backlog coprono ~70% del budget; il resto è Game Engine + Infrastructure |
-| **Allegato 3.5 - Gantt** | Il Gantt unifica le attività del Backlog (sprint Agile) e quelle fuori Backlog (Game Engine, Infrastructure) |
-
-*(Il razionale metodologico della separazione Backlog / WBS-Gantt è approfondito nella relazione, Cap. 3 - Planning.)*
-
----
-
-<!-- Sezione "Fonti e Riferimenti" commentata (link a blog esterni, non necessari in un allegato di progetto). Reinseribile o sostituibile con fonti del corso; registro in Relazione/_appunti-per-relazione.md.
-## Fonti e Riferimenti
-
-Questo documento è stato redatto seguendo le best practices Agile/Scrum 2026:
-- [Atlassian - Product Backlog Tips](https://www.atlassian.com/agile/scrum/backlogs)
-- [Atlassian - Story Points Estimation](https://www.atlassian.com/agile/project-management/estimation)
-- [Scrum Alliance - Story Point Estimation Guide](https://resources.scrumalliance.org/Article/story-point-estimation)
-- [Asana - Story Points Guide 2025](https://asana.com/resources/story-points)
-- [Mountain Goat Software - Agile Estimating](https://www.mountaingoatsoftware.com/agile/agile-estimation-estimating-with-story-points)
--->
+8. Product Owner ha approvato (demo in Sprint Review)
 
 ---
 
 **Redatto da**: Marco Venturi (Product Owner, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Scrum Master / Tech Lead)
-**Ultima revisione metodologica**: 28/10/2025 (v.2.0.0 - Separazione Product Backlog Agile da WBS/Gantt universale)
+
+**Storico revisioni**:
+- **v.2.0.0** (28/10/2025): separazione del Product Backlog dal lavoro tracciato in WBS/Gantt.
+- **v.3.0.0** (02/08/2026): snellimento in artefatto operativo — tabelle unificate per sottosistema, legenda P0-P3 ↔ MoSCoW, ambito compresso. Note metodologiche, riepiloghi percentuali, velocity tracking e processo di gestione del backlog spostati nella relazione (Cap. 3 e Cap. 5), nell'Allegato 4.2 (cerimonie) e nel registro `Relazione/_appunti-per-relazione.md`.
+- **v.3.1.0** (02/08/2026): revisione di tracciabilità e coerenza col Gantt. La colonna US ora punta alle **user story reali dell'Allegato 2.9** (la numerazione precedente era autonoma e collideva con quella del 2.9); i task tecnici sono marcati "—". Assegnazioni agli sprint riallineate alle **date del Gantt/CSV** (Allegato 3.5): il lavoro frontend scorre ora negli Sprint 5-11 (il tavolo da gioco negli Sprint 8-11, coerente con l'attività P di febbraio-marzo), il Real-Time negli Sprint 4-7. Nota capacity riscritta in termini di capacità (~40) vs carico medio (~37 team-wide, ~28 solo Backlog).

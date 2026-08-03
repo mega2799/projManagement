@@ -1,5 +1,5 @@
 # Allegato 3.4 - Cash Flow Management
-## v.1.3.0 – 2025-10-28 18:00
+## v.1.4.0 – 2026-08-02
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.4-CashFlow.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene statistiche chiave, il grafico Cash Flow mensile e la ripartizione spese per categoria, generati direttamente dai valori verificati di questo documento — sostituiscono le immagini PNG sotto, che mostrano dati superati (vedi nota nella sezione "Visualizzazione Grafica Cash Flow Mensile").
 
@@ -191,7 +191,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 
 ## Approval e Trasparenza Finanziaria
 
-**Meeting di Approvazione Budget**: 27/10/2025
+**Meeting di condivisione e approvazione del piano di Cash Flow**: 27/10/2025 *(il budget complessivo e la struttura di pagamento erano già stati confermati con l'approvazione dello Scoping del 02/10 e contrattualizzati alla firma del 15/10; questo meeting approva la ripartizione operativa delle spese)*
 **Partecipanti**:
 - Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 - Marco Venturi (Project Manager, PlayHeritage Labs)
@@ -224,6 +224,7 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
+- **v.1.4.0**: Chiarita la natura del meeting del 27/10 (approvazione del piano operativo di Cash Flow, non del budget — già contrattualizzato il 15/10).
 - **v.1.3.0**: Aggiunto il companion `Allegato3.4-CashFlow.html` con grafici nativi (SVG generati da script dai valori verificati della tabella corrente): Cash Flow mensile e ripartizione spese per categoria. Aggiunta nota che segnala come superate le immagini PNG esistenti (`img/cash-flow-maraffaonline.png`, generata pre-v.1.2.0 e mai rigenerata: mostra ancora 6 mesi e valori pre-ridistribuzione).
 - **v.1.2.0**: Ridistribuzione del Cash Flow sui 7 mesi effettivi del progetto (15 Ott 2025 - 15 Mag 2026). Tabella mensile estesa da 6 a 8 righe (Mese 0-7), outflow ridistribuiti con riduzione progressiva nella coda (testing/UAT/lancio), dettaglio spese per mese e per categoria resi internamente coerenti (righe = outflow mensile, colonne = totali di categoria). Totali invariati: inflow €25.000, outflow €22.750, surplus €2.250. Saldo minimo €2.250 (Mese 7).
 - **v.1.1.0**: Aggiunta visualizzazione grafica Cash Flow mensile (img/cash-flow-maraffaonline.png) e distribuzione spese per categoria (img/spese-categorie.png), con analisi interpretativa e insights chiave.
