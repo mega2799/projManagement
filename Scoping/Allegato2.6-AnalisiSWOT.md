@@ -88,7 +88,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 
 **Impatto**: Alto rischio di ritardi, bug difficili da debuggare, problemi di performance. Possibile necessità di consulenza esterna (costo aggiuntivo).
 
-**Mitigazione**: Piano di contingenza con consulente esterno (Dr. Stefano Nardi) se dopo 4 settimane il prototipo non funziona.
+**Mitigazione**: Piano di contingenza con consulente esterno (Dr. Stefano Nardi), attivabile al decision point go/no-go del giorno 15 dello spike; al giorno 30, escalation al committente.
 
 ---
 
@@ -106,7 +106,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 
 **Impatto**: Rischio di errori organizzativi, stime imprecise, gestione inefficace dei rischi, problemi di comunicazione interna/esterna.
 
-**Mitigazione**: Utilizzo rigoroso di metodologie e strumenti di project management, con documentazione e task tracking su Notion. Retrospective settimanali per identificare e correggere rapidamente i problemi organizzativi.
+**Mitigazione**: Utilizzo rigoroso di metodologie e strumenti di project management, con documentazione e task tracking su Notion. Retrospective di fine sprint (bi-settimanali) per identificare e correggere rapidamente i problemi organizzativi.
 
 ---
 
@@ -115,7 +115,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 
 **Impatto**: Qualsiasi ritardo impatta direttamente la deadline finale. Rischio di dover ridurre lo scope per rispettare la data di lancio.
 
-**Mitigazione**: MoSCoW prioritization ferrea. Completare Must Have entro fine febbraio, lasciando marzo-aprile per testing e maggio per UAT e polish.
+**Mitigazione**: MoSCoW prioritization ferrea. Completare i sottosistemi critici (Game Engine, Backend, Real-Time) entro gennaio e i restanti Must Have entro marzo, lasciando aprile per testing e UAT e inizio maggio per la preparazione del lancio.
 
 ---
 
@@ -222,7 +222,7 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 
 **Impatto**: Progetto non consegnabile. Perdita di credibilità verso committente e Università. Spreco del budget di €25.000.
 
-**Contrasto**: Spike tecnico prioritario nelle prime 4 settimane. Consulente esterno già identificato come fallback. Decision point chiaro al giorno 30.
+**Contrasto**: Spike tecnico prioritario nelle prime 4 settimane. Consulente esterno già identificato come fallback, attivabile al decision point go/no-go del giorno 15; al giorno 30, escalation al committente.
 
 ---
 

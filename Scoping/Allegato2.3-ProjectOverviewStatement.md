@@ -84,7 +84,7 @@ I rischi sono raggruppati per obiettivo (stesso numero della sezione Obiettivi);
 - Accesso infrastrutture universitarie senza costi
 - Pagamenti milestone puntuali
 - Utilizzo solo tecnologie open-source (no licenze a pagamento)
-- Team dedicato full-time per 7 mesi
+- Team dedicato al progetto per tutti i 7 mesi (impegno ~50% FTE, senza allocazioni su altri progetti)
 - Francesca Giuliani disponibile 2 volte/mese per consulenze
 - Hosting e deployment gestiti da PlayHeritage Labs
 - App mobile nativa rinviata a fase 2 post-MVP

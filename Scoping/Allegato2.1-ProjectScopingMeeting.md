@@ -88,6 +88,8 @@ Accordi su:
 - **Demo mensili** per mostrare progressi al committente
 - **Beta testing** con 20 membri selezionati della community
 
+> *Nota: accordo preliminare del 15/09, poi rivisto in sede di negoziazione delle Conditions of Satisfaction (Allegato 2.2) e nelle Regole Operative (Allegato 4.2): Project Status Meeting settimanale il venerdì e demo bi-settimanali in Sprint Review.*
+
 ### 7. Prossimi Passi e Chiusura (16:55 - 17:00)
 - Approvazione formale dell'inizio del progetto
 - Definizione del contratto formale (milestone e pagamenti scaglionati) entro fine settembre
@@ -101,7 +103,7 @@ Accordi su:
 |---|-----------|--------------|----------|
 | 1 | Approva il budget di €25.000 e la durata di 7 mesi | Giovanni Marchetti | Approvato |
 | 2 | Prioritizzare versione web responsive prima dell'app mobile nativa | Marco Venturi | Approvato |
-| 3 | Definire contratto formale con milestones e pagamenti scaglionati | Marco Venturi | 20/09/2025 |
+| 3 | Definire contratto formale con milestones e pagamenti scaglionati | Marco Venturi | 19/09/2025 |
 | 4 | Identificare 20 beta tester dalla community per user testing | Francesca Giuliani | 30/09/2025 |
 | 5 | Creare canale Slack condiviso PlayHeritage-MaraffaForever | Andrea Conti | 17/09/2025 |
 | 6 | Programmare primo meeting bi-settimanale | Marco Venturi | 26/09/2025 |
@@ -116,7 +118,7 @@ Accordi su:
 | 1 | Redigere il Project Overview Statement (POS) | Marco Venturi | 22/09/2025 | Not started |
 | 2 | Preparare documento Conditions of Satisfaction | Marco Venturi | 22/09/2025 | Not started |
 | 3 | Condurre Risk Analysis preliminare | Elena Rossi | 23/09/2025 | Not started |
-| 4 | Creare primi wireframe/mockup dell'interfaccia | Luca Moretti | 28/09/2025 | Not started |
+| 4 | Creare primi wireframe/mockup dell'interfaccia | Luca Moretti | 26/09/2025 | Not started |
 | 5 | Inviare regolamento ufficiale Maraffa romagnola | Francesca Giuliani | 25/09/2025 | Not started |
 | 6 | Identificare e contattare 20 beta tester | Francesca Giuliani | 30/09/2025 | Not started |
 | 7 | Preparare bozza di contratto con milestone payments | Marco Venturi | 19/09/2025 | Not started |

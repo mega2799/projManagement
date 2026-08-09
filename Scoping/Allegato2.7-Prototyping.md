@@ -181,9 +181,9 @@ Apprezzato:
 |                                        |
 | Invita giocatori:                      |
 | [ Cerca amici...]                      |
-| [ ] Marco Venturi                      |
-| [ ] Giulia Rossi                       |
-| [ ] Luca Bianchi                       |
+| [ ] Paolo Casadei                      |
+| [ ] Anna Fabbri                        |
+| [ ] Davide Montanari                   |
 |                                        |
 | Link di invito:                        |
 | maraffaonline.it/join/ABC123           |
@@ -213,7 +213,7 @@ Apprezzato:
 **Mockup v2 - Modifiche Implementate**:
 - Carte ingrandite del 30%
 - Semi e valori ben leggibili anche su mobile
-- Indicatore visivo "Mano vinta da [Nome Giocatore]"
+- Indicatore visivo "Presa vinta da [Nome Giocatore]"
 - Area "Carte giocate" visibile lateralmente
 - Timer di turno (30 secondi) con progress bar
 - Indicatore latency per ogni giocatore (verde/giallo/rosso)

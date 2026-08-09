@@ -1,6 +1,6 @@
 # Allegato 2.5 - Business Model Canvas
 
-## v.1.3.0 – 2025-09-21 14:30
+## v.1.3.0 – 2025-09-22 14:30
 
 > Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.5-BusinessModelCanvas.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 
@@ -172,7 +172,7 @@ Il Business Model Canvas è uno strumento strategico per descrivere, analizzare 
 
 **Costi Variabili:**
 - Consulenza esterna: €2.000 (budget emergenza)
-- Catering meeting: €300
+- Catering meeting: €250
 - Incentivi beta tester: €500
 
 **Costi One-Time:**
@@ -200,7 +200,7 @@ La tabella seguente riproduce il canvas classico a 9 blocchi: le colonne 2 e 4 r
 
 | Cost Structure | Revenue Streams |
 |---|---|
-| **Costi Fissi**<br>• Hosting server: €50/mese<br>• Spazi e tool: €0 (forniti da UniBo e open-source)<br><br>**Costi Variabili**<br>• Consulenza esterna: €2.000 (budget emergenza)<br>• Catering meeting: €300<br>• Incentivi beta tester: €500<br><br>**Costi One-Time**<br>• Dominio: €15/anno<br>• Marketing lancio: €500<br><br>**Ripartizione Budget (€25.000)**<br>• Sviluppo: 70% (€17.500)<br>• Infrastruttura: 15% (€3.750)<br>• Contingenza: 10% (€2.500)<br>• Marketing & Community: 5% (€1.250)<br><br>**Post-Lancio**<br>• €500/mese (manutenzione) | **Modello Attuale**<br>• Crowdfunding community: €25.000 totali<br>• Pagamenti a corpo in 3 tranche (50/25/25) legate all'avanzamento del progetto<br><br>**Modello Futuro**<br>• Contratto di manutenzione (€500/mese)<br>• Licensing ad altre community<br>• Consulenza per progetti simili<br>• Freemium model (tornei, temi grafici, statistiche avanzate)<br><br>**Ricavi Non-Monetari**<br>• Pubblicazioni scientifiche<br>• Portfolio e reputazione |
+| **Costi Fissi**<br>• Hosting server: €50/mese<br>• Spazi e tool: €0 (forniti da UniBo e open-source)<br><br>**Costi Variabili**<br>• Consulenza esterna: €2.000 (budget emergenza)<br>• Catering meeting: €250<br>• Incentivi beta tester: €500<br><br>**Costi One-Time**<br>• Dominio: €15/anno<br>• Marketing lancio: €500<br><br>**Ripartizione Budget (€25.000)**<br>• Sviluppo: 70% (€17.500)<br>• Infrastruttura: 15% (€3.750)<br>• Contingenza: 10% (€2.500)<br>• Marketing & Community: 5% (€1.250)<br><br>**Post-Lancio**<br>• €500/mese (manutenzione) | **Modello Attuale**<br>• Crowdfunding community: €25.000 totali<br>• Pagamenti a corpo in 3 tranche (50/25/25) legate all'avanzamento del progetto<br><br>**Modello Futuro**<br>• Contratto di manutenzione (€500/mese)<br>• Licensing ad altre community<br>• Consulenza per progetti simili<br>• Freemium model (tornei, temi grafici, statistiche avanzate)<br><br>**Ricavi Non-Monetari**<br>• Pubblicazioni scientifiche<br>• Portfolio e reputazione |
 
 ---
 

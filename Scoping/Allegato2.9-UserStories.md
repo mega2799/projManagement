@@ -195,7 +195,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Invio notifica in-app agli amici selezionati
 - Amico riceve notifica cliccabile che lo porta alla stanza
 
-**Dipendenze**: US-3.1 (Sistema amicizie)
+**Dipendenze**: US-5.1 (Sistema amicizie)
 **Test**: Manual
 
 ---
@@ -212,7 +212,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Countdown di 10 secondi quando 4/4 giocatori
 - Messaggio "La partita inizia tra 10...9...8..."
 - Distribuzione automatica 10 carte a giocatore
-- Determinazione casuale primo giocatore
+- Primo giocatore: chi ha il 4 di Denari, che sceglie la briscola e apre la prima mano (regole ufficiali, REQ-GE-1.1.2)
 - Transizione a schermata tavolo da gioco
 - Indicatore visivo "È il turno di [Nome]"
 
@@ -233,6 +233,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 - Carta giocata visibile a tutti i 4 giocatori
 - Turno passa al giocatore successivo
 - Non posso giocare carte durante il turno di altri
+- Se apro la presa, posso associare alla carta un segnale lecito (busso, striscio, volo), annunciato agli altri giocatori (REQ-GE-1.1.2)
 - Validazione server-side: carta deve essere legale (rispetto seme se possibile)
 - Messaggio errore se carta illegale
 
@@ -249,8 +250,8 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 **Criteri di Accettazione**:
 - Barra punteggio sempre visibile: "Noi: 45 - Loro: 38"
-- Aggiornamento real-time dopo ogni mano vinta
-- Indicatore visivo "Mano vinta da [Coppia]" (es. banner temporaneo)
+- Aggiornamento real-time dopo ogni presa vinta (il punteggio di partita si consolida a fine smazzata, con arrotondamento per difetto)
+- Indicatore visivo "Presa vinta da [Coppia]" (es. banner temporaneo)
 - Evidenziazione coppia in vantaggio (colore diverso)
 
 **Dipendenze**: US-3.2, Game Engine
@@ -284,7 +285,7 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 **Criteri di Accettazione**:
 - Schermata "VITTORIA!" o "SCONFITTA" con animazione
-- Punteggio finale: es. "41 - 38" (primo a 41 punti e una figura)
+- Punteggio finale: es. "41 - 36" (primo a 41 punti e una figura)
 - Riepilogo mani vinte per coppia
 - Punti raccolti per coppia durante la partita
 - Pulsanti: "Rivincita" / "Torna alla lobby" / "Condividi risultato"
@@ -298,14 +299,15 @@ Ogni user story è validata secondo il principio **INVEST**:
 ### US-3.6: Dichiarazione "Maraffa"
 
 **Come** giocatore esperto,
-**voglio** dichiarare "Maraffa" quando ho 3 carte dello stesso seme,
-**così da** ottenere punti bonus secondo le regole tradizionali.
+**voglio** dichiarare "Maraffa" quando ho Asso, 2 e 3 del seme di briscola,
+**così da** ottenere i 3 punti bonus secondo le regole tradizionali.
 
 **Criteri di Accettazione**:
-- Pulsante "Dichiara Maraffa" visibile durante mio turno (solo se ho 3+ carte stesso seme)
-- Click pulsante: mostro le 3 carte agli altri giocatori
-- Bonus punti aggiunto al punteggio della coppia
-- Validazione server-side: verifica effettiva presenza 3 carte
+- Pulsante "Dichiara Maraffa" visibile solo se ho Asso, 2 e 3 del seme di briscola (verificabile solo al mio primo turno)
+- La dichiarazione comporta di giocare l'Asso di briscola come prima carta (regole ufficiali, REQ-GE-1.1.5)
+- Click pulsante: la dichiarazione è annunciata agli altri giocatori
+- 3 punti bonus aggiunti al punteggio della coppia
+- Validazione server-side: verifica effettiva presenza di Asso, 2 e 3 di briscola in mano
 
 **Dipendenze**: US-3.2, validazione regole esperte Maraffa Forever
 **Test**: Manual + validazione Francesca Giuliani
@@ -445,10 +447,10 @@ Ogni user story è validata secondo il principio **INVEST**:
 
 ---
 
-## Backlog (Post-MVP, se tempo disponibile)
-- US-2.5: Invito Diretto Amici
-- US-4.2: Chat Globale
-- US-6.2: Statistiche Avanzate
+## Backlog (candidate al rinvio post-MVP)
+- US-2.5: Invito Diretto Amici *(Should Have: lo slittamento post-MVP è stato formalmente accettato dal committente, vedi Allegato 3.2)*
+- US-4.2: Chat Globale *(Could Have)*
+- US-6.2: Statistiche Avanzate *(Could Have)*
 
 *(La prioritizzazione MoSCoW e le stime sono negli allegati di Planning: 3.2 e 3.3.)*
 
@@ -471,7 +473,7 @@ Tutte le user stories sono state validate contro i criteri INVEST:
 
 **Redatto da**: Marco Venturi (Project Manager) & Team PlayHeritage Labs
 **Revisionato con**: Community Maraffa Forever (feedback su user experience)
-**Data approvazione**: 28/09/2025
+**Data approvazione**: 26/09/2025
 
 **Storico revisioni**:
 - **v.1.2.0**: Rimosso il "Riepilogo User Stories per Sprint" (5 sprint con story points), residuo sfuggito alla pulizia della v.1.1.0: era pianificazione dentro un documento di Scoping e contraddiceva il calendario del Product Backlog (Allegato 3.3), che è l'unica fonte per l'assegnazione agli sprint. Ripuliti anche i punti e le etichette MoSCoW dalla sezione Post-MVP.

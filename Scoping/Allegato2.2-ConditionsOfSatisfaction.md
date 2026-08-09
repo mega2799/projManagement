@@ -57,7 +57,7 @@ La tabella è composta da 4 colonne:
         <td>Not started</td>
     </tr>
     <tr>
-        <td rowspan="6">Tecnica</td>
+        <td rowspan="7">Tecnica</td>
         <td>Sistema scalabile per gestire partite concorrenti</td>
         <td>Supportare almeno 100 partite simultanee (400 giocatori concorrenti)</td>
         <td>Not started</td>
@@ -65,6 +65,11 @@ La tabella è composta da 4 colonne:
     <tr>
         <td>Latency massima per sincronizzazione real-time</td>
         <td>Delay massimo di 500ms tra azione del giocatore e aggiornamento per gli altri 3 giocatori</td>
+        <td>Not started</td>
+    </tr>
+    <tr>
+        <td>Tempo di risposta delle API</td>
+        <td>Risposta delle API REST entro 200ms (95° percentile)</td>
         <td>Not started</td>
     </tr>
     <tr>

@@ -34,7 +34,7 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
   - Figure (Re, Cavallo, Fante), 2 e 3 = 1/3 punto ciascuno
   - Carte 4-7 = 0 punti
   - Ultima presa = 1 punto
-  - Totale mano = 10 e 2/3 punti (11 con ultima presa)
+  - Totale smazzata = 10 e 2/3 punti dalle carte + 1 punto ultima presa = 11 e 2/3 grezzi (11 punti interi assegnati, dopo arrotondamento per difetto dei punteggi delle due coppie)
   - Conteggio: solo punti interi, arrotondamento per difetto
 - **Fonte regole**: [Wikipedia Marafone Beccacino](https://it.wikipedia.org/wiki/Marafone_Beccacino), [Giochi STARS](https://giochistars.it/news/giochi-carte-tradizionali/marafone-tutte-le-informazioni-e-le-regole-del-gioco-di-carte-romagnolo/)
 - **Validazione**: approvazione formale da Francesca Giuliani (esperta Maraffa Forever)
@@ -211,7 +211,7 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - `player_joined`: giocatore entra in partita
 - `game_started`: partita iniziata
 - `card_played`: carta giocata da un giocatore
-- `hand_won`: mano vinta, aggiornamento punteggio
+- `hand_won`: presa vinta, aggiornamento punteggio
 - `game_ended`: partita terminata
 - **Architettura**: Server-authoritative (server è fonte di verità)
 
@@ -331,10 +331,10 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 - **Alternativa MVP**: responsive web app utilizzabile da mobile browser
 - **Pianificazione**: sviluppo app nativa in fase 2 post-lancio (se progetto di successo)
 
-### 5.2 Progressive Web App (PWA) [F, C]
+### 5.2 Progressive Web App (PWA) [F, W]
 - Installabilità come app (Add to Home Screen)
 - Service Worker per offline caching
-- **Priorità**: Could Have (valutare in fase di planning)
+- **Priorità**: valutata come Could in fase di analisi, esclusa dall'MVP in fase di planning (Won't Have, rivalutabile in v1.1)
 
 ---
 
@@ -388,7 +388,7 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 
 ### 7.1 Hosting e Deployment
 
-#### 7.1.1 Server Dedicato [C, M]
+#### 7.1.1 Server Dedicato [NF, M]
 - Hetzner o OVH (server dedicato ~€50/mese)
 - 8GB RAM, 4 cores, 200GB SSD
 - **Vincolo**: Budget limitato, no cloud scalabile (AWS/GCP) nel MVP
@@ -469,16 +469,14 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 ### SHOULD HAVE (Importante ma non critico)
 - Sistema amicizie
 - Profili utente personalizzabili
-- Statistiche avanzate
 - Accessibilità WCAG AA
 - Monitoring avanzato
 
 ### COULD HAVE (Desiderabile)
 - Chat globale
 - Classifiche/Leaderboard
-- PWA
 - Modalità daltonici
-- Statistiche molto avanzate
+- Statistiche avanzate
 
 ### WON'T HAVE (MVP - Pianificato per v1.1+)
 - App mobile nativa iOS/Android
@@ -496,7 +494,7 @@ Ogni requisito sarà tracciato attraverso:
 - **ID univoco**: es. `REQ-GE-1.1.1` (Game Engine, sezione 1.1, punto 1)
 - **User Story associata**: vedi Allegato 2.9
 - **Test case**: definiti in fase di Planning
-- **Issue tracking**: Jira board con label per sottosistema
+- **Issue tracking**: board Notion con label per sottosistema
 
 ---
 

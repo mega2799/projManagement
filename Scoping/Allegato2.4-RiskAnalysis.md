@@ -105,7 +105,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
 | 4.2 | Vulnerabilità nel sistema di autenticazione | Backend Server | A | Disastroso | 4 | Giallo | Contingenza — Passport.js/JWT; HTTPS obbligatorio; penetration testing |
 | 4.3 | Gestione privacy e GDPR | Backend Server | B | Grave | 6 | Arancione | Mitigazione — ufficio legale UniBo; privacy policy, cookie consent, diritto all'oblio |
 | 5.1 | Budget limitato per infrastruttura cloud | Infrastructure & DevOps | C | Grave | 9 | Rosso | Mitigazione — server dedicato (€50/mese); architettura pronta per cloud migration |
-| 5.2 | Esperienza limitata in DevOps | Infrastructure & DevOps | B | Moderato | 4 | Giallo | Mitigazione — PaaS (Heroku/Railway); Docker; CI/CD con GitLab |
+| 5.2 | Esperienza limitata in DevOps | Infrastructure & DevOps | B | Moderato | 4 | Giallo | Mitigazione — configurazione Docker standardizzata e CI/CD GitLab riducono il presidio DevOps richiesto |
 | 5.3 | Picchi di traffico al lancio | Infrastructure & DevOps | D | Moderato | 8 | Arancione | Mitigazione — load testing; soft launch graduale; rate limiting |
 | 6.1 | Budget insufficiente per team | Project Management | D | Disastroso | 16 | Rosso Critico | Accept — progetto pilota a valore strategico; team part-time (50% FTE) |
 | 6.2 | Scope creep da richieste committente | Project Management | C | Disastroso | 12 | Rosso | Mitigazione — Change Control Process rigoroso; freeze requisiti dopo POS |
@@ -148,7 +148,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
        - Valore rischio: 16
        - Colore rischio: Rosso Critico
        - Descrizione: Team senza esperienza in real-time multiplayer
-       - Risk Management: Piano di Contingenza. Spike tecnico 2 settimane. Decision point giorno 30: se fallisce, consulente esterno Dr. Stefano Nardi (budget €2.000).
+       - Risk Management: Piano di Contingenza. Spike tecnico 2 settimane. Decision point go/no-go al giorno 15: se lo spike fallisce, si attiva il consulente esterno Dr. Stefano Nardi (budget €2.000); al giorno 30, escalation al committente.
    2. Gestione disconnessioni e riconnessioni
        - Sottosistema: Real-Time Communication
        - Probabilità: C
@@ -238,7 +238,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
        - Valore rischio: 4
        - Colore rischio: Giallo
        - Descrizione: Competenze teoriche, esperienza pratica limitata
-       - Risk Management: Mitigazione. PaaS (Heroku/Railway). Docker. CI/CD con GitLab.
+       - Risk Management: Mitigazione. Configurazione Docker standardizzata. CI/CD con GitLab (deploy automatizzato, meno presidio manuale).
    3. Picchi di traffico al lancio
        - Sottosistema: Infrastructure & DevOps
        - Probabilità: D
@@ -295,7 +295,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
 
 **Redatto da**: Elena Rossi (Lead Developer, PlayHeritage Labs)
 **Revisionato da**: Marco Venturi (Project Manager, PlayHeritage Labs)
-**Data approvazione**: 20/09/2025
+**Data approvazione**: 22/09/2025
 
 **Storico revisioni**:
 - **v.1.1.0**: Aggiornata la legenda dei colori (introdotto il livello "Rosso Critico" per il valore 16) e aggiunto il Risk Register tabellare di sintesi (codice, probabilità, impatto, valore, livello e strategia per ogni rischio).

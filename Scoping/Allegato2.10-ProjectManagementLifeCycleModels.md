@@ -91,7 +91,7 @@ Sull'infrastruttura l'approccio incrementale serve a evitare l'over-engineering:
 
 ## Coordinamento tra metodologie diverse
 
-La difficoltà principale di un approccio ibrido è tenere sincronizzati sottosistemi che internamente seguono ritmi diversi. La soluzione adottata è una cadenza comune sovrapposta ai singoli metodi: anche i sottosistemi Waterfall e Incrementale, che internamente non lavorano per sprint, si allineano a una scansione bi-settimanale, con demo al committente ogni venerdì e milestone di integrazione a cadenza mensile. Le settimane di integrazione (4, 8 e 12) non introducono nuove feature ma sono dedicate a integrazione e bug fixing.
+La difficoltà principale di un approccio ibrido è tenere sincronizzati sottosistemi che internamente seguono ritmi diversi. La soluzione adottata è una cadenza comune sovrapposta ai singoli metodi: anche i sottosistemi Waterfall e Incrementale, che internamente non lavorano per sprint, si allineano a una scansione bi-settimanale, con demo al committente il venerdì di fine sprint (cadenza bi-settimanale, in Sprint Review) e milestone di integrazione a cadenza mensile. Le settimane di integrazione (4, 8 e 12) non introducono nuove feature ma sono dedicate a integrazione e bug fixing.
 
 ---
 
