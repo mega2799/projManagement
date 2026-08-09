@@ -149,9 +149,9 @@ Se il grafico a torta risulta troppo affollato (troppe categorie piccole), usa:
 **Etichette Dati**: Mostra importo su ogni colonna
 
 **Annotazioni**: Aggiungi box di testo con le condizioni:
-- "50% upfront - Firma contratto"
-- "25% milestone - Scoping + Planning"
-- "25% finale - MVP beta"
+- "50% upfront - Firma contratto (15 Ott)"
+- "25% milestone - Backend Core, M2 (15 Dic)"
+- "25% finale - Core di gioco completo (15 Feb)"
 
 ---
 

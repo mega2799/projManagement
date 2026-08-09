@@ -43,7 +43,7 @@ Il team lavora **part-time (~50% FTE)**: è la risposta al rischio "budget insuf
 | Sprint | **15** (Sprint 0–14) da 2 settimane; sviluppo negli **Sprint 0–10**, gli 11–14 sono testing E2E, UAT, lancio |
 | Product Backlog | **310 SP**; lavoro totale ~**441 SP** equivalenti (310 + ~94 Game Engine + ~37 Infrastructure) |
 | Capacity / carico | **40 SP/sprint team-wide** = capacità stimata; carico medio pianificato **~37 team-wide** (441 SP su Sprint 0-11) e **~28 solo Backlog** (310 SP su Sprint 1-11); velocity misurata **38,3** |
-| Sprint 5 (natalizio) | 23 Dic–3 Gen: **21 SP su 40** (52,5%), carryover 19, **escluso** dalla media |
+| Sprint 5 (natalizio) | 22 Dic–2 Gen: **21 SP su 40** (52,5%), carryover 19, **escluso** dalla media |
 | Float | ramo Game Engine **22 gg**, ramo Chat/Social **37 gg** |
 | Fast tracking | legame **P→R Start-to-Start + lag 31 gg** (Testing E2E in overlap sulla coda del Frontend Tavolo) |
 | Attività più critica | **P — Frontend Tavolo da Gioco, 40 giorni** (2 Feb – 27 Mar) |
@@ -80,7 +80,7 @@ Monitoraggio su **3 livelli**: quotidiano (Daily Standup per i sottosistemi Agil
 
 ### Closing (Cap. 6 + documento di Closing)
 
-**Accettazione formale** il 10 Mag 2026: Giovanni testa personalmente una partita completa e firma senza chiedere modifiche. Il deploy in produzione è a carico della community (Docker image + istruzioni di Andrea). **Final Project Report** consegnato il 12 Mag. **Audit post-implementazione**: tutti gli obiettivi POS raggiunti (7 mesi, 141 gg di critical path rispettati, €22.750, regole validate, latenza 185ms, 80% utenti autonomi). **Lessons learned** principali: (1) prototipare le feature UI complesse già in fase di stima; (2) coinvolgere gli esperti di dominio anche durante lo sviluppo, non solo nello Scoping; (3) anticipare il testing cross-browser (fu fatto solo allo Sprint 12: le animazioni CSS su Safari costarono 2 giorni di fallback); (4) evitare di accumulare technical debt da smaltire tutto insieme (il cleanup dello Sprint 10 ha ridotto il valore visibile per lo sponsor in quella Review) — meglio il 10–15% di ogni sprint. Chiusura con celebrazione e interesse dello sponsor per sviluppi futuri (app nativa, tornei, single-player IA).
+**Accettazione formale** l'11 Mag 2026 (lunedì, quattro giorni prima del lancio): Giovanni testa personalmente una partita completa e firma senza chiedere modifiche. Il deploy in produzione è a carico della community (Docker image + istruzioni di Andrea). **Final Project Report** consegnato il 12 Mag. **Audit post-implementazione**: tutti gli obiettivi POS raggiunti (7 mesi, 141 gg di critical path rispettati, €22.750, regole validate, latenza 185ms, 80% utenti autonomi). **Lessons learned** principali: (1) prototipare le feature UI complesse già in fase di stima; (2) coinvolgere gli esperti di dominio anche durante lo sviluppo, non solo nello Scoping; (3) anticipare il testing cross-browser (fu fatto solo allo Sprint 12: le animazioni CSS su Safari costarono 2 giorni di fallback); (4) evitare di accumulare technical debt da smaltire tutto insieme (il cleanup dello Sprint 10 ha ridotto il valore visibile per lo sponsor in quella Review) — meglio il 10–15% di ogni sprint. Chiusura con celebrazione e interesse dello sponsor per sviluppi futuri (app nativa, tornei, single-player IA).
 
 ## 6. I casi speciali — risposte pronte (QUI si vince l'orale)
 
@@ -92,7 +92,7 @@ I criteri di scelta sono **l'incertezza dei requisiti e l'incertezza della soluz
 - **Real-Time → Agile Adattivo**: incertezza massima (le latenze con Socket.IO reggeranno?) → sperimentazione rapida, spike, decision point go/no-go.
 - **Social e Infrastructure → Incrementale**: valore rilasciabile in incrementi indipendenti prioritizzati MoSCoW.
 
-Il costo dell'ibrido è la **sincronizzazione**: risolto con una cadenza comune sovrapposta — scansione bi-settimanale anche per chi non lavora a sprint, demo ogni venerdì, milestone di integrazione mensili, settimane 4/8/12 dedicate a integrazione e bug fixing senza nuove feature. Benefici: rischio gestito per componente, niente overhead superfluo (uno sprint planning sul Game Engine non avrebbe senso), modello riusabile su futuri giochi tradizionali.
+Il costo dell'ibrido è la **sincronizzazione**: risolto con una cadenza comune sovrapposta — scansione bi-settimanale anche per chi non lavora a sprint, demo bi-settimanali il venerdì di fine sprint (in Sprint Review), milestone di integrazione mensili, settimane 4/8/12 dedicate a integrazione e bug fixing senza nuove feature. Benefici: rischio gestito per componente, niente overhead superfluo (uno sprint planning sul Game Engine non avrebbe senso), modello riusabile su futuri giochi tradizionali.
 
 ### 6.2 «Perché Social & Community sta nel Product Backlog se è Incrementale?» ⚠️
 
@@ -116,7 +116,7 @@ No, e la chiave è distinguere **capacità** da **carico**. I 40 SP/sprint sono 
 
 ### 6.6 «E lo sprint di Natale?»
 
-Lo Sprint 5 (23 Dic – 3 Gen) è pianificato **a capacità ridotta**: 21 SP completati su 40 (52,5%), con **carryover di 19 SP** riassorbito nei due sprint successivi. La media di 38,3 **lo esclude** perché non rappresentativo del ritmo di regime — dirlo esplicitamente mostra onestà metodologica, non un trucco.
+Lo Sprint 5 (22 Dic – 2 Gen) è pianificato **a capacità ridotta**: 21 SP completati su 40 (52,5%), con **carryover di 19 SP** riassorbito nei due sprint successivi. La media di 38,3 **lo esclude** perché non rappresentativo del ritmo di regime — dirlo esplicitamente mostra onestà metodologica, non un trucco.
 
 ### 6.7 «Perché il Must Have è al 75,8% se DSDM raccomanda 60%?»
 
@@ -147,15 +147,12 @@ Da sistemare prima della consegna, o quantomeno da **sapere** per non farsi sorp
 
 1. **UAT: aprile o maggio?** Gantt e Backlog collocano la UAT in **1–24 Apr** (M6 = approvazione 24 Apr); ma Cap. 5 e Cap. 6 raccontano la "UAT ufficiale" **1–10 Maggio**. Contraddizione da risolvere (la lettura più difendibile: UAT formale in aprile come da piano; a inizio maggio una sessione finale di *validazione pre-lancio*).
 2. **Pagamento M2**: la tranche del 15 Dic è "a valle del Backend Core", ma M2 cade il 19 Dic — sfasatura di 4 giorni, minore.
-3. **RASCI (Allegato 4.2), rilievi minori residui**:
-   - «Reconnection handling (**30s** timeout)» ma la regola è sospensione **max 5 min** (i 30s sono l'heartbeat);
-   - la **chat in-game** (P0, criterio CoS "delay <2s") non ha una riga nella matrice;
+3. **RASCI (Allegato 4.2), rilievi minori residui** (gli altri quattro — reconnection 30s, chat in-game senza riga, review del 15/12, assegnatario UAT nel CSV — sono stati **corretti** il 2026-08-09):
    - **Scrum Master**: il 3.3 firma «Elena Rossi (Scrum Master)», ma Daily e Retrospective nella RASCI sono facilitati da **Marco** — che è già PO (antipattern PO+SM; risposta pronta: "team di 5, facilitazione pragmaticamente in capo al PM; il presidio di processo Scrum era di Elena");
-   - «Validazione regole»: A = Giovanni, ma il 2.10 dice che è **Francesca** ad approvare la specifica;
-   - «Prossimo review 15/12 (fine Sprint 4)»: lo Sprint 4 finisce il 20/12;
-   - CSV Gantt: assegnatario UAT «Marco + 10 tester» vs RASCI «Francesca conduce le sessioni».
+   - «Validazione regole»: A = Giovanni, ma il 2.10 dice che è **Francesca** ad approvare la specifica (risposta pronta: Francesca valida tecnicamente ed esegue le sessioni, R; lo sponsor approva formalmente, A).
 4. **Sessioni di validazione regole (Francesca)**: il POS chiede la validazione formale della specifica «entro il 30/10/2025», il Cash Flow paga **2 sessioni** (Novembre 2025 e Aprile 2026, €150 l'una), ma il Gantt/CSV colloca una validazione a **fine gennaio** (task L.3, chiusura Game Engine Testing). Lettura difendibile: Ott/Nov = validazione della *specifica* (sessione pagata 1, quella in cui emerge la riclassificazione della Maraffa); Gennaio = validazione dell'*implementazione* dentro il GE Testing (Francesca coinvolta, non fatturata a parte); Aprile = validazione finale pre-UAT (sessione pagata 2).
 5. **POS, criterio "80 utenti attivi nei primi 2 mesi"**: non è verificabile alla chiusura del 15/05 (il Closing dichiara comunque "criteri pienamente soddisfatti"); risposta pronta: il dato delle prime 24h (50 registrati, 23 partite) è ben oltre la traiettoria attesa, e il criterio resta in monitoraggio post-lancio a carico della community.
+6. **Audit incrociato del 2026-08-09 — COMPLETATO E CORRETTO** (registro completo in `SCELTE-DI-PROGETTO.md` §8, risposte pronte in `FAQ.md` §G). Cinque squadre di verifica (date, denaro, cast/riferimenti, regole di gioco, metriche) hanno trovato e sono stati **corretti negli allegati**: le regole sbagliate nelle US-3.1/3.5/3.6 (4 di Denari, punteggio 41-36, Maraffa = A+2+3 di briscola); il "full-time" nel POS; il revisore fantasma "Luca Bianchi"; il decision point WebSocket armonizzato (g.15 consulente, g.30 escalation); la semantica EVM del Cap. 5 (CV vera, saldo €5.250); le percentuali MoSCoW di sezione; la **griglia sprint mar-sab riallineata a lun-ven** (S5 = 22 Dic-2 Gen); l'**accettazione spostata all'11/05** (il 10 era domenica); milestone del network rinumerate M2/M3/M4/M6; break-even ~84 mesi; ritardo Sprint 7 attribuito a M anche nel §5.8; rischi citati come 2.1/6.2 (non R1/R4); tornei = Won't; tutorial non più "extra"; PWA = Won't ovunque; SP padre del CSV = somma dei figli; più una ventina di refusi minori (date nel weekend, Jira/Confluence/PaaS/DigitalOcean, "12 allegati", chat 1-a-1 fantasma). **Restano da sapere** (difendibili a voce): i punti 1-5 sopra, il PoC in due stadi (spike Sprint 0 → PoC completo Sprint 2), REQ-SOC-6.1 letto come quota UI delle amicizie, gli overlap FS minori non annotati nel CSV (H.7, I.7, J.5, K.5-6, Q.4), la 3ª tranche di domenica 15/02 (data contrattuale fissa) e il doppio uso narrativo del surplus (6.3 supporto post-lancio vs 6.7 sostenibilità: stessa cassa, dirlo così).
 
 Storico delle incoerenze **già risolte** (per contesto, se chiedono "cosa correggereste?"):
 - Social & Community dichiarato "Agile" in contrasto col 2.10 → criterio della natura del lavoro (§6.2);
@@ -164,7 +161,7 @@ Storico delle incoerenze **già risolte** (per contesto, se chiedono "cosa corre
 - M4 datata 14 Mar prima della fine di P → 27 Mar;
 - RASCI: Elena "Backend Developer" e Sara Responsible del Game Engine mentre era già Responsible del Backend negli stessi sprint (conflitto di carico) → Elena A/R sul GE, Sara a supporto;
 - load test a 50 partite vs criterio CoS di 100 → uniformato a 100 (RASCI, Cap. 5, Cap. 6);
-- **tracciabilità US rotta**: il backlog usava 58 ID inesistenti nel 2.9 con collisioni di significato → colonna US rimappata sulle 22 user story reali del 2.9; rimosso dal 2.9 il "riepilogo per sprint" (pianificazione in Scoping, contraddiceva il 3.3);
+- **tracciabilità US rotta**: il backlog usava 58 ID inesistenti nel 2.9 con collisioni di significato → colonna US rimappata sulle 23 user story reali del 2.9; rimosso dal 2.9 il "riepilogo per sprint" (pianificazione in Scoping, contraddiceva il 3.3);
 - **tavolo da gioco a gennaio vs feb-mar**: gli sprint del backlog erano sfasati di ~1-2 sprint rispetto al Gantt su Frontend e Real-Time → riallineati alle date del Gantt (tavolo Sprint 8-11); il ritardo di gennaio è ora correttamente attribuito alla **Dashboard (M)**, e il "65% di P a gennaio" (impossibile: P inizia il 2 Feb) è diventato "60% di M";
 - kickoff previsto il 25/09 nel 2.1 → 15/10; timeline mockup 2.7 che sforava l'approvazione dello Scoping → anticipata (v2 il 25/09, approvazione 01/10);
 - Maraffa "era Should Have" solo nel racconto del Closing → riclassificazione documentata anche nella MoSCoW (nota di revisione, Novembre 2025);
@@ -206,4 +203,4 @@ Storico delle incoerenze **già risolte** (per contesto, se chiedono "cosa corre
 
 ---
 
-**Ultimo aggiornamento**: 2026-08-02 — allineato ad Allegato 3.3 v.3.1.0 (US reali del 2.9, sprint da Gantt), Allegato 3.5 v.2.0.0 (critical path 141 gg, fast tracking P→R), RASCI v.1.4.0, riconciliazione capacità 40 / carico 37-28, ritardo di gennaio su Dashboard (M), audit di coerenza incrociata completato.
+**Ultimo aggiornamento**: 2026-08-09 (sera) — audit incrociato a 5 lenti completato e correzioni applicate a tutti gli allegati (vedi §7.6); PDF e Relazione rigenerati; creati i documenti gemelli `SCELTE-DI-PROGETTO.md` (registro ragionato delle scelte) e `FAQ.md` (domande previste all'orale con risposte). Aggiornamento precedente: 2026-08-02 — allineato ad Allegato 3.3 v.3.1.0 (US reali del 2.9, sprint da Gantt), Allegato 3.5 v.2.0.0 (critical path 141 gg, fast tracking P→R), RASCI v.1.4.0, riconciliazione capacità 40 / carico 37-28, ritardo di gennaio su Dashboard (M), audit di coerenza incrociata completato.

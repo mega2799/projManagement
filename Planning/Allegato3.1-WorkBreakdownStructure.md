@@ -132,7 +132,7 @@ La WBS è organizzata su 4 livelli:
 - **Task 3.1.2.1**: Evento "gioca_carta" (broadcast a 4 giocatori)
 - **Task 3.1.2.2**: Evento "fine_mano" con punteggi aggiornati
 - **Task 3.1.2.3**: Evento "chat_message" (solo stanza attiva)
-- **Task 3.1.2.4**: Evento "notifica_turno" (push notification)
+- **Task 3.1.2.4**: Evento "notifica_turno" (notifica in-app via WebSocket)
 
 ### 3.2 Sincronizzazione Stato
 
@@ -230,7 +230,7 @@ La WBS è organizzata su 4 livelli:
 ### 5.2 Chat e Comunicazione
 
 #### 5.2.1 Chat Testuale
-- **Task 5.2.1.1**: Chat privata 1-a-1 con amici
+- **Task 5.2.1.1**: Chat globale lobby (REQ-RTC-3.4.2, Could Have)
 - **Task 5.2.1.2**: Chat stanza di gioco (4 giocatori)
 - **Task 5.2.1.3**: Storico messaggi (ultimi 100)
 - **Task 5.2.1.4**: Moderazione messaggi (filtro parole offensive)
@@ -247,7 +247,7 @@ La WBS è organizzata su 4 livelli:
 ### 6.1 Hosting e Deploy
 
 #### 6.1.1 Ambiente Produzione
-- **Task 6.1.1.1**: Setup VPS Linux (DigitalOcean/Hetzner)
+- **Task 6.1.1.1**: Setup VPS Linux (Hetzner/OVH)
 - **Task 6.1.1.2**: Configurare Nginx reverse proxy
 - **Task 6.1.1.3**: Certificati SSL (Let's Encrypt)
 - **Task 6.1.1.4**: Domain setup (maraffaonline.it)
@@ -309,7 +309,7 @@ La WBS è organizzata su 4 livelli:
 - **Task 7.1.1.4**: Regole ufficiali Maraffone (per team)
 
 #### 7.1.2 Documentazione PM
-- **Task 7.1.2.1**: Scoping documents (12 allegati)
+- **Task 7.1.2.1**: Scoping documents (11 allegati)
 - **Task 7.1.2.2**: Planning documents (5 allegati)
 - **Task 7.1.2.3**: Launching documents (2 allegati)
 - **Task 7.1.2.4**: Monitoring reports (settimanali)
@@ -343,7 +343,7 @@ Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratter
 ---
 
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
-**Revisionato da**: Luca Bianchi (Tech Lead)
+**Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
 - **v.1.2.0**: Aggiunta al companion HTML la sezione "Dettaglio Completo" con tutti i 160 Task in forma testuale (organizzati per Sottosistema → Funzione → Attività, colori coerenti col diagramma), su richiesta esplicita per avere un unico file stampabile con sia il diagramma sia il dettaglio.

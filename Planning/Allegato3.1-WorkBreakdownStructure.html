@@ -160,7 +160,7 @@
 <body>
 
 <h1>Work Breakdown Structure &mdash; MaraffaOnline</h1>
-<p class="sub">Allegato 3.1 &middot; v.1.1.0 &middot; PlayHeritage Labs</p>
+<p class="sub">Allegato 3.1 &middot; v.1.2.0 &middot; PlayHeritage Labs</p>
 
 <div class="note">Diagramma sui primi 3 livelli (Sottosistema &rarr; Funzione, con conteggio di Attività e Task). Il 4&deg; livello &mdash; i 160 Task atomici &mdash; è elencato per esteso nella sezione "Dettaglio Completo" più sotto e nella <strong>WBS Dictionary</strong> (<code>Allegato3.1-WorkBreakdownStructure.md</code>), secondo la prassi di separare il diagramma grafico (pochi livelli, leggibile) dal dettaglio completo.</p>
 
@@ -375,7 +375,7 @@
       <li><strong>3.1.2.1</strong> Evento "gioca_carta" (broadcast a 4 giocatori)</li>
       <li><strong>3.1.2.2</strong> Evento "fine_mano" con punteggi aggiornati</li>
       <li><strong>3.1.2.3</strong> Evento "chat_message" (solo stanza attiva)</li>
-      <li><strong>3.1.2.4</strong> Evento "notifica_turno" (push notification)</li>
+      <li><strong>3.1.2.4</strong> Evento "notifica_turno" (notifica in-app via WebSocket)</li>
     </ul></div>
     <div class="dict-fun">3.2 Sincronizzazione Stato</div>
     <div class="dict-att-block"><div class="dict-att">3.2.1 Conflict Resolution</div>
@@ -483,7 +483,7 @@
     <div class="dict-fun">5.2 Chat e Comunicazione</div>
     <div class="dict-att-block"><div class="dict-att">5.2.1 Chat Testuale</div>
     <ul class="dict-tasks">
-      <li><strong>5.2.1.1</strong> Chat privata 1-a-1 con amici</li>
+      <li><strong>5.2.1.1</strong> Chat globale lobby (REQ-RTC-3.4.2, Could Have)</li>
       <li><strong>5.2.1.2</strong> Chat stanza di gioco (4 giocatori)</li>
       <li><strong>5.2.1.3</strong> Storico messaggi (ultimi 100)</li>
       <li><strong>5.2.1.4</strong> Moderazione messaggi (filtro parole offensive)</li>
@@ -502,7 +502,7 @@
     <div class="dict-fun">6.1 Hosting e Deploy</div>
     <div class="dict-att-block"><div class="dict-att">6.1.1 Ambiente Produzione</div>
     <ul class="dict-tasks">
-      <li><strong>6.1.1.1</strong> Setup VPS Linux (DigitalOcean/Hetzner)</li>
+      <li><strong>6.1.1.1</strong> Setup VPS Linux (Hetzner/OVH)</li>
       <li><strong>6.1.1.2</strong> Configurare Nginx reverse proxy</li>
       <li><strong>6.1.1.3</strong> Certificati SSL (Let's Encrypt)</li>
       <li><strong>6.1.1.4</strong> Domain setup (maraffaonline.it)</li>
@@ -570,7 +570,7 @@
     </ul></div>
     <div class="dict-att-block"><div class="dict-att">7.1.2 Documentazione PM</div>
     <ul class="dict-tasks">
-      <li><strong>7.1.2.1</strong> Scoping documents (12 allegati)</li>
+      <li><strong>7.1.2.1</strong> Scoping documents (11 allegati)</li>
       <li><strong>7.1.2.2</strong> Planning documents (5 allegati)</li>
       <li><strong>7.1.2.3</strong> Launching documents (2 allegati)</li>
       <li><strong>7.1.2.4</strong> Monitoring reports (settimanali)</li>

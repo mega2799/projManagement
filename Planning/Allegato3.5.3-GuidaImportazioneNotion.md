@@ -318,7 +318,7 @@ Se preferisci partire da un template Notion già configurato:
 │   ├── Status (Select: Not Started | In Progress | Completed | Blocked)
 │   ├── Priority (Select: P0 | P1 | P2 | P3)
 │   ├── Critical Path (Checkbox)
-│   ├── Sprint (Select: Sprint 0-13)
+│   ├── Sprint (Select: Sprint 0-14)
 │   ├── Sottosistema (Select: 9 opzioni)
 │   ├── Assegnatario (Person o Text)
 │   ├── Durata (giorni) (Number)

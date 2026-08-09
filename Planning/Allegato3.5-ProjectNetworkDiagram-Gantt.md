@@ -144,10 +144,10 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
    +---------------------------+
    | ID: A                     |
    | Attività: Setup Infra     |
-   | Durata: 10 giorni         |
+   | Durata: 9 giorni          |
    +---------------------------+
-   | ES: 0  | EF: 10           |
-   | LS: 0  | LF: 10           |
+   | ES: 0  | EF: 9            |
+   | LS: 0  | LF: 9            |
    | Float: 0 (CRITICAL)       |
    +---------------------------+
    ```
@@ -156,11 +156,11 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
    - **Frecce rosse spesse**: attività sul critical path
    - **Frecce blu sottili**: attività con float (non critiche)
 
-3. **Milestone (Rombi)**: Punti di controllo chiave
-   - ◆ Milestone 1: "Backend Core Completo" (dopo attività G)
-   - ◆ Milestone 2: "Game Engine Completo" (dopo attività L)
-   - ◆ Milestone 3: "Frontend Completo" (dopo attività P)
-   - ◆ Milestone 4: "MVP Pronto" (dopo attività S)
+3. **Milestone (Rombi)**: Punti di controllo chiave (numerazione allineata alla tabella milestone del Gantt, M1-M7)
+   - ◆ M2: "Backend Core Complete" (dopo attività G)
+   - ◆ M3: "Game Engine Complete" (dopo attività L)
+   - ◆ M4: "Frontend Core Complete" (dopo attività P)
+   - ◆ M6: "UAT Approved" (dopo attività S)
 
 4. **Legenda Colori**:
    - **Rosso**: attività sul critical path (Float = 0)
@@ -212,7 +212,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 | A.3 | Setup GitLab CI/CD | 20-Ott | 23-Ott | 4 gg | A.2 | Sì |
 | A.4 | Setup PostgreSQL + SSL | 24-Ott | 27-Ott | 2 gg | A.3 | Sì |
 
-#### Sprint 1 (28 Ott - 08 Nov)
+#### Sprint 1 (28 Ott - 07 Nov)
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
 |----|----------|--------|------|--------|--------------|---------------|
 | B | Backend Auth + Database | 28-Ott | 07-Nov | 9 gg | A | Sì |
@@ -236,7 +236,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 | F.2 | Validazione mosse | 17-Nov | 26-Nov | 8 gg | F.1 | No |
 | F.3 | Vincitore presa | 27-Nov | 03-Dic | 5 gg | F.2 | No |
 
-#### Sprint 4-5 (09 Dic - 09 Gen)
+#### Sprint 4-5 (08 Dic - 02 Gen)
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
 |----|----------|--------|------|--------|--------------|---------------|
 | G | Backend Persistenza Stato | 09-Dic | 19-Dic | 9 gg | D | Sì |
@@ -245,7 +245,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 | I | Game Engine Punteggi | 15-Dic | 09-Gen | 16 gg | F | No |
 | J | Frontend Homepage + Login | 22-Dic | 09-Gen | 11 gg | G | Sì |
 
-#### Sprint 6-7 (12 Gen - 30 Gen)
+#### Sprint 6-7 (05 Gen - 30 Gen)
 | ID | Attività | Inizio | Fine | Durata | Predecessore | Critical Path |
 |----|----------|--------|------|--------|--------------|---------------|
 | M | Frontend Dashboard + Stanza | 12-Gen | 30-Gen | 15 gg | J | Sì |
@@ -406,7 +406,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 **Azioni Correttive**:
 - Comprimere attività S (UAT) da 17 a 12 giorni
 - Aggiungere 1 sviluppatore part-time su P per recuperare 5 giorni
-- **Costo aggiuntivo**: ~€2.000 (salary 0.5 mesi)
+- **Costo aggiuntivo**: ~€2.000 (contractor esterno senior per ~0,5 mesi a tariffe di mercato; coperto dal Contingency Buffer)
 
 ### Scenario 2: Game Engine Testing (L) scopre bug critici (+5 giorni)
 **Impatto**: L ha float? NO, L non è sul critical path ma O (Integration Testing) dipende da L.
@@ -417,7 +417,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 **Impatto**: N dispone di 37 giorni di float.
 - Ritardo di 10 giorni molto inferiore ai 37 giorni di float → N **non** entra nel critical path
 - **Nessun impatto sulla data di lancio**: il ritardo viene interamente assorbito dallo slack disponibile
-- Solo un ritardo superiore a 37 giorni renderebbe critico il ramo Chat/Social (A → B → E → H → K → N → Q → S); in quel caso l'azione sarebbe posticipare N/Q a post-lancio MVP (degradandole da Should/Could Have a Won't Have per la v1.0)
+- Solo un ritardo superiore a 37 giorni renderebbe critico il ramo Chat/Social (A → B → E → H → K → N → Q → S); in quel caso l'azione sarebbe posticipare a post-lancio la parte Should/Could di N/Q (amicizie, profili, storico), mentre i task Must contenuti in Q (notifiche di turno, responsive) verrebbero riassegnati alle attività M/P per restare nella v1.0
 
 ---
 
@@ -437,7 +437,7 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 **Redatto da**: Marco Venturi (Project Manager, PlayHeritage Labs)
 **Revisionato da**: Elena Rossi (Tech Lead)
 
-**Prossimo Aggiornamento**: 05/11/2025 (fine Sprint 0)
+**Prossimo Aggiornamento**: 31/10/2025 (venerdì; primo aggiornamento settimanale dopo la chiusura dello Sprint 0)
 
 **Storico revisioni**:
 - **v.1.1.0**: Chiarito che i file immagine del network diagram e del Gantt non sono stati prodotti per questo elaborato; restano documentati tramite le tabelle/CSV già presenti.

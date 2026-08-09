@@ -42,7 +42,7 @@ Ogni Stoplight Report contiene una tabella con cinque aree critiche: Scope, Sche
 
 - **Scope: Verde** - Tutte le feature Must Have sono in sviluppo secondo il piano. Nessuna change request aperta da Giovanni.
 - **Schedule: Giallo** - Il Frontend Dashboard e Creazione Stanza (attività M, sul critical path) ha accumulato 3 giorni di ritardo a causa della complessità inaspettata del flusso di creazione stanza e inviti. Recovery plan attivo: Luca Moretti è affiancato da Sara Bianchi in pair programming. Previsto recupero entro fine Sprint 9.
-- **Budget: Verde** - Costi cumulati €13.500 contro €14.100 pianificati; CV di -€300 (2,3% dell'Earned Value), ampiamente entro il Contingency Buffer. Saldo di cassa positivo a €4.650.
+- **Budget: Verde** - CV di -€300 (Earned Value €13.200 contro costi effettivi €13.500, pari al 2,3% dell'EV), ampiamente entro il Contingency Buffer; la spesa effettiva resta comunque sotto i €14.100 pianificati. Saldo di cassa positivo a €5.250 (incassate le prime due tranche, €18.750, a fronte di €13.500 spesi).
 - **Quality: Verde** - Test coverage all'87%, superiore al target dell'85%. Zero bug critici aperti. Tutti i test di integrazione superati.
 - **Risks: Verde** - Rischio latenza WebSocket declassato (rating 16 → 8) dopo il proof of concept e chiuso come "Mitigato" dopo il load test dello Sprint 6.
 
@@ -89,7 +89,7 @@ Da questi valori possiamo calcolare due indici fondamentali:
 
 **Cost Variance (CV) = EV - AC = €13.200 - €13.500 = -€300**
 
-La Cost Variance negativa indica che il progetto ha speso €300 in più rispetto al valore prodotto. Questo scostamento, pari al 2,3% del valore guadagnato, è considerato accettabile e rientra ampiamente nel Contingency Buffer del 18,7% previsto nel Cash Flow Management. La causa principale di questo lieve overrun è stata la necessità di dedicare ore extra al sistema Real-Time Communication per ottimizzare la latenza WebSocket, come identificato nel rischio R1 della Risk Rating Matrix.
+La Cost Variance negativa indica che il progetto ha speso €300 in più rispetto al valore prodotto. Questo scostamento, pari al 2,3% del valore guadagnato, è considerato accettabile e rientra ampiamente nel Contingency Buffer del 18,7% previsto nel Cash Flow Management. La causa principale di questo lieve overrun è stata la necessità di dedicare ore extra al sistema Real-Time Communication per ottimizzare la latenza WebSocket, come identificato nel rischio 2.1 della Risk Rating Matrix.
 
 **Schedule Variance (SV) = EV - PV = €13.200 - €14.100 = -€900**
 
@@ -130,15 +130,15 @@ Per i sottosistemi che utilizzano metodologie Agile, un'ulteriore metrica di mon
 
 Nel Product Backlog di MaraffaOnline era stata stimata una velocity target di 40 story points per sprint (ogni 2 settimane). Durante i primi sette sprint del progetto (Novembre 2025 - Gennaio 2026), la velocity effettiva è stata:
 
-- **Sprint 1** (28 Ott - 08 Nov): 38 story points completati su 40 pianificati (95%)
-- **Sprint 2** (11 Nov - 22 Nov): 42 story points completati su 40 pianificati (105%)
-- **Sprint 3** (25 Nov - 06 Dic): 40 story points completati su 40 pianificati (100%)
-- **Sprint 4** (09 Dic - 20 Dic): 35 story points completati su 40 pianificati (87,5%) - Impatto festività
-- **Sprint 5** (23 Dic - 03 Gen): 21 story points completati su 40 pianificati (52,5%) - Sprint interamente a cavallo delle festività natalizie
-- **Sprint 6** (06 Gen - 17 Gen): 39 story points completati su 40 pianificati (97,5%)
-- **Sprint 7** (20 Gen - 31 Gen): 36 story points completati su 40 pianificati (90%) - Ritardo Frontend
+- **Sprint 1** (28 Ott - 07 Nov): 38 story points completati su 40 pianificati (95%)
+- **Sprint 2** (10 Nov - 21 Nov): 42 story points completati su 40 pianificati (105%)
+- **Sprint 3** (24 Nov - 05 Dic): 40 story points completati su 40 pianificati (100%)
+- **Sprint 4** (08 Dic - 19 Dic): 35 story points completati su 40 pianificati (87,5%) - Impatto festività
+- **Sprint 5** (22 Dic - 02 Gen): 21 story points completati su 40 pianificati (52,5%) - Sprint interamente a cavallo delle festività natalizie
+- **Sprint 6** (05 Gen - 16 Gen): 39 story points completati su 40 pianificati (97,5%)
+- **Sprint 7** (19 Gen - 30 Gen): 36 story points completati su 40 pianificati (90%) - Ritardo Frontend
 
-Escludendo lo Sprint 5, che cade interamente nel periodo natalizio e non è rappresentativo del ritmo di regime, la velocity media è stata di 38,3 story points: leggermente inferiore al target di 40 ma molto vicina, a conferma che la stima iniziale era realistica e che il team stava lavorando in modo consistente. Lo Sprint 5 ha invece prodotto un carryover di 19 story points, riassorbito nei due sprint successivi. Il calo di velocity nello Sprint 7 è stato direttamente correlato al ritardo accumulato dal Frontend Tavolo da Gioco e ha innescato il recovery plan.
+Escludendo lo Sprint 5, che cade interamente nel periodo natalizio e non è rappresentativo del ritmo di regime, la velocity media è stata di 38,3 story points: leggermente inferiore al target di 40 ma molto vicina, a conferma che la stima iniziale era realistica e che il team stava lavorando in modo consistente. Lo Sprint 5 ha invece prodotto un carryover di 19 story points, riassorbito nei due sprint successivi. Il calo di velocity nello Sprint 7 è stato direttamente correlato al ritardo accumulato dal Frontend Dashboard e Creazione Stanza (attività M) e ha innescato il recovery plan.
 
 Durante le Sprint Retrospective, il team ha anche discusso i fattori che hanno influenzato la velocity, come ad esempio l'underestimation di alcune user stories particolarmente complesse o la necessità di dedicare tempo al refactoring per mantenere la qualità del codice. Queste riflessioni hanno permesso al team di migliorare progressivamente le proprie stime e di identificare pattern ricorrenti che causavano rallentamenti.
 
@@ -177,9 +177,9 @@ Marco Venturi mantiene un Risk Log su Notion che traccia lo stato di ciascun ris
 - **Azioni di mitigazione intraprese**: Cosa è stato fatto per ridurre la probabilità o l'impatto
 - **Owner**: Chi è responsabile di monitorare il rischio e attivare il piano di contingenza
 
-Durante i primi quattro mesi del progetto, il rischio R1 "Esperienza limitata con tecnologie WebSocket" è stato l'oggetto di attenzione maggiore. Inizialmente valutato come probabilità Alta (4) e impatto Disastroso (4) per un rating di 16 (Rosso Critico), è stato affrontato con uno spike tecnico di due settimane e, durante lo Sprint 2, con un proof of concept che ha mostrato una latenza di 180ms: la dimostrata padronanza della tecnologia ha ridotto la probabilità a Media-Bassa (2), portando il rating a 8 (Arancione). Il load test completo previsto per lo Sprint 6 ha confermato che con le ottimizzazioni implementate la latenza si mantiene sotto i 500ms anche con 100 partite simultanee (400 giocatori, il target delle Conditions of Satisfaction), permettendo di chiudere il rischio come "Mitigato".
+Durante i primi quattro mesi del progetto, il rischio 2.1 "Esperienza limitata con tecnologie WebSocket" è stato l'oggetto di attenzione maggiore. Inizialmente valutato come probabilità Alta (4) e impatto Disastroso (4) per un rating di 16 (Rosso Critico), è stato affrontato con uno spike tecnico di due settimane e, durante lo Sprint 2, con un proof of concept che ha mostrato una latenza di 180ms: la dimostrata padronanza della tecnologia ha ridotto la probabilità a Media-Bassa (2), portando il rating a 8 (Arancione). Il load test completo previsto per lo Sprint 6 ha confermato che con le ottimizzazioni implementate la latenza si mantiene sotto i 500ms anche con 100 partite simultanee (400 giocatori, il target delle Conditions of Satisfaction), permettendo di chiudere il rischio come "Mitigato".
 
-Il rischio R4 "Scope creep da richieste committente" è rimasto costantemente monitorato ma non si è mai materializzato, grazie alla chiarezza del POS (Project Overview Statement) e al rigore con cui Marco ha applicato il Change Request Process. Giovanni Marchetti ha accettato che alcune feature nice-to-have venissero posticipate alla versione 1.1 quando la loro implementazione avrebbe impattato il critical path.
+Il rischio 6.2 "Scope creep da richieste committente" è rimasto costantemente monitorato ma non si è mai materializzato, grazie alla chiarezza del POS (Project Overview Statement) e al rigore con cui Marco ha applicato il Change Request Process. Giovanni Marchetti ha accettato che alcune feature nice-to-have venissero posticipate alla versione 1.1 quando la loro implementazione avrebbe impattato il critical path.
 
 ## 5.11 Risultati del Monitoraggio
 
@@ -189,9 +189,9 @@ Tutti i criteri previsti sono stati rispettati entro le tolleranze accettabili. 
 
 **Criteri Temporali**: Il progetto ha accumulato un massimo di 3 giorni di ritardo sul critical path durante Gennaio 2026, ma grazie al recovery plan il ritardo è stato recuperato entro fine Febbraio. La data di lancio del 15 Maggio 2026 è stata mantenuta.
 
-**Criteri Economici**: Il budget di €25.000 è stato rispettato. A fine Febbraio 2026 (Mese 4) le spese totali erano di €17.500 su €17.800 pianificate, con uno scostamento favorevole di €300 (1,7%), ben all'interno del Contingency Buffer del 18,7%.
+**Criteri Economici**: Il budget di €25.000 è stato rispettato. A fine Febbraio 2026 (Mese 4) la Cost Variance era di -€200 (Earned Value €17.300 contro costi effettivi €17.500, pari al -1,2%), ben all'interno del Contingency Buffer del 18,7% e riassorbita nei mesi successivi fino a CV = 0 alla chiusura; la spesa effettiva è comunque rimasta sotto i €17.800 pianificati.
 
-**Criteri Tecnici**: Tutte le regole del Maraffone/Beccaccino sono state implementate correttamente e validate da Francesca Giuliani durante la Sessione 1 di validazione (Novembre 2025). Il sistema Real-Time mantiene una latenza media di 185ms, sotto il target di 500ms. Il test coverage è stabilmente sopra l'85%.
+**Criteri Tecnici**: Tutte le regole del Maraffone/Beccaccino sono state implementate correttamente e validate da Francesca Giuliani: la specifica nella Sessione 1 di validazione (Novembre 2025), l'implementazione alla chiusura del Game Engine Testing (fine Gennaio 2026) e nella validazione finale pre-UAT (Aprile 2026). Il sistema Real-Time mantiene una latenza media di 185ms, sotto il target di 500ms. Il test coverage è stabilmente sopra l'85%.
 
 **Criteri Qualitativi**: L'esperienza utente è stata validata in due momenti. Una prima sessione a Gennaio 2026 con 5 membri della community Maraffa Forever ha dato riscontri positivi sull'usabilità e portato a piccole migliorie implementate nello Sprint 11. La User Acceptance Testing ufficiale, condotta con 10 tester della community nella prima metà di Maggio 2026, ha poi confermato che l'80% degli utenti è riuscito a completare una partita senza aiuto, soddisfacendo il criterio di usabilità definito nelle Conditions of Satisfaction.
 

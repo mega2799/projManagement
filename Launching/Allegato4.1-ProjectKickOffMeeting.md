@@ -24,7 +24,7 @@ Verbale del meeting di avvio del progetto MaraffaOnline. Il kick-off segna il pa
 
 ## Materiali condivisi prima del meeting
 
-Il 12 ottobre sono stati inviati ai partecipanti il Project Overview Statement (Allegato 2.3), la WBS (3.1), il Gantt con il critical path (3.5), il Cash Flow (3.4) e le bozze di RASCI Matrix e Regole Operative (4.2), così da arrivare preparati e ridurre il tempo di presentazione durante il meeting.
+Venerdì 10 ottobre sono stati inviati ai partecipanti il Project Overview Statement (Allegato 2.3), la WBS (3.1), il Gantt con il critical path (3.5), il Cash Flow (3.4) e le bozze di RASCI Matrix e Regole Operative (4.2), così da arrivare preparati e ridurre il tempo di presentazione durante il meeting.
 
 ## Temi trattati
 
@@ -49,20 +49,20 @@ Elena ha infine richiamato i rischi principali dalla Risk Rating Matrix (Allegat
 | # | Azione | Owner | Scadenza |
 |---|--------|-------|----------|
 | 1 | Inviti alle piattaforme (GitLab, Figma, Notion, Slack, Zoom) | Andrea Conti | 16/10 |
-| 2 | Setup server Hetzner + Docker + CI/CD di base | Andrea Conti | 25/10 |
-| 3 | Proof of concept Socket.IO con test di latenza | Sara Bianchi | 27/10 |
-| 4 | Database schema PostgreSQL (utenti, partite, mosse) | Elena Rossi | 27/10 |
+| 2 | Setup server Hetzner + Docker + CI/CD di base | Andrea Conti | 24/10 |
+| 3 | Spike tecnico Socket.IO con test di latenza preliminare | Sara Bianchi | 27/10 |
+| 4 | Database schema PostgreSQL (utenti, partite, mosse) | Sara Bianchi | 27/10 |
 | 5 | Sprint 1 Planning (selezione user stories e stime) | Marco Venturi / Elena Rossi | 27/10 |
-| 6 | Conferma date delle sessioni di validazione regole | Francesca Giuliani | 18/10 |
-| 7 | Approvazione formale di Scoping e Planning | Giovanni Marchetti | 20/10 |
+| 6 | Conferma date delle sessioni di validazione regole | Francesca Giuliani | 17/10 |
+| 7 | Approvazione formale del verbale di kick-off | Giovanni Marchetti | 20/10 |
 
 Gli action item sono tracciati su Notion.
 
 ## Prossimi appuntamenti
 
 - Primo Daily Standup: 16/10/2025, 09:00
-- Primo Project Status Meeting: 18/10/2025, 16:00
-- Sprint 0 Review (setup infrastruttura + PoC Socket.IO): 27/10/2025
+- Primo Project Status Meeting: venerdì 17/10/2025, 16:00
+- Sprint 0 Review (setup infrastruttura + esito spike Socket.IO): venerdì 24/10/2025
 
 ---
 

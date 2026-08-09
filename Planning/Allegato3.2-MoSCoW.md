@@ -33,7 +33,7 @@ Un requisito è classificato come **Must Have** solo se soddisfa **almeno uno** 
 
 ### 3. Approccio Dinamico
 La categorizzazione MoSCoW è stata rivista **3 volte** tra Scoping e avvio del progetto:
-- **28/09/2025**: Prima classificazione basata su POS
+- **29/09/2025**: Prima classificazione basata su POS
 - **01/10/2025**: Revisione dopo lo user testing dei mockup v2 (29-30/09)
 - **15/10/2025**: Approvazione finale con Giovanni Marchetti (Maraffa Forever)
 
@@ -85,7 +85,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-BE-2.5.3 | Sicurezza API | 6 | M |
 | **Subtotale Must** | | **50 giorni** | |
 
-#### Should Have (~20%)
+#### Should Have (~23%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-BE-2.1.4 | Gestione profilo personalizzabile | 3 | S |
@@ -95,7 +95,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-BE-2.3.3 | Invito diretto amici | 2 | S |
 | **Subtotale Should** | | **16 giorni** | |
 
-#### Could Have (~10%)
+#### Could Have (~6%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-BE-2.4.2 | Statistiche avanzate (carta più giocata, etc.) | 4 | C |
@@ -112,7 +112,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 3. Real-Time Communication
 
-#### Must Have (~85%)
+#### Must Have (~93%)
 **Razionale**: WebSocket è critico per esperienza multiplayer real-time. Senza sincronizzazione, il gioco non è giocabile.
 
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
@@ -127,7 +127,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-RTC-3.4.1 | Chat in-game testuale | 4 | M |
 | **Subtotale Must** | | **42 giorni** | |
 
-#### Could Have (~15%)
+#### Could Have (~7%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-RTC-3.4.2 | Chat globale lobby | 3 | C |
@@ -136,7 +136,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 #### Won't Have
 | ID Requisito | Descrizione | Razionale Esclusione |
 |--------------|-------------|----------------------|
-| REQ-RTC-3.3.2b | Sostituzione giocatore con bot | Richiede IA (vedi REQ-GE-1.2). Non MVP. |
+| — | Sostituzione giocatore disconnesso con bot | Esclusione esplicita senza requisito RBS: richiede IA (vedi REQ-GE-1.2). Non MVP. |
 | REQ-RTC-3.4.3 | Emoji/reactions | Nice-to-have ma non essenziale. v1.1+ |
 
 **Totale Real-Time**: 45 giorni (Must: 42, Could: 3)
@@ -145,7 +145,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 4. Frontend Web
 
-#### Must Have (~65%)
+#### Must Have (~74%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-FE-4.1.1 | Implementazione mockup approvati (6 schermate) | 25 | M |
@@ -155,7 +155,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-FE-4.4.1 | Ottimizzazione caricamento (FCP < 2s) | 5 | M |
 | **Subtotale Must** | | **56 giorni** | |
 
-#### Should Have (~25%)
+#### Should Have (~22%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-FE-4.3.1 | Accessibilità WCAG 2.1 AA | 8 | S |
@@ -163,7 +163,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-FE-4.5.1 | Microinterazioni e animazioni | 6 | S |
 | **Subtotale Should** | | **17 giorni** | |
 
-#### Could Have (~10%)
+#### Could Have (~4%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-FE-4.3.2 | Modalità daltonici | 3 | C |
@@ -179,26 +179,26 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | ID Requisito | Descrizione | Razionale Esclusione |
 |--------------|-------------|----------------------|
 | REQ-MA-5.1 | App nativa iOS/Android | Budget €25.000 insufficiente per sviluppo nativo. Alternative: (1) responsive web utilizzabile da mobile, (2) sviluppo nativo in v2.0 se progetto di successo |
-| REQ-MA-5.2 | Progressive Web App (PWA) | Could Have, valutato in sprint 4-5 se tempo disponibile |
+| REQ-MA-5.2 | Progressive Web App (PWA) | Valutata come alternativa leggera in fase di analisi (RBS: Could), poi esclusa dall'MVP: nessun effort pianificato. Rivalutabile in v1.1 |
 
 ---
 
 ### 6. Social & Community Features
 
-#### Must Have (~40%)
+#### Must Have (~17%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-SOC-6.4.1 | Notifiche in-app ("È il tuo turno") | 4 | M |
 | **Subtotale Must** | | **4 giorni** | |
 
-#### Should Have (~40%)
+#### Should Have (~58%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
-| REQ-SOC-6.1 | Sistema amicizie (vedi Backend 2.3) | 11 | S |
+| REQ-SOC-6.1 | Sistema amicizie — UI e integrazione frontend (la parte API è in Backend 2.3) | 11 | S |
 | REQ-SOC-6.5.1 | Profili pubblici utenti | 3 | S |
 | **Subtotale Should** | | **14 giorni** | |
 
-#### Could Have (~20%)
+#### Could Have (~25%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-SOC-6.3.1 | Classifica globale (top 100) | 4 | C |
@@ -216,7 +216,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 7. Infrastructure & DevOps
 
-#### Must Have (~80%)
+#### Must Have (~73%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-INF-7.1.1 | Server dedicato (Hetzner/OVH) | 3 | M |
@@ -229,7 +229,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-INF-7.4.3 | Backup e disaster recovery | 3 | M |
 | **Subtotale Must** | | **27 giorni** | |
 
-#### Should Have (~20%)
+#### Should Have (~27%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-INF-7.2.2 | Redis caching | 3 | S |
@@ -280,6 +280,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 - Notifiche push
 - Emoji/reactions in chat
 - Tornei strutturati
+- Progressive Web App (PWA)
 
 ---
 

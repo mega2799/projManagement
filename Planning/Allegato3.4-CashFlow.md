@@ -183,7 +183,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 
 **Scenario Ottimistico** (1.000 utenti, 10% conversion):
 - 100 utenti Premium × €4.99 = €499/mese
-- Break-even: raggiunto dopo ~50 mesi (ROI negativo a breve termine)
+- Break-even: al netto dei costi operativi (€499 − €200 = €299/mese di margine), raggiunto dopo ~84 mesi, circa 7 anni (ROI negativo a breve termine)
 
 **Conclusione**: MaraffaOnline è un progetto **non-profit** per la community Maraffa Forever. Il budget €25.000 copre sviluppo MVP, ma monetizzazione futura richiede strategia diversa (es. sponsorizzazioni, tornei a pagamento, crowdfunding).
 
@@ -229,4 +229,4 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 - **v.1.2.0**: Ridistribuzione del Cash Flow sui 7 mesi effettivi del progetto (15 Ott 2025 - 15 Mag 2026). Tabella mensile estesa da 6 a 8 righe (Mese 0-7), outflow ridistribuiti con riduzione progressiva nella coda (testing/UAT/lancio), dettaglio spese per mese e per categoria resi internamente coerenti (righe = outflow mensile, colonne = totali di categoria). Totali invariati: inflow €25.000, outflow €22.750, surplus €2.250. Saldo minimo €2.250 (Mese 7).
 - **v.1.1.0**: Aggiunta visualizzazione grafica Cash Flow mensile (img/cash-flow-maraffaonline.png) e distribuzione spese per categoria (img/spese-categorie.png), con analisi interpretativa e insights chiave.
 
-**Prossimo Review**: 05/11/2025 (fine Mese 0)
+**Prossimo Review**: 31/10/2025 (venerdì, fine Mese 0)

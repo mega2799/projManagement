@@ -69,7 +69,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **Sistema turni 4 giocatori** | I | C | I | A/R | S | - | - |
 | **Gestione chi inizia (4 di denari)** | I | C | I | A/R | S | - | - |
 | **Calcolo punteggio fine presa** | I | C | I | A/R | S | - | - |
-| **Tracciamento punteggio mano (11pt totali)** | I | C | I | A/R | S | - | - |
+| **Tracciamento punteggio smazzata (11pt interi dopo arrotondamento)** | I | C | I | A/R | S | - | - |
 | **Condizione vittoria (41pt + figura)** | I | C | I | A/R | S | - | - |
 | **Gestione Maraffa/Cricca (A+2+3 briscola = +3pt)** | I | C | I | A/R | S | - | - |
 | **Validazione mosse legali** | I | C | I | A/R | S | - | - |
@@ -127,7 +127,8 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **WebSocket event: game-end** | I | - | I | A | R | C | - |
 | **Sincronizzazione stato 4 client** | I | - | I | A | R | S | - |
 | **Gestione disconnessione giocatore** | I | - | I | A | R | - | - |
-| **Reconnection handling (30s timeout)** | I | - | I | A | R | - | - |
+| **Reconnection handling (heartbeat 30s, sospensione max 5 min)** | I | - | I | A | R | - | - |
+| **Chat in-game testuale (throttling 1 msg/s + filtro)** | I | - | I | A | R | C | - |
 | **Notifiche real-time eventi partita** | I | - | I | A | R | C | - |
 | **Load testing 100 partite simultanee (400 giocatori)** | I | - | I | A | R | - | S |
 | **Monitoring latency con Sentry** | I | - | I | A | R | - | S |
@@ -181,7 +182,7 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **Sistema amicizie: richiesta/accettazione** | C | - | I | A | R | S | - |
 | **Sistema amicizie: lista amici** | C | - | I | A | R | S | - |
 | **Storico partite personali** | C | - | I | A | R | S | - |
-| **Replay partite (visualizzazione mosse)** | C | - | I | A | R | S | - |
+| **Salvataggio mosse partita per replay (WBS 2.2.3.1)** | C | - | I | A | R | S | - |
 | **Leaderboard: classifica globale** | C | - | I | A | R | S | - |
 | **Leaderboard: filtri (settimanale, mensile, all-time)** | C | - | I | A | R | S | - |
 | **Badge/achievement system (opzionale MVP)** | C | - | A | C | R | S | - |
@@ -418,4 +419,4 @@ Questo documento è stato redatto seguendo le best practices di Responsibility A
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Versione**: v.1.4.0
-**Prossimo review**: 15/12/2025 (fine Sprint 4, Milestone M2)
+**Prossimo review**: 19/12/2025 (venerdì, fine Sprint 4 — Milestone M2)
