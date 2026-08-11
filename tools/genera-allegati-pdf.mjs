@@ -26,7 +26,7 @@
  *   OUT_DIR      cartella di output (default: <repo>/Allegati-PDF)
  */
 
-import { readdir, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { readdir, readFile, writeFile, mkdir, rm, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -34,6 +34,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { marked } from 'marked';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 
 const execFileAsync = promisify(execFile);
 
@@ -160,9 +161,51 @@ async function printToPdf(html, outPdf) {
   await rm(tmpHtml, { force: true });
 }
 
+// Controllo di sanita' sui sorgenti HTML: un <div> non chiuso rende figli tutti
+// gli elementi successivi, quindi una regola come ".note { display: none }" dentro
+// @media print puo' nascondere l'INTERO documento e produrre un PDF vuoto
+// (successo silenzioso: Chrome stampa comunque una pagina bianca).
+function warnIfUnbalancedDivs(src, html) {
+  const body = html.includes('<body') ? html.slice(html.indexOf('<body')) : html;
+  const opened = (body.match(/<div\b/g) || []).length;
+  const closed = (body.match(/<\/div>/g) || []).length;
+  if (opened !== closed) {
+    console.log(
+      `\n  ATTENZIONE ${path.basename(src)}: <div> sbilanciati (${opened} aperti, ${closed} chiusi).` +
+      `\n  Un div non chiuso puo' far sparire il contenuto in stampa: controlla i tag di chiusura.`
+    );
+  }
+}
+
+// Numeri di pagina a fondo pagina ("n / N", centrato, grigio). Chrome headless
+// da CLI non supporta footer personalizzati (solo quello di default con URL e
+// data, brutto) e non implementa i margin box CSS (@page @bottom-center),
+// quindi i numeri vengono TIMBRATI sul PDF gia' generato con pdf-lib.
+// I PDF di una sola pagina restano senza numero ("1 / 1" sarebbe rumore).
+async function addPageNumbers(pdfPath) {
+  const doc = await PDFDocument.load(await readFile(pdfPath));
+  const pages = doc.getPages();
+  if (pages.length < 2) return;
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const size = 8.5;
+  const grey = rgb(0.45, 0.45, 0.45);
+  const yBaseline = 4 * 2.8346; // 4 mm dal bordo inferiore: dentro il margine di stampa (min 8 mm)
+  pages.forEach((page, i) => {
+    const label = `${i + 1} / ${pages.length}`;
+    const w = font.widthOfTextAtSize(label, size);
+    page.drawText(label, {
+      x: (page.getWidth() - w) / 2,
+      y: yBaseline,
+      size, font, color: grey,
+    });
+  });
+  await writeFile(pdfPath, await doc.save());
+}
+
 async function buildTask({ src, out, kind }) {
   const baseHref = pathToFileURL(path.dirname(src) + path.sep).href;
   let raw = await readFile(src, 'utf8');
+  if (kind === 'html') warnIfUnbalancedDivs(src, raw);
   if (OPT_CLEAN) raw = sanitizeForDelivery(raw);
   let html;
   if (kind === 'md') {
@@ -176,6 +219,7 @@ async function buildTask({ src, out, kind }) {
     html = prepareHtml(raw, baseHref);
   }
   await printToPdf(html, out);
+  await addPageNumbers(out);
 }
 
 async function main() {
@@ -193,7 +237,8 @@ async function main() {
     const files = (await readdir(dir)).filter((f) => {
       const isAllegato = /^Allegato.*\.(md|html)$/i.test(f);
       const isCapitolo = OPT_CAPITOLI && /^Capitolo.*\.md$/i.test(f);
-      return isAllegato || isCapitolo;
+      const isRegole = /^REGOLE-UFFICIALI.*\.md$/i.test(f); // annesso alle fonti del Game Engine
+      return isAllegato || isCapitolo || isRegole;
     });
 
     // Raggruppa per stem (nome senza estensione) per gestire le coppie md+html.
@@ -234,7 +279,14 @@ async function main() {
     process.stdout.write(`  [${t.phase}] ${path.basename(t.out)} ... `);
     try {
       await buildTask(t);
-      console.log('OK');
+      // Un PDF minuscolo e' quasi sempre una pagina bianca (solo intestazione):
+      // meglio segnalarlo che consegnarlo.
+      const { size } = await stat(t.out);
+      if (size < 20 * 1024) {
+        console.log(`SOSPETTO (${Math.round(size / 1024)} KB: pagina probabilmente vuota, verificare)`);
+      } else {
+        console.log('OK');
+      }
       ok++;
     } catch (err) {
       console.log('FALLITO');

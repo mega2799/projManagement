@@ -11,9 +11,9 @@ tools/node_modules/
 Allegati-PDF/
 
 # Pacchetto di consegna: artefatto rigenerabile con tools/costruisci-consegna.sh
-Consegna/
-Consegna-MaraffaOnline.zip
+MaraffaOnline-Consegna/
+MaraffaOnline-Consegna.zip
 
 # PDF compilato della Relazione: artefatto rigenerabile (tectonic / costruisci-consegna.sh).
-# La versione con i link agli allegati funzionanti e' Consegna/Relazione.pdf.
+# La versione con i link agli allegati funzionanti e' MaraffaOnline-Consegna/Relazione-MaraffaOnline.pdf.
 Relazione/main.pdf

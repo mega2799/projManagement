@@ -10,7 +10,7 @@ Uso:  python3 tools/genera-networkgantt-html.py
 """
 from datetime import date
 
-VERSION = "v.2.0.0"
+VERSION = "v.2.1.0"
 CP_DAYS = 141
 START = date(2025, 10, 15)
 
@@ -220,8 +220,9 @@ def network_svg():
             out.append(f'<text x="{tx}" y="{y + 27}" font-size="7.6" text-anchor="middle" fill="#1e5b2f" opacity="0.9">{dur}gg &middot; ES{es}</text>')
             out.append(f'<text x="{tx}" y="{y + 37}" font-size="7.2" text-anchor="middle" fill="#1e5b2f" opacity="0.85">float {fl}gg</text>')
             out.append('</g>')
-    # milestone del network (rombi): M1 dopo G, M2 dopo L, M3 dopo P, M4 dopo S
-    for label, x, y in [('M1', nx('J'), 62), ('M2', nx('O'), 182), ('M3', nend('P'), 62), ('M4', nend('S'), 62)]:
+    # milestone del network (rombi), numerazione allineata alla tabella Gantt M1-M7:
+    # M2 dopo G (Backend Core), M3 dopo L (Game Engine), M4 dopo P (Frontend), M6 dopo S (UAT)
+    for label, x, y in [('M2', nx('J'), 62), ('M3', nx('O'), 182), ('M4', nend('P'), 62), ('M6', nend('S'), 62)]:
         out.append(f'<g transform="translate({round(x,1)},{y})">')
         out.append('<path d="M0,-8 L8,0 L0,8 L-8,0 Z" fill="var(--testo-scuro)"/>')
         out.append(f'<text x="0" y="-12" font-size="7.5" text-anchor="middle" fill="var(--testo-scuro)" font-weight="700">{label}</text>')

@@ -57,9 +57,9 @@ La relazione deve seguire le 5 fasi del ciclo di vita del Project Management:
 - **2.7 Prototyping**: mockup/wireframes (v1 con commenti + v2 approvata)
 - **2.8 Requirements Breakdown Structure (RBS)**: requisiti per sottosistema
 - **2.9 User Stories**: seguendo principio INVEST
-- **2.10 User Flow**: diagramma di flusso utente
-- **2.11 Project Management Life Cycle Models**: scelta metodologia per ogni sottosistema
-- **2.12 Approval Process**: meeting di approvazione
+- **2.10 Project Management Life Cycle Models**: scelta metodologia per ogni sottosistema
+- **2.11 Approval Process**: meeting di approvazione
+  *(lo User Flow, previsto dal template delle linee guida, è stato assorbito dal Prototyping 2.7 e rimosso come allegato autonomo)*
 
 ### 3. PLANNING
 - **3.1 Work Breakdown Structure (WBS)**: decomposizione fino a task level

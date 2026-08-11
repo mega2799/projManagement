@@ -6,7 +6,7 @@ set -euo pipefail
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DIR"
 
-if [ ! -d node_modules/marked ]; then
+if [ ! -d node_modules/marked ] || [ ! -d node_modules/pdf-lib ]; then
   echo "Installo le dipendenze (marked)..."
   npm install --silent
 fi
