@@ -74,7 +74,7 @@ La tabella seguente riporta la ripartizione dell'outflow per categoria in ciascu
 
 **Note di dettaglio**:
 - **Salari** (€16.000): 5 persone. Il Mese 0 (mezzo mese, setup) e i Mesi 5-7 (fase finale con team progressivamente ridotto a testing, UAT e lancio) hanno importi più contenuti; i mesi centrali di sviluppo pieno (1-4) sono i più onerosi.
-- **Infrastruttura** (€275): server dedicato Hetzner (~€50/mese) attivo dal Mese 1. Nel Mese 7 la voce è nulla perché il deploy in produzione è a carico di Maraffa Forever (come da accordi contrattuali, vedi Cap. 6 - Closing).
+- **Infrastruttura** (€275): server dedicato Hetzner (≈€50/mese) attivo dal Mese 1. Nel Mese 7 la voce è nulla perché il deploy in produzione è a carico di Maraffa Forever (come da accordi contrattuali, vedi Cap. 6 - Closing).
 - **Tools e Licenze** (€1.111): dominio maraffaonline.it (€15 una tantum nel Mese 0) più abbonamenti software mensili (Figma Pro €75, JetBrains €25, Zoom Pro €13, Notion €50 = €163/mese), con quote ridotte nei mezzi mesi (0 e 7).
 - **Consulenza** (€300): Francesca Giuliani (esperta Maraffa Forever) per la validazione delle regole, in due sessioni da €150 — Novembre 2025 (Mese 1) e Aprile 2026 (Mese 6).
 - **Marketing/UAT/Celebrazione** (€400): tutte concentrate nel Mese 7 (fase di lancio) — comunicazione social €200, compenso simbolico ai 10 tester della community €100, team celebration €100.
@@ -89,7 +89,7 @@ Molti servizi cloud sono utilizzati in free tier e quindi non generano costi: Po
 | Categoria | Totale (€) | % del Budget | Note |
 |-----------|------------|--------------|------|
 | **Salari Team** | €16.000 | 64.0% | 5 persone su 7 mesi (part-time nel Mese 0 e nella coda Mesi 5-7) |
-| **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner ~€50/mese (attivo dal Mese 1; deploy finale a carico del committente) |
+| **Infrastruttura** | €275 | 1.1% | Server dedicato Hetzner ≈€50/mese (attivo dal Mese 1; deploy finale a carico del committente) |
 | **Tools e Licenze** | €1.111 | 4.4% | Figma, JetBrains, Zoom, Notion, Dominio |
 | **Consulenza Esperta** | €300 | 1.2% | Francesca Giuliani (validazione regole, 2 sessioni) |
 | **Marketing Lancio** | €200 | 0.8% | Comunicazione social per community |
@@ -109,7 +109,7 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 - **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 7 mesi, con impegno ridotto nel setup iniziale e nella fase finale)
 - **Contingency Buffer (18.7%)**: Buffer ampio coerente con l'estensione del progetto a 7 mesi e con le best practices PM per progetti software con scope evolutivo e change requests potenziali
 - **Tools e Licenze (4.4%)**: Costi contenuti grazie all'utilizzo di free tier per molti servizi cloud
-- **Infrastruttura (1.1%)**: Spese minime grazie a server dedicati economici (Hetzner ~€50/mese)
+- **Infrastruttura (1.1%)**: Spese minime grazie a server dedicati economici (Hetzner ≈€50/mese)
 - **Surplus Finale (9%)**: Riserva per imprevisti post-lancio e scalabilità iniziale
 
 **Insight**: L'allocazione del budget è ottimizzata per massimizzare il valore del team di sviluppo (64%), mantenendo contenuti i costi infrastrutturali (1.1%) e garantendo un margine di sicurezza complessivo del 27,7% (Contingency 18,7% + Surplus 9,0%) per gestire imprevisti e change requests in un progetto di 7 mesi.
@@ -178,12 +178,12 @@ Il grafico seguente mostra la distribuzione percentuale delle spese per categori
 - **Monetizzazione**: Modello freemium (abbonamento Premium €4.99/mese per feature avanzate)
 - **Conversion rate**: 5% (25 utenti Premium)
 - **Revenue mensile**: 25 × €4.99 = €124.75/mese
-- **Costi operativi mensili**: ~€200/mese (hosting + tools)
+- **Costi operativi mensili**: ≈€200/mese (hosting + tools)
 - **Break-even**: Mai raggiunto con questi numeri
 
 **Scenario Ottimistico** (1.000 utenti, 10% conversion):
 - 100 utenti Premium × €4.99 = €499/mese
-- Break-even: al netto dei costi operativi (€499 − €200 = €299/mese di margine), raggiunto dopo ~84 mesi, circa 7 anni (ROI negativo a breve termine)
+- Break-even: al netto dei costi operativi (€499 − €200 = €299/mese di margine), raggiunto dopo ≈84 mesi, circa 7 anni (ROI negativo a breve termine)
 
 **Conclusione**: MaraffaOnline è un progetto **non-profit** per la community Maraffa Forever. Il budget €25.000 copre sviluppo MVP, ma monetizzazione futura richiede strategia diversa (es. sponsorizzazioni, tornei a pagamento, crowdfunding).
 

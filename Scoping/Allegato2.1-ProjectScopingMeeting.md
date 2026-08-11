@@ -88,7 +88,7 @@ Accordi su:
 - **Demo mensili** per mostrare progressi al committente
 - **Beta testing** con 20 membri selezionati della community
 
-> *Nota: accordo preliminare del 15/09, poi rivisto in sede di negoziazione delle Conditions of Satisfaction (Allegato 2.2) e nelle Regole Operative (Allegato 4.2): Project Status Meeting settimanale il venerdì e demo bi-settimanali in Sprint Review.*
+> *Nota: accordo preliminare del 15/09, poi rivisto in sede di negoziazione delle Conditions of Satisfaction (Allegato 2.2) e nelle Regole Operative (Allegato 4.3): Project Status Meeting settimanale il venerdì e demo bi-settimanali in Sprint Review.*
 
 ### 7. Prossimi Passi e Chiusura (16:55 - 17:00)
 - Approvazione formale dell'inizio del progetto

@@ -20,7 +20,7 @@ Mischiare metodologie diverse nel Backlog comprometterebbe la coerenza della ges
 ### Lettura dei numeri di velocity (Scrum pura vs team-wide)
 _Provenienza: Allegato 3.3 - Product Backlog ("Lettura dei numeri di Velocity"). Rilevante anche per il Cap. 5 - Monitoring & Control (dove si cita la velocity 38,3)._
 
-- La **velocity di 38,3 SP/sprint** monitorata nel Cap. 5 è **team-wide**: somma il lavoro completato su tutto il progetto (Backlog + Game Engine in Waterfall + Infrastructure Incrementale), non solo le user stories del Backlog. La media esclude lo Sprint 5 (23 Dic - 03 Gen), a capacità ridotta per le festività.
+- La **velocity di 38,3 SP/sprint** monitorata nel Cap. 5 è **team-wide**: somma il lavoro completato su tutto il progetto (Backlog + Game Engine in Waterfall + Infrastructure Incrementale), non solo le user stories del Backlog. La media esclude lo Sprint 5 (22 Dic - 02 Gen), a capacità ridotta per le festività.
 - Inquadramento definitivo (agosto 2026): **capacità vs carico**. La **capacity team-wide è ~40 SP/sprint** (quanto il team può completare); il **carico medio pianificato** è **~37 SP/sprint team-wide** (441 SP = 310 Backlog + ~131 equivalenti GE/Infra, sugli sprint di sviluppo 0-11) e **~28 SP/sprint di solo Backlog** (310 SP sugli Sprint 1-11). Il margine capacità-carico assorbe festività e variabilità. Lo Sprint 11 ospita solo le rifiniture del tavolo in fast tracking col testing; gli Sprint 12-14 non sono stimati in SP.
 - **Attenzione, numeri superati da non reintrodurre**: "21 SP/sprint" (310/15, denominatore sbagliato) e "31 SP/sprint su Sprint 1-10" (superato quando gli sprint del backlog sono stati riallineati alle date del Gantt, v.3.1.0: il backlog è caricato sugli Sprint 1-11).
 - La differenza tra le misure non è un'incoerenza: è la distinzione tra "metrica Scrum" (Backlog) e "metrica gestionale di team" (Monitoring). Utile spiegarla in relazione per prevenire la domanda all'orale.
@@ -45,7 +45,7 @@ _L'allegato è stato ridotto ad artefatto operativo (tabelle unificate per sotto
 - **Riepilogo effort con percentuali** (Frontend 163 SP = 52,6%, Backend 80 = 25,8%, Real-Time 67 = 21,6%): i subtotali restano nelle tabelle; le percentuali erano analisi ridondante. Se servisse un commento sulla concentrazione dell'effort sul Frontend, va in relazione §3.4.
 - **Nota sui ~441 SP equivalenti** (310 Backlog + ~94 Game Engine + ~37 Infrastructure): la riconciliazione completa è già in relazione §3.4 e nel Cap. 5 Monitoring (nota metodologica velocity). Nell'allegato resta la riga di capacity.
 - **Sezione Velocity Tracking e Burn-down** (target 35-45 SP/sprint, monitoraggio a fine sprint, carryover): materiale di monitoring → già coperto dal Cap. 5 (velocity effettive Sprint 1-7, media 38,3 escluso lo Sprint 5 natalizio).
-- **Gestione Cambiamenti al Backlog** (proposta stakeholder → valutazione MoSCoW del PO → stima team → inserimento; Sprint Planning; Backlog Refinement a metà sprint, 1h): le cerimonie sono documentate nell'Allegato 4.2 - Regole Operative; il processo di change è nel Cap. 4 (Change Request). Se si vuole recuperare il **Backlog Refinement** (unico dettaglio non presente altrove), aggiungerlo alle cerimonie del 4.2.
+- **Gestione Cambiamenti al Backlog** (proposta stakeholder → valutazione MoSCoW del PO → stima team → inserimento; Sprint Planning; Backlog Refinement a metà sprint, 1h): le cerimonie sono documentate nell'Allegato 4.3 - Regole Operative; il processo di change è nel Cap. 4 (Change Request) e nella sintesi del 4.3. Il **Backlog Refinement** (metà sprint, 1h) è stato **recuperato** il 2026-08-10 nella tabella delle cerimonie del 4.3.
 - **Tabella "Relazione con Altri Documenti"** (Backlog ⊂ WBS; implementa MoSCoW; ~70% del budget; Gantt unifica): contenuto di raccordo da relazione, già coperto da §3.4.
 
 ---
@@ -59,9 +59,12 @@ _Commentate con `<!-- -->` (non renderizzate, ma presenti nel file). Da reinseri
 - [x] `Planning/Allegato3.4-CashFlow.md`
 - [x] `Planning/Allegato3.5-ProjectNetworkDiagram-Gantt.md`
 - [x] `Launching/Allegato4.1-ProjectKickOffMeeting.md`
-- [x] `Launching/Allegato4.2-RASCI-RegoleOperative.md` — **NOTA**: oltre ai link-blog "RASCI Matrix", questo file conteneva riferimenti solidi ("Regole Operative": Scrum Guide 2020, PMBOK 7th Edition, Lean/Toyota, Atlassian Team Playbooks). Sono fonti valide del corso: valgono la pena di essere citate nella relazione o reinserite come bibliografia vera.
+- [x] `Launching/Allegato4.2-RASCI.md` — solo link-blog divulgativi sulla RACI/RASCI: non citabili come bibliografia.
+- [x] `Launching/Allegato4.3-RegoleOperative.md` — **NOTA**: qui i riferimenti sono solidi (Scrum Guide 2020 per le cerimonie e la DoD, PMBOK 7th Edition per conflict resolution e change control, Lean/Toyota per i 5 Whys, Atlassian Team Playbooks per i working agreements). Sono fonti valide del corso: valgono la pena di essere citate nella relazione o reinserite come bibliografia vera.
 
 ## Note su altri allegati snelliti
+
+- **Allegato 4.2 → 4.2 + 4.3 (2026-08-10)**: la RASCI Matrix e le Regole Operative erano un unico allegato da 14 pagine. Separate: il 4.2 resta la matrice (registro testuale + companion HTML visuale), il 4.3 raccoglie le regole operative riscritte in forma schematica (una tabella per regola invece della prosa), con l'aggiunta delle sintesi di Change Management e Comunicazione a supporto delle sezioni 4.4 e 4.5. Motivazione: destinatari e cicli di aggiornamento diversi, e la relazione di riferimento adotta la stessa separazione in due allegati.
 
 - **Allegato 3.1 - WBS**: la sezione "Note Metodologiche → Allineamento con Metodologie per Sottosistema" (che ripeteva l'Allegato 2.11) è stata condensata a un rimando. Il contenuto vive già in 2.11 e va nella relazione, Cap. 2/3.
 - **Allegato 2.11 - Life Cycle Models**: la panoramica teorica dei 4 modelli PM (definizioni da manuale) è stata condensata in una legenda-tabella; la giustificazione applicata (mappatura per sottosistema, matrice decisionale, coordinamento) è rimasta perché è l'oggetto stesso dell'allegato.

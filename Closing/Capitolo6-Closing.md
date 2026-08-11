@@ -18,7 +18,7 @@ La documentazione generata durante l'intero progetto è completa e accessibile s
 2. **Project Overview** — genesi del progetto e contesto della community Maraffa Forever.
 3. **Scope Management** — allegati di Scoping (2.1-2.11): raccolta requisiti, Conditions of Satisfaction, validazione delle user stories.
 4. **Planning Documentation** — allegati di Planning (3.1-3.5): WBS, MoSCoW, Product Backlog, Cash Flow, Project Network Diagram.
-5. **Execution & Launch** — fase di Launching (4.1-4.2): RASCI Matrix e Regole Operative.
+5. **Execution & Launch** — fase di Launching (4.1-4.3): RASCI Matrix e Regole Operative.
 6. **Monitoring & Control** — Stoplight Reports, analisi Earned Value, metriche di velocity e quality metrics (test coverage > 85%).
 7. **Technical Architecture** — architettura del sistema, scelte tecnologiche (Node.js, React, Socket.IO, PostgreSQL), API e database schema.
 8. **Lessons Learned** — cosa ha funzionato e cosa migliorare (dettaglio nella sezione seguente).

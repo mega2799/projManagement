@@ -20,7 +20,7 @@ Per favore leggi il file claude.md per avere il contesto ed il file GUIDA_RAPIDA
 
 ### Fase 2: Scoping
 
-Creare tutti gli allegati della fase di Scoping (2.1 - 2.9)
+Creare tutti gli allegati della fase di Scoping (2.1 - 2.11)
 
 ### Fase 3: Planning
 
@@ -28,7 +28,7 @@ Creare tutti gli allegati della fase di Planning (3.1 - 3.5)
 
 ### Fase 4: Launching
 
-Creare tutti gli allegati della fase di Launching (4.1 - 4.2)
+Creare tutti gli allegati della fase di Launching (4.1 - 4.3)
 
 ### Fase 5: Monitoring & Control
 
@@ -167,7 +167,7 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 
 ### ✅ Fase 2: Scoping - COMPLETATA
 
-**Documenti Creati (Allegati 2.1-2.12)**:
+**Documenti Creati (Allegati 2.1-2.11)**:
 - Project Scoping Meeting
 - Conditions of Satisfaction
 - Project Overview Statement (POS)
@@ -177,7 +177,6 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 - Prototyping (mockup v1 → v2)
 - Requirements Breakdown Structure (RBS)
 - User Stories (formato INVEST)
-- User Flow
 - PM Life Cycle Models
 - Approval Process
 
@@ -196,8 +195,8 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 7. Infrastructure & DevOps → Incrementale
 
 **Documenti Creati (Allegati 3.1-3.5)**:
-1. ✅ Work Breakdown Structure (WBS) - Scomposizione gerarchica completa (7 sottosistemi)
-2. ✅ MoSCoW Analysis - Prioritizzazione 310 story points Agile (Must 71.6%, Should 22.2%, Could 6.2%)
+1. ✅ Work Breakdown Structure (WBS) - Scomposizione gerarchica completa (6 sottosistemi di sviluppo + PM trasversale; 43 attività, 160 task)
+2. ✅ MoSCoW Analysis - Prioritizzazione di 302 giorni-uomo (Must 75,8%, Should 18,9%, Could 5,3%)
 3. ✅ Product Backlog - 15 sprint, solo il lavoro che scorre negli sprint (Backend, Real-Time, Frontend + user story Social)
 4. ✅ Cash Flow Management - Budget €25.000, 7 mesi, con grafici Excel
 5. ✅ Project Network Diagram + Gantt Chart - Critical Path 141 giorni lavorativi (fast tracking P→R), CSV per Notion
@@ -209,13 +208,14 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 
 ### ✅ Fase 4: Launching - COMPLETATA
 
-**Documenti Creati (Allegati 4.1-4.2)**:
+**Documenti Creati (Allegati 4.1-4.3)**:
 1. ✅ Project Kick-Off Meeting - Meeting 15/10/2025 con agenda completa, Q&A, action items, next steps
-2. ✅ RASCI Matrix + Regole Operative - Responsibility assignment per tutti i task + processi operativi (problem solving, decision making, conflict resolution, brainstorming, meetings, change management)
+2. ✅ RASCI Matrix (Allegato 4.2) - Responsibility assignment a livello di attività WBS (i task ereditano la riga dell'attività)
+3. ✅ Regole Operative (Allegato 4.3) - Processi operativi (problem solving, decision making, conflict resolution, brainstorming, meetings, change management, comunicazione)
 
 **Note**:
-- RASCI Matrix copre tutti i 7 sottosistemi + Project Management tasks
-- Regole Operative definiscono 5 tipologie di meeting (Daily Standup, Sprint Planning, Sprint Review, Retrospective, Status Meeting)
+- RASCI Matrix a livello di attività WBS su 8 aree (6 sottosistemi + QA + PM), 51 righe
+- Regole Operative definiscono 6 riunioni ricorrenti (Daily Standup, Sprint Planning, Backlog Refinement, Sprint Review, Retrospective, Status Meeting)
 - Framework decisionale a 3 livelli (Operativo/Tattico/Strategico)
 - Change Management Process formalizzato con Project Impact Statement
 
@@ -244,7 +244,7 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 **Documento Creato**:
 
 - ✅ Capitolo 6 - Closing (integrato nella relazione, stile discorsivo)
-  - Accettazione formale (10 Maggio 2026, Giovanni firma senza modifiche)
+  - Accettazione formale (11 Maggio 2026, Giovanni firma senza modifiche)
   - Final Project Report (9 sezioni, consegnato 12 Maggio 2026)
   - Audit Post-Implementazione (tutti i criteri soddisfatti)
   - Fattori di Successo (5 fattori chiave identificati)
@@ -272,12 +272,12 @@ A: Devi usare quelli appropriati al tuo progetto, giustificando le scelte.
 **Tutti i capitoli completati**:
 
 - ✅ Capitolo 1 - Introduzione
-- ✅ Capitolo 2 - Scoping (Allegati 2.1-2.12)
+- ✅ Capitolo 2 - Scoping (Allegati 2.1-2.11)
 - ✅ Capitolo 3 - Planning (Allegati 3.1-3.5)
-- ✅ Capitolo 4 - Launching (Allegati 4.1-4.2)
+- ✅ Capitolo 4 - Launching (Allegati 4.1-4.3)
 - ✅ Capitolo 5 - Monitoring & Control
 - ✅ Capitolo 6 - Closing
 
 ---
 
-**Ultimo aggiornamento**: 2026-01-11
+**Ultimo aggiornamento**: 2026-08-11

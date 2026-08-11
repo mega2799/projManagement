@@ -17,9 +17,9 @@ Il metodo **MoSCoW** è una tecnica di prioritizzazione dei requisiti sviluppata
 ### 1. Regola del 60/20/20
 Seguendo le linee guida del **Dynamic Systems Development Method (DSDM)**, abbiamo applicato la seguente distribuzione dello sforzo:
 
-- **Must Have**: ~60% dello sforzo totale
-- **Should Have**: ~20% dello sforzo totale
-- **Could Have**: ~20% dello sforzo totale
+- **Must Have**: ≈60% dello sforzo totale
+- **Should Have**: ≈20% dello sforzo totale
+- **Could Have**: ≈20% dello sforzo totale
 
 Questo garantisce che il progetto possa consegnare valore anche in caso di vincoli di tempo/budget, concentrando la maggior parte delle risorse sui requisiti critici.
 
@@ -69,7 +69,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 2. Backend Server
 
-#### Must Have (~70%)
+#### Must Have (≈70%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-BE-2.1.1 | Registrazione utente | 4 | M |
@@ -85,7 +85,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-BE-2.5.3 | Sicurezza API | 6 | M |
 | **Subtotale Must** | | **50 giorni** | |
 
-#### Should Have (~23%)
+#### Should Have (≈23%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-BE-2.1.4 | Gestione profilo personalizzabile | 3 | S |
@@ -95,7 +95,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-BE-2.3.3 | Invito diretto amici | 2 | S |
 | **Subtotale Should** | | **16 giorni** | |
 
-#### Could Have (~6%)
+#### Could Have (≈6%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-BE-2.4.2 | Statistiche avanzate (carta più giocata, etc.) | 4 | C |
@@ -112,7 +112,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 3. Real-Time Communication
 
-#### Must Have (~93%)
+#### Must Have (≈93%)
 **Razionale**: WebSocket è critico per esperienza multiplayer real-time. Senza sincronizzazione, il gioco non è giocabile.
 
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
@@ -127,7 +127,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-RTC-3.4.1 | Chat in-game testuale | 4 | M |
 | **Subtotale Must** | | **42 giorni** | |
 
-#### Could Have (~7%)
+#### Could Have (≈7%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-RTC-3.4.2 | Chat globale lobby | 3 | C |
@@ -145,7 +145,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 4. Frontend Web
 
-#### Must Have (~74%)
+#### Must Have (≈74%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-FE-4.1.1 | Implementazione mockup approvati (6 schermate) | 25 | M |
@@ -155,7 +155,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-FE-4.4.1 | Ottimizzazione caricamento (FCP < 2s) | 5 | M |
 | **Subtotale Must** | | **56 giorni** | |
 
-#### Should Have (~22%)
+#### Should Have (≈22%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-FE-4.3.1 | Accessibilità WCAG 2.1 AA | 8 | S |
@@ -163,7 +163,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-FE-4.5.1 | Microinterazioni e animazioni | 6 | S |
 | **Subtotale Should** | | **17 giorni** | |
 
-#### Could Have (~4%)
+#### Could Have (≈4%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-FE-4.3.2 | Modalità daltonici | 3 | C |
@@ -185,20 +185,20 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 6. Social & Community Features
 
-#### Must Have (~17%)
+#### Must Have (≈17%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-SOC-6.4.1 | Notifiche in-app ("È il tuo turno") | 4 | M |
 | **Subtotale Must** | | **4 giorni** | |
 
-#### Should Have (~58%)
+#### Should Have (≈58%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-SOC-6.1 | Sistema amicizie — UI e integrazione frontend (la parte API è in Backend 2.3) | 11 | S |
 | REQ-SOC-6.5.1 | Profili pubblici utenti | 3 | S |
 | **Subtotale Should** | | **14 giorni** | |
 
-#### Could Have (~25%)
+#### Could Have (≈25%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-SOC-6.3.1 | Classifica globale (top 100) | 4 | C |
@@ -216,7 +216,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ### 7. Infrastructure & DevOps
 
-#### Must Have (~73%)
+#### Must Have (≈73%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-INF-7.1.1 | Server dedicato (Hetzner/OVH) | 3 | M |
@@ -229,7 +229,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 | REQ-INF-7.4.3 | Backup e disaster recovery | 3 | M |
 | **Subtotale Must** | | **27 giorni** | |
 
-#### Should Have (~27%)
+#### Should Have (≈27%)
 | ID Requisito | Descrizione | Effort (giorni) | Priorità |
 |--------------|-------------|-----------------|----------|
 | REQ-INF-7.2.2 | Redis caching | 3 | S |
@@ -288,9 +288,9 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 | Categoria | Giorni | % dello Sforzo | Target DSDM |
 |-----------|--------|----------------|-------------|
-| Must Have | 229 | 75.8% | ~60% |
-| Should Have | 57 | 18.9% | ~20% |
-| Could Have | 16 | 5.3% | ~20% |
+| Must Have | 229 | 75.8% | ≈60% |
+| Should Have | 57 | 18.9% | ≈20% |
+| Could Have | 16 | 5.3% | ≈20% |
 | **Totale** | **302** | **100%** | |
 
 **Analisi della Distribuzione**:
@@ -305,7 +305,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 ### 1. Esclusione App Mobile Nativa
 **Decisione**: Won't Have nel MVP
 **Razionale**:
-- Sviluppo nativo iOS + Android richiederebbe ~120 giorni aggiuntivi (40% effort in più)
+- Sviluppo nativo iOS + Android richiederebbe ≈120 giorni aggiuntivi (40% effort in più)
 - Budget €25.000 insufficiente per assumere sviluppatori mobile
 - **Alternativa**: responsive web app ottimizzata per mobile browser
 - **Validazione**: user testing ha confermato che la web app mobile è usabile (87.5% success rate, vedi Allegato 2.7)

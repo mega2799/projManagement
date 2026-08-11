@@ -1,5 +1,5 @@
 # Allegato 3.5 - Project Network Diagram & Gantt Chart
-## v.2.0.0 – 2026-08-01 12:00
+## v.2.1.0 – 2026-08-10
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.5-NetworkGantt.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene il Network Diagram (20 nodi, asse = giorni lavorativi CPM) e il Gantt (stesse 20 attività, asse = calendario reale) in forma condensata; il dettaglio per sprint/sotto-task, le tabelle Forward/Backward Pass complete, l'analisi rischi e il processo di aggiornamento dinamico restano in questo documento.
 
@@ -47,6 +47,35 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 | **T** | Preparazione Lancio | 9 | S | - |
 
 **Totale Attività**: 20 nodi principali
+
+### Raccordo con la WBS (tracciabilità Attività di rete ↔ Work Package)
+
+I 20 nodi del network sono **aggregazioni delle 43 attività della WBS** (Allegato 3.1), dimensionate per l'analisi reticolare: il controllo dei tempi si esercita su questi nodi, mentre il dettaglio del lavoro resta tracciato nella WBS Dictionary. La tabella seguente documenta la corrispondenza.
+
+| Nodo | Attività WBS di riferimento |
+|------|------------------------------|
+| **A** Setup Infrastruttura | 6.1.1, 6.1.2, 6.2.1, 6.2.2 (primo incremento: hosting, Docker, CI/CD) |
+| **B** Backend Auth + Database | 2.1.1; 2.3.1 (tabelle utenti) |
+| **C** Game Engine Foundation | 1.1.1; 1.1.3 (selezione briscola) |
+| **D** Backend Gestione Partite | 2.2.1; 2.3.1 (tabelle partite/mosse) |
+| **E** WebSocket Server Setup | 3.1.1 |
+| **F** Game Engine Regole Core | 1.1.1 (ordine di forza); 1.1.3 (presa, turni, timeout) |
+| **G** Backend Persistenza Stato | 2.2.2 |
+| **H** Real-Time Eventi | 3.1.2; 3.2.1 (broadcast selettivo e validazioni) |
+| **I** Game Engine Punteggi e Maraffa | 1.1.2, 1.1.4, 1.1.5 |
+| **J** Frontend Homepage + Login | 4.1.1 |
+| **K** Chat + Disconnessioni | 3.1.1 (reconnection), 3.2.2 (indicatori latency); 5.2.1 (chat in-game) |
+| **L** Game Engine Testing | 1.2.1, 1.2.2 |
+| **M** Frontend Dashboard + Creazione Stanza | 4.1.2, 4.1.3 |
+| **N** Sistema Amicizie | 5.1.1, 5.1.2; 2.1.2 (profilo utente) |
+| **O** Integration Testing Game Engine | 1.2.2; 7.2.1 (integration test) |
+| **P** Frontend Tavolo da Gioco | 4.1.4, 4.1.5; 4.3 (animazioni e performance) |
+| **Q** Frontend Profili + Notifiche | 4.2.1, 4.2.2 (responsive e accessibilità); 5.2.2; UI dello storico (2.2.3) |
+| **R** Testing End-to-End | 7.2.1 (E2E Cypress) |
+| **S** UAT + Bug Fixing | 7.2.2 |
+| **T** Preparazione Lancio | 6.1 (deploy production), 6.3.1 (monitoring post-lancio), 7.1.1 (documentazione utente) |
+
+> Le attività WBS **non riconducibili a nodi di rete** sono di natura continuativa o on-demand e non vincolano la schedula: la documentazione PM (7.1.2, prodotta lungo tutto il progetto), l'ottimizzazione delle query (2.3.2, attivata su evidenza di profiling), gli incrementi successivi di monitoring, logging e sicurezza (6.3.2, 6.4, attivati al bisogno secondo l'approccio incrementale) e la chat globale di lobby (5.2.1.1, Could Have). La loro copertura di responsabilità è comunque nella RASCI (Allegato 4.2).
 
 ---
 
@@ -108,7 +137,7 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 
 **Critical Path**: **A → B → D → G → J → M → P → R → S → T**
 
-**Durata Totale Critical Path**: **141 giorni lavorativi** — esattamente i giorni lavorativi disponibili dal 15 ottobre 2025 all'8 maggio 2026, al netto di weekend e festività italiane. Il lancio del 15 maggio conserva così **5 giorni lavorativi (~1 settimana) di margine** dopo la fine dell'ultima attività (T).
+**Durata Totale Critical Path**: **141 giorni lavorativi** — esattamente i giorni lavorativi disponibili dal 15 ottobre 2025 all'8 maggio 2026, al netto di weekend e festività italiane. Il lancio del 15 maggio conserva così **5 giorni lavorativi (≈1 settimana) di margine** dopo la fine dell'ultima attività (T).
 
 **Fast tracking dichiarato (P → R)**: per far stare il percorso critico nei sette mesi di calendario si è applicata una compressione della schedula di tipo *fast tracking*: il Testing End-to-End (R) non attende la fine del Frontend Tavolo da Gioco (P), ma parte quando P ha completato 31 dei suoi 40 giorni (legame **Start-to-Start con lag di 31 giorni**), lavorando sui moduli già consegnati mentre P chiude animazioni e rifiniture. La compressione non è gratis: introduce un rischio di rework sui test eseguiti su moduli poi ritoccati, accettato e mitigato dal fatto che l'Integration Testing del Game Engine (O) si chiude prima dell'avvio di R e che gli ultimi 2 giorni di R cadono comunque dopo la fine di P.
 
@@ -402,11 +431,11 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 ## Sensitivity Analysis (Analisi di Sensibilità)
 
 ### Scenario 1: Frontend Tavolo ritarda di 10 giorni
-**Impatto**: la fine di T slitta oltre l'8 Maggio; consumati i 5 giorni di margine, il lancio slitta di ~1 settimana (verso il 22 Maggio 2026)
+**Impatto**: la fine di T slitta oltre l'8 Maggio; consumati i 5 giorni di margine, il lancio slitta di ≈1 settimana (verso il 22 Maggio 2026)
 **Azioni Correttive**:
 - Comprimere attività S (UAT) da 17 a 12 giorni
 - Aggiungere 1 sviluppatore part-time su P per recuperare 5 giorni
-- **Costo aggiuntivo**: ~€2.000 (contractor esterno senior per ~0,5 mesi a tariffe di mercato; coperto dal Contingency Buffer)
+- **Costo aggiuntivo**: ≈€2.000 (contractor esterno senior per ≈0,5 mesi a tariffe di mercato; coperto dal Contingency Buffer)
 
 ### Scenario 2: Game Engine Testing (L) scopre bug critici (+5 giorni)
 **Impatto**: L ha float? NO, L non è sul critical path ma O (Integration Testing) dipende da L.
@@ -440,6 +469,7 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 **Prossimo Aggiornamento**: 31/10/2025 (venerdì; primo aggiornamento settimanale dopo la chiusura dello Sprint 0)
 
 **Storico revisioni**:
+- **v.2.1.0**: Aggiunta la tabella di **raccordo con la WBS** (tracciabilità nodo di rete ↔ attività della WBS, con nota sulle attività continuative/on-demand che non formano nodi), a supporto della doppia lettura della WBS dichiarata nell'Allegato 3.1 v.1.3.0.
 - **v.1.1.0**: Chiarito che i file immagine del network diagram e del Gantt non sono stati prodotti per questo elaborato; restano documentati tramite le tabelle/CSV già presenti.
 - **v.1.2.0**: Creato il companion `Allegato3.5-NetworkGantt.html` — Network Diagram (grafo a 3 rami: Critico/Game Engine/Chat-Social, nodi posizionati per ES/EF, frecce rosse spesse sul critical path e blu sottili sulle non critiche, milestone M1-M4 a rombo) e Gantt Chart (20 barre su calendario reale 15-Ott-2025→15-Mag-2026, milestone M1-M7, colori per criticità) generati via script Python dai valori verificati delle tabelle Forward/Backward Pass e Sprint di questo documento. Sostituisce la descrizione puramente testuale della "Struttura Visuale" con un diagramma effettivamente colorato e a colpo d'occhio.
-- **v.2.0.0**: Ricalibrazione del CPM sul calendario reale. Le durate precedenti erano nominali e la loro somma sul percorso critico (170 gg) superava i giorni lavorativi effettivamente disponibili nei 7 mesi di progetto (146 al 15 Mag). Tutte le durate sono ora espresse in giorni lavorativi netti (festività italiane escluse) e coerenti con le date del Gantt; il percorso critico risulta di **141 gg lavorativi** (15 Ott → 8 Mag) con ~1 settimana di margine sul lancio del 15 Mag. Esplicitato il **fast tracking P→R** (legame Start-to-Start con lag 31 gg), che prima era un overlap non dichiarato nel Gantt; float ricalcolati (Game Engine 30→22, Chat/Social 50→37); milestone M1-M4 allineate alle nuove date di fine attività (in particolare M4 corretta da 14-Mar a 27-Mar, fine di P). Rigenerato l'HTML companion con lo script `tools/genera-networkgantt-html.py` (ora versionato).
+- **v.2.0.0**: Ricalibrazione del CPM sul calendario reale. Le durate precedenti erano nominali e la loro somma sul percorso critico (170 gg) superava i giorni lavorativi effettivamente disponibili nei 7 mesi di progetto (146 al 15 Mag). Tutte le durate sono ora espresse in giorni lavorativi netti (festività italiane escluse) e coerenti con le date del Gantt; il percorso critico risulta di **141 gg lavorativi** (15 Ott → 8 Mag) con ≈1 settimana di margine sul lancio del 15 Mag. Esplicitato il **fast tracking P→R** (legame Start-to-Start con lag 31 gg), che prima era un overlap non dichiarato nel Gantt; float ricalcolati (Game Engine 30→22, Chat/Social 50→37); milestone M1-M4 allineate alle nuove date di fine attività (in particolare M4 corretta da 14-Mar a 27-Mar, fine di P). Rigenerato l'HTML companion con lo script `tools/genera-networkgantt-html.py` (ora versionato).

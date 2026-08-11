@@ -27,7 +27,6 @@ MaraffaOnline/
 │   ├── Allegato2.6-Prototyping.md
 │   ├── Allegato2.7-RequirementsBreakdownStructure.md
 │   ├── Allegato2.8-UserStories.md
-│   └── Allegato2.9-UserFlow.md
 ├── Planning/                   # Allegati fase Planning
 │   ├── Allegato3.1-WorkBreakdownStructure.md
 │   ├── Allegato3.2-Moscow.md
@@ -35,8 +34,9 @@ MaraffaOnline/
 │   ├── Allegato3.4-CashFlow.md
 │   └── Allegato3.5-ProjectNetworkDiagram-Gantt.md
 ├── Launching/                  # Allegati fase Launching
-│   ├── Allegato4.1-RASCI.md
-│   └── Allegato4.2-RegoleOperative.md
+│   ├── Allegato4.1-ProjectKickOffMeeting.md
+│   ├── Allegato4.2-RASCI.md (+ .html visuale)
+│   └── Allegato4.3-RegoleOperative.md
 ├── MonitoringControl/          # Allegati fase Monitoring & Control
 │   ├── Allegato5.1-StoplightReports.md
 │   └── Allegato5.2-EarnedValue.md

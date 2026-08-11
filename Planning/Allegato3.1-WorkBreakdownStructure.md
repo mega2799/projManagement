@@ -1,5 +1,5 @@
 # Allegato 3.1 - Work Breakdown Structure (WBS)
-## v.1.2.0 – 2025-10-20 10:00
+## v.1.3.0 – 2026-08-10
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.1-WorkBreakdownStructure.html`: apri il file nel browser e usa "Stampa → Salva come PDF". L'html contiene sia il diagramma ad albero (Sottosistema → Funzione, con conteggio di Attività/Task, a colpo d'occhio) sia, in una sezione sottostante, l'elenco testuale completo di tutti i 160 Task per chi vuole il dettaglio in un unico file. Questo documento `.md` resta comunque la WBS Dictionary di riferimento.
 
@@ -14,6 +14,8 @@ La WBS è organizzata su 4 livelli:
 2. **Funzione**: raggruppamenti logici di attività
 3. **Attività**: work package specifici
 4. **Task**: unità atomiche di lavoro
+
+> **Doppia lettura della WBS (controllo gestionale vs dettaglio operativo).** I primi tre livelli — fino alle **43 attività** — sono la WBS **gestionale**: ogni attività è un work package con effort medio di ≈7 giorni-uomo, dentro la finestra della *8/80 rule* (tra 8 e 80 ore di lavoro), ed è il livello a cui si esercitano stima, assegnazione delle responsabilità (RASCI, Allegato 4.2) e controllo — il Project Network Diagram e il Gantt lavorano infatti su 20 attività aggregate, raccordate a questa WBS nella tabella di tracciabilità dell'Allegato 3.5. Il **quarto livello** — i 160 task — è la **scomposizione operativa** (questa WBS Dictionary): alimenta lo Sprint Backlog dei sottosistemi agili e garantisce la tracciabilità requisito → lavoro; i singoli task (effort implicito ≈2 giorni-uomo) non sono oggetto di stima né di controllo individuale.
 
 > **Nota sui sottosistemi.** L'architettura del prodotto comprende **7 sottosistemi** (Game Engine, Backend Server, Real-Time Communication, Frontend Web, Mobile Application, Social & Community, Infrastructure & DevOps — vedi Allegato 2.8 - RBS e Allegato 2.10). La **Mobile Application è classificata Won't Have per l'MVP** (Allegato 3.2 - MoSCoW) e quindi non genera task in questa release: la presente WBS decompone perciò il lavoro dei **6 sottosistemi di sviluppo attivi** (sezioni 1-6) e delle **attività trasversali di Project Management e QA** (sezione 7).
 
@@ -311,7 +313,7 @@ La WBS è organizzata su 4 livelli:
 #### 7.1.2 Documentazione PM
 - **Task 7.1.2.1**: Scoping documents (11 allegati)
 - **Task 7.1.2.2**: Planning documents (5 allegati)
-- **Task 7.1.2.3**: Launching documents (2 allegati)
+- **Task 7.1.2.3**: Launching documents (3 allegati)
 - **Task 7.1.2.4**: Monitoring reports (settimanali)
 
 ### 7.2 Testing e QA
@@ -346,5 +348,6 @@ Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratter
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
+- **v.1.3.0**: Dichiarata la **doppia lettura** della WBS (livelli 1-3 = controllo gestionale sui 43 work package, entro la 8/80 rule; livello 4 = scomposizione operativa che alimenta lo Sprint Backlog), in coerenza con la potatura della RASCI a livello di attività (Allegato 4.2 v.2.1.0) e con la tabella di raccordo WBS ↔ Network aggiunta all'Allegato 3.5.
 - **v.1.2.0**: Aggiunta al companion HTML la sezione "Dettaglio Completo" con tutti i 160 Task in forma testuale (organizzati per Sottosistema → Funzione → Attività, colori coerenti col diagramma), su richiesta esplicita per avere un unico file stampabile con sia il diagramma sia il dettaglio.
 - **v.1.1.0**: Aggiunto il companion `Allegato3.1-WorkBreakdownStructure.html`: diagramma ad albero (Sottosistema → Funzione) con conteggi verificati di Attività/Task per ramo, colori per sottosistema. È la versione da esportare in PDF (stampa da browser) per l'allegato finale; questo `.md` resta la WBS Dictionary completa (tutti i 160 Task).

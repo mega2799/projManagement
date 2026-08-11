@@ -24,7 +24,7 @@ Verbale del meeting di avvio del progetto MaraffaOnline. Il kick-off segna il pa
 
 ## Materiali condivisi prima del meeting
 
-Venerdì 10 ottobre sono stati inviati ai partecipanti il Project Overview Statement (Allegato 2.3), la WBS (3.1), il Gantt con il critical path (3.5), il Cash Flow (3.4) e le bozze di RASCI Matrix e Regole Operative (4.2), così da arrivare preparati e ridurre il tempo di presentazione durante il meeting.
+Venerdì 10 ottobre sono stati inviati ai partecipanti il Project Overview Statement (Allegato 2.3), la WBS (3.1), il Gantt con il critical path (3.5), il Cash Flow (3.4) e le bozze di RASCI Matrix (4.2) e Regole Operative (4.3), così da arrivare preparati e ridurre il tempo di presentazione durante il meeting.
 
 ## Temi trattati
 
@@ -41,7 +41,7 @@ Elena ha infine richiamato i rischi principali dalla Risk Rating Matrix (Allegat
 1. Timeline di 7 mesi confermata (15/10/2025 – 15/05/2026).
 2. Budget di €25.000 confermato, senza incrementi.
 3. Scope dell'MVP confermato (esclusi app mobile nativa, AI, tornei, monetizzazione).
-4. RASCI Matrix e Regole Operative approvate (Allegato 4.2).
+4. RASCI Matrix (Allegato 4.2) e Regole Operative (Allegato 4.3) approvate.
 5. Calendario a 15 sprint da due settimane (Sprint 0–14), con Daily Standup dalle 09:00 a partire dal 16/10/2025.
 
 ## Action item

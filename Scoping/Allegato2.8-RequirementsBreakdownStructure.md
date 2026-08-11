@@ -389,7 +389,7 @@ I requisiti sono inoltre prioritizzati con il metodo **MoSCoW** (dettagliato in 
 ### 7.1 Hosting e Deployment
 
 #### 7.1.1 Server Dedicato [NF, M]
-- Hetzner o OVH (server dedicato ~€50/mese)
+- Hetzner o OVH (server dedicato ≈€50/mese)
 - 8GB RAM, 4 cores, 200GB SSD
 - **Vincolo**: Budget limitato, no cloud scalabile (AWS/GCP) nel MVP
 
