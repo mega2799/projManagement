@@ -10,6 +10,9 @@ tools/node_modules/
 # PDF degli allegati: artefatti rigenerabili con tools/genera-allegati-pdf.sh
 Allegati-PDF/
 
+# Cartella di lavoro locale per la verifica di correttezza dei PDF (non fa parte della consegna)
+_pdf_review/
+
 # Pacchetto di consegna: artefatto rigenerabile con tools/costruisci-consegna.sh
 MaraffaOnline-Consegna/
 MaraffaOnline-Consegna.zip
