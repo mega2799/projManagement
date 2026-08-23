@@ -43,7 +43,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 
 ## Categorizzazione Requisiti per Sottosistema
 
-> **Nota sugli ID.** Gli identificativi `REQ-<area>-<n>` codificano la numerazione gerarchica della Requirements Breakdown Structure (Allegato 2.8): ad esempio `REQ-SOC-6.3.1` corrisponde al primo requisito della sezione 6.3 (Classifiche e Leaderboard) della RBS.
+> **Nota sugli ID.** Gli identificativi `REQ-<area>-<n>` codificano la numerazione gerarchica della Requirements Breakdown Structure (Allegato 2.7): ad esempio `REQ-SOC-6.3.1` corrisponde al primo requisito della sezione 6.3 (Classifiche e Leaderboard) della RBS.
 
 ### 1. Game Engine
 
@@ -308,7 +308,7 @@ L'approccio resta dinamico anche in corso d'opera: a **Novembre 2025**, dopo la 
 - Sviluppo nativo iOS + Android richiederebbe ≈120 giorni aggiuntivi (40% effort in più)
 - Budget €25.000 insufficiente per assumere sviluppatori mobile
 - **Alternativa**: responsive web app ottimizzata per mobile browser
-- **Validazione**: user testing ha confermato che la web app mobile è usabile (87.5% success rate, vedi Allegato 2.7)
+- **Validazione**: user testing ha confermato che la web app mobile è usabile (87.5% success rate, vedi Allegato 2.6)
 
 **Trade-off accettati**:
 
@@ -384,5 +384,5 @@ Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
-- **v.1.2.0**: Documentata la riclassificazione in corso d'opera di REQ-GE-1.1.5 (Maraffa/Cricca) da Should a Must (Novembre 2025, dopo la Sessione 1 di validazione con Francesca Giuliani), in coerenza con il Cap. 6 - Closing. Aggiunta la nota di raccordo tra gli ID `REQ-*` e la numerazione gerarchica della RBS (Allegato 2.8). Data della seconda revisione allineata al nuovo calendario del prototyping (user testing 29-30/09).
+- **v.1.2.0**: Documentata la riclassificazione in corso d'opera di REQ-GE-1.1.5 (Maraffa/Cricca) da Should a Must (Novembre 2025, dopo la Sessione 1 di validazione con Francesca Giuliani), in coerenza con il Cap. 6 - Closing. Aggiunta la nota di raccordo tra gli ID `REQ-*` e la numerazione gerarchica della RBS (Allegato 2.7). Data della seconda revisione allineata al nuovo calendario del prototyping (user testing 29-30/09).
 - **v.1.1.0**: Aggiunto companion `Allegato3.2-MoSCoW.html` (board a 4 quadranti + barra di distribuzione). Corretti i totali Should (71→57 gg) e Could (20→16 gg) e il totale effort (320→302 gg) per allinearli alla somma dei subtotali per sottosistema; percentuali di distribuzione e di categoria ricalcolate (Must 75,8% / Should 18,9% / Could 5,3%).

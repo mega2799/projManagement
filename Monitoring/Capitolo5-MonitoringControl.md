@@ -63,7 +63,7 @@ Perché una feature sia "Done" (e maturi Earned Value) valgono quattro quality g
 
 ## 5.10 Risk Monitoring
 
-I rischi della Risk Rating Matrix (Allegato 2.4) sono rivisti a ogni Status Meeting su un Risk Log Notion: stato (Aperto / In Mitigation / Mitigato / Materializzato), probabilità e impatto rivalutati, azioni, owner.
+I rischi della Risk Rating Matrix (Allegato 2.3) sono rivisti a ogni Status Meeting su un Risk Log Notion: stato (Aperto / In Mitigation / Mitigato / Materializzato), probabilità e impatto rivalutati, azioni, owner.
 
 - **Rischio 2.1 — inesperienza WebSocket**, il più critico (rating 16): lo spike tecnico e il proof of concept dello Sprint 2 misurano una latenza di 180ms e dimezzano il rating a 8; il load test dello Sprint 6 lo chiude come "Mitigato".
 - **Rischio 6.2 — scope creep**: mai materializzato; la chiarezza del POS e il rigore del Change Request Process hanno retto, e Giovanni ha accettato di rinviare alla v1.1 le richieste che avrebbero toccato il critical path.

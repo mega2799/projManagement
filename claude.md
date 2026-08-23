@@ -59,7 +59,7 @@ La relazione deve seguire le 5 fasi del ciclo di vita del Project Management:
 - **2.9 User Stories**: seguendo principio INVEST
 - **2.10 Project Management Life Cycle Models**: scelta metodologia per ogni sottosistema
 - **2.11 Approval Process**: meeting di approvazione
-  *(lo User Flow, previsto dal template delle linee guida, è stato assorbito dal Prototyping 2.7 e rimosso come allegato autonomo)*
+  *(lo User Flow, previsto dal template delle linee guida, è stato assorbito dal Prototyping 2.7 e rimosso come allegato autonomo. Dal 2026-08-23 i verbali del Project Scoping Meeting e dell'Approval Process sono solo narrati nella relazione, senza allegato — i file restano in `Scoping/_ritirato-*.md` come note interne — e gli allegati di Scoping sono numerati sequenzialmente 2.1–2.9 (CoS=2.1 … PMLC=2.9), quindi il numero di allegato NON coincide con il numero di sezione qui sopra, come nella relazione di riferimento.)*
 
 ### 3. PLANNING
 - **3.1 Work Breakdown Structure (WBS)**: decomposizione fino a task level

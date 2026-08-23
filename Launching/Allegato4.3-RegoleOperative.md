@@ -1,7 +1,7 @@
 # Allegato 4.3 - Regole Operative
 ## v.1.0.0 – 2026-08-10 10:00
 
-Le Regole Operative definiscono come il team lavora insieme ogni giorno: problemi, decisioni, conflitti, generazione di idee e cadenza degli incontri. Approvate nel Project Kick-Off Meeting del 15/10/2025 (Allegato 4.1), valgono per tutti i sottosistemi qualunque sia il loro modello di ciclo di vita (Allegato 2.10). Responsible, Accountable e Consulted di ogni attività sono nell'**Allegato 4.2 - RASCI Matrix**.
+Le Regole Operative definiscono come il team lavora insieme ogni giorno: problemi, decisioni, conflitti, generazione di idee e cadenza degli incontri. Approvate nel Project Kick-Off Meeting del 15/10/2025 (Allegato 4.1), valgono per tutti i sottosistemi qualunque sia il loro modello di ciclo di vita (Allegato 2.9). Responsible, Accountable e Consulted di ogni attività sono nell'**Allegato 4.2 - RASCI Matrix**.
 
 ---
 

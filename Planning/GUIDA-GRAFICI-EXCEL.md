@@ -166,7 +166,7 @@ Se il grafico a torta risulta troppo affollato (troppe categorie piccole), usa:
 
 ### Colori
 
-Usa la palette coerente con il progetto MaraffaOnline (vedi `Scoping/Allegato2.7-Prototyping.md`):
+Usa la palette coerente con il progetto MaraffaOnline (vedi `Scoping/Allegato2.6-Prototyping.md`):
 - **Rosso mattone** (#b85450) per spese/outflow
 - **Verde bottiglia** (#28a745) per entrate/inflow
 - **Legno/arancione** (#fd7e14) per saldo/evidenziazioni

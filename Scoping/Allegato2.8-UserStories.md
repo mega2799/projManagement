@@ -1,5 +1,5 @@
-# Allegato 2.9 - User Stories
-## v.1.2.0 – 2026-08-02
+# Allegato 2.8 - User Stories
+## v.1.3.0 – 2026-08-23
 
 Le **User Stories** sono descrizioni concise delle funzionalità del sistema dal punto di vista dell'utente finale. Seguono il formato standard:
 
@@ -476,6 +476,7 @@ Tutte le user stories sono state validate contro i criteri INVEST:
 **Data approvazione**: 26/09/2025
 
 **Storico revisioni**:
+- **v.1.3.0**: Rinumerato da Allegato 2.9 a **Allegato 2.8**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.1.2.0**: Rimosso il "Riepilogo User Stories per Sprint" (5 sprint con story points), residuo sfuggito alla pulizia della v.1.1.0: era pianificazione dentro un documento di Scoping e contraddiceva il calendario del Product Backlog (Allegato 3.3), che è l'unica fonte per l'assegnazione agli sprint. Ripuliti anche i punti e le etichette MoSCoW dalla sezione Post-MVP.
 - **v.1.1.0**: Rimossi da ogni user story i campi Priorità (MoSCoW), Story Points e Sprint — contenuti che appartengono agli allegati di Planning (3.2 MoSCoW, 3.3 Product Backlog); le storie restano nella forma INVEST (racconto, criteri di accettazione, dipendenze, approccio di test). Aggiornata di conseguenza la tabella INVEST (Estimable/Small).
 - **v.1.0.0**: Prima stesura delle user stories.

@@ -1,4 +1,4 @@
-# Allegato 2.3 - Project Overview Statement (POS)
+# Allegato 2.2 - Project Overview Statement (POS)
 
 ## v.1.1.0 – 2025-09-18 16:45
 
@@ -108,5 +108,6 @@ I rischi sono raggruppati per obiettivo (stesso numero della sezione Obiettivi);
 **Data approvazione**: 19/09/2025
 
 **Storico revisioni**:
+- **v.1.2.0**: Rinumerato da Allegato 2.3 a **Allegato 2.2**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.1.1.0**: Rifatta la sezione Rischi con un raggruppamento leggibile per obiettivo (la numerazione annidata precedente rendeva poco chiara la corrispondenza rischio-obiettivo); evidenziati i due rischi critici. Contenuto dei rischi invariato.
 - **v.1.0.0**: Prima stesura del Project Overview Statement.

@@ -1,5 +1,5 @@
-# Allegato 2.7 - Prototyping
-## v.2.2.0 – 2026-08-02
+# Allegato 2.6 - Prototyping
+## v.2.3.0 – 2026-08-23
 
 Il prototyping è un passaggio fondamentale nella fase di Scoping per validare le scelte di design dell'interfaccia utente prima dell'implementazione. Per MaraffaOnline sono state create **due iterazioni** di mockup/wireframe:
 
@@ -293,7 +293,7 @@ Apprezzato:
 
 ## Responsive Design - Adattamenti Mobile
 
-**Sfida principale**: Il tavolo da gioco con 4 giocatori e 10 carte in mano deve essere usabile anche su schermi piccoli (375x667 iPhone SE).
+**Sfida principale**: Il tavolo da gioco con 4 giocatori e 10 carte in mano deve essere usabile anche su schermi piccoli
 
 **Soluzione v2**:
 - Layout verticale anziché tavolo quadrato
@@ -334,7 +334,7 @@ Apprezzato:
 
 ## Approvazione Finale
 
-**Data**: 01/10/2025 (formalizzata nel meeting di approvazione dello Scoping del 02/10, Allegato 2.11)
+**Data**: 01/10/2025 (formalizzata nel meeting di approvazione dello Scoping del 02/10)
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever)
 
 **Commento ufficiale**:
@@ -368,5 +368,6 @@ I nomi seguenti indicano come sarebbero stati organizzati i file grafici in un p
 **Revisionato da**: Marco Venturi (Project Manager)
 
 **Storico revisioni**:
+- **v.2.3.0**: Rinumerato da Allegato 2.7 a **Allegato 2.6**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.2.2.0**: Timeline del co-design e dell'approvazione anticipata entro la finestra di Scoping (workshop 16/09, v2 il 25/09, user testing 29-30/09, approvazione 01/10): le date precedenti (fino al 15/10) cadevano dopo il meeting di approvazione dello Scoping del 02/10 che esaminava questo stesso documento.
 - **v.2.1.0**: Chiarito esplicitamente che i file grafici (mockup PNG, file Figma) non sono stati prodotti per questo elaborato accademico; la rappresentazione visiva è affidata ai wireframe testuali già presenti nel documento.

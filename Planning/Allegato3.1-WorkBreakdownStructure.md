@@ -17,7 +17,7 @@ La WBS è organizzata su 4 livelli:
 
 > **Doppia lettura della WBS (controllo gestionale vs dettaglio operativo).** I primi tre livelli — fino alle **43 attività** — sono la WBS **gestionale**: ogni attività è un work package con effort medio di ≈7 giorni-uomo, dentro la finestra della *8/80 rule* (tra 8 e 80 ore di lavoro), ed è il livello a cui si esercitano stima, assegnazione delle responsabilità (RASCI, Allegato 4.2) e controllo — il Project Network Diagram e il Gantt lavorano infatti su 20 attività aggregate, raccordate a questa WBS nella tabella di tracciabilità dell'Allegato 3.5. Il **quarto livello** — i 160 task — è la **scomposizione operativa** (questa WBS Dictionary): alimenta lo Sprint Backlog dei sottosistemi agili e garantisce la tracciabilità requisito → lavoro; i singoli task (effort implicito ≈2 giorni-uomo) non sono oggetto di stima né di controllo individuale.
 
-> **Nota sui sottosistemi.** L'architettura del prodotto comprende **7 sottosistemi** (Game Engine, Backend Server, Real-Time Communication, Frontend Web, Mobile Application, Social & Community, Infrastructure & DevOps — vedi Allegato 2.8 - RBS e Allegato 2.10). La **Mobile Application è classificata Won't Have per l'MVP** (Allegato 3.2 - MoSCoW) e quindi non genera task in questa release: la presente WBS decompone perciò il lavoro dei **6 sottosistemi di sviluppo attivi** (sezioni 1-6) e delle **attività trasversali di Project Management e QA** (sezione 7).
+> **Nota sui sottosistemi.** L'architettura del prodotto comprende **7 sottosistemi** (Game Engine, Backend Server, Real-Time Communication, Frontend Web, Mobile Application, Social & Community, Infrastructure & DevOps — vedi Allegato 2.7 - RBS e Allegato 2.9). La **Mobile Application è classificata Won't Have per l'MVP** (Allegato 3.2 - MoSCoW) e quindi non genera task in questa release: la presente WBS decompone perciò il lavoro dei **6 sottosistemi di sviluppo attivi** (sezioni 1-6) e delle **attività trasversali di Project Management e QA** (sezione 7).
 
 ---
 
@@ -333,11 +333,11 @@ La WBS è organizzata su 4 livelli:
 
 ## Note Metodologiche
 
-Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratteristiche: Game Engine in Waterfall, Backend e Frontend in Agile Iterativo, Real-Time Communication in Agile Adattivo, Social e Infrastructure in Incrementale. **La scelta e la motivazione di ciascuna metodologia sono documentate nell'Allegato 2.10 - PM Life Cycle Models** e discusse nella relazione (Cap. 2/3).
+Ogni sottosistema è sviluppato con la metodologia più adatta alle sue caratteristiche: Game Engine in Waterfall, Backend e Frontend in Agile Iterativo, Real-Time Communication in Agile Adattivo, Social e Infrastructure in Incrementale. **La scelta e la motivazione di ciascuna metodologia sono documentate nell'Allegato 2.9 - PM Life Cycle Models** e discusse nella relazione (Cap. 2/3).
 
 ### Integrazione con Altri Documenti
 
-- **Requirements Breakdown Structure (Allegato 2.8)**: Definisce COSA consegnare
+- **Requirements Breakdown Structure (Allegato 2.7)**: Definisce COSA consegnare
 - **WBS (questo documento)**: Definisce COME organizzare il lavoro
 - **Product Backlog (Allegato 3.3)**: Prioritizza le attività per sprint Agile
 - **Gantt Chart (Allegato 3.5)**: Temporizza le attività con dipendenze

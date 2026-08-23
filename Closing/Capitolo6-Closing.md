@@ -39,7 +39,7 @@ Condotto da Marco Venturi **insieme a Giovanni Marchetti il 13 Maggio 2026**, ve
 ## 6.4 Fattori di Successo
 
 - **Monitoraggio multilivello** (Daily, Status Meeting con Stoplight, EVM, velocity, quality metrics) come rete di early warning: dei **17 blocker tecnici, 14 intercettati nei Daily entro 24 ore**, nessuno arrivato al post-delivery; il ritardo di Gennaio assorbito senza toccare le milestone.
-- **Metodologie differenziate per sottosistema** (Allegato 2.10): Waterfall sul Game Engine, Iterativo su Backend/Frontend, Adattivo sul Real-Time, Incrementale su Social/Infrastructure.
+- **Metodologie differenziate per sottosistema** (Allegato 2.9): Waterfall sul Game Engine, Iterativo su Backend/Frontend, Adattivo sul Real-Time, Incrementale su Social/Infrastructure.
 - **Leadership del PM** (PoC sul Real-Time in Sprint 2, recovery plan di Gennaio) e **sponsor collaborativo** (presente a tutti gli Status Meeting, rispettoso del Change Request Process).
 - **Competenza del team** su uno stack consolidato, con sottosistemi loosely coupled.
 

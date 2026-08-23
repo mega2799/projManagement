@@ -1,11 +1,11 @@
 # Allegato 3.3 - Product Backlog
 ## v.3.1.0 – 2026-08-02 12:00
 
-Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per il progetto MaraffaOnline. Gli item derivano dalle User Stories (Allegato 2.9), sono stimati in **story points** (Planning Poker, scala Fibonacci) e assegnati a sprint da 2 settimane, in coerenza con le date del Gantt (Allegato 3.5).
+Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per il progetto MaraffaOnline. Gli item derivano dalle User Stories (Allegato 2.8), sono stimati in **story points** (Planning Poker, scala Fibonacci) e assegnati a sprint da 2 settimane, in coerenza con le date del Gantt (Allegato 3.5).
 
 **Ambito.** Il Backlog include solo il lavoro esprimibile come user story e realizzato negli sprint: **Backend Server**, **Real-Time Communication**, **Frontend Web** e le user story di **Social & Community** (tracciate sotto il sottosistema che le implementa). Restano esclusi il **Game Engine** (Waterfall) e l'**Infrastructure & DevOps** (Incrementale, attività on-demand): sono tracciati in WBS (Allegato 3.1) e Gantt (Allegato 3.5). *(Razionale nella relazione, Cap. 3 - Planning.)*
 
-**Legenda.** Priorità: **P0-P1** = Must Have (P0 bloccante per il core), **P2** = Should Have, **P3** = Could Have (mappatura MoSCoW, Allegato 3.2). Story points: Fibonacci 1-21 (1 SP ≈ 1-2 ore; 8 SP ≈ 4-5 giorni; 13 SP ≈ 1 settimana). **Colonna US**: la user story dell'Allegato 2.9 da cui il task deriva; "—" indica task tecnici/abilitanti non riconducibili a una singola storia utente.
+**Legenda.** Priorità: **P0-P1** = Must Have (P0 bloccante per il core), **P2** = Should Have, **P3** = Could Have (mappatura MoSCoW, Allegato 3.2). Story points: Fibonacci 1-21 (1 SP ≈ 1-2 ore; 8 SP ≈ 4-5 giorni; 13 SP ≈ 1 settimana). **Colonna US**: la user story dell'Allegato 2.8 da cui il task deriva; "—" indica task tecnici/abilitanti non riconducibili a una singola storia utente.
 
 ---
 
@@ -153,4 +153,4 @@ Un item è **Done** solo quando:
 **Storico revisioni**:
 - **v.2.0.0** (28/10/2025): separazione del Product Backlog dal lavoro tracciato in WBS/Gantt.
 - **v.3.0.0** (02/08/2026): snellimento in artefatto operativo — tabelle unificate per sottosistema, legenda P0-P3 ↔ MoSCoW, ambito compresso. Note metodologiche, riepiloghi percentuali, velocity tracking e processo di gestione del backlog spostati nella relazione (Cap. 3 e Cap. 5), nell'Allegato 4.3 (cerimonie) e nel registro `Relazione/_appunti-per-relazione.md`.
-- **v.3.1.0** (02/08/2026): revisione di tracciabilità e coerenza col Gantt. La colonna US ora punta alle **user story reali dell'Allegato 2.9** (la numerazione precedente era autonoma e collideva con quella del 2.9); i task tecnici sono marcati "—". Assegnazioni agli sprint riallineate alle **date del Gantt/CSV** (Allegato 3.5): il lavoro frontend scorre ora negli Sprint 5-11 (il tavolo da gioco negli Sprint 8-11, coerente con l'attività P di febbraio-marzo), il Real-Time negli Sprint 4-7. Nota capacity riscritta in termini di capacità (≈40) vs carico medio (≈37 team-wide, ≈28 solo Backlog).
+- **v.3.1.0** (02/08/2026): revisione di tracciabilità e coerenza col Gantt. La colonna US ora punta alle **user story reali dell'Allegato 2.8** (la numerazione precedente era autonoma e collideva con quella del 2.9); i task tecnici sono marcati "—". Assegnazioni agli sprint riallineate alle **date del Gantt/CSV** (Allegato 3.5): il lavoro frontend scorre ora negli Sprint 5-11 (il tavolo da gioco negli Sprint 8-11, coerente con l'attività P di febbraio-marzo), il Real-Time negli Sprint 4-7. Nota capacity riscritta in termini di capacità (≈40) vs carico medio (≈37 team-wide, ≈28 solo Backlog).

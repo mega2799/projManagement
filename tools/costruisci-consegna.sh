@@ -28,7 +28,7 @@ echo "== 1/3 Genero gli allegati PDF (versione consegna, note interne rimosse) =
 OUT_DIR="$OUT/Documentazione" node genera-allegati-pdf.mjs --clean "$@"
 
 # Adegua i nomi alla convenzione dei link /URI della Relazione: per le coppie
-# md+html con lo stesso stem (2.5, 2.6, 3.1, 3.2, 3.4, 4.2) la Relazione linka
+# md+html con lo stesso stem (2.4, 2.5, 3.1, 3.2, 3.4, 4.2) la Relazione linka
 # <stem>-Visuale.pdf (versione visiva, da HTML) e <stem>.pdf (registro testuale, da md),
 # mentre il generatore produce <stem>.pdf (HTML) e <stem>-registro.pdf (md).
 for reg in "$OUT/Documentazione"/*/*-registro.pdf; do
@@ -39,6 +39,8 @@ for reg in "$OUT/Documentazione"/*/*-registro.pdf; do
 done
 
 # La guida di importazione Notion e' strumentazione interna: fuori dalla consegna.
+# (I verbali ritirati - Scoping Meeting e Approval Process - sono in
+#  Scoping/_ritirato-*.md: fuori dal pattern Allegato*, il generatore li ignora.)
 rm -f "$OUT/Documentazione/Planning/Allegato3.5.3-GuidaImportazioneNotion.pdf"
 
 echo "== 2/3 Compilo la Relazione =="

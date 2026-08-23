@@ -1,8 +1,8 @@
-# Allegato 2.5 - Business Model Canvas
+# Allegato 2.4 - Business Model Canvas
 
 ## v.1.3.0 – 2025-09-22 14:30
 
-> Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.5-BusinessModelCanvas.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
+> Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.4-BusinessModelCanvas.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 
 Il Business Model Canvas è uno strumento strategico per descrivere, analizzare e progettare il modello di business del progetto MaraffaOnline. Il canvas è composto da **9 componenti critiche** che insieme definiscono come PlayHeritage Labs crea, distribuisce e cattura valore attraverso questo progetto.
 
@@ -209,7 +209,8 @@ La tabella seguente riproduce il canvas classico a 9 blocchi: le colonne 2 e 4 r
 **Data approvazione**: 22/09/2025
 
 **Storico revisioni**:
-- **v.1.3.0**: Rimossi forward reference verso allegati successivi. Nei Revenue Streams tolti i nomi delle milestone di pagamento ("Backend Core", "completamento core di gioco" — dettaglio del Cash Flow 3.4/Gantt), mantenendo il modello di ricavo ad alto livello (€25.000, 3 tranche 50/25/25). Nelle Key Activities genericizzati "6 sottosistemi di sviluppo" → "piattaforma software" (la scomposizione è nella RBS 2.8) e "pianificazione sprint / monitoraggio milestone" → "pianificazione e monitoraggio del progetto" (dettaglio del Planning). Companion HTML allineato.
-- **v.1.2.0**: Aggiunto il companion `Allegato2.5-BusinessModelCanvas.html`: canvas a 9 blocchi con layout a griglia reale (rowspan) e colori ripresi dalla palette ufficiale di progetto (Allegato 2.7 / Guida Grafici Excel), contenuto condensato per lettura a colpo d'occhio. È la versione da esportare in PDF (stampa da browser) per l'allegato finale; il `.md` resta il registro testuale completo.
+- **v.1.4.0**: Rinumerato da Allegato 2.5 a **Allegato 2.4**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
+- **v.1.3.0**: Rimossi forward reference verso allegati successivi. Nei Revenue Streams tolti i nomi delle milestone di pagamento ("Backend Core", "completamento core di gioco" — dettaglio del Cash Flow 3.4/Gantt), mantenendo il modello di ricavo ad alto livello (€25.000, 3 tranche 50/25/25). Nelle Key Activities genericizzati "6 sottosistemi di sviluppo" → "piattaforma software" (la scomposizione è nella RBS 2.7) e "pianificazione sprint / monitoraggio milestone" → "pianificazione e monitoraggio del progetto" (dettaglio del Planning). Companion HTML allineato.
+- **v.1.2.0**: Aggiunto il companion `Allegato2.4-BusinessModelCanvas.html`: canvas a 9 blocchi con layout a griglia reale (rowspan) e colori ripresi dalla palette ufficiale di progetto (Allegato 2.6 / Guida Grafici Excel), contenuto condensato per lettura a colpo d'occhio. È la versione da esportare in PDF (stampa da browser) per l'allegato finale; il `.md` resta il registro testuale completo.
 - **v.1.1.0**: Sostituita la visualizzazione ASCII-art del canvas con vere tabelle Markdown (canvas a 9 blocchi + tabella Cost Structure/Revenue Streams), per una resa grafica corretta anche in export PDF/Word. Contenuto invariato rispetto alle sezioni 1-9.
 - **v.1.0.0**: Prima stesura del Business Model Canvas (9 componenti + visualizzazione ASCII-art).

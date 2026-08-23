@@ -1,5 +1,5 @@
-# Allegato 2.10 - Project Management Life Cycle Models
-## v.1.2.0 – 2025-09-30
+# Allegato 2.9 - Project Management Life Cycle Models
+## v.1.3.0 – 2026-08-23
 
 Questo documento descrive le metodologie di Project Management adottate per il progetto MaraffaOnline e giustifica la scelta di un approccio ibrido, che combina modelli diversi per sottosistemi differenti.
 
@@ -107,6 +107,7 @@ Alcune indicazioni metodologiche guideranno l'esecuzione: i decision point espli
 **Revisionato da**: Elena Rossi (Lead Developer)
 
 **Storico revisioni**:
+- **v.1.3.0**: Rinumerato da Allegato 2.10 a **Allegato 2.9**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.1.2.0**: Rinumerato da Allegato 2.11 a **Allegato 2.10** in seguito alla rimozione dell'ex Allegato 2.10 - User Flow (ridondante con Prototyping e User Stories). Contenuto invariato.
 - **v.1.1.0**: Snellimento. Rimossi i blocchi di pianificazione di dettaglio per sottosistema (fasi Waterfall, sprint plan, board Kanban, sequenze di incrementi) che duplicavano WBS, Product Backlog e Gantt; mantenuti le tabelle di sintesi, la matrice decisionale e la motivazione (ora concisa) di ciascuna scelta metodologica.
 - **v.1.0.0**: Prima stesura con l'analisi dettagliata per sottosistema.

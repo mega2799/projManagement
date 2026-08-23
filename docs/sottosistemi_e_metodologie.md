@@ -3,7 +3,7 @@
 ## Data: 2026-01-04
 ## Versione: 1.0
 
-> **Documento di lavoro storico** (analisi iniziale): le classificazioni MoSCoW qui indicate sono state superate dalle decisioni finali — fanno fede l'Allegato 2.10 (metodologie) e l'Allegato 3.2 (priorità: Mobile = Won't Have, chat in-game = Must, statistiche base = Must / leaderboard = Could).
+> **Documento di lavoro storico** (analisi iniziale): le classificazioni MoSCoW qui indicate sono state superate dalle decisioni finali — fanno fede l'Allegato 2.9 (metodologie) e l'Allegato 3.2 (priorità: Mobile = Won't Have, chat in-game = Must, statistiche base = Must / leaderboard = Could).
 
 ---
 
@@ -138,7 +138,7 @@ Ogni incremento aggiunge capacità senza stravolgere l'esistente. L'approccio in
 
 ## Note per la Relazione
 
-Questa scelta metodologica ibrida (mix di approcci) dovrà essere argomentata nell'**Allegato 2.10 - Project Management Life Cycle Models** della relazione.
+Questa scelta metodologica ibrida (mix di approcci) dovrà essere argomentata nell'**Allegato 2.9 - Project Management Life Cycle Models** della relazione.
 
 **Punti chiave da enfatizzare**:
 1. Approccio pragmatico: ogni sottosistema ha la metodologia più adatta

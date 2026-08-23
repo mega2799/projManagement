@@ -1,7 +1,7 @@
-# Allegato 2.4 - Risk Analysis
-## v.1.1.0 – 2025-09-19 11:20
+# Allegato 2.3 - Risk Analysis
+## v.1.2.0 – 2026-08-23
 
-> Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.4-RiskMatrix.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
+> Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.3-RiskMatrix.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 
 <!--
 Per l'analisi dei rischi si è scelto di utilizzare l'approccio **Risk Rating Matrix** che consiste nella creazione di una tabella che ha le probabilità che il rischio accada nelle righe e il livello di impatto del rischio nelle colonne.
@@ -298,5 +298,6 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
 **Data approvazione**: 22/09/2025
 
 **Storico revisioni**:
+- **v.1.2.0**: Rinumerato da Allegato 2.4 a **Allegato 2.3**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.1.1.0**: Aggiornata la legenda dei colori (introdotto il livello "Rosso Critico" per il valore 16) e aggiunto il Risk Register tabellare di sintesi (codice, probabilità, impatto, valore, livello e strategia per ogni rischio).
 - **v.1.0.0**: Prima stesura dell'analisi dei rischi (definizioni, elenco rischi per sottosistema, riepilogo rischi critici).

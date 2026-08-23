@@ -1,7 +1,7 @@
-# Allegato 2.6 - Analisi SWOT
-## v.1.2.0 – 2025-09-22 09:15
+# Allegato 2.5 - Analisi SWOT
+## v.1.3.0 – 2026-08-23
 
-> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato2.6-AnalisiSWOT.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la matrice SWOT a 4 quadranti (interni/esterni × utili/dannosi) con i soli titoli dei fattori e l'evidenza di quelli critici. Questo documento `.md` resta il registro completo (descrizioni, impatti, mitigazioni, matrice incrociata SO/WO/ST/WT e conclusioni).
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato2.5-AnalisiSWOT.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la matrice SWOT a 4 quadranti (interni/esterni × utili/dannosi) con i soli titoli dei fattori e l'evidenza di quelli critici. Questo documento `.md` resta il registro completo (descrizioni, impatti, mitigazioni, matrice incrociata SO/WO/ST/WT e conclusioni).
 
 L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori interni ed esterni che possono influenzare il successo del progetto MaraffaOnline.
 
@@ -324,5 +324,6 @@ L'analisi SWOT (Strengths, Weaknesses, Opportunities, Threats) valuta i fattori 
 **Data approvazione**: 23/09/2025
 
 **Storico revisioni**:
-- **v.1.2.0**: Ammorbiditi i superlativi ("Bassissima competizione", "rischio esistenziale", "Altamente motivata") e l'intro. Rimosse due forward reference: S5 non riproduce più la mappatura metodologia→sottosistema (contenuto dell'Allegato 2.10 - PM Life Cycle Models), resa come capacità metodologica ad alto livello; W3 non cita più artefatti di Planning (WBS/Gantt) né "Jira" (stack allineato a Notion).
-- **v.1.1.0**: Aggiunto companion `Allegato2.6-AnalisiSWOT.html` — matrice SWOT a 4 quadranti colorati con i soli titoli dei fattori (vista sintetica per l'allegato PDF). Contenuto del `.md` invariato.
+- **v.1.3.0**: Rinumerato da Allegato 2.6 a **Allegato 2.5**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
+- **v.1.2.0**: Ammorbiditi i superlativi ("Bassissima competizione", "rischio esistenziale", "Altamente motivata") e l'intro. Rimosse due forward reference: S5 non riproduce più la mappatura metodologia→sottosistema (contenuto dell'Allegato 2.9 - PM Life Cycle Models), resa come capacità metodologica ad alto livello; W3 non cita più artefatti di Planning (WBS/Gantt) né "Jira" (stack allineato a Notion).
+- **v.1.1.0**: Aggiunto companion `Allegato2.5-AnalisiSWOT.html` — matrice SWOT a 4 quadranti colorati con i soli titoli dei fattori (vista sintetica per l'allegato PDF). Contenuto del `.md` invariato.

@@ -24,17 +24,17 @@ Verbale del meeting di avvio del progetto MaraffaOnline. Il kick-off segna il pa
 
 ## Materiali condivisi prima del meeting
 
-Venerdì 10 ottobre sono stati inviati ai partecipanti il Project Overview Statement (Allegato 2.3), la WBS (3.1), il Gantt con il critical path (3.5), il Cash Flow (3.4) e le bozze di RASCI Matrix (4.2) e Regole Operative (4.3), così da arrivare preparati e ridurre il tempo di presentazione durante il meeting.
+Venerdì 10 ottobre sono stati inviati ai partecipanti il Project Overview Statement (Allegato 2.2), la WBS (3.1), il Gantt con il critical path (3.5), il Cash Flow (3.4) e le bozze di RASCI Matrix (4.2) e Regole Operative (4.3), così da arrivare preparati e ridurre il tempo di presentazione durante il meeting.
 
 ## Temi trattati
 
-Dopo il benvenuto e un breve giro di presentazioni, Marco ha ripreso vision e obiettivi del progetto (dettagliati nel POS, Allegato 2.3): realizzare entro il 15 maggio 2026 una piattaforma web per giocare al Maraffone in multiplayer, fedele alle regole ufficiali e con un'esperienza fluida, e i criteri di successo concordati in fase di Scoping (Allegato 2.2).
+Dopo il benvenuto e un breve giro di presentazioni, Marco ha ripreso vision e obiettivi del progetto (dettagliati nel POS, Allegato 2.2): realizzare entro il 15 maggio 2026 una piattaforma web per giocare al Maraffone in multiplayer, fedele alle regole ufficiali e con un'esperienza fluida, e i criteri di successo concordati in fase di Scoping (Allegato 2.1).
 
 Elena ha ricapitolato lo scope dell'MVP — i sei sottosistemi di sviluppo (Game Engine, Backend, Real-Time, Frontend, Social & Community, Infrastructure) più le attività trasversali di Testing/QA, con la prioritizzazione MoSCoW dell'Allegato 3.2 — e ciò che resta esplicitamente fuori dalla prima release: app mobile nativa, modalità single-player contro AI, tornei e monetizzazione.
 
 Sono state poi ripercorse la timeline e le milestone M1–M7 (dal Gantt, Allegato 3.5), con particolare attenzione all'attività più critica, il Frontend Tavolo da Gioco, che si trova sul percorso critico e sarà seguita da Luca con il supporto di Sara per i componenti più complessi. Marco ha ricordato la struttura di pagamento a corpo in tre tranche 50/25/25 (15 ottobre alla firma, 15 dicembre a valle del Backend Core, 15 febbraio al completamento del core di gioco), coerente con il Cash Flow (Allegato 3.4), e il budget complessivo di €25.000 con spese previste di €22.750.
 
-Elena ha infine richiamato i rischi principali dalla Risk Rating Matrix (Allegato 2.4) — su tutti l'esperienza limitata del team con le tecnologie WebSocket e il rischio di scope creep — con le relative mitigazioni (spike tecnico e proof of concept sul real-time nei primi sprint; Change Request Process per lo scope). Andrea ha presentato gli strumenti di lavoro condivisi (GitLab per codice e CI/CD, Notion per documentazione e task tracking, Figma per il design, Zoom e Slack per la comunicazione) e la cadenza dei meeting ricorrenti. I ruoli e le responsabilità di dettaglio sono definiti nella RASCI Matrix (Allegato 4.2).
+Elena ha infine richiamato i rischi principali dalla Risk Rating Matrix (Allegato 2.3) — su tutti l'esperienza limitata del team con le tecnologie WebSocket e il rischio di scope creep — con le relative mitigazioni (spike tecnico e proof of concept sul real-time nei primi sprint; Change Request Process per lo scope). Andrea ha presentato gli strumenti di lavoro condivisi (GitLab per codice e CI/CD, Notion per documentazione e task tracking, Figma per il design, Zoom e Slack per la comunicazione) e la cadenza dei meeting ricorrenti. I ruoli e le responsabilità di dettaglio sono definiti nella RASCI Matrix (Allegato 4.2).
 
 ## Decisioni approvate
 
@@ -70,6 +70,6 @@ Gli action item sono tracciati su Notion.
 **Approvato da**: Giovanni Marchetti (Project Sponsor, Maraffa Forever), 20/10/2025
 
 **Storico revisioni**:
-- **v.2.1.0**: Ruolo di Elena Rossi corretto da "Tech Lead / Backend" a "Tech Lead / Game Engine", in coerenza con Allegato 2.1, WBS/Gantt e RASCI v.1.4.0.
+- **v.2.1.0**: Ruolo di Elena Rossi corretto da "Tech Lead / Backend" a "Tech Lead / Game Engine", in coerenza con il verbale dello Scoping Meeting, WBS/Gantt e RASCI v.1.4.0.
 - **v.2.0.0**: Verbale snellito e reso più realistico. Rimossi i dialoghi Q&A ricostruiti, le citazioni sceneggiate, le tabelle che duplicavano altri allegati (effort per sottosistema, milestone, budget, top rischi) e i framework di processo sovra-dettagliati (SLA a ore, livelli decisionali, conflict resolution): il dettaglio resta nei rispettivi allegati, qui richiamati. Mantenuti partecipanti, temi trattati, decisioni, action item e prossimi passi.
 - **v.1.1.0**: Revisione di coerenza — milestone allineate al Gantt (M1–M7) e pagamenti al Cash Flow (15 Ott / 15 Dic / 15 Feb); effort per sottosistema allineato ai totali del MoSCoW; calendario completato a 15 sprint (0–14); aggiunta la voce di budget Marketing/UAT/Celebrazione; refusi e valuta uniformati.
