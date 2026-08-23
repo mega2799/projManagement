@@ -1,5 +1,5 @@
 # Allegato 4.2 - RASCI Matrix
-## v.2.1.0 – 2026-08-10
+## v.2.2.0 – 2026-08-23
 
 > La RASCI Matrix è disponibile anche come companion visivo `Allegato4.2-RASCI.html` (matrice colorata attività × ruoli, con legenda R/A/S/C/I): apri il file nel browser e usa "Stampa → Salva come PDF". Questo documento `.md` resta il registro testuale completo (matrice per sottosistema, note e analisi delle responsabilità).
 
@@ -168,16 +168,16 @@ La **RASCI Matrix** (Responsibility Assignment Matrix) chiarisce chi fa cosa in 
 | **Project Scoping Meeting** | A | C | R | C | C | C | C |
 | **Project Planning (WBS, Gantt, Cash Flow)** | A | - | R | C | - | - | - |
 | **Project Kick-Off Meeting** | A | I | R | I | I | I | I |
-| **Daily Standup facilitation** | - | - | A | S | I | I | I |
-| **Sprint Planning** | C | - | A | C | I | I | I |
+| **Daily Standup facilitation** | - | - | A/R | S | I | I | I |
+| **Sprint Planning** | C | - | A/R | C | I | I | I |
 | **Sprint Review** | A | C | R | R | R | R | R |
-| **Sprint Retrospective** | - | - | A | I | I | I | I |
+| **Sprint Retrospective** | - | - | A/R | I | I | I | I |
 | **Project Status Meeting (weekly)** | A | I | R | C | - | - | - |
 | **Cash Flow Tracking (monthly report)** | A | - | R | - | - | - | - |
-| **Risk Management (weekly review)** | C | - | A | C | - | - | - |
+| **Risk Management (weekly review)** | C | - | A/R | C | - | - | - |
 | **Change Request evaluation** | A | C | R | C | - | - | - |
-| **Stakeholder communication** | C | - | A | S | - | - | - |
-| **Documentazione Notion** | I | - | A | S | S | S | S |
+| **Stakeholder communication** | C | - | A/R | S | - | - | - |
+| **Documentazione Notion** | I | - | A/R | S | S | S | S |
 | **Final Project Report** | A | - | R | C | - | - | - |
 | **Lessons Learned session** | A | C | R | C | C | C | C |
 | **Project Closure celebration** | A | I | R | I | I | I | I |
@@ -209,6 +209,7 @@ La RASCI Matrix è stata presentata e approvata durante il **Project Kick-Off Me
 **Prossimo review**: 19/12/2025 (venerdì, fine Sprint 4 — Milestone M2)
 
 **Storico revisioni**:
+- **v.2.2.0**: Audit teorico sulla semantica R/A: le sei righe dell'area Project Management che avevano un Accountable senza Responsible ora portano **A/R** su Marco Venturi (chi approva è anche l'esecutore, come già per Elena sul Game Engine). Companion HTML allineato.
 - **v.2.1.0**: **potatura alla granularità di attività**. La matrice passa da una riga per task (124 righe, con l'82% delle righe che ripeteva una distribuzione di ruoli identica a un'altra) a una riga per attività della WBS o gruppo di attività con ruoli identici (51 righe): nessuna assegnazione è cambiata — ogni distribuzione di ruoli presente nella versione precedente conserva una riga — ma le eccezioni volute (validazione regole, UAT, badge system, disaster recovery) ora risaltano invece di annegare nella ripetizione. Aggiunta la nota "Granularità" e i riferimenti WBS nelle etichette.
 - **v.2.0.0**: separazione dei due artefatti. Le Regole Operative, prima raccolte nella Parte 2 di questo documento, sono ora nell'**Allegato 4.3 - Regole Operative** (in forma schematica): la matrice e le regole di collaborazione hanno destinatari e cicli di aggiornamento diversi, e tenerle insieme produceva un allegato di 14 pagine. Rimossa la legenda colori (ridondante con il companion HTML) e l'introduzione alla Parte 2. Matrice invariata nella sostanza.
 - **v.1.4.0**: revisione di coerenza con WBS/Gantt. Corretta l'inversione dei ruoli sul Game Engine: Responsible è Elena Rossi (Game Engine Specialist, come da verbale dello Scoping Meeting e assegnazioni WBS/Gantt), non Sara Bianchi — che negli stessi sprint è già Responsible del Backend; sul Game Engine Elena cumula A/R con Sara a supporto. Ruolo di Elena corretto da "Backend Developer" a "Game Engine Specialist". Load testing allineato al criterio delle Conditions of Satisfaction: 100 partite simultanee (era 50). Cross-browser esteso a Edge (come da CoS) e interazione carta uniformata al Backlog (click to play, non drag & drop).

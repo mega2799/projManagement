@@ -69,7 +69,7 @@
 <body>
 
 <h1>Risk Rating Matrix &mdash; MaraffaOnline</h1>
-<p class="sub">Allegato 2.3 &middot; Risk Analysis &middot; v.1.2.0</p>
+<p class="sub">Allegato 2.3 &middot; Risk Analysis &middot; v.1.3.0</p>
 
 <div class="legend">
   <span><i class="chip verde"></i> Verde (1-2) &middot; Accettabile</span>
@@ -129,7 +129,7 @@
     <th>Cod.</th><th>Rischio</th><th>Sottosistema</th><th>Prob.</th><th>Impatto</th><th>Val.</th><th>Livello</th><th>Strategia (sintesi)</th>
   </tr>
   <tr><td class="c">1.1</td><td>Incomprensioni sulle regole della Maraffa</td><td>Game Engine</td><td class="c">B</td><td>Grave</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; workshop con Francesca Giuliani; regole approvate formalmente</td></tr>
-  <tr><td class="c">1.2</td><td>Varianti regionali delle regole</td><td>Game Engine</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Accept &mdash; versione ufficiale "Maraffa Forever" definita in Scoping</td></tr>
+  <tr><td class="c">1.2</td><td>Varianti regionali delle regole</td><td>Game Engine</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Avoid &mdash; adottata in Scoping la versione ufficiale "Maraffa Forever": elimina l'ambiguit&agrave; delle varianti</td></tr>
   <tr><td class="c">1.3</td><td>Requisiti aggiuntivi scoperti in sviluppo</td><td>Game Engine</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; demo bi-settimanali; freeze requisiti dopo milestone 1</td></tr>
   <tr><td class="c">2.1</td><td>Esperienza limitata con WebSocket</td><td>Real-Time Communication</td><td class="c">D</td><td>Disastroso</td><td class="c">16</td><td><span class="lvl critico">Rosso Critico</span></td><td>Contingenza &mdash; spike tecnico 2 settimane; consulente esterno (budget &euro;2.000)</td></tr>
   <tr><td class="c">2.2</td><td>Gestione disconnessioni e riconnessioni</td><td>Real-Time Communication</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; sistema "partita sospesa" (5 min); state persistence con Redis</td></tr>
@@ -139,7 +139,7 @@
   <tr><td class="c">3.2</td><td>Scarsa partecipazione a user testing</td><td>Frontend Web</td><td class="c">A</td><td>Grave</td><td class="c">3</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; coinvolgimento precoce; incentivi (accesso anticipato, gadget)</td></tr>
   <tr><td class="c">3.3</td><td>Responsive design su tutti i dispositivi</td><td>Frontend Web</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; approccio mobile-first; framework Tailwind CSS</td></tr>
   <tr><td class="c">4.1</td><td>Integrazione chat con sistema real-time</td><td>Social &amp; Community</td><td class="c">C</td><td>Moderato</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; stesso canale WebSocket; throttling (1 msg/sec)</td></tr>
-  <tr><td class="c">4.2</td><td>Vulnerabilità nel sistema di autenticazione</td><td>Backend Server</td><td class="c">A</td><td>Disastroso</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Contingenza &mdash; Passport.js/JWT; HTTPS obbligatorio; penetration testing</td></tr>
+  <tr><td class="c">4.2</td><td>Vulnerabilità nel sistema di autenticazione</td><td>Backend Server</td><td class="c">A</td><td>Disastroso</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; Passport.js/JWT; HTTPS obbligatorio; penetration testing</td></tr>
   <tr><td class="c">4.3</td><td>Gestione privacy e GDPR</td><td>Backend Server</td><td class="c">B</td><td>Grave</td><td class="c">6</td><td><span class="lvl arancione">Arancione</span></td><td>Mitigazione &mdash; ufficio legale UniBo; privacy policy, cookie consent, diritto all'oblio</td></tr>
   <tr><td class="c">5.1</td><td>Budget limitato per infrastruttura cloud</td><td>Infrastructure &amp; DevOps</td><td class="c">C</td><td>Grave</td><td class="c">9</td><td><span class="lvl rosso">Rosso</span></td><td>Mitigazione &mdash; server dedicato (&euro;50/mese); architettura pronta per cloud migration</td></tr>
   <tr><td class="c">5.2</td><td>Esperienza limitata in DevOps</td><td>Infrastructure &amp; DevOps</td><td class="c">B</td><td>Moderato</td><td class="c">4</td><td><span class="lvl giallo">Giallo</span></td><td>Mitigazione &mdash; configurazione Docker standardizzata; CI/CD con GitLab</td></tr>

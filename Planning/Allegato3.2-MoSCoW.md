@@ -1,12 +1,12 @@
 # Allegato 3.2 - MoSCoW Prioritization Analysis
-## v.1.2.0 – 2026-08-02
+## v.1.3.0 – 2026-08-23
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.2-MoSCoW.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene la board MoSCoW a 4 quadranti colorati (Must/Should/Could/Won't) e la barra di distribuzione 60/20/20. Questo documento `.md` resta il registro completo dei requisiti (ID, effort, razionale di esclusione).
 
 Il metodo **MoSCoW** è una tecnica di prioritizzazione dei requisiti sviluppata da Dai Clegg per gestire le aspettative degli stakeholder e garantire che le risorse del progetto siano allocate sulle funzionalità più critiche. L'acronimo sta per:
 
 - **M**ust Have: requisiti essenziali per il successo del progetto
-- **S**hould Have: requisiti importanti ma non critici
+- **S**hould Have: requisiti critici, ma sostituibili o differibili se necessario (da soli non bloccano l'MVP)
 - **C**ould Have: requisiti desiderabili ma non necessari
 - **W**on't Have: requisiti esplicitamente esclusi dalla versione corrente
 
@@ -384,5 +384,6 @@ Questo documento è stato redatto seguendo le best practices del metodo MoSCoW 2
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
+- **v.1.3.0**: Audit teorico contro la knowledge_base: definizione degli Should Have allineata alle slide ('requisiti critici, sostituibili se necessario' — era 'importanti ma non critici'), allineata anche nel Cap. 3 della relazione.
 - **v.1.2.0**: Documentata la riclassificazione in corso d'opera di REQ-GE-1.1.5 (Maraffa/Cricca) da Should a Must (Novembre 2025, dopo la Sessione 1 di validazione con Francesca Giuliani), in coerenza con il Cap. 6 - Closing. Aggiunta la nota di raccordo tra gli ID `REQ-*` e la numerazione gerarchica della RBS (Allegato 2.7). Data della seconda revisione allineata al nuovo calendario del prototyping (user testing 29-30/09).
 - **v.1.1.0**: Aggiunto companion `Allegato3.2-MoSCoW.html` (board a 4 quadranti + barra di distribuzione). Corretti i totali Should (71→57 gg) e Could (20→16 gg) e il totale effort (320→302 gg) per allinearli alla somma dei subtotali per sottosistema; percentuali di distribuzione e di categoria ricalcolate (Must 75,8% / Should 18,9% / Could 5,3%).

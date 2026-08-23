@@ -10,21 +10,19 @@ Il deploy sui server di produzione definitivi era **a carico di Maraffa Forever*
 
 ## 6.2 Final Project Report
 
-Consegnato a Giovanni il **12 Maggio 2026**, redatto da Marco Venturi con Elena Rossi per la parte tecnica, pubblicato su Notion (accesso completo a sponsor e team). Nove sezioni:
+Consegnato a Giovanni il **12 Maggio 2026**, redatto da Marco Venturi con Elena Rossi per la parte tecnica. Il report è il documento di **sintesi** del **Project Notebook** — il workspace Notion del progetto, alimentato fin dal primo giorno con POS, RBS e revisioni, schedule originale e correzioni, verbali dei meeting, status report, documentazione di design, change request e comunicazioni (accesso completo a sponsor e team) — e segue la struttura raccomandata dal corso:
 
 1. **Executive Summary** — obiettivi raggiunti, €22.750 su €25.000, timeline rispettata
-2. **Project Overview** — genesi e contesto della community
-3. **Scope Management** — allegati di Scoping (2.1-2.11)
-4. **Planning Documentation** — allegati di Planning (3.1-3.5)
-5. **Execution & Launch** — fase di Launching (4.1-4.3)
-6. **Monitoring & Control** — Stoplight, Earned Value, velocity e quality metrics
-7. **Technical Architecture** — stack (Node.js, React, Socket.IO, PostgreSQL), API, schema DB
-8. **Lessons Learned** — dettaglio in §6.5
-9. **Appendix** — verbali, grafici, mockup approvati, codice sorgente e documentazione API
+2. **Livello di successo e performance** — verifica criterio per criterio delle CoS (§6.3), EVM con CPI e SPI ≈ 1, velocity di regime 38,3 SP
+3. **Organizzazione e amministrazione** — team di 5 part-time, matrice RASCI, cerimonie e regole operative
+4. **Tecniche impiegate** — approccio ibrido per sottosistema, CPM con fast tracking, EVM, Delphi e Planning Poker, Stoplight
+5. **Pregi e difetti dell'approccio** — architetturali (sottosistemi loosely coupled, server-authoritative) e gestionali (ibrido efficace, al costo della sincronizzazione tra metodi)
+6. **Raccomandazioni** — le cinque lezioni di §6.5 tradotte in raccomandazioni operative per i progetti futuri dello spin-off
+7. **Appendici** — POS, WBS, schedule, change request e deliverable finali (mockup approvati, Docker image, documentazione API)
 
 ## 6.3 Audit Post-Implementazione
 
-Condotto da Marco Venturi **insieme a Giovanni Marchetti il 13 Maggio 2026**, verificando sistematicamente ogni criterio delle Conditions of Satisfaction. Esito: **tutti gli obiettivi del POS raggiunti**.
+Condotto da Marco Venturi **insieme a Giovanni Marchetti il 13 Maggio 2026**, verificando sistematicamente ogni criterio delle Conditions of Satisfaction. Esito: **tutti gli obiettivi del POS raggiunti**. La domanda dell'audit sul **business value a regime** (l'adozione effettiva da parte della community) non è misurabile prima del go-live: è affidata al monitoraggio dei primi tre mesi di esercizio, coperto dal surplus di budget.
 
 | Criterio (CoS) | Verifica |
 |---|---|

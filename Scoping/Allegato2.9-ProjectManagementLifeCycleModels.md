@@ -1,5 +1,5 @@
 # Allegato 2.9 - Project Management Life Cycle Models
-## v.1.3.0 – 2026-08-23
+## v.1.4.0 – 2026-08-23
 
 Questo documento descrive le metodologie di Project Management adottate per il progetto MaraffaOnline e giustifica la scelta di un approccio ibrido, che combina modelli diversi per sottosistemi differenti.
 
@@ -24,10 +24,10 @@ Nel progetto sono stati impiegati quattro modelli, ciascuno con la propria condi
 
 | Modello | Quando si usa |
 |---------|---------------|
-| Linear/Waterfall | Requisiti chiari e stabili fin dall'inizio; fasi sequenziali con documentazione upfront e validazione finale |
-| Agile Iterativo (Scrum-like) | Requisiti noti ma con necessità di feedback continuo; sprint di 2 settimane con demo al committente |
-| Agile Adattivo (Kanban + Spike) | Alta incertezza tecnica; flusso continuo, prototipazione rapida (spike) e decision point go/no-go |
-| Incrementale | Componenti indipendenti rilasciabili in sequenza; prioritizzazione MoSCoW e release graduale |
+| Linear/Waterfall (TPM) | Goal e soluzione entrambi chiari: requisiti stabili fin dall'inizio, fasi sequenziali con documentazione upfront e validazione finale |
+| Agile Iterativo (APM) | Goal chiaro ma soluzione non completamente definita: i requisiti si raffinano a ogni iterazione col feedback del committente; sprint di 2 settimane con demo |
+| Agile Adattivo (APM) | Goal chiaro ma soluzione fortemente incerta: pianificazione just-in-time per cicli, prototipazione rapida (spike) e decision point go/no-go |
+| Incrementale (TPM) | Requisiti definiti come nel Linear, ma componenti indipendenti consegnati a incrementi per dare business value presto e spesso; prioritizzazione MoSCoW |
 
 ## Mappatura sottosistemi → metodologie
 
@@ -57,7 +57,7 @@ Il backend espone le API consumate dal frontend e ha bisogno di un ciclo di feed
 
 ### 3. Real-Time Communication — Agile Adattivo
 
-È il sottosistema più incerto e il rischio tecnico più critico del progetto: nessuno nel team ha esperienza di WebSocket in produzione e una stima affidabile a monte non è possibile. Si procede quindi in modo adattivo, riducendo l'incertezza per gradi: si parte da uno spike time-boxed (quattro client che sincronizzano uno stato semplificato, con latenza target sotto i 500 ms) e da un decision point go/no-go al giorno 15; se lo spike fallisce si attiva la contingenza (consulente esterno Dr. Stefano Nardi) e, se al giorno 30 nemmeno con il consulente si ottengono risultati, si escala al committente. Il lavoro segue un flusso Kanban con priorità dinamica e pair programming Elena-Sara, anziché sprint rigidi.
+È il sottosistema più incerto e il rischio tecnico più critico del progetto: nessuno nel team ha esperienza di WebSocket in produzione e una stima affidabile a monte non è possibile. Si procede quindi in modo adattivo, riducendo l'incertezza per gradi: si parte da uno spike time-boxed (quattro client che sincronizzano uno stato semplificato, con latenza target sotto i 500 ms) e da un decision point go/no-go al giorno 15; se lo spike fallisce si attiva la contingenza (consulente esterno Dr. Stefano Nardi) e, se al giorno 30 nemmeno con il consulente si ottengono risultati, si escala al committente. Il lavoro non segue sprint rigidi ma una pianificazione just-in-time per cicli, con una board a flusso continuo e limiti di work-in-progress (lo strumento della kanban board) a priorità dinamica, e pair programming Elena-Sara.
 
 ### 4. Frontend Web — Agile Iterativo
 
@@ -81,7 +81,7 @@ Sull'infrastruttura l'approccio incrementale serve a evitare l'over-engineering:
 
 | Caratteristica del sottosistema | Waterfall | Agile Iterativo | Agile Adattivo | Incrementale |
 |----------------------------|-----------|-----------------|----------------|--------------|
-| Requisiti completamente noti | Sì | No | No | Parziale |
+| Requisiti completamente noti | Sì | No | No | Sì (cambia solo la consegna, a incrementi) |
 | Feedback continuo necessario | No | Sì | Sì | No |
 | Alta incertezza tecnica | No | No | Sì | No |
 | Features indipendenti prioritizzabili | No | Parziale | No | Sì |
@@ -107,6 +107,7 @@ Alcune indicazioni metodologiche guideranno l'esecuzione: i decision point espli
 **Revisionato da**: Elena Rossi (Lead Developer)
 
 **Storico revisioni**:
+- **v.1.4.0**: Audit teorico sul quadrante di Wysocki: condizioni d'uso riformulate sull'asse goal/soluzione (l'Iterativo diceva 'requisiti noti', che è la condizione del TPM); rimosse le etichette 'Scrum-like' dall'Iterativo e 'Kanban' come nome dell'Adattivo (per le slide Scrum è un approccio Adaptive e il PMLC di Kanban è iterativo: la board a flusso resta come strumento operativo); Incrementale ricondotto al TPM con requisiti definiti.
 - **v.1.3.0**: Rinumerato da Allegato 2.10 a **Allegato 2.9**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.1.2.0**: Rinumerato da Allegato 2.11 a **Allegato 2.10** in seguito alla rimozione dell'ex Allegato 2.10 - User Flow (ridondante con Prototyping e User Stories). Contenuto invariato.
 - **v.1.1.0**: Snellimento. Rimossi i blocchi di pianificazione di dettaglio per sottosistema (fasi Waterfall, sprint plan, board Kanban, sequenze di incrementi) che duplicavano WBS, Product Backlog e Gantt; mantenuti le tabelle di sintesi, la matrice decisionale e la motivazione (ora concisa) di ciascuna scelta metodologica.

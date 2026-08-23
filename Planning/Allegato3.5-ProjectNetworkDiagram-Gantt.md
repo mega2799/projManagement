@@ -1,5 +1,5 @@
 # Allegato 3.5 - Project Network Diagram & Gantt Chart
-## v.2.1.0 – 2026-08-10
+## v.2.2.0 – 2026-08-23
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.5-NetworkGantt.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene il Network Diagram (20 nodi, asse = giorni lavorativi CPM) e il Gantt (stesse 20 attività, asse = calendario reale) in forma condensata; il dettaglio per sprint/sotto-task, le tabelle Forward/Backward Pass complete, l'analisi rischi e il processo di aggiornamento dinamico restano in questo documento.
 
@@ -22,6 +22,8 @@ Il Project Network Diagram rappresenta visivamente le **attività del progetto**
 ### Attività Principali del Progetto (Nodi)
 
 > **Nota sulle durate.** Tutte le durate sono espresse in **giorni lavorativi netti** (lun-ven, escluse le festività italiane che cadono nella finestra di progetto: Immacolata, Natale, S. Stefano, Capodanno, Epifania, Lunedì dell'Angelo, 1° Maggio). I legami sono Finish-to-Start, con un'eccezione dichiarata: il legame **P → R è Start-to-Start con lag di 31 giorni** (fast tracking, vedi sezione "Critical Path Identificato").
+>
+> **Convenzione dei tempi (ES/EF/LS/LF).** Le tabelle usano la convenzione a *istanti cumulati* con partenza da 0 (il valore è il confine di fine giornata), quindi **EF = ES + durata** e slack = LS − ES. Le slide del corso usano la convenzione equivalente a *giorni di calendario* 1-based (ES del primo task = 1, **EF = ES + durata − 1**, LS = LF − durata + 1): le due notazioni differiscono di una costante e producono le stesse durate, gli stessi slack e lo stesso critical path.
 
 | ID | Attività | Durata (gg lavorativi) | Predecessori | Successori |
 |----|----------|-----------------|--------------|------------|
@@ -334,7 +336,7 @@ Il Gantt Chart rappresenta il **calendario del progetto** con:
 
 2. **Frecce Dipendenza**:
    - **Finish-to-Start (FS)**: la più comune (es. B dipende da A)
-   - **Start-to-Start (SS)**: attività possono iniziare contemporaneamente (es. C e B partono insieme dopo A)
+   - **Start-to-Start (SS)**: la successiva non può iniziare prima che sia *iniziata* la precedente, eventualmente con lag (unico caso nel progetto: P → R, SS con lag 31); B e C partono insieme dopo A per semplice *divergenza* di due legami FS, non per un vincolo SS
    - **Colore freccia rosso**: dipendenza critica
    - **Colore freccia grigio**: dipendenza non critica
 
@@ -469,6 +471,7 @@ Questo documento è stato redatto seguendo le best practices di Project Manageme
 **Prossimo Aggiornamento**: 31/10/2025 (venerdì; primo aggiornamento settimanale dopo la chiusura dello Sprint 0)
 
 **Storico revisioni**:
+- **v.2.2.0**: Audit teorico: corretta la voce di legenda Start-to-Start (B e C dopo A partono insieme per divergenza di legami FS, non per vincolo SS; SS = la successiva non può iniziare prima che inizi la precedente); dichiarata la convenzione dei tempi a istanti 0-based (EF = ES + durata) e la sua equivalenza con la convenzione 1-based delle slide (EF = ES + durata − 1).
 - **v.2.1.0**: Aggiunta la tabella di **raccordo con la WBS** (tracciabilità nodo di rete ↔ attività della WBS, con nota sulle attività continuative/on-demand che non formano nodi), a supporto della doppia lettura della WBS dichiarata nell'Allegato 3.1 v.1.3.0.
 - **v.1.1.0**: Chiarito che i file immagine del network diagram e del Gantt non sono stati prodotti per questo elaborato; restano documentati tramite le tabelle/CSV già presenti.
 - **v.1.2.0**: Creato il companion `Allegato3.5-NetworkGantt.html` — Network Diagram (grafo a 3 rami: Critico/Game Engine/Chat-Social, nodi posizionati per ES/EF, frecce rosse spesse sul critical path e blu sottili sulle non critiche, milestone M1-M4 a rombo) e Gantt Chart (20 barre su calendario reale 15-Ott-2025→15-Mag-2026, milestone M1-M7, colori per criticità) generati via script Python dai valori verificati delle tabelle Forward/Backward Pass e Sprint di questo documento. Sostituisce la descrizione puramente testuale della "Struttura Visuale" con un diagramma effettivamente colorato e a colpo d'occhio.

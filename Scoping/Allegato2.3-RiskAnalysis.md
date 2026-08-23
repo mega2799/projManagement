@@ -1,5 +1,5 @@
 # Allegato 2.3 - Risk Analysis
-## v.1.2.0 – 2026-08-23
+## v.1.3.0 – 2026-08-23
 
 > Per la versione visiva compatta e a colori (da usare come allegato PDF), vedi `Allegato2.3-RiskMatrix.html`: apri il file nel browser e usa "Stampa → Salva come PDF".
 
@@ -92,7 +92,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
 | Codice | Rischio | Sottosistema | Prob. | Impatto | Valore | Livello | Strategia (sintesi) |
 |--------|---------|--------------|:-----:|---------|:------:|---------|---------------------|
 | 1.1 | Incomprensioni sulle regole della Maraffa | Game Engine | B | Grave | 6 | Arancione | Mitigazione — workshop con Francesca Giuliani; regole approvate formalmente |
-| 1.2 | Varianti regionali delle regole | Game Engine | B | Moderato | 4 | Giallo | Accept — versione ufficiale "Maraffa Forever" definita in Scoping |
+| 1.2 | Varianti regionali delle regole | Game Engine | B | Moderato | 4 | Giallo | Avoid — adottata in Scoping la versione ufficiale "Maraffa Forever": elimina l'ambiguità delle varianti |
 | 1.3 | Requisiti aggiuntivi scoperti in sviluppo | Game Engine | C | Grave | 9 | Rosso | Mitigazione — demo bi-settimanali; freeze requisiti dopo milestone 1 |
 | 2.1 | Esperienza limitata con WebSocket | Real-Time Communication | D | Disastroso | 16 | Rosso Critico | Contingenza — spike tecnico 2 settimane; consulente esterno (budget €2.000) |
 | 2.2 | Gestione disconnessioni e riconnessioni | Real-Time Communication | C | Grave | 9 | Rosso | Mitigazione — sistema "partita sospesa" (5 min); state persistence con Redis |
@@ -102,7 +102,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
 | 3.2 | Scarsa partecipazione a user testing | Frontend Web | A | Grave | 3 | Giallo | Mitigazione — coinvolgimento precoce; incentivi (accesso anticipato, gadget) |
 | 3.3 | Responsive design su tutti i dispositivi | Frontend Web | B | Moderato | 4 | Giallo | Mitigazione — approccio mobile-first; framework Tailwind CSS |
 | 4.1 | Integrazione chat con sistema real-time | Social & Community | C | Moderato | 6 | Arancione | Mitigazione — stesso canale WebSocket; throttling (1 msg/sec) |
-| 4.2 | Vulnerabilità nel sistema di autenticazione | Backend Server | A | Disastroso | 4 | Giallo | Contingenza — Passport.js/JWT; HTTPS obbligatorio; penetration testing |
+| 4.2 | Vulnerabilità nel sistema di autenticazione | Backend Server | A | Disastroso | 4 | Giallo | Mitigazione — Passport.js/JWT; HTTPS obbligatorio; penetration testing |
 | 4.3 | Gestione privacy e GDPR | Backend Server | B | Grave | 6 | Arancione | Mitigazione — ufficio legale UniBo; privacy policy, cookie consent, diritto all'oblio |
 | 5.1 | Budget limitato per infrastruttura cloud | Infrastructure & DevOps | C | Grave | 9 | Rosso | Mitigazione — server dedicato (€50/mese); architettura pronta per cloud migration |
 | 5.2 | Esperienza limitata in DevOps | Infrastructure & DevOps | B | Moderato | 4 | Giallo | Mitigazione — configurazione Docker standardizzata e CI/CD GitLab riducono il presidio DevOps richiesto |
@@ -131,7 +131,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
        - Valore rischio: 4
        - Colore rischio: Giallo
        - Descrizione: Varianti Maraffa in zone diverse della Romagna
-       - Risk Management: Accept. Definire versione ufficiale "Maraffa Forever" in Scoping.
+       - Risk Management: Avoid. Adottata in Scoping la versione ufficiale "Maraffa Forever" documentata dall'esperta: elimina la fonte del rischio (le varianti regionali).
    3. Requisiti aggiuntivi scoperti durante sviluppo
        - Sottosistema: Game Engine
        - Probabilità: C
@@ -214,7 +214,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
        - Valore rischio: 4
        - Colore rischio: Giallo
        - Descrizione: Dati compromessi danneggerebbero reputazione
-       - Risk Management: Piano di Contingenza. Librerie consolidate (Passport.js, JWT). HTTPS obbligatorio. Penetration testing.
+       - Risk Management: Mitigazione. Librerie consolidate (Passport.js, JWT). HTTPS obbligatorio. Penetration testing.
    3. Gestione privacy e GDPR
        - Sottosistema: Backend Server
        - Probabilità: B
@@ -298,6 +298,7 @@ Tabella di sintesi di tutti i rischi identificati, con codice *sottosistema.risc
 **Data approvazione**: 22/09/2025
 
 **Storico revisioni**:
+- **v.1.3.0**: Audit teorico sulle 5 strategie di risposta: rischio 1.2 da Accept ad **Avoid** (adottare la versione ufficiale elimina la fonte del rischio: per il corso Accept = nessuna azione possibile), rischio 4.2 da Contingenza a **Mitigazione** (le azioni elencate sono tutte preventive immediate). Companion HTML allineato.
 - **v.1.2.0**: Rinumerato da Allegato 2.4 a **Allegato 2.3**: ritirati dagli allegati i verbali ex 2.1 (Project Scoping Meeting) ed ex 2.11 (Approval Process), ora solo narrati nella relazione; numerazione degli allegati di Scoping resa sequenziale (2.1–2.9), come nella relazione di riferimento. Contenuto invariato.
 - **v.1.1.0**: Aggiornata la legenda dei colori (introdotto il livello "Rosso Critico" per il valore 16) e aggiunto il Risk Register tabellare di sintesi (codice, probabilità, impatto, valore, livello e strategia per ogni rischio).
 - **v.1.0.0**: Prima stesura dell'analisi dei rischi (definizioni, elenco rischi per sottosistema, riepilogo rischi critici).

@@ -1,5 +1,5 @@
 # Allegato 3.4 - Cash Flow Management
-## v.1.4.0 – 2026-08-02
+## v.1.5.0 – 2026-08-23
 
 > Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.4-CashFlow.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene statistiche chiave, il grafico Cash Flow mensile e la ripartizione spese per categoria, generati direttamente dai valori verificati di questo documento — sostituiscono le immagini PNG sotto, che mostrano dati superati (vedi nota nella sezione "Visualizzazione Grafica Cash Flow Mensile").
 
@@ -9,7 +9,7 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 
 ## Tabella Cash Flow Mensile
 
-| Mese | Periodo | Inflow (€) | Outflow (€) | Net Cash Flow (€) | Saldo Cumulativo (€) |
+| Mese | Periodo | Inflow (€) | Outflow (€) | Netto mensile (€) | Net Cash Flow / Saldo Cumulativo (€) |
 |------|---------|------------|-------------|-------------------|----------------------|
 | **Mese 0** | 15 Ott - 31 Ott | €12.500 | €3.000 | €9.500 | €9.500 |
 | **Mese 1** | 01 Nov - 30 Nov | €0 | €3.700 | -€3.700 | €5.800 |
@@ -23,6 +23,7 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 
 **Note**:
 - **Inflow**: pagamenti ricevuti da Maraffa Forever in 3 tranche (50% upfront, 25% a valle del Backend Core, 25% al completamento del core di gioco)
+- **Nomenclatura** (come da corso): il **Net Cash Flow** è la differenza dei totali cumulati (Inflow Tot. − Outflow Tot.) — è l'ultima colonna, e un valore negativo richiederebbe finanziamenti; il *netto mensile* (inflow − outflow del mese) è una colonna di appoggio.
 - **Outflow**: spese operative mensili (salari, hosting, tools, licenze), più contenute nella coda del progetto (Mesi 5-7) quando il team si riduce alle attività di testing, UAT e lancio
 - **Saldo Finale**: €2.250 di surplus destinato a contingency e celebrazione lancio
 
@@ -224,6 +225,7 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
+- **v.1.5.0**: Audit teorico: nomenclatura allineata alle slide — il Net Cash Flow è calcolato sui totali cumulati (colonna del saldo); il netto mensile è colonna di appoggio.
 - **v.1.4.0**: Chiarita la natura del meeting del 27/10 (approvazione del piano operativo di Cash Flow, non del budget — già contrattualizzato il 15/10).
 - **v.1.3.0**: Aggiunto il companion `Allegato3.4-CashFlow.html` con grafici nativi (SVG generati da script dai valori verificati della tabella corrente): Cash Flow mensile e ripartizione spese per categoria. Aggiunta nota che segnala come superate le immagini PNG esistenti (`img/cash-flow-maraffaonline.png`, generata pre-v.1.2.0 e mai rigenerata: mostra ancora 6 mesi e valori pre-ridistribuzione).
 - **v.1.2.0**: Ridistribuzione del Cash Flow sui 7 mesi effettivi del progetto (15 Ott 2025 - 15 Mag 2026). Tabella mensile estesa da 6 a 8 righe (Mese 0-7), outflow ridistribuiti con riduzione progressiva nella coda (testing/UAT/lancio), dettaglio spese per mese e per categoria resi internamente coerenti (righe = outflow mensile, colonne = totali di categoria). Totali invariati: inflow €25.000, outflow €22.750, surplus €2.250. Saldo minimo €2.250 (Mese 7).

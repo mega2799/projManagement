@@ -1,5 +1,5 @@
 # Allegato 3.3 - Product Backlog
-## v.3.1.0 – 2026-08-02 12:00
+## v.3.2.0 – 2026-08-23
 
 Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per il progetto MaraffaOnline. Gli item derivano dalle User Stories (Allegato 2.8), sono stimati in **story points** (Planning Poker, scala Fibonacci) e assegnati a sprint da 2 settimane, in coerenza con le date del Gantt (Allegato 3.5).
 
@@ -37,7 +37,7 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per
 
 ## Backend Server
 
-| Sprint | Priorità | US (2.9) | Task | SP |
+| Sprint | Priorità | US (2.8) | Task | SP |
 |:------:|:--------:|------|------|:--:|
 | 1 | P0 | — | Setup progetto Node.js + Express + PostgreSQL | 5 |
 | 1 | P0 | US-1.1 | Registrazione utente (email + password) | 5 |
@@ -64,7 +64,7 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per
 
 ## Real-Time Communication
 
-| Sprint | Priorità | US (2.9) | Task | SP |
+| Sprint | Priorità | US (2.8) | Task | SP |
 |:------:|:--------:|------|------|:--:|
 | 4 | P0 | — | Setup Socket.IO server | 5 |
 | 4 | P0 | — | Gestione rooms per partite (room-based broadcast) | 5 |
@@ -88,7 +88,7 @@ Il **Product Backlog** è l'elenco prioritizzato del lavoro gestito a sprint per
 
 ## Frontend Web
 
-| Sprint | Priorità | US (2.9) | Task | SP |
+| Sprint | Priorità | US (2.8) | Task | SP |
 |:------:|:--------:|------|------|:--:|
 | 5 | P0 | — | Setup progetto React + Vite + Tailwind CSS | 3 |
 | 5 | P0 | — | Design system: componenti base (Button, Card, Modal, Form) | 8 |
@@ -151,6 +151,7 @@ Un item è **Done** solo quando:
 **Revisionato da**: Elena Rossi (Scrum Master / Tech Lead)
 
 **Storico revisioni**:
+- **v.3.2.0**: Intestazioni di colonna 'US (2.9)' aggiornate a 'US (2.8)' dopo la rinumerazione sequenziale degli allegati di Scoping.
 - **v.2.0.0** (28/10/2025): separazione del Product Backlog dal lavoro tracciato in WBS/Gantt.
 - **v.3.0.0** (02/08/2026): snellimento in artefatto operativo — tabelle unificate per sottosistema, legenda P0-P3 ↔ MoSCoW, ambito compresso. Note metodologiche, riepiloghi percentuali, velocity tracking e processo di gestione del backlog spostati nella relazione (Cap. 3 e Cap. 5), nell'Allegato 4.3 (cerimonie) e nel registro `Relazione/_appunti-per-relazione.md`.
-- **v.3.1.0** (02/08/2026): revisione di tracciabilità e coerenza col Gantt. La colonna US ora punta alle **user story reali dell'Allegato 2.8** (la numerazione precedente era autonoma e collideva con quella del 2.9); i task tecnici sono marcati "—". Assegnazioni agli sprint riallineate alle **date del Gantt/CSV** (Allegato 3.5): il lavoro frontend scorre ora negli Sprint 5-11 (il tavolo da gioco negli Sprint 8-11, coerente con l'attività P di febbraio-marzo), il Real-Time negli Sprint 4-7. Nota capacity riscritta in termini di capacità (≈40) vs carico medio (≈37 team-wide, ≈28 solo Backlog).
+- **v.3.1.0** (02/08/2026): revisione di tracciabilità e coerenza col Gantt. La colonna US ora punta alle **user story reali dell'Allegato 2.8** (la numerazione precedente era autonoma e collideva con quella delle US reali); i task tecnici sono marcati "—". Assegnazioni agli sprint riallineate alle **date del Gantt/CSV** (Allegato 3.5): il lavoro frontend scorre ora negli Sprint 5-11 (il tavolo da gioco negli Sprint 8-11, coerente con l'attività P di febbraio-marzo), il Real-Time negli Sprint 4-7. Nota capacity riscritta in termini di capacità (≈40) vs carico medio (≈37 team-wide, ≈28 solo Backlog).
