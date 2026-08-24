@@ -1,5 +1,5 @@
 # Allegato 4.3 - Regole Operative
-## v.1.0.0 – 2026-08-10 10:00
+## v.1.1.0 – 2026-08-24
 
 Le Regole Operative definiscono come il team lavora insieme ogni giorno: problemi, decisioni, conflitti, generazione di idee e cadenza degli incontri. Approvate nel Project Kick-Off Meeting del 15/10/2025 (Allegato 4.1), valgono per tutti i sottosistemi qualunque sia il loro modello di ciclo di vita (Allegato 2.9). Responsible, Accountable e Consulted di ogni attività sono nell'**Allegato 4.2 - RASCI Matrix**.
 
@@ -75,34 +75,6 @@ Sei riunioni ricorrenti più incontri ad-hoc: pochi meeting ben definiti, con le
 
 ---
 
-## 6. Change Management (sintesi)
-
-Le modifiche a scope, timeline o budget già approvati seguono un processo formale, per evitare lo scope creep. Un Change Request si attiva su richiesta dello stakeholder (feature non prevista nel POS o modifica sostanziale), per impossibilità tecnica emersa in corso d'opera o per un evento esterno.
-
-1. **Submission** — Change Request Form: descrizione, motivazione di business, priorità percepita.
-2. **Impact analysis** — Marco ed Elena producono un **Project Impact Statement** con l'impatto su scope, tempi, budget, qualità e risorse, le opzioni (accettare estendendo la timeline, differire a una release successiva, rifiutare) e la raccomandazione motivata del PM.
-3. **Decisione dello Sponsor** — accettare, differire o rifiutare; con impatto significativo su budget o timeline si rinegozia il contratto.
-4. **Implementation** — aggiornamento di POS, WBS, Gantt e Product Backlog, comunicazione al team, assegnazione a un Responsible.
-5. **Tracking** — registrazione nel Change Log fino alla chiusura.
-
-I sottosistemi Agile accolgono il cambiamento come parte del processo; per quelli tradizionali ogni modifica è valutata caso per caso.
-
----
-
-## 7. Comunicazione (sintesi)
-
-Tre regole d'oro: **asincrono prima di tutto** (Slack ed email, i meeting solo se servono); **trasparenza** (le decisioni importanti si documentano su Notion, single source of truth); **SLA di risposta proporzionati alla priorità**, da poche ore per ciò che blocca il lavoro fino a qualche giorno per le richieste a bassa priorità.
-
-| Canale | Uso |
-|--------|-----|
-| Slack (canali dedicati) | Comunicazioni generali, daily, discussioni tecniche, urgenze (da leggere entro poche ore) |
-| Email | Comunicazioni formali verso sponsor ed enti esterni: report mensili, approvazioni di milestone, Change Request, contratti (subject categorizzato per tipo) |
-| Notion | Allegati di PM, note dei meeting (aggiornate a fine giornata), status report settimanali, decisioni tecniche, Change Log (in tempo reale) e Issue Log |
-
-Etiquette: thread per le discussioni lunghe, tag solo quando serve un'azione, parsimonia nelle mention di massa, emoji reactions per l'acknowledge rapido.
-
----
-
 ## Approvazione e adozione
 
 Lette dal team prima del kick-off, chiarite in Q&A e approvate per consensus dal team e formalmente da Giovanni Marchetti (Sponsor) il **15/10/2025**. Sono un **living document**: review ogni 2 sprint in retrospective, modifiche approvate dal PM, versioning su Notion.
@@ -115,4 +87,5 @@ Lette dal team prima del kick-off, chiarite in Q&A e approvate per consensus dal
 **Versione**: v.1.0.0 — **Prossimo review**: 19/12/2025 (venerdì, fine Sprint 4 — Milestone M2)
 
 **Storico revisioni**:
+- **v.1.1.0**: Rimosse le sezioni di sintesi 6 (Change Management) e 7 (Comunicazione): il loro contenuto vive ora per intero nelle sezioni 4.4 e 4.5 della relazione, che non rimandano più a questo allegato (come nella relazione di riferimento, dove Comunicazione e Gestione del cambiamento sono solo prosa). L'allegato torna alle sole regole operative del team: problem solving, decision making, conflict resolution, brainstorming, meeting.
 - **v.1.0.0**: primo rilascio come allegato autonomo. Le Regole Operative erano la Parte 2 dell'Allegato 4.2, ora separate e riscritte in forma schematica (una tabella per regola al posto della prosa). Contenuti invariati nella sostanza; recuperato il Backlog Refinement fra le cerimonie e aggiunte le sintesi di Change Management e Comunicazione per le sezioni 4.4 e 4.5 della relazione.
