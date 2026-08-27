@@ -8,6 +8,8 @@ Meeting di accettazione l'**11 Maggio 2026** (quattro giorni prima del lancio pu
 
 Il deploy sui server di produzione definitivi era **a carico di Maraffa Forever** fin dagli accordi contrattuali: il team tecnico della community lo ha eseguito con le Docker image e le istruzioni di deployment preparate da Andrea Conti, con supporto remoto di PlayHeritage Labs.
 
+L'installazione ha seguito un **approccio a fasi** (*phased*): il go-live non è stato un rilascio secco ma graduale — prima l'ambiente beta con i 20 tester della community, su cui sono maturati UAT e load test, poi il rilascio pubblico del 15 Maggio — scelta che coincideva con la mitigazione pianificata del rischio 5.3 (picchi di traffico al lancio: soft launch graduale e rate limiting). Non essendoci una soluzione preesistente da sostituire, gli approcci alternativi *cut-over* e *parallel* non erano applicabili.
+
 ## 6.2 Final Project Report
 
 Consegnato a Giovanni il **12 Maggio 2026**, redatto da Marco Venturi con Elena Rossi per la parte tecnica. Il report è il documento di **sintesi** del **Project Notebook** — il workspace Notion del progetto, alimentato fin dal primo giorno con POS, RBS e revisioni, schedule originale e correzioni, verbali dei meeting, status report, documentazione di design, change request e comunicazioni (accesso completo a sponsor e team) — e segue la struttura raccomandata dal corso:
@@ -28,7 +30,7 @@ Condotto da Marco Venturi **insieme a Giovanni Marchetti il 13 Maggio 2026**, ve
 |---|---|
 | **Temporale** — lancio 15/05/2026 | Rispettato: 7 mesi esatti, 141 giorni lavorativi di critical path. Unico scostamento: 3 giorni a Gennaio sul Frontend Dashboard (attività M), recuperati entro Febbraio con il recovery plan (pair programming Luca+Sara) |
 | **Economico** — budget €25.000 | Consumo €22.750; **surplus €2.250 (9%)** destinato, d'accordo con Giovanni, al supporto post-lancio (primi 3 mesi). Tranche 50/25/25 erogate puntualmente; saldo di cassa sempre positivo (minimo €2.250 al Mese 7) |
-| **Tecnico** — regole fedeli, latenza <500ms | Regole implementate secondo `REGOLE-UFFICIALI-MARAFFONE.md` validato da Francesca (punteggi, Maraffa +3, vittoria 41+figura, 4 di denari); **latenza media 185ms** ai load test con 100 partite simultanee (400 giocatori), grazie alle ottimizzazioni degli Sprint 2-4 e al PoC anticipato |
+| **Tecnico** — regole fedeli, latenza <500ms | Regole implementate secondo il documento delle regole ufficiali validato da Francesca (*Regole Ufficiali del Maraffone*, incluso nella documentazione allegata): punteggi, Maraffa +3, vittoria 41+figura, 4 di denari; **latenza media 185ms** ai load test con 100 partite simultanee (400 giocatori), grazie alle ottimizzazioni degli Sprint 2-4 e al PoC anticipato |
 | **Qualitativo** — usabilità e soddisfazione | UAT con 10 tester (compensati €10 ciascuno, a budget): **80% completa una partita senza aiuto**; questionario dei 20 beta tester: **4,5/5** (target 4,2); user testing di Gennaio (5 membri) con migliorie implementate nello Sprint 11; mockup Figma rispettati; WCAG 2.1 AA verificata; cross-browser OK su Chrome/Firefox/Safari/Edge |
 | **Gestione del lavoro** — team e processo | 15 retrospective → **30 action item, 28 implementati**; velocity di regime **38,3 SP** (Sprint 1-7, escluso il natalizio) vs target 40; nessun conflitto oltre la fase 2 (mediazione); RASCI efficace nel chiarire i ruoli |
 

@@ -1,7 +1,7 @@
 # Allegato 3.4 - Cash Flow Management
-## v.1.5.0 – 2026-08-23
+## v.1.6.0 – 2026-08-24
 
-> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.4-CashFlow.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene statistiche chiave, il grafico Cash Flow mensile e la ripartizione spese per categoria, generati direttamente dai valori verificati di questo documento — sostituiscono le immagini PNG sotto, che mostrano dati superati (vedi nota nella sezione "Visualizzazione Grafica Cash Flow Mensile").
+> Per la versione visiva compatta (da usare come allegato PDF), vedi `Allegato3.4-CashFlow.html`: apri il file nel browser e usa "Stampa → Salva come PDF". Contiene statistiche chiave, il grafico Cash Flow mensile e la ripartizione spese per categoria, generati direttamente dai valori verificati di questo documento.
 
 La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline, considerando il budget limitato di **€25.000** e la durata di **7 mesi** (15 ottobre 2025 - 15 maggio 2026). Questo documento traccia tutti i flussi finanziari in entrata (inflow) e in uscita (outflow) su base mensile, con visualizzazioni grafiche professionali.
 
@@ -27,18 +27,13 @@ La gestione del Cash Flow è critica per il successo del progetto MaraffaOnline,
 - **Outflow**: spese operative mensili (salari, hosting, tools, licenze), più contenute nella coda del progetto (Mesi 5-7) quando il team si riduce alle attività di testing, UAT e lancio
 - **Saldo Finale**: €2.250 di surplus destinato a contingency e celebrazione lancio
 
-### Visualizzazione Grafica Cash Flow Mensile
+### Andamento del Cash Flow
 
-> **Nota.** L'immagine seguente è stata generata prima della ridistribuzione del Cash Flow su 7 mesi (v.1.2.0) e mostra ancora i valori superati a 6 mesi (outflow Mese 1-4 a €4.200, saldo minimo €2.300 nel Mese 3). Non è stata rigenerata in Excel. Per i valori corretti, aggiornati alla tabella di questo documento, vedi il grafico nel companion `Allegato3.4-CashFlow.html`.
+Il grafico dell'andamento — inflow e outflow mensili con la linea del saldo cumulativo — è riportato nella **versione visiva** di questo allegato. In sintesi:
 
-Il grafico seguente illustra l'andamento del Cash Flow durante i 7 mesi del progetto:
-
-![Cash Flow MaraffaOnline - 7 Mesi](../img/cash-flow-maraffaonline.png)
-
-**Analisi del Grafico**:
-- **Barre Verdi**: Inflow (pagamenti committente) concentrati in 3 momenti chiave (Mese 0, 2, 4)
-- **Barre Rosse**: Outflow (spese operative) sostanzialmente costanti nei Mesi 1-4 (€3.700), più bassi nel Mese 0 (setup, mezzo mese) e in progressiva riduzione nei Mesi 5-7 (testing, UAT e lancio con team ridotto)
-- **Linea Arancione**: Saldo cumulativo sempre positivo, con minimo di €2.250 nel Mese 7
+- **Inflow**: pagamenti del committente concentrati in 3 momenti chiave (Mese 0, 2, 4)
+- **Outflow**: spese operative sostanzialmente costanti nei Mesi 1-4 (€3.700), più basse nel Mese 0 (setup, mezzo mese) e in progressiva riduzione nei Mesi 5-7 (testing, UAT e lancio con team ridotto)
+- **Saldo cumulativo**: sempre positivo, con minimo di €2.250 nel Mese 7
 
 **Insight**: Il saldo cumulativo non scende mai sotto €2.250, garantendo liquidità sufficiente per coprire le spese operative in ogni fase del progetto. La struttura di pagamento 50/25/25 è efficace per mantenere il cash flow positivo per tutti i 7 mesi, anche nei mesi privi di inflow (1, 3, 5, 6, 7).
 
@@ -100,13 +95,9 @@ Molti servizi cloud sono utilizzati in free tier e quindi non generano costi: Po
 | **TOTALE SPESE** | **€22.750** | **91.0%** | |
 | **Surplus Finale** | **€2.250** | **9.0%** | Reserve per fase post-lancio |
 
-### Visualizzazione Grafica Distribuzione Spese
+### Distribuzione delle Spese
 
-Il grafico seguente mostra la distribuzione percentuale delle spese per categoria:
-
-![Distribuzione Spese per Categoria](../img/spese-categorie.png)
-
-**Analisi del Grafico**:
+Il grafico della ripartizione percentuale per categoria è riportato nella **versione visiva** di questo allegato. In sintesi:
 - **Salari Team (64%)**: La voce di spesa predominante, coerente con un progetto ad alta intensità di lavoro qualificato (5 persone per 7 mesi, con impegno ridotto nel setup iniziale e nella fase finale)
 - **Contingency Buffer (18.7%)**: Buffer ampio coerente con l'estensione del progetto a 7 mesi e con le best practices PM per progetti software con scope evolutivo e change requests potenziali
 - **Tools e Licenze (4.4%)**: Costi contenuti grazie all'utilizzo di free tier per molti servizi cloud
@@ -225,6 +216,7 @@ Questo documento è stato redatto seguendo le best practices di Cash Flow Manage
 **Revisionato da**: Elena Rossi (Tech Lead)
 
 **Storico revisioni**:
+- **v.1.6.0**: Rimosse dal registro le immagini PNG storiche (`img/cash-flow-maraffaonline.png`, `img/spese-categorie.png`), generate prima della ridistribuzione su 7 mesi e con valori superati: finivano nel PDF di consegna senza la nota di avvertimento (che la pulizia rimuove). Le sezioni grafiche rimandano ora alla versione visiva, generata dai valori correnti; le analisi restano in prosa. Nel companion HTML rimossa la nota che citava le PNG e il file sorgente; versione HTML riallineata.
 - **v.1.5.0**: Audit teorico: nomenclatura allineata alle slide — il Net Cash Flow è calcolato sui totali cumulati (colonna del saldo); il netto mensile è colonna di appoggio.
 - **v.1.4.0**: Chiarita la natura del meeting del 27/10 (approvazione del piano operativo di Cash Flow, non del budget — già contrattualizzato il 15/10).
 - **v.1.3.0**: Aggiunto il companion `Allegato3.4-CashFlow.html` con grafici nativi (SVG generati da script dai valori verificati della tabella corrente): Cash Flow mensile e ripartizione spese per categoria. Aggiunta nota che segnala come superate le immagini PNG esistenti (`img/cash-flow-maraffaonline.png`, generata pre-v.1.2.0 e mai rigenerata: mostra ancora 6 mesi e valori pre-ridistribuzione).
