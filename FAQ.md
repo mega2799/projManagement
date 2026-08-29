@@ -190,7 +190,7 @@ Sì, due refusi dell'Allegato 2.8, individuati con un audit interno e **corretti
 A valori di mercato no, e non pretendono di esserlo: è un progetto **non-profit finanziato da un crowdfunding**, con un team part-time al ≈50% di uno spin-off universitario che dal pilota ricava valore non monetario (portfolio, pubblicazioni, la tesi di dottorato del PM). La SWOT lo dichiara apertamente come debolezza (W2: €714/mese-persona di budget contro i €2.500–3.000 di mercato) e il rischio budget è formalmente **accettato** da sponsor e team nel meeting di approvazione. La compensazione è strategica, non monetaria — e saperlo dire così è la risposta.
 
 **G7. Lo Sprint 6 carica 47 SP di solo Backlog con una capacity dichiarata di 40: come lo spiegate?**
-La capacity è team-wide e **media**: il piano carica in media 37 SP con margine sul 40, ma nei singoli sprint il carico oscilla (S6 = 47, però S2 = 13 e S3 = 16): i picchi si compensano con gli sprint leggeri adiacenti, e parte del carico di S6 è il carryover fisiologico dello sprint natalizio. A consuntivo la velocity si è mantenuta al ritmo di regime (~38) anche in quel periodo: il piano ha retto. Rilievo legittimo comunque: un bilanciamento più uniforme del carico sarebbe stato più pulito, e va ammesso.
+La capacity è team-wide e **media**: il piano carica in media 37 SP con margine sul 40, ma nei singoli sprint il carico oscilla (S6 = 47, però S2 = 13 e S3 = 16): i picchi si compensano con gli sprint leggeri adiacenti, e parte del carico di S6 è il carryover fisiologico dello sprint natalizio. A consuntivo la velocity si è mantenuta al ritmo di regime (≈38) anche in quel periodo: il piano ha retto. Rilievo legittimo comunque: un bilanciamento più uniforme del carico sarebbe stato più pulito, e va ammesso.
 
 **G8. Confrontare i costi effettivi con quelli pianificati ("ho speso meno del previsto") misura l'efficienza?**
 No, ed è l'errore classico dell'EVM: AC < PV da solo può significare semplicemente "ho fatto meno lavoro del previsto". L'efficienza si misura passando dall'Earned Value: **CV = EV − AC**. Nel progetto, a febbraio: EV = €17.300, AC = €17.500 → CV = −€200, leggermente sfavorevole ma entro il buffer, con recupero completo nei mesi successivi (CV = 0 alla chiusura). Il Cap. 5 in una prima stesura usava "scostamento favorevole" per un confronto AC-vs-PV: è stato corretto proprio per questa ragione — e saperne spiegare il perché all'orale vale più della correzione stessa.
@@ -221,7 +221,64 @@ Entrambe: sono due convenzioni equivalenti, e l'Allegato 3.5 lo dichiara. Le sli
 
 ---
 
-## H. Definizioni-lampo (ripasso finale)
+## H. Teoria del corso applicata al progetto (concetti che l'elaborato non nomina, ma che il professore può chiedere)
+
+> Il corso ha strumenti e concetti che l'elaborato non usa con quel nome. La risposta giusta non è mai fingere che ci siano: è dire **come si mappano sul progetto** oppure **perché non servivano**, con i fatti del caso.
+
+**H1. Scope Triangle: nel vostro progetto quali variabili erano fisse e quale flessibile?**
+Il triangolo del corso ha cinque variabili (scope, qualità, tempo, costo, risorse) e Wysocki propone un ordine di rigidità con il tempo per primo e il costo per ultimo. Il nostro è **rovesciato**: il costo è la variabile più rigida (€25.000 da crowdfunding, contratto a corpo), il tempo è fisso (15/05 voluto dalla community), qualità e risorse sono vincolate (CoS misurabili; 5 persone part-time), e la variabile che assorbe gli urti è lo **scope**, governato con MoSCoW (Should e Could de-scopabili, Won't Have dichiarati) e con il Change Control. È il caso "budget rigido" che il professore stesso cita come eccezione alla gerarchia di Wysocki; nel 4.3 i conflitti di scope o budget salgono allo sponsor proprio perché toccano il triangolo.
+
+**H2. Il corso parla di quattro "creep" (scope, hope, effort, feature): come li avete tenuti a bada?**
+*Scope creep*: freeze dei requisiti dopo il POS e Change Request con Project Impact Statement (rischio 1.3 e rischio "scope creep" a rating 12, mitigati). *Hope creep* (nascondere i ritardi sperando di recuperare): Daily Standup "fatto / farò / blocker", Stoplight settimanale con lo sponsor e un clima dichiarato di apertura (Cap. 5) — il ritardo di gennaio è emerso in 24 ore. *Effort creep* (lavorare tanto senza avanzare): l'Earned Value matura solo sulle feature accettate in Sprint Review, e la Definition of Done è oggettiva. *Feature creep* (aggiungere funzionalità non richieste): MoSCoW come perimetro, Review su "software funzionante, non slide", e la regola che i Could entrano solo con capacità residua (è successo alla leaderboard).
+
+**H3. Come classificherebbe il vostro progetto con i criteri del corso?**
+Per caratteristiche: **rischio medio-alto** (due rischi critici a rating 16), **business value alto** per lo spin-off (progetto pilota, modello riusabile) e per la community, **durata** 7 mesi, **complessità media** (7 sottosistemi ma loosely coupled), **tecnologia**: standard sullo stack, ma "mai usata" in produzione sul real-time — ed è proprio questo che spinge il Real-Time nel modello Adattivo; **costi bassi**, un solo "reparto". Per tipo: **nuovo** e **strategico**; per applicazione: sviluppo software. La classificazione serve a ciò per cui Wysocki la propone: scegliere l'approccio — da noi, uno per sottosistema.
+
+**H4. La Legge di Brooks ("aggiungere persone a un progetto in ritardo lo ritarda") vale per voi?**
+Sì, e l'abbiamo rispettata due volte. Nella pianificazione: 302 giorni-uomo non diventano 141 giorni dividendo per il numero di persone, ma perché 5 persone lavorano in parallelo su 6 sottosistemi loosely coupled (≈2,1 FTE). Nel recovery di gennaio: abbiamo aggiunto Sara in pair programming a Luca sulla Dashboard, ma era una persona **già nel team** (niente ramp-up né canali di comunicazione nuovi), su un task partizionabile e per 3 giorni. E i canali di comunicazione di Brooks, n(n−1)/2 = 10 per 5 persone, sono il motivo dei canali Slack strutturati e del Daily di 15 minuti.
+
+**H5. Brooks dice "plan to throw one away". Dov'è nel vostro progetto?**
+Nello spike Socket.IO dello Sprint 0 e nel proof of concept dello Sprint 2: quattro client che sincronizzano uno stato semplificato, costruiti per misurare la latenza (180 ms) e per essere buttati, non per diventare il prodotto. E nei mockup: la v1 commentata dalla community è stata sostituita dalla v2 approvata. È la stessa idea del corso sul PoC: ridurre l'incertezza prima di impegnarsi.
+
+**H6. Integrità concettuale e "surgical team" di Brooks: come sono organizzati architettura e team?**
+Una sola testa sull'architettura: Elena, Tech Lead, decide le scelte tattiche (architettura, API, schema dati) e su di lei convergono i conflitti tecnici ("disagree and commit", 4.3); il principio unico del real-time è il server come fonte di verità (server-authoritative). Il team è piccolo e con ruoli netti, resi espliciti dalla RASCI: un solo Accountable per attività. Non è un surgical team in senso stretto (non c'è un "chirurgo" che scrive tutto il codice), ma ne conserva il principio: poche persone, responsabilità chiare, niente decisioni architetturali per comitato.
+
+**H7. Il second-system effect: uno spin-off al primo progetto come si difende dall'over-engineering?**
+Con vincoli espliciti: i Won't Have (app nativa, IA, tornei, social login, push) chiudono la porta alle tentazioni; sull'infrastruttura il principio YAGNI — single server, auto-scaling solo se il traffico lo richiederà; la MoSCoW ricorda che i Must sono il 75,8%. Il rischio opposto, l'inesperienza (rischio 2.1), è coperto da spike, PoC e consulente di contingenza.
+
+**H8. Avete fatto una Joint Project Planning Session e un Project Definition Statement?**
+Non con questi nomi. La pianificazione è stata comunque un lavoro di gruppo: Delphi e Planning Poker sono per definizione sessioni collettive, la WBS è stata costruita dal team con il PM, e il piano è stato approvato in un meeting con lo sponsor che ha dato il via all'esecuzione (Cap. 3). Il PDS — la versione del POS più dettagliata, per il team — non è stato prodotto: il suo ruolo lo svolgono RBS, WBS Dictionary e Kick-Off. Se dovessi rifarlo, una JPPS formale di due giorni sarebbe un modo più pulito di raccontare la stessa cosa.
+
+**H9. Il corso parla di Scope Bank e di time contingency. Dove sono?**
+Il meccanismo c'è, senza quel nome. Riserva economica: contingency di €4.664 (18,7% del budget), distribuita per mese nel Cash Flow; riserva di calendario: il margine tra la fine del critical path (8/05) e il lancio (15/05). Le Change Request approvate la consumano (Change Log) e il MoSCoW funziona da "conto corrente" delle funzionalità: la leaderboard Could è entrata grazie all'efficienza, la Maraffa passata Should→Must ha compensato sui Could. Il punto teorico: la riserva è esplicita e gestita, non nascosta nelle stime (padding).
+
+**H10. Team: avete bilanciato gli stili di apprendimento di Kolb? Avete una war room?**
+No al primo punto, e va detto: il team era già formato (i 5 dello spin-off), non composto ad hoc; la distinzione del corso tra core team (Marco e Elena) e developer team (Sara, Luca, Andrea) c'è, con gli "altri membri" — sponsor, esperta di dominio, consulente di contingenza — fuori dal nucleo. La war room è ibrida: la sede di PlayHeritage Labs a Cesena per i meeting in presenza e Notion + Slack come war room virtuale, dato che il team lavora anche in remoto (da qui il Daily asincrono con Slackbot dallo Sprint 7).
+
+**H11. Milestone trend chart e burn chart: perché non ci sono?**
+Scelta di reporting proporzionata a un team di 5: Stoplight settimanale sulle cinque aree, EVM mensile con le tre curve, velocity per sprint. Le milestone sono monitorate nella riga Schedule dello Stoplight e nei review meeting alle milestone (le 7 di M1–M7 sono state tutte rispettate: un milestone trend chart sarebbe stato una linea piatta). Il burn-down per sprint sarebbe la naturale estensione del Backlog: non è negli allegati, e se me lo chiedono lo dico.
+
+**H12. KPI Kanban sul Real-Time: WIP limit, lead time, cycle time?**
+Il WIP limit c'è ed è la ragione della board a flusso (Allegato 2.9); lead time e cycle time non sono formalizzati — su un sottosistema da due persone il flusso si è misurato con i blocker nei Daily e con la latenza del PoC. Le regole di Toyota che si ritrovano: visualizzare il lavoro, limitare il WIP, gestire il flusso, migliorare (retrospective). Contratto: il corso associa Kanban al time & materials; da noi il flusso adattivo sta dentro un contratto a corpo grazie a spike, decision point e contingenza (FAQ C11).
+
+**H13. Le dieci Knowledge Area del PMBOK: dove stanno nel vostro progetto?**
+Integration: la relazione stessa e il ruolo del PM. Scope: CoS, POS, RBS, WBS, Change Control. Time: network diagram con CPM, Gantt, sprint. Cost: Cash Flow, EVM. Quality: criteri tecnici e qualitativi delle CoS, Definition of Done, coverage, UAT. Human Resources: RASCI, regole operative, retrospective. Communications: §4.4 (Slack, email, Notion, SLA). Risk: Risk Rating Matrix e monitoraggio settimanale. Procurement: hosting, consulente esterno di contingenza, esperta di dominio a compenso. Stakeholder: sponsor in ogni Status Meeting, co-design con la community, esperta nel loop.
+
+**H14. Il corso elenca sette tecniche di raccolta dei requisiti: quali avete usato?**
+*Facilitated group session*: il workshop del 16/09 con 10 membri della community (su Miro). *Interviste*: le sessioni con Francesca sulle regole. *Prototyping*: i mockup v1→v2. *Observation*: il Think Aloud Protocol nello user testing (l'utente esegue i compiti pensando ad alta voce). *Use case scenarios*: le 23 user story. Non usate: *requirements reuse* (primo progetto dello spin-off, niente da riusare) e *business process diagramming* (non c'è un processo aziendale da mappare: c'è un gioco).
+
+**H15. DevOps nel progetto?**
+È l'Infrastructure & DevOps, gestita in modo Incrementale: Docker per tutti i servizi, GitLab CI con pipeline test → build → deploy automatico sul branch main, monitoring e error tracking in produzione, backup giornalieri. È il ciclo dev + ops del modulo Kanban: rilasci piccoli e frequenti, automazione, feedback dal monitoring. Il deploy finale in produzione è stato eseguito dalla community con le nostre Docker image e istruzioni.
+
+**H16. Resource leveling: quali strategie del corso avete usato?**
+Tutte e tre: slack sui rami non critici (22 giorni sul Game Engine, 37 sul Social) per assorbire gli scostamenti senza toccare la fine progetto; durata allungata quando la capacità cala (Sprint 5 natalizio pianificato a 21 SP con carryover); risorsa in supporto (Sara affiancata a Luca a gennaio). A monte, la clausola di precedenza di MaraffaOnline sugli altri progetti dello spin-off evita l'over-allocation; lo straordinario non è mai la prima leva.
+
+**H17. Marco è CEO, PM e Product Owner insieme: non è un conflitto di ruoli?**
+È una scelta obbligata in uno spin-off di 5 e va governata, non negata: il potere decisionale sulle scelte strategiche non è suo ma dello sponsor (unico voto decisionale all'approvazione; decide su scope, budget e timeline sul Project Impact Statement del PM); sul tecnico decide Elena; il PM raccomanda, non decide da solo, ed è a sua volta Accountable/Responsible nella RASCI (righe dell'area PM). La trasparenza verso lo sponsor — Status Meeting settimanale, foglio EVM in sola lettura — è il contrappeso.
+
+---
+
+## I. Definizioni-lampo (ripasso finale)
 
 | Termine | Risposta in una frase (terminologia del corso) |
 |---|---|
