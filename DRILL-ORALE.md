@@ -21,7 +21,7 @@
 - **Float dei rami non critici?** → Game Engine 22 giorni; Chat/Social 37 giorni.
 - **Sprint?** → 15 (Sprint 0–14) da 2 settimane; sviluppo negli Sprint 0–10; 11–14 = testing E2E, UAT, lancio.
 - **Product Backlog?** → 310 SP; lavoro totale ≈441 SP equivalenti (310 + ≈94 Game Engine + ≈37 Infrastructure).
-- **Capacity, carico, velocity?** → capacità 40 SP/sprint team-wide; carico medio ≈37 team-wide e ≈28 di solo Backlog; velocity di regime 38,3 (Sprint 1–7, escluso il natalizio).
+- **Capacity, carico, velocity?** → tre domande diverse: capacità = quanto il team *può* (40 SP/sprint team-wide); carico = quanto è *in piano* (`441 ÷ 12` sprint 0–11 ≈ **37** team-wide; `310 ÷ 11` sprint 1–11 ≈ **28** solo Backlog); velocity = quanto è *stato fatto* (38,3 di regime, Sprint 1–7 escluso il natalizio). Denominatori diversi perché lo Sprint 0 è di setup: lavoro sì, user story no. Risposta parlata in FAQ C8.
 - **Sprint natalizio?** → Sprint 5, 22/12–2/01: 21 SP su 40 (52,5%), carryover 19 pianificato, escluso dalla media.
 - **EVM a gennaio?** → PV 14.100, EV 13.200, AC 13.500 → CV −€300, SV −€900, CPI 0,98, SPI 0,94; recuperato entro febbraio.
 - **EVM a fine progetto?** → CPI = SPI ≈ 1,00.
@@ -41,7 +41,14 @@
 - **Ciclo delle CoS?** → Request → Clarify Request → Response → Agree on Response.
 - **CoS vs acceptance criteria?** → le CoS dicono *cosa* deve essere il risultato (dal committente); gli AC dicono *come verificare* una storia (dal team).
 - **POS: sezioni?** → problema/opportunità, goal, 6 obiettivi numerati, criteri di successo correlati 1:1 agli obiettivi, assunzioni-rischi-ostacoli; non è un contratto (FAQ B1).
+- **Perché POS e non Project Charter?** → coerenza con Wysocki (il Charter è PMBOK, "documento alternativo"); e la sua funzione — conferire al PM l'autorità sulle risorse — è vuota in uno spin-off dove Marco è già CEO/PM/PO. I contenuti del Charter ci sono comunque, distribuiti tra POS, RBS, Risk, Gantt, Cash Flow, RASCI, Kick-Off e Approval (FAQ H18).
+- **Chi ha autorizzato il progetto?** → non un documento ma il **gate**: Approval Process del 02/10, sponsor unico voto decisionale. Il POS è l'input della decisione, l'approvazione di fase è l'atto (FAQ H18).
+- **POS o Charter sono contratti?** → no, nessuno dei due: non entrano nel merito di prezzo e condizioni. Il contratto è separato — da noi a corpo, 3 tranche 50/25/25 (FAQ H18).
+- **Perché niente PDS?** → opzionale già nelle slide ("potrebbe essere") e nelle linee guida ("es."); serve a colmare la distanza fra chi decide e chi esegue, ma il POS l'ha scritto il team stesso. Le sue 5 funzioni stanno in RBS/WBS Dictionary/Backlog, Kick-Off, Project Notebook + DoD + Status Meeting, retrospective; la quinta — onboarding di nuovi membri — non è mai servita: team invariato per 7 mesi, contingenza Nardi mai scattata (FAQ H19).
 - **S.M.A.R.T.?** → Specific, Measurable, Assignable, Realistic, Time-related (Doran) — i 6 obiettivi lo sono (FAQ B2).
+- **Business value del progetto?** → valore percepito dal **destinatario**: la community torna a giocare insieme a distanza (problema sociale, non tecnologico); quantificato nei criteri del POS (80 utenti attivi in 2 mesi, 4,2/5, ≤500 ms, zero errori di regole). Il valore per lo spin-off (pilota, modello replicabile, budget ridotto) è la sezione **Opportunità**, non il business value (FAQ A6).
+- **IRACIS: dove cade il vostro?** → tutto **Improved Service**; niente Increased Revenue (break-even ≈84 mesi → non-profit dichiarato) né Avoided Cost (FAQ A6).
+- **Il business value si è concretizzato?** → obiettivi e vincoli verificati all'audit del 13/05; il valore a regime è rimandato al monitoraggio dei primi 3 mesi (coperto dal surplus). Anticipatori: 50 registrati e 23 partite in 24 ore contro 20-30 attesi in una settimana (FAQ A6, F2).
 - **Assunzione / rischio / ostacolo?** → condizione data per vera / evento incerto con probabilità e impatto / difficoltà nota e certa (es. budget per persona sotto mercato) (FAQ B4).
 - **Matrice dei rischi?** → 4×4: probabilità A–D × impatto Trascurabile→Disastroso; valore P×I da 1 a 16; scala colori a 5 livelli (Rosso Critico = 16).
 - **Le 5 strategie di risposta?** → Accept, Avoid, Mitigate, Contingency, Transfer.
@@ -50,9 +57,11 @@
 - **Rischio varianti regionali (1.2)?** → Avoid: adottata in Scoping la versione ufficiale delle regole, che elimina la fonte del rischio.
 - **Rischio autenticazione (4.2)?** → Mitigazione: librerie consolidate, HTTPS, penetration test — azioni immediate, non un piano di contingenza.
 - **SWOT: cosa la distingue?** → estesa a matrice TOWS con 4 azioni immediate; incrocia i rischi (W1 = rischio 2.1, W4 = 6.4, T2 = 6.2) (FAQ B8).
-- **BMC in un non-profit?** → per verificare che il modello regga; break-even onesto ≈84 mesi → progetto dichiaratamente non-profit (FAQ B7).
+- **BMC in un non-profit?** → per verificare che il modello regga: il non-profit è la *conclusione* del canvas, non la premessa. Due scenari: realistico €124,75 di ricavi contro €200/mese di costi (pareggio mai raggiunto), ottimistico €299/mese di margine → €25.000 ÷ €299 ≈ **84 mesi** (7 anni). Risposta parlata da 30 secondi in FAQ B7.
 - **Prototyping?** → mockup Figma v1 commentata → v2 approvata e vincolante; workshop con 10 membri (Miro); Think Aloud con 8; click to play invece di drag & drop.
 - **PoC / prototipo / MVP?** → spike Socket.IO a 180 ms / mockup Figma / release del 15/05 (FAQ B9).
+- **Come avete ottenuto la RBS?** → 5 delle 7 tecniche di Wysocki: facilitated group session (workshop 16/09, 10 membri, Miro), interviste (Francesca sulle regole), prototyping (mockup v1→v2), observation (Think Aloud, 8 membri), use case scenarios (23 US); escluse requirements reuse e business process diagramming, motivate (FAQ B14, H14).
+- **Completezza della RBS?** → valutata per sottosistema, ed è il criterio di scelta del PMLC: Game Engine chiusa → Waterfall; Backend/Frontend note nel cosa → Iterativo; Real-Time incerta sulla soluzione → Adattivo. Misurabilità e testabilità garantite da CoS (soglie) e criteri di accettazione delle US (FAQ B14).
 - **RBS: livello di dettaglio?** → si ferma al requisito (dice *cosa*, non *come*); dettaglio nelle US, soglie nelle CoS, tecnologie nel Planning; gli ID REQ-* della MoSCoW codificano la numerazione della RBS (FAQ B11).
 - **User stories?** → 23 in 7 epiche, INVEST verificato criterio per criterio; niente priorità né story point (stanno nel Planning) (FAQ B10).
 - **INVEST?** → Independent, Negotiable, Valuable, Estimable, Small, Testable.
@@ -72,6 +81,11 @@
 - **Stime?** → Delphi (anonima, più round fino alla convergenza) sul Game Engine; Planning Poker con Fibonacci 1…21 sugli agili (FAQ C7).
 - **Effort vs durata?** → 302 giorni-uomo di sforzo contro 141 giorni di calendario: 5 persone in parallelo ≈ 2,1 FTE (FAQ C2).
 - **Tipi di dipendenza?** → FS, SS, FF, SF, più il lag; SS = la successiva non può iniziare prima che *inizi* la precedente.
+- **Quali avete usato voi?** → tutti FS tranne **uno**: P→R Start-to-Start + lag 31. FF e SF non usati per scelta: nessun vincolo reale li richiedeva (FAQ C14).
+- **B e C partono insieme: legame SS?** → No, **divergenza di legami FS** dal predecessore comune A. Chi inizia insieme perché dipende dalla stessa attività finita non ha legame reciproco.
+- **Total slack vs free slack?** → totale = senza spostare la *fine del progetto*; libero = senza spostare l'*inizio del successore*. I 22 giorni del Game Engine sono del **ramo, condivisi**: free slack 0 su C-F-I-L, 22 solo su O (FAQ C15).
+- **La somma sul critical path fa 150, non 141!** → giusto: `150 − 9 = 141`, e i 9 giorni sono il guadagno del fast tracking (R parte al giorno 104 invece di 113) (FAQ C16).
+- **Perché il Game Engine non è critico?** → critico ≠ importante: è posizione nella rete. `EF(O)=82` contro `ES(R)=104` → 22 giorni di float. E il critical path va **ricalcolato**: oltre 37 giorni di ritardo il ramo Social diventerebbe critico (FAQ C17).
 - **Convenzione dei tempi CPM?** → istanti 0-based: EF = ES + durata; le slide usano giorni 1-based: EF = ES + durata − 1; equivalenti, stesso critical path (FAQ G16).
 - **Slack?** → LS − ES (equivale a LF − EF); zero sul percorso critico.
 - **Fast tracking vs crashing?** → sovrapporre attività (SS + lag) vs aggiungere risorse (costo); noi fast tracking su P→R (FAQ C4).
@@ -134,4 +148,5 @@
 - **"Il numero di allegato è la sezione della relazione?"** → No: gli allegati di Scoping sono sequenziali 2.1–2.9; meeting e approval sono solo nella relazione (FAQ G15).
 - **"Il PM è anche CEO e Product Owner: conflitto?"** → governato: voto decisionale allo sponsor, decisioni tecniche a Elena, il PM raccomanda (FAQ H17).
 - **"Dove sono JPPS, PDS, Scope Bank, burn chart, Kolb?"** → non con quel nome; le risposte oneste sono in FAQ H8–H11.
+- **"Il business value è dimostrare che il modello è replicabile?"** → no, quello è il valore per il *fornitore* (Opportunità del POS): il business value è del destinatario, cioè la community che rigioca insieme. Non allargare il goal a "riportare di moda i giochi tradizionali": non è nei criteri di successo (FAQ A6).
 - **"Il CSV e le immagini dei mockup esistono?"** → i mockup sono dichiarati non prodotti (nota metodologica nel 2.6): l'elaborato gestisce il *processo* di design, non produce gli asset.

@@ -4,6 +4,8 @@
 > Registro completo delle **considerazioni fatte e delle scelte di progetto** che hanno portato all'elaborato attuale, in versione **didattica**: prima di raccontare *come* abbiamo usato uno strumento, un riquadro di ripasso spiega *che cos'è*, con la terminologia del corso (dispense del prof. Boschetti, basate in gran parte sull'approccio di Robert Wysocki). Leggendolo dall'inizio alla fine si ripassa la teoria E si impara l'elaborato.
 >
 > **Convenzione**: i riquadri `> Ripasso —` contengono la teoria generale; il testo normale racconta il progetto. Documenti gemelli: `PREPARAZIONE-ORALE.md` (numeri a memoria e risposte pronte) e `FAQ.md` (domande previste all'orale con risposte).
+>
+> **Per il ripasso mirato sull'orale** — che è una conversazione in cui il docente ripercorre le scelte e chiede *come sono state prese*, *perché non altre* e *cosa faresti di diverso* — le tre sezioni dedicate sono **§1.5** (come rispondere alle domande sul processo, incluso il fatto che l'elaborato è un caso di studio), **§9** (alternative scartate e strumenti del corso non usati) e **§10** (cosa faremmo di diverso, su tre piani).
 
 ---
 
@@ -16,6 +18,7 @@
 - **Scelta**: piattaforma web multiplayer per la Maraffa (MaraffaOnline), sviluppata da **PlayHeritage Labs** (spin-off dell'Università di Bologna a Cesena, nato nel 2023, specializzato in *cultural heritage gaming* — la digitalizzazione di giochi tradizionali) su commissione di **Maraffa Forever**, community di ≈150 ex studenti romagnoli che ha raccolto €25.000 con un crowdfunding interno.
 - **Motivazione**: (a) differenziazione totale dalla relazione di riferimento (Exploding Kittens: altro gioco, altra azienda, altro committente, altro problema — anti-plagio per costruzione); (b) la narrativa *spin-off + community* rende **internamente coerente ogni numero**: un budget piccolo (€25.000) è credibile solo se il team è part-time e il progetto ha valore strategico da "pilota"; l'esperta di dominio e i 20 beta tester escono naturalmente dalla community; il non-profit giustifica un break-even negativo senza doversi inventare ricavi.
 - **Il problema è sociale e geografico**, non tecnologico: le app esistenti sono obsolete o solo single-player; la dimensione conviviale del gioco si è persa con la dispersione geografica del gruppo. Questo àncora il progetto alla definizione di business value di Wysocki: il valore è "poter rigiocare insieme a distanza", ed è la community stessa a definirlo.
+- **Business value su due livelli, da non confondere** (FAQ A6): per il **destinatario** — la community — è rigiocare insieme a distanza, quantificato nei criteri di successo del POS e interamente sulla componente **Improved Service** dell'IRACIS (niente Increased Revenue: il break-even è a ≈84 mesi, il progetto è non-profit dichiarato); per il **fornitore** è la sezione **Opportunità** del POS (pilota, portfolio, pubblicazioni, modello replicabile su altri giochi tradizionali). Il secondo non è business value in senso Wysocki, e chiamarlo col suo nome evita la contro-domanda.
 
 ### 1.2 Gestione, non implementazione
 
@@ -40,6 +43,17 @@
 - **`.md` testuale = registro completo; `.html` companion = versione visiva a colori** per i contenuti a griglia (matrici di rischio, canvas, WBS ad albero, board MoSCoW, Gantt, RASCI). Motivo tecnico: il Markdown puro non supporta celle unite né colori affidabili nelle pipeline di stampa PDF; un HTML standalone con CSS sì.
 - **Storico revisioni in ogni allegato**: le correzioni di coerenza sono documentate, non nascoste (es. la ricalibrazione del critical path da 170 a 141 giorni; la riclassificazione della Maraffa). All'orale è un punto di forza: mostra controllo di configurazione, cioè la capacità di tracciare *chi ha cambiato cosa e quando*.
 - **Onestà documentale**: rimossi dai verbali i dialoghi ricostruiti e i punteggi inventati; le immagini non prodotte sono dichiarate tali; Notion è la *single source of truth* (l'unico posto dove un'informazione è "quella vera") del progetto narrato.
+
+### 1.5 Come rispondere alle domande sul processo (l'elaborato è un caso di studio)
+
+L'orale è una conversazione in cui il docente ripercorre le scelte e chiede **come sono state prese**, **perché non altre** e **cosa faresti di diverso**. Tre di queste domande non riguardano il progetto narrato ma il progettista, e vanno gestite con un registro diverso.
+
+- **Riconoscere i due registri.** *"Cosa avete fatto quando il rischio WebSocket si è alzato?"* è una domanda **dentro la narrazione** e si risponde dentro (spike, decision point al giorno 15, consulente pre-allertato). *"Come hai pensato il cash flow?"* o *"come ti è venuto in mente di usare il BMC?"* sono domande **al progettista**: si risponde da autore, senza finzione — "sono partito da questo vincolo, ho applicato questa regola del corso, ho verificato questa coerenza". I due errori speculari: restare nella finzione quando la domanda è sul processo (sembra che non si distinguano i piani) e liquidare con "è tutto inventato" (sembra che i numeri siano casuali).
+- **Ogni numero ha un'ancora, e sono solo quattro.** (1) **Vincolo dato a monte**: €25.000, 7 mesi, 5 persone, lancio 15/05 — dati del problema, non invenzioni. (2) **Regola del corso**: contingency ≈19%, 8/80 rule, 100% rule, saldo cumulativo mai negativo, MoSCoW. (3) **Derivazione aritmetica** da (1) e (2): 302 giorni-uomo, critical path 141 giorni, capacity 40 SP, velocity 38,3. (4) **Plausibilità di dominio dichiarata come tale**: costi di hosting, licenze, tariffa del consulente. Nessuna delle quattro richiede che il progetto sia realmente accaduto.
+- **Il cash flow come esempio della catena completa** (la domanda più probabile di questo tipo): il budget **non è un output del planning, è un vincolo dello scoping** — €25.000 sono la CoS economica, la cifra del crowdfunding, non negoziabile. Quindi la domanda del Planning non era "quanto costa?" ma **"ci sta dentro?"**. Da lì: 302 giorni-uomo (WBS + Delphi/Poker) → 5 persone al ≈50% FTE per 7 mesi → €16.000 di salari (64%), con le tariffe risultanti **sotto mercato e dichiarate come ostacolo nel POS**, non nascoste; voci minori verificabili (tools €1.111, infrastruttura €275, consulenza €300, marketing/UAT/celebrazione €400); contingency €4.664 (18,7%) più surplus €2.250 (9%). E soprattutto **la forma della curva discende da un vincolo**: l'ultimo incasso è il 15/02, quindi marzo–maggio vivono di saldo, quindi l'outflow *deve* calare nei mesi 5–7 — e infatti in quel periodo il Gantt non ha più sviluppo ma testing, UAT e lancio. Non è una curva disegnata bene: è un vincolo di liquidità imposto e poi verificato sul piano.
+- **Problema prima, strumento dopo.** Alla domanda "come ti è venuto in mente di usare X" non si risponde mai partendo da X: "avevo il problema Y, e il corso offre X per quello". Esempio: non "ho voluto usare due tecniche di stima", ma "avevo due metodologie diverse su sottosistemi diversi, e stimare story point su un sottosistema Waterfall non avrebbe senso". Se manca la risposta pronta su uno strumento, il ripiego onesto tiene: "risolveva il problema Y; senza, avrei dovuto risolverlo così".
+- **"Ma l'avete fatto davvero?"** — risposta serena, senza scuse: è un caso di studio costruito per l'esame; lo scenario è verosimile e i documenti sono quelli che produrrei davvero; la cosa presa sul serio è la **coerenza interna** — il critical path esce dalle durate della WBS, il cash flow dalle stime di effort, la velocity dagli sprint del Gantt, gli ID `REQ-*` legano RBS, MoSCoW e user story. In un elaborato simulato l'unico errore vero è l'incoerenza, ed è lì che si sono concentrate le verifiche (§8: tre giri di audit, con gli errori trovati e corretti).
+- **Onestà selettiva come arma.** Indicare per primi i punti deboli vale più di dieci difese: sposta il registro da interrogatorio a conversazione tra colleghi. Il repertorio è già pronto in §8 (voci 9, 12, 13, 14 e "restano difendibili"), in §11 e nella sezione G della `FAQ.md`.
 
 ---
 
@@ -130,6 +144,7 @@
 
 > **Ripasso.** La **RBS** (*Requirements Breakdown Structure*) è la scomposizione gerarchica dei **requisiti** (Requirement → Function → Sub-function → Feature): dice *cosa* va consegnato ed è la base per scegliere il PMLC (più la RBS è completa e stabile, più ci si può permettere un approccio tradizionale). Le **user story** esprimono un requisito dal punto di vista dell'utente ("Come <ruolo> voglio <azione> così da <beneficio>") e devono rispettare **INVEST**: **I**ndependent (indipendenti tra loro), **N**egotiable (negoziabili), **V**aluable (portano valore), **E**stimable (stimabili), **S**mall (piccole), **T**estable (verificabili). Un'**epica** è una storia troppo grande, da spezzare.
 
+- **Metodo di raccolta dei requisiti**: cinque delle sette tecniche del corso, applicate in sequenza nelle tre settimane di Scoping — *facilitated group session* (workshop del 16/09 con 10 membri su Miro, PM facilitatore), *interviews* (Francesca sulle regole), *prototyping* (mockup v1→v2), *observation* (Think Aloud con 8 membri), *use case scenarios* (le 23 user story). Escluse con motivazione *requirements reuse* (nessun archivio: è il primo progetto dello spin-off) e *business process diagramming* (non c'è un processo aziendale, c'è un gioco). La **completezza** è stata valutata per sottosistema, ed è il criterio con cui è stato scelto il PMLC di ciascuno (§2.9). *Nota di consegna*: nella relazione (§2.7) questo percorso è riassunto in una frase sulle fonti ("community, esperta, prototipi"); il lessico del corso resta nella risposta pronta, non nel documento — vedi FAQ B14 e H14.
 - **RBS per sottosistema** con classificazione F/NF/C (funzionale / non funzionale / vincolo) e pre-etichette MoSCoW. **Scelta di livello (v.1.1.0, 2026-08-23)**: la RBS si ferma deliberatamente al requisito — dice *cosa*, non *come*. Il dettaglio operativo vive nei documenti dedicati: criteri di accettazione nelle User Stories (timeout del turno, gestione disconnessioni...), soglie misurabili nelle CoS (latenza, API, WCAG), scelte tecnologiche nel Planning (MoSCoW/WBS/Cash Flow); la tracciabilità non si perde perché gli ID `REQ-*` della MoSCoW codificano la numerazione della RBS. Fonte delle regole di gioco: la documentazione ufficiale della community, **validata formalmente dall'esperta** e richiamata dalla RBS come riferimento normativo — è questo che rende stabili i requisiti del Game Engine e quindi giustifica il Waterfall (§2).
 - **23 user story in 7 epiche**, ognuna con criteri di accettazione puntuali e approccio di test, più una tabella che verifica INVEST criterio per criterio. **Scelta di pulizia**: nell'allegato delle User Stories (2.8) non ci sono priorità, story point né sprint — quelli appartengono al Planning (Allegati 3.2 e 3.3). Separazione netta tra il *cosa* (Scoping) e il *quanto/quando* (Planning).
 
@@ -167,7 +182,7 @@
 
 > **Ripasso — Le tecniche di stima consensuali.** Servono a stimare senza i *bias* individuali. **Delphi** (Project RAND, anni '50): ogni esperto dà la sua stima **in forma anonima** con motivazione; si condividono i risultati e si ripete per più round fino a convergenza — l'anonimato evita l'**ancoraggio** (il bias per cui la prima cifra sentita condiziona tutte le altre) e l'effetto autorità. **Planning Poker** (Scrum): il Product Owner presenta l'elemento, ognuno sceglie *in segreto* una carta della scala di **Fibonacci** (1, 2, 3, 5, 8, 13, 21 — cresce come l'incertezza), si scoprono insieme, si discutono le discrepanze e si ripete fino al consenso. Gli **story point** sono l'unità del Planning Poker: misurano la *complessità relativa*, non il tempo (sono adimensionali).
 >
-> **Ripasso — Effort vs Duration.** Lo **sforzo** (giorni-uomo, *effort*) misura il lavoro; la **durata** (giorni di calendario lavorativo) misura il tempo che passa. Non sono proporzionali: aggiungere persone non riduce la durata in modo lineare. Formula del corso: Labor = 0,75 × Duration (il 25% del tempo si perde in interruzioni). Corollario anti-illusione: *Effort ≠ Progress*.
+> **Ripasso — Effort vs Duration.** Lo **sforzo** (giorni-uomo, *effort*) misura il lavoro; la **durata** (giorni di calendario lavorativo) misura il tempo che passa. Non sono proporzionali: aggiungere persone non riduce la durata in modo lineare. Formula del corso: **Labor = 0,75 × Duration**, con due *model assumptions* dichiarate nella slide: *"individuals work at 75 percent efficiency rate"* e *"unplanned interruptions account for 33 percent of clock time"*. I due numeri sono la stessa perdita vista da basi diverse: se un giorno di calendario rende 0,75 giorni-uomo, per ottenere un giorno-uomo pieno ne servono 1/0,75 = **1,33** — cioè un terzo in più. Il grafico della slide mostra la retta ideale `L = D` e quella reale `L = .75D`, con il lavoro accumulato che sale **a gradini** (i pianerottoli sono le interruzioni). Corollario anti-illusione: *Effort ≠ Progress*.
 
 - **Due tecniche di stima, una filosofia** (stima collettiva anti-bias): **Delphi** per il Game Engine — requisiti stabili, contesto tradizionale — e **Planning Poker** per i sottosistemi agili. Sapere il perché di ciascuna: Delphi evita l'ancoraggio su requisiti noti; il Poker aggiunge la discussione delle discrepanze, preziosa dove l'incertezza è alta.
 - **Product Backlog**: la lista prioritizzata del lavoro dei sottosistemi agili. **Criterio di inclusione = natura del lavoro, non etichetta del sottosistema**: entra ciò che è esprimibile come user story rivolta all'utente e che scorre negli sprint (Backend, Real-Time, Frontend + le feature Social sotto il sottosistema che le implementa). Restano fuori il Game Engine (specifica congelata, validazione finale — è Waterfall) e l'Infrastructure (attività ricorrenti e on-demand, non user story): tracciati in WBS e Gantt. Motivo: il Backlog è uno strumento di Scrum; mescolarci lavoro con cicli di vita diversi ne comprometterebbe leggibilità e ruoli.
@@ -307,4 +322,70 @@
 
 ---
 
-**Ultimo aggiornamento**: 2026-08-11 — §4/§5 aggiornati con doppia lettura WBS, potatura RASCI (51 righe, 48 pattern conservati) e raccordo WBS↔Network; tilde→≈. Aggiornamento precedente: 2026-08-09 — versione didattica (riquadri "Ripasso" con la teoria del corso per ogni strumento); creato a valle della rilettura integrale di relazione e allegati, con audit di coerenza incrociata completato e correzioni applicate.
+## 9. Alternative scartate e strumenti del corso non usati
+
+> Il docente chiede spesso *"perché questo e non quello?"*. Qui le alternative che erano davvero sul tavolo, con la ragione dello scarto. Regola di risposta: **una scelta si difende dicendo cosa costava l'alternativa**, non elogiando l'opzione scelta.
+
+### 9.1 Alternative di impostazione e di metodo
+
+| Scelta fatta | Alternativa scartata | Perché |
+|---|---|---|
+| Approccio ibrido per sottosistema | Una metodologia **monolitica unica** | Overhead dove non serve (Sprint Planning sul Game Engine a requisiti congelati) e rigidità dove servirebbe flessibilità (Waterfall sul Real-Time incerto) |
+| TPM + APM secondo il quadrante | Modello **Extreme (xPM)** o **MPx** | xPM richiede goal *e* soluzione ignoti: da noi il goal è sempre chiaro. MPx è il caso inverso (tecnologia in cerca di impiego) |
+| Waterfall sul Game Engine | **Scrum** anche lì | Requisiti fissi da decenni e validati prima dello sviluppo: il feedback iterativo non aggiunge informazione, aggiunge cerimonie (FAQ B12) |
+| Contratto **a corpo** 50/25/25 | **Time & materials**, che il corso suggerisce quando le stime sono incerte | Il budget del committente è un tetto fisso da crowdfunding: serviva certezza di spesa per il cliente. Il rischio stime resta sul fornitore ed è gestito con spike, decision point e contingenza al 18,7% (FAQ C11) |
+| **POS** | **Project Charter** (PMBOK) | Il Charter conferisce al PM autorità sulle risorse: in uno spin-off dove il PM è già CEO e PO quell'autorità non ha nulla da attraversare (FAQ H18) |
+| RBS + WBS Dictionary + Kick-Off | **PDS** (Project Definition Statement) | Colma la distanza fra chi decide e chi esegue; qui il POS l'ha scritto il team stesso, e nessun nuovo membro è entrato in 7 mesi (FAQ H19) |
+| Pianificazione collettiva diffusa (Delphi, Poker, WBS col team) | **JPPS** formale di due giorni | Non con quel nome: la sostanza c'è stata, la forma sarebbe stata più pulita — ammesso apertamente (FAQ H8) |
+| **Delphi** + **Planning Poker** | Una sola tecnica per tutto; **three-point method** (PERT) | Due metodologie diverse chiedono due unità di stima diverse: giorni-uomo dove si pianifica a date, story point dove si pianifica a sprint. Il three-point non serviva avendo già due tecniche consensuali, ma la formula va saputa: E = (O + 4M + P)/6 |
+| **Fast tracking** su P→R (SS + lag 31) | **Crashing** dell'attività critica | Il fast tracking non costa denaro, solo rischio di rework (mitigato testando i moduli congelati). Il crashing resta come leva di riserva nella sensitivity analysis: +1 contractor ≈ €2.000 dalla contingenza |
+| Decision making **consultativo** | **Directive** o **participative** | Il directive spreca le competenze del team; il participative è lento e produce compromessi mediocri ("una decisione di consenso che accontenta tutti può comunque essere una cattiva decisione") |
+| Installazione **a fasi** (beta 20 tester → go-live) | **Cut-over** o **parallel** | Entrambe presuppongono un sistema preesistente da sostituire o affiancare: non c'era alcun legacy |
+
+### 9.2 Strumenti del corso deliberatamente non prodotti
+
+Per ciascuno la formula è la stessa — *a cosa serve → perché il bisogno non c'era → cosa lo copre*:
+
+- **Milestone trend chart** e **burn chart**: reporting proporzionato a un team di 5. Le milestone sono monitorate nella riga Schedule dello Stoplight e ai review; tutte e 7 rispettate, il trend chart sarebbe una linea piatta. Il burn-down per sprint sarebbe l'estensione naturale del Backlog: non c'è, e va detto (FAQ H11).
+- **Lead time / cycle time** sul Real-Time gestito a flusso: il WIP limit c'è, i due KPI no — su un sottosistema da due persone il flusso si è misurato con i blocker nei Daily (FAQ H12).
+- **Requirements reuse** e **business process diagramming** fra le tecniche di raccolta: nessun archivio da riusare (primo progetto dello spin-off) e nessun processo aziendale da mappare, c'è un gioco (FAQ B14, H14).
+- **Scope Bank**, bilanciamento **Kolb**, **war room** fisica: il team era già formato e la war room è ibrida (sede di Cesena + Notion/Slack) (FAQ H9, H10).
+- **Pomodoro**, LOC, function point come unità di stima: citati dal corso fra le alternative agli story point, non pertinenti a un backlog da 310 SP.
+- **User Flow** come allegato autonomo, previsto dal template delle linee guida: assorbito dentro il **Prototyping (2.6)**, dove i flussi sono descritti insieme alle schermate che li realizzano.
+- **Verbali** di Scoping Meeting e Approval Process come allegati: ritirati, i due eventi sono narrati nella relazione — gli allegati restano riservati agli artefatti veri e propri (FAQ G15).
+
+### 9.3 Alternative di scope (cosa il prodotto non fa)
+
+Sono le uniche alternative **negoziate col committente** e messe a verbale, quindi le più solide da citare: **app nativa iOS/Android** (≈ +120 giorni, +40% di effort — supplisce il responsive, 87,5% di successo nello user testing), **PWA** (valutata come alternativa leggera in analisi, poi esclusa senza effort pianificato), **social login**, **modalità single-player con IA**, **notifiche push**, **tornei strutturati**, **emoji/reactions**. Tutte Won't Have esplicite, con rivalutazione pianificata in v1.1+. Sul design, una scelta decisa **con un test e non a tavolino**: **click-to-play** al posto del **drag & drop**, dopo l'A/B testing con la community.
+
+---
+
+## 10. Cosa faremmo di diverso
+
+> Domanda quasi certa, e conviene distinguere due piani: cosa rifarei **nel progetto narrato** (sono le lessons learned, già nel Capitolo 6) e cosa rifarei **nell'elaborato come documento**. Il secondo piano è quello che dimostra distacco critico.
+
+### 10.1 Nel progetto (le 5 lessons learned, ognuna agganciata a uno strumento)
+
+1. **Prototipare le UI complesse già in fase di stima** — le animazioni del tavolo, stimate 8 SP col Planning Poker, erano sottostimate.
+2. **Tenere gli esperti di dominio nel loop durante lo sviluppo**, non solo nello Scoping — a novembre l'esperta ha fatto riclassificare la Maraffa da Should a Must.
+3. **Anticipare il cross-browser testing** agli sprint 5–6, i primi con interfaccia — farlo allo Sprint 12 costò 2 giorni di correzioni per Safari.
+4. **Daily standup asincrono strutturato** (Slackbot dallo Sprint 7) per i periodi di lavoro remoto.
+5. **Refactoring continuo al 10–15% di ogni sprint** invece di uno sprint di pulizia — lo Sprint 10 dedicato al debito tecnico mostrò poco valore visibile in Review.
+
+### 10.2 Nella gestione, con il senno di poi
+
+- **Una Change Request numerata per la riclassificazione della Maraffa**: la modifica fu discussa e approvata nella sostanza e compensata riducendo i Could, ma un CR con Project Impact Statement sarebbe stato più rigoroso — ed è la stessa lezione del punto 2 sopra (§8, voce 13).
+- **Ammettere i picchi invece di appoggiarsi alla media**: Sprint 6 a 47 SP e Sprint 10 a 42 contro una capacity di 40. La media pianificata di ≈37 regge, ma nasconde i picchi; un livellamento esplicito in fase di planning sarebbe stato più onesto (§8, voce 9).
+- **Un burn-down per sprint** accanto alla velocity: costo quasi nullo, e avrebbe dato allo sponsor una lettura infra-sprint che lo Stoplight settimanale non dà.
+- **Una JPPS formale** come contenitore unico della pianificazione collettiva già avvenuta, con PDS fra gli output (FAQ H8, H19).
+
+### 10.3 Nell'elaborato come documento
+
+- **Dichiarare il metodo di raccolta dei requisiti in testa alla RBS**: le evidenze ci sono tutte (workshop, interviste, prototipi, Think Aloud, use case), ma nel documento mancano le *etichette* del corso — oggi la risposta vive solo nei materiali d'orale (FAQ B14).
+- **Esplicitare IRACIS nel POS**: i criteri di successo sono quantificati correttamente, ma non sono etichettati come *Improved Service*; dirlo avrebbe reso immediato il legame col business value (FAQ A6).
+- **Il break-even negativo andava messo più in evidenza, non meno**: è la conclusione più interessante del BMC — un'analisi che porta a un esito negativo *utile* — e nella relazione è una riga.
+- **Numerare gli allegati come le sezioni** o dichiarare la mappa in apertura: la numerazione sequenziale 2.1–2.9 dopo il ritiro dei verbali è corretta ma costringe a spiegare lo sfasamento (FAQ G15).
+
+---
+
+**Ultimo aggiornamento**: 2026-09-08 — **revisione mirata sul formato dell'orale** (conversazione sulle scelte: come prese, perché non altre, cosa cambieresti): nuova **§1.5** su come rispondere alle domande di processo (i due registri narrazione/progettista, le quattro ancore dei numeri, il cash flow come catena completa, problema→strumento, "l'avete fatto davvero?", onestà selettiva); nuova **§9** con le alternative scartate in tabella, gli strumenti del corso non prodotti e le alternative di scope negoziate; nuova **§10** su cosa faremmo di diverso, distinta su tre piani (progetto narrato / gestione / elaborato come documento). Corretto in §3.3 il ripasso sulle stime: le slide dichiarano **efficienza 75% e interruzioni non pianificate al 33% del clock time** (il documento riportava un 25% che era un'interpretazione, non il dato della slide). Allineata §1.1 al business value su due livelli (FAQ A6). Aggiornamento precedente: 2026-08-11 — §4/§5 aggiornati con doppia lettura WBS, potatura RASCI (51 righe, 48 pattern conservati) e raccordo WBS↔Network; tilde→≈. Aggiornamento precedente: 2026-08-09 — versione didattica (riquadri "Ripasso" con la teoria del corso per ogni strumento); creato a valle della rilettura integrale di relazione e allegati, con audit di coerenza incrociata completato e correzioni applicate.
