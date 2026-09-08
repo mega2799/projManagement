@@ -5,6 +5,8 @@
 >
 > **Convenzione**: i riquadri `> Ripasso —` contengono la teoria generale; il testo normale racconta il progetto. Documenti gemelli: `PREPARAZIONE-ORALE.md` (numeri a memoria e risposte pronte) e `FAQ.md` (domande previste all'orale con risposte).
 >
+> **Sintesi da un foglio**: `RIPASSO-SCELTE.md` estrae in due pagine i due registri, le quattro ancore dei numeri, le scelte-cardine col costo dell'alternativa, i punti deboli da giocare per primi e le frasi pronte. Questo file resta la fonte: se un dato cambia, si aggiorna qui e poi lì.
+>
 > **Per il ripasso mirato sull'orale** — che è una conversazione in cui il docente ripercorre le scelte e chiede *come sono state prese*, *perché non altre* e *cosa faresti di diverso* — le tre sezioni dedicate sono **§1.5** (come rispondere alle domande sul processo, incluso il fatto che l'elaborato è un caso di studio), **§9** (alternative scartate e strumenti del corso non usati) e **§10** (cosa faremmo di diverso, su tre piani).
 
 ---
